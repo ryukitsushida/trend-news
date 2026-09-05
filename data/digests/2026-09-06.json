@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-06",
+  "generated_at": "2026-09-06 00:17 JST",
+  "categories": [
+    {
+      "id": "domestic-it",
+      "label": "国内IT・技術",
+      "overview": "",
+      "topics": [],
+      "quick_hits": [],
+      "ok": false,
+      "error": "PermissionDeniedError: Error code: 403 - {'Message': 'User: arn:aws:sts::476114113260:assumed-role/github-actions-trend-news/GitHubActions i…",
+      "article_count": 30,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "global-it",
+      "label": "海外IT・技術",
+      "overview": "",
+      "topics": [],
+      "quick_hits": [],
+      "ok": false,
+      "error": "PermissionDeniedError: Error code: 403 - {'Message': 'User: arn:aws:sts::476114113260:assumed-role/github-actions-trend-news/GitHubActions i…",
+      "article_count": 30,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "ai-cloud",
+      "label": "AI・クラウド",
+      "overview": "",
+      "topics": [],
+      "quick_hits": [],
+      "ok": false,
+      "error": "PermissionDeniedError: Error code: 403 - {'Message': 'User: arn:aws:sts::476114113260:assumed-role/github-actions-trend-news/GitHubActions i…",
+      "article_count": 5,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "",
+      "topics": [],
+      "quick_hits": [],
+      "ok": false,
+      "error": "PermissionDeniedError: Error code: 403 - {'Message': 'User: arn:aws:sts::476114113260:assumed-role/github-actions-trend-news/GitHubActions i…",
+      "article_count": 25,
+      "dropped_topics": 0,
+      "truncated": false
+    }
+  ],
+  "collection_failures": []
+}
