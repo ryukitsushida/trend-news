@@ -1,44 +1,102 @@
+# カテゴリは「どのフィードから来たか」ではなく「記事の内容」で決まる。
+# 話題が1つに定まるフィードは category を固定してAI分類をスキップし(確実・安価)、
+# 話題が横断するフィード(はてブ、Hacker News など)だけ分類パスに回す。
+
+# 通常のニュース系フィードの収集ウィンドウ
 window_hours: 30
+# slow: true のフィード(公式ブログ・注意喚起など更新頻度が低い)のウィンドウ。
+# 掲載済みURLは除外されるので、長くしても同じ記事が何日も出続けることはない。
+slow_window_hours: 240
+max_items_per_feed: 10      # 更新の多いフィードが枠を独占しないようにする
+topics_per_category: 5      # しっかり要約する件数
+quick_hits_per_category: 5  # タイトル+一行コメントで流す件数
+highlight_count: 5          # 先頭の「今日の5選」
 
 categories:
-  - id: domestic-it
-    label: 国内IT・技術
-    max_items: 30
-    feeds:
-      - { name: Publickey,          url: "https://www.publickey1.jp/atom.xml" }
-      - { name: はてブ テクノロジー, url: "https://b.hatena.ne.jp/hotentry/it.rss" }
-      - { name: Zenn,               url: "https://zenn.dev/feed" }
-      - { name: Qiita 人気,          url: "https://qiita.com/popular-items/feed" }
-      - { name: ITmedia NEWS,       url: "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml" }
-      - { name: GIGAZINE,           url: "https://gigazine.net/news/rss_2.0/" }
-
-  - id: global-it
-    label: 海外IT・技術
-    max_items: 30
-    feeds:
-      - { name: Hacker News,  url: "https://hnrss.org/frontpage?points=100" }
-      - { name: The Verge,    url: "https://www.theverge.com/rss/index.xml" }
-      - { name: Ars Technica, url: "https://feeds.arstechnica.com/arstechnica/index" }
-      - { name: TechCrunch,   url: "https://techcrunch.com/feed/" }
-      - { name: InfoQ,        url: "https://www.infoq.com/feed/" }
-
-  - id: ai-cloud
-    label: AI・クラウド
-    max_items: 30
-    feeds:
-      - { name: AWS News Blog,      url: "https://aws.amazon.com/blogs/aws/feed/" }
-      - { name: Google Cloud Blog,  url: "https://cloudblog.withgoogle.com/rss/" }
-      - { name: Azure Blog,         url: "https://azure.microsoft.com/en-us/blog/feed/" }
-      - { name: OpenAI News,        url: "https://openai.com/news/rss.xml" }
-      - { name: Google DeepMind,    url: "https://deepmind.google/blog/rss.xml" }
-      - { name: Hugging Face,       url: "https://huggingface.co/blog/feed.xml" }
-      - { name: ITmedia AI+,        url: "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml" }
-
+  - id: ai
+    label: AI・LLM
+    description: |
+      LLM/生成AIのモデル・製品リリース、研究成果、AI開発ツールやフレームワーク、
+      AI企業(OpenAI/Anthropic/Google等)の動向、AIの安全性・規制・倫理。
+  - id: security
+    label: セキュリティ
+    description: |
+      脆弱性(CVE)、ゼロデイ、情報漏洩・侵害インシデント、マルウェアや攻撃手法、
+      セキュリティ対策・ガイドライン・注意喚起。
+  - id: cloud
+    label: クラウド・インフラ
+    description: |
+      AWS/GCP/Azureのアップデート、Kubernetes・コンテナ、IaC、SRE・可観測性、
+      ネットワーク、データベース、データセンター。
+  - id: dev
+    label: 開発・エンジニアリング
+    description: |
+      プログラミング言語・フレームワーク、OSS、開発ツール・エディタ、
+      設計/アーキテクチャ、開発手法、エンジニアの働き方。
+  - id: product
+    label: プロダクト・ビジネス
+    description: |
+      IT企業の経営・組織の動向、資金調達・M&A・IPO、コンシューマ向け新製品、
+      市場動向、テック業界に関わる規制・訴訟。
   - id: general
     label: 一般ニュース
-    max_items: 25
-    feeds:
-      - { name: NHK 主要,   url: "https://www3.nhk.or.jp/rss/news/cat0.xml" }
-      - { name: NHK 経済,   url: "https://www3.nhk.or.jp/rss/news/cat5.xml" }
-      - { name: 朝日新聞,   url: "https://www.asahi.com/rss/asahi/newsheadlines.rdf" }
-      - { name: BBC News,  url: "https://feeds.bbci.co.uk/news/rss.xml" }
+    description: |
+      IT以外の政治・経済・社会・国際情勢。
+
+# 公開JSON APIから取得するソース。RSSでは人気度が取れないため、
+# LGTM・いいね・スコアを直接取れるAPIを使い、新着順ではなく人気順に採用する。
+json_sources:
+  - { name: Qiita 人気,    kind: qiita,    days: 5, min_stocks: 20, slow: true }
+  - { name: Zenn トレンド,  kind: zenn,     slow: true }
+  - { name: Lobsters,     kind: lobsters, slow: true }
+
+feeds:
+  # --- 話題が横断するフィード(内容で分類する) ---
+  # はてブ人気エントリと Hacker News はブックマーク数/ポイント数を返すため、
+  # 「いま話題になっているか」の実測シグナルとして要約の判断材料に渡している。
+  - { name: はてブ テクノロジー, url: "https://b.hatena.ne.jp/hotentry/it.rss" }
+  - { name: はてブ 世の中,      url: "https://b.hatena.ne.jp/hotentry/social.rss" }
+  - { name: Hacker News,        url: "https://hnrss.org/frontpage?points=100" }
+  - { name: Publickey,          url: "https://www.publickey1.jp/atom.xml", slow: true }
+  - { name: ITmedia NEWS,       url: "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml" }
+  - { name: ITmedia エンタープライズ, url: "https://rss.itmedia.co.jp/rss/2.0/enterprise.xml" }
+  - { name: GIGAZINE,           url: "https://gigazine.net/news/rss_2.0/" }
+  - { name: Ars Technica,       url: "https://feeds.arstechnica.com/arstechnica/index" }
+  - { name: The Verge,          url: "https://www.theverge.com/rss/index.xml" }
+  - { name: TechCrunch,         url: "https://techcrunch.com/feed/" }
+  - { name: InfoQ,              url: "https://www.infoq.com/feed/" }
+  - { name: GitHub Blog,        url: "https://github.blog/feed/", slow: true }
+  - { name: GitHub Changelog,   url: "https://github.blog/changelog/feed/" }
+
+  # --- AI・LLM 固定 ---
+  - { name: OpenAI News,      url: "https://openai.com/news/rss.xml",            category: ai, slow: true }
+  - { name: Google DeepMind,  url: "https://deepmind.google/blog/rss.xml",       category: ai, slow: true }
+  - { name: Google AI Blog,   url: "https://blog.google/technology/ai/rss/",     category: ai, slow: true }
+  - { name: Hugging Face,     url: "https://huggingface.co/blog/feed.xml",       category: ai, slow: true }
+  - { name: The Decoder,      url: "https://the-decoder.com/feed/",              category: ai }
+  - { name: Simon Willison,   url: "https://simonwillison.net/atom/everything/", category: ai, slow: true }
+  - { name: ITmedia AI+,      url: "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml", category: ai }
+
+  # --- セキュリティ固定 ---
+  - { name: JPCERT/CC,          url: "https://www.jpcert.or.jp/rss/jpcert.rdf",      category: security, slow: true }
+  - { name: IPA security,       url: "https://www.ipa.go.jp/security/alert-rss.rdf", category: security, slow: true }
+  - { name: The Hacker News,    url: "https://feeds.feedburner.com/TheHackersNews",  category: security }
+  - { name: Krebs on Security,  url: "https://krebsonsecurity.com/feed/",            category: security, slow: true }
+  - { name: Security NEXT,      url: "https://www.security-next.com/feed",           category: security }
+
+  # --- クラウド・インフラ固定 ---
+  - { name: AWS News Blog,      url: "https://aws.amazon.com/blogs/aws/feed/",                    category: cloud, slow: true }
+  - { name: AWS What's New,     url: "https://aws.amazon.com/about-aws/whats-new/recent/feed/",   category: cloud }
+  - { name: Google Cloud Blog,  url: "https://cloudblog.withgoogle.com/rss/",                     category: cloud, slow: true }
+  - { name: Azure Blog,         url: "https://azure.microsoft.com/en-us/blog/feed/",              category: cloud, slow: true }
+  - { name: Kubernetes Blog,    url: "https://kubernetes.io/feed.xml",                            category: cloud, slow: true }
+  - { name: HashiCorp Blog,     url: "https://www.hashicorp.com/blog/feed.xml",                   category: cloud, slow: true }
+
+  # --- 開発・エンジニアリング固定 ---
+  - { name: Stack Overflow Blog, url: "https://stackoverflow.blog/feed/",              category: dev, slow: true }
+
+  # --- 一般ニュース固定 ---
+  - { name: NHK 主要,  url: "https://www.nhk.or.jp/rss/news/cat0.xml",       category: general }
+  - { name: NHK 経済,  url: "https://www.nhk.or.jp/rss/news/cat5.xml",       category: general }
+  - { name: 朝日新聞,  url: "https://www.asahi.com/rss/asahi/newsheadlines.rdf", category: general }
+  - { name: BBC News, url: "https://feeds.bbci.co.uk/news/rss.xml",          category: general }

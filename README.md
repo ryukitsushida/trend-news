@@ -5,7 +5,8 @@ Claude(Haiku 4.5)にカテゴリ単位で要約させて、GitHub Pages に静�
 通勤中にスマホで読む用途を想定し、PWA(オフライン閲覧)対応です。
 
 - 公開URL: `https://ryukitsushida.github.io/trend-news/`(Pages有効化後)
-- カテゴリ: 国内IT・技術 / 海外IT・技術 / AI・クラウド / 一般ニュース
+- 構成: 冒頭に「今日の5選」、以下6カテゴリ(AI・LLM / セキュリティ / クラウド・インフラ /
+  開発・エンジニアリング / プロダクト・ビジネス / 一般ニュース)を各5トピック+短報5件
 - モデル: `global.anthropic.claude-haiku-4-5-20251001-v1:0`(Bedrock InvokeModel, ap-northeast-1)
 
 ## ローカル開発
@@ -158,7 +159,7 @@ Actions タブ > "Build daily digest" > Run workflow(`workflow_dispatch`)で手�
 ```
 config/sources.yaml     収集対象フィード(カテゴリ定義)
 scripts/collect.py       RSS収集・正規化・重複排除
-scripts/summarize.py     Bedrock呼び出し(カテゴリ単位、tool useで構造化出力)
+scripts/summarize.py     Bedrock呼び出し(分類→カテゴリ別要約→今日の5選 の3パス)
 scripts/render.py        Jinja2テンプレート -> public/ に静的サイト出力
 scripts/build.py         上記をまとめて実行するエントリポイント
 scripts/check_bedrock.py Bedrockへの疎通確認のみ行うスモークテスト

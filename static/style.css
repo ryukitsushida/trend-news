@@ -270,3 +270,88 @@ main {
   font-size: 0.78rem;
   text-align: center;
 }
+
+/* ---- 今日の5選 ---- */
+.highlights {
+  margin: 1.5rem 0 2.5rem;
+  scroll-margin-top: 4.2rem;
+}
+
+.highlights h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.highlights .lead {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.highlight-list {
+  list-style: none;
+  counter-reset: hl;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.highlight-card {
+  counter-increment: hl;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1rem 1rem 3rem;
+}
+
+.highlight-card::before {
+  content: counter(hl);
+  position: absolute;
+  left: 0.85rem;
+  top: 0.9rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--surface);
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.highlight-cat {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  padding: 0.1rem 0.55rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.highlight-cat:hover { text-decoration: none; }
+
+.highlight-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.highlight-reason {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.highlight-summary {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}

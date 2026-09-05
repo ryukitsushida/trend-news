@@ -14,10 +14,35 @@
 
 {% if digest.categories %}
 <nav class="category-tabs">
+  {% if digest.highlights %}<a href="#highlights">今日の{{ digest.highlights|length }}選</a>{% endif %}
   {% for cat in digest.categories %}
   <a href="#{{ cat.id }}">{{ cat.label }}</a>
   {% endfor %}
 </nav>
+{% endif %}
+
+{% if digest.highlights %}
+<section id="highlights" class="highlights">
+  <h2>今日の{{ digest.highlights|length }}選</h2>
+  {% if digest.lead %}
+  <p class="lead">{{ digest.lead }}</p>
+  {% endif %}
+  <ol class="highlight-list">
+    {% for h in digest.highlights %}
+    <li class="highlight-card">
+      <a class="highlight-cat" href="#{{ h.category_id }}">{{ h.category_label }}</a>
+      <h3>{{ h.topic.headline }}</h3>
+      {% if h.reason %}<p class="highlight-reason">{{ h.reason }}</p>{% endif %}
+      <p class="highlight-summary">{{ h.topic.summary }}</p>
+      <div class="source-list">
+        {% for src in h.topic.sources %}
+        <a href="{{ src.url }}" target="_blank" rel="noopener noreferrer">{{ src.title }}</a>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
 {% endif %}
 
 {% for cat in digest.categories %}
