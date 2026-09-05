@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-05",
+  "generated_at": "2026-09-05 23:41 JST",
+  "categories": [
+    {
+      "id": "domestic-it",
+      "label": "国内IT・技術",
+      "overview": "",
+      "topics": [],
+      "quick_hits": [],
+      "ok": false,
+      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_c3axnuibd67nlzgu5yaxqeroyf3xbzgc77g2uieeaeuond4rhndq', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
+      "article_count": 30,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "global-it",
+      "label": "海外IT・技術",
+      "overview": "",
+      "topics": [],
+      "quick_hits": [],
+      "ok": false,
+      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_akt5mdsgmhyuqgtucjegs2pcqf7switwtioazpgjbkb5swnblhkq', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
+      "article_count": 30,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "ai-cloud",
+      "label": "AI・クラウド",
+      "overview": "",
+      "topics": [],
+      "quick_hits": [],
+      "ok": false,
+      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_icscej6gvqoxqjoi3hkocuo7fo3r5rvphehfyusontt72stevksa', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
+      "article_count": 5,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "",
+      "topics": [],
+      "quick_hits": [],
+      "ok": false,
+      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_7gdngpxh6ixoigqsgp562spk37vag2w6gmynjm2yuzlukr5t3psa', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
+      "article_count": 25,
+      "dropped_topics": 0,
+      "truncated": false
+    }
+  ],
+  "collection_failures": []
+}
