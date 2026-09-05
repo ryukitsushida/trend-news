@@ -6,7 +6,7 @@ Claude(Haiku 4.5)にカテゴリ単位で要約させて、GitHub Pages に静�
 
 - 公開URL: `https://ryukitsushida.github.io/trend-news/`(Pages有効化後)
 - カテゴリ: 国内IT・技術 / 海外IT・技術 / AI・クラウド / 一般ニュース
-- モデル: `anthropic.claude-haiku-4-5`(Bedrock, ap-northeast-1)
+- モデル: `global.anthropic.claude-haiku-4-5-20251001-v1:0`(Bedrock InvokeModel, ap-northeast-1)
 
 ## ローカル開発
 
@@ -40,19 +40,20 @@ PWAアイコンは `scripts/make_icons.py` で生成済み(`static/icon-192.png`
 
 ## セットアップ手順(初回のみ・手動)
 
-### A. AWS側: Bedrockモデルアクセスの有効化
+### A. AWS側: モデルの初回有効化
 
-1. [Bedrock コンソール](https://console.aws.amazon.com/bedrock/home?region=ap-northeast-1#/modelaccess)
-   (リージョン: **ap-northeast-1**)を開く
-2. 「モデルアクセスを管理」から **Claude Haiku 4.5** を有効化(リクエスト後は基本即時利用可)
+Bedrockの「モデルアクセス」ページは廃止され、**サーバーレス基盤モデルは初回呼び出し時に
+自動で有効化される**方式に変わりました。ただし自動有効化には AWS Marketplace の権限が必要で、
+本プロジェクトのGitHub Actionsロールは最小権限(`bedrock:InvokeModel` のみ)しか持たないため、
+**権限を持つ人が1回だけ手で呼んでアカウント全体を有効化する**必要があります。
 
-> **会社名の入力について**: Anthropicモデルは本来「初回利用時に会社名・サイトURL・利用用途を
-> 提出するフォーム」が必須ですが、これは**`bedrock-mantle`エンドポイント経由のアクセスには適用されません**
-> ([AWS公式ドキュメント](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html))。
-> `summarize.py` は `AnthropicBedrockMantle` クライアント(= bedrock-mantleエンドポイント)を使うため、
-> このフォームへの入力は不要です。加えて Claude Haiku 4.5 自体が全顧客に開放済みのモデルのため、
-> 通常は承認待ちも発生しません。万一コンソールでフォームが出た場合も、会社サイトが無ければ
-> GitHubプロフィールや個人サイトのURLで代用できます。
+1. Bedrockコンソール(**ap-northeast-1**)→ 「モデルカタログ」→ **Claude Haiku 4.5**
+2. 「プレイグラウンドで開く」→ 適当なメッセージを送信
+
+初回利用時に利用用途(use case)の入力を求められた場合は、そこで入力してください。
+会社サイトが無い個人開発者は、GitHubプロフィールのURLで代用できます。
+
+一度成功すればアカウント全体で有効になり、以後はActionsのロールからも呼べます。
 
 ### B. AWS側: GitHub Actions用のOIDCロールを作る
 
@@ -75,6 +76,7 @@ IAM > IDプロバイダ > プロバイダを追加
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "GitHubActionsOIDC",
       "Effect": "Allow",
       "Principal": {
         "Federated": "arn:aws:iam::<AWSアカウントID>:oidc-provider/token.actions.githubusercontent.com"
@@ -82,10 +84,8 @@ IAM > IDプロバイダ > プロバイダを追加
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
         "StringEquals": {
-          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
-        },
-        "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:ryukitsushida/trend-news:ref:refs/heads/main"
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": "repo:ryukitsushida@181846498/trend-news@1353737192:ref:refs/heads/main"
         }
       }
     }
@@ -93,15 +93,31 @@ IAM > IDプロバイダ > プロバイダを追加
 }
 ```
 
-権限ポリシー(Bedrock Mantleエンドポイントの呼び出しのみ許可):
+> **`sub` に数値IDが入る点に注意。** GitHubが実際に送るsubは
+> `repo:<owner>@<ownerID>/<repo>@<repoID>:ref:refs/heads/main` という形式で、
+> 多くの記事にある `repo:<owner>/<repo>:...` ではありません。IAMの文字列条件は
+> 完全一致なので、IDを省くと `Not authorized to perform sts:AssumeRoleWithWebIdentity`
+> で失敗します。AWSは理由を伏せてこのエラーしか返さないため、原因の特定が難しい点に注意。
+>
+> 自分のリポジトリの正しい値は次で取得できます:
+>
+> ```bash
+> gh api repos/<owner>/<repo>/actions/oidc/customization/sub --jq .sub_claim_prefix
+> ```
+>
+> 失敗の実際の理由はCloudTrailで確認できます(`AssumeRoleWithWebIdentity` を検索し、
+> `userIdentity.userName` に載っている実際のsubを見る)。
+
+権限ポリシー(Bedrockのモデル呼び出しのみ許可):
 
 ```json
 {
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "InvokeClaudeOnBedrock",
       "Effect": "Allow",
-      "Action": ["bedrock-mantle:CreateInference"],
+      "Action": ["bedrock:InvokeModel"],
       "Resource": "*"
     }
   ]

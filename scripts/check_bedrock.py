@@ -33,12 +33,12 @@ def main() -> int:
     print(f"プロファイル: {os.environ.get('AWS_PROFILE', '(既定の認証チェーン)')}")
 
     try:
-        from anthropic import AnthropicBedrockMantle
+        from anthropic import AnthropicBedrock
     except ImportError:
         print("\n失敗: anthropic[bedrock] が入っていません -> pip install -r requirements.txt")
         return 1
 
-    client = AnthropicBedrockMantle(aws_region=region)
+    client = AnthropicBedrock(aws_region=region)
     print(f"エンドポイント: {client.base_url}\n")
 
     try:
@@ -53,7 +53,7 @@ def main() -> int:
         print(f"失敗: {type(exc).__name__}: {exc}\n")
         text = str(exc)
         if "AccessDenied" in text or "not authorized" in text:
-            print("→ IAMロールに bedrock-mantle:CreateInference が付いているか確認してください。")
+            print("→ IAMロールに bedrock:InvokeModel が付いているか確認してください。")
         elif "ExpiredToken" in text or "security token" in text:
             print("→ AWS認証が切れています。aws sso login --profile <プロファイル名> を実行してください。")
         elif "ValidationException" in text or "model" in text.lower():

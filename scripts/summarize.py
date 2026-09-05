@@ -1,5 +1,10 @@
 """Amazon Bedrock 上の Claude にカテゴリ単位で記事をまとめさせる。
 
+呼び出しは bedrock-runtime の InvokeModel 経路(AnthropicBedrock クライアント)。
+この経路のモデルIDはARN付きバージョン形式で、東京リージョンから呼ぶには推論
+プロファイルのプレフィックスが要る。Haiku 4.5 には jp / apac のプロファイルが
+無いため global を使う(価格の割増なし)。
+
 Bedrock は構造化出力(output_config.format)に非対応なため、tool use を
 tool_choice で強制してJSONを取り出す。LLMがURLを捏造する可能性があるため、
 レンダリング前に必ず入力記事のURL集合と突合してフィルタする(caller側の責務)。
@@ -13,7 +18,7 @@ from typing import Optional
 
 from scripts.collect import CategoryResult
 
-DEFAULT_MODEL_ID = "anthropic.claude-haiku-4-5"
+DEFAULT_MODEL_ID = "global.anthropic.claude-haiku-4-5-20251001-v1:0"
 DEFAULT_REGION = "ap-northeast-1"
 MAX_TOKENS = 8000
 
@@ -217,9 +222,24 @@ def _sanitize_and_filter(digest: dict, valid_urls: set[str]) -> tuple[dict, int]
 
 
 def _get_client(region: str):
-    from anthropic import AnthropicBedrockMantle
+    from anthropic import AnthropicBedrock
 
-    return AnthropicBedrockMantle(aws_region=region)
+    return AnthropicBedrock(aws_region=region)
+
+
+def _short_error(exc: Exception, limit: int = 140) -> str:
+    """APIエラーの生JSONをそのまま公開ページに出さないため、要点だけ取り出す。
+
+    完全な内容はビルドログに出るので、ここでは人が読める要約に留める。
+    """
+    body = getattr(exc, "body", None)
+    if isinstance(body, dict):
+        message = body.get("error", {}).get("message") if isinstance(body.get("error"), dict) else None
+        if message:
+            text = str(message)
+            return text if len(text) <= limit else text[:limit].rstrip() + "…"
+    text = f"{type(exc).__name__}: {exc}"
+    return text if len(text) <= limit else text[:limit].rstrip() + "…"
 
 
 def summarize_category(
@@ -254,6 +274,8 @@ def summarize_category(
             messages=[{"role": "user", "content": user_prompt}],
         )
     except Exception as exc:  # noqa: BLE001
+        # 完全なエラーはビルドログに残し、ページには要約だけ出す
+        print(f"[{category.id}] Bedrock呼び出し失敗: {exc}")
         return DigestResult(
             category_id=category.id,
             label=category.label,
@@ -261,7 +283,7 @@ def summarize_category(
             topics=[],
             quick_hits=[],
             ok=False,
-            error=str(exc),
+            error=_short_error(exc),
         )
 
     tool_use = next((b for b in response.content if b.type == "tool_use"), None)
