@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}Trend News{% endblock %}</title>
+<meta name="description" content="毎朝生成される、通勤中に読むためのIT・テクノロジー・ニュースダイジェスト">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="{{ root }}manifest.webmanifest">
+<link rel="icon" href="{{ root }}icon-192.png">
+<link rel="apple-touch-icon" href="{{ root }}icon-192.png">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="{{ root }}index.html">Trend News</a>
+  <a class="archive-link" href="{{ root }}archive/index.html">アーカイブ</a>
+</header>
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <p>記事本文はRSSフィードから取得し、要約は Amazon Bedrock (Claude) が生成しています。誤りを含む場合があるため、重要な情報は元記事を確認してください。</p>
+</footer>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('{{ root }}sw.js').catch(function () {});
+    });
+  }
+</script>
+</body>
+</html>

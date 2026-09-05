@@ -1,0 +1,67 @@
+name: Build daily digest
+
+on:
+  schedule:
+    # 20:00 UTC = 05:00 JST(Actionsのschedule実行は数十分遅延することがあるため余裕を持たせている)
+    - cron: "0 20 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      # ロールARNはSecret/Variableのどちらに登録してあっても動くようにしている
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN || vars.AWS_ROLE_ARN }}
+          aws-region: ap-northeast-1
+
+      - name: Build digest
+        env:
+          BEDROCK_MODEL_ID: anthropic.claude-haiku-4-5
+          TZ: Asia/Tokyo
+        run: python -m scripts.build
+
+      # 先にアーティファクトを上げるので、履歴コミットが失敗してもサイトは公開される
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+
+      - name: Commit digest history
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/digests
+          git diff --staged --quiet || (git commit -m "chore: update digest $(TZ=Asia/Tokyo date +%Y-%m-%d)" && git push)
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

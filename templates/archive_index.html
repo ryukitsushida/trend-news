@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}アーカイブ - Trend News{% endblock %}
+{% block content %}
+
+<div class="digest-head">
+  <h1>アーカイブ</h1>
+</div>
+
+{% if entries %}
+<ul class="archive-list">
+  {% for e in entries %}
+  <li>
+    <a href="{{ e.date }}.html">{{ e.date }}</a>
+    <span class="archive-meta">トピック {{ e.topic_count }} 件</span>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="notice">まだアーカイブがありません。</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,44 @@
+window_hours: 30
+
+categories:
+  - id: domestic-it
+    label: 国内IT・技術
+    max_items: 30
+    feeds:
+      - { name: Publickey,          url: "https://www.publickey1.jp/atom.xml" }
+      - { name: はてブ テクノロジー, url: "https://b.hatena.ne.jp/hotentry/it.rss" }
+      - { name: Zenn,               url: "https://zenn.dev/feed" }
+      - { name: Qiita 人気,          url: "https://qiita.com/popular-items/feed" }
+      - { name: ITmedia NEWS,       url: "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml" }
+      - { name: GIGAZINE,           url: "https://gigazine.net/news/rss_2.0/" }
+
+  - id: global-it
+    label: 海外IT・技術
+    max_items: 30
+    feeds:
+      - { name: Hacker News,  url: "https://hnrss.org/frontpage?points=100" }
+      - { name: The Verge,    url: "https://www.theverge.com/rss/index.xml" }
+      - { name: Ars Technica, url: "https://feeds.arstechnica.com/arstechnica/index" }
+      - { name: TechCrunch,   url: "https://techcrunch.com/feed/" }
+      - { name: InfoQ,        url: "https://www.infoq.com/feed/" }
+
+  - id: ai-cloud
+    label: AI・クラウド
+    max_items: 30
+    feeds:
+      - { name: AWS News Blog,      url: "https://aws.amazon.com/blogs/aws/feed/" }
+      - { name: Google Cloud Blog,  url: "https://cloudblog.withgoogle.com/rss/" }
+      - { name: Azure Blog,         url: "https://azure.microsoft.com/en-us/blog/feed/" }
+      - { name: OpenAI News,        url: "https://openai.com/news/rss.xml" }
+      - { name: Google DeepMind,    url: "https://deepmind.google/blog/rss.xml" }
+      - { name: Hugging Face,       url: "https://huggingface.co/blog/feed.xml" }
+      - { name: ITmedia AI+,        url: "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml" }
+
+  - id: general
+    label: 一般ニュース
+    max_items: 25
+    feeds:
+      - { name: NHK 主要,   url: "https://www3.nhk.or.jp/rss/news/cat0.xml" }
+      - { name: NHK 経済,   url: "https://www3.nhk.or.jp/rss/news/cat5.xml" }
+      - { name: 朝日新聞,   url: "https://www.asahi.com/rss/asahi/newsheadlines.rdf" }
+      - { name: BBC News,  url: "https://feeds.bbci.co.uk/news/rss.xml" }

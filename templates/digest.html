@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}{{ digest.date }} のトレンドダイジェスト - Trend News{% endblock %}
+{% block content %}
+
+<div class="digest-head">
+  <h1>{{ digest.date }}</h1>
+  {% if not is_latest %}
+    <p class="archive-badge">過去のアーカイブ号です</p>
+  {% endif %}
+  {% if digest.generated_at %}
+    <p class="generated-at">生成: {{ digest.generated_at }}</p>
+  {% endif %}
+</div>
+
+{% if digest.categories %}
+<nav class="category-tabs">
+  {% for cat in digest.categories %}
+  <a href="#{{ cat.id }}">{{ cat.label }}</a>
+  {% endfor %}
+</nav>
+{% endif %}
+
+{% for cat in digest.categories %}
+<section id="{{ cat.id }}" class="category-section">
+  <h2>{{ cat.label }}</h2>
+
+  {% if not cat.ok %}
+    <p class="notice notice-error">本日は生成できませんでした{% if cat.error %}({{ cat.error }}){% endif %}。</p>
+  {% elif not cat.article_count %}
+    <p class="notice notice-error">記事を取得できませんでした(配信元の一時的な障害の可能性があります)。</p>
+  {% elif not cat.topics %}
+    <p class="notice">記事は {{ cat.article_count }} 件取得しましたが、取り上げるトピックがありませんでした。</p>
+  {% else %}
+    {% if cat.overview %}
+    <p class="category-overview">{{ cat.overview }}</p>
+    {% endif %}
+
+    <div class="topic-list">
+      {% for topic in cat.topics %}
+      <article class="topic-card">
+        <div class="topic-head">
+          <h3>{{ topic.headline }}</h3>
+          {% if topic.importance %}
+          <span class="importance importance-{{ topic.importance }}" title="重要度 {{ topic.importance }}/5">
+            {% for _ in range(topic.importance) %}★{% endfor %}{% for _ in range(5 - topic.importance) %}☆{% endfor %}
+          </span>
+          {% endif %}
+        </div>
+        <p class="topic-summary">{{ topic.summary }}</p>
+        {% if topic.why_it_matters %}
+        <p class="topic-why"><strong>注目ポイント:</strong> {{ topic.why_it_matters }}</p>
+        {% endif %}
+        {% if topic.tags %}
+        <div class="tag-list">
+          {% for tag in topic.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </div>
+        {% endif %}
+        {% if topic.sources %}
+        <div class="source-list">
+          {% for src in topic.sources %}
+          <a href="{{ src.url }}" target="_blank" rel="noopener noreferrer">{{ src.title }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if cat.quick_hits %}
+    <div class="quick-hits">
+      <h4>その他の話題</h4>
+      <ul>
+        {% for hit in cat.quick_hits %}
+        <li>
+          <a href="{{ hit.url }}" target="_blank" rel="noopener noreferrer">{{ hit.title }}</a>
+          {% if hit.note %}<span class="quick-hit-note"> — {{ hit.note }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  {% endif %}
+</section>
+{% endfor %}
+
+{% if digest.collection_failures %}
+<section class="collection-failures">
+  <h4>取得できなかったソース</h4>
+  <ul>
+    {% for f in digest.collection_failures %}
+    <li>{{ f.source }}({{ f.category_id }}): {{ f.error }}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% endblock %}
