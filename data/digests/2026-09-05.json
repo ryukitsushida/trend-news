@@ -1,6 +1,6 @@
 {
   "date": "2026-09-05",
-  "generated_at": "2026-09-05 23:50 JST",
+  "generated_at": "2026-09-05 23:52 JST",
   "categories": [
     {
       "id": "domestic-it",
@@ -9,7 +9,7 @@
       "topics": [],
       "quick_hits": [],
       "ok": false,
-      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_ntpiaaolwimpnvolexbcxtycuoltkrbwc2q6zo2eyeu5qlgqxlja', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
+      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_2ku6qjlrbfcidxr7zdocwek4m5nsc6c6peipjex3m4bhlwqxwsyq', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
       "article_count": 30,
       "dropped_topics": 0,
       "truncated": false
@@ -21,7 +21,7 @@
       "topics": [],
       "quick_hits": [],
       "ok": false,
-      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_mu7lxsrmxaciu3qwuvapdwndvii4ttzqmg2lm6ftn6lmvixpue7q', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
+      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_sdu2kfslchyfebsgktxwnmg7pi33vcjtttd4dcqncmvfgvz4vexq', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
       "article_count": 30,
       "dropped_topics": 0,
       "truncated": false
@@ -33,7 +33,7 @@
       "topics": [],
       "quick_hits": [],
       "ok": false,
-      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_fcac44mu4q37rr4o6b44yhq57jfzqd54jg4znmzrbbae5gnzuphq', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
+      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_deictyxbppn6kf2bwdm2quklprohi52jcsf4cryrc7wyh565okza', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
       "article_count": 5,
       "dropped_topics": 0,
       "truncated": false
@@ -45,7 +45,7 @@
       "topics": [],
       "quick_hits": [],
       "ok": false,
-      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_qqcbuxgn7lncwzg3q57gbfgoon3e6sne3ysczlvjg7glns6er2qq', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
+      "error": "Error code: 403 - {'type': 'error', 'request_id': 'req_rzwtf5sf2c6my24eacav32kudmrash63ldvkwknnyjpjtjwf756q', 'error': {'type': 'permission_error', 'message': 'anthropic.claude-haiku-4-5 is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/'}}",
       "article_count": 25,
       "dropped_topics": 0,
       "truncated": false
