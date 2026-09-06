@@ -470,6 +470,28 @@ def _build_digest_prompt(label: str, articles: list[Article]) -> str:
     return "\n".join(lines)
 
 
+def select_for_summary(articles: list[Article], limit: int) -> list[Article]:
+    """要約に渡す記事を上限まで絞る。
+
+    単純に先頭(=新着順)で切ると、収集ウィンドウの広い Zenn / Qiita など
+    「古いが今まさに読まれている」記事が真っ先に脱落する。そこで枠の半分を
+    人気度の高い記事に割り当て、残りを新着で埋める。並び順は日付のまま返す。
+    """
+    if len(articles) <= limit:
+        return articles
+
+    popular = sorted(
+        (i for i, a in enumerate(articles) if a.popularity),
+        key=lambda i: -(articles[i].popularity or 0),
+    )
+    keep = set(popular[: limit // 2])
+    for i in range(len(articles)):  # articles は新着順
+        if len(keep) >= limit:
+            break
+        keep.add(i)
+    return [a for i, a in enumerate(articles) if i in keep]
+
+
 def summarize_category(
     category: dict,
     articles: list[Article],
@@ -486,7 +508,7 @@ def summarize_category(
 
     client = client or get_client()
     model_id = get_model_id(model_id, "digest")
-    articles = articles[:MAX_ARTICLES_PER_CATEGORY]
+    articles = select_for_summary(articles, MAX_ARTICLES_PER_CATEGORY)
 
     try:
         data, truncated = _call_tool(

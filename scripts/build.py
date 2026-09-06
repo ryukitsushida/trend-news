@@ -25,14 +25,14 @@ PUBLIC_DIR = BASE_DIR / "public"
 JST = ZoneInfo("Asia/Tokyo")
 
 
-def published_urls() -> set[str]:
+def published_urls(digests: list[dict]) -> set[str]:
     """過去のダイジェストで既に掲載したURL。
 
     更新頻度の低いフィードは収集ウィンドウを広げているため、これを除外しないと
     同じ記事が何日も出続けてしまう。
     """
     urls: set[str] = set()
-    for digest in load_all_digests():
+    for digest in digests:
         for cat in digest.get("categories", []):
             for topic in cat.get("topics", []):
                 for src in topic.get("sources", []):
@@ -70,66 +70,72 @@ def digest_to_dict(d: CategoryDigest) -> dict:
     }
 
 
+def classify(
+    articles: list[Article], categories: list[dict], client, model, dry_run: bool
+) -> tuple[dict[int, str], str | None]:
+    """カテゴリ未確定の記事を振り分ける。戻り値は (割り当て, エラー)。"""
+    if dry_run:
+        # 見た目確認用に、未確定分を順番に配る
+        ids = [c["id"] for c in categories]
+        unfixed = [i for i, a in enumerate(articles) if not a.category_id]
+        return {idx: ids[n % len(ids)] for n, idx in enumerate(unfixed)}, None
+    try:
+        return classify_articles(articles, categories, client, model), None
+    except Exception as exc:  # noqa: BLE001 - 分類が落ちても固定カテゴリ分は出す
+        print(f"[classify] 分類に失敗: {exc}")
+        return {}, str(exc)
+
+
+def make_highlights(
+    digests: list[CategoryDigest], client, model, count: int, dry_run: bool
+) -> tuple[str, list[dict]]:
+    if not dry_run:
+        return pick_highlights(digests, client, model, count)
+    highlights = [
+        {
+            "category_id": d.id,
+            "category_label": d.label,
+            "reason": "(dry-run)",
+            "topic": d.topics[0],
+        }
+        for d in digests
+        if d.topics
+    ][:count]
+    return "(dry-run) 本日の注目トピックです。", highlights
+
+
 def run(dry_run: bool = False, model_id: str | None = None, region: str | None = None) -> dict:
     now_jst = datetime.now(JST)
     config = load_config(CONFIG_PATH)
     categories = config["categories"]
     topic_count = config.get("topics_per_category", 5)
     quick_hit_count = config.get("quick_hits_per_category", 5)
-    highlight_count = config.get("highlight_count", 5)
 
-    collection = collect_all(CONFIG_PATH, exclude_urls=published_urls())
+    # 過去号は「掲載済みURLの抽出」と「アーカイブ生成」の両方で要るので一度だけ読む
+    past_digests = load_all_digests()
+    collection = collect_all(CONFIG_PATH, exclude_urls=published_urls(past_digests))
     print(f"収集: {len(collection.articles)} 件 / 取得失敗 {len(collection.failures)} フィード")
 
     client = None if dry_run else get_client(region)
     model = model_id  # None ならパスごとの環境変数で解決される
 
-    # --- 分類 ---
-    assigned: dict[int, str] = {}
-    classify_error = None
-    if dry_run:
-        # カテゴリ固定でない記事は順番に配って見た目を確認できるようにする
-        ids = [c["id"] for c in categories]
-        unfixed = [i for i, a in enumerate(collection.articles) if not a.category_id]
-        assigned = {idx: ids[n % len(ids)] for n, idx in enumerate(unfixed)}
-    else:
-        try:
-            assigned = classify_articles(collection.articles, categories, client, model)
-        except Exception as exc:  # noqa: BLE001 - 分類が落ちても固定カテゴリ分は出す
-            print(f"[classify] 分類に失敗: {exc}")
-            classify_error = str(exc)
-
+    assigned, classify_error = classify(
+        collection.articles, categories, client, model, dry_run
+    )
     grouped = group_by_category(collection.articles, categories, assigned)
-    unclassified = len(collection.articles) - sum(len(v) for v in grouped.values())
 
-    # --- カテゴリ別要約 ---
-    digests: list[CategoryDigest] = []
-    for category in categories:
-        articles = grouped[category["id"]]
-        if dry_run:
-            digests.append(dry_run_digest(category, articles, topic_count))
-        else:
-            digests.append(
-                summarize_category(
-                    category, articles, client, model, topic_count, quick_hit_count
-                )
-            )
+    digests = [
+        dry_run_digest(category, grouped[category["id"]], topic_count)
+        if dry_run
+        else summarize_category(
+            category, grouped[category["id"]], client, model, topic_count, quick_hit_count
+        )
+        for category in categories
+    ]
 
-    # --- 今日の5選 ---
-    if dry_run:
-        lead = "(dry-run) 本日の注目トピックです。"
-        highlights = [
-            {
-                "category_id": d.id,
-                "category_label": d.label,
-                "reason": "(dry-run)",
-                "topic": d.topics[0],
-            }
-            for d in digests
-            if d.topics
-        ][:highlight_count]
-    else:
-        lead, highlights = pick_highlights(digests, client, model, highlight_count)
+    lead, highlights = make_highlights(
+        digests, client, model, config.get("highlight_count", 5), dry_run
+    )
 
     digest = {
         "date": now_jst.strftime("%Y-%m-%d"),
@@ -142,13 +148,13 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
         ],
         "stats": {
             "collected": len(collection.articles),
-            "unclassified": unclassified,
+            "unclassified": len(collection.articles) - sum(len(v) for v in grouped.values()),
             "classify_error": classify_error,
         },
     }
 
     save_digest(digest)
-    render_site(digest, PUBLIC_DIR, config.get("archive_days"))
+    render_site(digest, PUBLIC_DIR, config.get("archive_days"), past_digests)
     return digest
 
 

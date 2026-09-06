@@ -266,7 +266,7 @@ def _fetch_json_source(cfg: dict):
         return cfg, [], str(exc)
 
 
-def _fetch_one(feed_cfg: dict):
+def _fetch_feed(feed_cfg: dict):
     try:
         parsed = feedparser.parse(fetch_feed_bytes(feed_cfg["url"]))
         if parsed.bozo and not parsed.entries:
@@ -274,6 +274,29 @@ def _fetch_one(feed_cfg: dict):
         return feed_cfg, parsed, None
     except Exception as exc:  # noqa: BLE001 - 1フィード失敗で全体を止めない
         return feed_cfg, None, str(exc)
+
+
+def _entries_to_articles(entries, feed_cfg: dict) -> list[Article]:
+    """feedparser のエントリを Article に変換する。期間や重複の判定は呼び出し側。"""
+    articles = []
+    for entry in entries:
+        popularity, popularity_label = _extract_popularity(entry)
+        snippet = clean_snippet(getattr(entry, "summary", ""))
+        if _HN_BOILERPLATE_RE.search(snippet):
+            snippet = ""
+        articles.append(
+            Article(
+                title=getattr(entry, "title", "").strip(),
+                url=getattr(entry, "link", "").strip(),
+                source=feed_cfg["name"],
+                published=_entry_published(entry),
+                snippet=snippet,
+                category_id=feed_cfg.get("category"),
+                popularity=popularity,
+                popularity_label=popularity_label,
+            )
+        )
+    return articles
 
 
 def _sort_key(a: Article) -> datetime:
@@ -298,12 +321,20 @@ def collect_all(
     per_feed_cap = config.get("max_items_per_feed", 10)
     excluded = exclude_urls or set()
 
+    def keep(article: Article, cutoff: datetime) -> bool:
+        if not article.title or not article.url:
+            return False
+        if normalize_url(article.url) in excluded:
+            return False
+        # 日付が取れない場合は除外せず採用する(取りこぼしより重複の方が実害が小さい)
+        return article.published is None or article.published >= cutoff
+
     result = Collection()
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         json_futures = [
             pool.submit(_fetch_json_source, c) for c in config.get("json_sources", [])
         ]
-        futures = [pool.submit(_fetch_one, f) for f in config["feeds"]]
+        feed_futures = [pool.submit(_fetch_feed, f) for f in config["feeds"]]
 
         for fut in as_completed(json_futures):
             cfg, articles, error = fut.result()
@@ -313,55 +344,22 @@ def collect_all(
                 )
                 continue
             cutoff = slow_cutoff if cfg.get("slow") else fast_cutoff
-            picked = [
-                a
-                for a in articles
-                if a.title
-                and a.url
-                and normalize_url(a.url) not in excluded
-                and (a.published is None or a.published >= cutoff)
-            ]
+            picked = [a for a in articles if keep(a, cutoff)]
             # 人気度が取れるソースなので、新着順ではなく人気順に上限まで取る
             picked.sort(key=lambda a: a.popularity or 0, reverse=True)
             result.articles.extend(picked[:per_feed_cap])
 
-        for fut in as_completed(futures):
+        for fut in as_completed(feed_futures):
             feed_cfg, parsed, error = fut.result()
             if error:
                 result.failures.append(
                     FeedFailure(source=feed_cfg["name"], url=feed_cfg["url"], error=error)
                 )
                 continue
-
             cutoff = slow_cutoff if feed_cfg.get("slow") else fast_cutoff
-            picked: list[Article] = []
-            for entry in parsed.entries:
-                title = getattr(entry, "title", "").strip()
-                link = getattr(entry, "link", "").strip()
-                if not title or not link:
-                    continue
-                if normalize_url(link) in excluded:
-                    continue
-                published = _entry_published(entry)
-                # 日付が取れない場合は除外せず採用する(取りこぼしより重複の方が実害が小さい)
-                if published is not None and published < cutoff:
-                    continue
-                popularity, popularity_label = _extract_popularity(entry)
-                snippet = clean_snippet(getattr(entry, "summary", ""))
-                if _HN_BOILERPLATE_RE.search(snippet):
-                    snippet = ""
-                picked.append(
-                    Article(
-                        title=title,
-                        url=link,
-                        source=feed_cfg["name"],
-                        published=published,
-                        snippet=snippet,
-                        category_id=feed_cfg.get("category"),
-                        popularity=popularity,
-                        popularity_label=popularity_label,
-                    )
-                )
+            picked = [
+                a for a in _entries_to_articles(parsed.entries, feed_cfg) if keep(a, cutoff)
+            ]
             # 更新の多いフィードが枠を独占しないよう、新しい順に上限まで
             picked.sort(key=_sort_key, reverse=True)
             result.articles.extend(picked[:per_feed_cap])

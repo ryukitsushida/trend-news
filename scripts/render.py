@@ -22,7 +22,7 @@ def domain_of(url: str) -> str:
     """URLからドメイン名を取り出す。source を持たない古いアーカイブ用のフォールバック。"""
     from urllib.parse import urlsplit
 
-    host = urlsplit(url or "").netloc
+    host = urlsplit(url or "").netloc.lower()
     return host[4:] if host.startswith("www.") else host
 
 
@@ -91,13 +91,46 @@ def _copy_digest_data(output_dir: Path, dates: list[str]) -> None:
             shutil.copy(src, data_out / src.name)
 
 
+def _date_neighbours(dates: list[str]) -> dict[str, tuple[str | None, str | None]]:
+    """各日付の (前の日, 次の日) を返す。dates は新しい順なので next は1つ前の要素。"""
+    return {
+        date: (
+            dates[i + 1] if i + 1 < len(dates) else None,
+            dates[i - 1] if i > 0 else None,
+        )
+        for i, date in enumerate(dates)
+    }
+
+
+def _render_archive_index(tmpl, digests: list[dict], archive_dir: Path) -> None:
+    entries = [
+        {
+            "date": d["date"],
+            "generated_at": d.get("generated_at"),
+            "topic_count": sum(len(c.get("topics", [])) for c in d.get("categories", [])),
+        }
+        for d in digests
+    ]
+    (archive_dir / "index.html").write_text(
+        tmpl.render(entries=entries, root="../"), encoding="utf-8"
+    )
+
+
 def render_site(
-    latest_digest: dict, output_dir: Path, archive_days: int | None = None
+    latest_digest: dict,
+    output_dir: Path,
+    archive_days: int | None = None,
+    past_digests: list[dict] | None = None,
 ) -> None:
+    """サイトを生成する。
+
+    past_digests を渡すと過去号の再読み込みを省略できる(build.py は
+    掲載済みURLの抽出で既に全件読んでいるため、そのまま使い回す)。
+    """
     env = get_env()
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    all_digests = load_all_digests()
+    all_digests = load_all_digests() if past_digests is None else list(past_digests)
     # 直近ビルド分を最新として先頭に反映(ファイル書き込み前でも一覧に含める)
     all_digests = [d for d in all_digests if d["date"] != latest_digest["date"]]
     all_digests.insert(0, latest_digest)
@@ -109,15 +142,8 @@ def render_site(
     digest_tmpl = env.get_template("digest.html")
     archive_index_tmpl = env.get_template("archive_index.html")
 
-    # 日付の前後移動用。all_digests は新しい順なので、次の日は1つ前の要素。
     dates = [d["date"] for d in all_digests]
-    neighbours = {
-        date: (
-            dates[i + 1] if i + 1 < len(dates) else None,  # prev(古い方)
-            dates[i - 1] if i > 0 else None,  # next(新しい方)
-        )
-        for i, date in enumerate(dates)
-    }
+    neighbours = _date_neighbours(dates)
 
     # index.html = 最新号。日付リンクはアーカイブ配下を指すので接頭辞を付ける。
     prev_date, next_date = neighbours.get(latest_digest["date"], (None, None))
@@ -146,19 +172,7 @@ def render_site(
         )
         (archive_dir / f"{digest['date']}.html").write_text(html, encoding="utf-8")
 
-    # archive/index.html = 日付一覧
-    archive_entries = [
-        {
-            "date": d["date"],
-            "generated_at": d.get("generated_at"),
-            "topic_count": sum(len(c.get("topics", [])) for c in d.get("categories", [])),
-        }
-        for d in all_digests
-    ]
-    (archive_dir / "index.html").write_text(
-        archive_index_tmpl.render(entries=archive_entries, root="../"),
-        encoding="utf-8",
-    )
+    _render_archive_index(archive_index_tmpl, all_digests, archive_dir)
 
     _copy_static(output_dir)
     _copy_digest_data(output_dir, dates)

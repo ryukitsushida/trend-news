@@ -147,6 +147,16 @@ a:hover { text-decoration: underline; }
 
 .category-tabs a.is-active .tab-count { color: rgba(255, 255, 255, 0.75); }
 
+/* 画面が広いときは横スクロールにする必要がないので折り返して全タブを見せる。
+   スマホは1行のまま横スクロール(縦を消費しないため)。 */
+@media (min-width: 640px) {
+  .category-tabs {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    row-gap: 0.35rem;
+  }
+}
+
 .category-section {
   margin: 2rem 0;
   scroll-margin-top: calc(var(--header-h, 6rem) + 0.75rem);
