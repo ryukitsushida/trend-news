@@ -15,7 +15,6 @@ from scripts.summarize import (
     classify_articles,
     dry_run_digest,
     get_client,
-    get_model_id,
     pick_highlights,
     summarize_category,
 )
@@ -83,7 +82,7 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
     print(f"収集: {len(collection.articles)} 件 / 取得失敗 {len(collection.failures)} フィード")
 
     client = None if dry_run else get_client(region)
-    model = get_model_id(model_id)
+    model = model_id  # None ならパスごとの環境変数で解決される
 
     # --- 分類 ---
     assigned: dict[int, str] = {}
@@ -158,7 +157,12 @@ def main() -> None:
     parser.add_argument(
         "--dry-run", action="store_true", help="Bedrockを呼ばず固定ダミー要約でサイトを生成する"
     )
-    parser.add_argument("--model-id", default=os.environ.get("BEDROCK_MODEL_ID"))
+    parser.add_argument(
+        "--model-id",
+        default=None,
+        help="全パスのモデルを明示指定する。未指定なら BEDROCK_{CLASSIFY,DIGEST,HIGHLIGHT}_MODEL_ID "
+        "→ BEDROCK_MODEL_ID の順に解決される。",
+    )
     parser.add_argument("--region", default=os.environ.get("AWS_REGION"))
     args = parser.parse_args()
 

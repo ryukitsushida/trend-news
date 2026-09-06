@@ -12,17 +12,60 @@
 <link rel="stylesheet" href="{{ root }}static/style.css">
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="{{ root }}index.html">Trend News</a>
-  <a class="archive-link" href="{{ root }}archive/index.html">アーカイブ</a>
+<header class="site-header" id="site-header">
+  <div class="header-top">
+    <a class="brand" href="{{ root }}index.html">Trend News</a>
+    {% block headermeta %}{% endblock %}
+  </div>
+  {% block headernav %}{% endblock %}
 </header>
+
 <main>
 {% block content %}{% endblock %}
 </main>
+
 <footer class="site-footer">
   <p>記事本文はRSSフィードから取得し、要約は Amazon Bedrock (Claude) が生成しています。誤りを含む場合があるため、重要な情報は元記事を確認してください。</p>
 </footer>
+
 <script>
+  // ヘッダーは高さが可変(タブの有無で2段/1段)なので、実測値をCSS変数に流し込む。
+  // アンカー遷移時に見出しがヘッダーの下に隠れるのを防ぐ。
+  (function () {
+    var header = document.getElementById('site-header');
+    if (!header) return;
+    function syncHeight() {
+      document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+    }
+    syncHeight();
+    window.addEventListener('resize', syncHeight);
+    if (window.ResizeObserver) new ResizeObserver(syncHeight).observe(header);
+  })();
+
+  // 現在読んでいるカテゴリのタブを光らせる
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.category-tabs a'));
+    if (!tabs.length || !('IntersectionObserver' in window)) return;
+    var byId = {};
+    tabs.forEach(function (t) { byId[t.getAttribute('href').slice(1)] = t; });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var tab = byId[entry.target.id];
+        if (!tab) return;
+        if (entry.isIntersecting) {
+          tabs.forEach(function (t) { t.classList.remove('is-active'); });
+          tab.classList.add('is-active');
+          // 選択中のタブが画面外なら横スクロールで見える位置へ寄せる
+          tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    Object.keys(byId).forEach(function (id) {
+      var section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+  })();
+
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
       navigator.serviceWorker.register('{{ root }}sw.js').catch(function () {});

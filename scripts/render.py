@@ -18,13 +18,23 @@ STATIC_DIR = BASE_DIR / "static"
 DIGESTS_DIR = BASE_DIR / "data" / "digests"
 
 
+def domain_of(url: str) -> str:
+    """URLからドメイン名を取り出す。source を持たない古いアーカイブ用のフォールバック。"""
+    from urllib.parse import urlsplit
+
+    host = urlsplit(url or "").netloc
+    return host[4:] if host.startswith("www.") else host
+
+
 def get_env() -> Environment:
-    return Environment(
+    env = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),
         autoescape=select_autoescape(["html"]),
         trim_blocks=True,
         lstrip_blocks=True,
     )
+    env.filters["domain"] = domain_of
+    return env
 
 
 def load_all_digests() -> list[dict]:
@@ -92,9 +102,26 @@ def render_site(latest_digest: dict, output_dir: Path) -> None:
     digest_tmpl = env.get_template("digest.html")
     archive_index_tmpl = env.get_template("archive_index.html")
 
-    # index.html = 最新号
+    # 日付の前後移動用。all_digests は新しい順なので、次の日は1つ前の要素。
+    dates = [d["date"] for d in all_digests]
+    neighbours = {
+        date: (
+            dates[i + 1] if i + 1 < len(dates) else None,  # prev(古い方)
+            dates[i - 1] if i > 0 else None,  # next(新しい方)
+        )
+        for i, date in enumerate(dates)
+    }
+
+    # index.html = 最新号。日付リンクはアーカイブ配下を指すので接頭辞を付ける。
+    prev_date, next_date = neighbours.get(latest_digest["date"], (None, None))
     (output_dir / "index.html").write_text(
-        digest_tmpl.render(digest=latest_digest, is_latest=True, root=""),
+        digest_tmpl.render(
+            digest=latest_digest,
+            is_latest=True,
+            root="",
+            prev_date=f"archive/{prev_date}" if prev_date else None,
+            next_date=f"archive/{next_date}" if next_date else None,
+        ),
         encoding="utf-8",
     )
 
@@ -102,8 +129,14 @@ def render_site(latest_digest: dict, output_dir: Path) -> None:
     archive_dir = output_dir / "archive"
     archive_dir.mkdir(parents=True, exist_ok=True)
     for digest in all_digests:
-        is_latest = digest["date"] == latest_digest["date"]
-        html = digest_tmpl.render(digest=digest, is_latest=is_latest, root="../")
+        prev_date, next_date = neighbours.get(digest["date"], (None, None))
+        html = digest_tmpl.render(
+            digest=digest,
+            is_latest=digest["date"] == latest_digest["date"],
+            root="../",
+            prev_date=prev_date,
+            next_date=next_date,
+        )
         (archive_dir / f"{digest['date']}.html").write_text(html, encoding="utf-8")
 
     # archive/index.html = 日付一覧

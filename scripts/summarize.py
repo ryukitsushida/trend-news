@@ -272,16 +272,18 @@ def _as_tags(value) -> list[str]:
     return [_as_text(t) for t in value if t is not None]
 
 
-def _sanitize_and_filter(digest: dict, valid_urls: set[str]) -> tuple[dict, int]:
+def _sanitize_and_filter(digest: dict, articles: list[Article]) -> tuple[dict, int]:
     """LLM出力の型ゆれを吸収しつつ、実在しないURLを除去する。
 
     テンプレート側で型エラーを起こさないよう、ここで必ず期待する型に正規化する。
     URL検証は捏造リンクの公開を防ぐだけでなく、javascript: などの不正スキームも遮断する。
+    あわせて、元記事が持っていた配信元と注目度をリンクに埋め戻す(表示と後からの検証用)。
     戻り値は (正規化済みdigest, 除去したtopic数)。
     """
     from scripts.collect import normalize_url
 
-    normalized_valid = {normalize_url(u) for u in valid_urls}
+    by_url = {normalize_url(a.url): a for a in articles}
+    normalized_valid = set(by_url)
 
     def valid_link(item) -> bool:
         return (
@@ -289,6 +291,17 @@ def _sanitize_and_filter(digest: dict, valid_urls: set[str]) -> tuple[dict, int]
             and isinstance(item.get("url"), str)
             and normalize_url(item["url"]) in normalized_valid
         )
+
+    def link(item: dict) -> dict:
+        origin = by_url[normalize_url(item["url"])]
+        out = {
+            "title": _as_text(item.get("title")) or origin.title,
+            "url": item["url"],
+            "source": origin.source,
+        }
+        if origin.popularity_label:
+            out["popularity"] = origin.popularity_label
+        return out
 
     raw_topics = digest.get("topics")
     raw_topics = raw_topics if isinstance(raw_topics, list) else []
@@ -300,11 +313,7 @@ def _sanitize_and_filter(digest: dict, valid_urls: set[str]) -> tuple[dict, int]
             continue
         raw_sources = topic.get("sources")
         raw_sources = raw_sources if isinstance(raw_sources, list) else []
-        sources = [
-            {"title": _as_text(s.get("title")) or s["url"], "url": s["url"]}
-            for s in raw_sources
-            if valid_link(s)
-        ]
+        sources = [link(s) for s in raw_sources if valid_link(s)]
         if not sources:
             dropped += 1
             continue
@@ -323,13 +332,7 @@ def _sanitize_and_filter(digest: dict, valid_urls: set[str]) -> tuple[dict, int]
     raw_hits = digest.get("quick_hits")
     raw_hits = raw_hits if isinstance(raw_hits, list) else []
     digest["quick_hits"] = [
-        {
-            "title": _as_text(h.get("title")) or h["url"],
-            "url": h["url"],
-            "note": _as_text(h.get("note")),
-        }
-        for h in raw_hits
-        if valid_link(h)
+        {**link(h), "note": _as_text(h.get("note"))} for h in raw_hits if valid_link(h)
     ]
 
     digest["overview"] = _as_text(digest.get("overview"))
@@ -346,8 +349,20 @@ def get_client(region: Optional[str] = None):
     return AnthropicBedrock(aws_region=region or os.environ.get("AWS_REGION", DEFAULT_REGION))
 
 
-def get_model_id(model_id: Optional[str] = None) -> str:
-    return model_id or os.environ.get("BEDROCK_MODEL_ID", DEFAULT_MODEL_ID)
+def get_model_id(model_id: Optional[str] = None, purpose: Optional[str] = None) -> str:
+    """パスごとにモデルを変えられるようにする。
+
+    分類は機械的で件数が多いので安いモデル、要約と5選は編集判断なので
+    賢いモデル、といった使い分けができる。優先順位は
+    引数 > BEDROCK_{PURPOSE}_MODEL_ID > BEDROCK_MODEL_ID > 既定値。
+    """
+    if model_id:
+        return model_id
+    if purpose:
+        specific = os.environ.get(f"BEDROCK_{purpose.upper()}_MODEL_ID")
+        if specific:
+            return specific
+    return os.environ.get("BEDROCK_MODEL_ID", DEFAULT_MODEL_ID)
 
 
 def _short_error(exc: Exception, limit: int = 140) -> str:
@@ -395,7 +410,7 @@ def classify_articles(
         return {}
 
     client = client or get_client()
-    model_id = get_model_id(model_id)
+    model_id = get_model_id(model_id, "classify")
     ids = [c["id"] for c in categories]
 
     lines = ["カテゴリ定義:"]
@@ -457,7 +472,7 @@ def summarize_category(
         return result
 
     client = client or get_client()
-    model_id = get_model_id(model_id)
+    model_id = get_model_id(model_id, "digest")
     articles = articles[:MAX_ARTICLES_PER_CATEGORY]
 
     try:
@@ -475,7 +490,7 @@ def summarize_category(
         result.error = _short_error(exc)
         return result
 
-    data, dropped = _sanitize_and_filter(data, {a.url for a in articles})
+    data, dropped = _sanitize_and_filter(data, articles)
     result.overview = data["overview"]
     result.topics = data["topics"][:topic_count]
     result.quick_hits = data["quick_hits"][:quick_hit_count]
@@ -511,7 +526,7 @@ def pick_highlights(
         return "", []
 
     client = client or get_client()
-    model_id = get_model_id(model_id)
+    model_id = get_model_id(model_id, "highlight")
     prompt = "各カテゴリのトピック一覧:\n" + "\n".join(lines)
 
     try:
@@ -583,11 +598,24 @@ def dry_run_digest(category: dict, articles: list[Article], topic_count: int = 5
                 "why_it_matters": "(dry-run: 実際の分析はBedrock呼び出し時に生成されます)",
                 "tags": ["dry-run"],
                 "importance": 5 - (i % 4),
-                "sources": [{"title": a.title, "url": a.url}],
+                "sources": [
+                    {
+                        "title": a.title,
+                        "url": a.url,
+                        "source": a.source,
+                        **({"popularity": a.popularity_label} if a.popularity_label else {}),
+                    }
+                ],
             }
         )
     result.quick_hits = [
-        {"title": a.title, "url": a.url, "note": ""}
+        {
+            "title": a.title,
+            "url": a.url,
+            "source": a.source,
+            "note": "",
+            **({"popularity": a.popularity_label} if a.popularity_label else {}),
+        }
         for a in articles[topic_count : topic_count + 5]
     ]
     return result
