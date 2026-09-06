@@ -12,6 +12,12 @@ topics_per_category: 5      # しっかり要約する件数
 quick_hits_per_category: 5  # タイトル+一行コメントで流す件数
 highlight_count: 5          # 先頭の「今日の5選」
 
+# サイトに公開するアーカイブの日数。JSON自体は data/digests に全て残るので
+# 履歴と掲載済みURLの除外には影響しない。公開ページ数と1日の生成量を抑えるための設定。
+# GitHub Pages の1GB上限に達するのは実測で約23年後なので、容量ではなく
+# ビルド時間とアーカイブ一覧の見やすさのための上限。null で無制限。
+archive_days: 365
+
 categories:
   - id: ai
     label: AI・LLM

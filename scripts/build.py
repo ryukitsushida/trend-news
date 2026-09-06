@@ -148,7 +148,7 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
     }
 
     save_digest(digest)
-    render_site(digest, PUBLIC_DIR)
+    render_site(digest, PUBLIC_DIR, config.get("archive_days"))
     return digest
 
 

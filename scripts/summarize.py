@@ -21,6 +21,7 @@ tool_choice で強制してJSONを取り出す。LLMがURLを捏造する可能�
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -365,18 +366,30 @@ def get_model_id(model_id: Optional[str] = None, purpose: Optional[str] = None) 
     return os.environ.get("BEDROCK_MODEL_ID", DEFAULT_MODEL_ID)
 
 
+# AWSのエラーメッセージには実行者のARN(アカウントID入り)が含まれる。
+# 公開リポジトリのJSONと公開サイトの両方に出るため、必ず伏せる。
+_ARN_RE = re.compile(r"arn:aws[\w-]*:[^\s\"\'}\]]+")
+_ACCOUNT_RE = re.compile(r"\b\d{12}\b")
+
+
+def redact(text: str) -> str:
+    """ARNと12桁のAWSアカウントIDを伏せ字にする。"""
+    return _ACCOUNT_RE.sub("<account-id>", _ARN_RE.sub("<arn>", text))
+
+
 def _short_error(exc: Exception, limit: int = 140) -> str:
     """APIエラーの生JSONをそのまま公開ページに出さないため、要点だけ取り出す。
 
     完全な内容はビルドログに出るので、ここでは人が読める要約に留める。
+    ARNやアカウントIDは公開物に残さないよう伏せる。
     """
     body = getattr(exc, "body", None)
+    text = None
     if isinstance(body, dict) and isinstance(body.get("error"), dict):
-        message = body["error"].get("message")
-        if message:
-            text = str(message)
-            return text if len(text) <= limit else text[:limit].rstrip() + "…"
-    text = f"{type(exc).__name__}: {exc}"
+        text = body["error"].get("message")
+    if not text:
+        text = f"{type(exc).__name__}: {exc}"
+    text = redact(str(text))
     return text if len(text) <= limit else text[:limit].rstrip() + "…"
 
 

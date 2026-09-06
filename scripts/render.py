@@ -81,15 +81,19 @@ def _copy_static(output_dir: Path) -> None:
             shutil.copy(src, output_dir / name)
 
 
-def _copy_digest_data(output_dir: Path) -> None:
+def _copy_digest_data(output_dir: Path, dates: list[str]) -> None:
+    """公開するJSONは、ページを生成した日付の分だけに絞る。"""
     data_out = output_dir / "data" / "digests"
     data_out.mkdir(parents=True, exist_ok=True)
-    if DIGESTS_DIR.exists():
-        for path in DIGESTS_DIR.glob("*.json"):
-            shutil.copy(path, data_out / path.name)
+    for date in dates:
+        src = DIGESTS_DIR / f"{date}.json"
+        if src.exists():
+            shutil.copy(src, data_out / src.name)
 
 
-def render_site(latest_digest: dict, output_dir: Path) -> None:
+def render_site(
+    latest_digest: dict, output_dir: Path, archive_days: int | None = None
+) -> None:
     env = get_env()
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -98,6 +102,9 @@ def render_site(latest_digest: dict, output_dir: Path) -> None:
     all_digests = [d for d in all_digests if d["date"] != latest_digest["date"]]
     all_digests.insert(0, latest_digest)
     all_digests.sort(key=lambda d: d["date"], reverse=True)
+    # 公開するのは直近 archive_days 分だけ。元のJSONは data/digests に残る。
+    if archive_days:
+        all_digests = all_digests[:archive_days]
 
     digest_tmpl = env.get_template("digest.html")
     archive_index_tmpl = env.get_template("archive_index.html")
@@ -154,4 +161,4 @@ def render_site(latest_digest: dict, output_dir: Path) -> None:
     )
 
     _copy_static(output_dir)
-    _copy_digest_data(output_dir)
+    _copy_digest_data(output_dir, dates)
