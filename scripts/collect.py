@@ -33,7 +33,9 @@ FETCH_TIMEOUT_SECONDS = 15
 MAX_WORKERS = 8
 SNIPPET_MAX_CHARS = 400
 
-_TAG_RE = re.compile(r"<[^>]+>")
+# タグ名で始まるものだけをタグとみなす。単純な <[^>]+> だと
+# 「a < b かつ c > d」のような地の文まで丸ごと削ってしまう。
+_TAG_RE = re.compile(r"</?[A-Za-z][^>]*>|<!--.*?-->", re.S)
 _WS_RE = re.compile(r"\s+")
 _TRACKING_PARAM_RE = re.compile(
     r"^(utm_|fbclid$|gclid$|mc_cid$|mc_eid$|ref$|ref_src$|spm$)", re.IGNORECASE
@@ -105,10 +107,15 @@ def normalize_title_key(title: str) -> str:
 
 
 def clean_snippet(raw_html: str, limit: int = SNIPPET_MAX_CHARS) -> str:
+    """RSSの概要をプロンプトと表示に使える素のテキストにする。
+
+    エンティティを戻した結果また擬似タグになる場合があるため、
+    タグ除去はエンティティ復元の後にもう一度かける。
+    """
     if not raw_html:
         return ""
     text = _TAG_RE.sub(" ", raw_html)
-    text = html.unescape(text)
+    text = _TAG_RE.sub(" ", html.unescape(text))
     text = _WS_RE.sub(" ", text).strip()
     if len(text) > limit:
         text = text[:limit].rstrip() + "…"
@@ -147,9 +154,22 @@ def _entry_published(entry) -> Optional[datetime]:
     return None
 
 
-def fetch_feed_bytes(url: str, timeout: int = FETCH_TIMEOUT_SECONDS) -> bytes:
+def _open(url: str, timeout: int):
+    """http(s) 以外は開かない。
+
+    URLは設定ファイル由来だが、配信元のドメインが乗っ取られた場合に
+    file: など別スキームへリダイレクトされる経路を塞ぐ。
+    """
+    from urllib.parse import urlsplit
+
+    if urlsplit(url).scheme not in ("http", "https"):
+        raise ValueError(f"http(s) 以外のURLは取得しない: {url[:80]}")
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
+    return urllib.request.urlopen(req, timeout=timeout)  # nosec B310 - 上でスキーム検証済み
+
+
+def fetch_feed_bytes(url: str, timeout: int = FETCH_TIMEOUT_SECONDS) -> bytes:
+    with _open(url, timeout) as resp:
         return resp.read()
 
 
@@ -164,8 +184,7 @@ def fetch_feed_bytes(url: str, timeout: int = FETCH_TIMEOUT_SECONDS) -> bytes:
 def fetch_json(url: str, timeout: int = FETCH_TIMEOUT_SECONDS):
     import json
 
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
+    with _open(url, timeout) as resp:
         return json.loads(resp.read())
 
 
@@ -303,6 +322,13 @@ def _sort_key(a: Article) -> datetime:
     return a.published or datetime.min.replace(tzinfo=timezone.utc)
 
 
+def _take(articles, keep, cutoff, limit, order):
+    """期間内の記事を order の降順で limit 件まで採る。"""
+    picked = [a for a in articles if keep(a, cutoff)]
+    picked.sort(key=order, reverse=True)
+    return picked[:limit]
+
+
 def collect_all(
     config_path: Path,
     now: Optional[datetime] = None,
@@ -320,6 +346,9 @@ def collect_all(
     slow_cutoff = now - timedelta(hours=config.get("slow_window_hours", 240))
     per_feed_cap = config.get("max_items_per_feed", 10)
     excluded = exclude_urls or set()
+
+    def cutoff_for(cfg: dict) -> datetime:
+        return slow_cutoff if cfg.get("slow") else fast_cutoff
 
     def keep(article: Article, cutoff: datetime) -> bool:
         if not article.title or not article.url:
@@ -343,11 +372,11 @@ def collect_all(
                     FeedFailure(source=cfg["name"], url=cfg["kind"], error=error)
                 )
                 continue
-            cutoff = slow_cutoff if cfg.get("slow") else fast_cutoff
-            picked = [a for a in articles if keep(a, cutoff)]
             # 人気度が取れるソースなので、新着順ではなく人気順に上限まで取る
-            picked.sort(key=lambda a: a.popularity or 0, reverse=True)
-            result.articles.extend(picked[:per_feed_cap])
+            result.articles.extend(
+                _take(articles, keep, cutoff_for(cfg), per_feed_cap,
+                      lambda a: a.popularity or 0)
+            )
 
         for fut in as_completed(feed_futures):
             feed_cfg, parsed, error = fut.result()
@@ -356,13 +385,11 @@ def collect_all(
                     FeedFailure(source=feed_cfg["name"], url=feed_cfg["url"], error=error)
                 )
                 continue
-            cutoff = slow_cutoff if feed_cfg.get("slow") else fast_cutoff
-            picked = [
-                a for a in _entries_to_articles(parsed.entries, feed_cfg) if keep(a, cutoff)
-            ]
             # 更新の多いフィードが枠を独占しないよう、新しい順に上限まで
-            picked.sort(key=_sort_key, reverse=True)
-            result.articles.extend(picked[:per_feed_cap])
+            result.articles.extend(
+                _take(_entries_to_articles(parsed.entries, feed_cfg), keep,
+                      cutoff_for(feed_cfg), per_feed_cap, _sort_key)
+            )
 
     result.articles.sort(key=_sort_key, reverse=True)
     result.articles = _dedupe(result.articles)

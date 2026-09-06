@@ -84,6 +84,8 @@ def _copy_static(output_dir: Path) -> None:
 def _copy_digest_data(output_dir: Path, dates: list[str]) -> None:
     """公開するJSONは、ページを生成した日付の分だけに絞る。"""
     data_out = output_dir / "data" / "digests"
+    if data_out.exists():
+        shutil.rmtree(data_out)
     data_out.mkdir(parents=True, exist_ok=True)
     for date in dates:
         src = DIGESTS_DIR / f"{date}.json"
@@ -159,7 +161,10 @@ def render_site(
     )
 
     # archive/YYYY-MM-DD.html = 各号(毎回全日程を再生成し、テンプレ更新を過去号にも反映)
+    # 保持日数を縮めたときに古いページが残らないよう、毎回作り直す
     archive_dir = output_dir / "archive"
+    if archive_dir.exists():
+        shutil.rmtree(archive_dir)
     archive_dir.mkdir(parents=True, exist_ok=True)
     for digest in all_digests:
         prev_date, next_date = neighbours.get(digest["date"], (None, None))

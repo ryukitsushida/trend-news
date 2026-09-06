@@ -25,23 +25,31 @@ PUBLIC_DIR = BASE_DIR / "public"
 JST = ZoneInfo("Asia/Tokyo")
 
 
-def published_urls(digests: list[dict]) -> set[str]:
+def _iter_link_urls(digest: dict):
+    """ダイジェスト内の全リンクURLを列挙する(トピックの出典と短報)。"""
+    for cat in digest.get("categories", []):
+        links = [s for t in cat.get("topics", []) for s in t.get("sources", [])]
+        links += cat.get("quick_hits", [])
+        for link in links:
+            if isinstance(link, dict) and isinstance(link.get("url"), str):
+                yield link["url"]
+
+
+def published_urls(digests: list[dict], exclude_date: str | None = None) -> set[str]:
     """過去のダイジェストで既に掲載したURL。
 
     更新頻度の低いフィードは収集ウィンドウを広げているため、これを除外しないと
     同じ記事が何日も出続けてしまう。
+
+    exclude_date には生成中の日付を渡す。同じ日に再実行したとき、前回の実行で
+    自分が選んだ記事まで除外してしまい、痩せた内容で上書きするのを防ぐ。
     """
-    urls: set[str] = set()
-    for digest in digests:
-        for cat in digest.get("categories", []):
-            for topic in cat.get("topics", []):
-                for src in topic.get("sources", []):
-                    if isinstance(src, dict) and src.get("url"):
-                        urls.add(normalize_url(src["url"]))
-            for hit in cat.get("quick_hits", []):
-                if isinstance(hit, dict) and hit.get("url"):
-                    urls.add(normalize_url(hit["url"]))
-    return urls
+    return {
+        normalize_url(url)
+        for digest in digests
+        if not (exclude_date and digest.get("date") == exclude_date)
+        for url in _iter_link_urls(digest)
+    }
 
 
 def group_by_category(
@@ -113,7 +121,10 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
 
     # 過去号は「掲載済みURLの抽出」と「アーカイブ生成」の両方で要るので一度だけ読む
     past_digests = load_all_digests()
-    collection = collect_all(CONFIG_PATH, exclude_urls=published_urls(past_digests))
+    today = now_jst.strftime("%Y-%m-%d")
+    collection = collect_all(
+        CONFIG_PATH, exclude_urls=published_urls(past_digests, exclude_date=today)
+    )
     print(f"収集: {len(collection.articles)} 件 / 取得失敗 {len(collection.failures)} フィード")
 
     client = None if dry_run else get_client(region)
@@ -123,6 +134,14 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
         collection.articles, categories, client, model, dry_run
     )
     grouped = group_by_category(collection.articles, categories, assigned)
+
+    # 分類パスが返さなかった記事はどのカテゴリにも入らず捨てられる。
+    # 一定割合を超えたら分類プロンプトかモデルを疑う手がかりになるので警告する。
+    unclassified = len(collection.articles) - sum(len(v) for v in grouped.values())
+    if unclassified:
+        ratio = unclassified / max(len(collection.articles), 1)
+        note = "  ※割合が高すぎます。分類パスを確認してください" if ratio > 0.2 else ""
+        print(f"分類されず除外: {unclassified} 件 ({ratio:.0%}){note}")
 
     digests = [
         dry_run_digest(category, grouped[category["id"]], topic_count)
@@ -138,7 +157,7 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
     )
 
     digest = {
-        "date": now_jst.strftime("%Y-%m-%d"),
+        "date": today,
         "generated_at": now_jst.strftime("%Y-%m-%d %H:%M JST"),
         "lead": lead,
         "highlights": highlights,
@@ -148,7 +167,7 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
         ],
         "stats": {
             "collected": len(collection.articles),
-            "unclassified": len(collection.articles) - sum(len(v) for v in grouped.values()),
+            "unclassified": unclassified,
             "classify_error": classify_error,
         },
     }

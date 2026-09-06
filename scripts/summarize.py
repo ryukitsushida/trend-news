@@ -273,52 +273,57 @@ def _as_tags(value) -> list[str]:
     return [_as_text(t) for t in value if t is not None]
 
 
-def _sanitize_and_filter(digest: dict, articles: list[Article]) -> tuple[dict, int]:
-    """LLM出力の型ゆれを吸収しつつ、実在しないURLを除去する。
+class _LinkResolver:
+    """LLMが返したリンクを、実在する元記事に突き合わせて正規化する。
 
-    テンプレート側で型エラーを起こさないよう、ここで必ず期待する型に正規化する。
-    URL検証は捏造リンクの公開を防ぐだけでなく、javascript: などの不正スキームも遮断する。
-    あわせて、元記事が持っていた配信元と注目度をリンクに埋め戻す(表示と後からの検証用)。
-    戻り値は (正規化済みdigest, 除去したtopic数)。
+    URL検証は捏造リンクの公開を防ぐだけでなく、javascript: などの不正スキームも
+    遮断する。あわせて配信元と注目度を埋め戻す(表示と後からの検証用)。
     """
-    from scripts.collect import normalize_url
 
-    by_url = {normalize_url(a.url): a for a in articles}
-    normalized_valid = set(by_url)
+    def __init__(self, articles: list[Article]):
+        from scripts.collect import normalize_url
 
-    def valid_link(item) -> bool:
+        self._normalize = normalize_url
+        self._by_url = {normalize_url(a.url): a for a in articles}
+
+    def key(self, item: dict) -> str:
+        return self._normalize(item["url"])
+
+    def valid(self, item) -> bool:
         return (
             isinstance(item, dict)
             and isinstance(item.get("url"), str)
-            and normalize_url(item["url"]) in normalized_valid
+            and self._normalize(item["url"]) in self._by_url
         )
 
-    def link(item: dict) -> dict:
-        origin = by_url[normalize_url(item["url"])]
-        out = {
+    def resolve(self, item: dict) -> dict:
+        origin = self._by_url[self.key(item)]
+        link = {
             "title": _as_text(item.get("title")) or origin.title,
             "url": item["url"],
             "source": origin.source,
         }
         if origin.popularity_label:
-            out["popularity"] = origin.popularity_label
-        return out
+            link["popularity"] = origin.popularity_label
+        return link
 
-    raw_topics = digest.get("topics")
-    raw_topics = raw_topics if isinstance(raw_topics, list) else []
 
-    kept_topics, dropped = [], 0
-    for topic in raw_topics:
+def _as_list(value) -> list:
+    return value if isinstance(value, list) else []
+
+
+def _clean_topics(raw, links: _LinkResolver) -> tuple[list[dict], int]:
+    """トピックを表示できる形に整える。戻り値は (採用分, 除去数)。"""
+    kept, dropped = [], 0
+    for topic in _as_list(raw):
         if not isinstance(topic, dict):
             dropped += 1
             continue
-        raw_sources = topic.get("sources")
-        raw_sources = raw_sources if isinstance(raw_sources, list) else []
-        sources = [link(s) for s in raw_sources if valid_link(s)]
-        if not sources:
+        sources = [links.resolve(s) for s in _as_list(topic.get("sources")) if links.valid(s)]
+        if not sources:  # 実在するソースが1つも無いトピックは捏造とみなす
             dropped += 1
             continue
-        kept_topics.append(
+        kept.append(
             {
                 "headline": _as_text(topic.get("headline")),
                 "summary": _as_text(topic.get("summary")),
@@ -328,21 +333,38 @@ def _sanitize_and_filter(digest: dict, articles: list[Article]) -> tuple[dict, i
                 "sources": sources,
             }
         )
-    digest["topics"] = kept_topics
+    return kept, dropped
 
-    raw_hits = digest.get("quick_hits")
-    raw_hits = raw_hits if isinstance(raw_hits, list) else []
-    digest["quick_hits"] = [
-        {**link(h), "note": _as_text(h.get("note"))} for h in raw_hits if valid_link(h)
-    ]
 
+def _clean_quick_hits(raw, links: _LinkResolver, used: set[str]) -> list[dict]:
+    """短報を整える。トピックで既出の記事と短報内の重複は落とす。"""
+    hits, seen = [], set()
+    for hit in _as_list(raw):
+        if not links.valid(hit):
+            continue
+        key = links.key(hit)
+        if key in used or key in seen:
+            continue
+        seen.add(key)
+        hits.append({**links.resolve(hit), "note": _as_text(hit.get("note"))})
+    return hits
+
+
+def _sanitize_and_filter(digest: dict, articles: list[Article]) -> tuple[dict, int]:
+    """LLM出力の型ゆれを吸収し、実在しないURLを除去する。
+
+    テンプレート側で型エラーを起こさないよう、ここで必ず期待する型に正規化する。
+    戻り値は (正規化済みdigest, 除去したtopic数)。
+    """
+    links = _LinkResolver(articles)
+    topics, dropped = _clean_topics(digest.get("topics"), links)
+    used = {links.key(s) for t in topics for s in t["sources"]}
+
+    digest["topics"] = topics
+    digest["quick_hits"] = _clean_quick_hits(digest.get("quick_hits"), links, used)
     digest["overview"] = _as_text(digest.get("overview"))
     return digest, dropped
 
-
-# --------------------------------------------------------------------------
-# Bedrock 呼び出し
-# --------------------------------------------------------------------------
 
 def get_client(region: Optional[str] = None):
     from anthropic import AnthropicBedrock
@@ -426,31 +448,42 @@ def classify_articles(
     model_id = get_model_id(model_id, "classify")
     ids = [c["id"] for c in categories]
 
+    data, _ = _call_tool(
+        client,
+        model_id,
+        CLASSIFY_SYSTEM,
+        _build_classify_prompt(categories, [a for _, a in targets]),
+        _classify_tool(ids),
+    )
+    return _read_assignments(data, [i for i, _ in targets], set(ids))
+
+
+def _build_classify_prompt(categories: list[dict], articles: list[Article]) -> str:
     lines = ["カテゴリ定義:"]
     for c in categories:
         lines.append(f"- {c['id']}({c['label']}): {' '.join(c['description'].split())}")
     lines.append("\n記事一覧:")
-    for n, (_, a) in enumerate(targets, start=1):
+    for n, a in enumerate(articles, start=1):
         snippet = a.snippet[:CLASSIFY_SNIPPET_CHARS]
         lines.append(f"{n}. [{a.source}] {a.title}" + (f" / {snippet}" if snippet else ""))
+    return "\n".join(lines)
 
-    data, _ = _call_tool(
-        client, model_id, CLASSIFY_SYSTEM, "\n".join(lines), _classify_tool(ids)
-    )
 
-    valid = set(ids)
+def _read_assignments(data: dict, indices: list[int], valid: set[str]) -> dict[int, str]:
+    """応答の「番号→カテゴリ」を、元のarticlesの添字に読み替える。
+
+    存在しない番号や未定義カテゴリは捨てる(LLMが番号を作ることがあるため)。
+    """
     assigned: dict[int, str] = {}
-    raw = data.get("assignments")
-    for item in raw if isinstance(raw, list) else []:
-        if not isinstance(item, dict):
+    for item in _as_list(data.get("assignments")):
+        if not isinstance(item, dict) or item.get("c") not in valid:
             continue
         try:
-            n = int(item.get("i"))
-        except (TypeError, ValueError):
+            n = int(item["i"])
+        except (TypeError, ValueError, KeyError):
             continue
-        cid = item.get("c")
-        if 1 <= n <= len(targets) and cid in valid:
-            assigned[targets[n - 1][0]] = cid
+        if 1 <= n <= len(indices):
+            assigned[indices[n - 1]] = item["c"]
     return assigned
 
 
@@ -547,16 +580,7 @@ def pick_highlights(
     highlights の各要素は表示に必要な情報を埋め込んだ dict
     (category_id / category_label / topic / reason)。
     """
-    refs: dict[str, tuple[CategoryDigest, dict]] = {}
-    lines = []
-    for d in digests:
-        for i, t in enumerate(d.topics):
-            ref = f"{d.id}-{i}"
-            refs[ref] = (d, t)
-            lines.append(
-                f"[{ref}] ({d.label} / 重要度{t['importance']}) {t['headline']}"
-                f" — {t['why_it_matters']}"
-            )
+    refs, lines = _index_topics(digests)
     if not refs:
         return "", []
 
@@ -572,13 +596,36 @@ def pick_highlights(
         print(f"[highlights] 選出に失敗: {exc}")
         return "", _fallback_highlights(digests, count)
 
+    picked = _read_highlights(data, refs, count)
+    if not picked:
+        return "", _fallback_highlights(digests, count)
+    return _as_text(data.get("lead")), picked
+
+
+def _index_topics(
+    digests: list[CategoryDigest],
+) -> tuple[dict[str, tuple[CategoryDigest, dict]], list[str]]:
+    """全トピックに参照IDを振り、プロンプト用の一覧行も作る。"""
+    refs: dict[str, tuple[CategoryDigest, dict]] = {}
+    lines: list[str] = []
+    for d in digests:
+        for i, t in enumerate(d.topics):
+            ref = f"{d.id}-{i}"
+            refs[ref] = (d, t)
+            lines.append(
+                f"[{ref}] ({d.label} / 重要度{t['importance']}) {t['headline']}"
+                f" — {t['why_it_matters']}"
+            )
+    return refs, lines
+
+
+def _read_highlights(data: dict, refs: dict, count: int) -> list[dict]:
+    """応答の参照IDを実トピックに解決する。存在しないIDは捨てる(捏造防止)。"""
     picked, seen = [], set()
-    raw = data.get("highlights")
-    for item in raw if isinstance(raw, list) else []:
+    for item in _as_list(data.get("highlights")):
         if not isinstance(item, dict):
             continue
         ref = item.get("ref")
-        # 存在しない参照IDは捨てる(捏造防止)
         if ref not in refs or ref in seen:
             continue
         seen.add(ref)
@@ -593,10 +640,7 @@ def pick_highlights(
         )
         if len(picked) >= count:
             break
-
-    if not picked:
-        return "", _fallback_highlights(digests, count)
-    return _as_text(data.get("lead")), picked
+    return picked
 
 
 def _fallback_highlights(digests: list[CategoryDigest], count: int) -> list[dict]:

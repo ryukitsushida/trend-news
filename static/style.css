@@ -157,6 +157,33 @@ a:hover { text-decoration: underline; }
   }
 }
 
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+
+.digest-head h1 {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 1.5rem;
+}
+
+.archive-badge {
+  display: inline-block;
+  margin: 0.2rem 0;
+  padding: 0.15rem 0.6rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.generated-at {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 0 0 0.75rem;
+}
+
 .category-section {
   margin: 2rem 0;
   scroll-margin-top: calc(var(--header-h, 6rem) + 0.75rem);
