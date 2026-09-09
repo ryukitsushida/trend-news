@@ -1,0 +1,1228 @@
+{
+  "date": "2026-09-10",
+  "generated_at": "2026-09-10 07:25 JST",
+  "lead": "セキュリティと経済・政治の急速な変化に市場と市民が揺れている。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "大量の脆弱性修正が公開されており、全ユーザーの即座の対応が必須。",
+      "topic": {
+        "headline": "Microsoft・Google・Adobeが月例パッチ公開、脆弱性1000件超に対応",
+        "summary": "マイクロソフトが9月月例更新で973件の脆弱性に対応。Googleはゼロデイを含む230件の脆弱性を修正したChrome 153をリリース。Adobeも複数製品で緊急対応が必要な脆弱性に対処した。一部脆弱性はすでに悪用が確認されており、早急な更新が推奨されている。",
+        "why_it_matters": "業界標準ソフトウェアの大量の脆弱性修正であり、すべてのユーザーに対応が必須。悪用中のゼロデイも含まれている。",
+        "tags": [
+          "Microsoft",
+          "Google Chrome",
+          "Adobe",
+          "脆弱性",
+          "セキュリティ更新"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "MS、9月の月例セキュリティ更新で脆弱性973件に対応",
+            "url": "https://www.security-next.com/190063",
+            "source": "Security NEXT"
+          },
+          {
+            "title": "Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox",
+            "url": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
+            "source": "The Hacker News"
+          },
+          {
+            "title": "「Chrome 153」を公開、脆弱性230件を修正 - ゼロデイも",
+            "url": "https://www.security-next.com/190040",
+            "source": "Security NEXT"
+          },
+          {
+            "title": "「Adobe Campaign Classic」に緊急対応必要なRCE脆弱性",
+            "url": "https://www.security-next.com/190057",
+            "source": "Security NEXT"
+          },
+          {
+            "title": "「Adobe ColdFusion」に深刻な脆弱性- 早急に更新を",
+            "url": "https://www.security-next.com/190035",
+            "source": "Security NEXT"
+          },
+          {
+            "title": "注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-141）に関する注意喚起",
+            "url": "https://www.jpcert.or.jp/at/2026/at260026.html",
+            "source": "JPCERT/CC"
+          },
+          {
+            "title": "注意喚起: 2026年9月マイクロソフトセキュリティ更新プログラムに関する注意喚起",
+            "url": "https://www.jpcert.or.jp/at/2026/at260025.html",
+            "source": "JPCERT/CC"
+          },
+          {
+            "title": "Microsoft 製品の脆弱性対策について(2026年9月)",
+            "url": "https://www.ipa.go.jp/security/security-alert/2026/0909-ms.html",
+            "source": "IPA security"
+          },
+          {
+            "title": "Adobe Acrobat および Reader の脆弱性対策について(2026年9月)",
+            "url": "https://www.ipa.go.jp/security/security-alert/2026/0909-adobereader.html",
+            "source": "IPA security"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "ホスティング事業者とそのユーザー企業に対する広範な脅威が顕在化している。",
+      "topic": {
+        "headline": "cPanel脆弱性により、メール権限のあるユーザーがサーバーを支配可能",
+        "summary": "cPanelに脆弱性が発見され、メール関連権限を持つアカウント所有者がEmailTrackを通じて任意ファイルをサーバーに作成し、root権限でコード実行が可能に。すべてのサポート版cPanelとWHMが影響を受ける。1つのホスティングアカウントがサーバー全体の制御を奪える深刻な権限昇格脆弱性。",
+        "why_it_matters": "ホスティング事業者にとって重大な脅威であり、共有ホスティング環境の顧客を広く危険にさらす可能性がある。",
+        "tags": [
+          "cPanel",
+          "権限昇格",
+          "コード実行",
+          "ホスティング"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "New cPanel Flaw Lets a Hosting Account With Mail Privileges Run Code as Root",
+            "url": "https://thehackernews.com/2026/09/new-cpanel-flaw-lets-hosting-account.html",
+            "source": "The Hacker News"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "Appleがスマートフォン業界の大きな転換点となる折りたたみ機を投入する。",
+      "topic": {
+        "headline": "Apple初の折りたたみスマホ「iPhone Duo」発表、36万円強から",
+        "summary": "Appleが初の折りたたみスマートフォン「iPhone Duo」を発表。5.4インチの外側画面と7.6インチ（iPhone史上最大）の内側画面を搭載。価格は36万4800円からで、10月23日発売予定。Touch IDやIP68防水対応、背面デュアルカメラなど機能も充実。",
+        "why_it_matters": "スマートフォン業界で折りたたみ型への注力が高まる中、Appleが遅ればせながら参入。iPhone Duoの成否がAndroid折りたたみ型市場に大きな影響を与える可能性がある。",
+        "tags": [
+          "iPhone",
+          "折りたたみスマホ",
+          "新製品"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "Apple初の折りたたみスマホ「iPhone Duo」の実機写真まとめ、折り目＆インナーカメラの目立ち具合や展開時の薄さなどが分かる",
+            "url": "https://gigazine.net/news/20260910-iphone-duo-appearance/",
+            "source": "GIGAZINE"
+          },
+          {
+            "title": "「iPhone Duo」発表　Apple初の折りたたみスマホ　36万4800円から",
+            "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001335/",
+            "source": "ITmedia NEWS"
+          },
+          {
+            "title": "Apple's long-rumored foldable becomes reality with the $2,000 iPhone Duo",
+            "url": "https://arstechnica.com/gadgets/2026/09/apples-long-rumored-foldable-becomes-reality-with-the-2000-iphone-duo/",
+            "source": "Ars Technica"
+          },
+          {
+            "title": "Verge staffers react to the iPhone Duo: What we love and don't love",
+            "url": "https://www.theverge.com/tech/992830/apple-iphone-duo-foldable-verge-staffers-react",
+            "source": "The Verge"
+          },
+          {
+            "title": "「iPhone Duo」ついに登場。Apple初7.6型折りたたみで36万円強",
+            "url": "https://pc.watch.impress.co.jp/docs/news/2139675.html",
+            "source": "はてブ テクノロジー",
+            "popularity": "135 users"
+          },
+          {
+            "title": "ついに出た折りたたみ型の「iPhone Duo」や「iPhone 18 Pro／Pro Max」「Apple Watch Series 12／Ultra 4」「AirPods 5」が明らかとなったAppleの新製品発表イベント「Surprise and shine.」まとめ",
+            "url": "https://gigazine.net/news/20260910-apple-event/",
+            "source": "GIGAZINE"
+          },
+          {
+            "title": "Everything Apple announced at its fall iPhone event, from the foldable iPhone Duo to an always-listening Apple Watch",
+            "url": "https://techcrunch.com/2026/09/09/everything-apple-announced-at-its-fall-iphone-event-from-the-foldable-iphone-duo-to-an-always-listening-apple-watch/",
+            "source": "TechCrunch"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "general",
+      "category_label": "一般ニュース",
+      "reason": "世界の石油供給の3割が通過する海峡での軍事的対立が経済に直結する危機。",
+      "topic": {
+        "headline": "ホルムズ海峡で米イランの応酬激化、船舶への攻撃相次ぐ",
+        "summary": "中東のホルムズ海峡をめぐり、米国とイランの攻撃の応酬が拡大。船舶を狙った攻撃が頻発し、さらなる応酬と被害の拡大が懸念される。エネルギー供給への影響も波及。",
+        "why_it_matters": "世界石油の約3割が通過する重要海峡での軍事的緊張。国際商業ルートの安全性が脅かされ、グローバル経済に直結。",
+        "tags": [
+          "ホルムズ海峡",
+          "米国",
+          "イラン",
+          "海運"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "ホルムズ海峡巡る米イラン応酬で船舶への攻撃相次ぐ",
+            "url": "https://news.web.nhk/newsweb/na/nd-20260910de49416",
+            "source": "NHK 主要"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "AI企業自身が人類への深刻なリスクを警告しており、業界全体の安全性認識が転換している。",
+      "topic": {
+        "headline": "AI安全性への危機感が高まる、研究者らが人類滅亡リスクを警告",
+        "summary": "Anthropicの研究者Jacob Coxonが退社し、10年以内に自己改善型AIが人類を滅ぼす可能性を指摘。同社の研究幹部Evan Hubingerも個人として同意を表明し、開発競争の減速を訴えている。OpenAIは信頼できる研究者Paul Christianoを新たに理事会に招き、Safety and Security Committeeに参加させた。",
+        "why_it_matters": "AI企業の内部からも安全性への深刻な懸念が相次いで表明されており、業界全体で安全性と責任ある開発についての議論が急速に高まっている。",
+        "tags": [
+          "AI安全性",
+          "倫理",
+          "リスク管理"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "Anthropic researcher quits with a warning: Self-improving AI could \"kill us all\"",
+            "url": "https://arstechnica.com/ai/2026/09/anthropic-researcher-quits-with-a-warning-self-improving-ai-could-kill-us-all/",
+            "source": "Ars Technica"
+          },
+          {
+            "title": "Anthropic在籍の研究者2人も同調──「AIが人類を滅ぼしかねないと本気で考えている」",
+            "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001342/",
+            "source": "ITmedia NEWS"
+          },
+          {
+            "title": "Anthropic scientist puts the odds of AI destroying humanity above ten percent this decade",
+            "url": "https://the-decoder.com/anthropic-scientist-puts-the-odds-of-ai-destroying-humanity-above-ten-percent-this-decade/",
+            "source": "The Decoder"
+          },
+          {
+            "title": "Paul Christiano joins OpenAI Foundation Board",
+            "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
+            "source": "OpenAI News"
+          },
+          {
+            "title": "OpenAI adds a prominent AI doomer to its board of directors",
+            "url": "https://techcrunch.com/2026/09/09/openai-adds-a-prominent-ai-doomer-to-its-board-of-directors/",
+            "source": "TechCrunch"
+          },
+          {
+            "title": "「AIは10年以内に我々全員を殺す」　アンソロピックの研究者が「企業は無責任」と退社",
+            "url": "https://www.sankei.com/article/20260909-YXTSWA7BWZA6VI3SCMGOQ3YMSM/",
+            "source": "はてブ テクノロジー",
+            "popularity": "158 users"
+          }
+        ]
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "AI研究の倫理性と安全性を巡る議論が急速に高まっている。一方、OpenAIの数学的成果や企業の経済予測モデルなど技術的進展も注目を集めている。音声アシスタントや画像生成といった実用的なアップデートも相次ぎ、AIの社会実装が加速している。",
+      "topics": [
+        {
+          "headline": "AI安全性への危機感が高まる、研究者らが人類滅亡リスクを警告",
+          "summary": "Anthropicの研究者Jacob Coxonが退社し、10年以内に自己改善型AIが人類を滅ぼす可能性を指摘。同社の研究幹部Evan Hubingerも個人として同意を表明し、開発競争の減速を訴えている。OpenAIは信頼できる研究者Paul Christianoを新たに理事会に招き、Safety and Security Committeeに参加させた。",
+          "why_it_matters": "AI企業の内部からも安全性への深刻な懸念が相次いで表明されており、業界全体で安全性と責任ある開発についての議論が急速に高まっている。",
+          "tags": [
+            "AI安全性",
+            "倫理",
+            "リスク管理"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Anthropic researcher quits with a warning: Self-improving AI could \"kill us all\"",
+              "url": "https://arstechnica.com/ai/2026/09/anthropic-researcher-quits-with-a-warning-self-improving-ai-could-kill-us-all/",
+              "source": "Ars Technica"
+            },
+            {
+              "title": "Anthropic在籍の研究者2人も同調──「AIが人類を滅ぼしかねないと本気で考えている」",
+              "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001342/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Anthropic scientist puts the odds of AI destroying humanity above ten percent this decade",
+              "url": "https://the-decoder.com/anthropic-scientist-puts-the-odds-of-ai-destroying-humanity-above-ten-percent-this-decade/",
+              "source": "The Decoder"
+            },
+            {
+              "title": "Paul Christiano joins OpenAI Foundation Board",
+              "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
+              "source": "OpenAI News"
+            },
+            {
+              "title": "OpenAI adds a prominent AI doomer to its board of directors",
+              "url": "https://techcrunch.com/2026/09/09/openai-adds-a-prominent-ai-doomer-to-its-board-of-directors/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "「AIは10年以内に我々全員を殺す」　アンソロピックの研究者が「企業は無責任」と退社",
+              "url": "https://www.sankei.com/article/20260909-YXTSWA7BWZA6VI3SCMGOQ3YMSM/",
+              "source": "はてブ テクノロジー",
+              "popularity": "158 users"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAIがミレニアム賞問題の証明で数学的成果、学術的信頼性に疑問も",
+          "summary": "OpenAIがミレニアム賞問題の一つであるNavierStokes方程式を解いたと発表。AIが数学変革の速度を示す成果だが、数学者Tristan Buckmaster氏は学術的不正を指摘し、CEO Sam Altmanは反論。Terence Taoは「開放的な学問伝統を逆転させかねない」と警告。",
+          "why_it_matters": "AI企業による学術的成果が、従来の学術慣行や査読体制と衝突する新しい問題として浮き彫りになっている。",
+          "tags": [
+            "AI研究",
+            "数学",
+            "学術的信頼"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "OpenAI's sly mathematical breakthrough sends a chill through academia",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/992953/openai-math-millennium-prize-navier-stokes",
+              "source": "The Verge"
+            },
+            {
+              "title": "OpenAI's millennium proof dispute raises the question of whether researchers can trust AI labs",
+              "url": "https://the-decoder.com/openais-millennium-proof-dispute-raises-the-question-of-whether-researchers-can-trust-ai-labs/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "Sunoが音楽業界との協力で新モデルv6を発表、既存モデル終了へ",
+          "summary": "AI音楽生成企業Sunoが、Warner Music Group、BMG、Believeとの協力で開発した新モデルv6をリリース。グラウンドアップで再学習し、従来のデータとは異なるライセンス済みコンテンツから学習。テキスト、オーディオ、画像から生成可能になった。旧モデルはすべてシャットダウン。",
+          "why_it_matters": "音楽生成AIが大手レコード会社と正式に提携することで、業界における合法性と共存の新しいモデルが示されている。",
+          "tags": [
+            "AI音楽生成",
+            "著作権",
+            "業界協力"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Suno releases its first AI music model made with record industry help",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/991977/suno-releases-its-first-ai-music-model-made-with-record-industry-help",
+              "source": "The Verge"
+            },
+            {
+              "title": "Suno launches v6 music models built with Warner, BMG, and Believe",
+              "url": "https://the-decoder.com/suno-launches-v6-music-models-built-with-warner-bmg-and-believe/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAI、GPT-6 Astraの需要急増でProプラン新規受付を一時停止の可能性",
+          "summary": "OpenAIの新モデルGPT-6 Astraは、ビジネス向けの最上位キャパビリティを備えた推論エンジンで、前例のない需要が寄せられている。同社のティボー・ソティオ氏は「新規のProプラン登録を一時停止しなければならないかも」とXで述べた。",
+          "why_it_matters": "AIサービスの需要が供給を大幅に上回る状況が生じており、市場の急速な拡大とそれに伴う運営課題が顕在化している。",
+          "tags": [
+            "ChatGPT",
+            "需要",
+            "サービス拡張"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "GPT-6 Astra: The next generation in intelligence for work",
+              "url": "https://openai.com/index/gpt-6-astra-next-generation-work",
+              "source": "OpenAI News"
+            },
+            {
+              "title": "ChatGPTのProプラン「新規受付一時停止するかも…」　GPT-6 Astraの「前例のない需要」受けて",
+              "url": "https://www.itmedia.co.jp/aiplus/article/2609/09/2000001322/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "Anthropic、AI経済モデルを発表　CEO警告は「極端シナリオ」と位置付け",
+          "summary": "Anthropicが米経済について2030年までの3つのシナリオを示す経済モデルを発表。極端シナリオでは産出が4.5年ごとに倍増し、知識労働者の失業率が17.9％に達する。CEO Dario Amodeiの5月の警告がこの最極端のシナリオに該当することが明らかになった。",
+          "why_it_matters": "AI企業のトップが示した悲観的な経済予測と、それを組織的なモデルで「極端」と分類する手法が、企業のコミュニケーション戦略と実際の懸念のズレを示唆している。",
+          "tags": [
+            "経済予測",
+            "雇用",
+            "AI影響"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Anthropic built an economic model that frames its CEO's bleakest job forecasts as an outlier scenario",
+              "url": "https://the-decoder.com/anthropic-built-an-economic-model-that-frames-its-ceos-bleakest-job-forecasts-as-an-outlier-scenario/",
+              "source": "The Decoder"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "マラソン大会ポスターで生成AI無表記使用、イラストレーター表記から訂正へ",
+          "url": "https://www.itmedia.co.jp/news/article/2609/09/2000001308/",
+          "source": "ITmedia NEWS",
+          "note": "生成AIの使用を隠蔽・過小表記する事例が相次ぎ、透明性とトレーサビリティへの要求が高まっている"
+        },
+        {
+          "title": "IBM、商用フレンドリーライセンスで時系列予測SOTAモデル「Granite」をリリース",
+          "url": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+          "source": "Hugging Face",
+          "note": "時系列予測の最先端モデルがビジネス利用しやすいライセンスで提供され、企業AI導入の加速を後押し"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 80,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "9月8～9日は月例セキュリティ更新が続々公開される一方、複数の国家支援型攻撃者が同一のexploit kitを使用するなど、高度な脅威活動も報告された。米国による暗号資産詐欺マーケットプレイスの摘発も実施された。",
+      "topics": [
+        {
+          "headline": "Microsoft・Google・Adobeが月例パッチ公開、脆弱性1000件超に対応",
+          "summary": "マイクロソフトが9月月例更新で973件の脆弱性に対応。Googleはゼロデイを含む230件の脆弱性を修正したChrome 153をリリース。Adobeも複数製品で緊急対応が必要な脆弱性に対処した。一部脆弱性はすでに悪用が確認されており、早急な更新が推奨されている。",
+          "why_it_matters": "業界標準ソフトウェアの大量の脆弱性修正であり、すべてのユーザーに対応が必須。悪用中のゼロデイも含まれている。",
+          "tags": [
+            "Microsoft",
+            "Google Chrome",
+            "Adobe",
+            "脆弱性",
+            "セキュリティ更新"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "MS、9月の月例セキュリティ更新で脆弱性973件に対応",
+              "url": "https://www.security-next.com/190063",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox",
+              "url": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "「Chrome 153」を公開、脆弱性230件を修正 - ゼロデイも",
+              "url": "https://www.security-next.com/190040",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "「Adobe Campaign Classic」に緊急対応必要なRCE脆弱性",
+              "url": "https://www.security-next.com/190057",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "「Adobe ColdFusion」に深刻な脆弱性- 早急に更新を",
+              "url": "https://www.security-next.com/190035",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-141）に関する注意喚起",
+              "url": "https://www.jpcert.or.jp/at/2026/at260026.html",
+              "source": "JPCERT/CC"
+            },
+            {
+              "title": "注意喚起: 2026年9月マイクロソフトセキュリティ更新プログラムに関する注意喚起",
+              "url": "https://www.jpcert.or.jp/at/2026/at260025.html",
+              "source": "JPCERT/CC"
+            },
+            {
+              "title": "Microsoft 製品の脆弱性対策について(2026年9月)",
+              "url": "https://www.ipa.go.jp/security/security-alert/2026/0909-ms.html",
+              "source": "IPA security"
+            },
+            {
+              "title": "Adobe Acrobat および Reader の脆弱性対策について(2026年9月)",
+              "url": "https://www.ipa.go.jp/security/security-alert/2026/0909-adobereader.html",
+              "source": "IPA security"
+            }
+          ]
+        },
+        {
+          "headline": "4つのスパイグループが1週間以内に同じexploit kitを使用",
+          "summary": "複数の国家支援型脅威集団がBlueMoonと呼ばれる未知のexploit kitを展開。Windows・Chrome の複数脆弱性を連鎖させるもので、中国系のAPT31が最初の野生での使用が確認されている。複数の国家行為者による同一ツールの短期間での使用は稀で、高度な脅威協力体制を示唆している。",
+          "why_it_matters": "複数の国家支援型攻撃者による調整された活動の可能性を示しており、脅威環境の急速な変化を示唆している。",
+          "tags": [
+            "APT",
+            "exploit kit",
+            "Chrome",
+            "Windows",
+            "国家支援型攻撃"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Four Spy Groups Used the Same Chrome and Windows Exploit Kit Within a Week",
+              "url": "https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "米国がXinbi Guarantee詐欺マーケットプレイスを摘発、5,280万ドルを凍結",
+          "summary": "米司法省はXinbi Guaranteeという違法オンラインマーケットプレイスの摘発を発表。中国の組織犯罪集団が運営するスキャム施設13ヵ所をマダガスカルで特定し、Telegramチャネルの押収や暗号資産ウォレットの没収を実施。多国間の司法協力による大規模な詐欺ネットワーク摘発。",
+          "why_it_matters": "国際的なサイバー犯罪戦に対する一貫した行動を示すもので、詐欺インフラの構造や資金流を理解する上で重要。",
+          "tags": [
+            "詐欺",
+            "暗号資産",
+            "国際捜査",
+            "組織犯罪"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "U.S. Disrupts Xinbi Guarantee Scam Marketplace, Freezes $52.8 Million in Crypto",
+              "url": "https://thehackernews.com/2026/09/us-disrupts-xinbi-guarantee-scam.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "情報窃取マルウェアが盗まれたAI APIトークンでMFAを迂回",
+          "summary": "Lumma StealerやVidarなどの情報窃取マルウェアが盗んだセッショントークンを利用し、GoogleやAnthropicなどのAIサービスアカウントに不正アクセス。盗まれたAPIキーを使用してAIモデルへの持続的なアクセスを確立する新たな脅威。MFA認証も再利用可能なトークンで迂回される。",
+          "why_it_matters": "AI資産の盗難と悪用が新たな脅威ベクトルとなっており、セキュリティトークンの管理方法を根本的に見直す必要がある。",
+          "tags": [
+            "情報窃取マルウェア",
+            "AI",
+            "API",
+            "MFA",
+            "認証回避"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Infostealer Logs Expose Replayable AI Tokens That Can Bypass MFA",
+              "url": "https://thehackernews.com/2026/09/infostealer-logs-expose-replayable-ai.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "cPanel脆弱性により、メール権限のあるユーザーがサーバーを支配可能",
+          "summary": "cPanelに脆弱性が発見され、メール関連権限を持つアカウント所有者がEmailTrackを通じて任意ファイルをサーバーに作成し、root権限でコード実行が可能に。すべてのサポート版cPanelとWHMが影響を受ける。1つのホスティングアカウントがサーバー全体の制御を奪える深刻な権限昇格脆弱性。",
+          "why_it_matters": "ホスティング事業者にとって重大な脅威であり、共有ホスティング環境の顧客を広く危険にさらす可能性がある。",
+          "tags": [
+            "cPanel",
+            "権限昇格",
+            "コード実行",
+            "ホスティング"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "New cPanel Flaw Lets a Hosting Account With Mail Privileges Run Code as Root",
+              "url": "https://thehackernews.com/2026/09/new-cpanel-flaw-lets-hosting-account.html",
+              "source": "The Hacker News"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "米CISA、悪用脆弱性リストに4件を追加",
+          "url": "https://www.security-next.com/190076",
+          "source": "Security NEXT",
+          "note": "WindowsやN-central、Adobe Commerceの脆弱性が実際に悪用されている。"
+        },
+        {
+          "title": "施設職員がサポート詐欺被害、PC内部に個人情報 - 大田区",
+          "url": "https://www.security-next.com/189902",
+          "source": "Security NEXT",
+          "note": "行政機関の職員がリモートアクセス詐欺に遭い、機関内の個人情報が危険にさらされた。"
+        },
+        {
+          "title": "講演会の申込フォームで個人情報が閲覧可能に - 早島町",
+          "url": "https://www.security-next.com/189868",
+          "source": "Security NEXT",
+          "note": "地域行政のフォーム設定ミスによる個人情報流出。"
+        },
+        {
+          "title": "n8nに複数の脆弱性",
+          "url": "https://www.jpcert.or.jp/wr/2026/wr260909.html#1",
+          "source": "JPCERT/CC",
+          "note": "ワークフロー自動化ツールn8nに複数の脆弱性が報告されている。"
+        },
+        {
+          "title": "Switching Password Managers in 2026（注目度 96 score）",
+          "url": "https://rmondello.com/2026/09/07/switching-password-managers-2026/",
+          "source": "Lobsters",
+          "popularity": "96 score",
+          "note": "パスワードマネージャーの乗り換えについての実践的ガイド。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 28,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "クラウド・インフラ分野では、各主要クラウドプロバイダーが生成AIとエンタープライズ機能の拡張を急速に推し進めている。一方、規制側ではデータセンターの環境対応が厳しくなりつつある。",
+      "topics": [
+        {
+          "headline": "AWSのLambda、Graviton5対応と90分タイムアウト制限で長時間処理に対応",
+          "summary": "AWS Lambdaが最新のGraviton5プロセッサ対応インスタンスをサポート開始し、計算性能を25%向上。同時に非同期呼び出しとイベントソースマッピングのタイムアウト上限を15分から90分に延長し、データ処理やバッチ処理など長時間実行が必要なワークロードに対応した。",
+          "why_it_matters": "Lambdaのユースケース拡大により、より複雑で負荷の高いアプリケーションもサーバレスで実行可能になる。",
+          "tags": [
+            "AWS",
+            "Lambda",
+            "サーバレス"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AWS Lambda now supports Graviton5-powered EC2 instances on Lambda Managed Instances",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-lambda-graviton5-ec2/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "AWS Lambda now supports 90-minute function timeout on Lambda Managed Instances",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-lambda-90-minute-function/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWSのBedrock、Confluenceコネクタ搭載と文書アクセス制御デバッグ機能を追加",
+          "summary": "Amazon Bedrock Managed Knowledge BaseにConfluence Data Centerのネイティブコネクタが追加され、セルフホスト環境からのコンテンツ取り込みが容易に。同時にCheckIngestedDocumentAclとGetIngestedDocumentAcl APIが実装され、文書レベルのアクセス制御問題を自服務でデバッグ可能になった。",
+          "why_it_matters": "企業のナレッジベース構築における実装の手間が減り、セキュリティ監査も効率化される。",
+          "tags": [
+            "AWS",
+            "Bedrock",
+            "RAG"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon Bedrock Managed Knowledge Base adds APIs and console support for debugging document-level access control",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-bedrock-knowledge-base-debugging-document-access-control/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "Amazon Bedrock Managed Knowledge Base now supports Confluence Data Center as a native data source connector",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-bedrock-managed-knowledge-base-confluence-data-center-native-data-source-connector/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "マサチューセッツ州がデータセンターに環境規制を強化、3カ月で3州目",
+          "summary": "マサチューセッツ州がデータセンター開発に新たな制限を導入。この3ヶ月で3番目の州による規制強化となり、データセンター業界への規制圧力が高まっている。",
+          "why_it_matters": "環境規制の強化はデータセンター建設コストと展開戦略に大きな影響を与え、業界全体の最適化ニーズが高まる。",
+          "tags": [
+            "規制",
+            "データセンター",
+            "環境"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Massachusetts hits data centers with new clean power rules",
+              "url": "https://techcrunch.com/2026/09/09/massachusetts-hits-data-centers-with-new-clean-power-rules/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "GoogleがAlloyDB Omni RPMオーケストレータGAで、PostgreSQLにクラウド品質を提供",
+          "summary": "Google CloudのAlloyDB Omni RPMオーケストレータがGA達成。オンプレミス環境でのPostgreSQLワークロードに、セキュリティ、耐障害性、ダウンタイム最小化といったクラウド品質の運用自動化をもたらす。",
+          "why_it_matters": "オンプレミスでのPostgreSQL運用の複雑さが軽減され、企業のデータベース現代化が加速する。",
+          "tags": [
+            "Google Cloud",
+            "データベース",
+            "PostgreSQL"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Enterprise-grade PostgreSQL with AlloyDB Omni RPM Orchestrator is generally available",
+              "url": "https://cloud.google.com/blog/products/databases/alloydb-omni-rpm-orchestrator-is-generally-available/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Google CloudがGartner 2026エンタープライズAIアシスタント調査でリーダー評価獲得",
+          "summary": "GoogleがGartnerの初回「エンタープライズAIアシスタント」マジッククアドラント調査でリーダー枠を獲得。完成度のビジョンと実行能力の両面で高評価を受け、Gemini Enterpriseの企業への展開が前進。",
+          "why_it_matters": "業界における信頼性の客観的証明となり、エンタープライズAI導入の意思決定材料として重要。",
+          "tags": [
+            "Google Cloud",
+            "AI",
+            "Gemini"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Google is a Leader in the 2026 Gartner® Magic Quadrant™ for Enterprise AI Assistants",
+              "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-is-a-leader-in-2026-gartner-magic-quadrant-for-enterprise-ai-assistants/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "AWS Systems Manager、EC2インスタンスの未管理状態原因を拡張診断",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/09/systems-manager-diagnoses-ec2-unmanaged/",
+          "source": "AWS What's New",
+          "note": "Systems Manager が EC2 インスタンスが管理対象外になる 6 つの追加カテゴリ原因を診断可能に"
+        },
+        {
+          "title": "Amazon SageMaker Feature Store、個別機能更新対応で書き込み遅延低減",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/08/sgm-feature-store-update-record/",
+          "source": "AWS What's New",
+          "note": "レコード全体の再書き込み不要で、単一リクエスト内で個別機能値更新が可能に"
+        },
+        {
+          "title": "Google Cloud SQL Server、ログイン・ユーザー移行の実装ガイド",
+          "url": "https://cloud.google.com/blog/products/databases/how-to-replicate-sql-server-logins-and-passwords-to-cloud-sql/",
+          "source": "Google Cloud Blog",
+          "note": "DMS による DB 移行後の SQL Server ログイン・ユーザー移行戦略を解説"
+        },
+        {
+          "title": "Amazon Connect、複雑性に基づくタスク・メール別の容量制限設定が可能に",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-connect-capacity-limits/",
+          "source": "AWS What's New",
+          "note": "コールセンターマネージャが作業種別ごとに細粒度な容量制限を設定可能"
+        },
+        {
+          "title": "Google Cloud、Airtel の IPL 2026 ライブストリーミング大規模配信を支援",
+          "url": "https://cloud.google.com/blog/products/media-entertainment/how-airtel-delivered-its-flawless-indian-premiere-league-2026-cricket-broadcasts/",
+          "source": "Google Cloud Blog",
+          "note": "Google Cloud インフラで同時大量視聴環境下での高品質ストリーミング実現"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 29,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "Gitオプション周辺で複数の新機能リリースが相次ぎ、エンジニアリングツールとOSSの生態系が活発に動いています。Apple Silicon対応やLLMエージェント統合など、開発環境の多様化と高度化が進みました。",
+      "topics": [
+        {
+          "headline": "GitHub関連機能が大量更新、Copilot権限管理とシークレット保護強化",
+          "summary": "GitHubが複数の新機能をリリース。Copilot Business/Enterpriseの管理者向けにエージェント操作の一元的権限管理、シークレット検出時のPR統合ブロック、Code Qualityのエージェント自動修復、Advanced Securityのトライアル対象拡大などが追加。",
+          "why_it_matters": "エンタープライズ規模でのセキュリティ制御とAI支援機能の精密なガバナンスが可能になり、大規模チームの生産性向上とリスク軽減に直結します。",
+          "tags": [
+            "GitHub",
+            "セキュリティ",
+            "DevOps",
+            "AI/LLM"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Enterprise managed permissions for GitHub Copilot agent operations",
+              "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations",
+              "source": "GitHub Changelog"
+            },
+            {
+              "title": "GitHub Advanced Security expands trial availability",
+              "url": "https://github.blog/changelog/2026-09-09-github-advanced-security-expands-trial-availability",
+              "source": "GitHub Changelog"
+            },
+            {
+              "title": "Block pull requests with exposed secrets from merging",
+              "url": "https://github.blog/changelog/2026-09-09-block-pull-requests-with-exposed-secrets-from-merging",
+              "source": "GitHub Changelog"
+            },
+            {
+              "title": "Remediate Code Quality findings with agentic autofix",
+              "url": "https://github.blog/changelog/2026-09-09-remediate-code-quality-findings-with-agentic-autofix",
+              "source": "GitHub Changelog"
+            },
+            {
+              "title": "Enterprise-managed sandbox in Copilot for JetBrains",
+              "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "Asahi LinuxがM3シリーズMac対応を正式化、Apple Silicon周辺の進展加速",
+          "summary": "Asahi Linux開発チームがM3シリーズSoC搭載MacBook/iMacへの公式サポート開始を発表。M1/M2で提供されていた機能がM3でも利用可能に。CodeQL 2.27.0もLinux ARM64対応をリリース。",
+          "why_it_matters": "Apple Silicon MacでのLinux活用が現実的になり、開発マシンの選択肢が広がります。ARM64エコシステムの成熟も開発環境の多様化を推進。",
+          "tags": [
+            "Linux",
+            "Mac",
+            "ARM64",
+            "開発環境"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Asahi LinuxがM3シリーズSoCを搭載したMacを正式にサポート",
+              "url": "https://gigazine.net/news/20260910-asahi-linux-official-m3/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "CodeQL 2.27.0 adds support for Linux ARM64",
+              "url": "https://github.blog/changelog/2026-09-09-codeql-2-27-0-adds-support-for-linux-arm64",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "Tailwind LabsをShopifyが買収、フロントエンド業界の変動",
+          "summary": "人気CSSフレームワーク「Tailwind CSS」の開発元Tailwind LabsがShopifyに買収される。110M+ の月間インストール数を誇るプロダクトが大手プラットフォーム企業傘下に。",
+          "why_it_matters": "主流フロントエンドツールの獲得再編が進み、ツール戦略と企業成長の連動が顕著に。開発者コミュニティの関心が高い（はてな11users）。",
+          "tags": [
+            "CSS",
+            "フロントエンド",
+            "M&A",
+            "業界動向"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Tailwind Labs is joining Shopify",
+              "url": "https://tailwindcss.com/blog/tailwind-is-joining-shopify",
+              "source": "はてブ テクノロジー",
+              "popularity": "11 users"
+            }
+          ]
+        },
+        {
+          "headline": "Rustエコシステムの実績層が厚くなる、rustlsは10年目を迎える",
+          "summary": "TLS実装rustlsが10周年マイルストーン到達。プロジェクトマネジメント実践ガイド（Zenn 336users）やRustメモリ管理、e-scooterのRustファームウェア化など、多層的なRust活用事例が増加。",
+          "why_it_matters": "Rustが学術的関心から本格的なシステムレベルの実装へ定着。セキュリティクリティカルなコンポーネントでの成功事例が増え、採用推進の根拠となります。",
+          "tags": [
+            "Rust",
+            "セキュリティ",
+            "システム開発"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "A decade of rustls",
+              "url": "https://rustls.dev/blog/2026-09-08-a-decade-of-rustls/",
+              "source": "Lobsters",
+              "popularity": "46 score"
+            },
+            {
+              "title": "Reverse engineering my e-scooter and rewriting the firmware in rust",
+              "url": "https://bensimms.moe/reverse-engineering-scooter/",
+              "source": "Lobsters",
+              "popularity": "55 score"
+            }
+          ]
+        },
+        {
+          "headline": "Neovimが構造化並行処理ライブラリを導入、エディタエコシステムの高度化",
+          "summary": "Neovimが Lua標準ライブラリに vim.async名前空間を追加。ストラクチャ化された並行処理管理により、タスク管理とエラーハンドリングの標準化を実現。プラグイン開発の安定性が向上。",
+          "why_it_matters": "エディタ拡張の品質向上と開発者体験の改善が直結。非同期処理の複雑性を低減できるため、プラグインエコシステムの健全化につながります。",
+          "tags": [
+            "Neovim",
+            "Lua",
+            "エディタ",
+            "開発ツール"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "vim.async's Addition Modernizes Neovim's Async Architecture for Better Stability",
+              "url": "https://www.infoq.com/news/2026/09/async-lua-neovim/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "GNU Radio in the browser",
+          "url": "https://gnuradioworld.com/",
+          "source": "Hacker News",
+          "popularity": "148 points",
+          "note": "無線信号処理のGNU Radioがブラウザで動作可能に（Hacker News 148points）。ハードウェア開発の敷居がさらに低下。"
+        },
+        {
+          "title": "Docker環境をガチで軽量化するための鉄板設定まとめ",
+          "url": "https://qiita.com/nolanlover0527/items/24ee07122dd4d0523069",
+          "source": "Qiita 人気",
+          "popularity": "94 LGTM",
+          "note": "ローカルDocker環境の最適化テクニック集（Qiita 94LGTM）。リソース効率化のノウハウ。"
+        },
+        {
+          "title": "I changed my license to EUPL",
+          "url": "https://bergie.iki.fi/blog/eupl/",
+          "source": "Lobsters",
+          "popularity": "137 score",
+          "note": "個人OSSをEUPLへライセンス変更した考察。OSS法務の動向に注目（Lobsters 137score）。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 30,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "Appleが新CEOの下で初めてのイベント「Surprise and shine.」を開催し、初の折りたたみスマートフォン「iPhone Duo」を発表。同時に、iPhone 18 Pro/Pro Max、Apple Watch Series 12/Ultra 4、AirPods 5も発表され、スマートフォンを中心に一斉値上げが実施された。",
+      "topics": [
+        {
+          "headline": "Apple初の折りたたみスマホ「iPhone Duo」発表、36万円強から",
+          "summary": "Appleが初の折りたたみスマートフォン「iPhone Duo」を発表。5.4インチの外側画面と7.6インチ（iPhone史上最大）の内側画面を搭載。価格は36万4800円からで、10月23日発売予定。Touch IDやIP68防水対応、背面デュアルカメラなど機能も充実。",
+          "why_it_matters": "スマートフォン業界で折りたたみ型への注力が高まる中、Appleが遅ればせながら参入。iPhone Duoの成否がAndroid折りたたみ型市場に大きな影響を与える可能性がある。",
+          "tags": [
+            "iPhone",
+            "折りたたみスマホ",
+            "新製品"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Apple初の折りたたみスマホ「iPhone Duo」の実機写真まとめ、折り目＆インナーカメラの目立ち具合や展開時の薄さなどが分かる",
+              "url": "https://gigazine.net/news/20260910-iphone-duo-appearance/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "「iPhone Duo」発表　Apple初の折りたたみスマホ　36万4800円から",
+              "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001335/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Apple's long-rumored foldable becomes reality with the $2,000 iPhone Duo",
+              "url": "https://arstechnica.com/gadgets/2026/09/apples-long-rumored-foldable-becomes-reality-with-the-2000-iphone-duo/",
+              "source": "Ars Technica"
+            },
+            {
+              "title": "Verge staffers react to the iPhone Duo: What we love and don't love",
+              "url": "https://www.theverge.com/tech/992830/apple-iphone-duo-foldable-verge-staffers-react",
+              "source": "The Verge"
+            },
+            {
+              "title": "「iPhone Duo」ついに登場。Apple初7.6型折りたたみで36万円強",
+              "url": "https://pc.watch.impress.co.jp/docs/news/2139675.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "135 users"
+            },
+            {
+              "title": "ついに出た折りたたみ型の「iPhone Duo」や「iPhone 18 Pro／Pro Max」「Apple Watch Series 12／Ultra 4」「AirPods 5」が明らかとなったAppleの新製品発表イベント「Surprise and shine.」まとめ",
+              "url": "https://gigazine.net/news/20260910-apple-event/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "Everything Apple announced at its fall iPhone event, from the foldable iPhone Duo to an always-listening Apple Watch",
+              "url": "https://techcrunch.com/2026/09/09/everything-apple-announced-at-its-fall-iphone-event-from-the-foldable-iphone-duo-to-an-always-listening-apple-watch/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "スマートフォン価格が一斉値上げ、iPhone 18 Pro/Pro Maxは119万円から",
+          "summary": "Appleが新型iPhone 18 Pro/Pro Maxを発表。Proは119万9ドル、Pro Maxは129万9ドルからと前世代から100ドル値上げ。同時に既存のiPhone 16、iPhone 17、iPhone Airも値上げ。日本では既存機種で最大4万7000円の値上がりとなった。",
+          "why_it_matters": "スマートフォン全体の価格帯の上昇が進む中、消費者の購買意欲への影響が懸念される。業界全体で収益重視の方向へ舵が切られている。",
+          "tags": [
+            "価格",
+            "iPhone 18",
+            "値上げ"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "It's the year of smartphone price hikes",
+              "url": "https://www.theverge.com/gadgets/993005/smartphone-price-hikes-apple-iphone-18-pro",
+              "source": "The Verge"
+            },
+            {
+              "title": "iPhone 18シリーズ発表、今年はPro・Pro Maxのみ　なんと\"無印\"なし　価格は21万9800円から【更新終了】",
+              "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001336/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Apple、既存iPhoneを値上げ　17は14万2800円→15万9800円から　Airや17eも",
+              "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001340/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "There are new shiny iPhones, so Apple is making you pay more for older models",
+              "url": "https://techcrunch.com/2026/09/09/there-are-new-shiny-iphones-so-apple-is-making-you-pay-more-for-older-models/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "「iPhone 18」は発表されず。メモリ高騰が影響か",
+              "url": "https://pc.watch.impress.co.jp/docs/news/2139681.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "5 users"
+            },
+            {
+              "title": "「iPhone 18 Pro／Pro Max」は価格21万9800円からで9月18日発売、可変絞り搭載＆A20 Proチップ搭載で本体カラーは4色",
+              "url": "https://gigazine.net/news/20260910-apple-iphone-18-pro/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "iPhone 18 Pro/Pro Maxは可変絞りカメラ＆A20 Proチップ搭載、9月18日発売",
+          "summary": "iPhone 18 Pro/Pro Maxは可変カメラ絞りとA20 Proチップを搭載。新しい熱管理システムでオーバーヒーティング軽減。Reference Image機能で撮影時点の画像の真正性を証明可能。サイズは6.3インチ（Pro）と6.9インチ（Pro Max）。予約注文は9月12日午後9時から、発売は9月18日。",
+          "why_it_matters": "iPhone 18シリーズはPro/Pro Maxのみのラインアップで、無印モデルが廃止。メモリ高騰の影響がこの戦略に反映されており、業界のコスト構造変化を示唆している。",
+          "tags": [
+            "iPhone 18",
+            "カメラ",
+            "AI"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「iPhone 18」シリーズ徹底比較　「17」シリーズとの違いをチェック",
+              "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001341/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Apple's iPhone 18 Pro adds variable camera aperture and a more powerful chip",
+              "url": "https://arstechnica.com/gadgets/2026/09/apples-iphone-18-pro-adds-variable-camera-aperture-and-a-more-powerful-chip/",
+              "source": "Ars Technica"
+            },
+            {
+              "title": "Apple's new iPhone camera mode promises to prove your photo isn't AI",
+              "url": "https://www.theverge.com/tech/992766/apple-iphone-18-pro-reference-image",
+              "source": "The Verge"
+            },
+            {
+              "title": "Here's how the new iPhone 18 Pro stacks up to the last-gen models",
+              "url": "https://www.theverge.com/tech/988501/iphone-18-pro-max-spec-comparison-features",
+              "source": "The Verge"
+            },
+            {
+              "title": "iPhone 18 Pro and Pro Max: Our first hands-on impressions",
+              "url": "https://www.theverge.com/tech/986400/apple-iphone-18-pro-max-hands-on-impressions-september-2026-event",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "Apple Watch Series 12/Ultra 4、新型ヘルスセンシング搭載＆Audio Intelligence機能対応",
+          "summary": "Apple Watch Series 12とUltra 4は新型ヘルスセンシングシステムを搭載。心拍数トラッキング精度向上。Audio Intelligence機能により周囲の音声をApple Intelligenceで分析し、その場でメモや文字起こしが可能。S11チップ搭載。9月18日発売、予約注文は9月10日から。Series 12は7万1800円から。",
+          "why_it_matters": "ウェアラブルデバイスのAI統合が進み、常時リスニング機能を搭載することでプライバシーと機能の線引きが業界課題となっている。",
+          "tags": [
+            "Apple Watch",
+            "AI",
+            "ヘルスケア"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "How the new Apple Watches compare to the last-gen models",
+              "url": "https://www.theverge.com/gadgets/990508/apple-watch-series-12-ultra-4-spec-comparison",
+              "source": "The Verge"
+            },
+            {
+              "title": "Hands-on with the new Apple Watch Series 12 and Apple Watch Ultra 4",
+              "url": "https://www.theverge.com/tech/992568/apple-watch-hands-on-series-12-ultra-4",
+              "source": "The Verge"
+            },
+            {
+              "title": "Apple Watch's new feature listens to your chats and recaps them",
+              "url": "https://techcrunch.com/2026/09/09/apple-watchs-new-feature-listens-to-your-chats-and-recaps-them/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "Apple starts preorders for Watch Series 12, Ultra 4 with new Health Sensing System",
+              "url": "https://arstechnica.com/gadgets/2026/09/apple-watch-series-12-ultra-4-have-wearables-most-accurate-heart-rate-sensing/",
+              "source": "Ars Technica"
+            },
+            {
+              "title": "センサー刷新でヘルスケア機能強化＆周囲の音声からAIで文字起こしや通知が可能な「Apple Watch Series 12」「Apple Watch Ultra 4」が登場",
+              "url": "https://gigazine.net/news/20260910-apple-watch/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "AirPods 5、アクティブノイキャン強化＆ライブ翻訳対応で税込2万3800円",
+          "summary": "AirPods 5はアクティブノイズキャンセリング性能を前世代比50%向上。ライブ翻訳やハンズフリーSiri AIアクセス対応。オープンイヤー型デザイン。基本モデルは2万3800円。上位モデル（軸スワイプ、ワイヤレス充電対応）は2万7800円。9月18日発売。",
+          "why_it_matters": "Apple Intelligenceの活用を進める中、イヤホンがAI機能の重要なインターフェースになりつつある。翻訳機能搭載でウェアラブルの実用性が高まる。",
+          "tags": [
+            "AirPods",
+            "ノイズキャンセリング",
+            "AI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Apple debuts $129 AirPods 5 with better noise cancellation and transparency mode",
+              "url": "https://arstechnica.com/gadgets/2026/09/apple-debuts-129-airpods-5-with-better-noise-cancellation-and-transparency-mode/",
+              "source": "Ars Technica"
+            },
+            {
+              "title": "「AirPods 5」登場　ノイキャン性能向上、従来比でノイズを50％除去　2万3800円から",
+              "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001339/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "オープンイヤー型イヤホン「AirPods 5」はアクティブノイキャン機能搭載＆ライブ翻訳にも対応で価格は税込2万3800円から、軸スワイプ＆Qi充電対応の上位モデルもあり",
+              "url": "https://gigazine.net/news/20260910-apple-airpods-5/",
+              "source": "GIGAZINE"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Apple Health アプリ、「健康年齢」と「レディネススコア」を計算する機能を搭載",
+          "url": "https://techcrunch.com/2026/09/09/apples-revamped-health-app-will-calculate-your-health-age-and-readiness-score/",
+          "source": "TechCrunch",
+          "note": "Apple Intelligenceを活用してヘルスデータを統合分析し、ユーザーの健康状態をスコア化。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 36,
+      "dropped_topics": 0,
+      "truncated": false
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "中東情勢の緊迫化、イラン核問題が国際舞台へ。米大統領が和平仲介に意欲。国内では政界再編と野天気な日常が混在。",
+      "topics": [
+        {
+          "headline": "IAEA、イランを国連安保理に付託　20年ぶりの厳しい対応",
+          "summary": "IAEA（国際原子力機関）が20年ぶりにイランの核問題を国連安保理に付託することを決定。イランは米国とイスラエルの施設への打撃が検査を妨害したと反発。中国とロシアは反対票を投じ、国際的な対立軸が明確化。",
+          "why_it_matters": "イラン核問題が外交交渉の枠を超え、国連レベルでの強制措置の可能性が生じた。中東地域の不安定化と世界的な核問題の深刻化を示唆。",
+          "tags": [
+            "イラン",
+            "核問題",
+            "国連",
+            "中東"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "IAEA、20年ぶりにイランの核問題を安保理に付託　中ロは反対",
+              "url": "http://www.asahi.com/articles/ASV996X2TV99UHBI00CM.html?ref=rss",
+              "source": "朝日新聞"
+            },
+            {
+              "title": "Iran referred to UN Security Council for nuclear non-compliance",
+              "url": "https://www.bbc.co.uk/news/articles/ckgwj4kl5lno?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "ホルムズ海峡で米イランの応酬激化、船舶への攻撃相次ぐ",
+          "summary": "中東のホルムズ海峡をめぐり、米国とイランの攻撃の応酬が拡大。船舶を狙った攻撃が頻発し、さらなる応酬と被害の拡大が懸念される。エネルギー供給への影響も波及。",
+          "why_it_matters": "世界石油の約3割が通過する重要海峡での軍事的緊張。国際商業ルートの安全性が脅かされ、グローバル経済に直結。",
+          "tags": [
+            "ホルムズ海峡",
+            "米国",
+            "イラン",
+            "海運"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "ホルムズ海峡巡る米イラン応酬で船舶への攻撃相次ぐ",
+              "url": "https://news.web.nhk/newsweb/na/nd-20260910de49416",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "トランプ大統領、ウクライナ和平へ3者会談に意欲　停滞する交渉の打開狙う",
+          "summary": "ロシアとウクライナの和平交渉が停滞する中、米国のトランプ大統領は、プーチン大統領とゼレンスキー大統領の3者会談について「起こりうるだろう」と述べ、実現に向けた意欲を示した。",
+          "why_it_matters": "ウクライナ紛争の長期化が続く中、新たな和平仲介の動きが浮上。米国の外交姿勢転換がもたらす国際秩序への影響は大きい。",
+          "tags": [
+            "ウクライナ",
+            "ロシア",
+            "米国",
+            "和平"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "米トランプ大統領 ロシアとウクライナとの3者会談実現に意欲",
+              "url": "https://news.web.nhk/newsweb/na/nd-20260910de49420",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "Apple新型折りたたみiPhone発表　20年ぶりの大型設計変更に賭け",
+          "summary": "Appleが新CEOのもと、初めての折りたたみ機能を持つiPhoneを発表。20年近くのiPhoneの基本設計を大きく変更する、新体制での重大な勝負。",
+          "why_it_matters": "折りたたみスマートフォン市場の競争激化。Apple新経営陣の経営判断がスマートフォン業界全体のトレンドを左右する可能性。",
+          "tags": [
+            "Apple",
+            "iPhone",
+            "スマートフォン",
+            "デバイス"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Apple's new boss starts with big gamble on costly first folding iPhone",
+              "url": "https://www.bbc.co.uk/news/articles/clyjd1jnd03o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "睡眠研究の筑波大・柳沢教授らがラスカー賞受賞　医学研究の最高栄誉",
+          "summary": "睡眠研究の第一人者である筑波大学の柳沢正史教授と中外製薬の研究者3人が、米国の権威ある医学賞「ラスカー賞」を受賞。日本の基礎医学研究の成果が認められた。",
+          "why_it_matters": "日本の医学基礎研究が国際的に高く評価されたことを示すとともに、睡眠関連疾患の治療開発へ弾みがつく可能性。",
+          "tags": [
+            "医学",
+            "睡眠研究",
+            "日本",
+            "受賞"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "ラスカー賞に睡眠研究の筑波大 柳沢教授らと中外製薬研究者3人",
+              "url": "https://news.web.nhk/newsweb/na/nd-20260910de49414",
+              "source": "NHK 主要"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "メルカリで露骨な資金洗浄疑惑　105万円で漫画やリモコン売買",
+          "url": "https://togetter.com/li/2743528",
+          "source": "はてブ 世の中",
+          "popularity": "99 users",
+          "note": "安い商品が不自然な高値で出品・完売。プラットフォームの監視体制が問題に"
+        },
+        {
+          "title": "Suicaキャラクター候補A・Cが色覚異常者に『溶ける』デザイン不具合",
+          "url": "https://togetter.com/li/2743614",
+          "source": "はてブ 世の中",
+          "popularity": "12 users",
+          "note": "企業の社会的責任とアクセシビリティ対応の課題が可視化"
+        },
+        {
+          "title": "共和党大会始まる　中間選挙前では初開催、トランプ支持率下落局面で",
+          "url": "https://news.web.nhk/newsweb/na/nd-20260909de49402",
+          "source": "NHK 主要",
+          "note": "11月中間選挙を前に与党の求心力維持が課題"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 60,
+      "dropped_topics": 0,
+      "truncated": false
+    }
+  ],
+  "collection_failures": [],
+  "stats": {
+    "collected": 263,
+    "unclassified": 0,
+    "classify_error": null
+  }
+}
