@@ -33,6 +33,7 @@
 {% if digest.categories %}
 <nav class="category-tabs">
   {% if digest.highlights %}<a href="#highlights">今日の{{ digest.highlights|length }}選</a>{% endif %}
+  {% if digest.deep_dive %}<a href="#deep-dive">深掘り</a>{% endif %}
   {% for cat in digest.categories %}
   <a href="#{{ cat.id }}">{{ cat.label }}{% if cat.topics %} <span class="tab-count">{{ cat.topics|length }}</span>{% endif %}</a>
   {% endfor %}
@@ -68,6 +69,51 @@
 </section>
 {% endif %}
 
+{% if digest.deep_dive %}
+{% set dd = digest.deep_dive %}
+<section id="deep-dive" class="deep-dive">
+  <h2>今日の深掘り</h2>
+  <a class="highlight-cat" href="#{{ dd.category_id }}">{{ dd.category_label }}</a>
+  <h3>{{ dd.headline }}</h3>
+
+  {% if dd.background %}
+  <h4>背景</h4>
+  <p>{{ dd.background }}</p>
+  {% endif %}
+
+  {% if dd.concepts %}
+  <h4>押さえる概念</h4>
+  <dl class="concepts">
+    {% for c in dd.concepts %}
+    <dt>{{ c.term }}</dt>
+    <dd>{{ c.explanation }}</dd>
+    {% endfor %}
+  </dl>
+  {% endif %}
+
+  {% if dd.for_you %}
+  <h4>自分の仕事にどう関わるか</h4>
+  <p>{{ dd.for_you }}</p>
+  {% endif %}
+
+  {% if dd.try_this %}
+  <div class="try-this">
+    <h4>今週の一手</h4>
+    <p>{{ dd.try_this }}</p>
+  </div>
+  {% endif %}
+
+  {% if dd.questions %}
+  <h4>考えてみる</h4>
+  <ul class="questions">
+    {% for q in dd.questions %}<li>{{ q }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if dd.sources %}{{ sourcelinks(dd.sources) }}{% endif %}
+</section>
+{% endif %}
+
 {% for cat in digest.categories %}
 <section id="{{ cat.id }}" class="category-section">
   <h2>{{ cat.label }}</h2>
@@ -91,7 +137,7 @@
           </span>
           {% if topic.tags %}
           <span class="tag-list">
-            {% for tag in topic.tags[:3] %}<span class="tag">{{ tag }}</span>{% endfor %}
+            {% for tag in topic.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
           </span>
           {% endif %}
         </div>

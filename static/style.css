@@ -500,3 +500,83 @@ main {
   font-size: 0.9rem;
   color: var(--text-muted);
 }
+
+/* ---- 今日の深掘り: ニュースではなく「学び」なので、少し落ち着いた別トーンで見せる ---- */
+.deep-dive {
+  margin: 0.5rem 0 2.5rem;
+  padding: 1rem 1rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 4px solid #10b981;
+  border-radius: 12px;
+  scroll-margin-top: calc(var(--header-h, 6rem) + 0.75rem);
+}
+
+.deep-dive h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.15rem;
+  color: #059669;
+}
+
+@media (prefers-color-scheme: dark) {
+  .deep-dive h2 { color: #34d399; }
+}
+
+.deep-dive h3 {
+  margin: 0.35rem 0 0.8rem;
+  font-size: 1.1rem;
+  line-height: 1.45;
+}
+
+.deep-dive h4 {
+  margin: 1rem 0 0.35rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.deep-dive p {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.concepts {
+  margin: 0;
+}
+
+.concepts dt {
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-top: 0.5rem;
+}
+
+.concepts dd {
+  margin: 0.1rem 0 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.try-this {
+  margin-top: 1rem;
+  padding: 0.75rem 0.85rem;
+  background: #10b98114;
+  border-left: 3px solid #10b981;
+  border-radius: 0 8px 8px 0;
+}
+
+.try-this h4 {
+  margin-top: 0;
+  color: #059669;
+}
+
+@media (prefers-color-scheme: dark) {
+  .try-this h4 { color: #34d399; }
+}
+
+.questions {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.questions li { margin-bottom: 0.3rem; }

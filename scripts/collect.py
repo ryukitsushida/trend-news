@@ -90,7 +90,12 @@ def _strip_tracking_params(query: str) -> str:
 
 
 def normalize_url(url: str) -> str:
-    """トラッキングパラメータと末尾スラッシュを除去し、重複判定に使う正規形にする。"""
+    """重複判定に使う正規形にする(比較用。表示には元のURLを使う)。
+
+    トラッキングパラメータ・末尾スラッシュ・フラグメントに加え、
+    scheme と www の有無も揃える。同じ記事が http と https の両方で
+    配信されることが実際にあり(朝日新聞)、揃えないと再掲されてしまう。
+    """
     if not url:
         return url
     from urllib.parse import urlsplit, urlunsplit
@@ -98,7 +103,12 @@ def normalize_url(url: str) -> str:
     parts = urlsplit(url.strip())
     query = _strip_tracking_params(parts.query)
     path = parts.path.rstrip("/") or "/"
-    return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), path, query, ""))
+    host = parts.netloc.lower()
+    if host.startswith("www."):
+        host = host[4:]
+    # scheme は https に寄せる(http/https は同じ記事を指すため)
+    scheme = "https" if parts.scheme.lower() in ("http", "https") else parts.scheme.lower()
+    return urlunsplit((scheme, host, path, query, ""))
 
 
 def normalize_title_key(title: str) -> str:

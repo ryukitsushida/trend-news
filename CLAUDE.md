@@ -53,14 +53,25 @@ Hacker News の RSS summary は「Article URL / Comments URL / Points」の定�
 `exclude_urls` で過去に掲載済みのURLを除くため、同じ記事が何日も出続けない。
 1フィードの失敗は握りつぶして続行し、`Collection.failures` に積む。
 
-**summarize.py** — 3パス構成。
+**summarize.py** — 4パス構成。
 1. `classify_articles` — 未確定の記事をカテゴリへ振り分け(1回)
 2. `summarize_category` — カテゴリごとにトピックと短報を生成(カテゴリ数だけ)
-3. `pick_highlights` — 生成済みトピックから「今日の5選」を選ぶ(1回)
+3. `pick_highlights` — 生成済みトピックから「今日の5選」と深掘り対象を選ぶ(1回)
+4. `deep_dive` — 指名されたトピックを背景・概念・示唆・今週の一手に掘り下げる(1回)
 
 3を元記事ではなく生成済みトピックから選ぶのは、全カテゴリを俯瞰した編集判断が
 できるうえ入力が小さいため。参照IDが実在しない場合は捨て、全滅したら重要度順の
-機械的フォールバックに落ちる。
+機械的フォールバックに落ちる。4は失敗しても None を返し、ページに出ないだけで
+他は影響を受けない。
+
+**読者プロフィール**(`config/sources.yaml` の `reader_profile`)が全パスの
+システムプロンプトに添えられる。`why_it_matters` は業界評論ではなく
+「この読者の仕事・設計・学習にどう関わるか」を書かせる。技術スタックや関心が
+変わったら設定を書き換えるだけでよい。
+
+**重複回避**: URLが違う同じ出来事の再掲を防ぐため、直近 `dedupe_lookback_days` 日の
+見出しを要約プロンプトに渡す。ただし全件渡すと入力の15%を占めたので、
+同カテゴリの見出し + 全カテゴリの5選だけに絞っている(`build.recent_headlines`)。
 
 **render.py** — 毎回 `data/digests/*.json` を全部読み、過去号も含めて全ページを再生成する。
 テンプレートを変えると過去号にも反映される。壊れたJSONは警告を出して読み飛ばす。
@@ -128,8 +139,12 @@ TypeError になるので、オフライン時は必ず Response を返すこと
 ## 運用上の制約
 
 - cron は `0 20 * * *` UTC = 05:00 JST。日付は JST 基準で扱う(`build.py` の `ZoneInfo`)
-- モデルIDは環境変数 `BEDROCK_MODEL_ID` で差し替えられる。品質を上げたいときは
-  `global.anthropic.claude-sonnet-4-5-20250929-v1:0` などに変更する
+- モデルIDは環境変数 `BEDROCK_MODEL_ID` で差し替えられる。パス別に
+  `BEDROCK_{CLASSIFY,DIGEST,HIGHLIGHT,DEEP_DIVE}_MODEL_ID` でも上書きでき、
+  分類だけ安いモデル・要約と深掘りだけ賢いモデル、という使い分けができる
+- **記事は番号で参照する。** プロンプトにURLを載せず `sources: [{n: 3}]` の形で
+  返させ、URL・タイトル・配信元は元記事から埋める。入力トークンが減るうえ、
+  捏造リンクが公開される余地が構造的に無くなる
 - ワークフローの `AWS_ROLE_ARN` は Secret / Variable どちらでも読めるようにしてある
 - パブリックリポジトリの cron は60日間の無活動で自動停止する
 

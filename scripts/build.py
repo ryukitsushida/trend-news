@@ -13,6 +13,8 @@ from scripts.render import load_all_digests, render_site, save_digest
 from scripts.summarize import (
     CategoryDigest,
     classify_articles,
+    deep_dive,
+    dry_run_deep_dive,
     dry_run_digest,
     get_client,
     pick_highlights,
@@ -50,6 +52,61 @@ def published_urls(digests: list[dict], exclude_date: str | None = None) -> set[
         if not (exclude_date and digest.get("date") == exclude_date)
         for url in _iter_link_urls(digest)
     }
+
+
+def recent_headlines(
+    digests: list[dict], days: int, exclude_date: str | None = None, category_id: str | None = None
+) -> list[str]:
+    """直近の号で取り上げた見出し。同じ出来事の再掲を避けるため要約に渡す。
+
+    全件渡すと6回の要約呼び出しごとに同じ80件超を繰り返し送ることになり、
+    入力トークンの15%を占めた。同じカテゴリの見出しと、カテゴリを跨いでも
+    目立つ「5選」だけに絞る(実測では跨ぎの再掲はごく稀)。
+    """
+    recent = sorted(
+        (d for d in digests if d.get("date") != exclude_date),
+        key=lambda d: d.get("date", ""),
+        reverse=True,
+    )[:days]
+    seen: set[str] = set()
+    out: list[str] = []
+
+    def add(headline):
+        if headline and headline not in seen:
+            seen.add(headline)
+            out.append(headline)
+
+    for d in recent:
+        for h in d.get("highlights", []):
+            add(h.get("topic", {}).get("headline"))
+        for c in d.get("categories", []):
+            if category_id and c.get("id") != category_id:
+                continue
+            for t in c.get("topics", []):
+                add(t.get("headline"))
+    return out
+
+
+def recent_deep_dive_categories(
+    digests: list[dict], days: int = 3, exclude_date: str | None = None
+) -> list[str]:
+    """直近で深掘りしたカテゴリ。同じ領域ばかり掘らないよう5選パスに渡す。
+
+    生成中の日付は除く。同日に再実行したとき、前回の実行で自分が選んだ
+    カテゴリを避けてしまい、日によって内容が変わるのを防ぐ。
+    """
+    recent = sorted(
+        (d for d in digests if d.get("date") != exclude_date),
+        key=lambda d: d.get("date", ""),
+        reverse=True,
+    )[:days]
+    seen, out = set(), []
+    for d in recent:
+        label = (d.get("deep_dive") or {}).get("category_label")
+        if label and label not in seen:
+            seen.add(label)
+            out.append(label)
+    return out
 
 
 def group_by_category(
@@ -95,10 +152,11 @@ def classify(
 
 
 def make_highlights(
-    digests: list[CategoryDigest], client, model, count: int, dry_run: bool
-) -> tuple[str, list[dict]]:
+    digests: list[CategoryDigest], client, model, count: int, dry_run: bool,
+    reader: str | None, avoid_categories: list[str] | None = None,
+) -> tuple[str, list[dict], dict | None]:
     if not dry_run:
-        return pick_highlights(digests, client, model, count)
+        return pick_highlights(digests, client, model, count, reader, avoid_categories)
     highlights = [
         {
             "category_id": d.id,
@@ -109,7 +167,25 @@ def make_highlights(
         for d in digests
         if d.topics
     ][:count]
-    return "(dry-run) 本日の注目トピックです。", highlights
+    target = {k: highlights[0][k] for k in ("category_id", "category_label", "topic")} if highlights else None
+    return "(dry-run) 本日の注目トピックです。", highlights, target
+
+
+def make_deep_dive(
+    target: dict | None, articles: list[Article], client, model, dry_run: bool, reader: str | None
+) -> dict | None:
+    """5選で指名されたトピックの出典記事を引き当てて深掘りを生成する。"""
+    if not target:
+        return None
+    if dry_run:
+        return dry_run_deep_dive(target)
+    by_url = {normalize_url(a.url): a for a in articles}
+    sources = [
+        by_url[normalize_url(s["url"])]
+        for s in target["topic"].get("sources", [])
+        if normalize_url(s.get("url", "")) in by_url
+    ]
+    return deep_dive(target, sources, client, model, reader)
 
 
 def run(dry_run: bool = False, model_id: str | None = None, region: str | None = None) -> dict:
@@ -118,6 +194,8 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
     categories = config["categories"]
     topic_count = config.get("topics_per_category", 5)
     quick_hit_count = config.get("quick_hits_per_category", 5)
+    dedupe_days = config.get("dedupe_lookback_days", 3)
+    reader = config.get("reader_profile")
 
     # 過去号は「掲載済みURLの抽出」と「アーカイブ生成」の両方で要るので一度だけ読む
     past_digests = load_all_digests()
@@ -143,17 +221,27 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
         note = "  ※割合が高すぎます。分類パスを確認してください" if ratio > 0.2 else ""
         print(f"分類されず除外: {unclassified} 件 ({ratio:.0%}){note}")
 
+    def covered_for(cid: str) -> list[str]:
+        return recent_headlines(past_digests, dedupe_days, exclude_date=today, category_id=cid)
+
     digests = [
         dry_run_digest(category, grouped[category["id"]], topic_count)
         if dry_run
         else summarize_category(
-            category, grouped[category["id"]], client, model, topic_count, quick_hit_count
+            category, grouped[category["id"]], client, model,
+            topic_count, quick_hit_count, covered_for(category["id"]), reader,
         )
         for category in categories
     ]
 
-    lead, highlights = make_highlights(
-        digests, client, model, config.get("highlight_count", 5), dry_run
+    lead, highlights, deep_target = make_highlights(
+        digests, client, model, config.get("highlight_count", 5), dry_run, reader,
+        recent_deep_dive_categories(past_digests, exclude_date=today),
+    )
+    deep = (
+        make_deep_dive(deep_target, collection.articles, client, model, dry_run, reader)
+        if config.get("deep_dive", True)
+        else None
     )
 
     digest = {
@@ -161,6 +249,7 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
         "generated_at": now_jst.strftime("%Y-%m-%d %H:%M JST"),
         "lead": lead,
         "highlights": highlights,
+        "deep_dive": deep,
         "categories": [digest_to_dict(d) for d in digests],
         "collection_failures": [
             {"source": f.source, "url": f.url, "error": f.error} for f in collection.failures
@@ -194,7 +283,8 @@ def main() -> None:
     digest = run(dry_run=args.dry_run, model_id=args.model_id, region=args.region)
 
     total = sum(len(c["topics"]) for c in digest["categories"])
-    print(f"\n生成完了: {digest['date']} / 5選 {len(digest['highlights'])}件 / トピック計 {total}件")
+    dd = "あり" if digest.get("deep_dive") else "なし"
+    print(f"\n生成完了: {digest['date']} / 5選 {len(digest['highlights'])}件 / 深掘り {dd} / トピック計 {total}件")
     for c in digest["categories"]:
         print(
             f"  {c['label']}: 記事{c['article_count']}件 → トピック{len(c['topics'])}件"

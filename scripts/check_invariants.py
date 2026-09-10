@@ -74,6 +74,43 @@ def check_digest(digest: dict) -> None:
     refs = [h.get("topic", {}).get("headline") for h in highlights]
     check("5選内で重複が無い", len(refs) == len(set(refs)))
 
+    # 5選が1カテゴリに偏ると1日の全体像が掴めない(実測で3件偏った日があった)
+    from collections import Counter
+    per_cat = Counter(h.get("category_id") for h in highlights)
+    over = {k: v for k, v in per_cat.items() if v > 2}
+    available = len({c["id"] for c in cats if c.get("topics")})
+    check(
+        "5選が1カテゴリに3件以上偏っていない",
+        not over or available <= 2,
+        f"{over} (トピックのあるカテゴリ数={available})",
+    )
+
+    # importance が実質3段階に潰れていないか(相対評価で全部4になる癖がある)
+    if len(topics) >= 10:
+        levels = Counter(t.get("importance") for _, t in topics)
+        top = levels.most_common(1)[0][1] / len(topics)
+        check(f"importanceが1段階に集中していない(最頻 {top:.0%})", top < 0.6)
+        check(f"importance=5 が全体の3割未満({levels.get(5,0)}/{len(topics)})",
+              levels.get(5, 0) / len(topics) < 0.3)
+
+    # 生成しても表示されない項目は、トークンを捨てているのと同じ
+    over_tags = [t for _, t in topics if len(t.get("tags", [])) > 3]
+    check("タグが表示上限3個を超えていない", not over_tags,
+          f"{len(over_tags)}件が超過")
+
+    # 深掘りは実在トピックを指し、出典は検証済みURLのみであるべき
+    dd = digest.get("deep_dive")
+    if dd:
+        check("深掘りが実在トピックを参照している", dd.get("headline") in heads)
+        check("深掘りのカテゴリIDが定義済み", dd.get("category_id") in config_ids)
+        dd_urls = {s.get("url") for s in dd.get("sources", [])}
+        check("深掘りの出典が本文の出典に含まれる", dd_urls <= set(urls), str(dd_urls - set(urls)))
+        check("深掘りに背景か概念のどちらかがある", bool(dd.get("background") or dd.get("concepts")))
+        check(
+            "深掘りの概念が term/explanation を持つ",
+            all(c.get("term") and c.get("explanation") for c in dd.get("concepts", [])),
+        )
+
     # 生成に失敗したカテゴリは、失敗として記録されているべき
     for c in cats:
         if not c.get("ok"):
