@@ -52,7 +52,10 @@ categories:
       (CISA KEV)・ゼロデイ・広く使われる製品(VPN機器、OS、ブラウザ、AWS等のクラウド、
       OSSライブラリ)を優先し、見出しか要約にCVE番号・対象製品・対処(パッチ/回避策)を
       入れる。情報漏えいは被害組織・規模・原因が分かるものを優先する。
-      同じCVEや同じ事案を複数ソースが報じていれば1トピックにまとめる。
+      同じCVE・同じ事案を複数ソースが報じていれば1トピックにまとめるが、別の製品・別のCVE・
+      別の事案は「相次ぐ」等で1トピックにまとめない(扱いきれない分は短報に回す)。
+      CVE番号・製品名・被害規模・原因・対処は記事に書かれたものだけを使い、推測で補わない。
+      importance 5 は「読者が使う製品で悪用が確認され、すぐ対応が要る」ものに限り、多くて2件。
   - id: cloud
     label: クラウド・インフラ
     description: |
@@ -114,7 +117,7 @@ feeds:
   # 報道より優先して残す(件数が少なく、新着の報道に押し出されて脱落していたため)。
   - { name: JPCERT/CC,          url: "https://www.jpcert.or.jp/rss/jpcert.rdf",      category: security, slow: true, priority: true }
   - { name: IPA security,       url: "https://www.ipa.go.jp/security/alert-rss.rdf", category: security, slow: true, priority: true }
-  - { name: JVN,                url: "https://jvn.jp/rss/jvn.rdf",                   category: security, slow: true, priority: true, max_items: 15 }
+  - { name: JVN,                url: "https://jvn.jp/rss/jvn.rdf",                   category: security, slow: true }
   # 報道: 脆弱性の悪用状況と情報漏えい・侵害インシデント
   - { name: Security NEXT,      url: "https://www.security-next.com/feed",           category: security, priority: true, max_items: 15 }
   - { name: piyolog,            url: "https://piyolog.hatenadiary.jp/rss",           category: security, slow: true, priority: true }

@@ -224,20 +224,26 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
     def covered_for(cid: str) -> list[str]:
         return recent_headlines(past_digests, dedupe_days, exclude_date=today, category_id=cid)
 
-    # カテゴリ側に topics / quick_hits があれば全体設定より優先する(重点カテゴリ用)
-    digests = [
-        dry_run_digest(category, grouped[category["id"]],
-                       category.get("topics", topic_count),
-                       category.get("quick_hits", quick_hit_count))
-        if dry_run
-        else summarize_category(
-            category, grouped[category["id"]], client, model,
-            category.get("topics", topic_count),
-            category.get("quick_hits", quick_hit_count),
-            covered_for(category["id"]), reader,
-        )
-        for category in categories
-    ]
+    # 同じ出来事が別カテゴリの記事として届くと両方で取り上げてしまうため、要約は順番に行い、
+    # 先に作ったカテゴリの見出しを後のカテゴリに渡す。重点カテゴリ(focus あり)を先に回し、
+    # 出来事がそちらに載るようにする。表示順は設定の順のまま。
+    order = sorted(categories, key=lambda c: not c.get("focus"))
+    taken: list[str] = []
+    by_id: dict[str, CategoryDigest] = {}
+    for category in order:
+        # カテゴリ側に topics / quick_hits があれば全体設定より優先する(重点カテゴリ用)
+        topics = category.get("topics", topic_count)
+        hits = category.get("quick_hits", quick_hit_count)
+        if dry_run:
+            d = dry_run_digest(category, grouped[category["id"]], topics, hits)
+        else:
+            d = summarize_category(
+                category, grouped[category["id"]], client, model, topics, hits,
+                covered_for(category["id"]), reader, taken,
+            )
+        taken.extend(t["headline"] for t in d.topics)
+        by_id[category["id"]] = d
+    digests = [by_id[c["id"]] for c in categories]
 
     lead, highlights, deep_target = make_highlights(
         digests, client, model, config.get("highlight_count", 5), dry_run, reader,

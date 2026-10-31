@@ -190,7 +190,7 @@ def _highlight_tool(count: int) -> dict:
                     ),
                 },
             },
-            "required": ["highlights", "deep_dive_ref"],
+            "required": ["lead", "highlights", "deep_dive_ref"],
         },
     }
 
@@ -266,11 +266,20 @@ DIGEST_SYSTEM = """通勤中にスマホで読む読者向けの日本語ダイ�
 - 出力は emit_digest の呼び出しのみ。全文日本語(英語記事も日本語に要約)。
 - sources / quick_hits は記事番号(n)で指す。一覧に無い番号は使わない。
 - 同じ出来事を報じる複数記事は1トピックにまとめ、sourcesに全て列挙する。1記事1トピックにしない。
+  ただし**1トピック=1つの出来事**。別の製品・別のCVE・別の事案を「相次ぐ」等でまとめない。
+  同じ製品でも別々の脆弱性・事案なら別トピックか短報にする。
+- **正確さを最優先する。** 内容は記事一覧のタイトル・概要に書かれた事実だけで書く:
+  - 書かれていない数値・日付・原因・影響範囲・対処方法・因果関係を足さない。
+    概要が無い記事は、タイトルから言える範囲で書き、言えないことは書かない。
+  - 主語・対象・規模を変えない(例: マウス実験を人の事例にしない、PoCや研究を実被害にしない、
+    「〜の可能性」「〜か」を断定にしない)。
+  - 別々の記事の事実を混ぜて1つの話にしない。
+  - 固有名詞・製品名・CVE番号は原文のまま。英語の技術用語は意味で訳す(root = root権限)。
 - why_it_matters は業界評論にしない。「議論が高まっている」等の一般論ではなく、
   読者プロフィールの人が明日の仕事・設計・学習で何を変えるか、何を知るべきかを書く。
 - importance は絶対基準で付ける(相対評価で全部を4に寄せない):
   5=対応や方針変更を迫られる / 4=近く影響しうる / 3=知っておくとよい / 2=関心があれば / 1=雑学
-  1カテゴリ5件のうち5は多くて1件。該当なしなら0件でよい。
+  1カテゴリで5は多くて1件(選定方針に別の上限があればそれに従う)。該当なしなら0件でよい。
 - 「注目度」(はてブ数/HNポイント)はコミュニティでの話題度の実測値。選定とimportanceで重視する。
   ただし注目度が無い記事(公式ブログ・注意喚起)が重要でないわけではない。
 - 広告や内容の薄い記事は無視してよい。該当が少なければtopicsを無理に埋めない。
@@ -283,6 +292,7 @@ HIGHLIGHT_SYSTEM = """あなたは日本語のテクノロジーニュース編�
 ルール:
 - 出力は必ず pick_highlights ツールの呼び出しのみで行うこと。
 - ref には入力に書かれている参照IDをそのまま使うこと。新しく作らない。
+- **同じ出来事を扱うトピックが複数カテゴリにあれば、1件だけ選ぶこと。**
 - **同一カテゴリから3件以上選ばないこと。** セキュリティやAIは件数が多くなりがちだが、
   最大2件に絞り、残りは他カテゴリから選ぶ。読者が1日の全体像を掴めることを優先する。
 - reason は「なぜ今日これを読むべきか」を読者目線で1文で書くこと。
@@ -573,7 +583,7 @@ def _age_label(article: Article, now: Optional[datetime] = None) -> str:
 
 def _build_digest_prompt(
     label: str, articles: list[Article], recent_headlines: Optional[list[str]] = None,
-    focus: Optional[str] = None,
+    focus: Optional[str] = None, taken_today: Optional[list[str]] = None,
 ) -> str:
     now = datetime.now(timezone.utc)
     lines = [f"以下は「{label}」カテゴリの記事一覧です(新しい順)。\n"]
@@ -592,6 +602,10 @@ def _build_digest_prompt(
         # URLが違えば除外が効かないため、同じ出来事の再掲はここで防ぐ
         lines.append("\n直近の号で既に取り上げた見出し(重複を避けるため):")
         lines.extend(f"- {h}" for h in recent_headlines)
+    if taken_today:
+        # 同じ出来事が別カテゴリの記事として届くことがある(The Decoder と BleepingComputer 等)
+        lines.append("\n今日すでに他のカテゴリで扱った見出し(同じ出来事はこのカテゴリでは扱わない):")
+        lines.extend(f"- {h}" for h in taken_today)
     return "\n".join(lines)
 
 
@@ -631,6 +645,7 @@ def summarize_category(
     quick_hit_count: int = 5,
     recent_headlines: Optional[list[str]] = None,
     reader_profile: Optional[str] = None,
+    taken_today: Optional[list[str]] = None,
 ) -> CategoryDigest:
     result = CategoryDigest(
         id=category["id"], label=category["label"], article_count=len(articles)
@@ -650,7 +665,8 @@ def summarize_category(
             model_id,
             with_reader(DIGEST_SYSTEM, reader_profile),
             _build_digest_prompt(
-                category["label"], articles, recent_headlines, category.get("focus")
+                category["label"], articles, recent_headlines, category.get("focus"),
+                taken_today,
             ),
             _digest_tool(topic_count, quick_hit_count),
         )
