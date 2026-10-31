@@ -1,20 +1,20 @@
 {
   "date": "2026-10-31",
-  "generated_at": "2026-10-31 14:46 JST",
-  "lead": "",
+  "generated_at": "2026-10-31 14:53 JST",
+  "lead": "AIと高性能チップの供給制約が戦略的な選択肢を狭め、セキュリティ脅威も多層化している。実務判断には技術的な深い理解と事業リスク認識の両立が必須。",
   "highlights": [
     {
       "category_id": "security",
       "category_label": "セキュリティ",
-      "reason": "Linux カーネルの認証なしリモート根取得脆弱性は、AWS EC2 や自社インフラへの直接的な脅威であり、パッチ適用までの時間が被害を左右する最優先事項。",
+      "reason": "TCP接続を受けるLinuxサーバのリモートroot攻撃が現実化しており、Terraform/Pythonで構築するAWS環境の緊急パッチが急務。",
       "topic": {
-        "headline": "Linuxカーネル脆弱性CVE-2026-98432、MPTCP認証なしでリモート根取得—修正版へのアップデート急務",
-        "summary": "IPv4 TCP処理のuse-after-freeで、認証なしにネットワーク経由からリモート根取得が可能。MPTCP対応サーバが対象。piyologが詳細解析。",
-        "why_it_matters": "AWSやオンプレのLinuxサーバを運用中なら、カーネルパッチの適用を最優先に。MPTCP有効化環境では即座の対応が必須。",
+        "headline": "Linux kernel CVE-2026-98432、リモートroot攻撃可能—MPTCP対応サーバが対象",
+        "summary": "IPv4 TCP 処理の use-after-free 脆弱性。認証不要でネットワーク経由から攻撃可能。MPTCP サーバへのリモート root 取得につながるおそれがある。",
+        "why_it_matters": "AWS EC2 や VPS など TCP 接続を受ける Linux サーバに影響する。アップデートの適用状況をすぐ確認し、該当環境があれば迅速に対応が必要。",
         "tags": [
-          "Linux",
-          "脆弱性",
-          "根取得"
+          "Linux kernel",
+          "RCE",
+          "use-after-free"
         ],
         "importance": 5,
         "sources": [
@@ -34,17 +34,17 @@
     {
       "category_id": "security",
       "category_label": "セキュリティ",
-      "reason": "Cursor や VS Code の AI 拡張機能からのバックドア検出は、あなたが日々の開発で使用する環境そのものが侵害されるリスクであり、認証情報保護の即座の行動に直結。",
+      "reason": "Cursorなどの開発ツール拡張機能経由でSSH鍵が盗取される事例が出現し、CI/CDパイプラインや開発環境のセキュリティ前提が変わった可能性がある。",
       "topic": {
-        "headline": "Cursor経由のClaude Code拡張機能にSSHバックドア、Anthropic VS Codeにも同様の不正コード確認",
-        "summary": "Cursor開発環境のClaudeコード生成拡張にSSHバックドアが埋め込まれていた。約12時間悪用状態。Anthropic提供のVS Code拡張にも同様の問題。",
-        "why_it_matters": "Cursor/VS CodeでAIアシスタント使用中なら、開発環境にバックドアが設置されたリスクを想定。認証情報やプライベートキーの露出防止、アクセスログ確認を。",
+        "headline": "Cursor の AI 拡張機能にバックドア、SSH 鍵窃取—Anthropic Claude Code 影響",
+        "summary": "Claude Code for VS と Cursor 公式拡張に悪意のあるコード。SSH バックドア設置。12 時間の運用後に削除。",
+        "why_it_matters": "開発環境の拡張機能は高い権限で実行される。AI コード補助ツール使用時は定期的に拡張機能の真正性と動作ログを確認。公式配布チャネルでも改ざん可能性がある。",
         "tags": [
-          "AI",
           "バックドア",
-          "開発環境"
+          "開発環境",
+          "SSH鍵"
         ],
-        "importance": 5,
+        "importance": 4,
         "sources": [
           {
             "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
@@ -66,24 +66,24 @@
       }
     },
     {
-      "category_id": "ai",
-      "category_label": "AI・LLM",
-      "reason": "エージェント実運用での成功要因が「技術以外の要因」にあるという指摘は、Terraform + AI 統合設計の段階で「システムと組織の整合性チェック」という新しい設計責任を示唆しており、実務判断を大きく変える。",
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "GPU調達がNvidia支配により一択に近づき、AI時代のエンジニアが複数ベンダー戦略を検討できなくなる構造的リスクが顕在化している。",
       "topic": {
-        "headline": "AIエージェント実運用の成否を分ける『技術以外の要因』——成果企業の共通点が明らかに",
-        "summary": "INDUSTRIAL-X調査によると、AIエージェントの実運用が主流化する一方で、企業規模による成果差が拡大。成果を分ける要因は技術スタック以外にあり、組織設計や意思決定フローが鍵となっている。",
-        "why_it_matters": "単にエージェント導入では成果が出ず、自社の意思決定体制・プロセス設計を同時に見直す必要がある。設計判断の段階で、システムと組織の整合性をチェックするチェックリストが必要になる。",
+        "headline": "Intel株価急落で政府ファンドが120億ドル損失——Nvidia支配が加速",
+        "summary": "Intel の株価急落により、米政府の保有株価値が約120億ドル減少した。AI インフラ領域での Nvidia 独占が強化される。",
+        "why_it_matters": "GPU調達が複数ベンダー選択肢の消滅により戦略的リスクを高めます。Nvidia 依存回避の代替案やマルチベンダー戦略の検討が急務です。",
         "tags": [
-          "AIエージェント",
-          "組織設計",
-          "実運用"
+          "Intel",
+          "Nvidia",
+          "インフラ競争"
         ],
         "importance": 4,
         "sources": [
           {
-            "title": "AIエージェントは「実運用」が主流に　「明確な成果」を得る企業の共通点は？",
-            "url": "https://www.itmedia.co.jp/enterprise/articles/2610/31/news008.html",
-            "source": "ITmedia エンタープライズ"
+            "title": "Intel’s stock crashes, knocking $12B from government’s stake",
+            "url": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
+            "source": "TechCrunch"
           }
         ]
       }
@@ -91,15 +91,15 @@
     {
       "category_id": "dev",
       "category_label": "開発・エンジニアリング",
-      "reason": "自動化ツール全盛時代に『なぜそう設定するのか』を学ぶ習慣を失うと、インシデント対応力と設計判断力が低下するという警告は、あなたの5年後のキャリア価値を守る上で今から再設計が必須。",
+      "reason": "自動化ツール依存によるスキル低下は、AI時代にブラックボックス化を避けるSRE職の学習姿勢として読者のキャリアに直結する課題。",
       "topic": {
-        "headline": "AI時代のSRE/DevOpsは「脱スキル化」の危機にある",
-        "summary": "生成AIが運用タスクを自動化する一方で、プロフェッショナルが深い専門知識を失いやすくなる。キャリアパス（エンジニアリング・マネージャー・スペシャリスト）の中間段階が消滅する懸念が業界で議論されている。",
-        "why_it_matters": "運用自動化ツール（Terraform、CloudFormation等）を導入する際、AIに丸投げせず「なぜそう設定するのか」を学ぶ習慣を意識的に続けないと、インシデント対応力が低下する。自分の5年後のスキルセット構成を今から再設計する時期。",
+        "headline": "AI時代のSRE職が『スキル低下』の危機—実装レベルの深い知識が失われる",
+        "summary": "AIツール普及がSRE職のスキルを浅くしている。エンジニアが複雑な問題を自力で解く機会が減り、長期的なキャリア形成に支障が出ている可能性。",
+        "why_it_matters": "自動化ツールに頼りすぎると、基礎知識の習得や問題解決能力が衰退する。クラウド・IaC時代のエンジニアには『ブラックボックス化を避ける』という学習姿勢が不可欠。",
         "tags": [
-          "キャリア",
-          "スキル",
-          "エンジニアリング組織"
+          "AI",
+          "SRE",
+          "スキル"
         ],
         "importance": 4,
         "sources": [
@@ -108,86 +108,80 @@
             "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
             "source": "Hacker News",
             "popularity": "548 points"
-          },
-          {
-            "title": "Presentation: The Ladder Is Missing Rungs: Engineering Progression When AI Ate the Middle",
-            "url": "https://www.infoq.com/presentations/ai-software-engineering-pipeline/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
-            "source": "InfoQ"
           }
         ]
       }
     },
     {
-      "category_id": "general",
-      "category_label": "一般ニュース",
-      "reason": "北朝鮮エリートハッカーによる高度な攻撃が現実化している中、AWS 認証情報・Terraform 状態管理・ネットワークセグメンテーションが防御の最後の砦になるという重要性が浮き彫りになる。",
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "GitHub Actionsがロックファイル方式に移行し、Terraformと同じCI/CD再現性パラダイムが標準化されつつあり、IaC時代の必須知識になる。",
       "topic": {
-        "headline": "北朝鮮『エリート』ハッカーがBinance大規模攻撃の主犯格か",
-        "summary": "北朝鮮のハッカー集団が大手仮想通貨取引所Binanceへの大規模攻撃で最有力容疑者に。北朝鮮はランサムウェアやNFT詐欺でも資金獲得を続けています。",
-        "why_it_matters": "クラウド・API・ウォレット連携のシステムが国家級脅威にさらされている現実。あなたが扱うAWSやTerraforformのクレデンシャル管理・ネットワークセグメンテーション・ログ分析が、こうした高度な脅威に対する最後の砦になります。",
+        "headline": "GitHub Actions、vers指定から『ロックファイル方式』へ——依存管理の進化",
+        "summary": "actions.lockでアクション依存を固定化。従来のバージョン指定より安全かつ再現性が高い。",
+        "why_it_matters": "Terraformのロックファイル管理と同じパラダイムがCI/CDにも波及。IaC時代のエンジニアとしてCI/CDパイプラインの『再現性』維持に必須の知識。",
         "tags": [
-          "セキュリティ",
-          "暗号資産",
-          "国家級脅威"
+          "GitHub",
+          "CI/CD",
+          "ベストプラクティス"
         ],
-        "importance": 4,
+        "importance": 3,
         "sources": [
           {
-            "title": "Why North Korea's 'elite' hackers are the prime suspect in major Binance hack",
-            "url": "https://www.bbc.co.uk/news/articles/ck9dz3v7z7v3o?at_medium=RSS&at_campaign=rss",
-            "source": "BBC News"
+            "title": "GitHub Actions で checkout@v7 のようなバージョン指定を書くのはやめよう！ 時代は actions.lock！",
+            "url": "https://zenn.dev/progate/articles/24b1140180300c",
+            "source": "Zenn トレンド",
+            "popularity": "107 いいね"
           }
         ]
       }
     }
   ],
   "deep_dive": {
-    "category_id": "ai",
-    "category_label": "AI・LLM",
-    "headline": "Claude Enterprise、AIの費用対効果を見える化する新機能で運用課題を解決",
+    "category_id": "dev",
+    "category_label": "開発・エンジニアリング",
+    "headline": "AI時代のSRE職が『スキル低下』の危機—実装レベルの深い知識が失われる",
     "sources": [
       {
-        "title": "AIの「費用対効果が分からない」問題、解決へ？　Claude Enterprise搭載の「3つの新機能」",
-        "url": "https://www.itmedia.co.jp/enterprise/articles/2610/31/news009.html",
-        "source": "ITmedia エンタープライズ"
+        "title": "AI isn't replacing SREs, it's deskilling them",
+        "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
+        "source": "Hacker News",
+        "popularity": "548 points"
       }
     ],
-    "background": "AI導入は急速に進む一方で、IT部門は投資効果の測定と説得が難しい状況にある。特にクラウド環境でのAI統合では、インフラコストとAI利用コストが絡み、どこまでが削減効果か判別しづらい。これがプロジェクト継続判断を曖昧にしていた。",
+    "background": "SREは複雑なシステムの可用性・パフォーマンス・スケーラビリティを担当する職種だが、ChatGPTなどのAIツールの普及により「問題を説明してAIに解かせる」ワークフローが標準化しつつある。その結果、ネットワーク・ストレージ・カーネル・コンテナランタイムなどインフラの実装レベルの知識習得機会が失われ、スキルが浅層化するリスクが指摘されている。",
     "concepts": [
       {
-        "term": "費用対効果の可視化",
-        "explanation": "AI利用にかかった総コストと、それによって得られた成果（業務時間削減・品質向上等）を数値で対応付けることで、ROIや採算ラインを明確にする取り組み。"
+        "term": "スキル低下（deskilling）",
+        "explanation": "ツールに頼りすぎることで、実装の詳細や原理を理解する能力が低下し、カンの良さやデバッグ直感が働かなくなる状態。短期的には生産性が上がるが、未知の問題への対応力が大幅に落ちる。"
       },
       {
-        "term": "利用状況の監視・分析ツール",
-        "explanation": "Claude Enterprise などのサービスで、誰が・どの機能を・どの程度使ったか、その結果コストがいくら発生したかをリアルタイムに追跡するダッシュボードやレポート機能。"
+        "term": "ブラックボックス化",
+        "explanation": "自動生成コードやAIの判断理由を『正しいから使う』と、内部動作を理解せずに信頼すること。クラウド・Terraform環境では見えない部分が多く、それを放置するとトラブル時に原因特定ができなくなる。"
       },
       {
-        "term": "予算配分の最適化",
-        "explanation": "複数のプロジェクトやチーム間でAI利用コストを公平に割り当て、効果の高い用途に優先投資する意思決定プロセス。"
+        "term": "実装レベルの知識",
+        "explanation": "ドキュメントに書かれた『何をするか』ではなく、システムがなぜそう動くのか、メモリ・CPU・ネットワークレイヤーでどう働いているかを理解すること。AIが言ったことの是非を判断できる基礎知識。"
       }
     ],
-    "for_you": "Terraform で構築したAI統合基盤では、EC2やLambda のコストと Claude API 呼び出し料は別々に発生し、経営層への説得が困難だった。新機能で利用量と成果の相関を示せれば、「AI実験→本運用」の段階的投資判断が根拠を持てるようになり、予算承認が取りやすくなる。",
-    "try_this": "この週は、Terraform 環境下での Claude 利用（呼び出し数・トークン消費・レスポンス時間）のメトリクスを AWS CloudWatch に集約し、単純な集計シートを作ってみる。新機能が提供するデータ構造を想定して、社内で説得に使える「月額コスト vs 削減時間」の対比表を試作してみる。",
-    "questions": [
-      "あなたの現在のAIプロジェクトでは、経営層にどんな指標があれば投資継続の判断ができると考えているか？",
-      "Terraform 環境で LLM コストを既存のリソースコストから分離して追跡する仕組みを持っているか？"
-    ]
+    "for_you": "Terraform + Pythonでインフラを書くあなたは、AWS CLIやBotoコマンドの『実行結果が何を意味するか』を生成AIに聞く前に、CloudFormationの実装や IAM評価ロジックを一度は手で追った経験がキャリアの土台になる。そうした基礎がなければ、本番障害時に『AIが推奨した設定は本当に安全か』という判断ができず、ビジネスリスクを高めてしまう。",
+    "try_this": "今週中に、最近ChatGPTやClaudeで自動生成・修正してもらったTerraformコード1つを選び、そのリソース定義が実際のAWS APIではどう解釈されるか公式ドキュメントで確認してみる。特に security_group や iam_policy の論理を手で追うと、AIが生成した条件の穴が見える。",
+    "questions": []
   },
   "categories": [
     {
       "id": "ai",
       "label": "AI・LLM",
-      "overview": "Claude Enterprise が運用費の見える化に本腰を入れ、AIエージェントは「成果を出す企業」の条件が明確化。セキュリティ面ではClaude系の拡張機能リスクと大型懸賞金による脅威情報収集が注目。",
+      "overview": "生成AIの実運用が本格化する一方、AIエージェントのセキュリティ脅威が現実化。Claudeの新機能で費用対効果の見える化が進み、多言語でのバイアス問題も浮かぶ。",
       "topics": [
         {
-          "headline": "Claude Enterprise、AIの費用対効果を見える化する新機能で運用課題を解決",
-          "summary": "Anthropicが Claude Enterprise に搭載した3つの新機能で、AIプロジェクトの採算性が可視化される。従来は導入後の実効性測定が困難だった課題に直面するが、新しい監視・分析ツールでコスト削減と成果の関連付けが可能に。",
-          "why_it_matters": "Terraform 環境にAIを組み込む際、採算ライン達成までのコスト予測と効果測定がしやすくなる。社内稟議や予算配分の説得力が向上し、実験段階から本運用への判断が下しやすくなる。",
+          "headline": "Claude Enterpriseが費用対効果を可視化—3つの新機能で投資判断を支援",
+          "summary": "Anthropicは「費用対効果が分からない」という企業のAI導入課題に対応する新機能を3つ搭載したClaudeを発表。投資ROIの判断が立てやすくなる見通し。",
+          "why_it_matters": "企業のAI導入では意思決定者が「効果測定が曖昧」で予算化をためらう場面が多い。新機能で数字に基づく説得力が出れば、社内提案や経営層への報告書の質が上がり、承認速度が加速する可能性がある。",
           "tags": [
-            "Claude",
-            "運用コスト",
-            "可視化"
+            "LLM",
+            "エンタープライズ",
+            "ROI"
           ],
           "importance": 4,
           "sources": [
@@ -199,13 +193,50 @@
           ]
         },
         {
-          "headline": "AIエージェント実運用の成否を分ける『技術以外の要因』——成果企業の共通点が明らかに",
-          "summary": "INDUSTRIAL-X調査によると、AIエージェントの実運用が主流化する一方で、企業規模による成果差が拡大。成果を分ける要因は技術スタック以外にあり、組織設計や意思決定フローが鍵となっている。",
-          "why_it_matters": "単にエージェント導入では成果が出ず、自社の意思決定体制・プロセス設計を同時に見直す必要がある。設計判断の段階で、システムと組織の整合性をチェックするチェックリストが必要になる。",
+          "headline": "LLMの性格は言語で変わる—中国大学の実験が文化バイアスを実証",
+          "summary": "中国科学技術大学の研究で、AIの性格診断結果が言語の切り替えによって大きく変わることが判明。多言語対応のAIにおける文化的バイアスの存在が改めて示された。",
+          "why_it_matters": "グローバルなAI活用では言語ごとに挙動が異なる可能性を認識する必要がある。特に多言語システムの設計やテストの際に、単一言語でのテストだけでは十分な品質保証ができず、言語別の性格偏りを確認するテストケースが必要になる。",
+          "tags": [
+            "LLM",
+            "バイアス",
+            "多言語"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AIに性格診断をやらせてみたところ言語を切り替えると結果が変わることが判明",
+              "url": "https://gigazine.net/news/20261031-ai-personality-profile-language-bias/",
+              "source": "はてブ テクノロジー",
+              "popularity": "6 users"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAI、ChatGPT 80万件超のログ分析—実仕事での具体的な使われ方を公開",
+          "summary": "OpenAIがChatGPTの実運用ログ80万件以上を分析し、誰がどんな仕事でChatGPTを使っているかを集計。実務への浸透度が数字で明かされた。",
+          "why_it_matters": "ログ分析から自分の業務と類似したユースケースを見つければ、導入後の効率化がより具体的に見通せる。自社での試用期間の効果測定にもベンチマークになり、費用対効果の判断材料になる。",
+          "tags": [
+            "ChatGPT",
+            "実運用",
+            "ユースケース"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "ChatGPTは「誰のどんな仕事」に使われているのか　OpenAIが80万件超のログを解析",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2610/31/news012.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "AIエージェント「実運用が主流に」—成果を分ける非技術要因が浮上",
+          "summary": "生成AIの活用が「試す」から「使い広げる」段階へ進み、AIエージェントも実運用が主流化。同時に企業規模による成果格差が拡大し、技術以外の要因が成否を分けることが調査で判明。",
+          "why_it_matters": "エージェント導入で『うまくいく企業』と『そうでない企業』の差が技術ではなく、組織・プロセス・人の側にある可能性が高い。自社での導入計画では、ツール選びより『実運用のための体制づくり』に意識を向ける必要がある。",
           "tags": [
             "AIエージェント",
-            "組織設計",
-            "実運用"
+            "実運用",
+            "組織"
           ],
           "importance": 4,
           "sources": [
@@ -217,99 +248,78 @@
           ]
         },
         {
-          "headline": "Claude が脳手術を自律判断で実行——人間の意思決定抜きの医療応用で倫理線引き問題に直面",
-          "summary": "DecoderがClaudeの自律的な遺伝子治療選択と脳手術実行を報道。AIが医療現場で人間の承認なく処置決定する事例が実現し、安全性と倫理的判断の基準が問われている。",
-          "why_it_matters": "AIの自律判断能力の上昇で、設計の責任分界点が曖昧になる。エージェント構築時に『ここまでは自動化、ここからは人間確認』の明確なルール設定が必須になる。医療以外の業務でも同じ問題が生じる可能性。",
+          "headline": "Dartmouth学長補佐、AI使用を指摘されて職失う—大学が自ら警告した規則に違反",
+          "summary": "AIチート警告を自ら出していたDartmouthの学長補佐が、職務でAIを使い方針違反が指摘され職を失った。大学内のAI使用ガバナンスが実例で問われた。",
+          "why_it_matters": "組織がAI使用ポリシーを作る際、経営層・管理職が『自分たちは例外』と考えると方針は浸透しない。ルール遵守の説得力は『全員が守るか、全員が同じ判断基準か』の一貫性で決まる。ガバナンス設計の教訓事例。",
           "tags": [
-            "自律性",
-            "倫理",
-            "責任分界"
+            "ガバナンス",
+            "AI利用",
+            "組織文化"
           ],
-          "importance": 4,
+          "importance": 3,
           "sources": [
             {
-              "title": "A Claude model autonomously chose a gene therapy and operated on a mouse brain with no human decision-making",
-              "url": "https://the-decoder.com/a-claude-model-autonomously-chose-a-gene-therapy-and-operated-on-a-mouse-brain-with-no-human-decision-making/",
-              "source": "The Decoder"
-            }
-          ]
-        },
-        {
-          "headline": "Cursor マーケットプレイスで悪意ある Claude Code 拡張機能が流通——遠隔アクセス・データ盗聴の脅威",
-          "summary": "Cursor の公式マーケットプレイスで、不正なリモートアクセスとデータ盗聴を試みる Claude Code 拡張機能が検出・削除された。開発ツール経由のエコシステム侵害が現実化。",
-          "why_it_matters": "IDE拡張機能を通じたセキュリティ侵害は、開発環境全体（AWS認証情報、ローカルスクリプト、リポジトリアクセス）を危険にさらす。マーケットプレイス依存度が高まる中、拡張機能の検証プロセスを個別に構築する必要がある。",
-          "tags": [
-            "セキュリティ",
-            "サプライチェーン",
-            "IDE拡張"
-          ],
-          "importance": 5,
-          "sources": [
-            {
-              "title": "Malicious Claude Code extension in Cursor's marketplace attempted remote access and data theft",
-              "url": "https://the-decoder.com/malicious-claude-code-extension-in-cursors-marketplace-attempted-remote-access-and-data-theft/",
-              "source": "The Decoder"
-            }
-          ]
-        },
-        {
-          "headline": "GLM 5.3 がオープンウェイト化で Firefox ゼロデイをゼロから自動生成——セキュリティ対応能力が競争軸に",
-          "summary": "オープンウェイトモデル GLM 5.3 が 48 時間以内に Firefox の完全なエクスプロイトチェーンを人間の支援なく構築。AIの攻撃自動化能力が脆弱性対応のスピード競争を加速させている。",
-          "why_it_matters": "AIがゼロデイ発見・エクスプロイト生成を数時間で行う時代に、パッチ適用の『遅れ』が即座に被害につながる。Cloud インフラの脆弱性スキャン・自動パッチ戦略を、秒単位の検出・対応フローに変更する必要がある。",
-          "tags": [
-            "ゼロデイ",
-            "自動化攻撃",
-            "パッチ対応"
-          ],
-          "importance": 5,
-          "sources": [
-            {
-              "title": "Open-weight model GLM 5.3 built full Firefox exploit chains with zero human input in under 48 hours",
-              "url": "https://the-decoder.com/open-weight-model-glm-5-3-built-full-firefox-exploit-chains-with-zero-human-input-in-under-48-hours/",
-              "source": "The Decoder"
+              "title": "Dartmouth's provost warned us about AI cheating—but his own AI use cost him his job",
+              "url": "https://arstechnica.com/tech-policy/2026/10/dartmouths-provost-warned-us-about-ai-cheating-but-his-own-ai-use-cost-him-his-job/",
+              "source": "Ars Technica"
             }
           ]
         }
       ],
       "quick_hits": [
         {
-          "title": "ChatGPTは「誰のどんな仕事」に使われているのか　OpenAIが80万件超のログを解析",
-          "url": "https://www.itmedia.co.jp/enterprise/articles/2610/31/news012.html",
-          "source": "ITmedia エンタープライズ",
-          "note": "OpenAI が ChatGPT 80万件超のログを解析。実務での使用パターン（職種・タスク別）が明らかに。自社での活用方針検討の参考データ。"
-        },
-        {
-          "title": "GMOがサイバー攻撃情報に異例の1.5億円懸賞金、AI時代の新防衛策となるのか",
-          "url": "https://monoist.itmedia.co.jp/mn/articles/2610/31/news013.html",
-          "source": "ITmedia AI+",
-          "note": "GMO が サイバー攻撃情報に 1.5 億円の懸賞金。AI 時代の脅威情報収集が金銭的インセンティブ駆動に。民間による防衛基盤の構築が加速。"
+          "title": "A Claude model autonomously chose a gene therapy and operated on a mouse brain with no human decision-making",
+          "url": "https://the-decoder.com/a-claude-model-autonomously-chose-a-gene-therapy-and-operated-on-a-mouse-brain-with-no-human-decision-making/",
+          "source": "The Decoder",
+          "note": "Claudeが自律的に遺伝子療法を選択し、マウス脳手術を無人実行—AI医療判断の能力と倫理課題の両立が問われ始めた。"
         },
         {
           "title": "人間と区別できないほど自然に会話できる音声AI「Prism」が登場、発言内容を事前確認できる仕組みを搭載",
           "url": "https://gigazine.net/news/20261030-prism/",
           "source": "GIGAZINE",
-          "note": "音声 AI「Prism」が登場、発言内容の事前確認機能を搭載。生成内容の可視化・制御が音声インターフェースにも波及。"
+          "note": "音声AI「Prism」が人間レベルの自然さで会話、発言事前確認で誤情報対策—検索やカスタマーサポート用途での導入が加速。"
+        },
+        {
+          "title": "Xで話題の、原文をたどってドメイン知識を集めるスキル「imozuru」を普通のAI検索と比べてみた",
+          "url": "https://qiita.com/inoyu-qiita/items/4fc91ba7f67d6763960e",
+          "source": "Qiita 人気",
+          "popularity": "40 LGTM",
+          "note": "ドメイン知識を原文から集める検索スキル『imozuru』、通常のAI検索より精度向上—Qiitaで話題、学習効果が高い。"
+        },
+        {
+          "title": "実際に試したClaude便利術20選 まとめ",
+          "url": "https://qiita.com/N-Kyo/items/bf4a3a2185db2d28eee5",
+          "source": "Qiita 人気",
+          "popularity": "35 LGTM",
+          "note": "Terraform構成図からClaudeで攻撃面分析するTips集—サブエージェント並列レビューでセキュリティ指摘を自動化、トークン削減法も実装例付き。"
+        },
+        {
+          "title": "AI の謎な説明文を直すスキル",
+          "url": "https://zenn.dev/microsoft/articles/explain-before-shorten",
+          "source": "Zenn トレンド",
+          "popularity": "260 いいね",
+          "note": "AI生成文の謎な説明文を修正するスキル、Zennで260いいね—プロンプト工夫で出力品質が実測で上がる具体例。"
         }
       ],
       "ok": true,
       "error": null,
-      "article_count": 68,
+      "article_count": 71,
       "dropped_topics": 0,
       "truncated": false
     },
     {
       "id": "security",
       "label": "セキュリティ",
-      "overview": "重大な脆弱性が相次ぎ悪用確認されている。Linuxカーネルのリモート根取得、GitLabの整数オーバーフロー、PHP脆弱性がPalo Altoファイアウォールを攻撃するなど、広く使われる製品が攻撃の標的に。一方、Scribd・Binance・Applebeeなど大規模情報漏洩事案も報告されている。",
+      "overview": "Linux kernel の use-after-free 脆弱性、Scribd 大規模侵害、複数の VPN/セキュリティ製品が攻撃対象に。企業向け管理プラットフォームやメール配信サービスの不正アクセスが相次ぎ、国内でも情報流出インシデントが多発している。",
       "topics": [
         {
-          "headline": "Linuxカーネル脆弱性CVE-2026-98432、MPTCP認証なしでリモート根取得—修正版へのアップデート急務",
-          "summary": "IPv4 TCP処理のuse-after-freeで、認証なしにネットワーク経由からリモート根取得が可能。MPTCP対応サーバが対象。piyologが詳細解析。",
-          "why_it_matters": "AWSやオンプレのLinuxサーバを運用中なら、カーネルパッチの適用を最優先に。MPTCP有効化環境では即座の対応が必須。",
+          "headline": "Linux kernel CVE-2026-98432、リモートroot攻撃可能—MPTCP対応サーバが対象",
+          "summary": "IPv4 TCP 処理の use-after-free 脆弱性。認証不要でネットワーク経由から攻撃可能。MPTCP サーバへのリモート root 取得につながるおそれがある。",
+          "why_it_matters": "AWS EC2 や VPS など TCP 接続を受ける Linux サーバに影響する。アップデートの適用状況をすぐ確認し、該当環境があれば迅速に対応が必要。",
           "tags": [
-            "Linux",
-            "脆弱性",
-            "根取得"
+            "Linux kernel",
+            "RCE",
+            "use-after-free"
           ],
           "importance": 5,
           "sources": [
@@ -326,15 +336,64 @@
           ]
         },
         {
-          "headline": "GitLabクリティカル脆弱性CVE-2026-97229、Ruby依存で被害拡大—オンプレミス環境も対象",
-          "summary": "整数オーバーフロー脆弱性がRuby由来。CISA KEVで悪用確認済。GitLabのほかRuby利用環境全般が影響を受けるリスク。",
-          "why_it_matters": "Terraformスクリプト管理やCI/CDでGitLab使用なら、9月以降のアップデートを確認し適用を。Ruby環境の脆弱性点検も必要。",
+          "headline": "Scribd 大規模侵害、複数サービス影響—10月26日に通知",
+          "summary": "Scribd、SlideShare、Everand、Fable を傘下に持つ親会社 Scribd, Inc. が侵害を確認。詳細は調査中。",
+          "why_it_matters": "これらサービスのユーザーは今後の被害情報に注視し、パスワード変更などの対応が必要になる可能性がある。",
           "tags": [
-            "GitLab",
-            "脆弱性",
-            "悪用確認"
+            "Scribd",
+            "侵害",
+            "多数ユーザー"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Tell HN: Scribd Breached",
+              "url": "https://news.ycombinator.com/item?id=50312756",
+              "source": "Hacker News",
+              "popularity": "104 points"
+            }
+          ]
+        },
+        {
+          "headline": "Ivanti Connect Secure、CISA KEV に追加脆弱性 2 件登録—連鎖攻撃確認",
+          "summary": "CVE-2026-118527(予測可能な数値生成)と CVE-2026-111357(認証不足)。両者とも悪用確認済み。複数脆弱性を組み合わせた連鎖攻撃も観測されている。",
+          "why_it_matters": "VPN 製品の脆弱性は侵害の入口になりやすい。Connect Secure 環境がある場合は、修正版アップデートの適用状況を確認し、緊急度の高い対応が必要。",
+          "tags": [
+            "Ivanti",
+            "VPN",
+            "悪用確認済"
           ],
           "importance": 5,
+          "sources": [
+            {
+              "title": "「Ivanti Connect Secure」に追加脆弱性2件 - 連鎖攻撃を確認",
+              "url": "https://www.security-next.com/192205",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "CVE-2026-118527: Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118527",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-111357: Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111357",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "GitLab CVE-2026-97229、原因は依存ライブラリ Ruby—修正版公開",
+          "summary": "整数オーバーフロー脆弱性。CISA KEV に登録され悪用確認済み。Ruby の利用環境も影響を受けるおそれがある。",
+          "why_it_matters": "GitLab は内部システム・CI/CD で多用されるツール。自組織で使っている場合は早急にアップデート。Ruby 依存関係のある他システムもチェック必要。",
+          "tags": [
+            "GitLab",
+            "整数オーバーフロー",
+            "Ruby"
+          ],
+          "importance": 4,
           "sources": [
             {
               "title": "CISA says max severity GitLab flaw now exploited in the wild",
@@ -355,15 +414,85 @@
           ]
         },
         {
-          "headline": "Cursor経由のClaude Code拡張機能にSSHバックドア、Anthropic VS Codeにも同様の不正コード確認",
-          "summary": "Cursor開発環境のClaudeコード生成拡張にSSHバックドアが埋め込まれていた。約12時間悪用状態。Anthropic提供のVS Code拡張にも同様の問題。",
-          "why_it_matters": "Cursor/VS CodeでAIアシスタント使用中なら、開発環境にバックドアが設置されたリスクを想定。認証情報やプライベートキーの露出防止、アクセスログ確認を。",
+          "headline": "PHP CVE-2026-109618・109619（PHP2Shell）、Palo Alto ファイアウォール攻撃で悪用—企業対応ガイド公開",
+          "summary": "メモリ破壊と stale request-state 脆弱性。賞金付き公開競技「Steal My Bitcoin」で実証。Palo Alto ファイアウォールへの攻撃で root 権限取得。修正版公開済み。",
+          "why_it_matters": "PHP 環境のサーバ管理者は早急にパッチ適用。IPA・JPCERT も注意喚起を出している。Palo Alto ファイアウォールを運用している場合は追加の監視が必要。",
           "tags": [
-            "AI",
-            "バックドア",
-            "開発環境"
+            "PHP",
+            "root取得",
+            "IDS/IPS"
           ],
-          "importance": 5,
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Patch now: PHP2Shell, Brotli, and eMudhra guidance for customers",
+              "url": "https://www.microsoft.com/en-us/msrc/blog/2026/10/patch-now-php2shell-brotli-emudhra-guidance-for-customers",
+              "source": "はてブ テクノロジー",
+              "popularity": "13 users"
+            },
+            {
+              "title": "注意喚起: PHPにおける複数の脆弱性（CVE-2026-109618、CVE-2026-109619）に関する注意喚起  (更新)",
+              "url": "https://www.jpcert.or.jp/at/2026/at260033.html",
+              "source": "JPCERT/CC"
+            },
+            {
+              "title": "PHP2Shellの賞金付き公開競技「Steal My Bitcoin」についてまとめてみた",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/10/28/172044",
+              "source": "piyolog"
+            },
+            {
+              "title": "更新：PHPの脆弱性対策について(CVE-2026-109618、CVE-2026-109619：PHP2shell)",
+              "url": "https://www.ipa.go.jp/security/security-alert/2026/alert20261022.html",
+              "source": "IPA security"
+            },
+            {
+              "title": "CVE-2026-109618: PHP Memory Corruption Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109618",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-109619: PHP Stale Internal Request-State Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109619",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Binance 約 1 兆円流出、北朝鮮ハッカー「TraderTraitor」が関与か",
+          "summary": "暗号資産取引所 Binance から多額の仮想通貨が流出。北朝鮮系ハッカー集団 TraderTraitor の犯行と報道されている。",
+          "why_it_matters": "大規模な暗号資産盗難事例。攻撃手法は一般企業のセキュリティ検討にも参考になる。北朝鮮系集団の活動動向を知る必要がある。",
+          "tags": [
+            "暗号資産",
+            "北朝鮮",
+            "内部不正"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Binanceの約1兆円流出、北朝鮮ハッカー集団「TraderTraitor」の犯行か",
+              "url": "https://www.itmedia.co.jp/news/article/2610/31/2000002775/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "推定1兆円相当のBinanceの不正出金事案についてまとめてみた - piyolog",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/10/30/230303",
+              "source": "はてブ テクノロジー",
+              "popularity": "50 users"
+            }
+          ]
+        },
+        {
+          "headline": "Cursor の AI 拡張機能にバックドア、SSH 鍵窃取—Anthropic Claude Code 影響",
+          "summary": "Claude Code for VS と Cursor 公式拡張に悪意のあるコード。SSH バックドア設置。12 時間の運用後に削除。",
+          "why_it_matters": "開発環境の拡張機能は高い権限で実行される。AI コード補助ツール使用時は定期的に拡張機能の真正性と動作ログを確認。公式配布チャネルでも改ざん可能性がある。",
+          "tags": [
+            "バックドア",
+            "開発環境",
+            "SSH鍵"
+          ],
+          "importance": 4,
           "sources": [
             {
               "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
@@ -382,209 +511,78 @@
               "popularity": "149 score"
             }
           ]
-        },
-        {
-          "headline": "Palo Alto・WordPress・PHP脆弱性が集中攻撃—PHP2Shellが49時間で63,000リクエスト",
-          "summary": "PHP脆弱性（CVE-2026-109618/109619）がPalo Alto Firewall等の根取得を狙ったPHP2Shell攻撃に悪用。WordPress RCEも24時間で63,000攻撃。eMudhra署名関連も対象。",
-          "why_it_matters": "WordPressサイト・PHP実行環境、またはPalo Altoファイアウォールを運用中なら、即パッチ適用を。攻撃スピードが極めて高速なため、48時間以内の対応が重要。",
-          "tags": [
-            "脆弱性",
-            "攻撃中",
-            "PHP/WordPress"
-          ],
-          "importance": 5,
-          "sources": [
-            {
-              "title": "Patch now: PHP2Shell, Brotli, and eMudhra guidance for customers",
-              "url": "https://www.microsoft.com/en-us/msrc/blog/2026/10/patch-now-php2shell-brotli-emudhra-guidance-for-customers",
-              "source": "はてブ テクノロジー",
-              "popularity": "13 users"
-            },
-            {
-              "title": "PHP2Shell Attacks Root Palo Alto Firewalls but Fail Against WordPress",
-              "url": "https://www.securityweek.com/php2shell-attacks-root-palo-alto-firewalls-but-fail-against-wordpress/",
-              "source": "SecurityWeek"
-            },
-            {
-              "title": "WordPress RCE Flaw Draws Nearly 63,000 Attack Attempts in Just 24 Hours",
-              "url": "https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html",
-              "source": "The Hacker News"
-            },
-            {
-              "title": "C2PA's eMudhra Moment",
-              "url": "https://www.da.vidbuchanan.co.uk/blog/c2pa-four.html",
-              "source": "Lobsters",
-              "popularity": "26 score"
-            },
-            {
-              "title": "注意喚起: PHPにおける複数の脆弱性（CVE-2026-109618、CVE-2026-109619）に関する注意喚起  (更新)",
-              "url": "https://www.jpcert.or.jp/at/2026/at260033.html",
-              "source": "JPCERT/CC"
-            }
-          ]
-        },
-        {
-          "headline": "Scribd大規模漏洩、Binance1兆円流出——北朝鮮グループ「TraderTraitor」の犯行の可能性",
-          "summary": "Scribd（Slideshare/Everand傘下）が大規模漏洩。同時期Binanceで約1兆円が不正流出、北朝鮮ハッカー集団が関与の可能性。",
-          "why_it_matters": "ログイン情報流出の可能性を想定して、Scribd利用ユーザは暗号資産取引所との認証情報使い回しがないか確認を。仮想通貨運用環境の多要素認証強化も。",
-          "tags": [
-            "流出",
-            "北朝鮮",
-            "仮想通貨"
-          ],
-          "importance": 4,
-          "sources": [
-            {
-              "title": "Tell HN: Scribd Breached",
-              "url": "https://news.ycombinator.com/item?id=50312756",
-              "source": "Hacker News",
-              "popularity": "104 points"
-            },
-            {
-              "title": "Binanceの約1兆円流出、北朝鮮ハッカー集団「TraderTraitor」の犯行か",
-              "url": "https://www.itmedia.co.jp/news/article/2610/31/2000002775/",
-              "source": "ITmedia NEWS"
-            },
-            {
-              "title": "推定1兆円相当のBinanceの不正出金事案についてまとめてみた - piyolog",
-              "url": "https://piyolog.hatenadiary.jp/entry/2026/10/30/230303",
-              "source": "はてブ テクノロジー",
-              "popularity": "50 users"
-            }
-          ]
-        },
-        {
-          "headline": "Applebee's・Resolve・松屋など小売・飲食の決済情報流出相次ぐ—管理システム侵害が主因",
-          "summary": "Applebee's がデータベースパスワード設定ミスで顧客データ露出。Resolve・松屋ほか複数企業の会員情報・決済カード情報漏洩。",
-          "why_it_matters": "クラウドデータベース構築時、デフォルトパスワード・オープン設定の徹底チェック、IAM権限最小化が重要。Terraform IaC でセキュリティベストプラクティスをコード化する必要性が高い。",
-          "tags": [
-            "設定ミス",
-            "漏洩",
-            "クラウド"
-          ],
-          "importance": 4,
-          "sources": [
-            {
-              "title": "Applebee’s exposed customers’ personal data after leaving database password in app",
-              "url": "https://techcrunch.com/2026/10/30/applebees-exposed-customers-personal-data-after-leaving-database-password-in-app/",
-              "source": "TechCrunch"
-            },
-            {
-              "title": "Fashion retailer Resolve says hackers stole payment card information",
-              "url": "https://therecord.media/resolve-fashion-retailer-data-breach-payment-cards",
-              "source": "The Record"
-            },
-            {
-              "title": "アプリの管理システムが侵害、会員情報流出 - 松屋",
-              "url": "https://www.security-next.com/192210",
-              "source": "Security NEXT"
-            }
-          ]
-        },
-        {
-          "headline": "Chrome・ServiceNow・Ivanti等で新脆弱性相次ぎ公開—IvantiはMPTCPで連鎖攻撃確認",
-          "summary": "Chrome21件脆弱性修正（クリティカル含む）。ServiceNowクリティカル脆弱性対応。Ivanti Connect Secureに追加脆弱性2件（CVE-2026-118527/111357）で連鎖攻撃が実は確認。",
-          "why_it_matters": "ブラウザ・エンタープライズ管理ツール・VPN製品は攻撃の広い入口。Chromeの即日更新、ServiceNowの9月以降アップデート、Ivantiのパッチを優先度高で実行を。",
-          "tags": [
-            "脆弱性",
-            "悪用確認",
-            "修正版"
-          ],
-          "importance": 4,
-          "sources": [
-            {
-              "title": "「ServiceNow」にクリティカル脆弱性 - 修正版が公開",
-              "url": "https://www.security-next.com/192231",
-              "source": "Security NEXT"
-            },
-            {
-              "title": "「Ivanti Connect Secure」に追加脆弱性2件 - 連鎖攻撃を確認",
-              "url": "https://www.security-next.com/192205",
-              "source": "Security NEXT"
-            },
-            {
-              "title": "「Chrome」で脆弱性21件を修正 - 「クリティカル」の脆弱性も",
-              "url": "https://www.security-next.com/192200",
-              "source": "Security NEXT"
-            },
-            {
-              "title": "CVE-2026-118527: Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
-              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118527",
-              "source": "CISA KEV",
-              "popularity": "悪用確認済"
-            },
-            {
-              "title": "CVE-2026-111357: Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
-              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111357",
-              "source": "CISA KEV",
-              "popularity": "悪用確認済"
-            }
-          ]
         }
       ],
       "quick_hits": [
         {
-          "title": "電力・ガス取引監視等委員会の関連サイトに攻撃 - 経産省",
-          "url": "https://www.security-next.com/192212",
-          "source": "Security NEXT",
-          "note": "経産省傘下の電力・ガス取引監視等委員会ウェブサイトが不正アクセス、サイト停止中。"
+          "title": "GMO不正アクセスの件で見つけた不審なXアカウントと「被害者フォーラム」について | ActiveTK's Note",
+          "url": "https://note.activetk.jp/hacks/onamae-desktop-cloud-v3",
+          "source": "はてブ テクノロジー",
+          "popularity": "80 users",
+          "note": "GMO デスクトップクラウド不正アクセス関連で「被害者フォーラム」など不審な Xアカウント出現。二次被害注視。"
         },
         {
-          "title": "Florida warns that 4.9 million people had Social Security numbers leaked in financial aid site breach",
-          "url": "https://therecord.media/florida-warns-5-million-affected-financial-aid-site-breach",
-          "source": "The Record",
-          "note": "フロリダ州財政援助サイト漏洩で490万人のSSN外部流出、州が警告。"
+          "title": "Applebee’s exposed customers’ personal data after leaving database password in app",
+          "url": "https://techcrunch.com/2026/10/30/applebees-exposed-customers-personal-data-after-leaving-database-password-in-app/",
+          "source": "TechCrunch",
+          "note": "Applebee's、アプリにデータベースパスワード平文記載で個人情報露出。設定ミスの典型。"
         },
         {
-          "title": "British spy agency cannot account for thousands of data storage devices, watchdog says",
-          "url": "https://therecord.media/gchq-cannot-account-for-thousands-of-data-devices",
-          "source": "The Record",
-          "note": "英国スパイ機関（GCHQ）が数千のデータ保管デバイスを追跡不可に、監査機関が報告。"
+          "title": "Chinese Hackers Use AI-Powered ARTEX to Target Over 200 Organizations Worldwide",
+          "url": "https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html",
+          "source": "The Hacker News",
+          "note": "中国ハッカー AI ツール ARTEX、200+ 組織対象に活動中。AI 活用された攻撃の事例。"
         },
         {
           "title": "Trezor warns of suspected crypto-theft implant in hardware wallet",
           "url": "https://www.bleepingcomputer.com/news/security/trezor-warns-of-suspected-crypto-theft-implant-in-hardware-wallet/",
           "source": "BleepingComputer",
-          "note": "Trezorハードウェアウォレットに疑わしい暗号盗難チップ埋め込み、CryptoBilis販売分を調査。"
+          "note": "Trezor ハードウェア財布に盗難マルウェア埋め込み疑い。仕入・検証プロセス見直し要。"
+        },
+        {
+          "title": "Florida warns that 4.9 million people had Social Security numbers leaked in financial aid site breach",
+          "url": "https://therecord.media/florida-warns-5-million-affected-financial-aid-site-breach",
+          "source": "The Record",
+          "note": "Florida 教育省サイト侵害、490 万人の Social Security Number 流出。米国大規模事案。"
         },
         {
           "title": "TeamViewer Flaw Lets Remote Computers Attack Users Who Connect to Control Them",
           "url": "https://thehackernews.com/2026/10/teamviewer-flaw-lets-remote-computers.html",
           "source": "The Hacker News",
-          "note": "TeamViewerリモート接続ツールで、接続対象がコントローラーを攻撃可能な脆弱性判明。"
+          "note": "TeamViewer 脆弱性、リモート接続側から接続元をコントロール可能。双方向制御リスク。"
         },
         {
-          "title": "Amadeus の旅客サービスシステムへの不正アクセスについてまとめてみた",
-          "url": "https://piyolog.hatenadiary.jp/entry/2026/10/28/214917",
-          "source": "piyolog",
-          "note": "Amadeus旅客サービスシステム侵害で日本航空・日本トランスオーシャン航空の顧客予約情報が参照された。"
+          "title": "アプリの管理システムが侵害、会員情報流出 - 松屋",
+          "url": "https://www.security-next.com/192210",
+          "source": "Security NEXT",
+          "note": "松屋会員管理システム侵害、会員情報流出。飲食業の POS システムセキュリティ参考事例。"
         },
         {
-          "title": "メール配信サービス「ブラストメール」への不正アクセスについてまとめてみた",
-          "url": "https://piyolog.hatenadiary.jp/entry/2026/10/27/133851",
-          "source": "piyolog",
-          "note": "メール配信サービス「ブラストメール」に不正アクセス、契約者情報持ち出し。"
+          "title": "ヤマハ製ルータ「NWR100」にコマンド実行など複数脆弱性",
+          "url": "https://www.security-next.com/192237",
+          "source": "Security NEXT",
+          "note": "ヤマハ無線ルータ NWR100 に複数脆弱性、任意コマンド実行・設定漏洩。ファームウェア修正版公開。"
         }
       ],
       "ok": true,
       "error": null,
-      "article_count": 98,
+      "article_count": 92,
       "dropped_topics": 0,
       "truncated": false
     },
     {
       "id": "cloud",
       "label": "クラウド・インフラ",
-      "overview": "AWS/Google Cloud/Azureが相次ぎ更新。Bedrockの地政学的拡張(GovCloud対応)、CloudFrontのセキュリティ強化、Kubernetesの分散AI対応が目立つ。Netflixの大規模GPU信頼性戦略も参考になる。",
+      "overview": "AWS・Google Cloud・Azureが相次ぎAPIやセキュリティ、インフラ機能を更新。マイナーアップデート多数で、エンジニアの選別検討が必須。",
       "topics": [
         {
-          "headline": "Amazon Bedrock、AWS GovCloudでOpenAI統合強化＆Cross-Region推論対応",
-          "summary": "Bedrockが米国防省向けGovCloud環境でOpenAI APIサポート拡張。地政学的制約下での生成AI統合基盤が現実化。Cross-Region Inferencing対応で可用性も向上。",
-          "why_it_matters": "政府機関向けクラウド案件や規制が厳しい業界でOpenAIモデルを統合する場合、GovCloud対応は選択肢になる。Terraform/Pythonでのマルチリージョン推論設計の参考に。",
+          "headline": "Amazon Bedrock、OpenAIモデルのクロスリージョン推論がGovCloudで利用可能に",
+          "summary": "AWS GovCloudで、Amazon BedrockがOpenAIモデルに対するAPIサポート拡大とクロスリージョン推論機能を提供開始。",
+          "why_it_matters": "政府・金融などGovCloud環境で複数リージョンにわたるAI推論が可能になり、ディザスタリカバリーや低遅延設計の選択肢が増える。",
           "tags": [
-            "AWS",
             "Bedrock",
-            "規制"
+            "生成AI",
+            "GovCloud"
           ],
           "importance": 3,
           "sources": [
@@ -592,30 +590,56 @@
               "title": "Amazon Bedrock expands API support and introduces Cross-Region Inferencing for OpenAI models in AWS GovCloud (US)",
               "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-openai-runtime-govcloud/",
               "source": "AWS What's New"
-            },
-            {
-              "title": "Daybreak Red from OpenAI now available to eligible customers on Amazon Bedrock in AWS GovCloud (US-East)",
-              "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/openai-daybreak-red-govcloud-east/",
-              "source": "AWS What's New"
             }
           ]
         },
         {
-          "headline": "CloudFront強化：ISP詳細+ポスト量子TLS対応で回線品質と量子耐性を可視化",
-          "summary": "CloudFrontが Viewer ISP情報とポスト量子TLS詳細をメトリクス化。DDoS対策と長期セキュリティ準備の両立。",
-          "why_it_matters": "配信パフォーマンス最適化時にISPごとのレイテンシ分析が可能に。量子コンピュータ対応も数年以内に実務課題となる。AWS WAFのCloudFront自動SDK統合(13番)と併用で防御層が強化される。",
+          "headline": "CloudFront、ISP情報とポスト量子TLS詳細をビューワに提供開始",
+          "summary": "Amazon CloudFrontがビューワのISP情報とポスト量子TLS（PQTLSv23）の詳細情報をメトリクス・ログで提供開始。",
+          "why_it_matters": "CDN経由のアクセス分析精度が向上し、地域別・ISP別のキャッシュ戦略調整やポスト量子暗号への移行進捗をデータで追跡できる。",
           "tags": [
             "CloudFront",
             "セキュリティ",
-            "パフォーマンス"
+            "ネットワーク"
           ],
-          "importance": 3,
+          "importance": 2,
           "sources": [
             {
               "title": "Amazon CloudFront now provides viewer ISP and post-quantum TLS details",
               "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-viewer-isp-post-quantum-visbility/",
               "source": "AWS What's New"
-            },
+            }
+          ]
+        },
+        {
+          "headline": "Amazon MSK、TLS 1.3によるデータ転送暗号化に対応",
+          "summary": "Amazon MSK（Managed Streaming for Kafka）がデータ転送時のTLS 1.3暗号化をサポート。",
+          "why_it_matters": "Kafka通信の暗号化レベルが最新化され、コンプライアンス要件への適合性向上とセキュアなイベントストリーム基盤が実現する。",
+          "tags": [
+            "MSK",
+            "Kafka",
+            "セキュリティ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Amazon MSK now supports TLS 1.3 for data in transit",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-tls/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS WAF、CloudFrontディストリビューション用SDK統合を自動化",
+          "summary": "AWS WAFがAmazon CloudFrontディストリビューションに対するSDK統合を自動実施するようになり、設定簡素化を実現。",
+          "why_it_matters": "Web ACLとCloudFrontの連携セットアップが簡便になり、セキュリティ導入の初期段階での手作業を削減できる。",
+          "tags": [
+            "WAF",
+            "CloudFront",
+            "セキュリティ"
+          ],
+          "importance": 2,
+          "sources": [
             {
               "title": "AWS WAF announces automatic SDK integration for Amazon CloudFront distributions",
               "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-waf-automatic-sdk-integration-amazon-cloudfront/",
@@ -624,61 +648,25 @@
           ]
         },
         {
-          "headline": "Netflix GPU信頼性を分散システム化——大規模GPU運用の障害パターン化",
-          "summary": "NetflixがGPU障害を単一デバイス問題ではなく分散システム課題として再定義。障害の検出・回復戦略を体系化した事例。",
-          "why_it_matters": "機械学習パイプラインやAIインフラ規模が増えるとGPU障害の確率が線形増加。単なるハードウェア冗長化ではなく『分散システムの設計思想』が必要になる場面で、Netflix事例は具体的な考え方を示唆。",
+          "headline": "Amazon Connect、フロー設定にバージョニング・エイリアス機能を追加",
+          "summary": "Amazon Connect Customerがコールセンター統制フロー設定のバージョニングとエイリアス指定をサポート。ドラフト自動保存機能も追加。",
+          "why_it_matters": "フロー管理と運用更新のリスク軽減が進み、ステージング・本番の切り替えやロールバック戦略を組みやすくなる。",
           "tags": [
-            "GPU",
-            "信頼性",
-            "分散システム"
+            "Connect",
+            "オペレーション",
+            "DevOps"
           ],
-          "importance": 4,
+          "importance": 2,
           "sources": [
             {
-              "title": "Netflix Treats GPU Reliability as a Distributed Systems Problem",
-              "url": "https://www.infoq.com/news/2026/10/netflix-gpu-distributed-systems/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
-              "source": "InfoQ"
-            }
-          ]
-        },
-        {
-          "headline": "Amazon MSK が TLS 1.3 対応＆Prometheus メトリクス拡充",
-          "summary": "MSKのデータ暗号化がTLS 1.3に統一、セキュリティ標準化。Managed Prometheuサポートでメトリクス収集も簡素化。",
-          "why_it_matters": "Kafkaパイプラインのセキュリティ監査で古いTLSバージョンは指摘対象。TLS 1.3への自動対応は準拠コスト削減。MSK consumer-group metricsはKafkaの詳細スループット分析に必須。",
-          "tags": [
-            "MSK",
-            "TLS",
-            "可観測性"
-          ],
-          "importance": 3,
-          "sources": [
-            {
-              "title": "Amazon MSK now supports TLS 1.3 for data in transit",
-              "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-tls/",
+              "title": "Amazon Connect Customer automatically saves in-progress emails as drafts",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-connect-email-draft-save/",
               "source": "AWS What's New"
             },
             {
-              "title": "Managed Prometheus collectors now support Amazon MSK consumer-group metrics",
-              "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/prometheus-collectors-msk-metrics/",
+              "title": "Amazon Connect Customer now supports versioning and aliasing for flows",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/connect-flows-versioning-aliasing/",
               "source": "AWS What's New"
-            }
-          ]
-        },
-        {
-          "headline": "Google Cloud 支出キャップ一般提供——マルチクラウド下でのコスト爆発抑制",
-          "summary": "GCP支出キャップがGA化。AI/ML負荷のランウェイ制御やハイブリッド環境での予算管理が容易に。",
-          "why_it_matters": "Terraformでリソース数が増える際、想定外のスケーリングでコスト暴騰を防止したい場合に重要。AWS・GCP間での支出管理ポリシーを統一する基盤になる。",
-          "tags": [
-            "GCP",
-            "コスト管理",
-            "ガバナンス"
-          ],
-          "importance": 3,
-          "sources": [
-            {
-              "title": "Innovate on your own business terms: Google Cloud spend caps now generally available",
-              "url": "https://cloud.google.com/blog/topics/cost-management/google-cloud-spend-caps-now-generally-available/",
-              "source": "Google Cloud Blog"
             }
           ]
         }
@@ -688,41 +676,53 @@
           "title": "「ここ 3 年くらいの CloudWatch アップデート について丸っと解説します」というタイトルで登壇しました #devio2026 | DevelopersIO",
           "url": "https://dev.classmethod.jp/articles/cloudwatc-upadte-summary-devio-2026/",
           "source": "はてブ テクノロジー",
-          "popularity": "23 users",
-          "note": "DevelopersIOのCloudWatch更新解説登壇。3年分のアップデート経緯から設計パターンを学べる資料。"
+          "popularity": "24 users",
+          "note": "DevelopersIOのブログで CloudWatch の3年分アップデート解説登壇記事を公開。"
         },
         {
-          "title": "When the Kubernetes API went silent: A three-layer networking mystery",
-          "url": "https://cloud.google.com/blog/products/networking/the-three-layer-gke-network-mystery/",
+          "title": "Web Search now available on Kiro in AWS GovCloud (US)",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/kiro-web-search-aws-govcloud-us/",
+          "source": "AWS What's New",
+          "note": "AWS GovCloud で Web Search が Kiro 上で利用可能に。"
+        },
+        {
+          "title": "Daybreak Red from OpenAI now available to eligible customers on Amazon Bedrock in AWS GovCloud (US-East)",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/openai-daybreak-red-govcloud-east/",
+          "source": "AWS What's New",
+          "note": "OpenAI の Daybreak Red が Amazon Bedrock で GovCloud-East 利用開始。"
+        },
+        {
+          "title": "Amazon RDS for Oracle no longer requires automatic minor version upgrades for JVM, Spatial, Locator, and OLAP options",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/oracle-jvm-spatial-locator-olap-options-amvu-optional/",
+          "source": "AWS What's New",
+          "note": "Amazon RDS Oracle、JVM・Spatial・Locator・OLAP オプションの自動マイナーバージョンアップが不要に。"
+        },
+        {
+          "title": "What’s new in AI infrastructure and orchestration in October",
+          "url": "https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month/",
           "source": "Google Cloud Blog",
-          "note": "GCP Kubernetes API沈黙事件——3層ネットワーク問題の診断事例。トラブルシューティング方法論が参考になる。"
-        },
-        {
-          "title": "Microsoft Retires Azure Deployment Environments with No Replacement Product",
-          "url": "https://www.infoq.com/news/2026/10/ade-dev-box-retirement/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
-          "source": "InfoQ",
-          "note": "Azure Deployment Environments廃止。代替製品なし——移行計画が必要なユーザーは早期に選択肢検討を。"
+          "note": "Google Cloud、AI インフラとオーケストレーション新機能を発表。"
         }
       ],
       "ok": true,
       "error": null,
-      "article_count": 32,
+      "article_count": 33,
       "dropped_topics": 0,
       "truncated": false
     },
     {
       "id": "dev",
       "label": "開発・エンジニアリング",
-      "overview": "エンジニアの役割が「スキル低下」圧力にさらされる一方で、CI/CD・ツール・フォーマッタは生成AIで急速に進化。インフラ層の加速が開発DXと安定性の両立を問い直している。",
+      "overview": "AI時代のエンジニアリングに求められる能力が変わる中、SREのスキルセット危機、コード品質維持の新アプローチ、そしてツールチェーン全体への影響が焦点。Rustによる高速化やGit基盤の進化も加速。",
       "topics": [
         {
-          "headline": "AI時代のSRE/DevOpsは「脱スキル化」の危機にある",
-          "summary": "生成AIが運用タスクを自動化する一方で、プロフェッショナルが深い専門知識を失いやすくなる。キャリアパス（エンジニアリング・マネージャー・スペシャリスト）の中間段階が消滅する懸念が業界で議論されている。",
-          "why_it_matters": "運用自動化ツール（Terraform、CloudFormation等）を導入する際、AIに丸投げせず「なぜそう設定するのか」を学ぶ習慣を意識的に続けないと、インシデント対応力が低下する。自分の5年後のスキルセット構成を今から再設計する時期。",
+          "headline": "AI時代のSRE職が『スキル低下』の危機—実装レベルの深い知識が失われる",
+          "summary": "AIツール普及がSRE職のスキルを浅くしている。エンジニアが複雑な問題を自力で解く機会が減り、長期的なキャリア形成に支障が出ている可能性。",
+          "why_it_matters": "自動化ツールに頼りすぎると、基礎知識の習得や問題解決能力が衰退する。クラウド・IaC時代のエンジニアには『ブラックボックス化を避ける』という学習姿勢が不可欠。",
           "tags": [
-            "キャリア",
-            "スキル",
-            "エンジニアリング組織"
+            "AI",
+            "SRE",
+            "スキル"
           ],
           "importance": 4,
           "sources": [
@@ -731,7 +731,20 @@
               "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
               "source": "Hacker News",
               "popularity": "548 points"
-            },
+            }
+          ]
+        },
+        {
+          "headline": "エンジニア職の階段に『中層が欠落』—AIに仕事を奪われた世代の成長戸惑い",
+          "summary": "AI出現でキャリアパスの中堅階層が消滅し、ジュニアからシニアへの段階的成長が困難に。企業の人材育成モデルが再設計を迫られている。",
+          "why_it_matters": "エンジニアとしてのキャリアプランを立てる際に、従来の『経験年数→スキルアップ』ルートが通用しなくなる。個人的な差別化と専門性の深掘りがより重要に。",
+          "tags": [
+            "キャリア",
+            "人材育成",
+            "AI"
+          ],
+          "importance": 3,
+          "sources": [
             {
               "title": "Presentation: The Ladder Is Missing Rungs: Engineering Progression When AI Ate the Middle",
               "url": "https://www.infoq.com/presentations/ai-software-engineering-pipeline/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
@@ -740,13 +753,13 @@
           ]
         },
         {
-          "headline": "curlが誤ってTuring完全性を持ってしまい、9ヶ月間も気づかれなかった",
-          "summary": "URLのパース機能が完全性を持つまでに実装が進化していたが、セキュリティレビューで発見されるまで報告されず。意図しない仕様爆発の典型例。",
-          "why_it_matters": "スクリプト言語的な機能を持つツール（CLI、設定ファイルパーサなど）を設計する際、意図しない完全性を持たないか。Terraformやその周辺でも同様のリスクがないか、エスカレーション仕様を明確にする参考になる。",
+          "headline": "curl が9ヶ月間、無意識に『チューリング完全』だった——実装の予期しない副作用",
+          "summary": "URLパーサーのバグにより、curlが計算完全性を持つ状態で運用されていた。修正後に気付いた珍しいケース。",
+          "why_it_matters": "セキュリティより『プログラムの予期しない動作がシステム全体に及ぶ』という実例。Terraformなどで外部ツール呼び出しする際、依存ツールの想定外動作も防御対象に。",
           "tags": [
-            "セキュリティ設計",
-            "OSS",
-            "バグ"
+            "curl",
+            "バグ",
+            "ツール"
           ],
           "importance": 2,
           "sources": [
@@ -759,197 +772,103 @@
           ]
         },
         {
-          "headline": "Bunフォーマッタが300倍高速、Prettier設定をそのまま流用可能に",
-          "summary": "JavaScriptランタイムBunがPrettier互換のコードフォーマッタをリリース。Prettier設定ファイルとの互換性を保ちながら大幅な高速化を実現。",
-          "why_it_matters": "TypeScript/JavaScriptプロジェクトの開発ループ（保存→フォーマット→テスト）が高速化。CI/CDパイプラインの待機時間削減につながり、ローカル開発でのフィードバック速度が向上。移行の学習コストが低い点も実装の判断材料になる。",
+          "headline": "コードレビュー省略でも品質維持する『新手法』実践例—自動テスト設計が鍵",
+          "summary": "レビュー工数を減らしながら品質を保つアプローチが実例で紹介。テスト戦略と自動化ツールの組み合わせで実現。",
+          "why_it_matters": "AI時代、人的レビューを減らしつつ品質を維持する設計思想を学べる。チーム規模や開発速度に応じた柔軟な品質保証モデル構築に参考になる。",
           "tags": [
-            "DevTools",
-            "TypeScript",
-            "開発効率"
+            "QA",
+            "自動化",
+            "レビュー"
           ],
           "importance": 3,
           "sources": [
             {
-              "title": "JavaScriptランタイムの「Bun」がPrettier互換で300倍以上高速なフォーマッタに。Prettier設定ファイルもそのまま利用可能",
-              "url": "https://www.publickey1.jp/blog/26/javascriptbunprettier300prettier.html",
-              "source": "Publickey"
+              "title": "人間がコードを読まずにPRをマージする技術 ─ それでも、品質は手放さない",
+              "url": "https://zenn.dev/karamage/articles/ac71f1c89c73ff",
+              "source": "Zenn トレンド",
+              "popularity": "43 いいね"
+            },
+            {
+              "title": "コードを読まずにマージするために必要なこと",
+              "url": "https://zenn.dev/nrs/articles/c777388530aa84",
+              "source": "Zenn トレンド",
+              "popularity": "187 いいね"
             }
           ]
         },
         {
-          "headline": "DuckDB 2.0 LTS、Quackプロトコルでサーバモード本格化・非同期処理で高速化",
-          "summary": "DuckDB 2.0がLTS版として正式リリース。クライアント/サーバアーキテクチャが実装され、非同期処理による高速化が図られた。",
-          "why_it_matters": "分析ワークロードをPythonで扱う際、ローカル SQLiteから DuckDB への移行検討が加速。Terraformでインフラデータを分析する際のツール選択肢として、スケーラビリティが向上。",
+          "headline": "GitHub Actions、vers指定から『ロックファイル方式』へ——依存管理の進化",
+          "summary": "actions.lockでアクション依存を固定化。従来のバージョン指定より安全かつ再現性が高い。",
+          "why_it_matters": "Terraformのロックファイル管理と同じパラダイムがCI/CDにも波及。IaC時代のエンジニアとしてCI/CDパイプラインの『再現性』維持に必須の知識。",
           "tags": [
-            "データベース",
-            "Python",
-            "インフラ分析"
+            "GitHub",
+            "CI/CD",
+            "ベストプラクティス"
           ],
           "importance": 3,
           "sources": [
             {
-              "title": "「DuckDB 2.0 LTS」正式リリース。Quackプロトコルによるクライアント/サーバ機能や非同期処理による高速化など",
-              "url": "https://www.publickey1.jp/blog/26/duckdb_20_ltsquack.html",
-              "source": "Publickey"
-            }
-          ]
-        },
-        {
-          "headline": "CloudflareがTypeScriptをRustに移植『tsrs』発表、70%少ないメモリで8倍速に",
-          "summary": "TypeScriptコンパイラ/LSP全機能をRustで実装する『tsrs』がアナウンスされた。大幅なメモリ削減と性能向上を実現し、エッジ環境での動作を想定。",
-          "why_it_matters": "エッジ環境でTypeScript処理が行える場合、オンプレミスやIoTデバイスでの軽量ツール開発の選択肢が広がる。AWS Lambdaのコールドスタート削減にも応用の余地がある。Rustの学習需要が設計層でも高まる可能性。",
-          "tags": [
-            "言語実装",
-            "パフォーマンス",
-            "エッジコンピューティング"
-          ],
-          "importance": 3,
-          "sources": [
-            {
-              "title": "Cloudflare、TypeScriptをRustに移植した「tsrs」を発表。TypeScript 7より最大で70％少ないメモリで8倍速。今後、LSPなどTypeScriptの全機能をサポート予定",
-              "url": "https://www.publickey1.jp/blog/26/cloudflaretypescriptrusttsrstypescript_7708lsptypescript.html",
-              "source": "Publickey"
+              "title": "GitHub Actions で checkout@v7 のようなバージョン指定を書くのはやめよう！ 時代は actions.lock！",
+              "url": "https://zenn.dev/progate/articles/24b1140180300c",
+              "source": "Zenn トレンド",
+              "popularity": "107 いいね"
             }
           ]
         }
       ],
       "quick_hits": [
         {
+          "title": "The federated code forge",
+          "url": "https://tangled.org/blog/forge/",
+          "source": "Lobsters",
+          "popularity": "27 score",
+          "note": "フェデレーション型コードフォージ構想。分散ホスティング・マルチプラットフォーム対応へ。"
+        },
+        {
+          "title": "No, npm, “estee” is not a typo of “testem”",
+          "url": "https://smoores.dev/post/no_npm_estee_is_not_a_typo/",
+          "source": "Lobsters",
+          "popularity": "29 score",
+          "note": "npm の typo 検出改善。『estee』が『testem』でないことを学んだ。"
+        },
+        {
           "title": "It’s ok that computers are (sometimes) better than us",
           "url": "https://stackoverflow.blog/2026/10/30/it-s-ok-that-computers-are-sometimes-better-than-us/",
           "source": "Stack Overflow Blog",
-          "note": "Stack Overflow：「コンピュータが人より優れている場合がある」と改めて認識させるコラム。AI導入の心構え記事。"
+          "note": "コンピュータが人間を上回る場面は許容すべき——Stack Overflow Blog の視点。"
         },
         {
-          "title": "GitHub Actions で checkout@v7 のようなバージョン指定を書くのはやめよう！ 時代は actions.lock！",
-          "url": "https://zenn.dev/progate/articles/24b1140180300c",
-          "source": "Zenn トレンド",
-          "popularity": "107 いいね",
-          "note": "Zenn：GitHub Actions v7ではなく actions.lock を使えという実装指針。Terraform的な宣言的管理思想がCIにも。"
+          "title": "The reports of Stack Overflow's death are greatly exaggerated",
+          "url": "https://stackoverflow.blog/2026/10/29/the-reports-of-stack-overflow-s-death-are-greatly-exaggerated/",
+          "source": "Stack Overflow Blog",
+          "note": "Stack Overflow 存在価値の再評価。LLM時代も『信頼できるナレッジベース』として機能。"
         },
         {
-          "title": "Octoverse: Commits, pushes, reach new highs in 2026 as developers build with agents",
-          "url": "https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/",
-          "source": "GitHub Blog",
-          "note": "GitHub Octoverse 2026：エージェント時代の開発統計。コミット・プッシュが記録的高水準、自動化の波を数字で実感。"
-        },
-        {
-          "title": "最近の E2E 戦略（2026 年 10 月現在）",
-          "url": "https://zenn.dev/polyco/articles/26624b38c951b5",
-          "source": "Zenn トレンド",
-          "popularity": "268 いいね",
-          "note": "Zenn：E2Eテスト戦略の最新動向（2026年10月）。AI時代のテスト自動化のベストプラクティス。"
-        },
-        {
-          "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
-          "url": "https://github.com/dbreunig/nesformer",
-          "source": "Hacker News",
-          "popularity": "226 points",
-          "note": "HN：Qwenで1GB以下のNintendo エミュレータ。軽量モデルのユースケースを示す異色の事例。"
+          "title": "A JSON schema Is not an AI governance layer",
+          "url": "https://stackoverflow.blog/2026/10/28/a-json-schema-is-not-an-ai-governance-layer/",
+          "source": "Stack Overflow Blog",
+          "note": "JSON Schema はAIガバナンスの銀の弾ではない。"
         }
       ],
       "ok": true,
       "error": null,
-      "article_count": 28,
+      "article_count": 27,
       "dropped_topics": 0,
       "truncated": false
     },
     {
       "id": "product",
       "label": "プロダクト・ビジネス",
-      "overview": "インテル経営危機とメモリ需給逆転、データセンター投資の合理化圧力が相次ぎ表面化。Google検索の収益比率が初の50%割れ、AIインフラ市場は投資効率の局面へ。",
+      "overview": "Waymoが日本参入を正式決定、Intelの株価急落でNvidiaの支配強化が鮮明に。AI需要が産業構造を再編している。",
       "topics": [
         {
-          "headline": "インテル株急落で政府支援失効、AIチップ国家戦略に転機",
-          "summary": "インテル株が大幅下落し、米政府が保有する株式から120億ドルが吹き飛んだ。AI時代の製造能力確保が政府目標だが、技術競争力の低下が露呈。",
-          "why_it_matters": "クラウドインフラのプロセッサ多様化が加速します。AWS上でも非Nvidia選択肢への移行検討が本格化するため、TerraformやPythonでの抽象化層設計がより重要になります。",
-          "tags": [
-            "半導体",
-            "クラウド戦略",
-            "政治経済"
-          ],
-          "importance": 4,
-          "sources": [
-            {
-              "title": "Intel’s stock crashes, knocking $12B from government’s stake",
-              "url": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
-              "source": "TechCrunch"
-            }
-          ]
-        },
-        {
-          "headline": "メモリー大手が米テックを上回る営業利益、Appleの立場逆転",
-          "summary": "AI需要で記憶素子の価格が高騰し、世界のメモリメーカーの営業利益が初めて米テック大手を超過。かつてAppleが値引き強要できた構図が逆転。",
-          "why_it_matters": "クラウド最適化時のメモリバンド幅とコストのバランスが経済状況に左右される局面です。マルチリージョン設計やスケーリング戦略の見直しが避けられません。",
-          "tags": [
-            "AI需要",
-            "サプライチェーン",
-            "価格変動"
-          ],
-          "importance": 4,
-          "sources": [
-            {
-              "title": "世界のメモリー大手、営業利益が初の米テック超え　AI需要が急増 - 日本経済新聞",
-              "url": "https://www.nikkei.com/article/DGXZQOUB29BWD0Z21C26A0000000/",
-              "source": "はてブ テクノロジー",
-              "popularity": "25 users"
-            },
-            {
-              "title": "AppleはiPhoneをエサにメモリメーカーへ大幅な値引きを強要してきたがAIの登場で価格が高騰して立場が逆転しているとの指摘",
-              "url": "https://gigazine.net/news/20261030-apple-chip-sellers-impact/",
-              "source": "GIGAZINE"
-            }
-          ]
-        },
-        {
-          "headline": "AI投資ブームの亀裂、データセンター支出の合理化圧力強まる",
-          "summary": "大型AIデータセンター投資に減速兆候。超音速機開発企業がAIインフラ事業へ転換し、テックジャイアントは支出規模の再検討を迫られている。",
-          "why_it_matters": "自社システムのLLM導入RoI評価がより厳密になります。実装前に具体的な使用パターンとコスト効果を数値化できるアーキテクチャ設計が必須です。",
-          "tags": [
-            "AI運用コスト",
-            "インフラ最適化",
-            "投資戦略"
-          ],
-          "importance": 4,
-          "sources": [
-            {
-              "title": "Cracks are emerging in the AI spending boom",
-              "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
-              "source": "TechCrunch"
-            },
-            {
-              "title": "Supersonic airliner in doubt as company shifts to powering AI data centers",
-              "url": "https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/",
-              "source": "Ars Technica"
-            }
-          ]
-        },
-        {
-          "headline": "Google検索の収益比率が初の50%割れ、広告構造が転換期へ",
-          "summary": "Alphabetの総売上に占めるGoogle検索の割合が49.7%と初めて半分を下回った。YouTubeや広告プラットフォームの多角化が進む。",
-          "why_it_matters": "検索API依存の設計から他のデータソースやLLMベース検索への転換が起きています。プロンプトエンジニアリングと外部APIの多元化を検討する時期です。",
-          "tags": [
-            "ビジネスモデル",
-            "Google",
-            "API戦略"
-          ],
-          "importance": 3,
-          "sources": [
-            {
-              "title": "Google検索の売上高がAlphabetの総売上高の50％を史上初めて下回る",
-              "url": "https://gigazine.net/news/20261030-google-search-alphabet-revenue/",
-              "source": "GIGAZINE"
-            }
-          ]
-        },
-        {
-          "headline": "Waymo日本進出は「技術より社会制度」、2027年トヨタbZ4Xで開始",
-          "summary": "ウェイモがトヨタと提携し2027年に日本でタクシー運行を開始。自動運転の最大課題は技術ではなく、法令・保険・信頼といった社会制度にあることが浮き彫り。",
-          "why_it_matters": "AIシステムの信頼性評価が国・地域の規制で大きく左右される現実を示しています。エンジニアリングの完成度だけでなく、コンプライアンスと監査ログ設計が差別化要因になります。",
+          "headline": "Waymo、日本で自動運転タクシー運行を2027年に開始——トヨタ bZ4X採用",
+          "summary": "Waymoが日本での自動運転タクシーサービス開始を発表。トヨタ bZ4X を採用し、2027年から運行予定。",
+          "why_it_matters": "自動運転の規制・インフラ整備は国ごとに大きく異なります。日本市場での展開事例は、日本国内でのAI/自動運転サービス構想を検討する際の参考になり、ローカライズ要件や事業モデルの差を学べます。",
           "tags": [
             "自動運転",
-            "規制対応",
-            "日本進出"
+            "日本展開",
+            "ロボタクシー"
           ],
           "importance": 3,
           "sources": [
@@ -965,6 +884,79 @@
               "popularity": "4 users"
             }
           ]
+        },
+        {
+          "headline": "AI需要がサプライチェーンを激変——メモリ大手が初めて米テック企業の利益を超える",
+          "summary": "世界のメモリー大手の営業利益が、初めてGAFAM等の米大型テック企業を上回った。AI需要の急増が産業構造を変えている。",
+          "why_it_matters": "インフラコストが今後のAI活用戦略の制約になります。メモリ・GPU価格の上昇トレンドを見通し、アーキテクチャ選択や構築タイミングの判断に活かせます。",
+          "tags": [
+            "AI需要",
+            "半導体",
+            "インフラコスト"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "世界のメモリー大手、営業利益が初の米テック超え　AI需要が急増 - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOUB29BWD0Z21C26A0000000/",
+              "source": "はてブ テクノロジー",
+              "popularity": "25 users"
+            }
+          ]
+        },
+        {
+          "headline": "Intel株価急落で政府ファンドが120億ドル損失——Nvidia支配が加速",
+          "summary": "Intel の株価急落により、米政府の保有株価値が約120億ドル減少した。AI インフラ領域での Nvidia 独占が強化される。",
+          "why_it_matters": "GPU調達が複数ベンダー選択肢の消滅により戦略的リスクを高めます。Nvidia 依存回避の代替案やマルチベンダー戦略の検討が急務です。",
+          "tags": [
+            "Intel",
+            "Nvidia",
+            "インフラ競争"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Intel’s stock crashes, knocking $12B from government’s stake",
+              "url": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Salesforce が防衛技術スタートアップ Rune を3億7500万ドルで買収",
+          "summary": "Salesforce が防衛関連スタートアップ Rune を3億7500万ドルで買収すると報道された。M&A活動を継続している。",
+          "why_it_matters": "大型SaaS企業の買収戦略が、従来の営業系ツール領域から防衛・規制対応領域へ拡大していることが見えます。垂直統合の動きを追跡することで、業界の再編パターンを学べます。",
+          "tags": [
+            "Salesforce",
+            "M&A",
+            "防衛テック"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Salesforce’s M&A spree continues with a reported $375M deal for defense tech startup Rune",
+              "url": "https://techcrunch.com/2026/10/30/salesforces-ma-spree-continues-with-a-reported-375m-deal-for-defense-tech-startup-rune/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Google検索がAlphabet売上の50％超を初めて割り込み——広告以外の収益化が急進",
+          "summary": "Alphabet 2026年Q3決算で、Google検索売上がAlphabet総売上に占める割合が初めて50%を下回り、49.7%になった。",
+          "why_it_matters": "Googleの収益多角化が本格化しており、AI、クラウド、ハードウェアなど他事業の成長が加速しています。クラウドプロバイダとしてのGCPやAI新機能の投資が本格化している兆候として注視できます。",
+          "tags": [
+            "Google",
+            "収益構造",
+            "AI投資"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Google検索の売上高がAlphabetの総売上高の50％を史上初めて下回る",
+              "url": "https://gigazine.net/news/20261030-google-search-alphabet-revenue/",
+              "source": "GIGAZINE"
+            }
+          ]
         }
       ],
       "quick_hits": [
@@ -972,95 +964,54 @@
           "title": "Apple Intelligence is finally coming to China with iOS 27.3",
           "url": "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3",
           "source": "The Verge",
-          "note": "iOS 27.3でApple Intelligenceが中国上陸。生成AI規制市場への実装モデルが参考になる。"
+          "note": "Apple Intelligence が iOS 27.3 で中国でも利用可能に——規制対応の課題をクリア"
         },
         {
-          "title": "Google&#8217;s satellite AI server transmits its first response to Earth",
-          "url": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+          "title": "Supersonic airliner in doubt as company shifts to powering AI data centers",
+          "url": "https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/",
+          "source": "Ars Technica",
+          "note": "超音速旅客機企業が AI データセンタ事業へ転換——物流・ハード投資から軽量ソフトへ"
+        },
+        {
+          "title": "Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
           "source": "The Verge",
-          "note": "Googleが衛星AI推論サーバーから初の地上応答を確認。エッジ×クラウド統合が現実化。"
+          "note": "Starbucks、ドライブスルーで個人化デジタルメニュー——AI顧客化が店舗まで浸透"
         },
         {
-          "title": "Fujifilm to boost tape production 5x as AI fuels archiving demand",
-          "url": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/",
-          "source": "Ars Technica",
-          "note": "富士フイルム、磁気テープ生産を5倍拡大。AI学習データのアーカイビングニーズが急増。"
+          "title": "AppleはiPhoneをエサにメモリメーカーへ大幅な値引きを強要してきたがAIの登場で価格が高騰して立場が逆転しているとの指摘",
+          "url": "https://gigazine.net/news/20261030-apple-chip-sellers-impact/",
+          "source": "GIGAZINE",
+          "note": "Apple、メモリ調達でベンダー優位に逆転——AI需要で交渉力が入れ替わり"
         },
         {
-          "title": "Basically no one is using AI agents for their DoorDash orders",
-          "url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/",
-          "source": "Ars Technica",
-          "note": "DoorDashのAIエージェント利用率ほぼゼロ。ユーザー行動から見えるAI機能の需要の現実。"
+          "title": "オラクル、社員が業務アプリをAIで自動作成、Oracle Cloud上で共有できる「Oracle App Composer」発表。Oracle AI World 2026",
+          "url": "https://www.publickey1.jp/blog/26/aioracle_cloudoracle_app_composeroracle_ai_world_2026.html",
+          "source": "Publickey",
+          "note": "Oracle App Composer、業務アプリの自動生成が Cloud 標準に——ローコード分野が加速"
         }
       ],
       "ok": true,
       "error": null,
-      "article_count": 24,
+      "article_count": 18,
       "dropped_topics": 0,
       "truncated": false
     },
     {
       "id": "general",
       "label": "一般ニュース",
-      "overview": "国内はクマとの衝突事故や大学運営の透明性問題が話題。国際ニュースはロシアガス脱却の欧州の強い決意と、北朝鮮ハッカーによるBinance攻撃が注目を集めています。",
+      "overview": "今日の一般ニュースは欧州とアジアの政治・事故が中心。ロシア産ガス脱依存の強い意思表示と、同志社の危機対応遅延が注目を集めています。",
       "topics": [
         {
-          "headline": "北海道特急列車がヒグマと衝突、脱線も乗客無事",
-          "summary": "JR宗谷線の特急がヒグマと衝突し先頭車両が脱線。乗客・乗員にけがなし。秦野でも「捕獲後に放した個体」が再度捕獲され、野生動物との衝突リスクが現実化しています。",
-          "why_it_matters": "インフラ側で対策できるシステムデザインがある——センサー、警告、速度制御など。野生動物との共存と安全運行を両立する技術的な対応を知っておくと、今後の交通システム設計で生かせます。",
+          "headline": "欧州委、ロシア産ガス輸入を戦後も継続しない方針を表明",
+          "summary": "欧州委員会がロシア産ガス脱依存は「戦争終結後も柔軟に見直さない」と公式立場を示し、情勢変化を理由に政策転換しない強い意思表示をした。",
+          "why_it_matters": "エネルギー安全保障とサプライチェーンの長期戦略が各国政策の判断基準となる時代。テック企業も取引先の地政学的リスク評価を今まで以上に厳しくする必要があります。",
           "tags": [
-            "インフラ",
-            "安全",
-            "自然災害"
-          ],
-          "importance": 2,
-          "sources": [
-            {
-              "title": "北海道 JR宗谷線特急とヒグマ衝突で脱線 終日一部運転見合わせ",
-              "url": "https://news.web.nhk/newsweb/na/nd-20261031de68820",
-              "source": "NHK 主要"
-            },
-            {
-              "title": "“捕獲後に山に放した個体”とみられるクマを捕獲 神奈川 秦野",
-              "url": "https://news.web.nhk/newsweb/na/nd-20261031de68899",
-              "source": "NHK 主要"
-            },
-            {
-              "title": "北海道で特急列車「サロベツ３号」がクマと衝突、一部の車輪がクマ巻き込み脱線…乗客は車内で一夜過ごす",
-              "url": "https://www.yomiuri.co.jp/national/20261031-GYT1T00137/",
-              "source": "はてブ 世の中",
-              "popularity": "10 users"
-            }
-          ]
-        },
-        {
-          "headline": "北朝鮮『エリート』ハッカーがBinance大規模攻撃の主犯格か",
-          "summary": "北朝鮮のハッカー集団が大手仮想通貨取引所Binanceへの大規模攻撃で最有力容疑者に。北朝鮮はランサムウェアやNFT詐欺でも資金獲得を続けています。",
-          "why_it_matters": "クラウド・API・ウォレット連携のシステムが国家級脅威にさらされている現実。あなたが扱うAWSやTerraforformのクレデンシャル管理・ネットワークセグメンテーション・ログ分析が、こうした高度な脅威に対する最後の砦になります。",
-          "tags": [
-            "セキュリティ",
-            "暗号資産",
-            "国家級脅威"
+            "エネルギー安全保障",
+            "欧州政策",
+            "脱ロシア依存"
           ],
           "importance": 4,
-          "sources": [
-            {
-              "title": "Why North Korea's 'elite' hackers are the prime suspect in major Binance hack",
-              "url": "https://www.bbc.co.uk/news/articles/ck9dz3v7z7v3o?at_medium=RSS&at_campaign=rss",
-              "source": "BBC News"
-            }
-          ]
-        },
-        {
-          "headline": "欧州、戦争終結後もロシア産ガス輸入しない——脱依存は法的決定",
-          "summary": "欧州委員会が「戦争の終わり方を問わずロシア産ガスを輸入しない」と表明。2022年侵攻後の方針転換ではなく、もはや法的な約束に格上げされました。",
-          "why_it_matters": "エネルギー・サプライチェーン戦略が政治決定として固定化した=そこに依存する事業・技術投資の環境が長期的に安定します。インフラ設計やコスト予測に影響します。",
-          "tags": [
-            "エネルギー",
-            "地政学",
-            "政策"
-          ],
-          "importance": 2,
           "sources": [
             {
               "title": "**「今後の展開にかかわらず」（戦争が終わっても、和平合意ができても）ロシア産ガスを輸入しない、というのが欧州委員会の公式立場です。「戦争が終わったら柔軟に見直す」のではなく、「すでに法的に決まった脱ロシア依存の道筋を、情勢がどう変わろうと貫く」という強い意思表示があります**",
@@ -1071,51 +1022,87 @@
           ]
         },
         {
-          "headline": "東大総長人事で文科省が検証要請、大学の自主性が問われる",
-          "summary": "藤垣新総長内定で学内投票結果との乖離が生じ、文科省が異例の検証を要請。大学の意思決定透明性と政府関与のバランスが論点。",
-          "why_it_matters": "研究機関・教育機関のガバナンスが変わると、補助金・予算配分・研究テーマの推奨方針が変わります。大学と関係する受託研究や学習環境の今後を見通す上で動向を押さえる価値があります。",
+          "headline": "同志社理事長が7ヶ月ぶりの会見、事故対応の遅延を謝罪も保護者の信頼回復に課題",
+          "summary": "辺野古沖船転覆事故（同志社国際高校生ら死亡）から約7ヶ月後、理事長が5時間会見を開き「情報発信の時期と方針が定まらず不安と不信を招いた」と謝罪。会見で遺族個人情報も漏らした。",
+          "why_it_matters": "組織危機対応で初動の遅さと情報管理の失敗がいかに回復を困難にするかを示す事例。エンジニアがいる組織では同様の事故・障害時の報告体制が学ぶべき反面教師です。",
           "tags": [
-            "ガバナンス",
-            "研究機関",
-            "政策"
+            "危機対応",
+            "情報管理",
+            "信頼関係"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "同志社理事長5時間会見　沈黙7カ月「風化狙い」否定も保護者「発信遅すぎる」",
+              "url": "https://www.sankei.com/article/20261031-NU3E5XNYBVKJFJ77CK25IAQQBQ/",
+              "source": "はてブ 世の中",
+              "popularity": "17 users"
+            },
+            {
+              "title": "辺野古沖転覆事故めぐる会見で「ありえない」放送事故　同志社理事長が遺族の個人情報ポロリ | 東スポWEB",
+              "url": "https://www.tokyo-sports.co.jp/articles/-/408314",
+              "source": "はてブ 世の中",
+              "popularity": "75 users"
+            }
+          ]
+        },
+        {
+          "headline": "北海道JR宗谷線で特急列車がヒグマと衝突し脱線、乗客1人も無事",
+          "summary": "北海道のJR宗谷線で稚内駅へ向かう特急列車が夜間にヒグマと衝突、先頭車両が脱線。乗客と乗員にけがはありませんでした。",
+          "why_it_matters": "野生動物と交通インフラのリスク管理の事例。クラウド事業者も物理施設と環境因子のシステム設計で参考になります。",
+          "tags": [
+            "交通事故",
+            "野生動物",
+            "インフラ運用"
           ],
           "importance": 2,
           "sources": [
             {
-              "title": "【社説】大学の萎縮招かないか　東大総長巡り文科省が異例の検証要請：朝日新聞",
-              "url": "https://www.asahi.com/articles/ASVBX21JJVBXUSPT00YM.html",
+              "title": "北海道 JR宗谷線特急とヒグマ衝突で脱線 終日一部運転見合わせ",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261031de68820",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "北海道で特急列車「サロベツ３号」がクマと衝突、一部の車輪がクマ巻き込み脱線…乗客は車内で一夜過ごす",
+              "url": "https://www.yomiuri.co.jp/national/20261031-GYT1T00137/",
               "source": "はてブ 世の中",
-              "popularity": "53 users"
+              "popularity": "11 users"
             }
           ]
         }
       ],
       "quick_hits": [
         {
-          "title": "小学生の絵に「AIくさい」　中傷相次ぎしょうゆコンクール公開中止：朝日新聞",
-          "url": "https://www.asahi.com/articles/ASVBZ2WFHVBZUTIL023M.html",
-          "source": "はてブ テクノロジー",
-          "popularity": "194 users",
-          "note": "小学生ポスターに『AI疑惑』で中傷殺到——生成AI社会での信用と証明の課題が顕在化"
+          "title": "【社説】大学の萎縮招かないか　東大総長巡り文科省が異例の検証要請：朝日新聞",
+          "url": "https://www.asahi.com/articles/ASVBX21JJVBXUSPT00YM.html",
+          "source": "はてブ 世の中",
+          "popularity": "53 users",
+          "note": "文科省が東大総長選考の検証要請、学内の意思決定と政府関与の緊張が大学ガバナンスで問題化"
         },
         {
           "title": "中国 製造業の景況感指数PMI 「50」下回る 内需の弱さを反映",
           "url": "https://news.web.nhk/newsweb/na/nd-20261031de68892",
           "source": "NHK 主要",
-          "note": "中国製造業PMI50割れ、内需弱化——グローバルサプライチェーンへの影響注視"
+          "note": "中国製造業PMI 10月に50下回る、内需の弱さが顕著"
         }
       ],
       "ok": true,
       "error": null,
-      "article_count": 54,
+      "article_count": 53,
       "dropped_topics": 0,
       "truncated": false
     }
   ],
-  "collection_failures": [],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
   "stats": {
-    "collected": 322,
-    "unclassified": 18,
+    "collected": 314,
+    "unclassified": 20,
     "classify_error": null
   }
 }
