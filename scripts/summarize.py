@@ -40,11 +40,10 @@ MAX_ARTICLES_PER_CATEGORY = 30
 CLASSIFY_SNIPPET_CHARS = 100
 CLASSIFY_TITLE_ENOUGH_CHARS = 20
 # 要約に渡すスニペット長。
-# RSSのsummaryは記事冒頭を切っただけのことが多く(「This interview has been lightly
-# edited...」のような定型文も混じる)、タイトルが十分長ければ情報が増えない。
-# タイトルが短く手掛かりに乏しい記事だけ補う。
+# 以前はタイトルが40字以上の記事には渡していなかったが、英語記事はほぼ全てが該当し、
+# タイトルだけを根拠に原因や規格名を推測で書き足す誤りが出た(curl の「URLパーサーのバグ」、
+# CloudFront の存在しない規格名など)。正確さを優先して全記事に渡す。
 DIGEST_SNIPPET_CHARS = 250
-DIGEST_TITLE_ENOUGH_CHARS = 40
 
 
 # --------------------------------------------------------------------------
@@ -274,6 +273,9 @@ DIGEST_SYSTEM = """通勤中にスマホで読む読者向けの日本語ダイ�
   - 主語・対象・規模を変えない(例: マウス実験を人の事例にしない、PoCや研究を実被害にしない、
     「〜の可能性」「〜か」を断定にしない)。
   - 別々の記事の事実を混ぜて1つの話にしない。
+  - 見出し・overview・短報の note も同じ。見出しに記事に無い評価や見通し
+    (「〜が加速」「〜が急進」等)を入れない。note はタイトル・概要の要点の言い換えに留める。
+  - 要約・見出しに使った事実の出所となる記事は、必ず sources に番号を含める。
   - 固有名詞・製品名・CVE番号は原文のまま。英語の技術用語は意味で訳す(root = root権限)。
 - why_it_matters は業界評論にしない。「議論が高まっている」等の一般論ではなく、
   読者プロフィールの人が明日の仕事・設計・学習で何を変えるか、何を知るべきかを書く。
@@ -595,7 +597,7 @@ def _build_digest_prompt(
         if a.popularity_label:
             meta += f" {a.popularity_label}"
         lines.append(f"{i}. [{meta}] {a.title}")
-        if a.snippet and len(a.title) < DIGEST_TITLE_ENOUGH_CHARS:
+        if a.snippet:
             lines.append(f"   {a.snippet[:DIGEST_SNIPPET_CHARS]}")
 
     if recent_headlines:

@@ -172,20 +172,33 @@ def make_highlights(
 
 
 def make_deep_dive(
-    target: dict | None, articles: list[Article], client, model, dry_run: bool, reader: str | None
+    target: dict | None, highlights: list[dict], articles: list[Article],
+    client, model, dry_run: bool, reader: str | None,
 ) -> dict | None:
-    """5選で指名されたトピックの出典記事を引き当てて深掘りを生成する。"""
-    if not target:
-        return None
+    """5選で指名されたトピックの出典記事を引き当てて深掘りを生成する。
+
+    出典がタイトルだけ(概要が1件も無い)のトピックは深掘りしない。根拠が1行しかないと
+    中身が一般論や推測になるため。指名先がそうなら、5選から概要のあるトピックに差し替える。
+    """
     if dry_run:
-        return dry_run_deep_dive(target)
+        return dry_run_deep_dive(target) if target else None
     by_url = {normalize_url(a.url): a for a in articles}
-    sources = [
-        by_url[normalize_url(s["url"])]
-        for s in target["topic"].get("sources", [])
-        if normalize_url(s.get("url", "")) in by_url
-    ]
-    return deep_dive(target, sources, client, model, reader)
+
+    def source_articles(candidate: dict) -> list[Article]:
+        return [
+            by_url[normalize_url(s["url"])]
+            for s in candidate["topic"].get("sources", [])
+            if normalize_url(s.get("url", "")) in by_url
+        ]
+
+    for candidate in ([target] if target else []) + highlights:
+        sources = source_articles(candidate)
+        if any(a.snippet for a in sources):
+            if candidate is not target:
+                print(f"[deep_dive] 指名先は出典に概要が無いため差し替え: {candidate['topic']['headline']}")
+            return deep_dive(candidate, sources, client, model, reader)
+    print("[deep_dive] 概要のある出典を持つ候補が無いため省略")
+    return None
 
 
 def run(dry_run: bool = False, model_id: str | None = None, region: str | None = None) -> dict:
@@ -250,7 +263,7 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
         recent_deep_dive_categories(past_digests, exclude_date=today),
     )
     deep = (
-        make_deep_dive(deep_target, collection.articles, client, model, dry_run, reader)
+        make_deep_dive(deep_target, highlights, collection.articles, client, model, dry_run, reader)
         if config.get("deep_dive", True)
         else None
     )
