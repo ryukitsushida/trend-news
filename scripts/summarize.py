@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import os
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Optional
@@ -62,6 +63,8 @@ class CategoryDigest:
     article_count: int = 0
     dropped_topics: int = 0
     truncated: bool = False
+    # 出力にあって入力記事に見当たらない数値(誤りの手掛かり。削除はせず記録だけする)
+    unverified_numbers: list[str] = field(default_factory=list)
 
 
 # --------------------------------------------------------------------------
@@ -277,6 +280,10 @@ DIGEST_SYSTEM = """通勤中にスマホで読む読者向けの日本語ダイ�
     (「〜が加速」「〜が急進」等)を入れない。note はタイトル・概要の要点の言い換えに留める。
   - 要約・見出しに使った事実の出所となる記事は、必ず sources に番号を含める。
   - 固有名詞・製品名・CVE番号は原文のまま。英語の技術用語は意味で訳す(root = root権限)。
+  - 英語記事の金額・数量は円や「億」に換算せず、原文の表記のまま書く($30B、$6bn、5,000人)。
+    桁を取り違えやすいため。日本語記事の数値は記事の表記のまま。
+  - 「最大」「推定」「約」「〜の可能性」「さらされた(exposed)」などの限定を落とさない
+    (最大5,000人がさらされた ≠ 5,000人が被害を受けた)。
 - why_it_matters は業界評論にしない。「議論が高まっている」等の一般論ではなく、
   読者プロフィールの人が明日の仕事・設計・学習で何を変えるか、何を知るべきかを書く。
 - importance は絶対基準で付ける(相対評価で全部を4に寄せない):
@@ -685,7 +692,68 @@ def summarize_category(
     result.quick_hits = data["quick_hits"][:quick_hit_count]
     result.dropped_topics = dropped
     result.truncated = truncated
+    result.unverified_numbers = find_unverified_numbers(result, articles)
+    if result.unverified_numbers:
+        print(f"[{category['id']}] 入力に無い数値: {', '.join(result.unverified_numbers)}")
     return result
+
+
+# --- 数値の照合 -----------------------------------------------------------
+# 実際に「$6bn」を「約6億ドル」、「$30B」を「30億ドル」と桁違いで書いた。
+# 数字だけを比べると 6 も 30 も入力にあるので見逃す。単位を掛けた値で比べる。
+
+_UNITS = {
+    "兆": 1e12, "千億": 1e11, "百億": 1e10, "億": 1e8, "千万": 1e7, "百万": 1e6, "万": 1e4,
+    "trillion": 1e12, "billion": 1e9, "bn": 1e9, "b": 1e9,
+    "million": 1e6, "mn": 1e6, "m": 1e6, "thousand": 1e3, "k": 1e3,
+}
+_AMOUNT_RE = re.compile(
+    r"(\d+(?:\.\d+)?)\s*(兆|千億|百億|億|千万|百万|万|"
+    r"trillion|billion|million|thousand|bn|mn|b|m|k)?(?![a-z])",
+    re.IGNORECASE,
+)
+_COMPOUND_RE = re.compile(r"(\d+(?:\.\d+)?)(兆|億)(\d+)(億|万)")
+_WORD_NUMS = {w: str(i) for i, w in enumerate(
+    "zero one two three four five six seven eight nine ten".split())}
+_WORD_NUM_RE = re.compile(
+    r"\b(" + "|".join(_WORD_NUMS) + r")(?=\s+(?:trillion|billion|million|thousand)\b)", re.IGNORECASE)
+# 単位の無い小さな数(「3件」「2つ」など)はモデルが数えた値でもあるので照合しない
+_MIN_PLAIN_NUMBER = 10
+
+
+def _amounts(text: str) -> list[tuple[str, float, bool]]:
+    """テキスト中の数値を (表記, 値, 単位付きか) で返す。全角は半角に、桁区切りは外す。"""
+    text = re.sub(r"(?<=\d),(?=\d{3})", "", unicodedata.normalize("NFKC", text))
+    # 英語記事は「one million」のように数を単語で書くことがある
+    text = _WORD_NUM_RE.sub(lambda m: _WORD_NUMS[m.group(1).lower()], text)
+    # 「3億7500万」「1兆2000億」は1つの数として読む(分けると 3億 と 7500万 になる)
+    text = _COMPOUND_RE.sub(
+        lambda m: str(int(float(m.group(1)) * _UNITS[m.group(2)] + float(m.group(3)) * _UNITS[m.group(4)])),
+        text,
+    )
+    out = []
+    for m in _AMOUNT_RE.finditer(text):
+        unit = (m.group(2) or "").lower()
+        out.append((m.group(0).strip(), float(m.group(1)) * _UNITS.get(unit, 1), bool(unit)))
+    return out
+
+
+def find_unverified_numbers(digest: CategoryDigest, articles: list[Article]) -> list[str]:
+    """見出し・要約・短報の数値のうち、入力記事のタイトル・概要に無いものを返す。"""
+    source_text = " ".join(f"{a.title} {a.snippet[:DIGEST_SNIPPET_CHARS]}" for a in articles)
+    known = [v for _, v, _ in _amounts(source_text)]
+    texts = [digest.overview]
+    texts += [f"{t['headline']} {t['summary']}" for t in digest.topics]
+    texts += [h.get("note", "") for h in digest.quick_hits]
+    missing: list[str] = []
+    for label, value, has_unit in _amounts(" ".join(texts)):
+        if not has_unit and value < _MIN_PLAIN_NUMBER:
+            continue
+        if any(abs(value - k) <= k * 0.01 for k in known):
+            continue
+        if label not in missing:
+            missing.append(label)
+    return missing
 
 
 # --- パス3: 今日の5選 ----------------------------------------------------

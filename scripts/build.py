@@ -132,6 +132,7 @@ def digest_to_dict(d: CategoryDigest) -> dict:
         "article_count": d.article_count,
         "dropped_topics": d.dropped_topics,
         "truncated": d.truncated,
+        "unverified_numbers": d.unverified_numbers,
     }
 
 

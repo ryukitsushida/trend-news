@@ -86,6 +86,9 @@ Hacker News の RSS summary は「Article URL / Comments URL / Points」の定�
 根拠を増やすため、要約には全記事の概要(先頭250字)を渡す。以前はタイトルが長い記事には渡しておらず、
 英語記事はタイトルだけを根拠に推測で書き足されていた(curl の原因、CloudFront の架空の規格名)。
 深掘りは、出典に概要が1件も無いトピック(HN の投稿など)を対象にしない(`build.make_deep_dive`)。
+英語の金額は換算させず原文表記で書かせる(「$6bn」を「約6億ドル」、「$30B」を「30億ドル」と桁違いにした)。
+生成後に `summarize.find_unverified_numbers` が見出し・要約・短報の数値を入力記事と単位込みで照合し、
+見つからない数値をログと digest JSON の `unverified_numbers` に残す(削除はしない)。
 
 **カテゴリ間の重複回避**: 同じ出来事が別カテゴリの記事として届く(The Decoder→AI と
 BleepingComputer→security など)。要約はカテゴリを順に回し、先に作った見出しを後のカテゴリに

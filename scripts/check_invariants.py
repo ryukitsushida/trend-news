@@ -48,6 +48,9 @@ def check_digest(digest: dict) -> None:
         "全トピックに見出しと要約がある",
         all(t.get("headline") and t.get("summary") for _, t in topics),
     )
+    # 入力記事に無い数値は桁違いなどの誤りの手掛かり(summarize.find_unverified_numbers)
+    unverified = [f"{c['id']}: {n}" for c in cats for n in c.get("unverified_numbers", [])]
+    check("見出し・要約の数値が入力記事に見つかる", not unverified, ", ".join(unverified))
     check(
         "importance が全て1〜5の整数",
         all(isinstance(t.get("importance"), int) and 1 <= t["importance"] <= 5 for _, t in topics),
