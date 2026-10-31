@@ -708,8 +708,11 @@ _UNITS = {
     "million": 1e6, "mn": 1e6, "m": 1e6, "thousand": 1e3, "k": 1e3,
 }
 _AMOUNT_RE = re.compile(
-    r"(\d+(?:\.\d+)?)\s*(兆|千億|百億|億|千万|百万|万|"
-    r"trillion|billion|million|thousand|bn|mn|b|m|k)?(?![a-z])",
+    # 数字は途中で切らない(切ると「2026年」から「202」を拾い、日付の除外が効かない)
+    r"(?<![\d.])(\d+(?:\.\d+)?)(?![\d.])\s*(兆|千億|百億|億|千万|百万|万|"
+    r"trillion|billion|million|thousand|bn|mn|b|m|k)?(?![a-z])"
+    # 日付・時刻は照合しない(元記事の「October」と要約の「10月」を別の数とみなしてしまう)
+    r"(?!\s*(?:年|月|日|時|分|秒|か月|ヶ月|カ月))",
     re.IGNORECASE,
 )
 _COMPOUND_RE = re.compile(r"(\d+(?:\.\d+)?)(兆|億)(\d+)(億|万)")

@@ -50,7 +50,8 @@ CISA KEV(悪用確認済みの脆弱性カタログ)も RSS が無いので `jso
 
 **重点カテゴリ**: カテゴリ定義に `topics` / `quick_hits` / `max_articles` を書くと
 全体設定を上書きでき、`focus` は要約プロンプトの先頭に選定方針として添えられる
-(現在は security のみ)。フィード側の `priority: true` は要約前の絞り込み
+(security と general)。general の focus は「仕事に直結しない」ことを理由に全件見送られ
+0件で出たための対策。フィード側の `priority: true` は要約前の絞り込み
 (`select_for_summary`)で枠の半分まで優先して残す。件数の少ない一次情報(KEV・JPCERT等)が
 新着の報道に押し出されて脱落していたための対策。JVN は国内向けの特殊な製品が多く採用されない
 ため priority を外している。`max_items` はフィード単位の件数上限。
