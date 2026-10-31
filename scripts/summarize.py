@@ -28,11 +28,7 @@ from typing import Optional
 
 from scripts.collect import Article
 
-DEFAULT_MODEL_ID = "anthropic.claude-haiku-5-5"
-# 拒否(refusal)されたときだけ使う予備モデル。Haiku 4.5 は安全分類器を持たず、
-# 5.x 世代(Sonnet/Opus 含む)はどれもサイバー系の分類器を持つため、こちらに逃がす。
-# 環境変数 BEDROCK_FALLBACK_MODEL_ID で差し替え、空文字で無効化できる。
-DEFAULT_FALLBACK_MODEL_ID = "global.anthropic.claude-haiku-4-5-20251001-v1:0"
+DEFAULT_MODEL_ID = "global.anthropic.claude-haiku-4-5-20251001-v1:0"
 DEFAULT_REGION = "ap-northeast-1"
 MAX_TOKENS = 8000
 # 1カテゴリに集まりすぎた場合に要約へ渡す上限。
@@ -487,40 +483,23 @@ def _call_tool(client, model_id: str, system: str, prompt: str, tool: dict):
     """tool_choice でツール呼び出しを強制し、その input を返す。
 
     戻り値は (input dict, truncatedフラグ)。
-    拒否されたら同じリクエストを予備モデルで1回だけ送り直す。
     """
-    def create(model: str):
-        response = client.messages.create(
-            model=model,
-            max_tokens=MAX_TOKENS,
-            system=system,
-            tools=[tool],
-            tool_choice={"type": "tool", "name": tool["name"]},
-            messages=[{"role": "user", "content": prompt}],
-        )
-        # コスト確認用。Actionsのログでパスごとの消費が追える
-        usage = getattr(response, "usage", None)
-        if usage is not None:
-            print(f"[usage] {tool['name']} ({model}): in={usage.input_tokens}"
-                  f" out={usage.output_tokens} stop={getattr(response, 'stop_reason', None)}")
-        return response
-
-    response = create(model_id)
-    fallback = os.environ.get("BEDROCK_FALLBACK_MODEL_ID", DEFAULT_FALLBACK_MODEL_ID)
-    if getattr(response, "stop_reason", None) == "refusal" and fallback and fallback != model_id:
-        category = getattr(getattr(response, "stop_details", None), "category", None)
-        print(f"[refusal] {tool['name']}: {model_id} が拒否({category})→ {fallback} で再試行")
-        response = create(fallback)
-
+    response = client.messages.create(
+        model=model_id,
+        max_tokens=MAX_TOKENS,
+        system=system,
+        tools=[tool],
+        tool_choice={"type": "tool", "name": tool["name"]},
+        messages=[{"role": "user", "content": prompt}],
+    )
     stop_reason = getattr(response, "stop_reason", None)
+    # コスト確認用。Actionsのログでパスごとの消費が追える
+    usage = getattr(response, "usage", None)
+    if usage is not None:
+        print(f"[usage] {tool['name']}: in={usage.input_tokens}"
+              f" out={usage.output_tokens} stop={stop_reason}")
     block = next((b for b in response.content if b.type == "tool_use"), None)
     if block is None or not isinstance(block.input, dict):
-        # Haiku 5.5 以降は安全分類器が HTTP 200 + stop_reason=refusal で断ることがある。
-        # 攻撃手法を扱うセキュリティ記事で起こりうるので、原因が分かるように区別する
-        if stop_reason == "refusal":
-            details = getattr(response, "stop_details", None)
-            category = getattr(details, "category", None)
-            raise RuntimeError(f"モデルが応答を拒否した(refusal: {category})")
         raise RuntimeError(f"tool_use ブロックが返らなかった(stop_reason={stop_reason})")
     return block.input, stop_reason == "max_tokens"
 

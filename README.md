@@ -1,14 +1,14 @@
 # Trend News
 
 GitHub Actions が毎朝、RSS/Atomフィードで指定サイトの記事を収集し、Amazon Bedrock 上の
-Claude(Haiku 5.5)にカテゴリ単位で要約させて、GitHub Pages に静的サイトとして公開します。
+Claude(Haiku 4.5)にカテゴリ単位で要約させて、GitHub Pages に静的サイトとして公開します。
 通勤中にスマホで読む用途を想定し、PWA(オフライン閲覧)対応です。
 
 - 公開URL: `https://ryukitsushida.github.io/trend-news/`(Pages有効化後)
 - 構成: 冒頭に「今日の5選」、以下6カテゴリ(AI・LLM / セキュリティ / クラウド・インフラ /
   開発・エンジニアリング / プロダクト・ビジネス / 一般ニュース)を各5トピック+短報5件
   (重点カテゴリのセキュリティのみ7トピック+短報8件)
-- モデル: `anthropic.claude-haiku-5-5`(Bedrock InvokeModel, ap-northeast-1)
+- モデル: `global.anthropic.claude-haiku-4-5-20251001-v1:0`(Bedrock InvokeModel, ap-northeast-1)
 
 ## ローカル開発
 
@@ -49,7 +49,7 @@ Bedrockの「モデルアクセス」ページは廃止され、**サーバー�
 本プロジェクトのGitHub Actionsロールは最小権限(`bedrock:InvokeModel` のみ)しか持たないため、
 **権限を持つ人が1回だけ手で呼んでアカウント全体を有効化する**必要があります。
 
-1. Bedrockコンソール(**ap-northeast-1**)→ 「モデルカタログ」→ **Claude Haiku 5.5**
+1. Bedrockコンソール(**ap-northeast-1**)→ 「モデルカタログ」→ **Claude Haiku 4.5**
 2. 「プレイグラウンドで開く」→ 適当なメッセージを送信
 
 初回利用時に利用用途(use case)の入力を求められた場合は、そこで入力してください。
@@ -180,6 +180,6 @@ Actionsタブから再有効化してください。
 
 ## コスト目安
 
-Haiku 5.5(Bedrock)で1日あたり分類1回+要約6回+5選1回+深掘り1回を呼んだ場合、
-入力は数万トークン、出力は2万トークン台で、概算で **月あたり100円前後**(Haiku 4.5 の約1/10)。
+Haiku 4.5(Bedrock)で1日あたり分類1回+要約6回+5選1回+深掘り1回を呼んだ場合、
+入力は数万トークン、出力は2万トークン台で、概算で **月あたり数百円程度**。
 Bedrock の単価はリージョンや推論プロファイルで変わるため、正確な額は Cost Explorer で確認すること。

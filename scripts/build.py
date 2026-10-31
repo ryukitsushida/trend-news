@@ -266,6 +266,11 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
         },
     }
 
+    # 全カテゴリが空なら保存も公開もしない。保存すると同日の正常な号を空の号で上書きし、
+    # ワークフローが成功扱いのまま空のサイトを公開してしまう(モデル未有効化の403で実際に起きた)
+    if not dry_run and not any(d.topics for d in digests):
+        raise SystemExit("全カテゴリの要約が空のため、保存と公開を中止します(Bedrockのエラーを確認)")
+
     save_digest(digest)
     render_site(digest, PUBLIC_DIR, config.get("archive_days"), past_digests)
     return digest

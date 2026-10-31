@@ -151,10 +151,6 @@ TypeError になるので、オフライン時は必ず Response を返すこと
 - モデルIDは環境変数 `BEDROCK_MODEL_ID` で差し替えられる。パス別に
   `BEDROCK_{CLASSIFY,DIGEST,HIGHLIGHT,DEEP_DIVE}_MODEL_ID` でも上書きでき、
   分類だけ安いモデル・要約と深掘りだけ賢いモデル、という使い分けができる
-- Haiku 5.5 以降は安全分類器が `stop_reason: "refusal"` で断ることがある(サイバー系は
-  セキュリティ記事で起こりうる)。拒否時は `BEDROCK_FALLBACK_MODEL_ID`(既定は分類器の
-  無い Haiku 4.5)で1回だけ再送する。空文字で無効化。Sonnet/Opus の5.x世代も同種の分類器を
-  持つので、上位モデルへの切り替えでは回避にならない
 - **記事は番号で参照する。** プロンプトにURLを載せず `sources: [{n: 3}]` の形で
   返させ、URL・タイトル・配信元は元記事から埋める。入力トークンが減るうえ、
   捏造リンクが公開される余地が構造的に無くなる
