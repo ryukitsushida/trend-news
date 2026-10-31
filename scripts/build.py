@@ -224,12 +224,17 @@ def run(dry_run: bool = False, model_id: str | None = None, region: str | None =
     def covered_for(cid: str) -> list[str]:
         return recent_headlines(past_digests, dedupe_days, exclude_date=today, category_id=cid)
 
+    # カテゴリ側に topics / quick_hits があれば全体設定より優先する(重点カテゴリ用)
     digests = [
-        dry_run_digest(category, grouped[category["id"]], topic_count)
+        dry_run_digest(category, grouped[category["id"]],
+                       category.get("topics", topic_count),
+                       category.get("quick_hits", quick_hit_count))
         if dry_run
         else summarize_category(
             category, grouped[category["id"]], client, model,
-            topic_count, quick_hit_count, covered_for(category["id"]), reader,
+            category.get("topics", topic_count),
+            category.get("quick_hits", quick_hit_count),
+            covered_for(category["id"]), reader,
         )
         for category in categories
     ]

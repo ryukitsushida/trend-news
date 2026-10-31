@@ -55,6 +55,8 @@ class Article:
     # 取れないフィードもあるので None を許容する。
     popularity: Optional[int] = None
     popularity_label: Optional[str] = None
+    # 設定で priority: true のソース(一次情報など)。要約前の絞り込みで優先して残す。
+    priority: bool = False
 
 
 @dataclass
@@ -281,10 +283,43 @@ def _adapter_lobsters(cfg: dict) -> list[Article]:
     return out
 
 
+def _adapter_cisa_kev(cfg: dict) -> list[Article]:
+    """CISA KEV: 実際に悪用が確認された脆弱性の公式カタログ。RSSが無いためJSONを使う。
+
+    人気度の代わりに「悪用確認済」を popularity_label に載せる。要約プロンプトと
+    ページのバッジの両方に出るので、パッチ優先度の判断材料になる。
+    """
+    data = fetch_json(
+        "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+    )
+    vulns = sorted(data.get("vulnerabilities", []),
+                   key=lambda v: v.get("dateAdded", ""), reverse=True)
+    out = []
+    for v in vulns[:30]:
+        cve = v.get("cveID", "")
+        label = "悪用確認済"
+        if v.get("knownRansomwareCampaignUse") == "Known":
+            label += "・ランサム"
+        out.append(
+            Article(
+                title=f"{cve}: {v.get('vulnerabilityName', '').strip()}",
+                url=f"https://nvd.nist.gov/vuln/detail/{cve}",
+                source=cfg["name"],
+                published=_parse_iso(v.get("dateAdded")),
+                snippet=clean_snippet(v.get("shortDescription", "")),
+                category_id=cfg.get("category"),
+                popularity_label=label,
+                priority=bool(cfg.get("priority")),
+            )
+        )
+    return out
+
+
 JSON_ADAPTERS = {
     "qiita": _adapter_qiita,
     "zenn": _adapter_zenn,
     "lobsters": _adapter_lobsters,
+    "cisa_kev": _adapter_cisa_kev,
 }
 
 
@@ -323,6 +358,7 @@ def _entries_to_articles(entries, feed_cfg: dict) -> list[Article]:
                 category_id=feed_cfg.get("category"),
                 popularity=popularity,
                 popularity_label=popularity_label,
+                priority=bool(feed_cfg.get("priority")),
             )
         )
     return articles
@@ -384,8 +420,8 @@ def collect_all(
                 continue
             # 人気度が取れるソースなので、新着順ではなく人気順に上限まで取る
             result.articles.extend(
-                _take(articles, keep, cutoff_for(cfg), per_feed_cap,
-                      lambda a: a.popularity or 0)
+                _take(articles, keep, cutoff_for(cfg), cfg.get("max_items", per_feed_cap),
+                      lambda a: (a.popularity or 0, _sort_key(a)))
             )
 
         for fut in as_completed(feed_futures):
@@ -398,7 +434,7 @@ def collect_all(
             # 更新の多いフィードが枠を独占しないよう、新しい順に上限まで
             result.articles.extend(
                 _take(_entries_to_articles(parsed.entries, feed_cfg), keep,
-                      cutoff_for(feed_cfg), per_feed_cap, _sort_key)
+                      cutoff_for(feed_cfg), feed_cfg.get("max_items", per_feed_cap), _sort_key)
             )
 
     result.articles.sort(key=_sort_key, reverse=True)

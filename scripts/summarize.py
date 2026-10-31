@@ -28,7 +28,11 @@ from typing import Optional
 
 from scripts.collect import Article
 
-DEFAULT_MODEL_ID = "global.anthropic.claude-haiku-4-5-20251001-v1:0"
+DEFAULT_MODEL_ID = "anthropic.claude-haiku-5-5"
+# 拒否(refusal)されたときだけ使う予備モデル。Haiku 4.5 は安全分類器を持たず、
+# 5.x 世代(Sonnet/Opus 含む)はどれもサイバー系の分類器を持つため、こちらに逃がす。
+# 環境変数 BEDROCK_FALLBACK_MODEL_ID で差し替え、空文字で無効化できる。
+DEFAULT_FALLBACK_MODEL_ID = "global.anthropic.claude-haiku-4-5-20251001-v1:0"
 DEFAULT_REGION = "ap-northeast-1"
 MAX_TOKENS = 8000
 # 1カテゴリに集まりすぎた場合に要約へ渡す上限。
@@ -483,19 +487,42 @@ def _call_tool(client, model_id: str, system: str, prompt: str, tool: dict):
     """tool_choice でツール呼び出しを強制し、その input を返す。
 
     戻り値は (input dict, truncatedフラグ)。
+    拒否されたら同じリクエストを予備モデルで1回だけ送り直す。
     """
-    response = client.messages.create(
-        model=model_id,
-        max_tokens=MAX_TOKENS,
-        system=system,
-        tools=[tool],
-        tool_choice={"type": "tool", "name": tool["name"]},
-        messages=[{"role": "user", "content": prompt}],
-    )
+    def create(model: str):
+        response = client.messages.create(
+            model=model,
+            max_tokens=MAX_TOKENS,
+            system=system,
+            tools=[tool],
+            tool_choice={"type": "tool", "name": tool["name"]},
+            messages=[{"role": "user", "content": prompt}],
+        )
+        # コスト確認用。Actionsのログでパスごとの消費が追える
+        usage = getattr(response, "usage", None)
+        if usage is not None:
+            print(f"[usage] {tool['name']} ({model}): in={usage.input_tokens}"
+                  f" out={usage.output_tokens} stop={getattr(response, 'stop_reason', None)}")
+        return response
+
+    response = create(model_id)
+    fallback = os.environ.get("BEDROCK_FALLBACK_MODEL_ID", DEFAULT_FALLBACK_MODEL_ID)
+    if getattr(response, "stop_reason", None) == "refusal" and fallback and fallback != model_id:
+        category = getattr(getattr(response, "stop_details", None), "category", None)
+        print(f"[refusal] {tool['name']}: {model_id} が拒否({category})→ {fallback} で再試行")
+        response = create(fallback)
+
+    stop_reason = getattr(response, "stop_reason", None)
     block = next((b for b in response.content if b.type == "tool_use"), None)
     if block is None or not isinstance(block.input, dict):
-        raise RuntimeError("tool_use ブロックが返らなかった")
-    return block.input, getattr(response, "stop_reason", None) == "max_tokens"
+        # Haiku 5.5 以降は安全分類器が HTTP 200 + stop_reason=refusal で断ることがある。
+        # 攻撃手法を扱うセキュリティ記事で起こりうるので、原因が分かるように区別する
+        if stop_reason == "refusal":
+            details = getattr(response, "stop_details", None)
+            category = getattr(details, "category", None)
+            raise RuntimeError(f"モデルが応答を拒否した(refusal: {category})")
+        raise RuntimeError(f"tool_use ブロックが返らなかった(stop_reason={stop_reason})")
+    return block.input, stop_reason == "max_tokens"
 
 
 # --- パス1: 分類 ---------------------------------------------------------
@@ -566,10 +593,14 @@ def _age_label(article: Article, now: Optional[datetime] = None) -> str:
 
 
 def _build_digest_prompt(
-    label: str, articles: list[Article], recent_headlines: Optional[list[str]] = None
+    label: str, articles: list[Article], recent_headlines: Optional[list[str]] = None,
+    focus: Optional[str] = None,
 ) -> str:
     now = datetime.now(timezone.utc)
     lines = [f"以下は「{label}」カテゴリの記事一覧です(新しい順)。\n"]
+    if focus:
+        # 記事データより前に置き、編集方針であることを明確にする
+        lines.insert(0, f"このカテゴリの選定方針: {' '.join(focus.split())}\n")
     for i, a in enumerate(articles, start=1):
         meta = f"{a.source} {_age_label(a, now)}"
         if a.popularity_label:
@@ -591,15 +622,20 @@ def select_for_summary(articles: list[Article], limit: int) -> list[Article]:
     単純に先頭(=新着順)で切ると、収集ウィンドウの広い Zenn / Qiita など
     「古いが今まさに読まれている」記事が真っ先に脱落する。そこで枠の半分を
     人気度の高い記事に割り当て、残りを新着で埋める。並び順は日付のまま返す。
+
+    priority のソース(JVN・CISA KEV など)は報道より件数が少なく、新着の報道に
+    押し出されて大半が脱落していたので、人気度より先に枠の半分まで確保する。
     """
     if len(articles) <= limit:
         return articles
 
+    prioritized = [i for i, a in enumerate(articles) if a.priority]
     popular = sorted(
         (i for i, a in enumerate(articles) if a.popularity),
         key=lambda i: -(articles[i].popularity or 0),
     )
-    keep = set(popular[: limit // 2])
+    keep = set(prioritized[: limit // 2])
+    keep.update(popular[: limit // 2])
     for i in range(len(articles)):  # articles は新着順
         if len(keep) >= limit:
             break
@@ -625,14 +661,18 @@ def summarize_category(
 
     client = client or get_client()
     model_id = get_model_id(model_id, "digest")
-    articles = select_for_summary(articles, MAX_ARTICLES_PER_CATEGORY)
+    articles = select_for_summary(
+        articles, category.get("max_articles", MAX_ARTICLES_PER_CATEGORY)
+    )
 
     try:
         data, truncated = _call_tool(
             client,
             model_id,
             with_reader(DIGEST_SYSTEM, reader_profile),
-            _build_digest_prompt(category["label"], articles, recent_headlines),
+            _build_digest_prompt(
+                category["label"], articles, recent_headlines, category.get("focus")
+            ),
             _digest_tool(topic_count, quick_hit_count),
         )
     except Exception as exc:  # noqa: BLE001
@@ -853,7 +893,9 @@ def dry_run_deep_dive(target: Optional[dict]) -> Optional[dict]:
     }
 
 
-def dry_run_digest(category: dict, articles: list[Article], topic_count: int = 5) -> CategoryDigest:
+def dry_run_digest(
+    category: dict, articles: list[Article], topic_count: int = 5, quick_hit_count: int = 5
+) -> CategoryDigest:
     """Bedrockを呼ばず、テンプレート確認用の固定ダミー要約を返す。"""
     result = CategoryDigest(
         id=category["id"],
@@ -869,7 +911,7 @@ def dry_run_digest(category: dict, articles: list[Article], topic_count: int = 5
                 "why_it_matters": "(dry-run: 実際の分析はBedrock呼び出し時に生成されます)",
                 "tags": ["dry-run"],
                 # ★5は1カテゴリ1件まで(本番の基準と揃える。検証が誤検知しないため)
-                "importance": [5, 4, 3, 3, 2][i % 5],
+                "importance": [5, 4, 3, 3][i] if i < 4 else 2,
                 "sources": [
                     {
                         "title": a.title,
@@ -888,6 +930,6 @@ def dry_run_digest(category: dict, articles: list[Article], topic_count: int = 5
             "note": "",
             **({"popularity": a.popularity_label} if a.popularity_label else {}),
         }
-        for a in articles[topic_count : topic_count + 5]
+        for a in articles[topic_count : topic_count + quick_hit_count]
     ]
     return result

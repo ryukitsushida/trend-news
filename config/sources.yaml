@@ -42,6 +42,17 @@ categories:
     description: |
       脆弱性(CVE)、ゼロデイ、情報漏洩・侵害インシデント、マルウェアや攻撃手法、
       セキュリティ対策・ガイドライン・注意喚起。
+    # 重点カテゴリ。件数の上書き(topics / quick_hits / max_articles)と、
+    # 要約プロンプトに添える選定方針(focus)はどのカテゴリにも書ける。
+    topics: 7
+    quick_hits: 8
+    max_articles: 60   # 既定30。フィードを増やした分、要約前に切り捨てられないようにする
+    focus: |
+      脆弱性情報と情報漏えい・侵害インシデントを最優先する。脆弱性は「悪用確認済」
+      (CISA KEV)・ゼロデイ・広く使われる製品(VPN機器、OS、ブラウザ、AWS等のクラウド、
+      OSSライブラリ)を優先し、見出しか要約にCVE番号・対象製品・対処(パッチ/回避策)を
+      入れる。情報漏えいは被害組織・規模・原因が分かるものを優先する。
+      同じCVEや同じ事案を複数ソースが報じていれば1トピックにまとめる。
   - id: cloud
     label: クラウド・インフラ
     description: |
@@ -68,6 +79,8 @@ json_sources:
   - { name: Qiita 人気,    kind: qiita,    days: 5, min_stocks: 20, slow: true }
   - { name: Zenn トレンド,  kind: zenn,     slow: true }
   - { name: Lobsters,     kind: lobsters, slow: true }
+  # 米CISAの「実際に悪用が確認された脆弱性」カタログ。パッチ優先度の一次情報。
+  - { name: CISA KEV,     kind: cisa_kev, category: security, slow: true, priority: true }
 
 feeds:
   # --- 話題が横断するフィード(内容で分類する) ---
@@ -97,11 +110,19 @@ feeds:
   - { name: ITmedia AI+,      url: "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml", category: ai }
 
   # --- セキュリティ固定 ---
-  - { name: JPCERT/CC,          url: "https://www.jpcert.or.jp/rss/jpcert.rdf",      category: security, slow: true }
-  - { name: IPA security,       url: "https://www.ipa.go.jp/security/alert-rss.rdf", category: security, slow: true }
+  # 一次情報(公的機関): 脆弱性・注意喚起の公式発表。priority: true は要約前の絞り込みで
+  # 報道より優先して残す(件数が少なく、新着の報道に押し出されて脱落していたため)。
+  - { name: JPCERT/CC,          url: "https://www.jpcert.or.jp/rss/jpcert.rdf",      category: security, slow: true, priority: true }
+  - { name: IPA security,       url: "https://www.ipa.go.jp/security/alert-rss.rdf", category: security, slow: true, priority: true }
+  - { name: JVN,                url: "https://jvn.jp/rss/jvn.rdf",                   category: security, slow: true, priority: true, max_items: 15 }
+  # 報道: 脆弱性の悪用状況と情報漏えい・侵害インシデント
+  - { name: Security NEXT,      url: "https://www.security-next.com/feed",           category: security, priority: true, max_items: 15 }
+  - { name: piyolog,            url: "https://piyolog.hatenadiary.jp/rss",           category: security, slow: true, priority: true }
+  - { name: BleepingComputer,   url: "https://www.bleepingcomputer.com/feed/",       category: security }
+  - { name: The Record,         url: "https://therecord.media/feed",                 category: security }
+  - { name: SecurityWeek,       url: "https://feeds.feedburner.com/securityweek",    category: security }
   - { name: The Hacker News,    url: "https://feeds.feedburner.com/TheHackersNews",  category: security }
   - { name: Krebs on Security,  url: "https://krebsonsecurity.com/feed/",            category: security, slow: true }
-  - { name: Security NEXT,      url: "https://www.security-next.com/feed",           category: security }
 
   # --- クラウド・インフラ固定 ---
   - { name: AWS News Blog,      url: "https://aws.amazon.com/blogs/aws/feed/",                    category: cloud, slow: true }
