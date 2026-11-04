@@ -1,0 +1,1085 @@
+{
+  "date": "2026-11-04",
+  "generated_at": "2026-11-04 09:30 JST",
+  "lead": "セキュリティと開発効率の両面で、エンジニアの実務設計が試される1日。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "WordPress RCE脆弱性が悪用中で、コア更新が緊急対応。インフラ監視・段階的upgrade戦略の設計が直結する。",
+      "topic": {
+        "headline": "WordPress RCE脆弱性、CISA KEV登録で悪用中——段階的upgrade窓を突く",
+        "summary": "WordPressコアの時刻チェック・時刻使用（TOCTOU）競合状態脆弱性により、非認証攻撃者がアップグレード期間中にサーバー上でコード実行が可能。予測可能で外部アクセス可能なステージングエリアが原因。実攻撃での悪用が確認されており、米当局が注意喚起。",
+        "why_it_matters": "WordPressはサイト制作・管理の標準ツール。本脆弱性は非認証・無操作で発動し悪用が進行中のため、すぐにコアを最新版に更新する必要がある。アップグレード時の可視化・監視も検討すべき。",
+        "tags": [
+          "RCE",
+          "CMS",
+          "悪用確認済"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "CVE-2026-119977: WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119977",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          },
+          {
+            "title": "「WordPress」更新機能のRCE脆弱性 - 悪用に米当局が注意喚起",
+            "url": "https://www.security-next.com/192310",
+            "source": "Security NEXT"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "Chrome 157のクリティカル7件は、開発・テスト・本番環境全体のブラウザ更新優先度を再確認する契機。",
+      "topic": {
+        "headline": "Chrome 157でクリティカル脆弱性7件を含む213件を修正",
+        "summary": "Googleはブラウザ「Chrome」最新版の157をリリース。複数の「クリティカル」レベル脆弱性を含む213件の脆弱性を修正している。",
+        "why_it_matters": "Chromeの脆弱性はブラウザを通じたあらゆるWebアプリケーション・API呼び出しに影響する。クリティカル7件は無条件で最新版への更新が必須。自動更新が有効か確認すること。",
+        "tags": [
+          "ブラウザ",
+          "クリティカル"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "「Chrome 157」で脆弱性213件を修正 - 「クリティカル」は7件",
+            "url": "https://www.security-next.com/192316",
+            "source": "Security NEXT"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "GitHub基盤のエージェント対応で180倍スループット向上が実現される見通しが、インフラ選定・信頼性判断の決め手になる。",
+      "topic": {
+        "headline": "GitHub Universe 2026、AIエージェント対応で180倍スループット性能向上を発表",
+        "summary": "GitHubが年次イベント「GitHub Universe 2026」で、AIエージェント時代に対応した大幅な性能向上を来年初頭に実現することを発表。基盤システムの抜本的な改善を予定。",
+        "why_it_matters": "スケール制約で代理実行・統合を考える際に、GitHub基盤自体の対応状況を把握できる。エージェント時代の実装設計で信頼性の見通しが立つ。",
+        "tags": [
+          "GitHub",
+          "AIエージェント",
+          "スケール"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "GitHubが従来比180倍のスループット性能向上を実現へ、来年初頭に。AIエージェント時代に対応。GitHub Universe 2026",
+            "url": "https://www.publickey1.jp/blog/26/github180aigithub_universe_2026.html",
+            "source": "Publickey"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "システム移行時のロックインが独占禁止法検証対象になった。自社の移行設計や契約交渉で競争法観点の再検討が必須に。",
+      "topic": {
+        "headline": "自治体システム移行時の高額請求、公正取引委員会が実態調査へ——独占禁止法違反の可能性",
+        "summary": "地方自治体が住民基本台帳などのシステム委託先を切り替える際、現在の委託先から高額な作業費を請求される事例が相次いでいる。公正取引委員会が独占禁止法の取引妨害にあたる可能性を調査する方針を固めた。",
+        "why_it_matters": "クラウドやシステム移行のロックイン状態が競争上の問題として公式に検証される局面。エンタープライズシステムの移行設計や契約条件の交渉で、競争法の観点から提案内容を再検討する必要が高まる。",
+        "tags": [
+          "規制",
+          "インフラ"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "自治体システム移行で高額請求、ＩＴ大手の「手切れ金」との声も…公取委が実態調査へ",
+            "url": "https://www.yomiuri.co.jp/economy/20261103-GYT1T00297/",
+            "source": "はてブ 世の中",
+            "popularity": "116 users"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "Binance侵害は採用詐称・ツール信頼性・AI権限設定の3点で、開発チーム内部の防御体制を問い直す事例。",
+      "topic": {
+        "headline": "Binance $6.3B盗難、北朝鮮ハッカーがフェイク採用面接とHomebrewで侵入",
+        "summary": "暗号資産取引所Binanceは最大規模となる$6.43B盗難について、北朝鮮ハッカーが数ヶ月間にわたる多段階キャンペーンで実行したと明かした。フェイク採用面接でジャーバのマルウェアをインストールさせた後、改ざんされたHomebrew実行ファイルを利用し、ウォレットインフラを侵害。内部AIツールも悪用された。",
+        "why_it_matters": "開発者への社会工学が初期侵入から内部権限奪取につながる典型例。採用・採用面接プロセスの詐称検証、Homebrewなど不可視なツール更新チェーンの信頼性検証、内部AIツール（LLM）の権限設定の見直しが必要。",
+        "tags": [
+          "社会工学",
+          "北朝鮮",
+          "供給チェーン"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Binance says hackers used fake job interviews and an internal AI tool to pull off the $6.3 billion heist",
+            "url": "https://www.theverge.com/news/1025576/binance-cyrpto-theft-explained",
+            "source": "The Verge"
+          },
+          {
+            "title": "Binance says fake job interview led to $6.3 billion crypto heist",
+            "url": "https://www.bleepingcomputer.com/news/security/binance-says-fake-job-interview-led-to-63-billion-crypto-heist/",
+            "source": "BleepingComputer"
+          },
+          {
+            "title": "Binance Reveals How Fake Job Interviews and AI Tool Abuse Led to $6.43 Billion Theft",
+            "url": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html",
+            "source": "The Hacker News"
+          },
+          {
+            "title": "Binance CEO says ‘months-long campaign’ led to $6.3 billion theft as N. Korea denies responsibility",
+            "url": "https://therecord.media/binance-cryptocurrency-theft-months-long-campaign-nkorea",
+            "source": "The Record"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "ai",
+    "category_label": "AI・LLM",
+    "headline": "Anthropic、AI モデル身元証明システム「FlashProve」を開発中",
+    "sources": [
+      {
+        "title": "Anthropic is working on a system to prove AI models’ identity",
+        "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/",
+        "source": "TechCrunch"
+      }
+    ],
+    "background": "生成AI時代、企業は LLM を社内システムや顧客向けサービスに組み込む際、「本当にこのレスポンスは認可されたモデルから生成されたのか」を証明する仕組みが欠落している。改ざんやなりすまし、ログの信頼性が問われ始め、コンプライアンス・監査の障壁になっている。",
+    "concepts": [
+      {
+        "term": "署名・検証",
+        "explanation": "デジタル署名により、データが特定の発信元から改ざんされず送られたことを暗号学的に証明する仕組み。FlashProveはこれを AI レスポンスに応用する。"
+      },
+      {
+        "term": "監査証跡(Audit Trail)",
+        "explanation": "金融・医療など規制業界では、「誰が何をいつ決めたか」の記録が必須。LLM の出力も同じく、本当に認可されたモデルからのものか追跡可能にする必要がある。"
+      },
+      {
+        "term": "モデル身元(Model Identity)",
+        "explanation": "AIモデルのバージョン・公開鍵・デプロイ環境など、そのモデルが「誰か」を一意に証明する識別子の集合。改ざんされたコピーとの区別ができる。"
+      }
+    ],
+    "for_you": "Terraform/Python で AWS 上に LLM パイプラインを構築する際、現在は「API 呼び出しログ」に頼っているはず。FlashProve のような検証機構があれば、Lambda から Claude API を呼び出した結果を、弁護士や監査役が「確かにこのレスポンスは公式 Claude からのもの」と検証できる。つまり、あなたが設計する AI 意思決定支援システムの信頼性が格段に上がり、本番導入が容易になる。",
+    "try_this": "今月中に、社内で使っているLLM APIのレスポンスをログに記録する際、「署名の検証ステップを入れるなら何が必要か」をラフに設計してみてください。Claude API のレスポンスヘッダに署名があるか、あるいは検証用のエンドポイントがあるか Anthropic のドキュメントを軽く調べ、今後の設計判断の参考にしましょう。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "AIモデルの低価格化による価値創造の再分配が指摘される一方、Google は学校向けに生成AI機能を原則オフへ。Anthropic が AIの身元証明システム、Apple は Siri の サードパーティ対応を発表。",
+      "topics": [
+        {
+          "headline": "AI富の再分配：開発企業から流通・決済企業へ",
+          "summary": "AIモデルの性能向上と低価格化により、AIが生み出す富が、モデル開発企業ではなく流通網や決済システムを支配する企業に集中するという分析が公開された。過去の技術革新の例に基づいて、AI開発競争や米中関係、世界経済の変化を分析している。",
+          "why_it_matters": "LLM を活用する際、モデル提供企業の競争が激化して低価格化する一方で、実装・流通・インフラ層が収益源になる可能性を踏まえ、自分の立ち位置（開発か流通か）と付加価値の所在を意識しながら設計・学習を進める必要がある。",
+          "tags": [
+            "AI戦略",
+            "経済分析",
+            "事業モデル"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AIモデルのコモディティ化で富は開発企業から流通・決済システムへ移るという予測「The Commanding Heights」",
+              "url": "https://gigazine.net/news/20261104-the-commanding-heights/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "Google、学校向けAI機能を原則オフ——検索AI無効化は未対応で批判",
+          "summary": "Google は K-12（幼稚園から高校）生徒向けアカウントで Gemini と Google 検索のAI機能を原則オフにすると発表した。ただし検索のAI機能のみを無効にはできず、AIを禁じる学校では検索自体が利用不可となる構仕上がり。",
+          "why_it_matters": "教育現場での AI 制限は、これまでのツール設計思想を問う事例。生成AI を段階的に制御する機構設計の難しさと、学校の多様なニーズに応える API 設計が、今後の B2B / B2E 営ソフトウェアで重要になる。",
+          "tags": [
+            "Google",
+            "教育",
+            "AI倫理"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Google、学校の生徒向けAI機能を原則オフへ　「AIなしのGoogle検索」は選べず批判も",
+              "url": "https://www.itmedia.co.jp/news/article/2611/04/2000002849/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Google will let schools skip AI tools, but they have to give up search, too",
+              "url": "https://arstechnica.com/ai/2026/11/google-will-let-schools-skip-ai-tools-but-they-have-to-give-up-search-too/",
+              "source": "Ars Technica"
+            }
+          ]
+        },
+        {
+          "headline": "Anthropic、AI モデル身元証明システム「FlashProve」を開発中",
+          "summary": "Anthropic が AI レスポンスの真正性を証明するシステム「FlashProve」に取り組んでいる。誰でも AI のレスポンスが本当にそのモデルから生成されたか検証できるようにするもの。",
+          "why_it_matters": "AI の出力を本番環境や監査対象で活用する際、なりすまし・改ざんの可能性が課題になる。信頼できる身元証明があれば、LLM を意思決定支援や記録作成に組み込む際の監査要件を簡素化できる。",
+          "tags": [
+            "Anthropic",
+            "信頼性",
+            "セキュリティ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Anthropic is working on a system to prove AI models’ identity",
+              "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Apple、Siri AI がサードパーティアプリ連携に対応——iOS 27.3で展開",
+          "summary": "Apple は iOS 27.3 update で Siri AI にサードパーティアプリ統合機能を追加する。Siri が「全アプリ」で動作できるようになり、ユーザーが持つアプリのデータ・機能を活用できるようになる。",
+          "why_it_matters": "AI アシスタントが特定アプリに限定されず複数サービス間の意図実現を担うとなると、エンジニアは API・webhook・認可スキーム設計で互いのアプリを安全に連携させる仕組みを検討する必要が出てくる。",
+          "tags": [
+            "Apple",
+            "Siri",
+            "API連携"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Apple starts giving Siri AI access to third-party apps",
+              "url": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "東北大・アイシン、STT-MRAM搭載 AIチップを開発——消費電力を50分の1に削減",
+          "summary": "東北大学とアイシンが不揮発性メモリ STT-MRAM を搭載する AIチップを 16nm プロセスで開発。OSブート時間を約39倍高速化、AI処理時間を約10分の1に短縮、消費電力を50分の1に削減した。",
+          "why_it_matters": "エッジ・IoT・組込み環境でローカルモデルを実行する際の制約（電力、起動時間）が劇的に改善される可能性がある。自社のAI推論基盤設計時に、クラウド送信か local inference かの判断基準が変わる可能性を視野に。",
+          "tags": [
+            "ハードウェア",
+            "省電力",
+            "エッジAI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "東北大とアイシンがSTT-MRAM搭載AIチップを開発、16nmプロセスでは世界初",
+              "url": "https://monoist.itmedia.co.jp/mn/articles/2611/04/news046.html",
+              "source": "ITmedia AI+"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "資料作成の「手直し地獄」がちょっと楽になる、Gemini新機能発表まとめ",
+          "url": "https://kn.itmedia.co.jp/kn/article/2611/04/2000002816/",
+          "source": "ITmedia AI+",
+          "note": "Google が Gemini に資料作成の手直し・体裁統一を効率化する新機能を発表。"
+        },
+        {
+          "title": "全社員を「AIマスター化」した広告代理店の“研修じゃない”人材戦略",
+          "url": "https://kn.itmedia.co.jp/kn/article/2611/04/2000002712/",
+          "source": "ITmedia AI+",
+          "note": "広告代理店テレシーが全社員の「AIマスター化」で人材戦略を実施、情報基盤整備と AI リテラシー格差解消に注力。"
+        },
+        {
+          "title": "OpenAI hires ex-Army Secretary, gaining bipartisan reach just as midterms loom",
+          "url": "https://the-decoder.com/openai-hires-ex-army-secretary-gaining-bipartisan-reach-just-as-midterms-loom/",
+          "source": "The Decoder",
+          "note": "OpenAI が元 US Army 長官 Dan Driscoll を「国防近代化シニアカウンセラー」に採用、政府契約・軍事 AI 規制への関与を強化。"
+        },
+        {
+          "title": "Bug hunters can now earn up to $172,000 from OpenAI as company ramps up security",
+          "url": "https://the-decoder.com/bug-hunters-can-now-earn-up-to-172000-from-openai-as-company-ramps-up-security/",
+          "source": "The Decoder",
+          "note": "OpenAI、バグバウンティの上限を17万2千ドルに引き上げセキュリティを強化。"
+        },
+        {
+          "title": "Anthropic cracks down on game cloning in Claude Code after wave of AI-built knockoffs",
+          "url": "https://the-decoder.com/anthropic-cracks-down-on-game-cloning-in-claude-code-after-wave-of-ai-built-knockoffs/",
+          "source": "The Decoder",
+          "note": "Anthropic が Claude Code でゲーム複製を防止する制限を導入、ビルトゲーム大量生成への対抗。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 61,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "17万"
+      ]
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "WordPressのRCE脆弱性が悪用中、Barracuda ESGなど複数製品で深刻フロー確認。Binance $6.3B盗難は北朝鮮がフェイク採用面接とAIツール悪用。情報漏えいはノジマ700万件、Harvard 85万件。",
+      "topics": [
+        {
+          "headline": "WordPress RCE脆弱性、CISA KEV登録で悪用中——段階的upgrade窓を突く",
+          "summary": "WordPressコアの時刻チェック・時刻使用（TOCTOU）競合状態脆弱性により、非認証攻撃者がアップグレード期間中にサーバー上でコード実行が可能。予測可能で外部アクセス可能なステージングエリアが原因。実攻撃での悪用が確認されており、米当局が注意喚起。",
+          "why_it_matters": "WordPressはサイト制作・管理の標準ツール。本脆弱性は非認証・無操作で発動し悪用が進行中のため、すぐにコアを最新版に更新する必要がある。アップグレード時の可視化・監視も検討すべき。",
+          "tags": [
+            "RCE",
+            "CMS",
+            "悪用確認済"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "CVE-2026-119977: WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119977",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "「WordPress」更新機能のRCE脆弱性 - 悪用に米当局が注意喚起",
+              "url": "https://www.security-next.com/192310",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "Barracuda ESG等6製品に脆弱性——連鎖でroot権限奪取",
+          "summary": "Barracuda Networksはメールセキュリティ製品ESGを含む6製品の脆弱性を明らかにし、修正パッチをリリース。ESGについては複数の脆弱性を組み合わせることで、大きな影響（root権限奪取の可能性）を受けるおそれがある。",
+          "why_it_matters": "メールセキュリティ製品は社内の信頼されたインフラ。root権限奪取されると、メール配信・暗号化・ルーティング全体が支配される。本社・大規模顧客ほど優先度が高い。",
+          "tags": [
+            "メールセキュリティ",
+            "root権限"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「Barracuda ESG」に深刻な脆弱性 - 連鎖でroot取得のおそれ",
+              "url": "https://www.security-next.com/192322",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "Barracuda Flaws Could Be Chained to Bypass Authorization and Gain Root Access",
+              "url": "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "Barracuda warns of critical flaws allowing root access to devices",
+              "url": "https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "SonicWall GMS、サポート終了で脆弱性の修正版提供なし",
+          "summary": "SonicWallの管理製品GMS（Global Management System）に深刻な脆弱性が明らかになった。既にサポートが終了しており、修正版の提供は行わない。別製品への移行を求めている。",
+          "why_it_matters": "VPN・ネットワークセキュリティ製品のサポート終了は運用に直結。仮にまだ利用中なら移行計画の加速が急務。今後もサポート終了製品の脆弱性開示に注視すべき。",
+          "tags": [
+            "管理製品",
+            "サポート終了"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "管理製品「SonicWall GMS」に深刻な脆弱性 - 修正版提供なし",
+              "url": "https://www.security-next.com/192328",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "Chrome 157でクリティカル脆弱性7件を含む213件を修正",
+          "summary": "Googleはブラウザ「Chrome」最新版の157をリリース。複数の「クリティカル」レベル脆弱性を含む213件の脆弱性を修正している。",
+          "why_it_matters": "Chromeの脆弱性はブラウザを通じたあらゆるWebアプリケーション・API呼び出しに影響する。クリティカル7件は無条件で最新版への更新が必須。自動更新が有効か確認すること。",
+          "tags": [
+            "ブラウザ",
+            "クリティカル"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「Chrome 157」で脆弱性213件を修正 - 「クリティカル」は7件",
+              "url": "https://www.security-next.com/192316",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "Binance $6.3B盗難、北朝鮮ハッカーがフェイク採用面接とHomebrewで侵入",
+          "summary": "暗号資産取引所Binanceは最大規模となる$6.43B盗難について、北朝鮮ハッカーが数ヶ月間にわたる多段階キャンペーンで実行したと明かした。フェイク採用面接でジャーバのマルウェアをインストールさせた後、改ざんされたHomebrew実行ファイルを利用し、ウォレットインフラを侵害。内部AIツールも悪用された。",
+          "why_it_matters": "開発者への社会工学が初期侵入から内部権限奪取につながる典型例。採用・採用面接プロセスの詐称検証、Homebrewなど不可視なツール更新チェーンの信頼性検証、内部AIツール（LLM）の権限設定の見直しが必要。",
+          "tags": [
+            "社会工学",
+            "北朝鮮",
+            "供給チェーン"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Binance says hackers used fake job interviews and an internal AI tool to pull off the $6.3 billion heist",
+              "url": "https://www.theverge.com/news/1025576/binance-cyrpto-theft-explained",
+              "source": "The Verge"
+            },
+            {
+              "title": "Binance says fake job interview led to $6.3 billion crypto heist",
+              "url": "https://www.bleepingcomputer.com/news/security/binance-says-fake-job-interview-led-to-63-billion-crypto-heist/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "Binance Reveals How Fake Job Interviews and AI Tool Abuse Led to $6.43 Billion Theft",
+              "url": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "Binance CEO says ‘months-long campaign’ led to $6.3 billion theft as N. Korea denies responsibility",
+              "url": "https://therecord.media/binance-cryptocurrency-theft-months-long-campaign-nkorea",
+              "source": "The Record"
+            }
+          ]
+        },
+        {
+          "headline": "ノジマオンライン、700万件の会員情報漏えい——パスワード含む",
+          "summary": "オンライン小売業者ノジマオンラインが不正アクセスにより、約700万件の会員情報が漏えい。サイトは休止状態で、再開予定は未定。",
+          "why_it_matters": "大規模小売サイトの会員管理漏えいは顧客アカウント乗っ取りに直結。パスワードが含まれるため、ユーザーの他サービスへの波及も懸念。個人利用者には要注意だが、クラウド/API設計面では多層認証・暗号化リセット、監査ログの外部保護が確認項目。",
+          "tags": [
+            "個人情報",
+            "パスワード"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "ノジマオンライン、会員情報約700万件漏えい　不正アクセスでサイト休止、再開未定",
+              "url": "https://www.itmedia.co.jp/news/article/2611/04/2000002848/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "GMOペイメント、Vプリカ69件漏えい——セキュリティコードも露出した3件",
+          "summary": "GMOペイメント決済支援システムで不正なユーザーによる行為が判明。決済プリペイドカード「Vプリカ」番号（16桁）69件が漏えい。うち3件はセキュリティコード、有効期限、氏名も同時に盗み取られた可能性がある。",
+          "why_it_matters": "決済システムのカード情報露出は直接的な不正利用につながる。セキュリティコード流出した3件は即座にカード無効化が必要。決済処理の権限管理・ログ監視・不正行為検出の強化が課題。",
+          "tags": [
+            "決済",
+            "カード情報"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "GMOペイメント、決済支援システムで「不正なユーザーによる行為」　「Vプリカ」69件漏えい、3件はセキュリティコードも",
+              "url": "https://www.itmedia.co.jp/news/article/2611/04/2000002850/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Google dismantles massive botnet hidden in Android TV boxes",
+          "url": "https://therecord.media/google-dismantles-botnet-hidden-android-tv-boxes",
+          "source": "The Record",
+          "note": "Google、侵害されたAndroid TV 130万台のボットネット X.CPE を制圧・接続遮断"
+        },
+        {
+          "title": "Google: LLMjacking attacks rack up $1 million in cloud AI charges",
+          "url": "https://www.bleepingcomputer.com/news/security/google-llmjacking-attacks-rack-up-1-million-in-cloud-ai-charges/",
+          "source": "BleepingComputer",
+          "note": "LLMjacking 攻撃で企業が最大$100万/日の詐欺クラウド課金——Google が注意喚起"
+        },
+        {
+          "title": "mSecure Warns Users to Change Passwords, Reset 2FA and Passkeys After Suspicious Activity",
+          "url": "https://thehackernews.com/2026/11/msecure-warns-users-to-change-passwords.html",
+          "source": "The Hacker News",
+          "note": "mSecure パスワード管理アプリ、不審な活動を理由にユーザーに2FA・パスキーリセット呼びかけ"
+        },
+        {
+          "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
+          "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+          "source": "Hacker News",
+          "popularity": "974 points",
+          "note": "Postman が AI プラグインを無音インストール・全 API データ共有を試みた？"
+        },
+        {
+          "title": "Critical Node-RED Flaw Exploited in Attacks",
+          "url": "https://www.securityweek.com/critical-node-red-flaw-exploited-in-attacks/",
+          "source": "SecurityWeek",
+          "note": "Node-RED クリティカル脆弱性が攻撃中——Linux ボット・webshell 展開"
+        },
+        {
+          "title": "Russia-Aligned Gorbag Hackers Exploit WinRAR Flaw to Deploy Data-Stealing Malware",
+          "url": "https://thehackernews.com/2026/11/russia-aligned-gorbag-hackers-exploit.html",
+          "source": "The Hacker News",
+          "note": "ロシア系 Gorbag ハッカー、WinRAR 脆弱性で情報窃取マルウェア展開・ウクライナ標的"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 65,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "クラウド大手のエージェント化推進が加速。AWSはStep Functionsをエージェント向けツール化、Terraformもエージェント対応を強化する一方、インフラ側ではセキュリティ強化と LLMジャッキング対策が急速に進む。",
+      "topics": [
+        {
+          "headline": "AWS Step Functions、エージェント向けツール化で220サービスへの自動化範囲拡大",
+          "summary": "AWS Step Functionsがエージェントのツールとして使用可能になり、既に220以上のAWSサービスを自動化対象にできる。ワークフローチームがエージェントに直接渡せるようになった。",
+          "why_it_matters": "クラウドインフラの自動化をエージェントが直接実行できるようになる。Terraformと組み合わせると、設計から運用まで AI が取り扱える領域が一段と広がり、インフラ管理の思考を根本から変える必要が出てくる。",
+          "tags": [
+            "AWS",
+            "エージェント"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AWS Weekly Roundup: GPT-6.1 Terra on Bedrock, Step Functions as agent tools, and more (November 2, 2026)",
+              "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-gpt-6-1-terra-on-bedrock-step-functions-as-agent-tools-and-more-november-2-2026/",
+              "source": "AWS News Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Terraform、ガバナンス自動化で AI エージェント対応の仕組みを実装開始",
+          "summary": "HashiCorp は Terraform Developer Portal(TDP)と Terraform 本体の改良で、AI エージェントが使用可能なインフラコード生成・管理を実現。エージェントが承認済みパターンを自動消費できる仕組みを組み込む。",
+          "why_it_matters": "読者が Python で Terraform を操作・自動生成する際、エージェントとの連携が標準オプションになる。セルフサービスとガバナンスを両立させたリファレンス実装として参考になる。",
+          "tags": [
+            "Terraform",
+            "エージェント"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Building Self-Service into Terraform: Introducing Terraform Developer Portal (Public Preview)",
+              "url": "https://www.hashicorp.com/blog/introducing-terraform-developer-portal",
+              "source": "HashiCorp Blog"
+            },
+            {
+              "title": "Terraform advances infrastructure lifecycle management for the agentic era",
+              "url": "https://www.hashicorp.com/blog/terraform-advances-infrastructure-lifecycle-management-for-the-agentic-era",
+              "source": "HashiCorp Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Google Cloud、LLMジャッキング被害を報告——エージェント環境でのカスタマー資源横領が深刻化",
+          "summary": "Google Mandiant が 2026 年に複数インシデントを対応。脅威アクターが企業クラウド・LLM環境を侵害し、AI API キーやリソースを無許可で搾取する手口（LLMジャッキング）が多発している。",
+          "why_it_matters": "エージェント・LLM活用の拡大に伴い、API キー・credentials の管理と監視がセキュリティの要になる。AWS Bedrock など生成 AI を本格利用する際、アクセス制御・監査ログの設計が必須に。",
+          "tags": [
+            "セキュリティ",
+            "LLM"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources",
+              "url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Google、XCPE ボットネット(130万以上のセットトップボックス)を解体——バックドア意図的開発・配置を確認",
+          "summary": "Google と業界パートナーが XCPE バックドアを撤去。130 万台以上のセットトップボックスが登録されたボットネットで、バックドアとボットネットは意図的に開発・配置されたと高い確度で評価。",
+          "why_it_matters": "大規模インフラ型デバイスへの意図的な侵害が起きている現実を確認する事例。読者の企業ネットワークに接続されたセットトップボックスやエッジデバイスの監視・認証構成を今一度見直す契機に。",
+          "tags": [
+            "セキュリティ",
+            "インフラ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Shutting the Door on the XCPE Botnet",
+              "url": "https://cloud.google.com/blog/topics/threat-intelligence/shutting-the-door-on-the-xcpe-botnet/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Google Cloud、エージェント向けスキル評価の落とし穴を警告——コンテキスト肥大化で実運用失敗のリスク",
+          "summary": "Google が SKILL.md ファイルの評価について、ラップトップでのワンショットテストではなく、実運用でのコンテキストウィンドウ管理に注意を促している。CLI ドキュメントの大量埋め込みなど設計のミスが本番で顕在化。",
+          "why_it_matters": "LLM エージェントを業務に統合する際、テスト段階での見落としが運用効率を大きく損なう。プロンプト設計・スキル定義時に、限定されたトークン予算と実データボリュームを見据えた検証が必須。",
+          "tags": [
+            "エージェント",
+            "LLM"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Five rules for evaluating agent skills before they bloat your context window",
+              "url": "https://cloud.google.com/blog/topics/developers-practitioners/evaluate-agent-skills-before-they-bloat-your-context-window/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "AWS Config now supports 10 new resource types",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-config-new-resource-types",
+          "source": "AWS What's New",
+          "note": "AWS Config、ElastiCache・QuickSight など 10 種類のリソース型に対応拡大。インベントリ・コンプライアンス検査の網が広がる。"
+        },
+        {
+          "title": "Amazon EKS Capabilities now supports Argo CD Notifications",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eks-argo-cd-notifications",
+          "source": "AWS What's New",
+          "note": "Amazon EKS、Argo CD Notifications 統合。アプリケーション同期失敗時に自動アラート。"
+        },
+        {
+          "title": "Introducing IBM Cloud Secrets Manager Vault Dedicated: HashiCorp Vault Enterprise, managed by IBM",
+          "url": "https://www.hashicorp.com/blog/introducing-ibm-cloud-secrets-manager-vault-dedicated",
+          "source": "HashiCorp Blog",
+          "note": "HashiCorp Vault Enterprise、IBM Cloud Secrets Manager で Dedicated インスタンス提供。マネージド型の運用負担軽減。"
+        },
+        {
+          "title": "Announcing the public preview of HashiCorp Secure Hub: Govern Vault at scale",
+          "url": "https://www.hashicorp.com/blog/announcing-the-public-preview-of-hashicorp-secure-hub-govern-vault-at-scale",
+          "source": "HashiCorp Blog",
+          "note": "HashiCorp Secure Hub（パブリックプレビュー）、複数 Vault 環境の集約管理・レポーティング可能に。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 32,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "GitHub Universe 2026で、AIエージェント時代に対応する新機能と性能向上が相次ぎ発表。Vitest 5やCodeQLなど開発ツールが新バージョンで最適化を進める。",
+      "topics": [
+        {
+          "headline": "GitHub Universe 2026、AIエージェント対応で180倍スループット性能向上を発表",
+          "summary": "GitHubが年次イベント「GitHub Universe 2026」で、AIエージェント時代に対応した大幅な性能向上を来年初頭に実現することを発表。基盤システムの抜本的な改善を予定。",
+          "why_it_matters": "スケール制約で代理実行・統合を考える際に、GitHub基盤自体の対応状況を把握できる。エージェント時代の実装設計で信頼性の見通しが立つ。",
+          "tags": [
+            "GitHub",
+            "AIエージェント",
+            "スケール"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "GitHubが従来比180倍のスループット性能向上を実現へ、来年初頭に。AIエージェント時代に対応。GitHub Universe 2026",
+              "url": "https://www.publickey1.jp/blog/26/github180aigithub_universe_2026.html",
+              "source": "Publickey"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub Copilot、Code Review Max、JetBrains Air統合ほか新機能が相次ぐ",
+          "summary": "GitHubがCodeレビューの自動化を進める「Copilot Code Review Max」を発表。Copilotは開発IDE「JetBrains Air」にも統合されAgent Client Protocol対応。Dependabotが Agent Package Manager対応を開始。",
+          "why_it_matters": "コードレビュー工数削減とIDEネイティブのAIコード支援が広がる。自分たちのレビュープロセスへの組み込みを検討する時期になった。",
+          "tags": [
+            "Copilot",
+            "IDE統合",
+            "レビュー自動化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "GitHub、より高度なコードレビューを行う「Copilot Code Review Max」発表。GitHub Universe 2026",
+              "url": "https://www.publickey1.jp/blog/26/githubcopilot_code_review_maxgithub_universe_2026.html",
+              "source": "Publickey"
+            },
+            {
+              "title": "GitHub Copilot is now available in JetBrains Air",
+              "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
+              "source": "GitHub Changelog"
+            },
+            {
+              "title": "Dependabot version updates support Agent Package Manager",
+              "url": "https://github.blog/changelog/2026-11-03-dependabot-version-updates-support-agent-package-manager",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "Vitest 5が性能重視で登場、実行速度8～53%向上",
+          "summary": "テストランナー Vitest 5.0は性能向上に注力。ほとんどのセットアップで8～25%、VM環境では最大53%の高速化を実現。vitest doctor コマンド追加、Browser Mode Trace View搭載。デフォルトで clearMocks=true など厳密さが強化。",
+          "why_it_matters": "Vitestを使ったプロジェクトの テスト実行時間が有意に削減される可能性がある。アップグレードしない理由がなくなる。",
+          "tags": [
+            "Vitest",
+            "テスト",
+            "パフォーマンス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Vitest 5: Prioritises Performance with a Shared Vite Server, Trace View, and Stricter Test Defaults",
+              "url": "https://www.infoq.com/news/2026/11/vite-5-release/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "CodeQL 2.27.3、Python 3.15対応とJSON拡張を追加",
+          "summary": "GitHubの静的解析エンジン CodeQL 2.27.3がリリース。Python 3.15の新機能に対応し、JSONデータ解析の拡張機能を追加。Dependabotも Python 3.15対応を開始。",
+          "why_it_matters": "Python 3.15へのアップグレード時に、セキュリティスキャンが新言語機能に対応している確認がつく。",
+          "tags": [
+            "CodeQL",
+            "Python",
+            "セキュリティスキャン"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "CodeQL 2.27.3 adds Python 3.15 features and JSON data extensions",
+              "url": "https://github.blog/changelog/2026-11-03-codeql-2-27-3-adds-python-3-15-features-and-json-data-extensions",
+              "source": "GitHub Changelog"
+            },
+            {
+              "title": "Dependabot now supports Python 3.15",
+              "url": "https://github.blog/changelog/2026-11-03-dependabot-now-supports-python-3-15",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub Desktop 3.6.10で短命認証トークンを導入、漏えいリスク低減",
+          "summary": "GitHub Desktop 3.6.10以降で、サインイン時に有効期限が短い自動更新トークンが利用可能に。漏えい時の被害期間を短縮。",
+          "why_it_matters": "ローカル開発環境の認証情報管理リスクが低下。古い認証トークンを使い続けるプロジェクトがあれば、更新を検討する価値がある。",
+          "tags": [
+            "認証",
+            "GitHub Desktop",
+            "セキュリティ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "GitHub Desktop adds short-lived authentication tokens",
+              "url": "https://github.blog/changelog/2026-11-02-github-desktop-adds-short-lived-authentication-tokens",
+              "source": "GitHub Changelog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Microsoft、メモリ8GBのWindows 11 PCを高速化　マルチタスク処理は最大40％向上",
+          "url": "https://www.itmedia.co.jp/news/article/2611/04/2000002851/",
+          "source": "ITmedia NEWS",
+          "note": "Windows 11（メモリ8GB向け）が v26H2 ビルド26300.9818以降でメモリ圧縮最適化。マルチタスク最大40%向上。"
+        },
+        {
+          "title": "Aterm設定画面、「PHP使ってないのに.php」なぜ？　NECに聞いた",
+          "url": "https://www.itmedia.co.jp/news/article/2611/04/2000002847/",
+          "source": "はてブ テクノロジー",
+          "popularity": "120 users",
+          "note": "NEC Aterm設定画面に「.php」拡張子がつく理由は、PHPの仕様を参考にした独自実装の名残。本体では PHP を使用していない。"
+        },
+        {
+          "title": "E2Eテスト大全（あなたの知らない、E2Eテスト周辺の理論） - 若くない何かの悩み",
+          "url": "https://blog.kuniwak.com/entry/e2ebok",
+          "source": "はてブ テクノロジー",
+          "popularity": "125 users",
+          "note": "ブログ記事『E2Eテスト大全』。UIテストとの境界、結合バグ検知、正当性・妥当性違反の定義ほか、理論と実装の落とし穴をまとめたもの。"
+        },
+        {
+          "title": "LinkedIn Uses OpenTelemetry to Trace the Member Journey from Tap to Backend",
+          "url": "https://www.infoq.com/news/2026/11/linkedin-opentelemetry-journey/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "LinkedInが OpenTelemetry で複数プラットフォーム（iOS、Android、Web）と バックエンド処理を一元トレース。ユーザー行動の全体像把握が可能に。"
+        },
+        {
+          "title": "Oh, your agents need OAuth2, too",
+          "url": "https://stackoverflow.blog/2026/11/03/oh-your-agents-need-oauth2-too/",
+          "source": "Stack Overflow Blog",
+          "note": "LeadDev LDX3 で FusionAuth と OAuth2 をエージェント向けに適応させる議論。認証機構の自動化と標準化が課題。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 41,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "AI時代のビジネス変化を背景に、プラットフォーム各社が戦略転換と最適化に動く。一方、自治体システム移行時の過度な請求に公正取引委員会が目を向け始めた。",
+      "topics": [
+        {
+          "headline": "Canva、スタッフの22%にあたる1,271人をレイオフ——組織最適化を実施",
+          "summary": "Canva CEOメラニー・パーキンスが22%にあたる1,271人の職員削減と役割変更を発表。一部は在宅勤務からハブ拠点への転勤を求められる。",
+          "why_it_matters": "大手デザインプラットフォームの大規模人員整理は、生成AIの浸透がクリエイティブツール企業の採算性に及ぼす影響の一例。AI機能統合の投資と運営効率のバランスが業界全体の課題になっている。",
+          "tags": [
+            "AI",
+            "経営戦略"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Canva is announcing changes and layoffs affecting 22 percent of its staff",
+              "url": "https://www.theverge.com/tech/1025971/canva-changes-layoffs",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "Sonos、AI音声アシスタント「Eleven AI」のベータ版と新Presetsを展開",
+          "summary": "Sonosがアプリアップデートでプリセット機能とAI音声アシスタント「Eleven AI」の早期アクセスを開始。特定の音量と部屋の組み合わせを保存して再利用できる。",
+          "why_it_matters": "スマートスピーカー機能の AI化で、家庭内音声制御の利便性が向上。声コマンドの自動化により、ホームオートメーション設定の負担が軽減される傾向が広がっている。",
+          "tags": [
+            "AI音声",
+            "スマートホーム"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Sonos adds new Presets and prepares for the 27voice AI beta",
+              "url": "https://www.theverge.com/tech/1025903/sonos-presets-27voice-ai-early-access",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "Steam投稿増加に対応、Valve が審査期間を最大12営業日に",
+          "summary": "Valveが最近のゲーム投稿数の大幅増加に対応し、ストア審査期間が従来の3営業日から最大12営業日に延長されていると明かした。",
+          "why_it_matters": "ゲーム開発のリリース計画に直結する。AIや自動生成ツール普及でゲーム投稿が加速しており、上市スケジュールの余裕を最大2週間見込む必要が出てくる。",
+          "tags": [
+            "ゲーム",
+            "プロセス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Valve is making changes to deal with a ‘significant increase’ in Steam game submissions",
+              "url": "https://www.theverge.com/games/1025722/valve-steam-game-increase-submissions",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "自治体システム移行時の高額請求、公正取引委員会が実態調査へ——独占禁止法違反の可能性",
+          "summary": "地方自治体が住民基本台帳などのシステム委託先を切り替える際、現在の委託先から高額な作業費を請求される事例が相次いでいる。公正取引委員会が独占禁止法の取引妨害にあたる可能性を調査する方針を固めた。",
+          "why_it_matters": "クラウドやシステム移行のロックイン状態が競争上の問題として公式に検証される局面。エンタープライズシステムの移行設計や契約条件の交渉で、競争法の観点から提案内容を再検討する必要が高まる。",
+          "tags": [
+            "規制",
+            "インフラ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "自治体システム移行で高額請求、ＩＴ大手の「手切れ金」との声も…公取委が実態調査へ",
+              "url": "https://www.yomiuri.co.jp/economy/20261103-GYT1T00297/",
+              "source": "はてブ 世の中",
+              "popularity": "116 users"
+            }
+          ]
+        },
+        {
+          "headline": "三菱UFJ、新銀行でキャッシュカード全廃——スマートフォン入出金に統一へ2027年開業",
+          "summary": "三菱UFJフィナンシャルグループが2027年開業の新銀行でキャッシュカードを廃止。セブン銀行と提携し、スマートフォンで出入金を完結させ、複数認証方式でサイバー犯罪対策を強化する。",
+          "why_it_matters": "金融インフラのモバイルシフトが急速に進む。認証・決済システムの設計や、銀行連携アプリ開発者は2027年前後の仕様変更に備える必要がある。",
+          "tags": [
+            "金融",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "三菱UFJ、三菱UFJエムット銀行でキャッシュカード全廃　サイバー防御へスマホ入出金 - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOUB29C0N0Z21C26A0000000/",
+              "source": "はてブ 世の中",
+              "popularity": "22 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Here’s what it’s like to use Audio Intelligence on the Apple Watch",
+          "url": "https://www.theverge.com/tech/1025835/audio-intelligence-live-rewind-siri-recap-apple-watch",
+          "source": "The Verge",
+          "note": "Apple Watch Series 12/Ultra 4 にAudio Intelligence機能が搭載、watchOS 27.3ベータで検証段階へ"
+        },
+        {
+          "title": "The Pixel Buds Pro 2 have returned to their lowest price to date",
+          "url": "https://www.theverge.com/gadgets/1025466/google-pixel-buds-pro-2-borderlands-goty-nintendo-switch-deal-sale",
+          "source": "The Verge",
+          "note": "Google Pixel Buds Pro 2 が過去最低価格の$169で販売中"
+        },
+        {
+          "title": "iPhone 18 rumors suggest a bigger battery, higher price next year",
+          "url": "https://www.theverge.com/tech/1025748/apple-iphone-18-rumors-price-hike-battery",
+          "source": "The Verge",
+          "note": "iPhone 18（基本モデル）は価格据え置きまたは値上げ、大型バッテリー搭載の可能性"
+        },
+        {
+          "title": "Reddit tests ads in search results as traffic declines and growth concerns mount",
+          "url": "https://techcrunch.com/2026/11/03/reddit-tests-ads-in-search-results-as-traffic-declines-and-growth-concerns-mount/",
+          "source": "TechCrunch",
+          "note": "Reddit、Google AI検索シフトへの対抗策として検索結果に広告挿入テスト開始"
+        },
+        {
+          "title": "NYT demands Brave shut down its paywall blocker and end deals with AI firms",
+          "url": "https://arstechnica.com/tech-policy/2026/11/nyt-demands-brave-shut-down-its-paywall-blocker-and-end-deals-with-ai-firms/",
+          "source": "Ars Technica",
+          "note": "New York Times、Brave のペイウォール回避ツール廃止と AI企業との提携終了を求め提訴"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 12,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "米中間選挙の投票が始まり、スペインで列車衝突事故が相次ぎ、医療や国際政治でも大きな動きが広がっている。",
+      "topics": [
+        {
+          "headline": "米中間選挙投票開始、トランプ政権評価が焦点に",
+          "summary": "連邦議会上院ではバージニア州で民主党が議席を確保。投票者は経済と民主主義の状態を最大の関心事としている。",
+          "why_it_matters": "米国の政策決定が今後2年の経済政策やインド太平洋戦略に直結し、日本を含む世界経済に影響する。",
+          "tags": [
+            "米国政治",
+            "中間選挙",
+            "経済"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "アメリカ中間選挙 上院 バージニア州は民主党【随時更新】",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261103de69965",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "US voters name economy and state of democracy as top issues, poll says",
+              "url": "https://www.bbc.co.uk/news/articles/c39wz0970eypo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "スペイン列車事故で当局トップが辞任、安全問題再び浮上",
+          "summary": "マドリッド南部での衝突で最低69人が死傷。スペイン運輸相は短期間での重大事故の再発に責任を感じ辞任の意向を表明した。",
+          "why_it_matters": "先進国での相次ぐ交通事故は社会全体の安全インフラ管理体制への問いかけになる。",
+          "tags": [
+            "交通事故",
+            "スペイン",
+            "安全"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Spanish transport minister resigns days after deadly train crash",
+              "url": "https://www.bbc.co.uk/news/articles/c6wydqd4yxdyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            },
+            {
+              "title": "スペインの運輸相 辞任の意向を表明 列車事故を受けて",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261104de70111",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "複数ヨーロッパ便に爆弾予告、計7便が検査対象に",
+          "summary": "ポーランド、スペイン、ブルガリア、イタリアの航空便7便が爆弾脅迫を受け、爆発物検査が実施された。",
+          "why_it_matters": "航空機への直接的な脅迫は乗客安全と航空輸送網の信頼性にかかわる。",
+          "tags": [
+            "爆弾予告",
+            "航空",
+            "ヨーロッパ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Seven flights across Europe targeted by suspected bomb threats",
+              "url": "https://www.bbc.co.uk/news/articles/c6x2wd4v04eeo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "多がん血液検査、英国のGP診療所で試行開始へ",
+          "summary": "肝臓、卵巣、膵臓など診断が難しい腹部がんを早期に検出することを目指し、血液検査が一部診療所で提供される予定。",
+          "why_it_matters": "早期診断・治療の道が開けば、がん患者の予後と医療経済の両面で社会的メリットが大きい。",
+          "tags": [
+            "医療技術",
+            "がん検診",
+            "英国"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "'Multi-cancer' blood tests coming to some GP surgeries soon",
+              "url": "https://www.bbc.co.uk/news/articles/cm9qz93ew22no?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "南アフリカ地方選挙でANC劣勢、公共サービス不満が背景",
+          "summary": "南アフリカの地方選挙が進行中。有権者は質の低い公共サービスに不満を訴えており、与党ANCが圧力にさらされている。",
+          "why_it_matters": "南アフリカのような新興国での政治的転換は地域経済と国際関係の安定性に響く。",
+          "tags": [
+            "南アフリカ",
+            "地方選挙",
+            "ANC"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "ANC under pressure to reverse South Africa decline",
+              "url": "https://www.bbc.co.uk/news/articles/cr4g1x6l77xyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "JA全農 来春向け肥料値上げへ 中東情勢が主因",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261103de70060",
+          "source": "NHK 主要",
+          "note": "来春肥料が15％超値上げ、中東情勢の原料コスト増加が主因"
+        },
+        {
+          "title": "Prince William says UK faces terrifying risk of more wildfires due to climate change",
+          "url": "https://www.bbc.co.uk/news/articles/cr62yv02zwxwo?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "ウィリアム皇太子、気候変動による山火事激増に懸念"
+        },
+        {
+          "title": "台風31号の影響 あすは関東・伊豆諸島で大雨のおそれ",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261104de70112",
+          "source": "NHK 主要",
+          "note": "強い台風31号の影響、関東・伊豆諸島で大雨のおそれ"
+        },
+        {
+          "title": "旧統一教会の韓鶴子総裁、入院中の「宮殿」通いで保釈取り消し | 毎日新聞",
+          "url": "https://mainichi.jp/articles/20261103/k00/00m/030/139000c",
+          "source": "はてブ 世の中",
+          "popularity": "28 users",
+          "note": "旧統一教会総裁、入院中に本部通いで保釈取り消し"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 39,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 271,
+    "unclassified": 21,
+    "classify_error": null
+  }
+}
