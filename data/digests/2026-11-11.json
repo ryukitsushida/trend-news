@@ -1,0 +1,1108 @@
+{
+  "date": "2026-11-11",
+  "generated_at": "2026-11-11 09:30 JST",
+  "lead": "Microsoftの月次セキュリティ更新でOutlookゼロデイを含む1,235件の脆弱性が修正され、BigQueryのMeasuresがGAとなってAIエージェントの精度向上が実現する。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "Outlookゼロデイは既に悪用中であり、インフラの即座の更新がセキュリティ体制の基礎となるため。",
+      "topic": {
+        "headline": "Microsoft Patch Tuesday、1,235件の脆弱性を修正（Outlook ゼロデイ含む）",
+        "summary": "Microsoft が11月の Patch Tuesday で record-breaking の1,235件の脆弱性に対応。CVE-2026-124194 の Outlook ゼロデイは悪用確認済み。Windows 11 をはじめ複数製品に更新をリリース。",
+        "why_it_matters": "Windows・Office は読者のインフラの基礎。悪用中のゼロデイは即座に対応が必須。クラウド環境の管理画面や VPN 経由での Outlook 接続も確認して、組織の更新状況を把握する必要がある。",
+        "tags": [
+          "Microsoft",
+          "Outlook",
+          "ゼロデイ"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "Microsoft Fixes Nearly 1,100 Security Vulnerabilities",
+            "url": "https://krebsonsecurity.com/2026/11/microsoft-fixes-nearly-1100-security-vulnerabilities/",
+            "source": "Krebs on Security"
+          },
+          {
+            "title": "Microsoft’s Patch Tuesday surpasses 1,000 bugs for second month in a row",
+            "url": "https://therecord.media/patch-tuesday-microsoft-1000-bugs-again",
+            "source": "The Record"
+          },
+          {
+            "title": "Exploited Outlook Zero-Day Among 1,094 Flaws Patched by Microsoft",
+            "url": "https://www.securityweek.com/exploited-outlook-zero-day-among-1094-flaws-patched-by-microsoft/",
+            "source": "SecurityWeek"
+          },
+          {
+            "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
+            "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/",
+            "source": "BleepingComputer"
+          },
+          {
+            "title": "Windows 11 KB5132061 & KB5131087 cumulative updates released",
+            "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5132061-and-kb5131087-cumulative-updates-released/",
+            "source": "BleepingComputer"
+          },
+          {
+            "title": "CVE-2026-124194: Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-124194",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "公式メトリクスをAIエージェントに直結させることで、自社BI運用の一本化と精度向上が実現でき、AI活用の実践的な設計判断に活かせるため。",
+      "topic": {
+        "headline": "BigQueryの新機能 Measures GA：メトリクス定義と知識グラフをAIに統合",
+        "summary": "BigQuery Measures が一般提供開始。AIエージェントが複雑なビジネス質問に答える際、ガバナンスされたメトリクス定義（「何が起きたか」）と関連性の知識グラフ（「なぜか」）を統一的に参照できる。",
+        "why_it_matters": "Gemini等のAIエージェントに自社の公式メトリクスと関連ロジックを直接参照させることで、回答精度が向上しハルシネーション(根拠なし回答)を減らせる。BI/知識グラフ運用を一本化でき、メンテナンス効率も上がる。",
+        "tags": [
+          "Google Cloud",
+          "BigQuery"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "BigQuery measures is now GA: Unifying BI metrics and knowledge graphs for AI accuracy",
+            "url": "https://cloud.google.com/blog/products/data-analytics/bigquery-measures-ga-unifying-bi-metrics-and-knowledge-graphs/",
+            "source": "Google Cloud Blog"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "Notionやサードパーティ連携時のチャット履歴漏えいリスクは、業務で使う場合の重要な検討項目となるため。",
+      "topic": {
+        "headline": "Fireworks AI、顧客データ・モデル重み・Notion チャット履歴まで窃取",
+        "summary": "AI推論サービスの Fireworks AI が10月のブリーチで、一部顧客のアカウント・請求情報、秘密・データセット・未完成のモデル、および Notion との連携により Notion ユーザーのチャット履歴も影響。",
+        "why_it_matters": "Notion と Fireworks の統合を業務で使う場合、チャット履歴が関連企業経由で漏えいするリスクがある。秘密やモデル重みの漏えいは競争優位性の喪失に直結。",
+        "tags": [
+          "Fireworks",
+          "AI",
+          "Notion"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "AI company Fireworks says hackers stole data, billing info during October breaches",
+            "url": "https://therecord.media/ai-company-fireworks-says-hackers-stole-data-in-oct-attacks",
+            "source": "The Record"
+          },
+          {
+            "title": "Fireworks AI Confirms Wider Breach Affecting Customer Datasets, Model Weights and Notion AI Chats",
+            "url": "https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html",
+            "source": "The Hacker News"
+          },
+          {
+            "title": "一部のNotionワークスペースに影響を与える可能性があるFireworks AIのインシデントに関するお知らせ – Notion (ノーション)ヘルプセンター",
+            "url": "https://www.notion.com/ja/help/security-incident-involving-a-third-party-ai-vendor",
+            "source": "はてブ テクノロジー",
+            "popularity": "20 users"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "マルチリージョンの検索基盤を自前運用からマネージドサービスへ移行することで、オペレーション負荷の削減とRTO短縮が実現するため。",
+      "topic": {
+        "headline": "Amazon OpenSearch、マネージドな広域ディザスタリカバリを提供開始",
+        "summary": "Amazon OpenSearch Service がマネージドな広域ディザスタリカバリ機能を提供。レプリケーション基盤を自動管理し、検索・AI・分析のミッションクリティカルワークロードの高可用性と事業継続性を実現。",
+        "why_it_matters": "これまでレプリケーション構成を自分で運用していた場合、マネージドサービスへの移行でオペレーション負荷が軽減。特にマルチリージョン戦略の検索基盤では、自動フェイルオーバーにより RTO を削減できる。",
+        "tags": [
+          "AWS",
+          "OpenSearch"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "Amazon OpenSearch Service announces managed cross-Region disaster recovery",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-service-managed-cross-region-disaster-recovery/",
+            "source": "AWS What's New"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "Anthropic IPOの仮条件から、AI企業の評価構造と業界の競争図式が具体化され、技術投資判断の参考になるため。",
+      "topic": {
+        "headline": "Anthropic、IPO仮条件は1株70～78ドル、調達額最大644億ドル",
+        "summary": "AnthropicはIPO向け登録届を提出し、仮条件を1株70～78ドル、公開株数8億2500万株で調達額最大644億ドルに設定。GoogleなどCVCが別途260億ドルを引き受け、時価総額は最大約1兆4000億ドルに上る見通し。",
+        "why_it_matters": "AI領域の最有力企業の評価額が具体化。OpenAIとの競争図式が資金規模でも可視化され、クラウド・AI戦略の投資判断の参考になる。",
+        "tags": [
+          "IPO",
+          "資金調達",
+          "生成AI"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Anthropic、IPOの仮条件を1株70?78ドルに　調達額は最大約644億ドル、GoogleとNVIDIAは各100億ドルを別途出資",
+            "url": "https://www.itmedia.co.jp/news/article/2611/11/2000003085/",
+            "source": "ITmedia NEWS"
+          },
+          {
+            "title": "All 7 Anthropic founders will each cash out about $250M in IPO",
+            "url": "https://techcrunch.com/2026/11/10/all-7-anthropic-founders-will-each-cash-out-about-250m-in-ipo/",
+            "source": "TechCrunch"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "cloud",
+    "category_label": "クラウド・インフラ",
+    "headline": "BigQueryの新機能 Measures GA：メトリクス定義と知識グラフをAIに統合",
+    "sources": [
+      {
+        "title": "BigQuery measures is now GA: Unifying BI metrics and knowledge graphs for AI accuracy",
+        "url": "https://cloud.google.com/blog/products/data-analytics/bigquery-measures-ga-unifying-bi-metrics-and-knowledge-graphs/",
+        "source": "Google Cloud Blog"
+      }
+    ],
+    "background": "BigQuery Measures は、定義済みメトリクス（売上、リスク等）と、そのメトリクスが何に由来するかの関係性（知識グラフ）を一元管理する機能。これまで AI エージェントはこれらが分散していたため、ビジネス質問への回答時に矛盾や無根拠の回答が生じていた。",
+    "concepts": [
+      {
+        "term": "ガバナンスされたメトリクス",
+        "explanation": "組織全体で一意に定義・承認された数値指標。誰が計算しても同じ結果になるよう仕様が固定されている。"
+      },
+      {
+        "term": "知識グラフ",
+        "explanation": "データ間の関係性をネットワーク状に表現したもの。『売上』が『顧客数×平均購買額』に分解される等の因果関係を機械が理解できる形に整理。"
+      },
+      {
+        "term": "ハルシネーション",
+        "explanation": "生成AI が根拠なく事実のように見える情報を作り出す現象。メトリクスの正確な定義がないと発生しやすい。"
+      },
+      {
+        "term": "Gemini エージェント",
+        "explanation": "Google の生成AI が複数のステップを自動実行し、外部データ（ここでは BigQuery）を参照して回答する機能。"
+      }
+    ],
+    "for_you": "AWS/Terraform環境でも、Redshift や DataZone でメトリクスと関係性を統一管理し、LLM に参照させる仕組みを同じく構築できる。特にPython で LLM を呼び出し、外部ナレッジを注入するアーキテクチャを設計する際、BigQuery Measures のアプローチが参考になり、セキュリティ・メンテナンス面の課題が明確になる。",
+    "try_this": "今週中に、自分たちが既に定義しているビジネスメトリクス（「売上」「コスト」等）をリストアップし、それぞれが何のデータから計算されるかを図に描いてみる。その過程で『定義が曖昧な部分』『複数の部署で異なる計算方法』が見えたら、それが LLM に与えると誤回答になるポイント。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "GoogleがGemini 4 Carbonを一般提供開始。フィジカルAIへの参入が通信大手3社で広がり、AI活用による業務効率化の事例が相次ぐ。",
+      "topics": [
+        {
+          "headline": "Google、Gemini 4 Carbon一般提供開始——複雑な推論・高度なコーディングに特化",
+          "summary": "Googleは最上位AIモデル「Gemini 4 Carbon」を一般提供開始。月額1万4500円の「Google AI Ultra」契約で利用可能。開発者向けAPIと新機能「/swarm」のプレビュー提供も開始。",
+          "why_it_matters": "Gemini 4 Carbonはコーディングと推論タスクで高性能を発揮。GitHub CopilotやGoogle Workspaceでも利用可能になるため、日常的に使うツール内で最新モデルへの選択肢が広がる。料金と性能のバランスを検討する判断材料になる。",
+          "tags": [
+            "生成AI",
+            "LLM",
+            "Google"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Google、「Gemini 4 Carbon」一般提供開始　Geminiアプリでは最上位「AI Ultra」限定",
+              "url": "https://www.itmedia.co.jp/news/article/2611/11/2000003083/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Gemini 4 Carbon in GitHub Copilot",
+              "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "ソフトバンク・NTT・KDDIがフィジカルAIに本格参入——ロボット事業の可能性を読む",
+          "summary": "通信大手3社がロボットやフィジカルAIビジネスに相次いで参入。各社がそろって本腰を入れる背景と狙いが注目される。",
+          "why_it_matters": "フィジカルAIは通信インフラとの親和性が高く、新たなビジネス領域として事業化される段階に。クラウド・エッジ・ロボットの統合設計がこれから加速する可能性があり、エンジニアにとって次の成長領域の一つ。",
+          "tags": [
+            "ロボット",
+            "フィジカルAI",
+            "通信"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "通信大手3社こぞって「フィジカルAI」に参入、なぜ？　ロボットが動くともうかるワケ",
+              "url": "https://www.itmedia.co.jp/business/articles/2611/11/news038.html",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "紀陽銀行、社内知識集約でAIが問い合わせを自動処理——年4400時間削減",
+          "summary": "紀陽銀行が情報を見つける仕組みを見直し、AIが社内知識から自動回答する体制を構築。従業員が自力で疑問を解消でき、定型問い合わせが減少。",
+          "why_it_matters": "マニュアルの整備だけでなく、AIが検索・要約・回答する仕組みまで設計することで、初めて従業員の自動解消が進む実例。社内ナレッジ管理の設計方針を参考になる。",
+          "tags": [
+            "業務効率化",
+            "社内ナレッジ",
+            "LLM"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "「“できる人”ばかり質問されがち」から脱却し、年4400時間削減――紀陽銀行の「社内知識」集約術とは",
+              "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/11/news029.html",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "ハナマルキ、25ライセンスの試験導入からGemini全社展開——ログイン率86%超、年間2万時間削減",
+          "summary": "食品メーカーのハナマルキは小規模な試験導入からGeminiを全社に定着させた。2年で登録者のログイン率が86%を超え、年間2万時間の削減効果を見込む。導入に成功した鍵は「3つのK」にあるという。",
+          "why_it_matters": "小規模スタート→全社展開のプロセスと、定着に必要な要素が具体的に示される。生成AI導入を検討する組織の参考になり、自社での展開フェーズやボトルネック判断に活用できる。",
+          "tags": [
+            "生成AI",
+            "導入事例",
+            "組織変革"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AI活用で年間2万時間の削減効果　創業108年のハナマルキ、25ライセンスから始めたGemini定着術",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/11/news006.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "スタディスト「Teachme Knowledge」——動画・文書をAIが自動構造化、現場の暗黙知を形式知に",
+          "summary": "スタディストが新プロダクト「Teachme Knowledge」を発表。事前の仕分けなしに動画や文書を投入することで、AIが要約・構造化を行い、熟練者の知識を形式知化。マニュアルの自動更新も実現。",
+          "why_it_matters": "現場の知識を整理・保管・配信する一連の流れが自動化される仕組み。ドキュメント作成の負担が減り、属人化していた知識の共有が加速する可能性がある。",
+          "tags": [
+            "ナレッジ管理",
+            "自動化",
+            "AI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "動画や文書を“雑に”入れてAIが知識化、マニュアル自動更新で現場の負担を解消",
+              "url": "https://monoist.itmedia.co.jp/mn/articles/2611/10/news083.html",
+              "source": "ITmedia AI+"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "「AIはバブルではない」との主張、まだAI企業が成長する余地はあるのか？",
+          "url": "https://gigazine.net/news/20261111-not-convinced-ai-bubble-exists/",
+          "source": "GIGAZINE",
+          "note": "2030年4.2兆ドル規模予想の一方、「AIはバブル説」も根強い中、成長余地について議論が続く"
+        },
+        {
+          "title": "SCM変革の「壁」をAIでどう突破するか、o9とTDKが語るレガシー脱却の道",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/11/news024.html",
+          "source": "ITmedia AI+",
+          "note": "TDKがサプライチェーン改革でレガシー脱却の壁を越えた実践的アプローチが紹介される"
+        },
+        {
+          "title": "富士フイルム、Q2過去最高益　「instaxチェキ」ヒットに並ぶ“もう一つの稼ぎ頭”とは？",
+          "url": "https://www.itmedia.co.jp/business/articles/2611/11/news032.html",
+          "source": "ITmedia AI+",
+          "note": "富士フイルムQ2過去最高益の背景に、チェキに加えてカメラ以外の新規事業"
+        },
+        {
+          "title": "「盗撮」→「法律で規制」が話題のAI眼鏡　海外では大ヒットなのに、日本での普及は限定的　ビジネスでの活用事例を探る",
+          "url": "https://www.itmedia.co.jp/news/article/2611/11/2000002913/",
+          "source": "はてブ テクノロジー",
+          "popularity": "13 users",
+          "note": "AI眼鏡が海外では急速に普及する一方、日本での法規制・普及が限定的な理由"
+        },
+        {
+          "title": "日本製紙ら「たった半年で」釧路にデータセンター新設　なぜスピード稼働できたのか？",
+          "url": "https://www.itmedia.co.jp/business/articles/2611/11/news017.html",
+          "source": "ITmedia AI+",
+          "note": "釧路に日本製紙・東京ガスが新データセンター、2026年度内稼働予定でスピード稼働が可能な背景"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 84,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "Microsoft の Patch Tuesday で 1,235 件の脆弱性に対応。悪用確認済みの Outlook ゼロデイを含む。Nitori や日商ネット試験など国内大型情報漏えい多数発生。",
+      "topics": [
+        {
+          "headline": "Microsoft Patch Tuesday、1,235件の脆弱性を修正（Outlook ゼロデイ含む）",
+          "summary": "Microsoft が11月の Patch Tuesday で record-breaking の1,235件の脆弱性に対応。CVE-2026-124194 の Outlook ゼロデイは悪用確認済み。Windows 11 をはじめ複数製品に更新をリリース。",
+          "why_it_matters": "Windows・Office は読者のインフラの基礎。悪用中のゼロデイは即座に対応が必須。クラウド環境の管理画面や VPN 経由での Outlook 接続も確認して、組織の更新状況を把握する必要がある。",
+          "tags": [
+            "Microsoft",
+            "Outlook",
+            "ゼロデイ"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Microsoft Fixes Nearly 1,100 Security Vulnerabilities",
+              "url": "https://krebsonsecurity.com/2026/11/microsoft-fixes-nearly-1100-security-vulnerabilities/",
+              "source": "Krebs on Security"
+            },
+            {
+              "title": "Microsoft’s Patch Tuesday surpasses 1,000 bugs for second month in a row",
+              "url": "https://therecord.media/patch-tuesday-microsoft-1000-bugs-again",
+              "source": "The Record"
+            },
+            {
+              "title": "Exploited Outlook Zero-Day Among 1,094 Flaws Patched by Microsoft",
+              "url": "https://www.securityweek.com/exploited-outlook-zero-day-among-1094-flaws-patched-by-microsoft/",
+              "source": "SecurityWeek"
+            },
+            {
+              "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
+              "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "Windows 11 KB5132061 & KB5131087 cumulative updates released",
+              "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5132061-and-kb5131087-cumulative-updates-released/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "CVE-2026-124194: Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-124194",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "ニトリ、3,762万件の顧客情報漏えい",
+          "summary": "日本の家具大手 Nitori が、ネットワーク上のシステムへの不正アクセスにより、最大3,762万件の顧客情報の盗まれた可能性があることを発表。",
+          "why_it_matters": "大型小売の漏えいはクレジットカード・配送先住所を含むことが多く、読者も顧客となっている可能性。不正アクセスがどのような手口・脆弱性で起きたのかを注視。",
+          "tags": [
+            "Nitori",
+            "情報漏えい",
+            "小売"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Japanese furniture giant Nitori says hackers stole 37.6M customer records",
+              "url": "https://www.bleepingcomputer.com/news/security/japanese-furniture-giant-nitori-says-hackers-stole-376m-customer-records/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "システム侵害で顧客情報流出の可能性 - ニトリグループ",
+              "url": "https://www.security-next.com/192572",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "日商ネット試験に不正アクセス、最大98万人の受験者情報漏えい",
+          "summary": "日本商工会議所がネット試験で利用する外部サーバーへの不正アクセスにより、最大約98万人分（約197万件）の受験者情報が漏えいした可能性。氏名、試験成績、合否結果などを含む。",
+          "why_it_matters": "試験管理システムの侵害は認証情報や個人履歴まで外部化する。簿記など業務資格試験の成績も含まれるため、読者が受験者である場合は ID 再設定・パスワード管理を確認。",
+          "tags": [
+            "日商",
+            "受験者情報",
+            "試験管理"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "簿記などの受験者情報最大98万人分漏えいか　合否や得点も　日商ネット試験に不正アクセス",
+              "url": "https://www.itmedia.co.jp/news/article/2611/11/2000003084/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "商工会議所ネット試験管理システムへの不正アクセスによる受験者情報（個人情報）漏えいの可能性について｜日本商工会議所",
+              "url": "https://www.jcci.or.jp/news/news/2026/1110170000.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "11 users"
+            }
+          ]
+        },
+        {
+          "headline": "Fireworks AI、顧客データ・モデル重み・Notion チャット履歴まで窃取",
+          "summary": "AI推論サービスの Fireworks AI が10月のブリーチで、一部顧客のアカウント・請求情報、秘密・データセット・未完成のモデル、および Notion との連携により Notion ユーザーのチャット履歴も影響。",
+          "why_it_matters": "Notion と Fireworks の統合を業務で使う場合、チャット履歴が関連企業経由で漏えいするリスクがある。秘密やモデル重みの漏えいは競争優位性の喪失に直結。",
+          "tags": [
+            "Fireworks",
+            "AI",
+            "Notion"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AI company Fireworks says hackers stole data, billing info during October breaches",
+              "url": "https://therecord.media/ai-company-fireworks-says-hackers-stole-data-in-oct-attacks",
+              "source": "The Record"
+            },
+            {
+              "title": "Fireworks AI Confirms Wider Breach Affecting Customer Datasets, Model Weights and Notion AI Chats",
+              "url": "https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "一部のNotionワークスペースに影響を与える可能性があるFireworks AIのインシデントに関するお知らせ – Notion (ノーション)ヘルプセンター",
+              "url": "https://www.notion.com/ja/help/security-incident-involving-a-third-party-ai-vendor",
+              "source": "はてブ テクノロジー",
+              "popularity": "20 users"
+            }
+          ]
+        },
+        {
+          "headline": "Xen Orchestra 認証回避脆弱性、積極的に悪用中",
+          "summary": "Vates VMS が Xen Orchestra の認証回避脆弱性（VSA-2026-*）の積極的な悪用を警告。管理者権限取得により仮想化ホストの乗っ取りが可能。CVE はまだ未割り当て。",
+          "why_it_matters": "XCP-ng 環境を運用する場合は即座にパッチ適用が必須。クラウド基盤のハイパーバイザー層への侵害は全顧客環境に波及する可能性。",
+          "tags": [
+            "Xen",
+            "認証回避",
+            "仮想化"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access",
+              "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers",
+              "url": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "Railway クラウドホスト、IAM 認証情報盗難で $740,000 の不正 AI 利用",
+          "summary": "クラウドホスティング Railway が、インフラ脆弱性を悪用した攻撃により顧客の認証秘密を盗まれ、$740,000 相当の不正 AI 使用が発生。最大 100,000 のワークスペース認証情報が露出した可能性。",
+          "why_it_matters": "AWS 相当のクラウドプロバイダの IAM 認証情報漏えいは、複数顧客環境の同時侵害を招く。読者が Railway を使う場合、アクセスキーの即座の再生成とリソース監査が必須。",
+          "tags": [
+            "Railway",
+            "IAM",
+            "クラウド"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Railway breach leads to $740,000 in fraudulent AI charges",
+              "url": "https://www.bleepingcomputer.com/news/apple/railway-breach-leads-to-740-000-in-fraudulent-ai-charges/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "Git 脆弱性、悪意あるリポジトリのクローン時にコード実行",
+          "summary": "Git に脆弱性があり、悪意あるリポジトリを再帰的にクローンすると攻撃者のコードを実行される。Git 2.56.1 および 2.50～2.55 系の修正版でパッチ済み。6件の脆弱性に対応。",
+          "why_it_matters": "開発環境で頻繁に使うツール。サブモジュール含むリポジトリクローンは CI/CD パイプラインでも実行されるため、Git バージョンの即座のアップデートとサプライチェーン攻撃への警戒が必要。",
+          "tags": [
+            "Git",
+            "RCE",
+            "開発"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Git Patches Flaw That Lets Malicious Repositories Execute Code During Recursive Clones",
+              "url": "https://thehackernews.com/2026/11/git-patches-flaw-that-lets-malicious.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "Git security vulnerabilities announced",
+              "url": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-7/",
+              "source": "GitHub Blog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "米CISAがインシデント報告フォームを刷新　カギは攻撃を語る「共通言語」",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/11/news021.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "CISA がインシデント報告フォームを刷新し、背後の攻撃キャンペーン全体像を把握しやすく"
+        },
+        {
+          "title": "関連サイトで侵害、個人情報が流出 - 阪急阪神百貨店",
+          "url": "https://www.security-next.com/191650",
+          "source": "Security NEXT",
+          "note": "阪急阪神百貨店関連サイト侵害、顧客情報流出"
+        },
+        {
+          "title": "「花キューピット」のECサイトで侵害 - 利用者メアドなど流出",
+          "url": "https://www.security-next.com/192157",
+          "source": "Security NEXT",
+          "note": "花キューピット ECサイト侵害、ログイン ID・メールアドレス流出"
+        },
+        {
+          "title": "ドトール、通販サイトでも侵害 - 会員情報流出の可能性",
+          "url": "https://www.security-next.com/192495",
+          "source": "Security NEXT",
+          "note": "ドトール通販サイト不正アクセス、会員情報流出の可能性"
+        },
+        {
+          "title": "CVE-2026-125350: Google Chromium Use-After-Free Vulnerability",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125350",
+          "source": "CISA KEV",
+          "popularity": "悪用確認済",
+          "note": "Chrome（Chromium）に Use-After-Free 脆弱性、複数ブラウザに影響の可能性"
+        },
+        {
+          "title": "Terminal2Shell: Critical flaw grants instant shell access on every major OS",
+          "url": "https://terminal2shell.com/",
+          "source": "Lobsters",
+          "popularity": "142 score",
+          "note": "Terminal2Shell、全主要 OS でシェルアクセス権限を即座に獲得する脆弱性"
+        },
+        {
+          "title": "Hackers exploit trusted AWS access to breach multiple cloud environments",
+          "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-trusted-aws-access-to-breach-multiple-cloud-environments/",
+          "source": "BleepingComputer",
+          "note": "AWS Qubole プラットフォームの IAM 認証情報が悪用され、複数顧客環境にアクセス"
+        },
+        {
+          "title": "Google Widens Gemini 4 Carbon Access After AI Agents Verify Signal Code",
+          "url": "https://www.securityweek.com/google-widens-gemini-4-carbon-access-after-ai-agents-verify-signal-code/",
+          "source": "SecurityWeek",
+          "note": "Google、Gemini を使用した AI エージェントで Signal コード検証を実施、Carbon へのアクセス拡大"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 85,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWS/Google Cloudの管理・分析サービスが機能拡張。Cloudflareが分析プラットフォームをGA、Google CloudはBigQueryでメトリクス管理をAI対応にした。",
+      "topics": [
+        {
+          "headline": "AWS Billing Conductorとのカスタム課金ビュー統合",
+          "summary": "AWS Billing and Cost Management がカスタム課金ビューでAWS Billing ConductorおよびAWS Billing Transferのビューをソースとして利用可能に。請求グループごと・転送関係ごとのビューを統合できる。",
+          "why_it_matters": "複数の請求グループ・転送関係を管理する場合、一度のクエリで統合ビュー化でき、コスト分析の効率が向上する。マルチアカウント・マルチ部門環境でのコスト配分を簡潔にする。",
+          "tags": [
+            "AWS",
+            "Cost Management"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "AWS Billing and Cost Management now supports AWS Billing Conductor and AWS Billing Transfer views as source views for custom billing views",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-billing-and-cost-management-multi-source-custom-billing-views",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "EC2 G7インスタンス、ロンドン・ムンバイ・シドニー・サンパウロで利用可能に",
+          "summary": "NVIDIA RTX PRO 4500 Blackwell Server Edition GPU搭載のAmazon EC2 G7インスタンスが、Europe (London)、Asia Pacific (Mumbai, Sydney)、South America (Sao Paulo)リージョンで利用可能に。",
+          "why_it_matters": "GPUが必要なワークロード(3Dレンダリング、機械学習推論など)を各地域で低レイテンシーで実行できる選択肢が広がる。特に日本時間に近いAPAC採用を検討しているなら、シドニー・ムンバイの追加で選択肢が増える。",
+          "tags": [
+            "AWS",
+            "EC2"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Amazon EC2 G7 instances now available in additional regions",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-additional-regions/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Cloudflareの分析プラットフォーム Basin、GA達成",
+          "summary": "Apache IcebergとR2 Object Storageで構築したサーバーレス分析プラットフォーム Basin が一般提供開始。DuckDB、Snowflake、Apache等のツールと統合、オープンデータフォーマット対応。",
+          "why_it_matters": "既存の分析スタック(Snowflakeなど)と連携しながら、Cloudflareのネットワークから直接分析できる。Iceberg形式でスキーマ進化に対応しており、スケール時の構造変更が柔軟。",
+          "tags": [
+            "Cloudflare",
+            "Analytics"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Cloudflare Makes Basin Serverless Analytics Generally Available",
+              "url": "https://www.infoq.com/news/2026/11/cloudflare-basin-analytics/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon OpenSearch、マネージドな広域ディザスタリカバリを提供開始",
+          "summary": "Amazon OpenSearch Service がマネージドな広域ディザスタリカバリ機能を提供。レプリケーション基盤を自動管理し、検索・AI・分析のミッションクリティカルワークロードの高可用性と事業継続性を実現。",
+          "why_it_matters": "これまでレプリケーション構成を自分で運用していた場合、マネージドサービスへの移行でオペレーション負荷が軽減。特にマルチリージョン戦略の検索基盤では、自動フェイルオーバーにより RTO を削減できる。",
+          "tags": [
+            "AWS",
+            "OpenSearch"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon OpenSearch Service announces managed cross-Region disaster recovery",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-service-managed-cross-region-disaster-recovery/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "BigQueryの新機能 Measures GA：メトリクス定義と知識グラフをAIに統合",
+          "summary": "BigQuery Measures が一般提供開始。AIエージェントが複雑なビジネス質問に答える際、ガバナンスされたメトリクス定義（「何が起きたか」）と関連性の知識グラフ（「なぜか」）を統一的に参照できる。",
+          "why_it_matters": "Gemini等のAIエージェントに自社の公式メトリクスと関連ロジックを直接参照させることで、回答精度が向上しハルシネーション(根拠なし回答)を減らせる。BI/知識グラフ運用を一本化でき、メンテナンス効率も上がる。",
+          "tags": [
+            "Google Cloud",
+            "BigQuery"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "BigQuery measures is now GA: Unifying BI metrics and knowledge graphs for AI accuracy",
+              "url": "https://cloud.google.com/blog/products/data-analytics/bigquery-measures-ga-unifying-bi-metrics-and-knowledge-graphs/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Amazon RDS for PostgreSQL announces Extended Support minor versions 13.23-rds.20260819, 12.22-rds.20260820 and 11.22-rds.20260822",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-postgresql-extended-support/",
+          "source": "AWS What's New",
+          "note": "PostgreSQL 13・12・11の Extended Support版がリリース、最大3年の追加修正対応"
+        },
+        {
+          "title": "Amazon RDS for MySQL 26.10 is now available in Amazon RDS Database Preview Environment",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-mysql-26-10-preview-environment/",
+          "source": "AWS What's New",
+          "note": "MySQL 26.10のプレビュー版がRDS Database Preview Environmentで試験可能に"
+        },
+        {
+          "title": "Inside the Gemini factory: Accelerating partner solutions",
+          "url": "https://cloud.google.com/blog/topics/partners/inside-the-gemini-factory-accelerating-partner-solutions/",
+          "source": "Google Cloud Blog",
+          "note": "GoogleがGeminiにMCP・A2A・REST API経由のパートナー統合機能を提供、企業向けエコシステム強化"
+        },
+        {
+          "title": "AWS Partner Central now provides an improved business planning experience",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-central-business-planning/",
+          "source": "AWS What's New",
+          "note": "AWS Partner Central が新しいビジネス計画機能を提供開始"
+        },
+        {
+          "title": "Experimenting with ClusterNetworkPolicy in GKE",
+          "url": "https://cloud.google.com/blog/topics/developers-practitioners/experimenting-with-clusternetworkpolicy-in-gke/",
+          "source": "Google Cloud Blog",
+          "note": "Google GKE でClusterNetworkPolicy (CNP)を使用し、クラスタ全体の粒度の細かいネットワーク検証を実装可能に"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 24,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "13",
+        "12",
+        "11"
+      ]
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "Microsoftが.NET 11を正式リリースし、UIフレームワークがMonoから脱却。Blenderが生成AI対応、OSおよび開発ツールの新バージョンが相次いでリリースされた。",
+      "topics": [
+        {
+          "headline": ".NET 11正式リリース、共用型とコンパイラ高速化を実装",
+          "summary": "Microsoftが.NET 11を正式リリース。C#に共用型を導入し、JIT・AOTコンパイラの高速化、コマンドラインツール強化などを実装。同時にリリースした.NET MAUI 11はMonoランタイムからCoreClrへ統一。",
+          "why_it_matters": ".NET環境でのパフォーマンス改善と言語機能の進化は、既存プロジェクトの最適化や新機能の活用を検討する際の参考になる。",
+          "tags": [
+            ".NET",
+            "マイクロソフト",
+            "言語"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "マイクロソフト、.NET 11正式リリース。C#に共用型を導入、JITやAOTコンパイラの高速化、コマンドラインツール強化など新機能",
+              "url": "https://www.publickey1.jp/blog/26/net_11cjitaot.html",
+              "source": "Publickey"
+            },
+            {
+              "title": "「.NET MAUI 11」がついにXamarin由来のMonoランタイムから脱却、CoreCLRに統一",
+              "url": "https://www.publickey1.jp/blog/26/net_maui_11xamarinmonocoreclr.html",
+              "source": "Publickey"
+            }
+          ]
+        },
+        {
+          "headline": "Blender 5.3、ガウシアン・スプラッティング対応で生成AI画像対応を強化",
+          "summary": "3D制作ソフトBlender 5.3をリリース。ガウシアン・スプラッティング（生成AI画像から3D構造を抽出する技術）をサポート。",
+          "why_it_matters": "生成AI画像を3Dワークフロー内で直接活用できるようになり、AI画像を扱う制作パイプラインの構築時に検討する価値がある。",
+          "tags": [
+            "Blender",
+            "3D",
+            "生成AI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Blender 5.3 released with Gaussian Splat support",
+              "url": "https://www.blender.org/download/releases/5-3/",
+              "source": "Hacker News",
+              "popularity": "416 points"
+            }
+          ]
+        },
+        {
+          "headline": "Modern Web APIで古い JavaScript依存を減らすコーディング・エージェント",
+          "summary": "CSS.highlights、dialog + showModal()、field-sizing など、ブラウザがネイティブ実装した機能を活用し、約2019年時点のJavaScriptライブラリ依存から脱却するコーディング・エージェントの紹介。",
+          "why_it_matters": "コーディング・エージェント（コード生成AI）の出力品質が改善すれば、AIが生成したコードの保守性と性能が向上する。最新のWeb標準をエージェントが活用するか確認する価値がある。",
+          "tags": [
+            "ブラウザAPI",
+            "JavaScript",
+            "エージェント"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+              "url": "https://github.com/GoogleChrome/modern-web-guidance",
+              "source": "Hacker News",
+              "popularity": "233 points"
+            }
+          ]
+        },
+        {
+          "headline": "Effect 4.0、TypeScriptフレームワークがバンドルサイズを1/5に削減",
+          "summary": "TypeScriptの型付きエラーと構造化並行処理フレームワークEffect 4.0を2026年9月30日にリリース。ファイバーランタイムを全書き直しし、バンドルサイズを35.6kBから7.1kBに削減。依存なし。",
+          "why_it_matters": "効率的なバンドル化と高いスループットは、エッジで実行するLambdaやCloudflare Workersなど、コスト最適化が重要なサーバーレス環境で利点を持つ。",
+          "tags": [
+            "TypeScript",
+            "フレームワーク",
+            "パフォーマンス"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Effect 4.0 Ships: Dependency-Free Rewrite with 5x Smaller Bundles and Long-Term Support",
+              "url": "https://www.infoq.com/news/2026/11/effect-4-0-release/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub、非アクティブリポジトリのDependabot通知を一時停止",
+          "summary": "2026年12月8日より、過去1年間アクティビティのないリポジトリに対し、GitHubはDependabot通知を一時停止。既存通知はアーカイブされ、削除されない。",
+          "why_it_matters": "保守終了したプロジェクトの依存性管理の運用が簡素化される一方、既に放置しているリポジトリがある場合は対象となる可能性を確認する必要がある。",
+          "tags": [
+            "GitHub",
+            "依存性管理",
+            "運用"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Dependabot alerts will pause on inactive repositories",
+              "url": "https://github.blog/changelog/2026-11-10-dependabot-alerts-will-pause-on-inactive-repositories",
+              "source": "GitHub Changelog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "11年間にわたるリバースエンジニアリングでDOS版「ウイングコマンダー」の2人同時協力プレイ実現に成功",
+          "url": "https://gigazine.net/news/20261111-wing-commander-together/",
+          "source": "GIGAZINE",
+          "note": "兄弟が11年のリバースエンジニアリングでDOS版ウイングコマンダーに双機協力プレイを実装"
+        },
+        {
+          "title": "無料で使える「SketchUp」代替の3Dモデリングツール「BenchUp」が登場、ブラウザ上で家具の設計が可能",
+          "url": "https://gigazine.net/news/20261111-benchup/",
+          "source": "GIGAZINE",
+          "note": "SketchUp代替の無料3Dモデリング「BenchUp」、Rust・WebGPU採用でブラウザ対応"
+        },
+        {
+          "title": "無料のプロジェクト管理ツール「Leantime」、カンバン・一覧表・ガントビュー・iCal・タイムブロッキング・ホワイトボード・タイムシートを組み合わせて認知負荷を軽減することでADHD・失読症・自閉症を念頭に置いて設計",
+          "url": "https://gigazine.net/news/20261110-leantime/",
+          "source": "はてブ テクノロジー",
+          "popularity": "32 users",
+          "note": "ADHD・失読症・自閉症向けに設計されたプロジェクト管理ツール「Leantime」が無料公開"
+        },
+        {
+          "title": "You should try Gleam",
+          "url": "https://nchagnet.eu/blog/you-should-try-gleam",
+          "source": "Lobsters",
+          "popularity": "48 score",
+          "note": "Gleamというプログラミング言語が注目を集めている"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 27,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "AnthropicのIPOが迫り、GoogleとNVIDIAが各100億ドルを別途投資。OpenAIはトラベルスタートアップを買収、Ouraはヘルスケアチャットボットを625百万ドルで取得するなど、AI企業の資金調達・M&Aが活発化している。",
+      "topics": [
+        {
+          "headline": "Anthropic、IPO仮条件は1株70～78ドル、調達額最大644億ドル",
+          "summary": "AnthropicはIPO向け登録届を提出し、仮条件を1株70～78ドル、公開株数8億2500万株で調達額最大644億ドルに設定。GoogleなどCVCが別途260億ドルを引き受け、時価総額は最大約1兆4000億ドルに上る見通し。",
+          "why_it_matters": "AI領域の最有力企業の評価額が具体化。OpenAIとの競争図式が資金規模でも可視化され、クラウド・AI戦略の投資判断の参考になる。",
+          "tags": [
+            "IPO",
+            "資金調達",
+            "生成AI"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Anthropic、IPOの仮条件を1株70?78ドルに　調達額は最大約644億ドル、GoogleとNVIDIAは各100億ドルを別途出資",
+              "url": "https://www.itmedia.co.jp/news/article/2611/11/2000003085/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "All 7 Anthropic founders will each cash out about $250M in IPO",
+              "url": "https://techcrunch.com/2026/11/10/all-7-anthropic-founders-will-each-cash-out-about-250m-in-ipo/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAI、Sonder創業者のトラベルスタートアップ Odessia を買収",
+          "summary": "OpenAIはトラベルスタートアップ Odessia を買収。Sonder創業者 Francis Davidson が関わり、OpenAIは買収後の事業方針をまだ明かしていない。",
+          "why_it_matters": "OpenAIが旅行業界への進出を示唆。LLM/AIの応用領域拡大を見通す上で、OpenAIが選ぶ隣接事業の種類が戦略方向を示す。",
+          "tags": [
+            "買収",
+            "事業拡張",
+            "OpenAI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "OpenAI acquires Odessia, travel startup created by Sonder founder",
+              "url": "https://techcrunch.com/2026/11/10/openai-acquires-odessia-travel-startup-created-by-sonder-founder/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Oura、医療AI企業 Counsel Health を625百万ドルで買収",
+          "summary": "ウェアラブル企業Ouraは医療AI企業 Counsel Health をAcquisition price 625百万ドルで買収。Counsel Healthの「AI-native 初期医療」チャットボットをOuraアプリに既に統合している。",
+          "why_it_matters": "ヘルスケアデータ＋医療AI の統合。エンドツーエンドの健康管理プラットフォーム化が進む中、ウェアラブルとAI診察の連携パターンを理解する必要がある。",
+          "tags": [
+            "買収",
+            "ヘルスケアAI",
+            "M&A"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Oura is acquiring medical AI chatbot startup Counsel Health",
+              "url": "https://www.theverge.com/gadgets/1031284/oura-counsel-health-acquisition",
+              "source": "The Verge"
+            },
+            {
+              "title": "Oura to acquire AI-native primary care startup Counsel Health for $625M",
+              "url": "https://techcrunch.com/2026/11/10/oura-to-acquire-ai-native-primary-care-startup-counsel-health-for-625m/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon、Ring 自動ロボット・ドローン向けセキュリティデバイス発表",
+          "summary": "Amazon傘下 Ring Robotics が移動型セキュリティドローン・ロボットをリリース。2026年後半～2027年初頭に登場予定。",
+          "why_it_matters": "スマートホームがヘッドレス化。固定カメラから巡回型へのシフトは、自動化・AI統合の進展を示す。ホーム監視の新しいUXパターン。",
+          "tags": [
+            "Amazon",
+            "ロボティクス",
+            "スマートホーム"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Ring cameras go mobile as Amazon debuts AI-powered security drone and robot",
+              "url": "https://arstechnica.com/ai/2026/11/ring-cameras-go-mobile-as-amazon-debuts-ai-powered-security-drone-and-robot/",
+              "source": "Ars Technica"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Seagate's new hybrid drive raises some old questions",
+          "url": "https://arstechnica.com/gadgets/2026/11/seagate-resurrects-the-ssd-hdd-hybrid-drive/",
+          "source": "Ars Technica",
+          "note": "Seagate が FireCuda Forge ハイブリッドドライブで、HDD+SSDの再検討を投げかけ。"
+        },
+        {
+          "title": "The VR Disney Plus app on Meta Quest now has 3D movies",
+          "url": "https://www.theverge.com/tech/1031256/meta-quest-disney-plus-vr-3d-movies",
+          "source": "The Verge",
+          "note": "Disney Plus、Meta Quest 向けアプリに60本超の3D映画を追加。"
+        },
+        {
+          "title": "The PlayStation Plus PC app is shutting down next month",
+          "url": "https://www.theverge.com/games/1031144/sony-playstation-plus-windows-pc-app-shutting-down",
+          "source": "The Verge",
+          "note": "Sony、PlayStation Plus PC アプリを12月10日に廃止。利用者が少なかったため。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 27,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "小泉防衛相が総裁選出馬見送りを表明、水俣病の教訓がアマゾンで繰り返される危機について報道、司法試験デジタル化で大規模不具合が発生。",
+      "topics": [
+        {
+          "headline": "司法試験デジタル化で250件近い不具合、試験終了が3時間半遅延",
+          "summary": "今年からデジタル化された司法試験で、パソコン不具合が250件近く発生し、一部の受験生は試験終了が3時間半遅れた。11日が合格発表予定。",
+          "why_it_matters": "最難関の国家試験で技術的な不都合が人生に関わる受験機会を左右する事例であり、デジタル試験導入時の準備と検証の重要性を示している。",
+          "tags": [
+            "司法試験",
+            "デジタル化",
+            "不具合"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "司法試験でパソコン不具合が多発　　「人生かかってる」受験生は怒り：朝日新聞",
+              "url": "https://www.asahi.com/articles/ASVCB11GYVCBPTIL00JM.html",
+              "source": "はてブ 世の中",
+              "popularity": "6 users"
+            }
+          ]
+        },
+        {
+          "headline": "米FDA、GLP-1受容体作動薬に急激な視力低下リスクを警告",
+          "summary": "アメリカFDAは肥満症・糖尿病治療薬「GLP-1受容体作動薬」使用時に、急激な視力低下などのリスクが高まる可能性があると発表した。",
+          "why_it_matters": "急速に普及している肥満症治療薬の安全性に対する警告であり、使用中の患者と医師による治療方針の再検討が必要になる可能性がある。",
+          "tags": [
+            "医薬品安全性",
+            "GLP-1",
+            "FDA"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "米FDA 糖尿病治療薬「マンジャロ」などに視力低下リスクを警告 | NHKニュース",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261110de73780",
+              "source": "はてブ 世の中",
+              "popularity": "16 users"
+            }
+          ]
+        },
+        {
+          "headline": "大阪万博のEVバス補助金、返還は58億円余の約半分にとどまる",
+          "summary": "大阪メトロが大阪・関西万博で使用したEVバスについて、国や大阪府・市から受け取った補助金約58億5千万円のうち、返還は半分にとどまった。",
+          "why_it_matters": "万博プロジェクトにおける資金配分の不効率さが顕在化し、大規模公共事業の検証と補助金管理の課題を示している。",
+          "tags": [
+            "万博",
+            "EV補助金",
+            "返還"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "【独自】万博のEVバス補助金、返還半分　国や府・市が58億円交付",
+              "url": "https://www.47news.jp/15210591.html",
+              "source": "はてブ 世の中",
+              "popularity": "36 users"
+            }
+          ]
+        },
+        {
+          "headline": "水俣の教訓がアマゾンで繰り返される危機、企業の社会責任が問われる",
+          "summary": "水俣病の過去の教訓が、アマゾンの現地活動において繰り返される危機として指摘されている。",
+          "why_it_matters": "歴史的な公害事例が現在の企業活動でも同様の構図として発生していることが警告され、企業の環境・健康配慮の実態が検証される。",
+          "tags": [
+            "企業責任",
+            "環境",
+            "アマゾン"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "「命を優先してほしかった」水俣の教訓　アマゾンで繰り返される危機",
+              "url": "http://www.asahi.com/articles/ASVC55W1VVC5TIPE001M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "小泉防衛相、来秋の総裁選出馬見送りを明言",
+          "summary": "小泉防衛相が来秋の自民党総裁選への出馬を見送ることを明言し、現執行部支持の姿勢を示した。",
+          "why_it_matters": "自民党の次期指導体制調整の一段が明らかになり、政治の主要な人事決定と力関係の変化に関わる動きである。",
+          "tags": [
+            "政治",
+            "総裁選",
+            "自民党"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "小泉防衛相が来秋の総裁選への出馬見送りを明言「私は全力で支える」",
+              "url": "http://www.asahi.com/articles/ASVCC007FVCCUTFK01MM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "大村愛知県知事が5選出馬へ　挑む背景は？4期の実績は？",
+          "url": "http://www.asahi.com/articles/ASVCB728ZVCBOIPE00YM.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "大村愛知県知事が5選出馬へ、4期の実績を背景に出馬決定"
+        },
+        {
+          "title": "【独自】日中首脳会談、実現調整は不調　中国拒否、首相答弁に反発（共同通信） - Yahoo!ニュース",
+          "url": "https://news.yahoo.co.jp/articles/1146559599423bef79763ac290b7ab096fb6364d",
+          "source": "はてブ 世の中",
+          "popularity": "9 users",
+          "note": "日中首脳会談、APEC開催に合わせた実現調整が不調に終わる"
+        },
+        {
+          "title": "First day of Ukraine peace talks constructive, Zelensky says",
+          "url": "https://www.bbc.co.uk/news/articles/cqpvgvrpjvv8o?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "ウクライナ平和協議、米ロウクライナの三者会談がUAEで開始、9か月ぶり"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 47,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [],
+  "stats": {
+    "collected": 305,
+    "unclassified": 11,
+    "classify_error": null
+  }
+}
