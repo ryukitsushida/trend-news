@@ -1,0 +1,1033 @@
+{
+  "date": "2026-11-12",
+  "generated_at": "2026-11-12 10:51 JST",
+  "lead": "セキュリティ脅威とAIエージェント時代の運用ガバナンスが最優先課題。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "RMMのゼロデイ悪用は管理対象環境全体に波及し、AWS基盤の可視性・統制に直結する緊急対応案件。",
+      "topic": {
+        "headline": "N-able RMM に悪用中のゼロデイ、ホステッド環境をオフライン化",
+        "summary": "N-able は N-central リモート監視・管理プラットフォームのゼロデイ脆弱性に対応。公開後、ホステッド環境を一時的にオフラインにした。",
+        "why_it_matters": "RMM は MSP の中核ツール。ゼロデイ悪用は管理対象顧客全体に波及リスク。該当環境の早期パッチ確認が急務。",
+        "tags": [
+          "N-able",
+          "ゼロデイ",
+          "RMM"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "N-able releases security hotfixes for zero-day vulnerabilities",
+            "url": "https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/",
+            "source": "BleepingComputer"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "TerraformやPythonで企業システムを構築するチームが生成AI導入時に直面するDLP・EDR連携設計を把握できる。",
+      "topic": {
+        "headline": "Claude Enterprise、DLP連携とEDR対応で企業のAI統制を強化",
+        "summary": "AnthropicがClaude Enterpriseのセキュリティ・管理機能を拡充。設定状況の一覧化、DLP連携、EDR連携、個人アカウントの遮断機能などにより、企業のAI統制とシャドーIT対策を実現。",
+        "why_it_matters": "TerraformやPythonで企業基盤を構築するあなたのチームも、生成AIの導入・運用段階で同様の統制要件に直面する。DLP・EDRといった既存セキュリティツールとの連携ポイントを把握しておくと、企業内でのAI利用ガバナンス設計が立てやすくなる。",
+        "tags": [
+          "Claude",
+          "エンタープライズ",
+          "ガバナンス"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Claude Enterpriseがセキュリティと管理機能を強化　DLP・EDR連携など新機能の全容は",
+            "url": "https://kn.itmedia.co.jp/kn/article/2611/12/2000003082/",
+            "source": "ITmedia AI+"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "エージェントによるコード生成を本番で安全に運用するための権限・予算制御が揃い、実装の障壁が下がった。",
+      "topic": {
+        "headline": "GitHub Agentic Workflows が GA、コーディングエージェント実行時の権限制御・予算制限に対応",
+        "summary": "GitHub Agentic Workflows が一般提供開始。GitHub Actions 上でコーディングエージェントを実行する際、デフォルト読み取り専用・書き込みジョブを分離するなど、権限制御と予算制限に対応。",
+        "why_it_matters": "AIエージェントによるコード自動生成を本番環境で安全に運用するための基盤が揃う。AWS Terraform コード生成など、エージェント利用の可能性を検討する際の信頼性・コスト管理が課題だったが、これが改善される。",
+        "tags": [
+          "AI",
+          "GitHub",
+          "セキュリティ"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "GitHub Makes Agentic Workflows Generally Available with Isolation and Budget Controls",
+            "url": "https://www.infoq.com/news/2026/11/github-agentic-workflows-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+            "source": "InfoQ"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "使用するSaaS・生成AIツールの委託先侵害で機密情報が流出する事例から、自社チームの情報入力ルール見直しが急務。",
+      "topic": {
+        "headline": "Notion AI チャット記録が Fireworks から流出、委託先で 2経路の侵入",
+        "summary": "Notion は委託先 Fireworks AI で発生したセキュリティインシデントにより、Notion AI の一部チャット記録が流出した可能性を公表。10月中に内部認証情報の不正使用と第三者クラウド経由の侵入が検知された。",
+        "why_it_matters": "AI 推論基盤の委託先侵害で、顧客の LLM 対話履歴が漏えい。自身が使う SaaS の委託先セキュリティを問う。生成 AI ツール利用時の機密情報入力に警戒が必要。",
+        "tags": [
+          "Notion",
+          "Fireworks",
+          "生成AI"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Notion says Fireworks breach exposed customer AI chat transcripts",
+            "url": "https://www.bleepingcomputer.com/news/security/notion-says-fireworks-breach-exposed-customer-ai-chat-transcripts/",
+            "source": "BleepingComputer"
+          },
+          {
+            "title": "Notion AIのチャット記録が委託先から流出した可能性についてまとめてみた",
+            "url": "https://piyolog.hatenadiary.jp/entry/2026/11/11/125745",
+            "source": "piyolog"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "AIが生成したテストの品質保証にミューテーション・テストを組み込む方法を学び、本当に機能する検証フロー構築に活かせる。",
+      "topic": {
+        "headline": "AIが生成したテストが本当に機能しているのか、ミューテーション・テストで検証する動き",
+        "summary": "AIにテスト作成を任せた場合、テストが実際に有効性を持っているか不確実な問題がある。Stryker などのミューテーション・テストツールでテストの強度を測定し、品質検証する手法が注目されている。",
+        "why_it_matters": "AIが書いたテストの信頼性は、見た目の合格だけでは判定できない。テスト実装の品質保証プロセスにミューテーション・テストを組み込むことで、本当に機能するテスト環境を構築できる。開発フローの改善に活用する価値がある。",
+        "tags": [
+          "テスト",
+          "AI",
+          "品質保証"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "AI「テスト通りました」← これ､本当？  Stryker でテストの穴を塞いだ話",
+            "url": "https://qiita.com/Dingu-suke/items/b5318ef2040a9f59224a",
+            "source": "Qiita 人気",
+            "popularity": "65 LGTM"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "ai",
+    "category_label": "AI・LLM",
+    "headline": "「APIを呼ぶのは、もう人間ではない」——MCPとOpenAPIの親和性向上で、エージェントがAPI利用時代へ",
+    "sources": [
+      {
+        "title": "「APIを呼ぶのは、もう人間ではない」　進化するMCPとOpenAPIとの“新しい関係”",
+        "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/12/news004.html",
+        "source": "ITmedia AI+"
+      }
+    ],
+    "background": "これまでAPIはWebブラウザや手書きしたクライアントアプリから「人間が操作する」ために設計されてきました。しかしMCPとOpenAPIの連携強化により、AIエージェントが自律的にAPI仕様を読み解き、適切なものを選択・実行する環境が急速に整っています。これはAPI設計哲学の根本的な転換を意味します。",
+    "concepts": [
+      {
+        "term": "MCP (Model Context Protocol)",
+        "explanation": "LLMが外部ツール・APIと連携するための標準化されたプロトコル。AIエージェントが「どのAPIが使えるか」を機械的に理解し、自動判断して呼び出すための仕組みです。"
+      },
+      {
+        "term": "OpenAPI仕様",
+        "explanation": "REST APIの機能・パラメータ・戻り値を機械可読な形で定義する標準フォーマット。人間の開発者だけでなく、AIエージェントもこれを読んでAPI利用を判断できます。"
+      },
+      {
+        "term": "API設計のエージェント対応",
+        "explanation": "レート制限・エラーコード・権限スコープなどを、AIの自動リトライ・フォールバック・セッション管理に対応する形に設計し直すこと。人間のミスで呼べない設計から、AIの自律実行に耐える設計へ。"
+      }
+    ],
+    "for_you": "あなたがTerraformで構築したインフラのAPIや、Pythonで書いたバックエンドのエンドポイントが、今後は「営業ツールのAIエージェント」「社内定型業務自動化のAI」などから直接呼ばれるようになります。現在のAPI設計（認証スキーム、エラー戻り値、同時実行数制限）は「人間が夜間に数件呼ぶ」前提かもしれません。これがエージェントの無制限リトライ・並列実行で壊れる時代が来ています。",
+    "try_this": "今週、自分が実装したPython APIまたはTerraformで公開しているエンドポイント1つを選んで、OpenAPI定義を書き出すか確認してください（FastAPI/Djangoなら自動生成、AWSなら既存API Gatewayから）。その定義を読んで「AIが見たとき、レート制限・権限・エラー処理が十分か」を自分のチェックリストに加えてください。",
+    "questions": [
+      "現在のあなたのAPIは、同時に100回呼ばれたときのレート制限・課金・ログ戻りを想定してますか？AIなら簡単に達成します。",
+      "エラー応答（4xx・5xx）をAIが『自動リトライすべき』と『即座に中止すべき』で区別できるように設計できてますか？"
+    ]
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "生成AIの「判断特化型」モデルが市場参入し始め、Googleも本格参入。一方、企業側はAI統制機能を強化し、エージェント活用に向けた基盤整備が急速に進む。",
+      "topics": [
+        {
+          "headline": "Google、判断特化型「Gemini Decisions API」発表——選択肢から答えを選ぶ用途に特化",
+          "summary": "GoogleはGemini Decision 1を用いた「Gemini Decisions API」を発表。yes/no、複数選択肢、採点ルーブリックなど3種類の閉鎖型質問に最大1,000件を1回の推論で回答でき、確率と信頼度スコアを返す。従来モデルより高速かつ低コストで動作。",
+          "why_it_matters": "AIの実務利用が「何でも生成する」から「制約下で判断する」へシフト。API設計や自社システム連携を検討する際、こうした判断特化型モデルをツール選定の選肢に加えるべき時期が来ている。",
+          "tags": [
+            "Gemini",
+            "API",
+            "決定モデル"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Google、選択肢から答えを選ぶことに特化した「Gemini Decisions API」発表　回答を生成せず確率で返す",
+              "url": "https://www.itmedia.co.jp/aiplus/article/2611/12/2000003123/",
+              "source": "ITmedia AI+"
+            },
+            {
+              "title": "Gemini Decisions API",
+              "url": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+              "source": "Simon Willison"
+            },
+            {
+              "title": "Google joins the decision-model wave with Gemini Decision 1, scoring 1,000 questions in a single pass",
+              "url": "https://the-decoder.com/google-joins-the-decision-model-wave-with-gemini-decision-1-scoring-1000-questions-in-a-single-pass/",
+              "source": "The Decoder"
+            },
+            {
+              "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+              "source": "Google AI Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Claude Enterprise、DLP連携とEDR対応で企業のAI統制を強化",
+          "summary": "AnthropicがClaude Enterpriseのセキュリティ・管理機能を拡充。設定状況の一覧化、DLP連携、EDR連携、個人アカウントの遮断機能などにより、企業のAI統制とシャドーIT対策を実現。",
+          "why_it_matters": "TerraformやPythonで企業基盤を構築するあなたのチームも、生成AIの導入・運用段階で同様の統制要件に直面する。DLP・EDRといった既存セキュリティツールとの連携ポイントを把握しておくと、企業内でのAI利用ガバナンス設計が立てやすくなる。",
+          "tags": [
+            "Claude",
+            "エンタープライズ",
+            "ガバナンス"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Claude Enterpriseがセキュリティと管理機能を強化　DLP・EDR連携など新機能の全容は",
+              "url": "https://kn.itmedia.co.jp/kn/article/2611/12/2000003082/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "AWS Marketplaceで「ChatGPT Enterprise」購入可能に——AWSアカウント一括管理へ",
+          "summary": "OpenAIがChatGPT EnterpriseをAWS Marketplaceで提供開始。既存のAWSアカウントと契約枠で購入・管理でき、請求一本化や契約管理が簡素化される。",
+          "why_it_matters": "AWS環境を軸にしているなら、生成AIの調達・支払い・ライセンス管理がAWSコンソール内で一元化される。これまでOpenAI別契約だったチームは移行検討が必要になる可能性がある。",
+          "tags": [
+            "AWS",
+            "OpenAI",
+            "調達"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AWSで「ChatGPT Enterprise」を購入可能に　AWSアカウントで一括管理するメリットは",
+              "url": "https://kn.itmedia.co.jp/kn/article/2611/12/2000003080/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "「APIを呼ぶのは、もう人間ではない」——MCPとOpenAPIの親和性向上で、エージェントがAPI利用時代へ",
+          "summary": "MCPの2026年7月仕様改訂によって、既存のWebAPIとの親和性が高まった。AIエージェントが自らAPIを選択・呼び出す環境が整いつつあり、企業の既存APIをAIエージェントから直接利用する仕組みが機能し始めている。",
+          "why_it_matters": "TerraformやPythonで構築したシステムのAPI設計が、人間のクライアントだけでなくAIエージェントを想定した設計に変わり始めている。レート制限、エラーハンドリング、権限・スコープ管理を見直すタイミングが近付いている。",
+          "tags": [
+            "MCP",
+            "API",
+            "エージェント"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「APIを呼ぶのは、もう人間ではない」　進化するMCPとOpenAPIとの“新しい関係”",
+              "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/12/news004.html",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "Gartner 2027年のトップ・トレンド：非言語系AI・自律型エージェント統制・変化に耐える基盤設計が焦点",
+          "summary": "Gartnerの2027年戦略的テクノロジトップ10トレンドの大半が、自律型エージェント統制と基盤設計に充てられた。同社は、LLMの弱点を補う「非言語系AI」など、AIの頭脳に当たる3つの技術がまだ不足していると指摘。",
+          "why_it_matters": "エージェント活用への産業界の関心が急速に高まる一方、統制・安定性・言語以外のモダリティ対応が企業の大きな関心事に。今後の技術投資判断の参考になる。",
+          "tags": [
+            "トレンド",
+            "エージェント",
+            "ガバナンス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "「非言語系AI」はLLMの弱点を補えるか？　Gartner「2027年の戦略的テクノロジのトップ・トレンド」",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/11/news089.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "トラブル情報2400件超、AIで使えたのは27件　矢崎総業が直面した「AI Ready」の壁",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/06/news004.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "矢崎総業、2400件超の過去トラブル情報を生成AIで活用した結果、27件しか実用化できず。データ品質・形式・文脈の準備が、期待と現実のギャップを生む。"
+        },
+        {
+          "title": "United won’t let your AI agent book your flight",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents",
+          "source": "The Verge",
+          "note": "ユナイテッド航空、プライバシーと規制上の懸念からAIエージェントのフライト予約を禁止。AIの自動行為が法的・倫理的課題を引き起こし始めている。"
+        },
+        {
+          "title": "Google Deepmind's AlphaProof Code verified Signal's cryptographic core in four weeks instead of years",
+          "url": "https://the-decoder.com/google-deepminds-alphaproof-code-verified-signals-cryptographic-core-in-four-weeks-instead-of-years/",
+          "source": "The Decoder",
+          "note": "Google DeepMindのAlphaProof Code、Signal の暗号化コアを4週間で数学的検証。AI駆動の自動証明がセキュリティコードレビューの新手法に。"
+        },
+        {
+          "title": "IBM to offer access to a dual-processor quantum system in 2027",
+          "url": "https://arstechnica.com/science/2026/11/ibm-to-offer-access-to-a-dual-processor-quantum-system-in-2027/",
+          "source": "Ars Technica",
+          "note": "IBMが2027年にデュアルプロセッサ量子システム(各520キュービット)へのアクセス提供予定。量子コンピュータの実用段階が進む。"
+        },
+        {
+          "title": "Google’s Tabletop AI experiment lets you build custom collaboration apps",
+          "url": "https://www.theverge.com/tech/1031526/google-tabletop-ai-experiment-waitlist-availability",
+          "source": "The Verge",
+          "note": "Google、Tabletop という新実験ツールで、カスタム協調作業スペースを生成AIで構築。グループでの計画・遊び・実行を自動化。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 77,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "Chrome・Firefox・Zoomなど主要ソフトウェアに相次ぐセキュリティアップデート。脆弱性修正の傍ら、国内サービスの情報漏えいインシデント（ラクスル等）や、AI脅威（AntiFox・VOLTA）の実被害が報告された。",
+      "topics": [
+        {
+          "headline": "Chrome が今週2度目の更新、83件の脆弱性修正",
+          "summary": "Google は Chrome のセキュリティアップデートを公開。クリティカル脆弱性を含む83件に対応した。",
+          "why_it_matters": "ブラウザは業務・個人開発を問わず毎日使うツール。新版への更新を習慣づけて、悪用前の防御を心がけるべき。",
+          "tags": [
+            "Chrome",
+            "脆弱性修正",
+            "ブラウザ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「Chrome」が今週2度目の更新 - 脆弱性83件を修正、「クリティカル」も",
+              "url": "https://www.security-next.com/192735",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "Firefox 160 公開、99件の脆弱性に対応",
+          "summary": "Mozilla は Firefox の最新版を公開。複数の脆弱性を解消した。",
+          "why_it_matters": "Firefox も広く使われるブラウザ。早期の更新がセキュリティリスク低減に直結する。",
+          "tags": [
+            "Firefox",
+            "脆弱性修正",
+            "ブラウザ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「Firefox 160」が公開 - 99件の脆弱性に対応",
+              "url": "https://www.security-next.com/192688",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "Zoom Workplace Windows版に脆弱性、CVE-2026-108186 含む——クリティカル2件",
+          "summary": "Zoom は Windows 向け Zoom Workplace の複数の脆弱性を明らかにし、修正済み。クリティカルな脆弱性は認可なしの権限昇格を許す。",
+          "why_it_matters": "リモート会議は業務の標準インフラ。Windows 版の即座の更新が必須。",
+          "tags": [
+            "Zoom",
+            "権限昇格",
+            "CVE-2026-108186"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation",
+              "url": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "Windows版「Zoom Workplace」に脆弱性 - 「クリティカル」も",
+              "url": "https://www.security-next.com/192629",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "Ivanti 5製品に脆弱性アップデート、クリティカル含む13件",
+          "summary": "Ivanti は5製品向けセキュリティアップデートを提供し、クリティカル度とされる脆弱性を含む13件に対応した。",
+          "why_it_matters": "VPN・リモートアクセス機器の脆弱性は侵入経路になる。ネットワークの境界防御に関わる場合は優先度高。",
+          "tags": [
+            "Ivanti",
+            "脆弱性修正"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Ivantiの5製品が脆弱性に対応 - 2製品に「クリティカル」",
+              "url": "https://www.security-next.com/192727",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "Citrix, Ivanti Patch Critical and High-Severity Vulnerabilities",
+              "url": "https://www.securityweek.com/citrix-ivanti-patch-critical-and-high-severity-vulnerabilities/",
+              "source": "SecurityWeek"
+            }
+          ]
+        },
+        {
+          "headline": "N-able RMM に悪用中のゼロデイ、ホステッド環境をオフライン化",
+          "summary": "N-able は N-central リモート監視・管理プラットフォームのゼロデイ脆弱性に対応。公開後、ホステッド環境を一時的にオフラインにした。",
+          "why_it_matters": "RMM は MSP の中核ツール。ゼロデイ悪用は管理対象顧客全体に波及リスク。該当環境の早期パッチ確認が急務。",
+          "tags": [
+            "N-able",
+            "ゼロデイ",
+            "RMM"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "N-able releases security hotfixes for zero-day vulnerabilities",
+              "url": "https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "ネット印刷「ラクスル」がサイバー攻撃、顧客情報と入稿データが流出か",
+          "summary": "ネット印刷サービス「ラクスル」がサイバー攻撃を受け、個人情報や入稿した印刷データなどが流出した可能性がある。",
+          "why_it_matters": "国内有力サービスの漏えい。顧客データを扱うクラウドサービスのセキュリティ態勢が問われる事例。自社サービスの委託先評価に参考になる。",
+          "tags": [
+            "ラクスル",
+            "情報漏えい",
+            "サイバー攻撃"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "ネット印刷サービス「ラクスル」で侵害 - 個人情報や印刷データが流出か",
+              "url": "https://www.security-next.com/192575",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "Notion AI チャット記録が Fireworks から流出、委託先で 2経路の侵入",
+          "summary": "Notion は委託先 Fireworks AI で発生したセキュリティインシデントにより、Notion AI の一部チャット記録が流出した可能性を公表。10月中に内部認証情報の不正使用と第三者クラウド経由の侵入が検知された。",
+          "why_it_matters": "AI 推論基盤の委託先侵害で、顧客の LLM 対話履歴が漏えい。自身が使う SaaS の委託先セキュリティを問う。生成 AI ツール利用時の機密情報入力に警戒が必要。",
+          "tags": [
+            "Notion",
+            "Fireworks",
+            "生成AI"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Notion says Fireworks breach exposed customer AI chat transcripts",
+              "url": "https://www.bleepingcomputer.com/news/security/notion-says-fireworks-breach-exposed-customer-ai-chat-transcripts/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "Notion AIのチャット記録が委託先から流出した可能性についてまとめてみた",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/11/11/125745",
+              "source": "piyolog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Beyond ARTEX: 45 AI Pentesting Tools and How to Find Them",
+          "url": "https://blog.gitguardian.com/ai-pentesting-tools-beyond-artex/",
+          "source": "はてブ テクノロジー",
+          "popularity": "5 users",
+          "note": "45個の AI 侵入テストツール、LLM を攻撃自動化ループに統合。オープンソース実装が増加中。"
+        },
+        {
+          "title": "Active ScreenConnect attacks breach MSPs, impact dozens of organizations",
+          "url": "https://www.bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations/",
+          "source": "BleepingComputer",
+          "note": "ScreenConnect 環境の侵害で MSP に不正リモートアクセスクライアント配置。顧客システムへの波及リスク。"
+        },
+        {
+          "title": "Lock Your GitHub Actions",
+          "url": "https://hugovk.dev/blog/2026/lock-github-actions/",
+          "source": "Hacker News",
+          "popularity": "118 points",
+          "note": "GitHub Actions のセキュリティ設定ベストプラクティス。ワークフロー権限の絞り込みが要点。"
+        },
+        {
+          "title": "eMudhra revokes 8 more CA certificates after private key mishap",
+          "url": "https://www.bleepingcomputer.com/news/security/emudhra-revokes-8-more-ca-certificates-after-private-key-mishap/",
+          "source": "BleepingComputer",
+          "note": "eMudhra、認証局 8本の中間証明書を失効。秘密鍵不正取扱いが原因。"
+        },
+        {
+          "title": "Maersk confirms data breach as WhiteArmor ransomware demands $5 million",
+          "url": "https://www.bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million/",
+          "source": "BleepingComputer",
+          "note": "Maersk、レガシーシステムから白甲冑ランサムウェアが $5M 要求。旧並購システムのリスク。"
+        },
+        {
+          "title": "eBPF Rootkits: Why Underground Actors Are Taking Notice",
+          "url": "https://www.bleepingcomputer.com/news/security/ebpf-rootkits-why-underground-actors-are-taking-notice/",
+          "source": "BleepingComputer",
+          "note": "Linux eBPF rootkit、カーネルモジュール不要で検知回避。アンダーグラウンド共有が加速。"
+        },
+        {
+          "title": "電子チケットサービス「teket」への不正アクセスについてまとめてみた",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/11/075305",
+          "source": "piyolog",
+          "note": "電子チケット「teket」、不正アクセスで顧客情報流出。サービス停止継続中。"
+        },
+        {
+          "title": "米セキュリティ当局、悪用確認済み脆弱性6件に注意喚起",
+          "url": "https://www.security-next.com/192653",
+          "source": "Security NEXT",
+          "note": "CISA 注意喚起、Cisco BroadWorks・Barracuda・Chromium 脆弱性が悪用確認。Barracuda は早急対応を指示。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 91,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWSはローカルでAPI再現できる「AWS Emulator」を無償公開し、AIエージェント向けの安全な実行環境「Nitro Sandbox」も提供開始。SageMaker JumpStartにはOrniと DeepSeekの最新モデルが追加。",
+      "topics": [
+        {
+          "headline": "AWS Emulator 無償公開、AIエージェント記述で開発者のローカルテスト実現",
+          "summary": "AWSは手元でAWS APIを再現できる「AWS Emulator」を無料で公開。すべてのコードが自律型AIエージェントによって記述され、人間のレビューは介在していない。AWSアカウント不要で、アプリ構築やCI/CDでの統合テストなどをローカルで実行可能。",
+          "why_it_matters": "開発環境でのクラウドリソース使用を削減でき、テストサイクル短縮と低コスト化が期待できる。Terraform検証もローカルで実行できるようになり、デプロイ前の検証プロセスを高速化できる。",
+          "tags": [
+            "AWS",
+            "開発ツール"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Amazon、AWSのAPIを手元で再現する「AWS Emulator」を無償公開　コードはすべてAIエージェントが記述",
+              "url": "https://www.itmedia.co.jp/news/article/2611/12/2000003126/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "AWS Emulator is now available for building and testing AWS applications locally",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-emulator-now-available/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS Nitro Sandbox、AIエージェント向けハードウェア級の隔離環境を提供開始",
+          "summary": "EC2インスタンス上でネイティブに近いEC2性能を保ちながら、Nitroシステムハードウェアレベルの強力な隔離環境を備えた軽量VM「AWS Nitro Sandbox」の提供を開始。AIエージェントによるコーディング普及に対応し、コンテナなどの軽量仮想環境よりも強力な分離を実現。",
+          "why_it_matters": "AIエージェントが生成したコードを本番環境から安全に実行するインフラが整備された。エージェント出力の信頼性がまだ限定的な中、硬いセキュリティ境界で安心して統合テスト・デプロイ検証ができるようになる。",
+          "tags": [
+            "AWS",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AWS、AIエージェント向けに強力な隔離環境とネイティブなEC2性能を備えた軽量VM「AWS Nitro Sandboxes」提供開始",
+              "url": "https://www.publickey1.jp/blog/26/awsaiec2vmaws_nitro_sandboxes.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "6 users"
+            }
+          ]
+        },
+        {
+          "headline": "SageMaker JumpStart に Ornith と DeepSeek 最新モデル追加、利用可能なファウンデーションモデルを拡充",
+          "summary": "DeepReinforce AI の Ornith-1.0-9B と Ornith-1.0-35B、および DeepSeek の V4-Pro・V4-Flash・V4.1-Flash がSageMaker JumpStartで提供開始。AWS顧客が利用可能なファウンデーションモデルのポートフォリオを拡大。",
+          "why_it_matters": "SageMaker を使うAWS顧客が、AWS外で別途インポートする手間なくこれらモデルを試せるようになった。複数の軽量・軽中量モデルで性能と推論コストをトレードオフ検証するプロトタイピング環境が整う。",
+          "tags": [
+            "SageMaker",
+            "生成AI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Ornith-1.0-9B and Ornith-1.0-35B models now available on Amazon SageMaker JumpStart",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/01/ornith-1-0-9b-ornith-1-0-35b-on-sagemaker-jumpstart/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "DeepSeek-V4-Pro, DeepSeek-V4-Flash, and DeepSeek-V4.1-Flash models now available on Amazon SageMaker JumpStart",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/01/deepseek-v4-pro-v4-flash-v4.1-flash-on-sagemaker-jumpstart/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "JAL、基幹システム50年ぶり刷新でクラウド移行　6時間停止で全切り替え完了",
+          "summary": "JALは自前で50年運用してきた旅客基幹システムをクラウドサービスに切り替え。刷新にあたり、現場の業務制約への抵抗感とアジャイル開発への不安を組織的に乗り越えた。停止時間6時間で全移行を完了。",
+          "why_it_matters": "大規模レガシーシステムのクラウド移行は計画・テスト・ロールバック計画が極めて重要な課題。JALの実例から、大規模組織でのアジャイル導入と現場合意形成の勘所を学ぶ価値がある。",
+          "tags": [
+            "クラウド移行",
+            "ERP"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "JAL、約50年使った基幹システムを刷新　停止6時間の大移行を支えた“2つのPM”",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2610/28/news002.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "AWS Network Security Manager now available in AWS European Sovereign Cloud and Additional New Regions",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/network-security-mgr-eu-sovereign-cloud/",
+          "source": "AWS What's New",
+          "note": "Network Security Manager が AWS European Sovereign Cloud と追加31地域で利用可能に"
+        },
+        {
+          "title": "AWS Cloud WAN now supports Flow Logs",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-cloud-wan-flow-logs/",
+          "source": "AWS What's New",
+          "note": "AWS Cloud WAN が VPC Flow Logs に対応、グローバルネットワークのトラフィック可視化を実現"
+        },
+        {
+          "title": "Amazon EKS Provisioned Control Plane now offers a 24 GB etcd database on 4XL and 8XL tiers",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eks-provisioned-control-plane-larger-etcd-database/",
+          "source": "AWS What's New",
+          "note": "Amazon EKS etcd が 4XL/8XL で 16 GB から 24 GB に拡張、クラスタ状態管理の容量向上"
+        },
+        {
+          "title": "Amazon Cognito now supports user pool session management",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cognito-session-management/",
+          "source": "AWS What's New",
+          "note": "Amazon Cognito がユーザープールのセッション管理に対応、SSO セッションの可視化・制御が可能に"
+        },
+        {
+          "title": "AWS Lambda MicroVMs now supports the x86 CPU architecture",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-microvms-x86-architecture/",
+          "source": "AWS What's New",
+          "note": "AWS Lambda MicroVM が x86 CPU アーキテクチャに対応、既存 x86 アプリの再コンパイル不要に"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 34,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "31"
+      ]
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "テストフレームワーム・コンパイラの実行環境が広がり、AIコード生成への検証・倫理の議論が高まる一週間。",
+      "topics": [
+        {
+          "headline": "Playwrightがv1.65.0でBunを正式サポート、テストランナーが実行可能に",
+          "summary": "Webアプリテストフレームワーク「Playwright」が最新版でNode.jsに加えてBunでのテストランナー実行を正式にサポート。",
+          "why_it_matters": "JavaScriptテストの高速実行環境が増え、開発環境の選択肢が広がる。Bunはビルド・実行速度が速いため、テスト実行時間の短縮を検討する価値がある。",
+          "tags": [
+            "テスト",
+            "JavaScript",
+            "Bun"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "テストフレームワーク「Playwright」がBunを正式サポート。テストランナーの実行を可能に",
+              "url": "https://www.publickey1.jp/blog/26/playwrightbun.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "17 users"
+            }
+          ]
+        },
+        {
+          "headline": "Angularのコンパイラ、TypeScript 7対応でRust前処理により2〜3倍高速化",
+          "summary": "Angularチームが Rust 製のコンパイラ前処理「ngp」をベータ版で発表。TypeScript 7.0で削除された Transformer API への依存を廃止し、早期ベンチマークで冷スタートビルドが2〜3倍高速化。",
+          "why_it_matters": "大規模なAngularアプリケーションのビルド時間が短縮される。エンジニアの開発生産性向上に直結するため、Angular使用者は今後のGA版対応を視野に入れておくべき。",
+          "tags": [
+            "Angular",
+            "TypeScript",
+            "パフォーマンス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Angular's TypeScript 7-Powered Compiler Enters Beta with Rust-Based Preprocessor",
+              "url": "https://www.infoq.com/news/2026/11/angular-compiler-rust-typescript/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub Agentic Workflows が GA、コーディングエージェント実行時の権限制御・予算制限に対応",
+          "summary": "GitHub Agentic Workflows が一般提供開始。GitHub Actions 上でコーディングエージェントを実行する際、デフォルト読み取り専用・書き込みジョブを分離するなど、権限制御と予算制限に対応。",
+          "why_it_matters": "AIエージェントによるコード自動生成を本番環境で安全に運用するための基盤が揃う。AWS Terraform コード生成など、エージェント利用の可能性を検討する際の信頼性・コスト管理が課題だったが、これが改善される。",
+          "tags": [
+            "AI",
+            "GitHub",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "GitHub Makes Agentic Workflows Generally Available with Isolation and Budget Controls",
+              "url": "https://www.infoq.com/news/2026/11/github-agentic-workflows-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "AIコード生成の倫理問題、ゲーム業界でも「いかなるAI活用も許さない」判定が登場",
+          "summary": "インディゲーム「Big Walk」がバグ修正にAIコーディング支援を使用したことが、Independent Games Festival 審査員の大多数に不受け入れられた。ゲーム業界でのAI使用に対する厳しい見方が表面化。",
+          "why_it_matters": "エンジニアが業務でAIコード生成を活用する際、その事実が外部評価（採用試験、受託案件の選定、コンテスト出場など）で否定的に扱われるリスクが存在することを認識すべき。組織の方針や透明性の重要性が高まっている。",
+          "tags": [
+            "AI",
+            "倫理",
+            "ゲーム開発"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning.",
+              "url": "https://arstechnica.com/gaming/2026/11/big-walk-used-ai-to-fix-a-bug-now-the-indie-gaming-world-is-having-a-reckoning/",
+              "source": "Ars Technica"
+            }
+          ]
+        },
+        {
+          "headline": "AIが生成したテストが本当に機能しているのか、ミューテーション・テストで検証する動き",
+          "summary": "AIにテスト作成を任せた場合、テストが実際に有効性を持っているか不確実な問題がある。Stryker などのミューテーション・テストツールでテストの強度を測定し、品質検証する手法が注目されている。",
+          "why_it_matters": "AIが書いたテストの信頼性は、見た目の合格だけでは判定できない。テスト実装の品質保証プロセスにミューテーション・テストを組み込むことで、本当に機能するテスト環境を構築できる。開発フローの改善に活用する価値がある。",
+          "tags": [
+            "テスト",
+            "AI",
+            "品質保証"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AI「テスト通りました」← これ､本当？  Stryker でテストの穴を塞いだ話",
+              "url": "https://qiita.com/Dingu-suke/items/b5318ef2040a9f59224a",
+              "source": "Qiita 人気",
+              "popularity": "65 LGTM"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Issue types and fields are available for personal accounts",
+          "url": "https://github.blog/changelog/2026-11-11-issue-types-and-fields-are-available-for-personal-accounts",
+          "source": "GitHub Changelog",
+          "note": "GitHub、個人アカウント向けにIssue typeとissue fields を一般提供。開発管理機能が個人開発・OSS保守者にも拡大。"
+        },
+        {
+          "title": "Article: The iOS Crash We Could Not Reproduce",
+          "url": "https://www.infoq.com/articles/ios-crash-sigbus-debugging-experiment/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "大規模iOSアプリの本番クラッシュ再現不可、調査プロセスの事例。デバッグの知見が参考になる。"
+        },
+        {
+          "title": "Customer support is the gnarliest AI problem",
+          "url": "https://stackoverflow.blog/2026/11/10/customer-support-is-the-gnarliest-ai-problem/",
+          "source": "Stack Overflow Blog",
+          "note": "Airbnb CTOが語る、顧客サポートにおけるマルチエージェント AI の実装課題。評価・精度・レイテンシバランスの工夫。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 26,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "エヌビディアCEOジェンスン・フアン氏の複数の不倫疑惑と中国スパイ容疑により、同社の取締役会が彼の解任を検討。一方、TSMCが Anthropic と OpenAI に各10億ドルを投資し、AI チップ開発が加速。",
+      "topics": [
+        {
+          "headline": "エヌビディアCEO解任の可能性、取締役会が準備中か",
+          "summary": "フアン CEO が中国スパイ容疑の女性との不倫に加え、同社女性幹部との第2の不倫疑惑が報じられた。取締役会は水曜夜にも解任を決定する可能性があり、FBI も捜査中。議会共和党は彼からのブリーフィング要求を発出。",
+          "why_it_matters": "AI半導体市場のリーダー企業の経営危機は、チップ供給とクラウドインフラに影響を及ぼしうる。AWS インフラを構築・運用するエンジニアにとって、エヌビディア GPU の調達安定性や業界動向の不透明化は実務上の検討事項となる。",
+          "tags": [
+            "エヌビディア",
+            "経営",
+            "スキャンダル"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "The unfolding Jensen Huang scandal: a timeline",
+              "url": "https://techcrunch.com/2026/11/11/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "【速報】エヌビディアCEO、女性幹部とも不倫か",
+              "url": "https://www.47news.jp/15217626.html",
+              "source": "はてブ 世の中",
+              "popularity": "4 users"
+            },
+            {
+              "title": "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
+              "url": "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "Jensen Huang accused of having another affair — with an Nvidia exec",
+              "url": "https://techcrunch.com/2026/11/11/jensen-huang-accused-of-having-another-affair-with-a-nvidia-exec/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "CEO Jensen Huang's job is suddenly on the line at Nvidia",
+              "url": "https://arstechnica.com/gadgets/2026/11/ceo-jensen-huangs-job-is-suddenly-on-the-line-at-nvidia/",
+              "source": "Ars Technica"
+            },
+            {
+              "title": "Nvidia is reportedly preparing to fire Jensen Huang",
+              "url": "https://www.theverge.com/tech/1031652/jensen-huang-rumor",
+              "source": "The Verge"
+            },
+            {
+              "title": "Congress to call Jensen Huang in to answer for alleged Chinese spy affair",
+              "url": "https://techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "TSMC、AI企業への大型出資でチップ競争を加速",
+          "summary": "台湾の TSMC が Anthropic と OpenAI に各10億ドル投資することを表明。AI チップの需要拡大に応える供給体制の強化の一環。",
+          "why_it_matters": "TSMC のプロセス技術は AI 企業にとって差別化要因であり、投資による関係強化は下位互換品の価格低下やリードタイム短縮につながる可能性がある。代替チップ・ベンダー選択肢の動向を知ることで、GPU/TPU 調達戦略の検討に役立つ。",
+          "tags": [
+            "TSMC",
+            "AI",
+            "投資"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI",
+              "url": "https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/",
+              "source": "Ars Technica"
+            }
+          ]
+        },
+        {
+          "headline": "Apple、27年前からのユーザーフォーラムを11月20日に閉鎖",
+          "summary": "1998年開設の Appleサポートコミュニティが11月20日に終了。現在は閲覧専用で新規投稿は受け付けていない。Apple は戦略・顧客ニーズの再評価に基づく決定としており、ユーザーは公式サポートサイトへの移行が必須。",
+          "why_it_matters": "長年にわたる公開ユーザーコミュニティのナレッジが消失する可能性がある。Mac/iOS 開発・運用に関する技術情報の代替リソース確保や、サポート体制の変化に適応する必要がある。",
+          "tags": [
+            "Apple",
+            "サポート"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Appleサポートコミュニティ、11月20日に閉鎖へ　新規投稿は既に終了",
+              "url": "https://www.itmedia.co.jp/news/article/2611/12/2000003124/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Apple is shuttering its 28-year-old online community forum",
+              "url": "https://arstechnica.com/gadgets/2026/11/apple-is-shuttering-its-28-year-old-online-community-forum/",
+              "source": "Ars Technica"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Hands on with Home Assistant’s new ‘smart home multi-tool’",
+          "url": "https://www.theverge.com/tech/1031601/home-assistant-connect-aux-2-hands-on",
+          "source": "The Verge",
+          "note": "Home Assistant Connect Aux-2 発表——スマートホムの非スマート機器統合向けデバイス"
+        },
+        {
+          "title": "Loot boxes, influencers, and addictive features face an EU crackdown",
+          "url": "https://www.theverge.com/policy/1031575/digital-fairness-act-eu-dfa-consumer-protection",
+          "source": "The Verge",
+          "note": "EU、ルートボックス・インフルエンサー・中毒性フィーチャーへの規制案『Digital Fairness Act』を公開"
+        },
+        {
+          "title": "まるで「自宅警備員」？　室内を自律飛行する防犯ドローン、Amazon傘下が発表　約4万円から",
+          "url": "https://www.itmedia.co.jp/news/article/2611/11/2000003111/",
+          "source": "ITmedia NEWS",
+          "note": "Amazon 傘下 Ring、屋内自律飛行ドローンと自律走行警備ロボットを発表——ドローンは約4万円"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 28,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "国内では鳥インフルエンザの今季初感染が確認され大規模殺処分が始まった。経済面では円相場が159円台後半に下落、企業物価も前年比7.1%上昇と、金融・物価の不安定さが続いている。",
+      "topics": [
+        {
+          "headline": "京都の養鶏場で鳥インフル確認、20万羽を殺処分へ",
+          "summary": "京都府亀岡市の養鶏場でニワトリが集団死亡し、高病原性H5型の鳥インフルエンザウイルスが検出された。今シーズン初の感染確認で、20万羽の殺処分が予定されている。",
+          "why_it_matters": "養鶏業や鳥インフル由来の食品供給リスク、さらに感染拡大による公衆衛生への影響が予想される。",
+          "tags": [
+            "感染症",
+            "食品",
+            "京都"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "京都 亀岡の養鶏場で今シーズン初 鳥インフルエンザ感染確認",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261112de74535",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "京都の養鶏場で鳥インフル、今季1例目と確認　20万羽を殺処分へ",
+              "url": "http://www.asahi.com/articles/ASVCC33GDVCCUTIL023M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "エヌビディアがジェンスン・フアンCEOを解任へ、米紙報道",
+          "summary": "米半導体大手エヌビディアがジェンスン・フアンCEOの解任を準備していると、ウォール・ストリート・ジャーナルが報じた。詳細な背景は記事では示されていない。",
+          "why_it_matters": "AI時代の最大級テック企業の経営トップ交代は、AI産業の成長戦略や市場展望に大きな影響を与える可能性がある。",
+          "tags": [
+            "AI",
+            "経営",
+            "半導体"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "エヌビディア フアンCEO解任へ準備 米紙報道",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261112de74529",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "円相場159円台後半、FRB追加利上げ観測で売圧力",
+          "summary": "11日の外国為替市場で、米FRBが来月の会合で追加利上げに踏み切るとの観測から円を売ってドルを買う動きが進み、円相場は一時159円台後半に値下がりした。",
+          "why_it_matters": "円安進行は日本企業の輸入コスト上昇と海外競争力の低下をもたらし、企業経営と家計購買力に直結する。",
+          "tags": [
+            "為替",
+            "金融",
+            "経済"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "円相場1ドル＝159円台後半 FRBの追加利上げ観測で",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261112de74514",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "10月企業物価指数7.1%上昇、中東情勢で石油関連製品が値上がり",
+          "summary": "10月の企業物価指数は前年同月比7.1%上昇し、9月からの伸び率が拡大した。中東情勢の影響による石油関連製品の値上がりが反映されている。",
+          "why_it_matters": "エネルギー・素材コストの上昇は製造業全般のコスト圧力となり、最終消費者負担の増加につながる可能性がある。",
+          "tags": [
+            "物価",
+            "エネルギー",
+            "経済"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "10月企業物価指数 前年同月比7.1％上昇 中東背景に伸び率拡大",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261112de74538",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "日産自動車、中間決算で赤字幅縮小も2期連続の最終赤字",
+          "summary": "経営再建中の日産自動車は4月～9月の中間決算で397億円の赤字を報告した。コスト削減と円安が進み赤字幅は縮小したが、中間決算としては2期連続の最終赤字となった。",
+          "why_it_matters": "国内大手自動車メーカーの経営危機の継続は、サプライチェーン全体と関連産業の雇用・投資判断に影響する。",
+          "tags": [
+            "自動車",
+            "経営",
+            "日本"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "日産自動車 中間決算 赤字幅縮小も2期連続の最終赤字",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261112de74555",
+              "source": "NHK 主要"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "米 ニューヨークで建物の一部が倒壊 死者1人 けが人多数",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261112de74557",
+          "source": "NHK 主要",
+          "note": "ニューヨーク・ブルックリンの3階建て建物が一部倒壊、1人が死亡し12人がけが。"
+        },
+        {
+          "title": "丸亀製麺が1割値下げで「かけうどん」（並）は390円に　消費減税対策で大手初、外食各社が客離れ防ぐ - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUC30CG30Q6A031C2000000/",
+          "source": "はてブ 世の中",
+          "popularity": "30 users",
+          "note": "丸亀製麺が大手飲食初、主力メニューを最大11%値下げ。消費税減税への先制対策。"
+        },
+        {
+          "title": "地震調査委員会 “茨城県沖で地震活動がやや活発” | NHKニュース",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261111de74483",
+          "source": "はてブ 世の中",
+          "popularity": "4 users",
+          "note": "茨城県沖でマグニチュード5クラスの地震が相次ぎ、地震調査委が活動活発化を指摘。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 44,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 307,
+    "unclassified": 7,
+    "classify_error": null
+  }
+}
