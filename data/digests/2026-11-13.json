@@ -1,0 +1,1121 @@
+{
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13 09:58 JST",
+  "lead": "エンタープライズシステムの脆弱性報告と AI エージェント実装時の制御設計が今週の重要課題。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "AWS認証情報盗難キャンペーンが Terraform や CI/CD パイプラインを狙っており、あなたの開発フロー直結のリスク。",
+      "topic": {
+        "headline": "GitHub認証情報悪用キャンペーン『wfx-loot』、4,837アカウント侵害しクラウド認証情報盗難",
+        "summary": "攻撃者が4,837個の侵害されたGitHubアカウントを使用して61,764リポジトリを探索し、プルリクエスト送信やシークレット盗難マルウェアをプッシュするキャンペーン『wfx-loot』。1,800以上のリポジトリで継続的インテグレーション用シークレット盗難ツールが実行される。",
+        "why_it_matters": "Terraformやデプロイスクリプトに含まれるAWS認証情報が盗まれるリスクが高い。.gitignoreやシークレット管理の徹底、IAMポリシー最小化を今すぐ確認を。",
+        "tags": [
+          "GitHub",
+          "認証情報",
+          "AWS"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "Hackers compromise 4,800 GitHub accounts to steal cloud credentials",
+            "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials/",
+            "source": "BleepingComputer"
+          },
+          {
+            "title": "Attacker Targets 60,000 GitHub Repositories in Credential Theft Campaign",
+            "url": "https://www.securityweek.com/attacker-targets-60000-github-repositories-in-credential-theft-campaign/",
+            "source": "SecurityWeek"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "約半数のエージェントが予期しない動作を示しており、本番運用でのコスト・データアクセス暴走を防ぐアーキテクチャ設計が不可欠。",
+      "topic": {
+        "headline": "約半数がAIエージェントの意図しない行動を確認、自動停止は困難",
+        "summary": "Salt Security調査によると、約半数の組織がAIエージェントによる想定外の行動を確認。一方で、これを自動的に停止できている組織は少ないという。",
+        "why_it_matters": "エージェント実装時の監視・制御機構の設計が急務。API呼び出しの権限制御・予算上限・ログ監視をアーキテクチャに組み込まないと、本番運用で予期しない費用・データアクセスが発生する危険。",
+        "tags": [
+          "AIエージェント",
+          "セキュリティ",
+          "監視"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "AIエージェントを「追えない、止められない」　約半数が経験する“暴走”、浮上する3つの盲点",
+            "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/13/news036.html",
+            "source": "ITmedia AI+"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "Citrix NetScaler のクリティカル脆弱性は VPN・ロードバランサー経由の侵入経路となるため、AWS 環境への境界防御確認が急務。",
+      "topic": {
+        "headline": "Citrix NetScaler ADC/Gateway/Consoleにクリティカル脆弱性、セキュリティアップデート公開",
+        "summary": "Cloud Software GroupはNetScaler ADC（旧Citrix ADC）、NetScaler Gateway（旧Citrix Gateway）、NetScaler Console（旧NetScaler ADM）の複数クリティカル脆弱性に対応するセキュリティアップデートを公開。",
+        "why_it_matters": "NetScalerはVPN・ロードバランサーとして金融機関や大企業で広く使われているため、修正パッチの適用は急務。貴社のインフラで利用中なら優先的に検証・適用を。",
+        "tags": [
+          "Citrix",
+          "脆弱性",
+          "クラウドセキュリティ"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "「NetScaler ADC/Gateway」に複数の「クリティカル」脆弱性",
+            "url": "https://www.security-next.com/192789",
+            "source": "Security NEXT"
+          },
+          {
+            "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
+            "url": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+            "source": "The Hacker News"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "M365 障害は認証・API連携の脆弱性を露呈させており、マルチサービス依存時の フェイルオーバー戦略を見直す契機。",
+      "topic": {
+        "headline": "Microsoft 365 で Exchange Online 障害、Outlook とメール連携サービスが影響",
+        "summary": "11月12日（米国時間）、Microsoft 365 の Exchange Online メールボックス接続に障害が発生。Outlook の Web 版・デスクトップ・モバイルアプリ、MAPI・ActiveSync・REST 経由の接続に影響が出た。",
+        "why_it_matters": "エンタープライズで広く使われるメール基盤の障害であり、認証・連携設計の堅牢性とフェイルオーバー戦略を改めて検討する契機になる。",
+        "tags": [
+          "クラウド",
+          "障害",
+          "Microsoft 365"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Microsoft Outlook is still down",
+            "url": "https://www.theverge.com/tech/1032226/microsoft-outlook-is-down",
+            "source": "The Verge"
+          },
+          {
+            "title": "アウトルックでメール送れず　「マイクロソフト365」で大規模障害：朝日新聞",
+            "url": "https://www.asahi.com/articles/ASVCD6X84VCDUHBI001M.html",
+            "source": "はてブ テクノロジー",
+            "popularity": "12 users"
+          },
+          {
+            "title": "Microsoft 365で大規模障害　「Outlook」でメールにアクセスできず、「Teams」など複数サービスに影響",
+            "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003161/",
+            "source": "はてブ テクノロジー",
+            "popularity": "43 users"
+          },
+          {
+            "title": "マイクロソフト、「365」世界で大規模障害　メール送れずビジネスに影響 - 日本経済新聞",
+            "url": "https://www.nikkei.com/article/DGXZQOGN12CY20S6A111C2000000/",
+            "source": "はてブ テクノロジー",
+            "popularity": "86 users"
+          },
+          {
+            "title": "Microsoft’s Outlook email hit by new outage",
+            "url": "https://techcrunch.com/2026/11/12/microsofts-outlook-email-hit-by-new-outage/",
+            "source": "TechCrunch"
+          },
+          {
+            "title": "Service degradation on Microsoft 365",
+            "url": "https://status.cloud.microsoft/",
+            "source": "Hacker News",
+            "popularity": "464 points"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "非 IT 部門が Gemini で Python を内製化した事例から、チーム全体の自動化・スキル底上げの可能性が見える。",
+      "topic": {
+        "headline": "JR九州、非IT部門がGeminiでPythonアプリを内製化",
+        "summary": "JR九州は「Google Workspace with Gemini」を導入し、非エンジニアが業務アプリをPythonで内製開発。2～3ヶ月での完成を実現。IT人材不足と外部ベンダー依存の解決に取り組んでいる。",
+        "why_it_matters": "Geminiを活用した低技能者のコード生成・内製化の成功事例。あなたのチームで非開発者がTerraform・Pythonを書く環境を作る可能性、及び内製による納期短縮・属人性排除のメリットが見える。",
+        "tags": [
+          "生成AI",
+          "内製化",
+          "低コード"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "JR九州の非IT部門がGeminiでPythonアプリを内製開発　2?3カ月で完成させた方法",
+            "url": "https://kn.itmedia.co.jp/kn/article/2611/13/2000003142/",
+            "source": "ITmedia AI+"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "security",
+    "category_label": "セキュリティ",
+    "headline": "GitHub認証情報悪用キャンペーン『wfx-loot』、4,837アカウント侵害しクラウド認証情報盗難",
+    "sources": [
+      {
+        "title": "Hackers compromise 4,800 GitHub accounts to steal cloud credentials",
+        "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials/",
+        "source": "BleepingComputer"
+      },
+      {
+        "title": "Attacker Targets 60,000 GitHub Repositories in Credential Theft Campaign",
+        "url": "https://www.securityweek.com/attacker-targets-60000-github-repositories-in-credential-theft-campaign/",
+        "source": "SecurityWeek"
+      }
+    ],
+    "background": "GitHub上の侵害されたアカウントから大規模な認証情報盗難が発生している。攻撃者が『wfx-loot』と呼ばれるキャンペーンで、4,837個のGitHubアカウントを利用して61,764リポジトリに侵入し、CI/CDパイプラインにシークレット盗難マルウェアをプッシュしている。この手法は、コード管理とインフラストラクチャ自動化が連携する環境での認証情報流出リスクを明示している。",
+    "concepts": [
+      {
+        "term": "シークレット盗難マルウェア（Secrets Stealer）",
+        "explanation": "CI/CDパイプラインの実行時に、TerraformやPythonスクリプト内のAWS認証情報やトークンなどを自動抽出し、攻撃者に送信するツール。ビルドログやメモリから環境変数を掘り出す。"
+      },
+      {
+        "term": "継続的インテグレーション（CI）シークレット",
+        "explanation": "GitHubのCI/CD（GitHub Actionsなど）で使用される、AWSアクセスキーやデプロイトークンといった認証情報。通常は環境変数として保管されるため、マルウェアの格好の標的になる。"
+      },
+      {
+        "term": "プルリクエスト（Pull Request）による初期入侵",
+        "explanation": "攻撃者が侵害されたアカウントから、マルウェアを含むコードをPRとして送信。リポジトリ管理者の不注意でマージされると、CI/CDが自動実行されてマルウェアが起動する。"
+      }
+    ],
+    "for_you": "あなたがTerraformやPythonデプロイスクリプトでAWS認証情報を管理している場合、このキャンペーンは直接的な脅威です。特にGitHub Actionsを使用してTerraformプランやapplyを自動化している環境では、CI環境変数に保存されたアクセスキーが盗まれる可能性があります。また、ローカル環境やGitHub SecretsとしてAWS_ACCESS_KEY_IDなどを設定している場合も、リポジトリが侵害されればマルウェアが実行時に抽出します。",
+    "try_this": "今週中に、あなたが管理するリポジトリの直近3ヶ月のPRやcommitを検査し、予期しないプルリクエストがマージされていないか確認してください。同時に、GitHub Secretsに保存しているAWS認証情報の権限を振り返り、IAMポリシーを最小化します。また、.gitignoreで.tfvarsやconfig.pyなどの機密ファイルが確実に除外されているか、そしてGit履歴に過去の認証情報が残っていないか（git log --all -p で検査可能）確認してください。",
+    "questions": [
+      "あなたのGitHub ActionsワークフローでAWS認証情報を使用している場合、その権限スコープはデプロイに必要な最小限に制限されているか、それとも管理者権限に近い設定になっていないか？",
+      "ローカルや CI 環境で使用しているAWS認証情報が、1つのプロジェクトに固有なのか、複数のプロジェクトやリソースで使い回されていないか？"
+    ]
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "Googleが低価格で高速の「Gemini 4 Hydrogen」を発表。M365障害の影響が生成AI連携に波及。AIエージェントの暴走検知・防止の課題が顕在化。",
+      "topics": [
+        {
+          "headline": "Google、「Gemini 4 Hydrogen」で高速・低価格を実現",
+          "summary": "GoogleがAIエージェント向けの新モデル「Gemini 4 Hydrogen」を発表。「Gemini 3.8 Flash」の約2.5倍の速度でタスクを完了し、推論の深さを4段階から選択可能。APIやGeminiアプリから同日提供開始。",
+          "why_it_matters": "エージェント活用時の応答速度とコスト・ユースケースのトレードオフ設計が現実的になる。あなたの業務自動化・アプリ内AI統合で、タスクと予算に応じたモデル選択の幅が広がる。",
+          "tags": [
+            "Gemini",
+            "生成AI",
+            "API"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Google、高速で低価格の「Gemini 4 Hydrogen」発表　無料ユーザーも利用可能",
+              "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003162/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Google's Gemini 4 Hydrogen outscores the bigger Argon just four weeks after its launch",
+              "url": "https://the-decoder.com/googles-gemini-4-hydrogen-outscores-the-bigger-argon-just-four-weeks-after-its-launch/",
+              "source": "The Decoder"
+            },
+            {
+              "title": "Gemini 4 Hydrogen and Orchestrator",
+              "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+              "source": "Hacker News",
+              "popularity": "281 points"
+            },
+            {
+              "title": "Gemini 4 Hydrogen",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+              "source": "Hacker News",
+              "popularity": "451 points"
+            }
+          ]
+        },
+        {
+          "headline": "M365障害、ChatGPT・Claudeのコネクタも影響",
+          "summary": "Microsoft 365の複数サービスで発生した障害により、OpenAIの「ChatGPT」とAnthropicの「Claude」のMicrosoft 365コネクタが「ほとんどのリクエストで動作しない」状態に。",
+          "why_it_matters": "Officeスイートとの統合を前提にしたAIワークフローの依存性を改めて理解する機会。M365連携に依存しすぎている自動化・エージェント設計の脆弱性を見直す必要がある。",
+          "tags": [
+            "M365",
+            "障害",
+            "API連携"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "M365障害、ChatGPT／Claudeのコネクタにも影響　「ほとんどのリクエストで動作しない」",
+              "url": "https://www.itmedia.co.jp/aiplus/article/2611/13/2000003164/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "約半数がAIエージェントの意図しない行動を確認、自動停止は困難",
+          "summary": "Salt Security調査によると、約半数の組織がAIエージェントによる想定外の行動を確認。一方で、これを自動的に停止できている組織は少ないという。",
+          "why_it_matters": "エージェント実装時の監視・制御機構の設計が急務。API呼び出しの権限制御・予算上限・ログ監視をアーキテクチャに組み込まないと、本番運用で予期しない費用・データアクセスが発生する危険。",
+          "tags": [
+            "AIエージェント",
+            "セキュリティ",
+            "監視"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AIエージェントを「追えない、止められない」　約半数が経験する“暴走”、浮上する3つの盲点",
+              "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/13/news036.html",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "NEC、データカタログ1435個を整備しAIによる意思決定支援へ",
+          "summary": "NECは5年間かけた基盤整備の後、従業員向けダッシュボード構築から経営の意思決定支援段階へ進行中。人向けに整備したデータカタログがAI活用には「足りない」ことに気付き、補強を進めている。",
+          "why_it_matters": "データ基盤と生成AIの連携では、人間の利用を前提にした構造（階層分類・自然言語説明）だけでなく、AIが直接参照・推論できるスキーマ設計が必要になることを示唆。メタデータ・知識グラフの充実度がAI意思決定の質を左右する。",
+          "tags": [
+            "データ基盤",
+            "生成AI",
+            "ガバナンス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "NECがデータカタログ1435個を1年で整備　AIによる意思決定支援への挑戦",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2610/30/news006.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "JR九州、非IT部門がGeminiでPythonアプリを内製化",
+          "summary": "JR九州は「Google Workspace with Gemini」を導入し、非エンジニアが業務アプリをPythonで内製開発。2～3ヶ月での完成を実現。IT人材不足と外部ベンダー依存の解決に取り組んでいる。",
+          "why_it_matters": "Geminiを活用した低技能者のコード生成・内製化の成功事例。あなたのチームで非開発者がTerraform・Pythonを書く環境を作る可能性、及び内製による納期短縮・属人性排除のメリットが見える。",
+          "tags": [
+            "生成AI",
+            "内製化",
+            "低コード"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "JR九州の非IT部門がGeminiでPythonアプリを内製開発　2?3カ月で完成させた方法",
+              "url": "https://kn.itmedia.co.jp/kn/article/2611/13/2000003142/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "「好機が来た」――なぜ今Sakana AIは、イチからAIモデルを作るのか　“新たな一手”のねらいを聞いた",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/13/2000003141/",
+          "source": "ITmedia AI+",
+          "note": "Sakana AI、既存モデル活用から自社AIモデル開発へ転換。背景・狙いを取材。"
+        },
+        {
+          "title": "設計／製造から工場運用へ、オートデスクが描く工場全体の最適化戦略",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/13/news012.html",
+          "source": "ITmedia AI+",
+          "note": "オートデスク、製品設計から工場運用まで領域を拡大。M&A・AI活用の構想を幹部に聞く。"
+        },
+        {
+          "title": "AIに仕事は“奪われない”が、生まれなくなる――Gartnerが予測する2030年の雇用",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/13/news014.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "Gartner、2030年のAIが雇用に与える影響を予測。失職ではなく「仕事が生まれなくなる」懸念も。"
+        },
+        {
+          "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+          "url": "https://openai.com/business/customer-stories/amplitude",
+          "source": "OpenAI News",
+          "note": "OpenAIとAmplitudeのパートナーシップ。プロダクトエージェント「Wave」で1～2日で改善を実装。"
+        },
+        {
+          "title": "Google’s latest Search upgrade promises better answers to your most complicated questions",
+          "url": "https://techcrunch.com/2026/11/12/googles-latest-search-upgrade-promises-better-answers-to-your-most-complicated-questions/",
+          "source": "TechCrunch",
+          "note": "Google Search、Gemini 4 Hydrogenで複雑クエリへの応答精度・ビジュアル表示を向上。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 82,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "Citrix NetScaler ADCなど複数クリティカル脆弱性と、GitHub認証情報悪用による大規模クレデンシャル盗難キャンペーンが並行。Apache HTTP Serverと複数製品にRCE脆弱性が相次ぎ、個人情報漏えいもタイムズカー・資生堂・商工会議所で多数件報告。",
+      "topics": [
+        {
+          "headline": "Citrix NetScaler ADC/Gateway/Consoleにクリティカル脆弱性、セキュリティアップデート公開",
+          "summary": "Cloud Software GroupはNetScaler ADC（旧Citrix ADC）、NetScaler Gateway（旧Citrix Gateway）、NetScaler Console（旧NetScaler ADM）の複数クリティカル脆弱性に対応するセキュリティアップデートを公開。",
+          "why_it_matters": "NetScalerはVPN・ロードバランサーとして金融機関や大企業で広く使われているため、修正パッチの適用は急務。貴社のインフラで利用中なら優先的に検証・適用を。",
+          "tags": [
+            "Citrix",
+            "脆弱性",
+            "クラウドセキュリティ"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "「NetScaler ADC/Gateway」に複数の「クリティカル」脆弱性",
+              "url": "https://www.security-next.com/192789",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
+              "url": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub認証情報悪用キャンペーン『wfx-loot』、4,837アカウント侵害しクラウド認証情報盗難",
+          "summary": "攻撃者が4,837個の侵害されたGitHubアカウントを使用して61,764リポジトリを探索し、プルリクエスト送信やシークレット盗難マルウェアをプッシュするキャンペーン『wfx-loot』。1,800以上のリポジトリで継続的インテグレーション用シークレット盗難ツールが実行される。",
+          "why_it_matters": "Terraformやデプロイスクリプトに含まれるAWS認証情報が盗まれるリスクが高い。.gitignoreやシークレット管理の徹底、IAMポリシー最小化を今すぐ確認を。",
+          "tags": [
+            "GitHub",
+            "認証情報",
+            "AWS"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Hackers compromise 4,800 GitHub accounts to steal cloud credentials",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "Attacker Targets 60,000 GitHub Repositories in Credential Theft Campaign",
+              "url": "https://www.securityweek.com/attacker-targets-60000-github-repositories-in-credential-theft-campaign/",
+              "source": "SecurityWeek"
+            }
+          ]
+        },
+        {
+          "headline": "Apache HTTP Server mod_http2に重大RCE脆弱性『CVE-2026-119618』、パッチ公開",
+          "summary": "Apache HTTP Serverの HTTP/2モジュールに存在するレース条件により、未認証の攻撃者がリモートコード実行を実行できる。Anthropic・Googleにより発見。",
+          "why_it_matters": "HTTP/2対応サーバーが対象。直ちにApacheをアップデートしないと外部からのコード実行に晒される。特にクラウド上で複数サーバーを運用中なら一括適用の手順を確認を。",
+          "tags": [
+            "Apache",
+            "RCE",
+            "OSSライブラリ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
+              "url": "https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "Apache Patches Critical HTTP Server RCE Found by Anthropic, Google",
+              "url": "https://www.securityweek.com/apache-patches-critical-http-server-rce-found-by-anthropic-google/",
+              "source": "SecurityWeek"
+            }
+          ]
+        },
+        {
+          "headline": "N-able N-centralに悪用中のゼロデイ『4EverAble2Shell』、PoC公開直後に利用開始",
+          "summary": "N-able N-centralの新規公開ゼロデイ『4EverAble2Shell』は、PoC公開から数時間以内に複数サーバー侵害に悪用される。研究者が少なくとも21の影響を受けたシステムを確認、19はハッシュプール向けとも（マイニング目的の可能性）。",
+          "why_it_matters": "MSP・RMM環境は顧客システムへの広がりが大きく、本社・支社の管理ツールとして使っていれば他組織への波及リスクも高い。即座に N-able の勧告を確認し、隔離検討を。",
+          "tags": [
+            "MSP",
+            "RMM",
+            "ゼロデイ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+              "url": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "Windows『SignDrop』ゼロデイ、CLFS機能悪用でSYSTEM権限取得可能",
+          "summary": "新規ゼロデイ『SignDrop』はWindows Common Log File System（CLFS）ドライバの設計上の問題により、ローカルユーザーがシステム権限を取得できる。PoC公開済み。",
+          "why_it_matters": "特権昇格が可能になるため、マルウェア感染後の横展開や永続化に使われやすい。WindowsセキュアOS設定（最小権限実行ポリシー）の見直しと、EDRでの異常アクセス検知が重要。",
+          "tags": [
+            "Windows",
+            "権限昇格",
+            "ゼロデイ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access",
+              "url": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "New Windows SignDrop zero-day gives hackers SYSTEM privileges",
+              "url": "https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "Red Hat Quayに重大脆弱性、匿名アクセスで全プライベートコンテナイメージ読み取り・上書き可能",
+          "summary": "Red Hat Quayコンテナレジストリに重大脆弱性があり、デフォルト有効の匿名アクセス中なら、攻撃者がアカウント不要で全リポジトリの非公開コンテナイメージを読み取り・上書き可能。",
+          "why_it_matters": "Quay使用中なら直ちに匿名アクセス設定を確認し、無効化またはネットワーク制限を。本番イメージの改ざんリスクがあり、CI/CDパイプラインの信頼性が損なわれる。",
+          "tags": [
+            "コンテナ",
+            "レジストリ",
+            "デプロイ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Critical Red Hat Quay Flaw Lets Attackers Read and Overwrite All Private Container Images in a Registry",
+              "url": "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "ScreenConnect侵害、コマンド実行ツール『SCKit』で MSP・顧客間に横展開リスク",
+          "summary": "ScreenConnect独立ツール悪用によるMSP侵害で、新たなワーム型マルウェア『SCKit』が感染マシンから MSP技術者のコンピュータ、さらに他顧客に拡散する設計。ほぼ50社近いScreenConnect顧客で侵害確認。",
+          "why_it_matters": "MSP経由で複数顧客へ波及する可能性が高く、被害の全容把握に時間がかかりやすい。ScreenConnect使用中なら即座にConnectWiseの勧告を確認し、ネットワークセグメント化・アクセスログ確認が不可欠。",
+          "tags": [
+            "MSP",
+            "RMM",
+            "横展開"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "New worm-like 'SCKit' malware targets MSPs in ScreenConnect attacks",
+              "url": "https://www.bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "ConnectWise investigates ScreenConnect breaches after reports of incidents at nearly 50 organizations",
+              "url": "https://therecord.media/connectwise-screenconnect-breaches-third-party-tool",
+              "source": "The Record"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "AIの攻撃はAIで守る、AI SOC実現へ　規制業種を縛る「3つの壁」をTrellixはどう超えるのか",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/13/news019.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "AI攻撃への防御も AI が必要だが、金融・官公庁は規制で自動化に踏み切れず。Trellixが新製品で突破口を狙う。"
+        },
+        {
+          "title": "Feds announce seizure of $1.2 billion from Binance theft; also takedown of ‘FaceStealer’ tools",
+          "url": "https://therecord.media/stolen-binance-crypto-recovered-doj-facestealer-disrupted",
+          "source": "The Record",
+          "note": "米司法省・FBI が北朝鮮関連暗号通貨盗難から $1.2B 差し押さえ、『FaceStealer』ツール撤去。"
+        },
+        {
+          "title": "Microsoft 365 Outage Disrupts Outlook, Exchange Online and Teams",
+          "url": "https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/",
+          "source": "SecurityWeek",
+          "note": "Microsoft 365 大規模障害（Outlook・Teams・Copilot）、ヘルスチェック失敗が原因。サイバー攻撃ではなし。"
+        },
+        {
+          "title": "United to block customers from using AI agents, citing cyber threats",
+          "url": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
+          "source": "The Record",
+          "note": "United Airlines、AI エージェントへのアカウント認証情報共有を禁止。不正決済・権限濫用リスク理由。"
+        },
+        {
+          "title": "Shipping giant Maersk says recent cyber incident affected legacy system",
+          "url": "https://therecord.media/shipping-giant-maersk-says-recent-incident-affected-legacy-system",
+          "source": "The Record",
+          "note": "Maersk が最近のサイバーインシデント公表、レガシーシステム被害。ポート・海運へのランサムウェア攻撃が相次ぐ。"
+        },
+        {
+          "title": "186 Fake AI Domains Redirect Users to ClickFix Lures, Browser Malware, and Search Hijackers",
+          "url": "https://thehackernews.com/2026/11/186-fake-ai-domains-redirect-users-to.html",
+          "source": "The Hacker News",
+          "note": "186個の偽 AI ドメイン（ClickFix・ブラウザハイジャッカー・マルウェア・詐欺誘導）がサーチ結果を汚染。"
+        },
+        {
+          "title": "Police dismantle Gootloader, CastleRAT, StealC malware infrastructure",
+          "url": "https://www.bleepingcomputer.com/news/security/police-dismantles-gootloader-castlerat-stealc-malware-infrastructure/",
+          "source": "BleepingComputer",
+          "note": "欧州警察 Gootloader・CastleRAT・StealC マルウェア基盤を差し押さえ、9カ国協力。"
+        },
+        {
+          "title": "試験管理システムで侵害、受験者情報流出の可能性 - 日商",
+          "url": "https://www.security-next.com/192652",
+          "source": "Security NEXT",
+          "note": "日商ネット試験管理システムが不正アクセス、受験者情報流出の可能性。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 91,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWS Emulatorが正式リリースされ、ローカル開発環境でのテストが無料で可能に。認証・ネットワークなどAWSサービスの機能拡張が相次ぎ、AIエージェント活用の環境が整備されている。",
+      "topics": [
+        {
+          "headline": "AWS Emulator正式リリース、ローカルでAWSサービスをエミュレート可能に",
+          "summary": "Amazonがローカル環境でAWSサービスを実行できる無料の公式エミュレーター「AWS Emulator」をリリース。AWS CLIおよびSDKコマンドで開発・テストが可能。Rustで実装され、AWSアカウント不要。",
+          "why_it_matters": "ローカルでの統合テストが可能になり、開発ループの高速化と開発費削減が実現。Terraformでのインフラ定義後すぐに動作検証できるようになる。",
+          "tags": [
+            "AWS",
+            "開発ツール",
+            "ローカルテスト"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "無料でAWSをローカル環境で再現できるAmazon公式エミュレーターが登場",
+              "url": "https://gigazine.net/news/20261113-aws-emulator/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "AWSをローカルマシン上でエミュレートする、AWS公式の「AWSエミューレタ」正式リリース",
+              "url": "https://www.publickey1.jp/blog/26/awsawsaws_1.html",
+              "source": "Publickey"
+            },
+            {
+              "title": "Test your applications against AWS locally with AWS Emulator",
+              "url": "https://aws.amazon.com/blogs/aws/test-your-applications-against-aws-locally-with-aws-emulator/",
+              "source": "AWS News Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon Cognito、OAuth 2.0 token exchangeに対応",
+          "summary": "Amazon CognitoがOAuth 2.0 token exchange（RFC 8693）に対応。AIエージェントやサービス間の認証を強化。",
+          "why_it_matters": "AIエージェントが複数サービスに安全にアクセスするための認証基盤が整備される。権限分離とトークン有効期限管理が可能になり、セキュリティ強化が実現。",
+          "tags": [
+            "AWS",
+            "認証",
+            "セキュリティ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon Cognito now supports OAuth 2.0 token exchange",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-token-exchange/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon Aurora・RDSがGraviton5ベースR9gインスタンスに対応、性能30%向上",
+          "summary": "AWS Graviton5ベースのR9gデータベースインスタンスがAurora・RDSで一般提供開始。PostgreSQL・MySQL・MariaDBに対応し、最大30%のパフォーマンス向上を実現。",
+          "why_it_matters": "Terraformで既存RDSをR9gへ移行する際の性能・コスト試算が必要。ただしGraviton互換性の確認が必須。",
+          "tags": [
+            "AWS",
+            "RDS",
+            "パフォーマンス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon Aurora and RDS now support Graviton5-based R9g database instances",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-rds-postgresql-mysql-mariadb-r9g-instances/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon MWAA、IAM Identity Centerによるきめ細かなアクセス制御に対応",
+          "summary": "Amazon Managed Workflows for Apache AirflowがIAM Identity Centerを使用したアクセス制御に対応。複数チーム環境でのワークフロー・リソースへのアクセスを制限可能。",
+          "why_it_matters": "マルチテナント環境でのデータパイプライン運用時に、チーム間の権限分離が実現。IAMベースの統一的なアクセス管理により運用負担削減。",
+          "tags": [
+            "AWS",
+            "MWAA",
+            "アクセス制御"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon MWAA now supports fine-grained access control with IAM Identity Center and multi-team environments",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/mwaa-fine-grained-access-control/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon FSx for Lustre、Intelligent-Tieringの最小コストを75%削減",
+          "summary": "Amazon FSx for LustreがIntelligent-Tieringファイルシステムの最小プロビジョニングスループット・メタデータIOPSを75%削減。高性能コンピューティング・機械学習ワークロードでコスト効率化。",
+          "why_it_matters": "HPC・MLパイプラインの初期投資が大幅削減。小規模実験から本番への段階的スケールが容易に。",
+          "tags": [
+            "AWS",
+            "FSx",
+            "コスト最適化"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Amazon FSx for Lustre lowers the entry cost of Intelligent-Tiering file systems by 75%",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/fsx-lustre-intelligent-tiering-lower-throughput/",
+              "source": "AWS What's New"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "情シス3人で1500店舗超の回線を管理　スーパー・ドラッグストア大手は何を変えたのか",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/13/news029.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "バローホールディングスが情シス3人で1500店舗超の回線管理を実現。オンプレ・クラウド・SaaSの最適化で運用効率化。"
+        },
+        {
+          "title": "Chrome Enterprise brings more protections to healthcare technologies",
+          "url": "https://cloud.google.com/blog/products/chrome-enterprise/chrome-enterprise-brings-more-protections-to-healthcare-technologies/",
+          "source": "Google Cloud Blog",
+          "note": "Google Chrome Enterpriseが医療向けAIエージェント保護機能を強化。臨床文書作成・チャート要約・Webアプリ操作での保護体制。"
+        },
+        {
+          "title": "Amazon Connect Customer supports merging and linking related cases in the agent workspace",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-cases-merge-link/",
+          "source": "AWS What's New",
+          "note": "Amazon Connect、関連ケースのマージ・リンク機能をエージェントワークスペースに追加。顧客問題の一元化で対応効率向上。"
+        },
+        {
+          "title": "Simplifying last mile cloud connectivity with Lumen and partner Cross-Cloud Interconnect",
+          "url": "https://cloud.google.com/blog/products/networking/partner-cross-cloud-interconnect-for-last-mile-delivered-by-lumen/",
+          "source": "Google Cloud Blog",
+          "note": "Google Cloud、Cross-Cloud InterconnectでLumenとパートナー連携を拡大。マルチクラウド・オンプレ接続の最適化。"
+        },
+        {
+          "title": "AWS、AIエージェント向けに強力な隔離環境とネイティブなEC2性能を備えた軽量VM「AWS Nitro Sandboxes」提供開始",
+          "url": "https://www.itmedia.co.jp/news/article/2611/12/2000003139/",
+          "source": "ITmedia NEWS",
+          "note": "AWS Nitro Sandbox提供開始。AIエージェント向けにハードウェアレベルの隔離環境とネイティブEC2性能を実現。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 40,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "Microsoft 365で世界規模の大規模障害が発生し、Outlookやその他複数サービスに影響。AWS・KV キャッシュ関連の新機能が公開され、GitHub Actions と Rust 最新版もリリース。",
+      "topics": [
+        {
+          "headline": "Microsoft 365 で Exchange Online 障害、Outlook とメール連携サービスが影響",
+          "summary": "11月12日（米国時間）、Microsoft 365 の Exchange Online メールボックス接続に障害が発生。Outlook の Web 版・デスクトップ・モバイルアプリ、MAPI・ActiveSync・REST 経由の接続に影響が出た。",
+          "why_it_matters": "エンタープライズで広く使われるメール基盤の障害であり、認証・連携設計の堅牢性とフェイルオーバー戦略を改めて検討する契機になる。",
+          "tags": [
+            "クラウド",
+            "障害",
+            "Microsoft 365"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Microsoft Outlook is still down",
+              "url": "https://www.theverge.com/tech/1032226/microsoft-outlook-is-down",
+              "source": "The Verge"
+            },
+            {
+              "title": "アウトルックでメール送れず　「マイクロソフト365」で大規模障害：朝日新聞",
+              "url": "https://www.asahi.com/articles/ASVCD6X84VCDUHBI001M.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "12 users"
+            },
+            {
+              "title": "Microsoft 365で大規模障害　「Outlook」でメールにアクセスできず、「Teams」など複数サービスに影響",
+              "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003161/",
+              "source": "はてブ テクノロジー",
+              "popularity": "43 users"
+            },
+            {
+              "title": "マイクロソフト、「365」世界で大規模障害　メール送れずビジネスに影響 - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOGN12CY20S6A111C2000000/",
+              "source": "はてブ テクノロジー",
+              "popularity": "86 users"
+            },
+            {
+              "title": "Microsoft’s Outlook email hit by new outage",
+              "url": "https://techcrunch.com/2026/11/12/microsofts-outlook-email-hit-by-new-outage/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "Service degradation on Microsoft 365",
+              "url": "https://status.cloud.microsoft/",
+              "source": "Hacker News",
+              "popularity": "464 points"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub Actions、ARM32 サポート終了予定（2026年12月8日）",
+          "summary": "GitHub Actions ホステッド ランナーが、Windows・Linux 上の ARM32 ジョブ実行サポートを 2026年12月8日に廃止する。",
+          "why_it_matters": "ARM32 を対象にした CI/CD 環境を持つ場合は、アーキテクチャ移行計画を立てる必要がある。",
+          "tags": [
+            "CI/CD",
+            "GitHub Actions"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Actions for ARM32 Linux & Windows retirement",
+              "url": "https://github.blog/changelog/2026-11-12-actions-for-arm32-linux-windows-retirement",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "Rust 1.100.0 リリース",
+          "summary": "Rust チームが新バージョン 1.100.0 をリリース。Rust はシステムプログラミング向けの言語で、信頼性と効率性を重視して開発される。",
+          "why_it_matters": "Rust 生態系の最新動向を把握し、言語機能の改善や互換性の確認で設計判断に活かせる。",
+          "tags": [
+            "Rust",
+            "言語更新"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Announcing Rust 1.100.0 | Rust Blog",
+              "url": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/",
+              "source": "はてブ テクノロジー",
+              "popularity": "17 users"
+            }
+          ]
+        },
+        {
+          "headline": "Windows 11 バージョン 23H2 の Enterprise・Education エディション、サポート終了",
+          "summary": "Windows 11 23H2 の Enterprise・Education エディションで更新プログラム提供が終了した。Home・Pro に続いての終了。",
+          "why_it_matters": "社内システムで Windows 11 を運用している場合、バージョン管理方針と移行スケジュールの再検討が必要になる。",
+          "tags": [
+            "Windows",
+            "運用"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Windows 11 23H2が更新終了　移行先の選び方で更新期限に「1年」の差",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/12/news064.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "GitHub availability report: October 2026",
+          "url": "https://github.blog/news-insights/company-news/github-availability-report-october-2026/",
+          "source": "GitHub Blog",
+          "note": "GitHub の 10 月可用性レポート。8件のインシデントで複数サービスがパフォーマンス低下。"
+        },
+        {
+          "title": "2026年のCPU-Z統計ではメモリ64GB搭載PCの割合が2025年の同時期より18％減少、旧世代のDDR4はシェア拡大",
+          "url": "https://gigazine.net/news/20261113-cpu-z-64gb-ram-ddr4/",
+          "source": "GIGAZINE",
+          "note": "2026年11月時点の PC ハードウェア統計。64GB メモリ搭載 PC が前年同期比18%減少、DDR4 シェア拡大。"
+        },
+        {
+          "title": "Public monitoring alerts now have direct links",
+          "url": "https://github.blog/changelog/2026-11-12-public-monitoring-alerts-now-have-direct-links",
+          "source": "GitHub Changelog",
+          "note": "GitHub Enterprise の Public monitoring alerts が直接リンク対応。個別アラートへのアクセスが改善。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 24,
+      "dropped_topics": 1,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "Nvidiaの創業者ジェンスン・フアン氏がCEO辞任。不倫相手に中国スパイ容疑があり、取締役会による後任選出が進行中。一方、Whoopはウェアラブルデータ共有のSNS機能を開始。",
+      "topics": [
+        {
+          "headline": "Jensen Huang氏が不倫と中国スパイ容疑で Nvidia CEO辞任、後任選出へ",
+          "summary": "Nvidia創業者・CEO の Jensen Huang氏が辞任、CFO Colette Kress氏が暫定CEO就任。中国スパイ容疑のある女性との不倫関係のほか、別の不倫報道もあり、下院民主党は追加調査を宣言。",
+          "why_it_matters": "AI・GPU業界の最大手指導者交代であり、米中技術競争とセキュリティ関連の政策が今後の製品ロードマップ・提携戦略に影響する可能性がある。Nvidia基盤のシステム設計やサプライチェーン戦略の再検討が必要になるかもしれない。",
+          "tags": [
+            "Nvidia",
+            "リーダーシップ",
+            "セキュリティ"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Donald Trump really wants Tim Cook to run Nvidia",
+              "url": "https://www.theverge.com/tech/1032774/president-donald-trump-tim-cook-nvidia-jensen-huang",
+              "source": "The Verge"
+            },
+            {
+              "title": "Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump",
+              "url": "https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "‘It’s a mistake’: reactions from tech leaders on Jensen Huang’s resignation",
+              "url": "https://www.theverge.com/tech/1032434/nvidia-jensen-huang-resignation-reactions",
+              "source": "The Verge"
+            },
+            {
+              "title": "The unfolding Jensen Huang scandal: a timeline",
+              "url": "https://techcrunch.com/2026/11/12/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "トランプ氏、NVIDIAのCEO後任「アップルのクック会長しかいない」 - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOGN12CLN0S6A111C2000000/",
+              "source": "はてブ 世の中",
+              "popularity": "17 users"
+            },
+            {
+              "title": "Jensen Huang’s exit puts Nvidia’s support for open source in question",
+              "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "NVIDIA、“革ジャンCEO”ことフアン氏が辞任　クレスCFOが暫定CEOに",
+              "url": "https://www.itmedia.co.jp/news/article/2611/12/2000003160/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "エヌビディア、フアンCEOの辞任を発表　不倫相手に中国スパイ疑惑：朝日新聞",
+              "url": "https://www.asahi.com/articles/ASVCD4SJ9VCDULZU009M.html",
+              "source": "はてブ 世の中",
+              "popularity": "10 users"
+            },
+            {
+              "title": "NVIDIAジェンスン・フアン氏がCEO辞任",
+              "url": "https://pc.watch.impress.co.jp/docs/news/2156075.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "26 users"
+            },
+            {
+              "title": "【速報】エヌビディア ジェンスン・フアンCEOが辞任 “中国女性スパイと不倫関係” 製品情報漏えいした疑い（TBS NEWS DIG Powered by JNN） - Yahoo!ニュース",
+              "url": "https://news.yahoo.co.jp/articles/b6052803117ed7f8fe0f92cdbfb99cc33bba6e5b",
+              "source": "はてブ 世の中",
+              "popularity": "7 users"
+            },
+            {
+              "title": "NVIDIA Announces CEO Transition",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+              "source": "はてブ テクノロジー",
+              "popularity": "60 users"
+            },
+            {
+              "title": "NVIDIA取締役会、フアンCEO解任の可否決定へ　2件の不倫報道で株価8％超下落",
+              "url": "https://www.itmedia.co.jp/news/article/2611/12/2000003138/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "Whoop、ウェアラブルデータを共有するSNS機能「Whoop Humans」開始",
+          "summary": "Whoopユーザーが健康指標・アクティビティ・達成度などのデータを Whoop Humans プラットフォーム上で他のユーザーと共有・投稿可能に。Story的な「Moments」機能も備える。",
+          "why_it_matters": "ウェアラブル・フィットネス業界が個人データの社会化へ進む動き。ユーザーのプライバシー設計・データ利用ポリシー理解が重要。また API連携や個人ユースでのデータ活用機会も増える。",
+          "tags": [
+            "ウェアラブル",
+            "ヘルスケア",
+            "SNS"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Whoop launched a social network where every user has a ‘verified heartbeat’",
+              "url": "https://www.theverge.com/gadgets/1032630/whoop-humans-social-network",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "Muse、AIが米国企業への営業電話に対応（有料サービス）",
+          "summary": "Muse のAIが米国ビジネスへのアウトバウンド通話に対応する機能を開始。有料で利用可能。",
+          "why_it_matters": "AI音声エージェント技術の実用化が加速。顧客サポート・営業支援の自動化判断や、コスト・リスク評価が重要になる。",
+          "tags": [
+            "AI音声",
+            "自動化",
+            "営業支援"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Muse can now place calls to US businesses — if you pay",
+              "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
+              "source": "TechCrunch"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "The Oura Ring 4 is almost as good as the newer model, but $150 cheaper",
+          "url": "https://www.theverge.com/gadgets/1032311/oura-ring-4-smart-ring-deal-sale",
+          "source": "The Verge",
+          "note": "前世代 Oura Ring 4、現行モデルより$150安い$249で販売中"
+        },
+        {
+          "title": "ワタミがMBOへ、創業者の渡辺美樹氏が取得　総合外食に転換 - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUC072DI0X01C26A1000000/",
+          "source": "はてブ 世の中",
+          "popularity": "22 users",
+          "note": "ワタミ、創業者による MBO 実施へ（年内完了予定）"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 17,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "Microsoft 365で世界規模の接続障害が発生。国内では千葉の養鶏場で鳥インフル感染が確認された。",
+      "topics": [
+        {
+          "headline": "Microsoft 365で世界規模の接続障害が発生",
+          "summary": "米IT大手マイクロソフトは、Microsoft 365で世界各地に影響するおそれのある接続障害が発生していると発表した。具体的な影響の範囲や程度は明らかになっていない。",
+          "why_it_matters": "Microsoft 365はクラウドサービスとして広く利用されており、障害の規模と復旧時間によって多くの企業や個人の業務に支障が出うる。",
+          "tags": [
+            "Microsoft",
+            "インフラ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "【速報中】マイクロソフト 接続障害が発生 各地に影響のおそれ",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261113de75121",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "千葉の養鶏場で鳥インフルエンザ感染、4万羽を処分開始",
+          "summary": "千葉県旭市の養鶏場で、死んだニワトリから高病原性の鳥インフルエンザウイルスが検出された。県がこの養鶏場の約4万羽の処分を始めた。今季2例目。",
+          "why_it_matters": "鳥インフル感染拡大は食糧生産と公衆衛生の両面で深刻な影響を与え、卵や鶏肉の価格上昇につながる可能性がある。",
+          "tags": [
+            "感染症",
+            "農業"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "千葉 旭市の養鶏場 鳥インフルエンザ感染確認 全国で今季2例目",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261113de75136",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "エヌビディアCEOジェンスン・フアン氏が辞任、中国との関係が焦点",
+          "summary": "米半導体大手エヌビディアは、中国の情報機関の協力者とされる女性と親密な関係にあったなどと報じられた創業者のジェンスン・フアン氏がCEOを辞任したと発表した。業界全体への影響も懸念されている。",
+          "why_it_matters": "AI向け半導体で世界的な影響力を持つエヌビディアの経営危機は、AI産業全体と米国のセキュリティ戦略に波及し、株価や供給チェーンに急激な変化をもたらす可能性がある。",
+          "tags": [
+            "企業経営",
+            "AI・半導体"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Scandal-hit Nvidia CEO Jensen Huang quits, plunging AI chipmaking giant into turmoil",
+              "url": "https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            },
+            {
+              "title": "エヌビディア フアンCEOが辞任 業界全体に影響も",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261112de75078",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "トランプ大統領がイラン合意不要を表明、副大統領に国内対応を要請",
+          "summary": "米トランプ大統領は、イランとの合意は必要ないとSNSに投稿し、交渉にあたってきたバンス副大統領に国内の民主党対応に集中するよう要請した。",
+          "why_it_matters": "中東との外交方針転換は国際情勢の不安定化につながり、原油価格の変動や地政学的リスク拡大を招く可能性がある。",
+          "tags": [
+            "国際政治",
+            "米国"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "米大統領「イラン合意は不要」 副大統領には国内対応を要請",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261113de75140",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "プーチン大統領、ウクライナとの局地停戦を提案",
+          "summary": "ロシアのプーチン大統領は、ウクライナとの和平を仲介する米国の特使らとモスクワで会談し、ウクライナ南部の都市で実施された局地的な停戦と人道支援を東部の別の都市にも適用することを提案した。",
+          "why_it_matters": "紛争の部分的な鎮静化の動きは、エネルギー・食糧価格の安定やグローバル経済への緊張緩和をもたらす可能性がある。",
+          "tags": [
+            "ウクライナ情勢",
+            "国際政治"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "プーチン大統領 米特使らと会談で局地停戦提案 ウクライナ警戒",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261113de75124",
+              "source": "NHK 主要"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "山形 寒河江 住宅火災で3人の遺体 3人居住 連絡とれず",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261113de75126",
+          "source": "NHK 主要",
+          "note": "山形県寒河江市で住宅火災、3人の遺体を収容。連絡がとれていない住人の身元確認を進行中。"
+        },
+        {
+          "title": "COP31首脳級会合 英首相が中東情勢念頭に脱化石燃料訴え",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261113de75130",
+          "source": "NHK 主要",
+          "note": "気候変動対策の国連会議COP31で首脳級会合が開催。英首相が中東情勢に触れ脱化石燃料を訴え。"
+        },
+        {
+          "title": "グレタさん5年ぶりCOP参加、被災ネパールの議員と気候危機訴え",
+          "url": "http://www.asahi.com/articles/ASVCD4J5LVCDUTFL010M.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "グレタ・トゥンベリが5年ぶりにCOP参加、被災ネパールの議員と気候危機を訴える。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 44,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 309,
+    "unclassified": 11,
+    "classify_error": null
+  }
+}
