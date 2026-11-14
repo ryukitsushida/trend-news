@@ -1,0 +1,912 @@
+{
+  "date": "2026-11-14",
+  "generated_at": "2026-11-14 09:49 JST",
+  "lead": "情報の信頼性判定が、あなたの技能と判断に依存する時代が到来した。",
+  "highlights": [
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "仕事で受け取るドキュメント・提案書・AIの出力が見た目の信頼性だけで判定できなくなり、検証プロセスの厳格化が急務。",
+      "topic": {
+        "headline": "流暢な言葉遣いなら、AIの幻覚でも人は信用してしまう",
+        "summary": "研究により、LLMが生成した事実ではない内容でも、洗練された文体で述べられれば人間は信じてしまう可能性が高いことが判明。",
+        "why_it_matters": "ドキュメント・提案書・サポート応答など、仕事で受け取る情報の検証プロセスを厳格化する必要が出ている。AIの出力は見た目の信頼性で判断してはいけない。",
+        "tags": [
+          "幻覚",
+          "信頼性",
+          "LLM"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "幻覚がひどいAIでも言葉遣いが洗練されていれば人を簡単に騙せることが判明",
+            "url": "https://gigazine.net/news/20261114-llm-fluency-credible/",
+            "source": "GIGAZINE"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "Secrets Manager のクロスアカウント複製でマルチアカウント構成の管理が簡潔化され、実務でのTerraform設計が効率化。",
+      "topic": {
+        "headline": "AWS、RDS Oracleのメンテナンス時間削減とSecrets Manager クロスアカウント複製対応",
+        "summary": "Amazon RDS for Oracleはメンテナンスダウンタイムを短縮。Secrets Managerはクロスアカウント複製に対応し、セカンダリアカウントでの同期コピー化を実現。",
+        "why_it_matters": "ミッションクリティカルなOracle環境の定期メンテ中の影響最小化、マルチアカウント構成でのシークレット管理が簡潔化。",
+        "tags": [
+          "AWS",
+          "RDS"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "Amazon RDS for Oracle reduces downtime for automatic minor version upgrades and scheduled maintenance",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-reduces-maintenance-downtime-for-amvu-scheduled-upgrades/",
+            "source": "AWS What's New"
+          },
+          {
+            "title": "AWS Secrets Manager now supports cross-account replication",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-manager-cross-account/",
+            "source": "AWS What's New"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "LangChain の大型調達により、Python開発での標準ツールの機能拡張とライセンス変更が進むため今後の対応計画が必要。",
+      "topic": {
+        "headline": "LangChain、$3B評価に達成：AIエージェント管理ツールが7,000顧客獲得",
+        "summary": "LangChainがユニコーン企業入りし、$3B評価に到達。LangSmithというモデル・プラットフォーム非依存のエージェント管理ツールが7,000社に導入されている。",
+        "why_it_matters": "LangChainはPythonでLLM開発をする際の標準ツールの一つ。評価上昇＝資金調達による機能拡張・商用化が進む見込み。業務・個人開発でLangChain採用時の今後のライセンス・機能変更に注視する必要がある。",
+        "tags": [
+          "LangChain",
+          "AI agent",
+          "スタートアップ"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "AI agent startup LangChain hits $3B valuation",
+            "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+            "source": "TechCrunch"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "AI生成コードをプロダクション導入する際、検証プロセスなしでは品質リスクが高まり、テスト自動化の設計が不可欠。",
+      "topic": {
+        "headline": "AI コーディングエージェント、自生成コードの検証能力に課題",
+        "summary": "AI エージェントが設計・フロント・実装を一貫作成できるようになる一方、自分で生成したコードが正しく動作しているかの確認が困難という実装上の問題が指摘されている。",
+        "why_it_matters": "エージェント生成コードをプロダクション導入する際、第三者検証やテスト自動化の設計が重要。生成結果の検証プロセスなしに導入すると品質リスクが高まる。",
+        "tags": [
+          "AI",
+          "テスト"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "Your coding agent shouldn't grade its own homework",
+            "url": "https://stackoverflow.blog/2026/11/13/your-coding-agent-shouldn-t-grade-its-own-homework/",
+            "source": "Stack Overflow Blog"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "Claude の大型調達により推論インフラと性能が加速度的に進化し、今後のAI選択判断と設計に影響を与える可能性がある。",
+      "topic": {
+        "headline": "Anthropic IPO、過去最大規模（6倍超購読、最大644億ドル調達）",
+        "summary": "Anthropic の IPO が大規模購読により成立予定。調達額は最大644億ドル、過去最大のIPO規模に。仮条件は1株70～78ドル。",
+        "why_it_matters": "大型調達により Claude の開発・推論インフラ投資が加速。今後のモデル性能・提供形態の変化に注視すべき。",
+        "tags": [
+          "IPO",
+          "Anthropic",
+          "資金調達"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls",
+            "url": "https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls/",
+            "source": "The Decoder"
+          },
+          {
+            "title": "Anthropic's IPO is six times oversubscribed and on track to become the largest public offering in history",
+            "url": "https://the-decoder.com/anthropics-ipo-is-six-times-oversubscribed-and-on-track-to-become-the-largest-public-offering-in-history/",
+            "source": "The Decoder"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "ai",
+    "category_label": "AI・LLM",
+    "headline": "流暢な言葉遣いなら、AIの幻覚でも人は信用してしまう",
+    "sources": [
+      {
+        "title": "幻覚がひどいAIでも言葉遣いが洗練されていれば人を簡単に騙せることが判明",
+        "url": "https://gigazine.net/news/20261114-llm-fluency-credible/",
+        "source": "GIGAZINE"
+      }
+    ],
+    "background": "LLMは確率ベースで次の単語を予測することで機能し、事実と虚構の区別なく、統計的に「もっともらしい」テキストを生成します。この仕組み自体に「正誤判定機構」が存在しないため、自信を持って誤った情報を述べる（幻覚）が避けられません。さらに、訓練データには低品質な情報も含まれており、AIは説得力ある口調でそれを再現することもあります。",
+    "concepts": [
+      {
+        "term": "ハルシネーション（幻覚）",
+        "explanation": "LLMが根拠なく、または根拠を誤解して、事実でない情報を真実のように生成する現象。AIの仕組みそのものに由来する構造的な問題です。"
+      },
+      {
+        "term": "流暢性バイアス",
+        "explanation": "情報の内容が正確かどうかに関わらず、言葉が洗練されていたり読みやすいほど、人間がそれを正しいと判断しやすくなるという心理的傾向。"
+      }
+    ],
+    "for_you": "AWS環境でのIaC生成、Pythonコード補完、API仕様書のドラフト作成など、あなたが日常的にAIを設計判断の補助に使っています。この研究は「生成されたコードが動いている＝正しい」「CloudFormationテンプレートが洗練されている＝ベストプラクティスに従っている」という誤った結論を招く危険性を指摘しています。特にセキュリティ設定やリソース権限周辺では、AIの出力を「見た目の信頼性」で鵜呑みにすると、本番環境に潜在的な穴を残す可能性があります。",
+    "try_this": "今週、AIで生成したドキュメント・コード・設計案を受け取ったとき、「これが正しいと思った理由」を明記してから実装に進む習慣をつけてください。具体的には：(1)AIの出力に対して「この内容の根拠は何か」と追加質問を投げかける、(2)数値・API仕様・ポリシー名など「事実」が含まれる部分を公式ドキュメントで必ず照合する、(3)同僚や外部資料との比較を意識的に入れる。これが「AI時代の検証プロセス」になります。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "AIスロップが学術界を脅かす実態が実証される一方、チャットボットの洗練された虚偽は人を騙しやすいことが判明。Anthropic・OpenAIが相次ぎ製品展開を加速し、流通・製造・セキュリティなど業界横断で実用化が進む。",
+      "topics": [
+        {
+          "headline": "AI生成論文が学術出版システムをすり抜ける、実証実験で確認",
+          "summary": "科学技術系フリーライターがAIツールで偽造論文を生成する実験を実施。学術出版業界では低品質なコンテンツ「AIスロップ」が問題視されつつある。",
+          "why_it_matters": "将来的にセキュリティ情報・研究成果・技術文書の信頼性判定が難しくなる。学術情報ソースの取捨選別が、ますます自分の技能と判断に依存する。",
+          "tags": [
+            "学術出版",
+            "AIスロップ",
+            "信頼性"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AIを使って科学論文を偽造してみたらこうなった",
+              "url": "https://gigazine.net/news/20261114-ai-generated-scientific-papers/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "流暢な言葉遣いなら、AIの幻覚でも人は信用してしまう",
+          "summary": "研究により、LLMが生成した事実ではない内容でも、洗練された文体で述べられれば人間は信じてしまう可能性が高いことが判明。",
+          "why_it_matters": "ドキュメント・提案書・サポート応答など、仕事で受け取る情報の検証プロセスを厳格化する必要が出ている。AIの出力は見た目の信頼性で判断してはいけない。",
+          "tags": [
+            "幻覚",
+            "信頼性",
+            "LLM"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "幻覚がひどいAIでも言葉遣いが洗練されていれば人を簡単に騙せることが判明",
+              "url": "https://gigazine.net/news/20261114-llm-fluency-credible/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAIがChatGPT Walletで決済機能提供、AI agent が購入を代行",
+          "summary": "ChatGPT Proユーザー向けにChatGPT Wallet が展開開始。登録済みカードから指紋・Face IDで承認し、agents が購入を完結。",
+          "why_it_matters": "AI agentの経済行動範囲が拡大。自動化による顧客体験改善の一方、エラーや誤判断時の対処・監査が新たなシステム要件になる。",
+          "tags": [
+            "Agent",
+            "決済",
+            "自動化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet",
+              "source": "The Verge"
+            },
+            {
+              "title": "ChatGPT’s new Wallet lets AI agents shop and check out for you",
+              "url": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "Introducing ChatGPT Wallet",
+              "url": "https://openai.com/index/introducing-chatgpt-wallet",
+              "source": "OpenAI News"
+            }
+          ]
+        },
+        {
+          "headline": "Anthropic IPO、過去最大規模（6倍超購読、最大644億ドル調達）",
+          "summary": "Anthropic の IPO が大規模購読により成立予定。調達額は最大644億ドル、過去最大のIPO規模に。仮条件は1株70～78ドル。",
+          "why_it_matters": "大型調達により Claude の開発・推論インフラ投資が加速。今後のモデル性能・提供形態の変化に注視すべき。",
+          "tags": [
+            "IPO",
+            "Anthropic",
+            "資金調達"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls",
+              "url": "https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls/",
+              "source": "The Decoder"
+            },
+            {
+              "title": "Anthropic's IPO is six times oversubscribed and on track to become the largest public offering in history",
+              "url": "https://the-decoder.com/anthropics-ipo-is-six-times-oversubscribed-and-on-track-to-become-the-largest-public-offering-in-history/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub Copilot に Google Gemini 4 Hydrogen 追加",
+          "summary": "Google の最新モデル Gemini 4 Hydrogen が GitHub Copilot で一般提供開始。高速・効率的な agent 動作、ツール利用、マルチステップワークフロー対応。",
+          "why_it_matters": "コーディング assistant の選択肢が増加。Terraform・Python でのコード生成・提案の精度向上が期待でき、次のプロジェクトで試す価値あり。",
+          "tags": [
+            "Gemini",
+            "Copilot",
+            "コーディング"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Gemini 4 Hydrogen in GitHub Copilot",
+              "url": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+              "source": "GitHub Changelog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "NVIDIAをつくった男、ジェンスン・フアン　“デニーズの皿洗い“から“AI時代の主役“へ、激動の半生",
+          "url": "https://www.itmedia.co.jp/business/articles/2611/14/news008.html",
+          "source": "ITmedia AI+",
+          "note": "NVIDIA CEO 黄仁勛氏の半生ドキュメント。皿洗いから AI 時代の主役まで。"
+        },
+        {
+          "title": "学生が発表で使ったスライドがAIを使っていたので使用ソフトを尋ねたら「全部AIです」と言われた、Figmaとかだと思ったらツールごと全部AIとHTMLで作ってた",
+          "url": "https://togetter.com/li/2770106",
+          "source": "はてブ テクノロジー",
+          "popularity": "145 users",
+          "note": "学生がスライド・ツール両方を AI + HTML で全自動生成。プレゼン作成プロセスの急速な変化を示唆。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 81,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "644億",
+        "78"
+      ]
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "PostgreSQL・GitLab・Check Pointなど使用度の高いソフトウェアで複数の脆弱性やゼロデイが明らかになり、対応が必要に。Osaka市やマネックス証券など大規模な情報漏えいが相次ぎ、日本国内でも深刻なインシデントが続発中。",
+      "topics": [],
+      "quick_hits": [
+        {
+          "title": "Microsoft says November security updates cause printing issues",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-says-november-security-updates-cause-printing-issues/",
+          "source": "BleepingComputer",
+          "note": "Microsoft が 11 月セキュリティアップデートでプリンタ問題を注記。複雑形式の文書印刷が壊れる可能性。"
+        },
+        {
+          "title": "相次ぐ情報漏えいでアナログ回帰？　ダイソー「パスワード管理ノート」が品薄に　一方でリスクも──IPAに聞いた",
+          "url": "https://www.itmedia.co.jp/news/article/2611/14/2000003193/",
+          "source": "ITmedia NEWS",
+          "note": "情報漏えい相次ぎダイソーの紙パスワード管理ノート品薄。IPA は紙を全否定せず、多要素認証・パスキー推奨。"
+        },
+        {
+          "title": "How one AI agent exposed five critical enterprise security gaps",
+          "url": "https://www.bleepingcomputer.com/news/security/how-one-ai-agent-exposed-five-critical-enterprise-security-gaps/",
+          "source": "BleepingComputer",
+          "note": "AI エージェント（請求書自動化）がメール指示で仕入先銀行口座変更、従来セキュリティアラート逃げ切り。5つの AI セキュリティギャップを提示。"
+        },
+        {
+          "title": "When an AI Agent Goes Wrong, Can You Stop It?",
+          "url": "https://thehackernews.com/2026/11/when-ai-agent-goes-wrong-can-you-stop-it.html",
+          "source": "The Hacker News",
+          "note": "AI エージェント暴走時の停止困難さが指摘：サポートチケット分類エージェントが悪意ある指示で未知の先へデータ外出。"
+        },
+        {
+          "title": "FAA Ground Stop Issued Due to ‘Extraordinary Circumstances’",
+          "url": "https://www.securityweek.com/faa-ground-stop-issued-due-to-extraordinary-circumstances/",
+          "source": "SecurityWeek",
+          "note": "FAA 地上停止、通信障害の原因未公表。サイバー攻撃の有無も未確認。"
+        },
+        {
+          "title": "$11.4M in Nvidia hardware vanishes during shipment from CA to TX",
+          "url": "https://www.freightwaves.com/news/11-4-million-in-nvidia-hardware-vanishes-during-shipment-from-california-to-texas",
+          "source": "Hacker News",
+          "popularity": "276 points",
+          "note": "Nvidia ハードウェア $11.4M がカリフォルニア〜テキサス間で輸送中に消失。"
+        },
+        {
+          "title": "German parliament passes law giving spy agencies hacking, sabotage powers",
+          "url": "https://therecord.media/german-parliament-passes-law-giving-spy-agencies-hacking-power",
+          "source": "The Record",
+          "note": "ドイツ連邦議会が戦後最大のスパイ法改正、諜報機関にハッキング・破壊活動権を付与。"
+        },
+        {
+          "title": "9月はフィッシングの報告、URLともに増加",
+          "url": "https://www.security-next.com/191657",
+          "source": "Security NEXT",
+          "note": "9 月フィッシング報告数が前月超過、悪用 URL 件数も増加中。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 85,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "マイクロソフトの大規模障害が回復局面へ。AWSとGoogle Cloudはそれぞれ新機能追加で、インフラ運用の効率化とAIエージェントの本番化支援に注力している。",
+      "topics": [
+        {
+          "headline": "Microsoft 365障害、復旧進行中だが一部機能は低下状態継続",
+          "summary": "マイクロソフトは日本時間14日午前3時、広範囲にわたる復旧をSNSで発表。ただしOutlook等の一部機能・アプリは依然として低下状態で稼働。",
+          "why_it_matters": "M365ユーザーの業務再開時期が不確定。社内システムの連携が復旧しているか、クライアント側の確認が必要。",
+          "tags": [
+            "障害",
+            "Microsoft"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "マイクロソフト 接続障害「広範囲にわたる復旧がみられる」 | NHKニュース",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261114de75755",
+              "source": "はてブ テクノロジー",
+              "popularity": "24 users"
+            },
+            {
+              "title": "Microsoft&#8217;s massive Outlook outage might be over",
+              "url": "https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "AWS、RDS Oracleのメンテナンス時間削減とSecrets Manager クロスアカウント複製対応",
+          "summary": "Amazon RDS for Oracleはメンテナンスダウンタイムを短縮。Secrets Managerはクロスアカウント複製に対応し、セカンダリアカウントでの同期コピー化を実現。",
+          "why_it_matters": "ミッションクリティカルなOracle環境の定期メンテ中の影響最小化、マルチアカウント構成でのシークレット管理が簡潔化。",
+          "tags": [
+            "AWS",
+            "RDS"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon RDS for Oracle reduces downtime for automatic minor version upgrades and scheduled maintenance",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-reduces-maintenance-downtime-for-amvu-scheduled-upgrades/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "AWS Secrets Manager now supports cross-account replication",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-manager-cross-account/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Aurora PostgreSQL、CloudFormationでExpress設定のIaC対応",
+          "summary": "Aurora PostgreSQLがCloudFormationでのExpress設定をサポート。インフラコード化により自動デプロイが可能に。",
+          "why_it_matters": "Terraformと並行してCloudFormationを運用する場合、ハイパフォーマンス構成のコード化で本番化までの時間短縮。",
+          "tags": [
+            "Aurora",
+            "CloudFormation"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Aurora PostgreSQL with express configuration now supported in CloudFormation",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aurora-postgresql-cloudformation/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Google Cloud、BigQueryとLookerにAIエージェント監視・統治機能を追加",
+          "summary": "BigQueryとLookerで、本番稼働するAIエージェントの動作理由・データアクセス・実行コストを可視化する機能を追加。エージェント向けの監視・ガバナンス体制を強化。",
+          "why_it_matters": "エージェント本番運用で、意図外の挙動・過剰コスト・データアクセスの追跡が必要。可視化でリスク低下・運用負荷削減。",
+          "tags": [
+            "Google Cloud",
+            "エージェント"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "New AI agent observability and governance across BigQuery and Looker",
+              "url": "https://cloud.google.com/blog/products/data-analytics/enterprise-ai-agent-observability-with-bigquery-and-looker/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        },
+        {
+          "headline": "AWS Batch on EKS、Linux capabilities・seccomp・pod設定のセキュリティ強化",
+          "summary": "AWS BatchがAmazon EKS上でKubernetesセキュリティコンテキスト設定（Linux capabilities、seccomp、ポッド単位）をサポート。Pod Security Standards対応を容易化。",
+          "why_it_matters": "EKS上のBatch ジョブがセキュリティ標準に準拠しやすく。コンテナのroot権限最小化・システムコール制限で攻撃面を削減。",
+          "tags": [
+            "AWS",
+            "Kubernetes"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AWS Batch on Amazon EKS adds Linux capabilities, seccomp, and pod-level settings",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-batch-eks-security-context/",
+              "source": "AWS What's New"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "データセンターの排熱でエビ養殖、NTT系が実験　育ったら食べられる？　担当者に聞いてみた",
+          "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003200/",
+          "source": "はてブ テクノロジー",
+          "popularity": "23 users",
+          "note": "NTT系がデータセンター排熱でエビ養殖の実証実験開始、2027年度に運用化予定"
+        },
+        {
+          "title": "Grok 4.7 now available on Kiro in AWS GovCloud (US)",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/kiro-grok-4-7-aws-govcloud-us/",
+          "source": "AWS What's New",
+          "note": "AWS GovCloud (US) で Grok 4.7 モデル利用可能に"
+        },
+        {
+          "title": "This young startup wants to power floating data centers with the ocean’s heat, and investors are already on board",
+          "url": "https://techcrunch.com/2026/11/13/this-young-startup-wants-to-power-floating-data-centers-with-the-oceans-heat-and-investors-are-already-on-board/",
+          "source": "TechCrunch",
+          "note": "海熱を用いた浮体型データセンター開発スタートアップ Drogue、2年以内にプロトタイプ実運用へ"
+        },
+        {
+          "title": "AWS、Microsoft 365障害の影響を否定　正常稼働を強調",
+          "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003185/",
+          "source": "ITmedia NEWS",
+          "note": "AWS、Microsoft 365障害との関連性を否定し正常稼働を強調"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 37,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "GitHub Copilot が企業向けツール拡張を進め、AIコーディングエージェントの信頼性検証が業界課題に浮上。開発生産性とコード品質のバランスが問われている。",
+      "topics": [
+        {
+          "headline": "GitHub Copilot、GHES対応と2026年12月の旧モデル廃止",
+          "summary": "GitHub Copilot が GitHub Enterprise Server に対応し、リモートリポジトリ・issue・PR の操作が可能に。同時に旧版モデルを 2026年12月14日に廃止予定。",
+          "why_it_matters": "社内 GitHub インスタンスに Copilot を導入する際の選択肢が広がり、段階的な移行計画が必要。クライアントアプリの利用を検討する場合は廃止日程を含めた対応ロードマップの策定が必須。",
+          "tags": [
+            "GitHub",
+            "IDE"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Upcoming deprecation of selected GitHub Copilot models in December",
+              "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
+              "source": "GitHub Changelog"
+            },
+            {
+              "title": "GitHub Enterprise Server support in the GitHub Copilot app",
+              "url": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "AI コーディングエージェント、自生成コードの検証能力に課題",
+          "summary": "AI エージェントが設計・フロント・実装を一貫作成できるようになる一方、自分で生成したコードが正しく動作しているかの確認が困難という実装上の問題が指摘されている。",
+          "why_it_matters": "エージェント生成コードをプロダクション導入する際、第三者検証やテスト自動化の設計が重要。生成結果の検証プロセスなしに導入すると品質リスクが高まる。",
+          "tags": [
+            "AI",
+            "テスト"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Your coding agent shouldn't grade its own homework",
+              "url": "https://stackoverflow.blog/2026/11/13/your-coding-agent-shouldn-t-grade-its-own-homework/",
+              "source": "Stack Overflow Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Siri AI Developer Preview、iOS/macOS アプリ統合がベータ開始",
+          "summary": "Apple が Siri AI Developer Preview を OS 27.3 ベータで公開。開発者と app が Siri と統合し、アクション実行を移譲できる。プレビュー期間はアクセス制限中。",
+          "why_it_matters": "Apple エコシステムの app 開発で音声 AI 統合が標準化に向かう。iOS/macOS のネイティブ app を開発・保守しているなら、Siri 連携を想定した設計検討が近く必要になる可能性がある。",
+          "tags": [
+            "Apple",
+            "AI"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Siri AI Developer Preview Lets iOS, iPadOS, and macOS Apps Integrate with Siri",
+              "url": "https://www.infoq.com/news/2026/11/apple-siri-ai-integration/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub AI Scan、REST API で ON/OFF 制御が可能に",
+          "summary": "GitHub code scanning の AI Scan を REST API で組織・リポジトリレベルから制御できるようになった。Public Preview 段階。",
+          "why_it_matters": "大量リポジトリを管理する場合、API 経由で AI Scan の一括・段階的導入が可能に。Infrastructure as Code で GitHub 環境構築を自動化している環境では活用できる。",
+          "tags": [
+            "GitHub",
+            "セキュリティ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Manage AI Scan for repositories using the REST API",
+              "url": "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "Agentic Search、ページ検索ではなく回答組立が技術課題",
+          "summary": "EXA 共同創業者による、Agentic Search インフラの大規模化に関する解説。カスタム embedding・vector database 構築、trillions 規模の検索対応が技術課題。",
+          "why_it_matters": "AI agent が外部情報源を活用する際、単なる検索 API ではなく検索結果の意味的な取得・組立が求められる。LLM エージェント設計時に、外部データ ソースの取得戦略を検討する参考になる。",
+          "tags": [
+            "LLM",
+            "検索"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Agentic search doesn't find pages, it assembles answers",
+              "url": "https://stackoverflow.blog/2026/11/13/agentic-doesn-t-find-pages-it-assembles-answers/",
+              "source": "Stack Overflow Blog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Probabilistic data structures in Go",
+          "url": "https://antonz.org/probabilistic-data-structures/",
+          "source": "Lobsters",
+          "popularity": "27 score",
+          "note": "Go 言語の確率的データ構造をまとめた記事。大規模キャッシュや概数分析に活用。"
+        },
+        {
+          "title": "Fable 5.2は物理モデリング音源の実装も作曲もすごい - きしだのHatena",
+          "url": "https://nowokay.hatenablog.com/entry/2026/11/13/101644",
+          "source": "はてブ テクノロジー",
+          "popularity": "78 users",
+          "note": "Claude Fable 5.2、物理モデリング音源と作曲性能が実用的に。前世代より改善。"
+        },
+        {
+          "title": "Terminal borders that don't cost a cell",
+          "url": "https://www.joshka.net/cell-borders/",
+          "source": "Lobsters",
+          "popularity": "44 score",
+          "note": "ターミナル描画、セルを消費しない border 実装の技法。TUI ツール開発の参考に。"
+        },
+        {
+          "title": "How Not to Build a Music Player",
+          "url": "https://alichraghi.github.io/blog/how-not-to-build-a-music-player",
+          "source": "Lobsters",
+          "popularity": "82 score",
+          "note": "音声プレイヤー UI 実装のアンチパターンと改善案。UX 設計の学習に。"
+        },
+        {
+          "title": "Dropbox Shares How Its In-House Cookie Auditor Tests Consent Behaviour Across 200+ Web Surfaces",
+          "url": "https://www.infoq.com/news/2026/11/dropbox-cookie-auditor/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "Dropbox が Playwright で 200+ web surface の cookie 同意を自動監査。品質保証手法の参考。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 23,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "Amazonが全サイトの商品データを一元管理する「World Product Graph」構想を開始。一方、LangChainが$3B評価に到達し、中国がNvidiaの輸出禁止チップで先端AIモデルを開発している実態が明かされた。",
+      "topics": [
+        {
+          "headline": "Amazon、全世界の商品データ統合基盤を構想「World Product Graph」",
+          "summary": "Amazonがインターネット上のあらゆる商品データを集約する「World Product Graph」構想を進めている。Amazon未対応商品も含めた全商品情報をAmazonサイト経由で提供する計画。",
+          "why_it_matters": "AWS内のデータ戦略が小売領域へ拡張する動き。エンジニアとしてはAmazonが公開するAPIの整備・活用機会や、Terraformで定義する外部データソース構成が今後変わる可能性を追跡する価値がある。",
+          "tags": [
+            "Amazon",
+            "データ統合",
+            "eコマース"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Amazon has a plan to index the world’s online shopping data",
+              "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "LangChain、$3B評価に達成：AIエージェント管理ツールが7,000顧客獲得",
+          "summary": "LangChainがユニコーン企業入りし、$3B評価に到達。LangSmithというモデル・プラットフォーム非依存のエージェント管理ツールが7,000社に導入されている。",
+          "why_it_matters": "LangChainはPythonでLLM開発をする際の標準ツールの一つ。評価上昇＝資金調達による機能拡張・商用化が進む見込み。業務・個人開発でLangChain採用時の今後のライセンス・機能変更に注視する必要がある。",
+          "tags": [
+            "LangChain",
+            "AI agent",
+            "スタートアップ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AI agent startup LangChain hits $3B valuation",
+              "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "中国の先端AIモデル、輸出禁止のNvidiaチップで学習：規制回避の実態浮上",
+          "summary": "新たな調査で、中国の最先端AIモデルが米国輸出禁止のNvidiaチップを使用して学習されていたことが判明。規制の実効性に疑問が生じている。",
+          "why_it_matters": "AI競争の地政学リスク。クラウド構築時のGPU調達戦略やセキュリティ方針（どの地域のリソースを信頼するか）が今後の標準判断に影響する可能性がある。",
+          "tags": [
+            "Nvidia",
+            "中国",
+            "AI規制"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!",
+              "url": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Apple TV 4K新型、YouTube アプリがエラー表示：起動直後に障害",
+          "summary": "Apple TV 4Kの新型ユーザーが開封直後、YouTubeアプリでQRコード付きエラーメッセージが表示される障害を報告。",
+          "why_it_matters": "新型デバイス発売時のアプリ互換性問題の事例。スマートホーム・IoT構成を組む際の初期検証フェーズで同種の問題が生じる可能性を念頭に。",
+          "tags": [
+            "Apple",
+            "YouTube",
+            "トラブル"
+          ],
+          "importance": 1,
+          "sources": [
+            {
+              "title": "The new Apple TV has a YouTube problem",
+              "url": "https://www.theverge.com/tech/1033076/apple-tv-4k-youtube-error",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "ElevenLabs、会議自動記録＆音声入力アプリ「ElevenAI」リリース：チーム・エンタープライズ向け",
+          "summary": "ElevenLabsが会議の自動記録と音声書き起こし機能を搭載した「ElevenAI」をチーム・エンタープライズ向けにリリース。",
+          "why_it_matters": "音声合成企業が生成AI時代のコミュニケーション基盤に参入。Pythonで音声API連携する設計を検討する際の選択肢候補。",
+          "tags": [
+            "ElevenLabs",
+            "音声AI",
+            "SaaS"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "ElevenLabs’ new app combines meeting note-taking and dictation for teams",
+              "url": "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/",
+              "source": "TechCrunch"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Amazon’s new Kindle Colorsoft is a premium e-reader with a premium price",
+          "url": "https://techcrunch.com/2026/11/13/amazons-new-kindle-colorsoft-is-a-premium-e-reader-with-a-premium-price/",
+          "source": "TechCrunch",
+          "note": "Kindle Colorsoft新型、前型比で軽量化・薄型化だが既所有者の買い替え価値は限定的"
+        },
+        {
+          "title": "古い機器をスマートホームデバイスとしてよみがえらせる「Home Assistant Connect AUX-2」が発売開始",
+          "url": "https://gigazine.net/news/20261113-home-assistant-connect-aux-2/",
+          "source": "GIGAZINE",
+          "note": "Home Assistant Connect AUX-2、レガシーIoTデバイスをスマートホーム対応デバイスに変換する専用ハード発売"
+        },
+        {
+          "title": "Xに添付できる画像が最大4枚から20枚に変更…写真や漫画を載せるにはいいかもしれないが、3行までしか読めないXユーザーが画像20枚も見るか？",
+          "url": "https://togetter.com/li/2770039",
+          "source": "はてブ 世の中",
+          "popularity": "17 users",
+          "note": "X、投稿画像・動画添付枚数が10年続いた4枚上限から20枚に拡大"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 11,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "米国全土の空港が通信障害で運航停止、テロではないと発表。米中ロ首脳会談が来週開催される予定。",
+      "topics": [
+        {
+          "headline": "米国全土の空港で運航停止、通信障害が原因",
+          "summary": "FAAが米全土の空港で航空機の運航停止措置を実施。国土安全保障省は通信障害が原因で、テロではないと判断している。",
+          "why_it_matters": "世界経済と密接に関わる米国の航空網停止は、国際的な人流・物流に直ちに影響する。",
+          "tags": [
+            "航空",
+            "障害",
+            "米国"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "米全土の空港 航空機運航停止 国土安全保障省“テロではない”",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261114de75764",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "全米の空港で「異常事態」地上待機命令　運輸長官は「通信障害」説明",
+              "url": "http://www.asahi.com/articles/ASVCF771GVCFUHBI008M.html?ref=rss",
+              "source": "朝日新聞"
+            },
+            {
+              "title": "FAA ground stop shuts down flights nationwide",
+              "url": "https://www.theverge.com/news/1033489/faa-ground-stop",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "米中ロ3首脳会談が初開催へ、19日に中国深圳で",
+          "summary": "ホワイトハウスが発表。トランプ大統領と習近平国家主席、プーチン大統領によるAPEC首脳会議に合わせた3者会談は初開催となる。",
+          "why_it_matters": "米中ロの3大国が同時に会談するのは異例で、国際秩序や経済に関わる重要な交渉の場となる可能性がある。",
+          "tags": [
+            "国際外交",
+            "米中ロ",
+            "APEC"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "米中ロ3か国首脳会談19日開催 3者会談は初 ホワイトハウス発表",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261114de75768",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "米中ロが史上初の3首脳会談へ　米側が発表　中国深圳で19日開催",
+              "url": "http://www.asahi.com/articles/ASVCF7VTGVCFUHBI00PM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "ニューオーリンズでクルーズ船衝突、全乗客救出",
+          "summary": "クルーズ船が衝突し、32人が重大ではない症状で入院。行方不明者は出ていない。",
+          "why_it_matters": "大型クルーズ船の運航安全性が試される事故であり、海上交通の安全体制が問われる。",
+          "tags": [
+            "海上事故",
+            "米国",
+            "救出"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "'Miracle on Mississippi' - All passengers rescued after New Orleans cruise ship collision",
+              "url": "https://www.bbc.co.uk/news/articles/cw20xmy0m5yyo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "タマホームの保険金不正請求で損保大手が販売停止を検討",
+          "summary": "注文住宅大手のタマホームが2000万円を超える保険金を不正請求していた問題で、損害保険ジャパン、三井住友海上火災保険、東京海上日動火災保険がタマホームの火災保険新規販売停止を検討している。",
+          "why_it_matters": "大手住宅メーカーの不正行為が業界の信頼を揺るがし、消費者保護の仕組みが機能しているかが問われる。",
+          "tags": [
+            "住宅",
+            "保険",
+            "不正"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "【独自】タマホームの保険金不正請求問題で新展開、火災保険の新規販売停止措置を損保大手が検討（東洋経済オンライン） - Yahoo!ニュース",
+              "url": "https://news.yahoo.co.jp/articles/9bed8a8b8eec11dded3e3c0c8ccf820686b23028",
+              "source": "はてブ 世の中",
+              "popularity": "18 users"
+            }
+          ]
+        },
+        {
+          "headline": "英国で政治人物・タレントへの不祥事調査広がる",
+          "summary": "デイビッド・ウォリアムズがいわゆる『性的犯罪』容疑で警察に調査されるなど、エンターテイメント業界での不祥事が相次いでいる。",
+          "why_it_matters": "権力やセレブリティーの悪用に対する組織的なチェック機能が歴史的に機能していなかった構造が明らかになり、社会的な脱却局面にある。",
+          "tags": [
+            "エンターテイメント",
+            "不祥事",
+            "英国"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Brand, Walliams and MAFS: Is this a reckoning for the entertainment industry?",
+              "url": "https://www.bbc.co.uk/news/articles/cqn70lz71lg8o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            },
+            {
+              "title": "'Police launch investigation' into Walliams and Piddington asylum 'betrayal'",
+              "url": "https://www.bbc.co.uk/news/articles/cx4gn4y1q906o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Family's two-year fight to bring killer driver back from Latvia",
+          "url": "https://www.bbc.co.uk/news/articles/c6dxwxn71gx0o?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "12歳の少年を殺害した運転手をラトビアから引き渡させるまで、両親が2年間闘った"
+        },
+        {
+          "title": "Setback for SpaceX Starship rocket's double-catch test",
+          "url": "https://www.bbc.co.uk/news/articles/ckregdgnl0xpo?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "SpaceXのスターシップロケット、ブースター回収の試みを中止。海に落下"
+        },
+        {
+          "title": "ハンズ渋谷が48年の歴史に幕　大量消費に反発「自分でやる」拠点に",
+          "url": "http://www.asahi.com/articles/ASVCF1S95VCFULFA020M.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "ハンズ渋谷が48年の歴史に幕。大量消費への反発を背景に個人向けDIY拠点として活用されていた"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 56,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 311,
+    "unclassified": 18,
+    "classify_error": null
+  }
+}
