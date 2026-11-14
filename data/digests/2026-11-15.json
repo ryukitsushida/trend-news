@@ -1,0 +1,952 @@
+{
+  "date": "2026-11-15",
+  "generated_at": "2026-11-15 08:46 JST",
+  "lead": "NVIDIA経営危機がAIスタートアップ投資に波及し、クラウド・セキュリティ基盤の調達戦略も揺らぎ始めた。",
+  "highlights": [
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "AWSの不確実性が高まる投資環境でも、Terraformスタックの実装範囲を事前に検証できるようになり、ローカルテスト→本番デプロイの確実性が確保でき、インフラの信頼性が一層重要になる。",
+      "topic": {
+        "headline": "AWS Emulator、CDK/Terraformスタックの実装範囲を実測確認",
+        "summary": "Qiitaの記事が、AWS Emulator（2026年11月11日正式リリース）で実際にCDK・Terraform記述のAWSスタックがどこまで動作するか検証。実装APIは既存と同じ結果・エラーを返し、未実装は501で失敗。",
+        "why_it_matters": "ローカル開発やCI上でのAWSの振る舞いをテストできる範囲が明確になり、Terraformの apply 前の検証戦略を立てやすくなる。実装範囲の把握が必須になる。",
+        "tags": [
+          "AWS Emulator",
+          "IaC検証",
+          "CDK/Terraform"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "【AWS】AWS EmulatorでCDK/Terraformのスタックはどこまで動くか【AWSEmulator】",
+            "url": "https://qiita.com/Nana_777/items/3f3c71525d867b22c9f2",
+            "source": "Qiita 人気",
+            "popularity": "48 LGTM"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "AlloyDBがDB内でAI処理を完結できるようになり、LLM連携時のデータ処理パターンが単純化され、Pythonコードの複雑性が減り開発効率が上がる。",
+      "topic": {
+        "headline": "Google AlloyDBに AI分類・抽出関数、トランザクショナルDB内でテキスト処理",
+        "summary": "AlloyDBが ai.classify と ai.extract の新しいAI関数を導入。臨床記録・レビュー・チケット等の非構造化テキストをDB内で直接処理でき、アプリケーション層の複雑なコード記述が不要に。",
+        "why_it_matters": "PythonでLLM連携のためのデータ抽出・変換ロジックをDB側に寄せられ、レイテンシ・スループット・管理領域を削減できる。生成AIをシステムアーキテクチャに組み込む際の実装パターンが確立。",
+        "tags": [
+          "AlloyDB",
+          "生成AI",
+          "データベース"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "Introducing new AI functions for AlloyDB: ai.classify and ai.extract",
+            "url": "https://cloud.google.com/blog/products/databases/ai-classify-and-ai-extract-functions-in-alloydb-ai/",
+            "source": "Google Cloud Blog"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "AI開発に必要なPythonパッケージの安全性が見える化され、脆弱なライブラリ導入を防ぎやすくなり、セキュリティと速度のバランスが取りやすくなる。",
+      "topic": {
+        "headline": "PyPI、セキュリティ表示を強化した新プロジェクトページが公開",
+        "summary": "PyPI のプロジェクトページがリデザインされ、セキュリティに関する情報がより見やすくなった。",
+        "why_it_matters": "依存するパッケージの安全性を事前に確認する判断が迅速になり、脆弱なライブラリの導入を防ぎやすくなる。",
+        "tags": [
+          "Python",
+          "セキュリティ",
+          "パッケージ管理"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "PyPI's redesigned project pages with clearer security signals are now live",
+            "url": "https://blog.pypi.org/posts/2026-11-06-ui-updates-complete/",
+            "source": "Hacker News",
+            "popularity": "188 points"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "NVIDIA経営危機でAIスタートアップへの投資が縮小し、外部AI開発ツール・プラットフォームの企業体力と持続性を見直す必要が出てくる。",
+      "topic": {
+        "headline": "フアンNVIDIA退任で数十億ドル規模のAIスタートアップ投資が縮小懸念、VC・創業者が警戒",
+        "summary": "フアンが率いたNVIDIAによる数十億ドル規模のAIスタートアップ投資が今後縮小する見通し。創業者・VCはより小さい投資と低い企業評価を覚悟している。",
+        "why_it_matters": "AI スタートアップへの資金調達環境が変わる。自社AIプロダクト・サービスの開発計画や外部ツール選定で、企業の規模・資金状況を見直す必要が出そう。",
+        "tags": [
+          "NVIDIA",
+          "AI投資",
+          "スタートアップ"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say",
+            "url": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/",
+            "source": "TechCrunch"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "チップサプライチェーンの混乱で、クラウドやAI基盤の調達先・タイミングが予測しにくくなり、マルチベンダー戦略やオンプレ検討の重要性が高まる。",
+      "topic": {
+        "headline": "アジア各国、NVIDIA CEO退任受けチップ供給確認など対応開始",
+        "summary": "アジア各国政府はチップ供給コミットメント確認や地元プロジェクト影響調査、調査対応などを進めている。",
+        "why_it_matters": "NVIDIA製チップへの依存国がサプライチェーン対応を迫られている。クラウド・AI基盤の調達計画に変動が生じる可能性がある。",
+        "tags": [
+          "NVIDIA",
+          "サプライチェーン",
+          "政府"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+            "url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+            "source": "TechCrunch"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "cloud",
+    "category_label": "クラウド・インフラ",
+    "headline": "AWS Emulator、CDK/Terraformスタックの実装範囲を実測確認",
+    "sources": [
+      {
+        "title": "【AWS】AWS EmulatorでCDK/Terraformのスタックはどこまで動くか【AWSEmulator】",
+        "url": "https://qiita.com/Nana_777/items/3f3c71525d867b22c9f2",
+        "source": "Qiita 人気",
+        "popularity": "48 LGTM"
+      }
+    ],
+    "background": "AWS Emulatorが2026年11月11日に正式リリースされ、AWSアカウントなしでローカル・CI環境でAWSサービスの動作を検証できるようになった。SDKやCLIの呼び出しを同じAWSと同等の結果・エラーで返し、未実装APIは501で失敗させるという仕様。",
+    "concepts": [
+      {
+        "term": "AWS Emulator",
+        "explanation": "AWSサービスをローカルまたはCI環境でシミュレートするツール。実装済みAPIはAWSと同じ結果を返し、未実装APIは501エラーで応答する。"
+      },
+      {
+        "term": "API実装範囲の把握",
+        "explanation": "Emulator上でどのAWSサービス・APIが動作するか事前に確認し、テスト・検証の限界を知ること。すべてが実装されているわけではない。"
+      },
+      {
+        "term": "Infrastructure as Code（IaC）の検証戦略",
+        "explanation": "Terraform apply前にローカルで構文・ロジックの妥当性をテストして、本番実行時の失敗リスクを低減させるプロセス。"
+      }
+    ],
+    "for_you": "Terraform/CDKで書いたAWSリソース定義を本番実行する前に、Emulatorでローカル検証できる範囲が明確になると、Pythonスクリプトやテストスイート内で「このスタックは実際に動くか」を事前確認でき、CIパイプラインの失敗率を下げられます。実装範囲外のAPIを使っているかどうかは設計段階で把握すべき制約になります。",
+    "try_this": "今週、自分のTerraformスタックでよく使う3〜5個のAWSサービス（例：S3、Lambda、DynamoDBなど）について、AWS Emulatorで実際に動作確認してみてください。501エラーが出たAPIをリスト化し、本番検証との分け方を決めておくと、CI設計の判断材料になります。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "Anthropic の IPO 直前にも不確実性を認めるなど、大型AI企業の成長が投資コスト に直面。一方、Google と Anthropic がベンチマークで OpenAI モデルを上回り、業界の競争図式が変わり始めている。",
+      "topics": [
+        {
+          "headline": "Anthropic CEO、IPO直前に「計算力コストの不確実性」認める",
+          "summary": "Anthropic の CEO Dario Amodei は、IPO 前に計算力の購入が「最大の経営課題」と述べた。同社のコミットメント総額は約 $901 billion に達しており、将来的な収益性が不透明な状況。",
+          "why_it_matters": "大規模モデルの学習・実行コストが経営存続に直結する時代。あなたが設計する AI アプリケーションでも、推論コストの最適化（軽量モデル選択、キャッシング戦略）が事業判断に影響してくる。",
+          "tags": [
+            "Anthropic",
+            "IPO",
+            "コスト"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Anthropic CEO Amodei admits \"there's a huge uncertainty in what's going to happen next year\" days before a record IPO",
+              "url": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "Google Gemini 4 がベンチマークで初めて OpenAI トップモデルを上回る",
+          "summary": "MathArena ベンチマークで Google の Gemini 4 Carbon と Anthropic の Fable 5.2 が OpenAI の GPT-6.1 Sol を抜いた。ただし両者とも GPT-6.1 Sol より有意に高コストとのこと。",
+          "why_it_matters": "モデル選択の判断軸が「性能＝低コスト」から「用途別の最適モデル」へ移行。計算集約的なタスクなら高コスト製品も選択肢になるが、実装時は roi を検証する必要がある。",
+          "tags": [
+            "Gemini 4",
+            "ベンチマーク",
+            "モデル評価"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol",
+              "url": "https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAI のロボティクス専門チーム解散、汎用モデルで対応へ",
+          "summary": "OpenAI がロボティクス専門チームを解散。GPT-6 Astra などの汎用モデルが直接ロボット制御できることから、専門ユニットは不要と判断。研究者は他部門に配置転換される。",
+          "why_it_matters": "エッジで動く特化型 AI ではなく、API 経由で汎用モデルを使う構図が確定。ロボティクスや自動化の実装パターンが大きく変わる可能性があり、あなたの設計判断にも波及する。",
+          "tags": [
+            "OpenAI",
+            "ロボティクス",
+            "汎用AI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "OpenAI reassigns robotics researchers to other teams as general-purpose models might make specialized robotics AI unnecessary",
+              "url": "https://the-decoder.com/openai-reassigns-robotics-researchers-to-other-teams-as-general-purpose-models-might-make-specialized-robotics-ai-unnecessary/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "Claude Opus 5.5、デフォルト化と新しいプロンプティング ガイド",
+          "summary": "Anthropic が Claude Opus 5.5 を有料プランのデフォルトに。古い「考えてから答える」習慣を廃し、「中程度の推論」から始めるよう改めた ガイドを公開。",
+          "why_it_matters": "プロンプトの作り方が変わると、コスト・レイテンシ・精度のバランスが変わる。既存の Claude 運用ルーチンを見直すタイミング。",
+          "tags": [
+            "Claude",
+            "プロンプティング",
+            "ベストプラクティス"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Anthropic says outdated prompting habits are slowing down Claude Opus 5.5",
+              "url": "https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "Runway、オープンソースのロボティクスモデル Praxis-1 公開",
+          "summary": "Runway が動画学習を活用したロボット制御モデル Praxis-1 を Apache 2.0 で公開。Nvidia の RoboLab-120 ベンチマークで World Action Model カテゴリ首位。",
+          "why_it_matters": "オープンソースのロボット制御モデルが利用可能になった。独自モデル開発と OSSの選択肢が広がり、プロトタイピングのコストが下がる。",
+          "tags": [
+            "Runway",
+            "ロボティクス",
+            "オープンソース"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+              "url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller/",
+              "source": "The Decoder"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "常時稼働エージェントの作り方（Claude公式ブログを資料化）",
+          "url": "https://speakerdeck.com/minorun365/jouji-kadou-ejento-no-tsukurikata",
+          "source": "はてブ テクノロジー",
+          "popularity": "80 users",
+          "note": "Claude 公式が常時稼働エージェントのガイドを公開。スライド化して試験中。"
+        },
+        {
+          "title": "Qwen3.8 Flash Nextに混ざる中国語を、出力層の書き換えで消した: 27%→0%、他の重みは1バイトも変えずに",
+          "url": "https://zenn.dev/caphtech/articles/qwen38-zh-ban",
+          "source": "はてブ テクノロジー",
+          "popularity": "58 users",
+          "note": "Qwen 3.8 Flash Next の中国語混入を、出力層書き換えだけで 27% → 0% に削減。他の重みは不変。"
+        },
+        {
+          "title": "AIチームを率いるとは、どういうこと？ with プログラマー・起業家 amachang Part1 | The Update",
+          "url": "https://theupdate.coffee/episodes/0J7UP7922ZXV6NBTt7w9Jl/",
+          "source": "はてブ テクノロジー",
+          "popularity": "121 users",
+          "note": "スマートニュースで複数の AI チームを統制する組織運営についてのポッドキャスト。"
+        },
+        {
+          "title": "Build once, run on any agent: A practical guide to agent skills",
+          "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/",
+          "source": "GitHub Blog",
+          "note": "GitHub が agent skills のガイド公開。再利用可能な engineering work をファイル化。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 61,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "脆弱性と情報流出インシデントが多数。UnrealIRCd、Check Point、Barracuda のゼロデイが悪用確認済。Cursor の CI/CD 侵害でマルウェア配布。北朝鮮の暗号資産窃盗キャンペーン摘発。",
+      "topics": [
+        {
+          "headline": "UnrealIRCd に悪用確認済ゼロデイ、サーバーコマンドインジェクション脆弱性CVE-2026-114713",
+          "summary": "CISA が高危険度の脆弱性 CVE-2026-114713 をKEVに追加。2台以上のリンクサーバーを持つネットワーク上の任意ユーザーがサーバー間通信を注入し、サーバー権限で実行可能。",
+          "why_it_matters": "オープンソースIRCサーバーの悪用可能な脆弱性。IRC運用者は早急なパッチ確認・適用が必須。",
+          "tags": [
+            "脆弱性",
+            "ゼロデイ",
+            "OSS"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection",
+              "url": "https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "CVE-2026-114713: UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114713",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Check Point ファイアウォール・管理サーバーに権限昇格ゼロデイ CVE-2026-123039、悪用確認済",
+          "summary": "Check Point Firewall、Multi-Domain Security Management Server、Scalable Platforms、Security Gateway、Security Management Server 等の製品に、Gaia OS の DynamicCLI デーモン実行時の権限設定誤りの脆弱性。悪用確認済（CISA KEV）。",
+          "why_it_matters": "エンタープライズファイアウォール・セキュリティ管理の根幹機器での権限昇格。運用環境で使用中なら定期アップデート確認が必須。",
+          "tags": [
+            "脆弱性",
+            "ファイアウォール",
+            "権限昇格"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "CVE-2026-123039: Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123039",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Barracuda メールセキュリティゲートウェイほか複数製品に悪用確認済ゼロデイ 2件、認証回避とOSコマンドインジェクション",
+          "summary": "Barracuda Networks Email Security Gateway（ESG）、Load Balancer、ADC、Message Archiver、WAF Control Center、WAF、Web Security Gateway に2つのゼロデイ。CVE-2026-111560：OSコマンドインジェクション。CVE-2026-116606：ESGで認証回避により未認証ユーザーがバックアップをインポート可能。両者ともに悪用確認済（CISA KEV）。",
+          "why_it_matters": "メールセキュリティ・WAFは外部脅威の最前線。認証回避で復旧ファイル改ざん攻撃も可能。対象製品の運用者は緊急確認が必須。",
+          "tags": [
+            "脆弱性",
+            "メールセキュリティ",
+            "認証回避"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "CVE-2026-111560: Barracuda Networks Multiple Products OS Command Injection Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111560",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-116606: Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116606",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Cursor が CI/CD インフラ Fireworks AI 侵害により認証情報盗難、マルウェア拡張機能配布",
+          "summary": "コードエディタ Cursor が Fireworks AI（AI インフラ提供者）からの認証情報窃盗により侵害される。盗まれた認証情報を用いて Cursor マーケットプレイスに悪性 Claude Code 拡張機能が配布された。",
+          "why_it_matters": "AI コーディングツールのマーケットプレイスが侵害され、ユーザーの環境にマルウェアが配布される事例。AI 開発ツール利用時に信頼できるマーケットプレイスの検証が必要。",
+          "tags": [
+            "インシデント",
+            "マルウェア",
+            "CI/CD"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Cursor confirms security breach led to malicious Claude Code extension",
+              "url": "https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "北朝鮮『FaceStealer』キャンペーンを米国が摘発、4億ドルを超える暗号資産窃盗",
+          "summary": "米国政府が北朝鮮のソーシャルエンジニアリングキャンペーン『FaceStealer』を摘発。4億ドル以上の暗号資産盗難に関与。",
+          "why_it_matters": "国家支援の窃盗キャンペーンの摘発事例。ソーシャルエンジニアリングの規模と被害の大きさを示す。",
+          "tags": [
+            "インシデント",
+            "北朝鮮",
+            "暗号資産"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "US disrupts North Korean campaign behind $400 million crypto theft",
+              "url": "https://www.bleepingcomputer.com/news/security/us-disrupts-north-korean-campaign-behind-400-million-crypto-theft/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "Lovable（開発プラットフォーム）のアプリがパスポート詳細・プライベートメッセージ20万件以上を公開",
+          "summary": "Lovable で構築されたアプリケーション群がパスポート詳細とプライベートメッセージ 200,000 件以上を露出させていた。",
+          "why_it_matters": "ノーコード・ローコード開発ツール経由でのデータ露出。配置・設定不備が個人情報大量流出につながる事例。",
+          "tags": [
+            "データ露出",
+            "開発ツール"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Lovable apps expose passport details and more than 200K private messages",
+              "url": "https://www.crissyfield.de/research/lovable-en/",
+              "source": "Hacker News",
+              "popularity": "572 points"
+            }
+          ]
+        },
+        {
+          "headline": "AI 悪用サイバー攻撃拠点が世界に1000台以上、弱点探索・不正侵入に利用",
+          "summary": "10月以降、世界インターネット上に AI 悪用の疑いがあるサーバーが 1000 台前後発見。国内外の Web サイトを標的に AI で弱点を探索し不正侵入を図る。日本の情報セキュリティ専門機関が国際調査で判明。",
+          "why_it_matters": "AI を悪用した自動化攻撃インフラの規模が明らかに。攻撃の効率化・広範化に対応した検知・防御体制の強化が必要。",
+          "tags": [
+            "AI悪用",
+            "自動化攻撃"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AI悪用の攻撃拠点、千台発見　サイトの弱点探索、不正侵入疑い",
+              "url": "https://www.47news.jp/15231027.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "25 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "京阪電車など22万人分のLINE情報流出　友だち登録プロフィル画像など、京阪百は住所なども｜京都新聞デジタル　京都・滋賀のニュースサイト",
+          "url": "https://www.kyoto-np.co.jp/articles/-/1826087",
+          "source": "はてブ 世の中",
+          "popularity": "12 users",
+          "note": "京阪電気鉄道など22万人分の LINE 登録情報（表示名・プロフィール画像など）が流出。"
+        },
+        {
+          "title": "City of Osaka warns of data breach impacting 1 million as Japan reels from dozens of cyber incidents",
+          "url": "https://therecord.media/city-of-osaka-japan-email-data-breach",
+          "source": "The Record",
+          "note": "大阪市、100万人超のデータ流出で注意喚起。"
+        },
+        {
+          "title": "Trezor confirms crypto-stealing implants in three wallets, releases fix",
+          "url": "https://www.bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix/",
+          "source": "BleepingComputer",
+          "note": "Trezor ハードウェア財布3台に悪意のあるハードウェアチップが埋め込まれていた。"
+        },
+        {
+          "title": "良品計画への不正アクセスについてまとめてみた",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/13/162738",
+          "source": "piyolog",
+          "note": "良品計画への不正アクセス被害範囲が拡大、会員情報から住所・カード番号まで。"
+        },
+        {
+          "title": "SoftBank製Airターミナル6におけるOSコマンドインジェクションの脆弱性",
+          "url": "https://jvn.jp/jp/JVN64740097/",
+          "source": "JVN",
+          "note": "SoftBank Airターミナル6に OS コマンドインジェクション脆弱性。"
+        },
+        {
+          "title": "「まとまるEC店長」への不正アクセスについてまとめてみた",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/12/113829",
+          "source": "piyolog",
+          "note": "ネットショップ管理SaaS『まとまるEC店長』が不正アクセス、LINEアカウント登録詐欺に悪用。"
+        },
+        {
+          "title": "偽TikTokアプリによるスマートフォンの遠隔操作と不正決済についてまとめてみた",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/11/094815",
+          "source": "piyolog",
+          "note": "偽 TikTok アプリで遠隔操作・不正決済被害、中国籍男2人を逮捕。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 58,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "Google CloudのCompute Engine APIが日次ベースのイミュータブル版へ移行し、DocumentDBがOSS正式版をリリース。AWS EmulatorはTerraform/CDKの検証範囲がクローズアップされ、エージェントと連携したAI機能がクラウド基盤に浸透。",
+      "topics": [
+        {
+          "headline": "Google Cloud、Compute Engine APIを日次イミュータブル版へ移行",
+          "summary": "Google CloudはCompute Engine APIのバージョニングを日付ベース（例：2026-09-01）のイミュータブル版（四半期ごとのスナップショット）に移行。ヘッダやクエリパラメータで指定でき、可変な/v1に代わる。",
+          "why_it_matters": "バージョン間の破壊的変更による想定外のAPIエラーを回避でき、Terraformで宣言的にAPI版を固定できるようになる。インフラのドリフト検出がより正確になる。",
+          "tags": [
+            "Google Cloud",
+            "API設計",
+            "Terraform"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Google Cloud Moves the Compute Engine API to Immutable Date-Based Versions",
+              "url": "https://www.infoq.com/news/2026/11/compute-engine-api-versioning/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "DocumentDB 1.0が正式リリース、OSS・MongoDB互換のドキュメントDB",
+          "summary": "PostgreSQL基盤のOSS（MIT）ドキュメントデータベース DocumentDB 1.0が正式リリース。MongoDBワイアプロトコル互換で、ほぼ全MongoDBドライバ・ツール・クエリが変更なしに動作。",
+          "why_it_matters": "MongoDBのコスト削減やベンダーロック回避を検討する際、OSSの互換実装が選択肢になる。Pythonマイグレーション時の依存関係確認が簡潔になる可能性がある。",
+          "tags": [
+            "DocumentDB",
+            "OSS",
+            "MongoDB"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Open Source DocumentDB 1.0 Reaches General Availability",
+              "url": "https://www.infoq.com/news/2026/11/mongodb-compatible-documentdb/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "AWS Emulator、CDK/Terraformスタックの実装範囲を実測確認",
+          "summary": "Qiitaの記事が、AWS Emulator（2026年11月11日正式リリース）で実際にCDK・Terraform記述のAWSスタックがどこまで動作するか検証。実装APIは既存と同じ結果・エラーを返し、未実装は501で失敗。",
+          "why_it_matters": "ローカル開発やCI上でのAWSの振る舞いをテストできる範囲が明確になり、Terraformの apply 前の検証戦略を立てやすくなる。実装範囲の把握が必須になる。",
+          "tags": [
+            "AWS Emulator",
+            "IaC検証",
+            "CDK/Terraform"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "【AWS】AWS EmulatorでCDK/Terraformのスタックはどこまで動くか【AWSEmulator】",
+              "url": "https://qiita.com/Nana_777/items/3f3c71525d867b22c9f2",
+              "source": "Qiita 人気",
+              "popularity": "48 LGTM"
+            }
+          ]
+        },
+        {
+          "headline": "Google AlloyDBに AI分類・抽出関数、トランザクショナルDB内でテキスト処理",
+          "summary": "AlloyDBが ai.classify と ai.extract の新しいAI関数を導入。臨床記録・レビュー・チケット等の非構造化テキストをDB内で直接処理でき、アプリケーション層の複雑なコード記述が不要に。",
+          "why_it_matters": "PythonでLLM連携のためのデータ抽出・変換ロジックをDB側に寄せられ、レイテンシ・スループット・管理領域を削減できる。生成AIをシステムアーキテクチャに組み込む際の実装パターンが確立。",
+          "tags": [
+            "AlloyDB",
+            "生成AI",
+            "データベース"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Introducing new AI functions for AlloyDB: ai.classify and ai.extract",
+              "url": "https://cloud.google.com/blog/products/databases/ai-classify-and-ai-extract-functions-in-alloydb-ai/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Google Cloud HPC×エージェントAI、スパコン領域でのAI実験が加速",
+          "summary": "SC26（スーパーコンピュータ会議）でGoogle Cloudが、HPC・AI新機能を発表。計算科学者・HPC엔지니어がAIエージェントを密集科学データ処理に活用する事例が増加。",
+          "why_it_matters": "スケーラブルなデータ処理やシミュレーション領域でのエージェント活用が標準化されつつあり、Terraform×LLMで複雑なワークフロー自動化を検討する際の参考になる。",
+          "tags": [
+            "HPC",
+            "エージェント",
+            "Google Cloud"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Where supercomputing meets agentic AI: What’s new in Google Cloud HPC and AI at SC26",
+              "url": "https://cloud.google.com/blog/topics/hpc/whats-new-in-hpc-and-ai-at-sc26/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "FAA expands AI advice to manage air traffic congestion across entire US airspace",
+          "url": "https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/",
+          "source": "Ars Technica",
+          "note": "FAA、米国全域のエアトラフィック混雑管理にAI活用——航空会社は評価も管制官組合未参加"
+        },
+        {
+          "title": "Snowflake Dashboards 2.0が最高な理由と、これからBIに求められること",
+          "url": "https://zenn.dev/dataheroes/articles/snowflake-dashboards-2-and-future-of-bi",
+          "source": "Zenn トレンド",
+          "popularity": "51 いいね",
+          "note": "Snowflake Dashboards 2.0、BIツールの今後の方向性を示す（51いいね、トレンド）"
+        },
+        {
+          "title": "AWS Weekly Roundup: AgentCore Runtime V2, Amazon DynamoDB bulk put items, and more (November 9, 2026)",
+          "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-agentcore-runtime-v2-amazon-dynamodb-bulk-put-items-and-more-november-9-2026/",
+          "source": "AWS News Blog",
+          "note": "AWS Weekly Roundup、Amazon S3 Tables + Apache Iceberg で Hive テーブル移行が簡潔化"
+        },
+        {
+          "title": "AWSから4.3億円の課金が...バグと思われる高額請求された際にまずすること",
+          "url": "https://zenn.dev/tsumita7/articles/aoss-intelligent-ingestion-billing-202610",
+          "source": "Zenn トレンド",
+          "popularity": "61 いいね",
+          "note": "Zenn、AWS 高額課金（4.3億円）事例で緊急対応フロー解説（61いいね、トレンド）"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 23,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "51",
+        "61"
+      ]
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "Pythonパッケージの安全な利用が見やすく。Node.jsが標準機能を拡充。ソフトウェア品質は過去より改善している。",
+      "topics": [
+        {
+          "headline": "PyPI、セキュリティ表示を強化した新プロジェクトページが公開",
+          "summary": "PyPI のプロジェクトページがリデザインされ、セキュリティに関する情報がより見やすくなった。",
+          "why_it_matters": "依存するパッケージの安全性を事前に確認する判断が迅速になり、脆弱なライブラリの導入を防ぎやすくなる。",
+          "tags": [
+            "Python",
+            "セキュリティ",
+            "パッケージ管理"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "PyPI's redesigned project pages with clearer security signals are now live",
+              "url": "https://blog.pypi.org/posts/2026-11-06-ui-updates-complete/",
+              "source": "Hacker News",
+              "popularity": "188 points"
+            }
+          ]
+        },
+        {
+          "headline": "Node.js 26.10.0、debounce・throttle と PKCS#12 パース機能を標準搭載",
+          "summary": "Node.js 26.10.0 は util.debounce() と util.throttle() を core に追加。crypto.parsePKCS12() で .p12・.pfx ファイルの読み込みにも対応。",
+          "why_it_matters": "頻出の非同期制御とファイル形式処理を標準で提供することで、外部ライブラリなしで実装できる開発の裏側が効率化される。",
+          "tags": [
+            "Node.js",
+            "標準ライブラリ",
+            "暗号"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Node.js Brings Debounce, Throttle, and PKCS#12 Parsing Into Core Modules",
+              "url": "https://www.infoq.com/news/2026/11/nodejs-debounce-throttle/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "過去のソフトウェアはさらに問題を抱えていた、現代の改善を指摘",
+          "summary": "1990年代からのエンジニアが、肥大化やバグ増加を理由に『昔の方が良かった』という主張に対し、過去のソフトウェアの深刻な問題を振り返り現代のソフトウェアの改善を解説している。",
+          "why_it_matters": "ソフトウェア品質への議論が行き交う際、複雑性の増加と引き換えに得た安定性・機能・互換性を認識することで、設計判断時の優先度がより根拠を持つ。",
+          "tags": [
+            "ソフトウェア工学",
+            "エンジニアリング文化"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "現代のソフトウェアは劣化しているかもしれないが昔のソフトウェアはもっとひどかったという指摘",
+              "url": "https://gigazine.net/news/20261114-software-used-to-be-horrible/",
+              "source": "GIGAZINE"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "A Family Tree of Software Job Titles",
+          "url": "https://zwischenzugs.com/2026/11/03/a-family-tree-of-software-job-titles/",
+          "source": "Hacker News",
+          "popularity": "176 points",
+          "note": "ソフトウェア開発職の役職・キャリアパス系統の分類（Hacker News 176ポイント）"
+        },
+        {
+          "title": "Show HN: A terminal-native idle factory game, written in Rust with ratatui",
+          "url": "https://gitlab.com/snipedbywifi/terminactory",
+          "source": "Hacker News",
+          "popularity": "125 points",
+          "note": "ターミナルで遊べるファクトリーゲーム、Rust/ratatuiで実装（Show HN）"
+        },
+        {
+          "title": "無料で時間管理用のカレンダーとタスク管理用のToDoアプリの両方を1つのタイムラインにまとめる「Mitra」、CalDAV・Googleカレンダー・Appleカレンダー・Notion・Todoist・Tempoと双方向同期可能",
+          "url": "https://gigazine.net/news/20261114-mitra/",
+          "source": "GIGAZINE",
+          "note": "カレンダーと ToDoアプリを統合、複数サービスと双方向同期できる無料オープンソースアプリ Mitra"
+        },
+        {
+          "title": "「ざっくり工数どのくらい？」に「ざっくり工数このくらい」で答えてはいけない",
+          "url": "https://qiita.com/tsutorm/items/c9ab1e1c64474c341d77",
+          "source": "Qiita 人気",
+          "popularity": "41 LGTM",
+          "note": "工数見積もり質問に『ざっくり何人月』で答えてはいけない理由（Qiita 41ポイント）"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 20,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "176",
+        "41"
+      ]
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "NVIDIAのフアンCEO辞任に続き、復帰を求める署名が11万人超に拡大。テスラはCybercabの個人向け予約を開始したが月額$299の手数料が議論を呼ぶ。",
+      "topics": [
+        {
+          "headline": "フアンNVIDIA前CEO復帰求める署名が11万人超、マスク氏ら賛同",
+          "summary": "「Stand with Jensen」署名サイトに11万人超が賛同。マスク氏らも名を連ね、取締役会に公正な調査と退任理由の説明を要求。米議会の調査も並行中。",
+          "why_it_matters": "NVIDIAの経営トップに異変が生じており、AI開発投資や戦略に影響する可能性がある。VCや起業家が投資判断や資金調達で動揺している（記事7参照）。",
+          "tags": [
+            "NVIDIA",
+            "経営",
+            "AI投資"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "NVIDIAフアン前CEOの復帰求める署名が11万人超　マスク氏らも賛同、米議会は追及継続",
+              "url": "https://www.itmedia.co.jp/news/article/2611/15/2000003207/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+              "url": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "アジア各国、NVIDIA CEO退任受けチップ供給確認など対応開始",
+          "summary": "アジア各国政府はチップ供給コミットメント確認や地元プロジェクト影響調査、調査対応などを進めている。",
+          "why_it_matters": "NVIDIA製チップへの依存国がサプライチェーン対応を迫られている。クラウド・AI基盤の調達計画に変動が生じる可能性がある。",
+          "tags": [
+            "NVIDIA",
+            "サプライチェーン",
+            "政府"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+              "url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "フアンNVIDIA退任で数十億ドル規模のAIスタートアップ投資が縮小懸念、VC・創業者が警戒",
+          "summary": "フアンが率いたNVIDIAによる数十億ドル規模のAIスタートアップ投資が今後縮小する見通し。創業者・VCはより小さい投資と低い企業評価を覚悟している。",
+          "why_it_matters": "AI スタートアップへの資金調達環境が変わる。自社AIプロダクト・サービスの開発計画や外部ツール選定で、企業の規模・資金状況を見直す必要が出そう。",
+          "tags": [
+            "NVIDIA",
+            "AI投資",
+            "スタートアップ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say",
+              "url": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "テスラ、Cybercab個人向け予約開始　月額$299の手数料でマスク氏も「高い」と指摘",
+          "summary": "テスラは選定顧客向けにCybercabの個人使用での購入を予約開始。地域制限あり月額$299の手数料設定だが、マスク氏自身も手数料が「高い」とコメント。",
+          "why_it_matters": "自動運転技術の商用化が段階的に進む。テスラが自動運転タクシーの実装・収益化をどう進めるか業界動向の参考になる。",
+          "tags": [
+            "テスラ",
+            "自動運転",
+            "Cybercab"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Tesla opens Cybercab pre-orders ‘for personal use,’ with geo restrictions and a $299 monthly fee",
+              "url": "https://techcrunch.com/2026/11/14/tesla-opens-cybercab-pre-orders-for-personal-use-with-geo-restrictions-and-a-299-monthly-fee/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "Tesla is inviting some people to buy a Cybercab ‘for personal use’ — but read the fine print",
+              "url": "https://www.theverge.com/transportation/1033844/tesla-personal-cybercab-orders-299-subscription-fine-print",
+              "source": "The Verge"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Jensen Huang and the decline of the visionary showman founder CEO",
+          "url": "https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo",
+          "source": "The Verge",
+          "note": "フアンはCESで1月6日、「ロックスター的瞬間」を得た。その直後の辞任発表となった。"
+        },
+        {
+          "title": "Kalshi ditches Trump Jr. as advisor; CEO admitted \"optics\" weren't good",
+          "url": "https://arstechnica.com/tech-policy/2026/11/trump-jr-out-as-kalshi-advisor-after-his-firms-big-investment-in-polymarket/",
+          "source": "Ars Technica",
+          "note": "Kalshi（予測市場プラットフォーム）がトランプ・ジュニアを顧問から外した。トランプ政権の法的支援受取の「見た目の問題」を理由に。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 8,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "ウクライナ情勢の新展開、拉致問題の節目、国内での法令違反摘発が主な出来事。",
+      "topics": [
+        {
+          "headline": "ゼレンスキー大統領、米国がNATO加盟と引き換えにドンバス撤退を打診したと発言",
+          "summary": "ウクライナのゼレンスキー大統領は、アメリカ側からNATO加盟を交換条件にウクライナ軍が東部ドンバス地域から撤退することの可否を打診されたと述べた。米国側は詳細を確認していない。",
+          "why_it_matters": "ウクライナ紛争の終結をめぐる国家間の駆け引きが顕在化しており、停戦と領土問題の行方に影響する可能性がある。",
+          "tags": [
+            "ウクライナ",
+            "NATO",
+            "米国"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "ゼレンスキー大統領“米がNATO加盟と交換で軍撤退を打診”",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261115de76042",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "US has floated Ukraine ceding Donbas for Nato membership, Zelensky says",
+              "url": "https://www.bbc.co.uk/news/articles/cwvg2l312ylqo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "横田めぐみさん拉致から49年、母・早紀江さんが面会を訴え",
+          "summary": "中学1年時に北朝鮮に拉致された横田めぐみさんについて、49年経った15日、母親の早紀江さんが「1回でもいいから会いたい」と述べ、一刻も早い帰国実現を求めた。",
+          "why_it_matters": "長年解決されない拉致問題は日本社会の懸案事項であり、政府・国民の粘り強い取り組みが問われ続ける。",
+          "tags": [
+            "拉致",
+            "北朝鮮",
+            "人権"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "横田めぐみさん拉致から49年　早紀江さん「会いたい」",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261114de75986",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "YouTuber「あっすん」ら3人が風営法違反で逮捕、無許可で風俗営業",
+          "summary": "YouTubeの番組に出演するインフルエンサー「あっすん」ら3人が、名古屋市の繁華街のバーで無許可に従業員に客の接待をさせていたとして、風俗営業法違反の疑いで逮捕された。",
+          "why_it_matters": "SNS時代のインフルエンサー活動が違法性との境界を曖昧にしており、稼ぎ方の透明性・法令遵守が問われている。",
+          "tags": [
+            "インフルエンサー",
+            "風俗営業法",
+            "摘発"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "インフルエンサー「あっすん」 風営法違反疑いで逮捕",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261115de76043",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "「ラヴ上等」出演の「あっすん」を逮捕　無許可風俗営業容疑　名古屋",
+              "url": "http://www.asahi.com/articles/ASVCG366TVCGOIPE001M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "福岡市長選、13候補が出馬し投票開始——再選挙の可能性も",
+          "summary": "福岡市長選が異例の13人出馬の中、投票が始まった。再選挙の可能性があるとも報じられている。",
+          "why_it_matters": "政令指定都市の首長選挙の行方は地域の主要産業や福祉政策に直結し、住民生活に影響する。",
+          "tags": [
+            "福岡市",
+            "市長選",
+            "選挙"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "13人出馬の福岡市長選、投票始まる　異例の選挙戦、再選挙可能性も",
+              "url": "http://www.asahi.com/articles/ASVCG413HVCGTIPE01PM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "農地がホテルや住宅に変わる　312市町村で1割超消失、細る食料基盤 - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUE216VA0R21C26A0000000/",
+          "source": "はてブ 世の中",
+          "popularity": "5 users",
+          "note": "過去15年間に312市町村で農地の1割超が転用され、ホテルや住宅に変わっている。食料生産基盤の縮小が進行中。"
+        },
+        {
+          "title": "マンション向け債券、金利上昇で応募2倍に　資金運用に動く管理組合",
+          "url": "http://www.asahi.com/articles/ASVCC2RW2VCCULFA004M.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "金利上昇を背景に、マンション管理組合がマンション向け債券への応募を増やし、資金運用に動いている。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 68,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 239,
+    "unclassified": 1,
+    "classify_error": null
+  }
+}
