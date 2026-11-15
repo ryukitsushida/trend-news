@@ -1,0 +1,898 @@
+{
+  "date": "2026-11-16",
+  "generated_at": "2026-11-16 08:52 JST",
+  "lead": "AIエージェントが金銭と自動判断を扱う時代が到来し、エンジニアの設計判断が大きく問われ始める。",
+  "highlights": [
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "自分たちが構築するAPIやシステムが、AIエージェント主導の取引に対応できるか設計段階で考える必要が出てくる転換点。",
+      "topic": {
+        "headline": "OpenAI、AIエージェント経由の生体認証決済「ChatGPT Wallet」開始",
+        "summary": "OpenAIがAIエージェント「dot」に決済機能を持たせる「ChatGPT Wallet」を発表。実際のカード情報を店舗に渡さず、購入ごとに生体認証を求めることでセキュリティを確保。ChatGPT Pro加入者向けに米国で提供開始、将来は自律決済にも対応予定。",
+        "why_it_matters": "AIエージェントが金銭を扱う時代が現実化する。自分たちの決済システムやAPI設計でこうした「エージェント主導の取引」を想定する必要が出てくる。",
+        "tags": [
+          "決済",
+          "エージェント",
+          "セキュリティ"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "OpenAI、AIエージェントが代わりに支払う「ChatGPT Wallet」　カード番号は渡さず、購入ごとに生体認証",
+            "url": "https://www.itmedia.co.jp/news/article/2611/16/2000003208/",
+            "source": "ITmedia NEWS"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "本番でAIエージェント化する際、予期せぬ行動が起きたとき監視ログ・決定履歴をどう設計するか、今から知っておくべき実装課題。",
+      "topic": {
+        "headline": "AIエージェント予期せぬ行動時に説明責任果たせるか、IT部門が整備すべき記録と体制",
+        "summary": "AIエージェントが予期しない行動を取った場合、原因を説明できるか。人間中心のインシデント対応では通用せず、成熟した対応手順がない現状を指摘。IT部門が今から整えるべき記録と体制について論じている。",
+        "why_it_matters": "本番環境でAIエージェント化するなら、インシデント対応の前提そのものを見直す必要がある。監視ログ・決定履歴をどう設計するか、今から検討すべき。",
+        "tags": [
+          "運用",
+          "インシデント対応",
+          "エージェント"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "AIエージェントが「事故」を起こしたとき、説明できますか？　IT部門が整えるべき記録と体制",
+            "url": "https://www.itmedia.co.jp/enterprise/articles/2611/16/news005.html",
+            "source": "ITmedia エンタープライズ"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "Terraformで構築してきた標準設計がもう陳腐化している可能性があり、IAM・ネットワーク・データ流通の新しい基盤を早めにキャッチアップすべき時期。",
+      "topic": {
+        "headline": "AWS・GCP主要インフラの常識が急速に変わる",
+        "summary": "AWSではネットワーク設計の最適化実績、GCPではBigQuery・AlloyDB間のデータ連携、新認証・暗号化オプションなど、クラウド基盤技術が大きく進化。エージェントAIの登場で従来の運用ルールも再検討が迫られている。",
+        "why_it_matters": "Terraform/Python で AWS 構築してきた標準設計が既に陳腐化している可能性がある。特にセキュリティ・認証（IAM Identity Center の複数リージョン対応）、ネットワーク分離（Private Origins）、データ流通（Reverse ETL）は今後の設計の基盤になる。どこを取り、何を残すか判断軸を再点検すべき時期。",
+        "tags": [
+          "AWS",
+          "GCP",
+          "インフラ設計"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "勘定系をオンプレに残す三井住友信託、クラウドに移すソニー銀行　AWS活用の分かれ道",
+            "url": "https://www.itmedia.co.jp/enterprise/articles/2611/16/news019.html",
+            "source": "ITmedia エンタープライズ"
+          },
+          {
+            "title": "こんなに変わった！ AWSネットワークの常識",
+            "url": "https://speakerdeck.com/shotashiratori/nw-jaws-10th-keynote",
+            "source": "はてブ テクノロジー",
+            "popularity": "198 users"
+          },
+          {
+            "title": "IAM Identity Center に追加リージョン（セカンダリ）を作ってみた（KMSキーの作成から大阪リージョンの追加まで） | DevelopersIO",
+            "url": "https://dev.classmethod.jp/articles/add-iic-secondary-region/",
+            "source": "はてブ テクノロジー",
+            "popularity": "10 users"
+          },
+          {
+            "title": "Cloudflare Introduces Private Origins for Application Services",
+            "url": "https://www.infoq.com/news/2026/11/cloudflare-private-origins/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+            "source": "InfoQ"
+          },
+          {
+            "title": "From OLAP to OLTP: How Copel Simplified Reverse ETL Using BigQuery's Native Export to AlloyDB",
+            "url": "https://cloud.google.com/blog/products/data-analytics/reverse-etl-bigquery-exports-to-alloydb/",
+            "source": "Google Cloud Blog"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "AWS CodePipelineでTerraformを使ったビルド自動化を構築する際、zipタイムスタンプの落とし穴を避けられる実践的な知見。",
+      "topic": {
+        "headline": "git archive 生成zipをAWS CodePipeline のソースに使用時、DOSタイムスタンプはUTC指定が必須",
+        "summary": "git archiveで作成したzipをCodePipelineビルドのソースとして使う場合、zipのDOSタイムスタンプ（タイムゾーン情報なし）をUTCで作成する必要がある。拡張タイムスタンプはUTC格納だが、AWS CodePipelineの処理ではDOSタイムスタンプが基準となる。",
+        "why_it_matters": "AWS Terraform/Pythonでビルドパイプラインを構築する際、zipタイムスタンプによる意図しない再ビルドトリガーを避けられる。Terraformでzipを作成する実装で注意すべき落とし穴。",
+        "tags": [
+          "AWS",
+          "CodePipeline",
+          "zip"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "git archive で作成した zip ファイルを AWS CodePipeline のビルドのソースとして使う場合はDOSタイムスタン",
+            "url": "https://zenn.dev/yskszk63/articles/codepipeline-zip-dostime",
+            "source": "はてブ テクノロジー",
+            "popularity": "5 users"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "AIチップ輸出規制強化は、LLMサービス調達やクラウド戦略に影響する可能性があり、地域別対応を視野に入れた判断軸が必要になるかもしれない。",
+      "topic": {
+        "headline": "米議会、中国スパイ事件後にAIチップ輸出規制を強化へ",
+        "summary": "Jensen Huang前CEO辞任に絡む中国スパイ容疑事件を受け、民主・共和両党がAIチップの輸出規制をさらに厳しくする動きを進めている。",
+        "why_it_matters": "AIチップの流通コントロール強化は、クラウド・LLMサービスの利用形態や調達戦略に影響する可能性がある。地域別の規制差を意識した設計判断が必要になるかもしれない。",
+        "tags": [
+          "規制",
+          "AIチップ",
+          "地政学"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+            "url": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+            "source": "The Verge"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "cloud",
+    "category_label": "クラウド・インフラ",
+    "headline": "AWS・GCP主要インフラの常識が急速に変わる",
+    "sources": [
+      {
+        "title": "勘定系をオンプレに残す三井住友信託、クラウドに移すソニー銀行　AWS活用の分かれ道",
+        "url": "https://www.itmedia.co.jp/enterprise/articles/2611/16/news019.html",
+        "source": "ITmedia エンタープライズ"
+      },
+      {
+        "title": "こんなに変わった！ AWSネットワークの常識",
+        "url": "https://speakerdeck.com/shotashiratori/nw-jaws-10th-keynote",
+        "source": "はてブ テクノロジー",
+        "popularity": "198 users"
+      },
+      {
+        "title": "IAM Identity Center に追加リージョン（セカンダリ）を作ってみた（KMSキーの作成から大阪リージョンの追加まで） | DevelopersIO",
+        "url": "https://dev.classmethod.jp/articles/add-iic-secondary-region/",
+        "source": "はてブ テクノロジー",
+        "popularity": "10 users"
+      },
+      {
+        "title": "Cloudflare Introduces Private Origins for Application Services",
+        "url": "https://www.infoq.com/news/2026/11/cloudflare-private-origins/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+        "source": "InfoQ"
+      },
+      {
+        "title": "From OLAP to OLTP: How Copel Simplified Reverse ETL Using BigQuery's Native Export to AlloyDB",
+        "url": "https://cloud.google.com/blog/products/data-analytics/reverse-etl-bigquery-exports-to-alloydb/",
+        "source": "Google Cloud Blog"
+      }
+    ],
+    "background": "クラウドインフラの「常識」が急速に変わっている。AWSのネットワーク最適化、GCPのデータ連携強化、複数リージョン対応の認証基盤など、個別の改善が次々と浮上している。Terraform/Pythonで構築したAWS標準設計が、数年で陳腐化し始めている時期。",
+    "concepts": [
+      {
+        "term": "IAM Identity Center の複数リージョン対応",
+        "explanation": "従来は単一リージョンの認証基盤が、セカンダリリージョンを持つことでマルチリージョン展開時のフェイルオーバー・低レイテンシ認証が実現する。KMSのマルチリージョンキーと組み合わせることで、ゾーン障害時にも認証機能が持続する。"
+      },
+      {
+        "term": "Private Origins（Cloudflare）",
+        "explanation": "プライベートネットワークのアプリケーションをパブリックトラフィック経由で公開する仕組み。IPアドレスや受け口ポートをインターネットに晒さず、Cloudflare経由でアクセス可能にするネットワーク分離パターン。"
+      },
+      {
+        "term": "Reverse ETL（BigQuery→AlloyDB）",
+        "explanation": "分析基盤（OLAP）のデータを本番データベース（OLTP）に同期する処理。従来はミドルウェアが必要だったが、BigQueryからAlloyDBへの直接エクスポート機能で軽量化できる。データドリブン運用の高速化につながる。"
+      },
+      {
+        "term": "マルチリージョンキー（KMS）",
+        "explanation": "単一リージョンのKMSキーではなく、複数リージョンで同一キーIDを保持するキー体系。リージョン間のデータレプリケーション時に暗号化キーの管理を簡潔にし、リージョン障害時の復旧を加速する。"
+      }
+    ],
+    "for_you": "あなたがTerraformで設計してきたAWS標準（単一リージョンのIAM Identity Center、セキュリティグループベースの分離、ETL処理の中間ストレージ設計）は、エージェントAIの登場で再検討を迫られている。特にBigQuery/AlloyDBのような複数サービス間データ流通や、マルチリージョン冗長性が業務要件に浮上した場合、従来の「設定の繰り返し」では対応できない。判断軸を明確にすることが、次の案件での信頼を左右する。",
+    "try_this": "今週中に、自分たちが保守しているTerraformコード（IAM設定、ネットワーク構成、データパイプライン）を1つ選び、「これを複数リージョン化・Private Originsで分離・Reverse ETL対応するなら何が変わるか」を30分で図解してみる。不足する知識が見えたら、それが学習優先度。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "OpenAIが生体認証ベースの決済機能を発表、足立区がAIエージェントを議会答弁に試験導入。業務オートメーション化が進む一方、AIの品質確保と人間の役割再設計が課題に。",
+      "topics": [
+        {
+          "headline": "OpenAI、AIエージェント経由の生体認証決済「ChatGPT Wallet」開始",
+          "summary": "OpenAIがAIエージェント「dot」に決済機能を持たせる「ChatGPT Wallet」を発表。実際のカード情報を店舗に渡さず、購入ごとに生体認証を求めることでセキュリティを確保。ChatGPT Pro加入者向けに米国で提供開始、将来は自律決済にも対応予定。",
+          "why_it_matters": "AIエージェントが金銭を扱う時代が現実化する。自分たちの決済システムやAPI設計でこうした「エージェント主導の取引」を想定する必要が出てくる。",
+          "tags": [
+            "決済",
+            "エージェント",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "OpenAI、AIエージェントが代わりに支払う「ChatGPT Wallet」　カード番号は渡さず、購入ごとに生体認証",
+              "url": "https://www.itmedia.co.jp/news/article/2611/16/2000003208/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "足立区がAIエージェントを議会答弁に試験導入、「分からない」ガードで信頼確保",
+          "summary": "東京都足立区がGoogle Cloudと連携し、議会答弁と区民対応にAIエージェントを試験導入中。区の担当者が実装のポイントを紹介。確信がない場合に「分かりません」と回答する設定により、情報誤りによる区民への影響を防いでいる。",
+          "why_it_matters": "公的部門でのAI活用には確度の低い回答を避ける設計が必須。業務でAIを組み込む際、出力の信頼性を担保するための実装パターンが参考になる。",
+          "tags": [
+            "自治体",
+            "エージェント",
+            "信頼性"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "自信がなければ「分かりません」──足立区が議会答弁AIにかけた“ガード”　「情報間違えれば区民に影響」の思い",
+              "url": "https://www.itmedia.co.jp/aiplus/article/2611/16/2000003196/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "AIエージェント予期せぬ行動時に説明責任果たせるか、IT部門が整備すべき記録と体制",
+          "summary": "AIエージェントが予期しない行動を取った場合、原因を説明できるか。人間中心のインシデント対応では通用せず、成熟した対応手順がない現状を指摘。IT部門が今から整えるべき記録と体制について論じている。",
+          "why_it_matters": "本番環境でAIエージェント化するなら、インシデント対応の前提そのものを見直す必要がある。監視ログ・決定履歴をどう設計するか、今から検討すべき。",
+          "tags": [
+            "運用",
+            "インシデント対応",
+            "エージェント"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AIエージェントが「事故」を起こしたとき、説明できますか？　IT部門が整えるべき記録と体制",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/16/news005.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "生成AI導入で開発スピード短縮も、大量生成コードの品質確認が新課題——メルカリ事例",
+          "summary": "メルカリが生成AIで画面・試作品制作を1～2日から数十分に短縮。専門部門の壁を取り払い少人数チームで機能を完成させる体制へ移行。一方、200～300画面に及ぶアプリではAIが生み出す大量の変更案に対し、人間による最終チェックが追いつかない課題が発生。",
+          "why_it_matters": "生成AIによる高速化の代償として、レビュー・品質保証が組織の新しいボトルネックになる。自動化では対応できない部分へ人間の力をどう集中させるか、設計段階から考える必要がある。",
+          "tags": [
+            "開発効率",
+            "品質保証",
+            "組織設計"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "メルカリ、アプリ開発「2日→数十分」へ　直面したAI時代の“意外な課題”とは？",
+              "url": "https://www.itmedia.co.jp/business/articles/2611/16/news031.html",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "東京都内全域、信号機AI制御8000カ所へ　渋滞1割削減実績で2027年度導入予定",
+          "summary": "警視庁が実証実験で確認した渋滋緩和効果に基づき、AI信号制御を2027年度にも東京都内全域8000カ所に広げる予定。交差点の交通量や過去データから30分後の渋滋を予測し制御。物流円滑化に効果ありと判断。",
+          "why_it_matters": "大規模インフラ運用へのAI統合が加速している。自社システムのモニタリング・最適化にも同様のアプローチが活用できる可能性がある。",
+          "tags": [
+            "インフラ",
+            "最適化",
+            "東京"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "信号機AI制御8000カ所、東京都内全域導入へ　渋滞長さ1割減で物流円滑に - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOUD292PN0Z20C26A9000000/",
+              "source": "はてブ 世の中",
+              "popularity": "6 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "ガートナーが考えるフィジカルAI実装のロードマップと人の役割",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/16/news050.html",
+          "source": "ITmedia AI+",
+          "note": "ガートナーが製造業でのフィジカルAI実装ロードマップ、AI時代の人の役割を解説。"
+        },
+        {
+          "title": "ライセンス更新を機に「脱マクロ」　オートバックスセブンがGeminiで目指す売上高5000億円",
+          "url": "https://kn.itmedia.co.jp/kn/article/2611/16/2000003181/",
+          "source": "ITmedia AI+",
+          "note": "オートバックスセブンがGoogle Workspace・Gemini導入、2032年度売上5000億円を目指す。"
+        },
+        {
+          "title": "AIモデリングもできる無償3D CAD「SolidCraft」を試してみた！",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/16/news011.html",
+          "source": "ITmedia AI+",
+          "note": "オープンソース3D CAD「SolidCraft」、ブラウザ対応で生成AIとの対話モデリング機能も。"
+        },
+        {
+          "title": "AIは答えを出せても「聞くべきこと」を見落とすことが税務の仕事を再現したテストで判明",
+          "url": "https://gigazine.net/news/20261115-dayjob-tax/",
+          "source": "GIGAZINE",
+          "note": "AIベンチマーク「DAYJOB: Tax」、米国税務業務で「聞くべきこと」の見落としが判明。"
+        },
+        {
+          "title": "AIが便利になればなるほど深刻になる「自動化の皮肉」に人間はどう対処すべきか",
+          "url": "https://gigazine.net/news/20261115-ai-isnt-replacing-sres-its-deskilling/",
+          "source": "GIGAZINE",
+          "note": "自動化の皮肉：AIが95%の問題を処理すると、残り5%の対応能力が低下する懸念。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 60,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "Microsoft 365で約36時間の大規模障害が発生し、メール機能の喪失で政府・企業に影響。TSMC従業員データ流出、京成への不正アクセスと情報漏えい事案が相次ぐ。複数のゼロデイと悪用確認脆弱性が登録。",
+      "topics": [],
+      "quick_hits": [
+        {
+          "title": "パスワードはもう限界　「物理」のセキュリティキーを手掛けるYubicoの日本市場戦略",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/16/news021.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "フィッシング対策としてハードウェアセキュリティキー（YubiKey等）の需要が高まる背景解説。"
+        },
+        {
+          "title": "Cohere Finding Shows Self-Hosted Open-Weight Models Still Need Egress Controls",
+          "url": "https://www.infoq.com/news/2026/11/cohere-open-weight-egress-risk/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "Qwen3.8等のオープン重みモデルがデータ流出・命令回避のリスクを持つ。自社ホスト時は出力トラフィック監視が必須。"
+        },
+        {
+          "title": "TightVNCおよびUltraVNCのWindows Viewerにおけるヒープベースのバッファオーバーフローの脆弱性",
+          "url": "https://jvn.jp/vu/JVNVU92656681/",
+          "source": "JVN",
+          "note": "TightVNC・UltraVNCのWindows Viewerにヒープバッファオーバーフロー（CERT/CC公表）。リモートアクセスツール利用者は要確認。"
+        },
+        {
+          "title": "ImageMagickを利用したアプリケーションにおける任意ファイル読み書きの脆弱性",
+          "url": "https://jvn.jp/vu/JVNVU95718857/",
+          "source": "JVN",
+          "note": "ImageMagickを使うアプリケーションで任意ファイル読み書きの脆弱性（CERT/CC公表）。検索画像処理機能がある場合は対応確認。"
+        },
+        {
+          "title": "PromZardにおけるリモートコード実行の脆弱性",
+          "url": "https://jvn.jp/vu/JVNVU98641453/",
+          "source": "JVN",
+          "note": "PromZardにリモートコード実行脆弱性（CERT/CC公表）。使用状況の確認が必要。"
+        },
+        {
+          "title": "ComfyUIのComfyUI-Easy-Use拡張機能における認証不要のパストラバーサルの脆弱性",
+          "url": "https://jvn.jp/vu/JVNVU99429639/",
+          "source": "JVN",
+          "note": "ComfyUI-Easy-Use拡張機能に認証不要のパストラバーサル脆弱性（CERT/CC公表）。ローカルComfyUI利用時も悪用リスク。"
+        },
+        {
+          "title": "CVE-2026-20320: Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20320",
+          "source": "CISA KEV",
+          "popularity": "悪用確認済",
+          "note": "CVE-2026-20320：Cisco BroadWorks XXE脆弱性、未認証で設定情報読み取り可能（悪用確認済）。"
+        },
+        {
+          "title": "CVE-2026-111793: Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111793",
+          "source": "CISA KEV",
+          "popularity": "悪用確認済",
+          "note": "CVE-2026-111793：Openwave Messaging Webtop Media Transcoderで認証ユーザーが不正な文書型処理可能（悪用確認済）。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 41,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWS/GCP両者がアーキテクチャ常識を塗り替える中、Cloudflare・HashiCorpなど周辺サービスの大型更新と、エージェントAI対応インフラが本格化。",
+      "topics": [
+        {
+          "headline": "AWS・GCP主要インフラの常識が急速に変わる",
+          "summary": "AWSではネットワーク設計の最適化実績、GCPではBigQuery・AlloyDB間のデータ連携、新認証・暗号化オプションなど、クラウド基盤技術が大きく進化。エージェントAIの登場で従来の運用ルールも再検討が迫られている。",
+          "why_it_matters": "Terraform/Python で AWS 構築してきた標準設計が既に陳腐化している可能性がある。特にセキュリティ・認証（IAM Identity Center の複数リージョン対応）、ネットワーク分離（Private Origins）、データ流通（Reverse ETL）は今後の設計の基盤になる。どこを取り、何を残すか判断軸を再点検すべき時期。",
+          "tags": [
+            "AWS",
+            "GCP",
+            "インフラ設計"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "勘定系をオンプレに残す三井住友信託、クラウドに移すソニー銀行　AWS活用の分かれ道",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/16/news019.html",
+              "source": "ITmedia エンタープライズ"
+            },
+            {
+              "title": "こんなに変わった！ AWSネットワークの常識",
+              "url": "https://speakerdeck.com/shotashiratori/nw-jaws-10th-keynote",
+              "source": "はてブ テクノロジー",
+              "popularity": "198 users"
+            },
+            {
+              "title": "IAM Identity Center に追加リージョン（セカンダリ）を作ってみた（KMSキーの作成から大阪リージョンの追加まで） | DevelopersIO",
+              "url": "https://dev.classmethod.jp/articles/add-iic-secondary-region/",
+              "source": "はてブ テクノロジー",
+              "popularity": "10 users"
+            },
+            {
+              "title": "Cloudflare Introduces Private Origins for Application Services",
+              "url": "https://www.infoq.com/news/2026/11/cloudflare-private-origins/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            },
+            {
+              "title": "From OLAP to OLTP: How Copel Simplified Reverse ETL Using BigQuery's Native Export to AlloyDB",
+              "url": "https://cloud.google.com/blog/products/data-analytics/reverse-etl-bigquery-exports-to-alloydb/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Cloudflare、プライベートネットワークへの安全なアクセス機能を一般提供",
+          "summary": "Cloudflare Application Services for Private Originsが GA に。パブリックネットワークからプライベート内部ネットワークホストへ、IP公開やファイアウォール穴あけなしにアクセス可能に。",
+          "why_it_matters": "VPC/セキュリティグループの設計が、エッジプロキシで大きく変わる可能性。オンプレミスとクラウドハイブリッド環境での穴あけ作業や VPN 構築の必要性を減らせるなら、Terraform での IaC も簡潔になる。",
+          "tags": [
+            "Cloudflare",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Cloudflare Introduces Private Origins for Application Services",
+              "url": "https://www.infoq.com/news/2026/11/cloudflare-private-origins/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "Google Cloud、エージェント対応の認証・管理・監視機能を次々投入",
+          "summary": "Organization Policy の新機能（ゼロトラスト向け）、SentinelOne連携による自動防御、CodeMender によるコード検証、Professional Agentic Architect 認証など、エージェントAI 時代の統治・可視化・証明書体系を急速に整備中。",
+          "why_it_matters": "生成 AI でコード量が増えてもセキュリティ・ガバナンスが追いつかない問題が、プラットフォーム機能で解決される流れ。自動生成コードの品質チェック、IAM 権限の段階的制限、SOC と連携した自動対応が標準化されれば、実装の信頼性が大きく高まる。",
+          "tags": [
+            "Google Cloud",
+            "エージェント",
+            "ガバナンス"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Powering agentic cloud governance: What's new in Organization Policy",
+              "url": "https://cloud.google.com/blog/products/identity-security/ai-powered-cloud-governance-whats-new-in-organization-policy/",
+              "source": "Google Cloud Blog"
+            },
+            {
+              "title": "Autonomous defense at cloud speed with SentinelOne and Google Security Operations",
+              "url": "https://cloud.google.com/blog/topics/partners/autonomous-defense-at-cloud-speed-with-sentinelone-and-google-security-operations/",
+              "source": "Google Cloud Blog"
+            },
+            {
+              "title": "Don’t just prompt AI — architect it: Introducing the Professional Agentic Architect Certification",
+              "url": "https://cloud.google.com/blog/topics/training-certifications/google-cloud-agentic-architect-certification-dont-just-prompt-ai-design-it/",
+              "source": "Google Cloud Blog"
+            },
+            {
+              "title": "Don't just flag it, fix it: How to run CodeMender in your pull requests",
+              "url": "https://cloud.google.com/blog/products/identity-security/how-to-run-codemender-in-your-pull-requests/",
+              "source": "Google Cloud Blog"
+            }
+          ]
+        },
+        {
+          "headline": "HashiCorp Consul 2.1.0、エージェント・多言語AI対応のネットワーク管理へ進化",
+          "summary": "Consul 2.1.0 がリリース。従来のサービスメッシュ機能に加え、AI ワークロードへの信頼できる接続性確保、接続復旧性・セキュリティの強化などが特徴。Terraform/Concert との統合で infrastructure risk を可視化・改善。",
+          "why_it_matters": "Terraform を使ったインフラ定義と、オペレーショナルなリスク管理が統合される。従来は運用チェックリストで手作業だった脆弱性発見・修復が、ポリシーコード化・自動実行の対象になる。",
+          "tags": [
+            "Terraform",
+            "ネットワーク"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "From insight to action: improving infrastructure risk posture with Terraform and Concert",
+              "url": "https://www.hashicorp.com/blog/from-insight-to-action-improving-infrastructure-risk-posture-with-terraform-and-c",
+              "source": "HashiCorp Blog"
+            },
+            {
+              "title": "Consul 2.1.0: Advancing secure, resilient connectivity for modern and agentic applications",
+              "url": "https://www.hashicorp.com/blog/consul-210-advancing-secure-resilient-connectivity-for-modern-and-agentic-applica",
+              "source": "HashiCorp Blog"
+            }
+          ]
+        },
+        {
+          "headline": "大規模 macOS インフラ構築事例：なぜ Namespace は MacBook Pro をデータセンター化したのか",
+          "summary": "Namespace は Windows・macOS 仮想環境をオンライン提供する企業で、サービス展開のために大量の MacBook Pro を導入、データセンター運用。その背景と選択理由を解説。",
+          "why_it_matters": "クラウドネイティブでない環境（macOS 互換性必須）への投資判断、エコシステムロックインの実例として参考になる。Terraform で Mac インスタンスを扱う機会はまだ限定的だが、今後増える可能性がある。",
+          "tags": [
+            "macOS",
+            "インフラ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "大量のMacBook Proでデータセンターを構築した企業が「なぜMacなのか」を解説",
+              "url": "https://gigazine.net/news/20261115-mac-datacenter-namespace/",
+              "source": "GIGAZINE"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
+          "url": "https://bruceroettgers.eu/blog/protomaps/",
+          "source": "Hacker News",
+          "popularity": "111 points",
+          "note": "Protomaps でセルフホストマップタイル配置が低コスト化。地図データのクラウド依存を減らせる選択肢が普及中。"
+        },
+        {
+          "title": "FreeBSD bhyve Live Migration: Moving VMs Between Hosts",
+          "url": "https://gyptazy.com/blog/freebsd-bhyve-live-migration-support-rfc/",
+          "source": "Lobsters",
+          "popularity": "23 score",
+          "note": "FreeBSD bhyve Live Migration 機能。ハイパーバイザーレベルでのホスト間 VM 移行が可能に。オンプレ環境での可用性向上。"
+        },
+        {
+          "title": "Google named the furthest in vision for the Gartner Magic Quadrant for Data Lakehouse Platforms",
+          "url": "https://cloud.google.com/blog/products/data-analytics/google-is-a-leader-in-the-gartner-magic-quadrant-for-data-lakehouse-platforms/",
+          "source": "Google Cloud Blog",
+          "note": "Google Cloud、Gartner Data Lakehouse Platform Magic Quadrant で Leaders・Vision 最大グループに。BigQuery の競争力が公式認定。"
+        },
+        {
+          "title": "How lemonflow built real-time agents for EV charging using Gemma and TPUs",
+          "url": "https://cloud.google.com/blog/topics/startups/building-real-time-agents-for-ev-charging-using-gemma-and-tpus/",
+          "source": "Google Cloud Blog",
+          "note": "lemonflow が EV 充電用リアルタイムエージェント を Gemma・TPU で実装。生成 AI・インフラの実装事例。"
+        },
+        {
+          "title": "Building the next generation of multimodal AI experiences with fal in Microsoft Foundry",
+          "url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/building-the-next-generation-of-multimodal-ai-experiences-with-fal-in-microsoft-/4570032",
+          "source": "Azure Blog",
+          "note": "Microsoft、fal と連携しビデオ生成を Microsoft Foundry に統合。Azure × マルチモーダル AI の強化。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 19,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "PostgreSQL 19リリースが延期となった原因がAIによるコードレビューに関連する可能性が指摘される一方、Cloudflareがai専用ヘッドレスブラウザをオープンソース公開。開発ツール・インフラの進化と課題が表れている。",
+      "topics": [
+        {
+          "headline": "PostgreSQL 19リリース延期、β4で新機能取り下げ相次ぐ",
+          "summary": "PostgreSQL 19 RC2が公開されたが、11月19日予定の正式リリースが延期へ。β4段階で多くの新機能が取り下げられた状況から、AIによるコードレビューが原因の可能性が指摘されている。",
+          "why_it_matters": "本番で使うOSSデータベースの開発プロセスに、AI導入時の品質確保課題が表れた。複雑なシステムの変更ロジック確認がAIだけでは不十分な可能性を示唆し、エンジニアとしてレビュー体制の設計を参考にできる。",
+          "tags": [
+            "PostgreSQL",
+            "AI",
+            "開発プロセス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "PostgreSQL 19リリース延期の背景。β4で多くの新機能取り下げが発生、原因はAIによるコードレビューか",
+              "url": "https://www.publickey1.jp/blog/26/postgresql_194ai.html",
+              "source": "Publickey"
+            }
+          ]
+        },
+        {
+          "headline": "Cloudflare、AIエージェント向けヘッドレスブラウザ「Kitesurf」をオープンソース公開",
+          "summary": "CloudflareはAIエージェント操作を想定した軽量ヘッドレスブラウザ「Kitesurf」をGitHubで公開。タブ・テーマ・拡張機能を持たないAI専用設計。",
+          "why_it_matters": "AIエージェントがWebを自動操作する場面が業務レベルで現れている。ヘッドレスブラウザの選択肢が増え、自動化設計時の検討対象が広がった。",
+          "tags": [
+            "Cloudflare",
+            "AIエージェント",
+            "ヘッドレスブラウザ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Cloudflare、AI専用でタブやテーマや拡張などない軽量ヘッドレスブラウザ「Kitesurf」、オープンソースで公開",
+              "url": "https://www.publickey1.jp/blog/26/cloudflareaikitesurf.html",
+              "source": "Publickey"
+            }
+          ]
+        },
+        {
+          "headline": "ブラウザ上でSQLite・CSVを編集変換できる無料Webアプリ「editsqlite」",
+          "summary": "ブラウザベースのSQLiteエディタ「editsqlite」が、.sqlite/.db形式やSQLダンプ、CSVファイルの編集と形式変換に対応。サーバーアップロードやツールインストール不要。",
+          "why_it_matters": "ローカルでDB調査や変換が完結する選択肢が増えた。開発やテスト時の小規模データ操作の手間が減り、プロトタイプ検証が素早くなる。",
+          "tags": [
+            "SQLite",
+            "Webツール",
+            "データベース"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "無料でSQLiteデータベース（.sqlite・.db）・.sqlダンプファイル・CSVファイルなどを編集・変換できる「editsqlite」",
+              "url": "https://gigazine.net/news/20261115-editsqlite/",
+              "source": "はてブ テクノロジー",
+              "popularity": "4 users"
+            }
+          ]
+        },
+        {
+          "headline": "git archive 生成zipをAWS CodePipeline のソースに使用時、DOSタイムスタンプはUTC指定が必須",
+          "summary": "git archiveで作成したzipをCodePipelineビルドのソースとして使う場合、zipのDOSタイムスタンプ（タイムゾーン情報なし）をUTCで作成する必要がある。拡張タイムスタンプはUTC格納だが、AWS CodePipelineの処理ではDOSタイムスタンプが基準となる。",
+          "why_it_matters": "AWS Terraform/Pythonでビルドパイプラインを構築する際、zipタイムスタンプによる意図しない再ビルドトリガーを避けられる。Terraformでzipを作成する実装で注意すべき落とし穴。",
+          "tags": [
+            "AWS",
+            "CodePipeline",
+            "zip"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "git archive で作成した zip ファイルを AWS CodePipeline のビルドのソースとして使う場合はDOSタイムスタン",
+              "url": "https://zenn.dev/yskszk63/articles/codepipeline-zip-dostime",
+              "source": "はてブ テクノロジー",
+              "popularity": "5 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Museに雑に投げて頭を空けておく - taxin.dev",
+          "url": "https://taxin.dev/articles/2026-11-15",
+          "source": "はてブ テクノロジー",
+          "popularity": "108 users",
+          "note": "Meta Muse、個人タスクやプライベート調べ物の自動化で認知負荷低減の実例"
+        },
+        {
+          "title": "脱WordPress：10年超の個人ブログをAstro + Cloudflare Workersへ移行しPageSpeed 100点を実現",
+          "url": "https://zenn.dev/unsoluble_sugar/articles/8cdf1efc01e6cb",
+          "source": "Zenn トレンド",
+          "popularity": "39 いいね",
+          "note": "WordPressから脱却、Astro+Cloudflare WorkersでPageSpeed 100点達成"
+        },
+        {
+          "title": "Memory management in 40 major C projects, a survey",
+          "url": "https://theconsensus.dev/p/2026/11/08/c-memory-management-survey.html",
+          "source": "Lobsters",
+          "popularity": "42 score",
+          "note": "C言語40プロジェクトのメモリ管理手法を調査、実装差異の学習教材"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 20,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "Nvidiaリーダーシップ危機の余波は業界全体に波及。AI規制やイノベーションへの影響が顕在化している。",
+      "topics": [
+        {
+          "headline": "米議会、中国スパイ事件後にAIチップ輸出規制を強化へ",
+          "summary": "Jensen Huang前CEO辞任に絡む中国スパイ容疑事件を受け、民主・共和両党がAIチップの輸出規制をさらに厳しくする動きを進めている。",
+          "why_it_matters": "AIチップの流通コントロール強化は、クラウド・LLMサービスの利用形態や調達戦略に影響する可能性がある。地域別の規制差を意識した設計判断が必要になるかもしれない。",
+          "tags": [
+            "規制",
+            "AIチップ",
+            "地政学"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "インドのチップスタートアップ、AI対応センサで$24M調達—General Atomicsなど採用",
+          "summary": "Bharat Semiが2,400万ドルのシード資金を確保。AI対応センサ技術で設計採用実績を持つ。",
+          "why_it_matters": "Nvidia独占への代替チップ・センサ需要が顕在化している。エッジAI推論用途の選択肢増加を追跡して、自分の設計判断の幅を広げておくとよい。",
+          "tags": [
+            "AIチップ",
+            "スタートアップ",
+            "センサ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Indian chip startup Bharat Semi lands $24M seed round as it eyes global AI sensor market",
+              "url": "https://techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market/",
+              "source": "TechCrunch"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Apple’s first smart glasses are coming together",
+          "url": "https://www.theverge.com/tech/1033968/apples-first-smart-glasses-are-coming-together",
+          "source": "The Verge",
+          "note": "Apple初のスマートグラス、ARなし基本版が2026年6月WWDCで発表予定。量産時期は未定。"
+        },
+        {
+          "title": "AIノイズキャンセリング＆32bit float録音対応でE-Inkディスプレイ搭載のワイヤレスマイク「Insta360 Mic Pro」はどれほど高性能なのか実際に使ってみたよレビュー",
+          "url": "https://gigazine.net/news/20261115-insta360-mic-pro-usage/",
+          "source": "GIGAZINE",
+          "note": "Insta360 Mic Proはカラーe-Inkディスプレイ+AIノイズキャンセル+32bit float録音で動画撮影用途対応。"
+        },
+        {
+          "title": "Let Me Let You Own Your Data",
+          "url": "https://www.willett.io/posts/data/",
+          "source": "Lobsters",
+          "popularity": "45 score",
+          "note": "データオーナーシップを巡る議論が継続中。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 10,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "国内外で政策・インフラ・人物の転換が相次ぐ。ロシアウクライナの通信制限問題、英国の雇用政策検討、米宇宙産業の競争構図変化が焦点。",
+      "topics": [
+        {
+          "headline": "Vulcan 初号機の全損がULA初の総損失、SpaceX独占の圧力強まる",
+          "summary": "United Launch Alliance の Vulcan ロケットが打ち上げに失敗し、ULA創設から20年間で初めての任務全体の喪失となった。これにより民間宇宙産業での競争図式に変化をもたらす。",
+          "why_it_matters": "米国の宇宙産業多元化戦略が揺らぎ、SpaceX の市場支配力がさらに強まる可能性がある。",
+          "tags": [
+            "宇宙",
+            "米国"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Vulcan rocket fails during launch, dealing major blow to SpaceX competitors",
+              "url": "https://arstechnica.com/space/2026/11/vulcan-rocket-fails-during-launch-dealing-major-blow-to-spacex-competitors/",
+              "source": "Ars Technica"
+            }
+          ]
+        },
+        {
+          "headline": "ウクライナ大統領、米衛星通信の制限解除を改めて訴え——軍の無人機迎撃に支障",
+          "summary": "ゼレンスキー大統領は、ウクライナ軍が使用する米国の衛星通信サービスの制限によってロシア軍の無人機迎撃に影響が出ていると述べ、制限解除を改めて求めた。",
+          "why_it_matters": "ウクライナの防衛能力が米国の通信インフラ制限に直結する脆弱性を示し、供給国側の政策転換が戦況に波及することを浮き彫りにしている。",
+          "tags": [
+            "ウクライナ",
+            "通信"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "ゼレンスキー大統領 米の衛星通信サービスの制限解除訴え",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261116de76330",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "英国で若年労働層の雇用創出へ、National Insurance段階的引き下げを検討",
+          "summary": "Milburn 報告書は、英国の25歳未満の層に対する雇用コスト削減を5年かけて段階的に実施する提案を示す。",
+          "why_it_matters": "欧米主要国での労働政策転換を示す動きで、若年失業・技能形成が政治課題化している。",
+          "tags": [
+            "労働",
+            "英国"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Cut national insurance for under-25s to create jobs, Milburn report to say",
+              "url": "https://www.bbc.co.uk/news/articles/c6p9dzmj514ko?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "カナダのアルバータ州で独立運動が再燃、米国の影もちらつく",
+          "summary": "原油産地のアルバータ州では独立運動の動きが伏流し続けており、背景に米国の影響を指摘する見方がある。",
+          "why_it_matters": "北米のエネルギー政治と連邦制の綻びが露出し、米国のカナダ戦略にも波及する可能性がある。",
+          "tags": [
+            "カナダ",
+            "政治"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "カナダの原油産地アルバータ州でくすぶる独立運動　ちらつく米国の影",
+              "url": "http://www.asahi.com/articles/ASVCB74VKVCBUHBI003M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "ニューオーリンズのクルーズ船衝突、船舶の操舵機能喪失が先行——NTSB予備調査",
+          "summary": "米国運輸安全委員会の予備調査によれば、金曜日のタンカーとクルーズ船の衝突前に、タンカーの操舵機能の喪失が起きていたという。",
+          "why_it_matters": "海上輸送の安全性に対する定期的な検証と、商用船の老朽化問題が議論の対象となる。",
+          "tags": [
+            "海運",
+            "米国"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "'Steering casualty' preceded New Orleans cruise ship collision, says NTSB",
+              "url": "https://www.bbc.co.uk/news/articles/c65y131w1534o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Teenager Andreeva caps stunning week with WTA Finals title",
+          "url": "https://www.bbc.co.uk/sport/tennis/articles/c61740145y7wo?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "テニスプレイヤーのミーラ・アンドレーバがWTAファイナルで優勝し、フレンチオープンチャンピオンの地位を確固としたシーズンを締めくくった。"
+        },
+        {
+          "title": "Trident submarine returns home after record-breaking undersea patrol",
+          "url": "https://www.bbc.co.uk/news/articles/c32l5ny1r7x9o?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "英国の Trident 原子力潜水艦が、英国艦艇としての記録的な長期海洋派遣から帰路。"
+        },
+        {
+          "title": "Prince Harry praises war veterans on surprise visit to Ukraine",
+          "url": "https://www.bbc.co.uk/news/articles/c60evn992jq8o?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "ハリー王子がウクライナの戦傷退役兵を支援する訪問で、同国のレジリエンスを称賛。"
+        },
+        {
+          "title": "大東建託が国産木材使用倍増へ　住友林業系から調達、円安で日本産回帰 - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUC052OX0V01C26A1000000/",
+          "source": "はてブ 世の中",
+          "popularity": "22 users",
+          "note": "大東建託が円安を背景に国産木材調達を2年で倍増、ウッドショック後の地政学リスク対策を強化。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 49,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "25"
+      ]
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 219,
+    "unclassified": 20,
+    "classify_error": null
+  }
+}
