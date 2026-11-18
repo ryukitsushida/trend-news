@@ -1,0 +1,1172 @@
+{
+  "date": "2026-11-18",
+  "generated_at": "2026-11-18 11:17 JST",
+  "lead": "生成AIコストと実装戦略が急速に変わる局面、セキュリティと経営リスクの2つの視点で判断が迫られる。",
+  "highlights": [
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "GPT-6.2はコスト効率が3分の1へ低下するため、LLMエージェント構築の経済性が大きく変わり、自分たちの実装判断を即座に見直す必要がある。",
+      "topic": {
+        "headline": "OpenAI、新モデルGPT-6.2 Astra/Sol発表・前世代比3分の1コスト",
+        "summary": "OpenAIが専門業務向けの「GPT-6.2 Astra」と汎用モデルの「GPT-6.2 Sol」を発表。Astraは一部性能評価で前世代を上回るスコアを大幅なコスト削減で実現し、独立指標で Claude Fable 5.2に次ぐ2位を獲得。両モデルはAPI・各有料プランで利用可能。",
+        "why_it_matters": "コスト効率の向上は実装判断・エージェント構築の経済性を大きく変える。性能ベンチマークは他社比較の参考になるが、サイバーセキュリティ能力が「Critical」で制限されることも把握しておくべき。",
+        "tags": [
+          "LLM",
+          "API価格",
+          "性能"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "「GPT-6.2 Astra／Sol」登場　前世代超える性能を「コスト1/3で実現」　Ultrafast提供も拡大",
+            "url": "https://www.itmedia.co.jp/aiplus/article/2611/18/2000003282/",
+            "source": "ITmedia AI+"
+          },
+          {
+            "title": "OpenAI、「GPT-6.2」の「Astra」と「Sol」を公開　AI自己改善能力は初の「High」に",
+            "url": "https://www.itmedia.co.jp/news/article/2611/18/2000003279/",
+            "source": "ITmedia NEWS"
+          },
+          {
+            "title": "GPT‑6.2 Astra and GPT‑6.2 Sol",
+            "url": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/",
+            "source": "Simon Willison"
+          },
+          {
+            "title": "OpenAI launches GPT-6.2 Astra and Sol with lower API prices and some benchmark gains",
+            "url": "https://the-decoder.com/openai-launches-gpt-6-2-astra-and-sol-with-lower-api-prices-and-some-benchmark-gains/",
+            "source": "The Decoder"
+          },
+          {
+            "title": "OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol now available",
+            "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+            "source": "GitHub Changelog"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "コーディング特化モデルが複数出そろったことで、プロジェクトの性質に応じた最適なモデル選定ができるようになり、コスト・精度のバランス改善が期待できる。",
+      "topic": {
+        "headline": "Microsoft、コーディング用AIモデル「MAI Code 2」「Code 2 Flash」発表",
+        "summary": "マイクロソフトがコーディング専用の「MAI Code 2」と安価な「MAI Code 2 Flash」をMicrosoft Igniteで発表。競合と同等性能を低価格で提供することをうたっている。GitHub Copilotでも利用可能。",
+        "why_it_matters": "コーディング専用モデルの選択肢が増加。価格と性能のバランスを検討する際、実装に合わせたモデル選定の幅が広がった。",
+        "tags": [
+          "コーディング",
+          "GitHub Copilot",
+          "低価格"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "［速報］マイクロソフト、コーディング用AIモデルとして高性能かつ低価格「MAI Code 2」「MAI Code 2 Flash」発表",
+            "url": "https://www.publickey1.jp/blog/26/aimai_code_2mai_code_2_flash.html",
+            "source": "はてブ テクノロジー",
+            "popularity": "15 users"
+          },
+          {
+            "title": "MAI Code 2 and Code 2 Flash",
+            "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+            "source": "Hacker News",
+            "popularity": "289 points"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "PowerShellが Windows 標準へ移行することで、Terraform runner や自動化スクリプトの互換性確認が急務になり、開発環境の整備計画に影響する。",
+      "topic": {
+        "headline": "PowerShell 7、次回 Windows 更新から組み込みへ",
+        "summary": "マイクロソフトが PowerShell 7 を Windows に統合予定。PowerShell 5.1 の後継として次期 Windows リリースに含まれると発表。",
+        "why_it_matters": "Windows 標準シェルの新版へ移行は、スクリプト資産の確認・互換性テストが必要。自動化や Terraform runner 環境に影響する可能性がある。",
+        "tags": [
+          "PowerShell",
+          "Windows",
+          "開発環境"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "PowerShell 7 is coming to Windows - PowerShell Team",
+            "url": "https://devblogs.microsoft.com/powershell/powershell-7-coming-to-windows/",
+            "source": "はてブ テクノロジー",
+            "popularity": "7 users"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "NVIDIA の中国向けチップ販売中止はAIインフラの地政学的リスクを顕在化させ、長期的なクラウド基盤の選択肢検討と代替ベンダー評価が必要になる。",
+      "topic": {
+        "headline": "NVIDIA、中国向けチップ販売を中止へ—フアン氏退任後の大転換",
+        "summary": "暫定CEO・コレット・クレスが、同社は中国へのチップ販売を継続しないと表明。フアン氏の退任と関連する大幅な事業方針の変更。",
+        "why_it_matters": "グローバルなAIインフラ構築の競争環境が激変する可能性がある。長期的なクラウド・AI基盤の地政学的リスク評価と、代替ベンダーの検討が迫られる。",
+        "tags": [
+          "NVIDIA",
+          "地政学リスク",
+          "チップサプライチェーン"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Nvidia is abandoning China after Jensen Huang’s ouster",
+            "url": "https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/",
+            "source": "TechCrunch"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "general",
+      "category_label": "一般ニュース",
+      "reason": "中東の軍事衝突激化は石油価格とエネルギーコストに直結し、データセンター運用費やクラウド料金の値上げ局面での経営判断に影響を与える可能性がある。",
+      "topic": {
+        "headline": "米軍とイランがミサイル施設の攻撃で応酬、中東緊張が継続",
+        "summary": "ホルムズ海峡周辺でイランが1週間で3度目となるバーレーンのアメリカ軍施設への攻撃声明を出し、これに対してアメリカ軍はイランのミサイル発射施設を攻撃。両者の攻撃が応酬している。",
+        "why_it_matters": "中東の軍事衝突の激化は石油価格や国際情勢に影響を与え、エネルギー価格や経済全体の不確実性を高める。",
+        "tags": [
+          "米イラン対立",
+          "中東情勢"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "米軍がイランのミサイル施設を攻撃 両者で攻撃の応酬に",
+            "url": "https://news.web.nhk/newsweb/na/nd-20261118de77531",
+            "source": "NHK 主要"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "security",
+    "category_label": "セキュリティ",
+    "headline": "OpenJDK「Java4Shell」(CVE-2026-114938)、認証不要でRCE・Java 17/21/25/27などに影響",
+    "sources": [
+      {
+        "title": "OpenJDKにおけるヒープベースのバッファオーバーフローの脆弱性",
+        "url": "https://jvn.jp/vu/JVNVU99608534/",
+        "source": "JVN"
+      },
+      {
+        "title": "Javaの「Java4Shell」（CVE-2026-114938）をOracleが正式公表 認証不要で悪用可能な脆弱性、Java 17・21・25・27などに影響|セキュリティニュースのセキュリティ対策Lab",
+        "url": "https://rocket-boys.co.jp/security-measures-lab/java4shell-cve-2026-114938-oracle-openjdk-base64-rce-20261118/",
+        "source": "はてブ テクノロジー",
+        "popularity": "11 users"
+      },
+      {
+        "title": "Critical Java4Shell flaw allows RCE attacks on major Java applications",
+        "url": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/",
+        "source": "BleepingComputer"
+      },
+      {
+        "title": "Java4Shell: RCE in OpenJDK when processing Base64",
+        "url": "https://calif.io/java4shell/",
+        "source": "Hacker News",
+        "popularity": "534 points"
+      },
+      {
+        "title": "Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges",
+        "url": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html",
+        "source": "The Hacker News"
+      }
+    ],
+    "background": "Oracleが2026年11月17日に公開したJavaセキュリティアップデートで、Base64デコード最適化処理の脆弱性「Java4Shell」(CVE-2026-114938)が発見された。ヒープベースのバッファオーバーフローにより、認証不要でリモートコード実行(RCE)が可能。CVSS 8.1(High)で評価され、Java 17/21/25/27など複数のLTS・非LTSバージョンに影響。",
+    "concepts": [
+      {
+        "term": "ヒープベースのバッファオーバーフロー",
+        "explanation": "メモリのヒープ領域に割り当てられたバッファに意図より大きなデータを書き込み、隣接するメモリを破壊する脆弱性。適切に細工されたBase64データを送ることでメモリを汚染し、任意コード実行につながる。"
+      },
+      {
+        "term": "Base64デコード最適化処理",
+        "explanation": "テキストをバイナリに変換するBase64デコード処理を高速化した実装で、その最適化ロジックに境界チェック不備があり脆弱性が生じた。Webアプリやメッセージング処理で頻繁に使われるため、影響が広い。"
+      },
+      {
+        "term": "CVSS 8.1 (High)",
+        "explanation": "脆弱性の深刻度スコア(0～10)。8.1は『認証不要・ネットワーク経由・複雑な条件不要』で悪用可能な高リスク水準で、迅速な対応が求められるレベル。"
+      }
+    ],
+    "for_you": "AWSでJavaアプリをTerraformで構築・運用するあなたにとって、この脆弱性は『本番環境への即座の影響確認』と『デプロイメントパイプラインの見直し』が必須。Jenkins・Keycloak・Atlassianスタックを使っている場合、認証バイパス可能なため侵攻の入口になりやすい。Java 17/21/25/27のうちどのバージョンを本番で走らせているか、まず洗い出しが必要。",
+    "try_this": "今週中に、自分の本番環境・ステージングで稼働するJavaアプリケーション・ミドルウェア(Jenkins、Keycloak、Atlassian製品など)のバージョンをリスト化。Pythonで `aws ec2 describe-instances` や `aws lambda list-functions` を使い、自動でバージョン情報を収集するスクリプトを書いて、影響度を定量化するのが有効。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "OpenAIが新モデル「GPT-6.2 Astra」「Sol」を発表し、企業向け確認機能やAIエージェント決済も展開。エンジニアの必須スキルや組織のAI活用のあり方が改めて問われている。",
+      "topics": [
+        {
+          "headline": "OpenAI、新モデルGPT-6.2 Astra/Sol発表・前世代比3分の1コスト",
+          "summary": "OpenAIが専門業務向けの「GPT-6.2 Astra」と汎用モデルの「GPT-6.2 Sol」を発表。Astraは一部性能評価で前世代を上回るスコアを大幅なコスト削減で実現し、独立指標で Claude Fable 5.2に次ぐ2位を獲得。両モデルはAPI・各有料プランで利用可能。",
+          "why_it_matters": "コスト効率の向上は実装判断・エージェント構築の経済性を大きく変える。性能ベンチマークは他社比較の参考になるが、サイバーセキュリティ能力が「Critical」で制限されることも把握しておくべき。",
+          "tags": [
+            "LLM",
+            "API価格",
+            "性能"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「GPT-6.2 Astra／Sol」登場　前世代超える性能を「コスト1/3で実現」　Ultrafast提供も拡大",
+              "url": "https://www.itmedia.co.jp/aiplus/article/2611/18/2000003282/",
+              "source": "ITmedia AI+"
+            },
+            {
+              "title": "OpenAI、「GPT-6.2」の「Astra」と「Sol」を公開　AI自己改善能力は初の「High」に",
+              "url": "https://www.itmedia.co.jp/news/article/2611/18/2000003279/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "GPT‑6.2 Astra and GPT‑6.2 Sol",
+              "url": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/",
+              "source": "Simon Willison"
+            },
+            {
+              "title": "OpenAI launches GPT-6.2 Astra and Sol with lower API prices and some benchmark gains",
+              "url": "https://the-decoder.com/openai-launches-gpt-6-2-astra-and-sol-with-lower-api-prices-and-some-benchmark-gains/",
+              "source": "The Decoder"
+            },
+            {
+              "title": "OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol now available",
+              "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "Microsoft、コーディング用AIモデル「MAI Code 2」「Code 2 Flash」発表",
+          "summary": "マイクロソフトがコーディング専用の「MAI Code 2」と安価な「MAI Code 2 Flash」をMicrosoft Igniteで発表。競合と同等性能を低価格で提供することをうたっている。GitHub Copilotでも利用可能。",
+          "why_it_matters": "コーディング専用モデルの選択肢が増加。価格と性能のバランスを検討する際、実装に合わせたモデル選定の幅が広がった。",
+          "tags": [
+            "コーディング",
+            "GitHub Copilot",
+            "低価格"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "［速報］マイクロソフト、コーディング用AIモデルとして高性能かつ低価格「MAI Code 2」「MAI Code 2 Flash」発表",
+              "url": "https://www.publickey1.jp/blog/26/aimai_code_2mai_code_2_flash.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "15 users"
+            },
+            {
+              "title": "MAI Code 2 and Code 2 Flash",
+              "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+              "source": "Hacker News",
+              "popularity": "289 points"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAI、企業向けChatGPT紹介確認機能をβ提供開始",
+          "summary": "OpenAIは企業向けにβ機能を公開し、自社がChatGPTでどのように紹介されているかを確認できるようにした。対象企業は自社のAIエージェントをChatGPT広告のリンク先に設定することも可能。",
+          "why_it_matters": "企業がAIに対する自社情報の提示方法を把握・管理できるようになる。エンタープライズ利用時の信頼性・透明性が高まる。",
+          "tags": [
+            "企業向け",
+            "透明性",
+            "ChatGPT"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "わが社はChatGPTでどう紹介されている？　OpenAIが企業向けの確認機能を提供開始",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/18/news022.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "GAS×Gemini連携が一般提供開始、コーディング不要でスクリプト作成可能に",
+          "summary": "Google Apps ScriptとGeminiの連携が一般提供を開始。コーディング知識がないユーザーでも自然言語の指示でスクリプト作成・編集・エラー修正ができるようになり、管理者側は権限設定の確認が必要。",
+          "why_it_matters": "業務自動化の敷居が下がり、非技術ユーザーもスクリプト作成可能になる。一方、シャドーAI同様、組織内での利用管理・権限制御の重要性が高まる。",
+          "tags": [
+            "Google",
+            "自動化",
+            "権限管理"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "GAS×Geminiが一般提供開始　IT管理者が確認すべき権限設定は？",
+              "url": "https://kn.itmedia.co.jp/kn/article/2611/18/2000003256/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "Geminiの「スキル」機能拡張、他ユーザーへの共有とGoogleドライブ参照に対応",
+          "summary": "Geminiのカスタム指示保存機能「スキル」が拡張され、作成したスキルを他ユーザーと共有でき、Googleドライブなどのファイルを追加して常に最新データを参照できるようになった。",
+          "why_it_matters": "プロンプトの再利用性・保守性が向上し、チーム全体での知見・テンプレートの統一が可能に。生産性向上の反面、情報アクセス権限の設計が重要になる。",
+          "tags": [
+            "Gemini",
+            "スキル",
+            "データ連携"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Googleドライブの最新ファイルをGeminiが常時参照　「スキル」に新機能追加",
+              "url": "https://kn.itmedia.co.jp/kn/article/2611/18/2000003259/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "External sandboxes for coding agents",
+          "url": "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/",
+          "source": "Simon Willison",
+          "note": "Simon Willison氏が、コーディングエージェント実行時のサンドボックス方式について、ローカルモデル利用時にプロンプト インジェクション攻撃への対策を検討する記事を公開。"
+        },
+        {
+          "title": "How Shopify Orchestrates AI-Powered Mobile App Development Without Overloading Developers' Machines",
+          "url": "https://www.infoq.com/news/2026/11/shopify-remote-ai-dev/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "Shopifyが開発した「Remote Dev」は、AIエージェントがiOS/Android開発を独立して進行できるよう、開発者マシンのリソース枯渇を回避する仕組みを実装。"
+        },
+        {
+          "title": "Building the Agent Host Protocol for sessions that continue across devices",
+          "url": "https://github.blog/engineering/engineering-principles/building-the-agent-host-protocol-for-sessions-that-continue-across-devices/",
+          "source": "GitHub Blog",
+          "note": "GitHubが「Agent Host Protocol」をオープンソース化。エージェントセッションをエディタ・アプリ・スマートフォン・クラウド間で継続できる基盤を提供。"
+        },
+        {
+          "title": "Not Everything Needs an LLM",
+          "url": "https://newsletter.posthog.com/p/decision-models",
+          "source": "Hacker News",
+          "popularity": "101 points",
+          "note": "「Not Everything Needs an LLM」という題の議論が注目。AIエージェント普及の一方で、用途を問わない過度な活用への警告が集まっている。"
+        },
+        {
+          "title": "AIにクレカを渡せるか　OpenAI「ChatGPT Wallet」米国で提供開始",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/18/news028.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "OpenAIが「ChatGPT Wallet」を米国で提供開始。AIエージェントがカード情報を保有し決済を代行する仕組み。カード情報の安全性が実装の課題。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 94,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "Java OpenJDKに認証不要でRCE可能な深刻脆弱性「Java4Shell」が確認され、楽天証券・プレイド・ポケットチェンジなど複数の国内主要企業でテスト環境や本番環境からの情報漏えいが相次いでいます。",
+      "topics": [
+        {
+          "headline": "OpenJDK「Java4Shell」(CVE-2026-114938)、認証不要でRCE・Java 17/21/25/27などに影響",
+          "summary": "OracleがJava SEのセキュリティアップデートを公開し、Base64デコード最適化処理の脆弱性「Java4Shell」(CVE-2026-114938)をCVSS 8.1(High)で正式リスク評価に掲載。認証不要の悪用が可能で、Jenkins・Atlassian Jira・Confluence・Keycloak等の企業アプリに影響。",
+          "why_it_matters": "Java は AWS 上の多くのエンタープライズアプリで稼働しています。本番環境での影響を確認し、アップデート計画を早期に策定する必要があります。",
+          "tags": [
+            "Java",
+            "RCE",
+            "ゼロデイ"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "OpenJDKにおけるヒープベースのバッファオーバーフローの脆弱性",
+              "url": "https://jvn.jp/vu/JVNVU99608534/",
+              "source": "JVN"
+            },
+            {
+              "title": "Javaの「Java4Shell」（CVE-2026-114938）をOracleが正式公表 認証不要で悪用可能な脆弱性、Java 17・21・25・27などに影響|セキュリティニュースのセキュリティ対策Lab",
+              "url": "https://rocket-boys.co.jp/security-measures-lab/java4shell-cve-2026-114938-oracle-openjdk-base64-rce-20261118/",
+              "source": "はてブ テクノロジー",
+              "popularity": "11 users"
+            },
+            {
+              "title": "Critical Java4Shell flaw allows RCE attacks on major Java applications",
+              "url": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "Java4Shell: RCE in OpenJDK when processing Base64",
+              "url": "https://calif.io/java4shell/",
+              "source": "Hacker News",
+              "popularity": "534 points"
+            },
+            {
+              "title": "Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges",
+              "url": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "楽天証券、テスト環境の顧客データ約1572万口座漏えい・ワンタイムキー発行遅延中",
+          "summary": "楽天証券が11月16日に第三者による不正アクセスを検知し、テスト環境で管理されていた合計約1572万口座の顧客情報の一部が11月11日に外部へ漏えいしたおそれがあると判明。出金やログインパスワード変更に必要なワンタイムキーの発行に時間がかかっている。",
+          "why_it_matters": "顧客資産に関わる金融機関のテスト環境管理の課題が浮彫になりました。本番データをテスト環境に持ち込まない・強化された認証を適用する設計の重要性を示しています。",
+          "tags": [
+            "情報漏えい",
+            "テスト環境",
+            "金融"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "口座情報漏えいの楽天証券、「ワンタイムキー発行に時間がかかっている」　出金やログインパス変更に必要",
+              "url": "https://www.itmedia.co.jp/news/article/2611/18/2000003284/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "楽天証券への不正アクセスについてまとめてみた",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/11/18/100525",
+              "source": "piyolog"
+            },
+            {
+              "title": "「楽天証券」漏えい、あなたは対象？　ログインして「重要なお知らせ」確認を",
+              "url": "https://www.itmedia.co.jp/news/article/2611/18/2000003281/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "楽天証券から漏洩した情報とは？　テスト環境に一時的に置いた顧客データを狙われたか（山口健太） - エキスパート - Yahoo!ニュース",
+              "url": "https://news.yahoo.co.jp/expert/articles/a46f1f27a0870d14588ebdbaa074fb457c0d95b3",
+              "source": "はてブ テクノロジー",
+              "popularity": "75 users"
+            }
+          ]
+        },
+        {
+          "headline": "プレイド「KARTE」、サーバー脆弱性を悪用した不正アクセスで利用企業のアカウント情報漏えい",
+          "summary": "プレイドのCXプラットフォーム「KARTE」が11月13日に第三者による不正アクセスを検知。サーバー脆弱性を悪用された認証情報窃取により、利用企業のアカウント情報などが漏えい。",
+          "why_it_matters": "SaaS プラットフォーム経由での顧客データ侵害です。自社以外のベンダーシステムの脆弱性対応状況を事前に把握する必要があります。",
+          "tags": [
+            "情報漏えい",
+            "SaaS",
+            "認証情報"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "プレイドのCXプラットフォーム「KARTE」への不正アクセスについてまとめてみた - piyolog",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/11/18/010752",
+              "source": "はてブ テクノロジー",
+              "popularity": "7 users"
+            }
+          ]
+        },
+        {
+          "headline": "電子マネー「Pokepay」(Enterprise)、不正アクセスで全サービス一時停止・学生協など波及",
+          "summary": "ポケットチェンジが11月14日、Pokepay(Enterprise)への第三者からの不正アクセスを確認し全サービスを一時停止。大学生協電子マネーや自治体のデジタル地域通貨など複数の下流サービスも影響。",
+          "why_it_matters": "プラットフォーム層の障害が複数組織に波及する仕組みが改めて明確になりました。依存性の強いシステムほど対応計画と透明な通知が求められます。",
+          "tags": [
+            "情報漏えい",
+            "電子決済",
+            "サービス停止"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "電子マネー基盤「Pokepay」への不正アクセスについてまとめてみた",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/11/17/192656",
+              "source": "piyolog"
+            }
+          ]
+        },
+        {
+          "headline": "Chrome 158、脆弱性204件対処・6件がクリティカル",
+          "summary": "GoogleがChrome 158を公開し、200件以上の脆弱性に対応。クリティカル判定の脆弱性も含まれている。",
+          "why_it_matters": "本番・開発環境の両方で最新版への迅速なアップデートが必須です。CI/CD パイプラインでブラウザ依存のテストを実行する場合は対応が必要。",
+          "tags": [
+            "ブラウザ",
+            "脆弱性",
+            "クリティカル"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「Chrome 158」で脆弱性204件に対処 - 6件が「クリティカル」",
+              "url": "https://www.security-next.com/192998",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "uBlock Origin(Firefox版)、ワンクリックで任意JSを実行可能な汎用XSS脆弱性が存在していた",
+          "summary": "uBlock Origin のFirefox版に、ワンクリックで実行可能な汎用XSS(UXSS)脆弱性が存在していたことが11月15日に発表。悪意のあるサイトが任意のフィルターを追加させ、JavaScriptを注入可能。",
+          "why_it_matters": "ブラウザ拡張機能の脆弱性が開発効率ツール(検査やスクレイピング)と組み合わさると、認証情報や機密データ盗難に直結します。拡張機能の更新確認も重要。",
+          "tags": [
+            "ブラウザ拡張",
+            "XSS",
+            "JavaScript実行"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "広告ブロッカー「uBlock Origin」にワンクリックで任意のJavaScriptを実行可能にできる脆弱性が存在していたことが判明",
+              "url": "https://gigazine.net/news/20261118-ublock-origin-uxss-vulnerability/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "太陽光発電遠隔監視「エコめがね」・防災製品出荷管理システムなど複数企業で不正アクセス被害",
+          "summary": "NTTスマイルエナジーの「エコめがね」が不正アクセスを受けポイント不正交換が発生。古河電工パワーシステムズの防災製品部出荷管理システムも侵害され、関係者の個人情報流出の可能性。",
+          "why_it_matters": "製造・運用管理向けクラウドサービスの侵害が相次いでいます。IoT・遠隔監視システムの認証・ネットワーク分離の実装確認が必要。",
+          "tags": [
+            "情報漏えい",
+            "IoT",
+            "運用管理"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "太陽光発電遠隔監視サービスで侵害 - ポイント不正交換も",
+              "url": "https://www.security-next.com/192657",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "防災製品部の出荷管理システムで侵害か - 古河電工グループ会社",
+              "url": "https://www.security-next.com/192962",
+              "source": "Security NEXT"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "宝くじサイトやアプリに不正ログイン - パスワード不正変更も",
+          "url": "https://www.security-next.com/192870",
+          "source": "Security NEXT",
+          "note": "宝くじサイト・アプリ、パスワードリスト攻撃でアカウント侵害・パスワード不正変更"
+        },
+        {
+          "title": "CVE-2026-115731: Perforce Puppet Enterprise Deserialization of Untrusted Data Vulnerability",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115731",
+          "source": "CISA KEV",
+          "popularity": "悪用確認済",
+          "note": "Perforce Puppet Enterprise、逆シリアライゼーション脆弱性(CVE-2026-115731)で任意コード実行・悪用確認済(CISA KEV)"
+        },
+        {
+          "title": "「GitLab」に37件の脆弱性 - 重要度「High」が4件",
+          "url": "https://www.security-next.com/192966",
+          "source": "Security NEXT",
+          "note": "GitLab、37件の脆弱性公開・High重要度4件含む"
+        },
+        {
+          "title": "ストレージ製品「Dell PowerStore」の複数の脆弱性",
+          "url": "https://www.security-next.com/192903",
+          "source": "Security NEXT",
+          "note": "Dell PowerStore、複数脆弱性対策・クリティカル判定含む"
+        },
+        {
+          "title": "国内17原発で機密漏洩の芽　位置情報3000端末ID分、スパイ接触リスク - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOCA20A5I0Q6A021C2000000/",
+          "source": "はてブ 世の中",
+          "popularity": "11 users",
+          "note": "原発17施設で位置情報3000端末IDが海外で売買・スパイ接触リスク"
+        },
+        {
+          "title": "California fines Hertz $1.5 million for breaking state data privacy law",
+          "url": "https://therecord.media/california-fines-hertz-state-data-privacy-law",
+          "source": "The Record",
+          "note": "Hertz、カリフォルニア州のデータ プライバシー法違反で150万ドルの罰金"
+        },
+        {
+          "title": "Website management platform Optimizely confirms hackers put malicious code into customer sites",
+          "url": "https://therecord.media/optimizely-malicious-code-customer-sites",
+          "source": "The Record",
+          "note": "Optimizely Web、178サイトで悪意あるJavaScriptコード埋め込み・既報の続報"
+        },
+        {
+          "title": "Cloud keys leaked in Docker Hub images are stolen within seconds",
+          "url": "https://www.bleepingcomputer.com/news/security/cloud-keys-leaked-in-docker-hub-images-are-stolen-within-seconds/",
+          "source": "BleepingComputer",
+          "note": "Docker Hub公開イメージの認証情報、公開から8秒以内に攻撃者が盗取・悪用"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 90,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWS/AzureがAIエージェント対応インフラを急速に投入し、Oracle連携や新DBサービス発表が相次ぐ一方、データセンター料金値上がりの時代に入った。",
+      "topics": [
+        {
+          "headline": "Amazon EMR 8.2リリース、Spark/Iceberg/Delta Lake最新版対応",
+          "summary": "Amazon EMR 8.2がApache Spark 4.1.3、Apache Iceberg 1.11.0、Delta Lake 4.2.0にアップグレード。EMR on EC2/EKS/Serverlessに対応し、Long-Term Support版。",
+          "why_it_matters": "大規模データ処理基盤の依存コンポーネントが更新。環境構築時の検証・アップグレード計画の参考に。",
+          "tags": [
+            "AWS EMR",
+            "データ処理",
+            "Spark"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon EMR 8.2 is now available",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-emr-8.2/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Apache Spark最適化エージェント、EMR Serverlessで自動推奨開始",
+          "summary": "Amazon EMR Serverlessに統合されたApache Spark最適化エージェントが、完了したジョブを分析し、コスト・パフォーマンス最適化の推奨を数秒で提供。",
+          "why_it_matters": "Serverless環境でのコスト管理が自動化される。ジョブチューニング作業の削減や最適化指標の発見に直結。",
+          "tags": [
+            "AWS EMR",
+            "AI最適化",
+            "コスト削減"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Introducing the Apache Spark Optimization Agent for Amazon EMR Serverless",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/apache-spark-optimization-agent/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "データセンター5年で17％値上がり、AI電力需要が引き金",
+          "summary": "約15年続いたデータセンター利用料の値下がり傾向が反転、5年で17％上昇。AI需要と電力獲得競争が背景。",
+          "why_it_matters": "インフラコスト構造が変わる局面。契約更新時にコスト交渉・多拠点分散・オンプレ活用の検討が必要に。",
+          "tags": [
+            "データセンター",
+            "コスト",
+            "基盤"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "データセンター利用料が5年で17％上昇　契約更新前に確認すべき「9項目」",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/17/news020.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "PostgreSQL互換・ミッションクリティカル向けAzure HorizonDB正式リリース",
+          "summary": "マイクロソフトがMicrosoft Ignite 2026で、PostgreSQL互換のAzure HorizonDBを正式リリース。ミッションクリティカル向けデータベースサービス。",
+          "why_it_matters": "PostgreSQLベースの高可用DBがAzureで選択肢に。既存PostgreSQL環境からの移行検討時の参考に。",
+          "tags": [
+            "Azure",
+            "PostgreSQL",
+            "データベース"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "［速報］マイクロソフト、PostgreSQL互換のミッションクリティカル向けデータベースサービス「Azure HorizonDB」正式リリース",
+              "url": "https://www.publickey1.jp/blog/26/postgresqlazure_horizondb.html",
+              "source": "Publickey"
+            }
+          ]
+        },
+        {
+          "headline": "Microsoft Fabric HorizonDB、サーバレスでOLTP/OLAP両対応がプレビュー開始",
+          "summary": "PostgreSQL互換のサーバレスデータベース「Microsoft Fabric HorizonDB」がパブリックプレビュー版を提供。OLTPとOLAP両方に対応。",
+          "why_it_matters": "トランザクション処理と分析処理を単一DBで両立。構成単純化やコスト最適化の検討機会が拡大。",
+          "tags": [
+            "Azure Fabric",
+            "PostgreSQL",
+            "ハイブリッド処理"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "［速報］PostgreSQL互換のサーバレスでOLTPとOLAP両対応を実現する「Microsoft Fabric HorizonDB」パブリックプレビュー",
+              "url": "https://www.publickey1.jp/blog/26/postgresqloltpolapmicrosoft_fabric_horizondb.html",
+              "source": "Publickey"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "[AWS] S3Vectorsは全文検索エンジンとしてOpenSearchの代わりになるのか？ - Qiita",
+          "url": "https://qiita.com/kikuziro/items/cd1389f6a1601494895f?utm_campaign=post_article&utm_medium=twitter&utm_source=twitter_share",
+          "source": "はてブ テクノロジー",
+          "popularity": "72 users",
+          "note": "S3Vectorsがハイブリッド検索(ベクトル+全文)対応。OpenSearchからの乗換え候補に。"
+        },
+        {
+          "title": "Ten Years On, Google Updates the SRE Book for the AI Era",
+          "url": "https://www.infoq.com/news/2026/11/google-sre-book-ai-era/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "Google SRE Bookが10年ぶり全面改稿。AI時代のSRE実践を体系化。"
+        },
+        {
+          "title": "How to Build Durable Agentic Systems with Google Antigravity: From Instructions to Loops",
+          "url": "https://cloud.google.com/blog/topics/developers-practitioners/how-to-build-durable-agentic-systems-with-google-antigravity-from-instructions-to-loops/",
+          "source": "Google Cloud Blog",
+          "note": "Google Antigravityでエージェントループ設計。プロンプト工学からシステム設計へ。"
+        },
+        {
+          "title": "Introducing Azure Catalyst agentic modernization and new AI infrastructure innovations",
+          "url": "https://azure.microsoft.com/en-us/blog/introducing-azure-catalyst-agentic-modernization-and-new-ai-infrastructure-innovations/",
+          "source": "Azure Blog",
+          "note": "Azure Catalyst、AI インフラのスタック全体最適化へ。シリコン・クラウド・モデルの統合設計。"
+        },
+        {
+          "title": "Simplifying multicloud networking to Azure with partner Cross-Cloud Interconnect",
+          "url": "https://cloud.google.com/blog/products/networking/cross-cloud-interconnect-for-microsoft-azure/",
+          "source": "Google Cloud Blog",
+          "note": "Google Cloud、マルチクラウド間Azure接続をパートナー Cross-Cloud Interconnect で簡素化。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 38,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "Windows 11へのPowerShell 7統合、JavaScriptフレームワーク新版・大型メジャーリリース、Rust で書き直されたツール群の台頭が目立つ。",
+      "topics": [
+        {
+          "headline": "PowerShell 7、次回 Windows 更新から組み込みへ",
+          "summary": "マイクロソフトが PowerShell 7 を Windows に統合予定。PowerShell 5.1 の後継として次期 Windows リリースに含まれると発表。",
+          "why_it_matters": "Windows 標準シェルの新版へ移行は、スクリプト資産の確認・互換性テストが必要。自動化や Terraform runner 環境に影響する可能性がある。",
+          "tags": [
+            "PowerShell",
+            "Windows",
+            "開発環境"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "PowerShell 7 is coming to Windows - PowerShell Team",
+              "url": "https://devblogs.microsoft.com/powershell/powershell-7-coming-to-windows/",
+              "source": "はてブ テクノロジー",
+              "popularity": "7 users"
+            }
+          ]
+        },
+        {
+          "headline": "jQuery 4.1.0、TypeScript サポートなど改善リリース",
+          "summary": "jQuery の新版 4.1.0 がリリース。TypeScript サポート強化やセキュリティ改善を含む。",
+          "why_it_matters": "jQuery を使用するレガシープロジェクトの保守で新版情報は参考になる。型安全性の強化で段階的な更新効果を見込める。",
+          "tags": [
+            "JavaScript",
+            "jQuery",
+            "ライブラリ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "jQuery 4.1.0",
+              "url": "https://github.com/jquery/jquery/releases/tag/4.1.0",
+              "source": "Hacker News",
+              "popularity": "253 points"
+            }
+          ]
+        },
+        {
+          "headline": "Solid 2.0、新フレームワーク機能リリース",
+          "summary": "フロントエンドフレームワーク Solid のメジャーバージョン 2.0 が公開。",
+          "why_it_matters": "モダンフロームワーク動向の参考。React や Vue の代替選択肢として検討中の場合は新機能確認の時機。",
+          "tags": [
+            "フレームワーク",
+            "JavaScript",
+            "フロントエンド"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Solid 2.0",
+              "url": "https://www.solidjs.com/blog/solid-2-0-the-long-hold/",
+              "source": "Hacker News",
+              "popularity": "229 points"
+            }
+          ]
+        },
+        {
+          "headline": "Rust 版 TypeScript（tsrs）、Oxlint で type-aware linting へ",
+          "summary": "Cloudflare と VoidZero が発表した Rust ポートの TypeScript（tsrs）が、Oxlint の type-aware linting 代替として採用。Cloudflare、Owner.com、OpenAI が既に使用中。",
+          "why_it_matters": "TypeScript リント高速化の実装選択肢が広がる。Python/Terraform でも Rust ツール統合が増えており、パフォーマンス重視の環境構築で参考になる。",
+          "tags": [
+            "TypeScript",
+            "Rust",
+            "開発ツール"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Faster type-aware linting with tsrs",
+              "url": "https://oxc.rs/blog/2026-11-17-faster-type-aware-linting-with-tsrs",
+              "source": "はてブ テクノロジー",
+              "popularity": "19 users"
+            }
+          ]
+        },
+        {
+          "headline": "curl を Rust に書き直し、実装検証始まる",
+          "summary": "curl の Rust 版実装が進行。既存 curl との互換性確認・検証プロセスが進展。",
+          "why_it_matters": "HTTP クライアント実装の言語間ポートは内部動作の差異発見に有用。AWS SDK や Terraform HTTP プロバイダー改善の先例になる可能性。",
+          "tags": [
+            "Rust",
+            "curl",
+            "開発ツール"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Actual curl rewrites in rust",
+              "url": "https://daniel.haxx.se/blog/2026/11/17/actual-curl-rewrites-in-rust/",
+              "source": "Lobsters",
+              "popularity": "77 score"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Windowsのフォント管理はこれが便利！ Windows10, 11対応、オープンソースの無料アプリ -tuna-fonts",
+          "url": "https://coliss.com/articles/build-websites/operation/work/font-manager-for-windows-tuna-fonts.html",
+          "source": "はてブ テクノロジー",
+          "popularity": "10 users",
+          "note": "Windows 10/11 向けオープンソースフォント管理ツール tuna-fonts が紹介されている。"
+        },
+        {
+          "title": "Microsoft's ONNX Runtime has disappeared from GitHub",
+          "url": "https://github.com/microsoft/onnxruntime",
+          "source": "Hacker News",
+          "popularity": "128 points",
+          "note": "Microsoft の ONNX Runtime が GitHub から削除。詳細は記事本文で確認推奨。"
+        },
+        {
+          "title": "iFixit’s Apple HomeView teardown reveals a device that will be difficult to repair",
+          "url": "https://www.theverge.com/tech/1036045/ifixit-teardown-apple-homeview-smart-home-hub",
+          "source": "The Verge",
+          "note": "iFixit が Apple HomeView（タブレット型スマートホームハブ）を分解。修理の難度が高いと判定。"
+        },
+        {
+          "title": "Web Browser Engineering (2021)",
+          "url": "https://browser.engineering/",
+          "source": "Hacker News",
+          "popularity": "123 points",
+          "note": "Web Browser Engineering（2021）が話題に。ブラウザ実装の理論的背景学習向け。"
+        },
+        {
+          "title": "軽量なマイクロVMでネイティブよりアプリを高速起動できる「Hyperlight-Unikraft」登場",
+          "url": "https://www.publickey1.jp/blog/26/vmhyperlight-unikraft.html",
+          "source": "Publickey",
+          "note": "CNCF の Hyperlight-Unikraft：Linux アプリ再コンパイル不要で軽量 VM 実行環境で動作。セキュアな隔離を実現。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 31,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "NVIDIAの経営体制が大きく動く中で、取締役会がジェンスン・フアン前CEOの復帰を明確に否定。中国スパイ関連の調査が進む一方で、同社の投資ポートフォリオや市場への影響を巡る懸念が広がっている。",
+      "topics": [
+        {
+          "headline": "NVIDIA取締役会、フアン氏のCEO復帰を正式に否定",
+          "summary": "ハーベイ・C・ジョーンズ会長が決算説明会で、CEO辞任後にX投稿で復帰意欲を示したジェンスン・フアン氏について「復帰させる予定はない」と明言。新CEOの選定は社内外から慎重に進める方針。",
+          "why_it_matters": "NVIDIAのチップ供給戦略と経営方針が不透明化するなか、AI関連の大型投資判断や取引先との交渉にも影響しうる。特に下流のスタートアップや取引先は経営の安定性を見極める必要がある。",
+          "tags": [
+            "NVIDIA",
+            "経営体制",
+            "CEO交代"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "ジェンスン・フアンがCEO復帰への意欲を公表するもNVIDIA会長は「復帰させる予定なし」と明言",
+              "url": "https://gigazine.net/news/20261118-nvidia-not-plan-reappoint-jensen-huang-ceo/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "NVIDIA、フアン氏退任後初の決算　取締役会「正式なCEOは急がず適任者を選ぶ」",
+              "url": "https://www.itmedia.co.jp/news/article/2611/18/2000003280/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Nvidia says it doesn’t plan to reappoint Jensen Huang as CEO",
+              "url": "https://techcrunch.com/2026/11/17/nvidia-says-it-doesnt-plan-to-reappoint-jensen-huang-as-ceo/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "Read everything that Nvidia’s board chair had to say about Jensen Huang",
+              "url": "https://www.theverge.com/tech/1036160/nvidia-earnings-harvey-c-jones-jensen-huang",
+              "source": "The Verge"
+            },
+            {
+              "title": "Nvidia says it does not intend to reinstate Jensen Huang as CEO",
+              "url": "https://www.theverge.com/report/1035465/nvidia-says-it-will-not-reinstate-jensen-huang-as-ceo",
+              "source": "The Verge"
+            },
+            {
+              "title": "NVIDIAのフアン前CEO、退任後初のX投稿　「取締役会が望むならCEOに復帰したい」",
+              "url": "https://www.itmedia.co.jp/news/article/2611/18/2000003278/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "NVIDIA、中国向けチップ販売を中止へ—フアン氏退任後の大転換",
+          "summary": "暫定CEO・コレット・クレスが、同社は中国へのチップ販売を継続しないと表明。フアン氏の退任と関連する大幅な事業方針の変更。",
+          "why_it_matters": "グローバルなAIインフラ構築の競争環境が激変する可能性がある。長期的なクラウド・AI基盤の地政学的リスク評価と、代替ベンダーの検討が迫られる。",
+          "tags": [
+            "NVIDIA",
+            "地政学リスク",
+            "チップサプライチェーン"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Nvidia is abandoning China after Jensen Huang’s ouster",
+              "url": "https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "NVIDIA投資ポートフォリオの価値が$65Bに膨張、フアン氏退任で今後の投資案件に疑問符",
+          "summary": "過去9カ月間でNVIDIAのプライベート投資の価値が3倍近くに拡大したが、フアン氏の積極的な買収活動と退任により、新規案件の見通しが不透明化。",
+          "why_it_matters": "NVIDIAのスタートアップ投資が資金調達や評価額の指標になってきた分野では、投資判断や資金調達戦略の急変を見込む必要がある。特にAI関連スタートアップの評価額や資金調達スケジュールへの波及に注視すべき。",
+          "tags": [
+            "VC投資",
+            "AIスタートアップ",
+            "経営変化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future  deals in doubt",
+              "url": "https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "SEC、NVIDIA CEO退任を受けて調査開始—フアン氏の私生活と企業統治",
+          "summary": "ウォール・ストリート・ジャーナルの報道によると、SEC（証券取引委員会）がジェンスン・フアン氏の中国スパイとの関係に関連して、NVIDIAに対する調査を開始。",
+          "why_it_matters": "上場企業の情報開示義務や内部統治の厳格性が問題化する可能性がある。長期投資家やNVIDIA取引先は、企業統治リスクと規制対応の影響を評価する必要がある。",
+          "tags": [
+            "規制",
+            "企業統治",
+            "SEC"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "SEC reportedly investigating Nvidia amid Huang exit",
+              "url": "https://techcrunch.com/2026/11/17/sec-reportedly-investigating-nvidia-amid-huang-exit/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Appleのクラウドサービスで大規模障害、iCloud・App Store等に一時的な影響",
+          "summary": "11月18日、一部地域でiCloudをはじめとする複数のAppleサービスで障害が発生。",
+          "why_it_matters": "Appleエコシステムに依存した開発環境やテスト基盤を使う場合、サービス復旧のタイムラインや代替手段の準備が必要になることがある。",
+          "tags": [
+            "Apple",
+            "インシデント",
+            "クラウド"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "iCloudやApp Storeなど複数のAppleサービスで障害が発生",
+              "url": "https://gigazine.net/news/20261118-apple-down/",
+              "source": "GIGAZINE"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Nvidia promises that revenue will keep soaring — for now",
+          "url": "https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/",
+          "source": "TechCrunch",
+          "note": "NVIDIAの第3四半期決算は売上高103%増と堅調。フアン氏の退任にもかかわらず、収益の伸びは今後も続く見通し。"
+        },
+        {
+          "title": "Amazon and Google will together own nearly 30% of Anthropic after its IPO",
+          "url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/",
+          "source": "TechCrunch",
+          "note": "AmazonとGoogleがAnthropicのIPO後にほぼ30%の株式を保有へ。Amazon約15%、Google約14%の見込み。"
+        },
+        {
+          "title": "Waymo suspends freeway rides nationwide after California DMV order",
+          "url": "https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/",
+          "source": "TechCrunch",
+          "note": "Waymoの自動運転タクシーが、カリフォルニア州DMVの安全上の懸念を受けて全米で高速道路走行を一時停止。改善策の実証が必要。"
+        },
+        {
+          "title": "メルカリ、Google Play ストアでアプリが検索・ダウンロードできない状態に",
+          "url": "https://www.itmedia.co.jp/news/article/2611/17/2000003274/",
+          "source": "ITmedia NEWS",
+          "note": "メルカリがGoogle Playストアで検索・ダウンロード不可の状態に。理由は記事に記載されず。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 25,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "米ドル売却で株が暴落、気候交渉は脱炭素に後ろ向き、中東の米軍へ攻撃が続く。国内では能登地震の死者が761人に、政府広報が陰謀論系発信者を起用して批判、韓国では大学入試のAI対策を大幅強化。",
+      "topics": [
+        {
+          "headline": "NY株式市場が1000ドル超値下がり、IT・金融に売り注文",
+          "summary": "17日のニューヨーク株式市場でダウ平均株価が一時1000ドルを超える値下がりとなった。相次ぐシステム障害やサイバー攻撃への懸念から、大手IT企業や金融銘柄に売り注文が広がった。",
+          "why_it_matters": "海外市場の急落は為替や日本株にも波及する可能性があり、金融資産を保有する家計に影響を与え得る。",
+          "tags": [
+            "NY株",
+            "相場変動"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "NY株式市場 ダウ 一時1000ドル超値下がり ITや金融に売り注文",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261118de77527",
+              "source": "NHK 経済"
+            }
+          ]
+        },
+        {
+          "headline": "COP31でトルコと豪州が脱化石燃料に消極姿勢、議長役から失望表明",
+          "summary": "気候変動対策の国際会議COP31において、議長役を務めるトルコと豪州が脱化石燃料への取り組みに消極的な姿勢を示しているとして、批判の声が上がっている。",
+          "why_it_matters": "主要国の気候政策の足並みの乱れは、地球温暖化対策の進展速度と最終的な実現可能性を左右する世界的な課題。",
+          "tags": [
+            "気候交渉",
+            "脱炭素"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "「失望した」COP31議長役のトルコと豪州　脱化石燃料に消極姿勢",
+              "url": "http://www.asahi.com/articles/ASVCK3583VCKUHBI02ZM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "米軍とイランがミサイル施設の攻撃で応酬、中東緊張が継続",
+          "summary": "ホルムズ海峡周辺でイランが1週間で3度目となるバーレーンのアメリカ軍施設への攻撃声明を出し、これに対してアメリカ軍はイランのミサイル発射施設を攻撃。両者の攻撃が応酬している。",
+          "why_it_matters": "中東の軍事衝突の激化は石油価格や国際情勢に影響を与え、エネルギー価格や経済全体の不確実性を高める。",
+          "tags": [
+            "米イラン対立",
+            "中東情勢"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "米軍がイランのミサイル施設を攻撃 両者で攻撃の応酬に",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261118de77531",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "能登半島地震の死者が761人に、災害関連死3人を新たに認定へ",
+          "summary": "能登半島地震の後に亡くなった石川県内の3人について、専門家の審査会が災害関連死と認定するよう答申を出した。正式に認定されると死者は761人になる見通し。",
+          "why_it_matters": "被害者の正確な集計と災害関連死の認定は、支援施策の対象や補償基準を決める基本データとなる。",
+          "tags": [
+            "能登地震",
+            "被害集計"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "能登半島地震 災害関連死3人答申 認定なら死者761人に",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261118de77511",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "エヌビディアのジェンスン・フアン氏、復帰に意欲示す一方、取締役会は意向ない",
+          "summary": "エヌビディアのCEOを辞任したジェンスン・フアン氏が17日、SNSでの投稿で復帰に意欲を示した。一方、同社の取締役会は復帰を容認する意向がないとしている。AI・半導体分野で大きな影響力を持つ人物の動向が注目されている。",
+          "why_it_matters": "エヌビディアは生成AI時代の基幹企業であり、経営層の交代は産業全体の方向性に関わる重要な動き。",
+          "tags": [
+            "NVIDIA",
+            "経営交代"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "エヌビディア フアン氏復帰に意欲も取締役会は「意向ない」",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261118de77484",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "Nvidia says it won't reinstate Huang as firm reports bumper results",
+              "url": "https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "【速報】教員のなり手不足解消へ、文科省が改革素案",
+          "url": "https://www.47news.jp/15245233.html",
+          "source": "はてブ 世の中",
+          "popularity": "47 users",
+          "note": "教員のなり手不足解消へ、文科省が教職課程の共通科目削減・多様な学部学科からの取得促進を素案化"
+        },
+        {
+          "title": "リニア中央新幹線 JR東海“開業時期の見通し 年内公表断念” | NHKニュース",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261117de77431",
+          "source": "はてブ 世の中",
+          "popularity": "30 users",
+          "note": "JR東海がリニア中央新幹線の品川・名古屋間開業時期について、年内公表の断念を国交省に伝達"
+        },
+        {
+          "title": "高速道路の「深夜割引」ついに変更時期にメド 「走った分だけ後日還元」へ年度内に見直し 足掛け2年遅れ（乗りものニュース） - Yahoo!ニュース",
+          "url": "https://news.yahoo.co.jp/articles/22bed37a815f1e90895ba50da1b6dd7326123e61",
+          "source": "はてブ 世の中",
+          "popularity": "12 users",
+          "note": "高速道路の深夜割引見直し、2026年度中に「走った分だけ後日還元」へ変更予定"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 55,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 333,
+    "unclassified": 0,
+    "classify_error": null
+  }
+}
