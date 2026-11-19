@@ -1,0 +1,1138 @@
+{
+  "date": "2026-11-19",
+  "generated_at": "2026-11-19 10:49 JST",
+  "lead": "企業のAI投資効率の課題と、生成コード品質の実装課題がエンジニアの価値判断を変える転換期。",
+  "highlights": [
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "コード生成量の増加がレビューボトルネック化している現実を実データで示し、チームのワークフロー・評価軸を見直す必要があることが明確になった。",
+      "topic": {
+        "headline": "AIコーディングエージェント導入で、コード生成30％増もレビュー時間49％増加",
+        "summary": "ハーバード大学の研究がAIエージェント導入企業を調査。コード作成量は約30％増加したが、レビュー時間が49％増加したため、完成した作業量は目立った増加がなかった。",
+        "why_it_matters": "生成量の増加がそのまま成果に繋がらず、レビューがボトルネック化していることが実データで示された。チームの評価軸やレビュー体制の見直しが急務になっている。",
+        "tags": [
+          "エージェント",
+          "開発効率",
+          "組織課題"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "AIコーディングエージェントの登場でコード作成量が30％増もコードレビュー時間は49％長くなりボトルネックが移り変わったことをハーバード大学の研究者が発見",
+            "url": "https://gigazine.net/news/20261119-ai-coding-agents-shifted-bottleneck-code-review/",
+            "source": "GIGAZINE"
+          },
+          {
+            "title": "AIで仕事は速くなったのに、チームの成果につながらないのはなぜ？　9500人調査が示した「落とし穴」",
+            "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003314/",
+            "source": "ITmedia NEWS"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "生成AI コードを本番運用する際、単体テストだけでなく多層検証が品質を左右することを定量示した設計指標として、エンジニア自身の品質評価基準を更新する参考になる。",
+      "topic": {
+        "headline": "Claude Code 開発チーム、AI 記述コード 90% を多層テスト検証で品質維持",
+        "summary": "エンドツーエンドテスト・プロパティテスト・差分テストで AI 生成コードを検証。Anthropic エンジニアが具体的な検証方法論を公開。",
+        "why_it_matters": "コード生成 AI を本番に使う際、単体テストでなく多層検証が品質を左右することを示唆。自分たちが AI コードを利用する設計レビュー時に参考になる指標。",
+        "tags": [
+          "AI コード生成",
+          "テスト",
+          "品質保証"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Claude Codeチームは検証についてどのように考えて実行しているのか、エンドツーエンドテスト・プロパティテスト・差分テストで証拠に基づいて自身の作業を検証する方法",
+            "url": "https://gigazine.net/news/20261118-claude-code-test-code-review/",
+            "source": "GIGAZINE"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "既存の分散システムのまま AI エージェントで組織知を活用する実証例が示され、データ統合待機企業のクラウド設計アプローチの幅が広がった。",
+      "topic": {
+        "headline": "データ統合せずに複数システムのまま連携、楽天市場がAIエージェントで実証",
+        "summary": "数百人のECコンサルタントの経験値が個人に偏り、業務履歴も複数システムに分散した状態で、データを1カ所に集めずにつなぐAIエージェントの実証を進めている。",
+        "why_it_matters": "データウェアハウス構築の待機期間を埋め、既存の分散システムのまま組織知を活用する道を示した。クラウド・データ統合の課題がある企業のアプローチの参考になる。",
+        "tags": [
+          "エージェント",
+          "データ基盤",
+          "実装事例"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "データを統合せずにAIを使う　楽天市場が実証する“既存システムのまま”のデータ基盤",
+            "url": "https://www.itmedia.co.jp/enterprise/articles/2611/19/news005.html",
+            "source": "ITmedia エンタープライズ"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "AI エージェントが認証情報に安全にアクセスする設計パターン（Agent Access）がオープン化され、自社システムでの実装検討対象になる。",
+      "topic": {
+        "headline": "Bitwarden、エージェント向け認証情報プロトコル Agent Access をオープンソース化",
+        "summary": "リモートシステムが password manager からエージェント用認証情報を E2E 暗号化トンネル経由で取得でき、全体 vault 露出を回避。CLI ツール・SDK も提供。",
+        "why_it_matters": "AI エージェントが AWS やクラウドサービスの認証情報にアクセス必要時、vault 全体を公開しない設計が実現。自社システムで agent access の導入検討対象。",
+        "tags": [
+          "認証情報管理",
+          "エージェント",
+          "セキュリティ"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "GitHub - bitwarden/agent-access: Agent Access is an open protocol, CLI tool, and SDK to provide agents with credentials without exposing their entire vault",
+            "url": "https://github.com/bitwarden/agent-access",
+            "source": "はてブ テクノロジー",
+            "popularity": "6 users"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "Google AI 検索で検索流入が 40% 減少している現実は、Web API やプロダクト設計の前提条件が変わったことを示す、読者の設計判断に直結する。",
+      "topic": {
+        "headline": "Google AI検索概要でクリック率40%減少、Webサイト運営者が対応迫られる",
+        "summary": "Googleの検索結果画面にAI概要が表示されると、外部Webサイトへのクリック率が約40%減少することが研究で示された。サイト運営者の収益構造が変わる可能性がある。",
+        "why_it_matters": "検索流入に依存しているサイト・ビジネスモデルの基盤が揺らいでいる。読者がWebサービスやAPIの仕様変更に対応する際の優先度判断や、新規プロダクト設計の前提条件を見直す必要がある。",
+        "tags": [
+          "Google検索",
+          "AI概要",
+          "Webトラフィック"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Google検索の「AIによる概要」のせいで外部ウェブサイトのクリック率が約40％減少、サイト運営者はどうするべきか？",
+            "url": "https://gigazine.net/news/20261118-google-ai-overviews-cut-clicks-websites/",
+            "source": "GIGAZINE"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "ai",
+    "category_label": "AI・LLM",
+    "headline": "AIコーディングエージェント導入で、コード生成30％増もレビュー時間49％増加",
+    "sources": [
+      {
+        "title": "AIコーディングエージェントの登場でコード作成量が30％増もコードレビュー時間は49％長くなりボトルネックが移り変わったことをハーバード大学の研究者が発見",
+        "url": "https://gigazine.net/news/20261119-ai-coding-agents-shifted-bottleneck-code-review/",
+        "source": "GIGAZINE"
+      },
+      {
+        "title": "AIで仕事は速くなったのに、チームの成果につながらないのはなぜ？　9500人調査が示した「落とし穴」",
+        "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003314/",
+        "source": "ITmedia NEWS"
+      }
+    ],
+    "background": "AIコーディングエージェントが普及し、開発者の個人生産性は向上している。しかし、ハーバード大学の研究によると、生成されたコード量の増加（+30%）に対して、レビュー時間が急増（+49%）し、チーム全体の成果は停滞している。これは、Terraformやシステム設計でもAIが活躍する環境で、エンジニアが直面する新しい課題を示唆している。",
+    "concepts": [
+      {
+        "term": "AIコーディングエージェント",
+        "explanation": "コード生成だけでなく、複数のステップを自動で実行するAIシステム。単なるコード補完ツールではなく、ある程度の意思決定や問題解決を行う。"
+      },
+      {
+        "term": "ボトルネック移行",
+        "explanation": "コード作成が自動化されると、次の段階（この場合レビュー）が制約となって全体の処理速度を左右すること。個人のタスク最適化がチーム全体を最適化するとは限らない。"
+      },
+      {
+        "term": "コンテキスト喪失",
+        "explanation": "AIが生成した理由や思考過程がチャット履歴に閉じ込められ、レビュアーがそれを追跡できず、検証に時間がかかる状態。透明性の欠如がレビュー時間を増幅させる。"
+      }
+    ],
+    "for_you": "TerraformやPythonでAIを使った自動コード生成を導入する際、あなたは「30%の生成量増加」に喜ぶべきではなく、「レビュー体制が耐えられるか」を真っ先に問い直す必要があります。特にセキュリティ・クラウド設定は検証ミスが本番影響を及ぼすため、レビュー負荷の増加は直接リスク増加に繋がります。また、AIの思考プロセスが失われると、後続メンテナンスや設計判断の再現性も失われます。",
+    "try_this": "今週、チームのレビュープロセスを時系列で記録してみてください。AIが生成したコード（例：Terraformモジュール）と人手作成コードの平均レビュー時間と指摘数を比較し、差が出ている理由をレビュアーに直接ヒアリングしましょう。そこから「AI生成コードに必要な標準化」（例：コメント義務化、段階的レビュー制度）の設計に進むことができます。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "Googleが新モデル「Gemini 4 Neon」を発表し、AIエージェント導入企業はチームの成果向上と効率化のボトルネック移行に直面。データ統合なしで業務AI化する新事例が広がる。",
+      "topics": [
+        {
+          "headline": "Google、「Gemini 4 Neon」発表　複雑なコーディング・企業業務向け",
+          "summary": "推論の深さと効率のバランスを重視した新AIモデル。上位モデル「Carbon」と軽量な「Hydrogen」の中間に位置付けられ、APIやGemini Pro/Ultraプランのアプリから利用可能。",
+          "why_it_matters": "複雑なコーディングや企業業務に適するとされ、GitHub Copilotにも実装。エンジニアのコード生成基盤がアップデートされるため、できることと効率が変わり始める時期。",
+          "tags": [
+            "Gemini",
+            "LLM",
+            "開発"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Google、「Gemini 4 Neon」発表　「Carbon」と「Hydrogen」の中間を担うモデル、「Pro」プランでも利用可能",
+              "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003315/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Google ships Gemini 4 Neon, its fourth new Gemini model in a month",
+              "url": "https://the-decoder.com/google-ships-gemini-4-neon-its-fourth-new-gemini-model-in-a-month/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "AIコーディングエージェント導入で、コード生成30％増もレビュー時間49％増加",
+          "summary": "ハーバード大学の研究がAIエージェント導入企業を調査。コード作成量は約30％増加したが、レビュー時間が49％増加したため、完成した作業量は目立った増加がなかった。",
+          "why_it_matters": "生成量の増加がそのまま成果に繋がらず、レビューがボトルネック化していることが実データで示された。チームの評価軸やレビュー体制の見直しが急務になっている。",
+          "tags": [
+            "エージェント",
+            "開発効率",
+            "組織課題"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AIコーディングエージェントの登場でコード作成量が30％増もコードレビュー時間は49％長くなりボトルネックが移り変わったことをハーバード大学の研究者が発見",
+              "url": "https://gigazine.net/news/20261119-ai-coding-agents-shifted-bottleneck-code-review/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "AIで仕事は速くなったのに、チームの成果につながらないのはなぜ？　9500人調査が示した「落とし穴」",
+              "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003314/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "AIエージェント導入で応答時間の遅延、インフラ増強だけでは解決しない",
+          "summary": "業務上重要なアプリケーションで応答時間の目標を常に達成できている企業は2割に満たない。AIエージェント業務利用の広がりの中、応答性の問題が顕在化している。",
+          "why_it_matters": "インフラ予算をひねり出す前に、設計上の最適化や既存システムの構造改善を見直す機会。何に投資するべきかの判断基準が変わっている。",
+          "tags": [
+            "エージェント",
+            "インフラ",
+            "パフォーマンス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AIエージェント導入で「処理の遅延問題」悪化　意外と“古典的”な打開策とは？",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/19/news028.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "データ統合せずに複数システムのまま連携、楽天市場がAIエージェントで実証",
+          "summary": "数百人のECコンサルタントの経験値が個人に偏り、業務履歴も複数システムに分散した状態で、データを1カ所に集めずにつなぐAIエージェントの実証を進めている。",
+          "why_it_matters": "データウェアハウス構築の待機期間を埋め、既存の分散システムのまま組織知を活用する道を示した。クラウド・データ統合の課題がある企業のアプローチの参考になる。",
+          "tags": [
+            "エージェント",
+            "データ基盤",
+            "実装事例"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "データを統合せずにAIを使う　楽天市場が実証する“既存システムのまま”のデータ基盤",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/19/news005.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "AIエージェント支出が予測困難に、7割の予算超過組織がダッシュボード導入済み",
+          "summary": "IDCの調査では、支出見通せない課題が顕在化。AIエージェント採用によって、従来のSaaS予測モデルが機能していない。",
+          "why_it_matters": "AIエージェント導入後の総保有コスト（TCO）の試算が現状の手法では機能していない。予算立案やビジネスケースの評価基準を見直す必要が出ている。",
+          "tags": [
+            "エージェント",
+            "コスト",
+            "導入課題"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "大幅予算超過の組織、7割は「ダッシュボード導入済み」だった　AIエージェント支出の落とし穴",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/19/news020.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "日本の音声AIスタートアップに159億円　ElevenLabsはなぜ、社員15人のKotobaを買収するのか",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003306/",
+          "source": "ITmedia AI+",
+          "note": "米ElevenLabsが音声AIスタートアップ米Kotoba Technologiesを買収。買収額159億円。"
+        },
+        {
+          "title": "PFUがファンレスエッジAIデバイスを開発、自然言語入力でAI解析機能を簡単構築",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/19/news044.html",
+          "source": "ITmedia AI+",
+          "note": "PFUがファンレスエッジAIデバイスと自然言語入力でAI解析機能を簡単構築できるSIエージェントを参考出展。"
+        },
+        {
+          "title": "「e-F@ctory」から次の進化へ、三菱電機が描くAI主体の自律型工場",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/19/news045.html",
+          "source": "ITmedia AI+",
+          "note": "三菱電機がFA向けに「Serendie Automation」ブランドを展開。AI主体の自律型工場実現へ。"
+        },
+        {
+          "title": "Connect Supabase, Box, Calendly, and more to Copilot",
+          "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+          "source": "GitHub Changelog",
+          "note": "GitHub Copilotが8つの新サービス（Supabase、Box、Calendlyほか）をMCPサーバー経由で接続可能に。"
+        },
+        {
+          "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
+          "url": "https://techcrunch.com/2026/11/18/satya-nadella-predicts-ai-agents-will-reshuffle-the-economics-of-the-web/",
+          "source": "TechCrunch",
+          "note": "Microsoft CEOナデラ氏、AIエージェントが広告駆動型ビジネスモデルを破壊する可能性を指摘。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 88,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "脆弱性と漏えいが多数。nginxの10年前のRCE脆弱性が緊急対応、PHPとApache製品も悪用中、複数企業の顧客データ漏えいが判明。",
+      "topics": [
+        {
+          "headline": "nginx HTTP/2で未認証RCE、CVE-2026-123007/123633・緊急パッチ公開",
+          "summary": "nginxのHTTP/2実装に10年前から存在する脆弱性が2件(CVE-2026-123007/123633)。未認証で任意コード実行が可能。2026年11月18日にセキュリティアップデートが公開され、国家機関が速やかなアップデート適用を呼びかけた。",
+          "why_it_matters": "nginxはAWSなど多くのクラウド構成で使われるWebサーバ。該当バージョン(1.9.5以降)を使用していれば至急パッチ適用かHTTP/2無効化が必須。AWS環境での影響範囲と緩和策も並行確認が必要。",
+          "tags": [
+            "nginx",
+            "RCE",
+            "緊急対応"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "NGINXの脆弱性 CVE-2026-123633、CVE-2026-123007についてまとめてみた - piyolog",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/11/19/065715",
+              "source": "はてブ テクノロジー",
+              "popularity": "49 users"
+            },
+            {
+              "title": "nginx2root の HTTP/2 脆弱性2件を AWS 構成ごとに整理してみた | DevelopersIO",
+              "url": "https://dev.classmethod.jp/articles/nginx-http2-rce-aws-mitigation/",
+              "source": "はてブ テクノロジー",
+              "popularity": "77 users"
+            },
+            {
+              "title": "10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers",
+              "url": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "nginx2root",
+              "url": "https://xint.io/blog/nginx2root-remote-code-execution",
+              "source": "Lobsters",
+              "popularity": "63 score"
+            }
+          ]
+        },
+        {
+          "headline": "PHP支援中全バージョン対象、CVE-2026-115560を含む致命的脆弱性・11月19日緊急リリース予定",
+          "summary": "PHPセキュリティチームが2026年11月19日に緊急セキュリティリリースを予定。CVE-2026-115560を含む重大な脆弱性が対象で、サポート中の全バージョンが対応対象。",
+          "why_it_matters": "PHPは広く使われるサーバサイド言語。リリース予定が事前告知されており、本番環境のテストとロールアウト計画を今から準備すること。サーバ起動時間やアプリ再起動の影響を考慮する必要がある。",
+          "tags": [
+            "PHP",
+            "緊急パッチ",
+            "予定公開"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「PHP」に再び“致命的”な脆弱性、日本時間19日夜にセキュリティリリースへ／サポート中の全バージョンが対象",
+              "url": "https://forest.watch.impress.co.jp/docs/news/2157690.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "147 users"
+            },
+            {
+              "title": "PHPが2026年11月19日に緊急セキュリティリリースを予定――CVE-2026-115560を含む重大な脆弱性に対応",
+              "url": "https://aikido-community.jp/blog/php-security-release-19-november-2026-cve-2026-115560",
+              "source": "はてブ テクノロジー",
+              "popularity": "11 users"
+            },
+            {
+              "title": "Upcoming Critical PHP Security Release (18 Nov 2026)",
+              "url": "https://www.php.net/index.php#2026-11-18-1",
+              "source": "Lobsters",
+              "popularity": "19 score"
+            }
+          ]
+        },
+        {
+          "headline": "Apache Roller、Apache Axisほか複数製品が悪用確認済み脆弱性・CISAが注意喚起",
+          "summary": "Apache Roller(CVE-2026-129448、CVSS 9.8)が野生で活発に悪用中。別途、Apache Axis、REDCap、Synology DSM、LiteLLMの脆弱性も実際の攻撃で悪用されていることを米当局が確認し警告。",
+          "why_it_matters": "Apacheなどの主要OSSが実被害として利用されている。自社環境で該当製品を使用していないか確認し、使用していれば優先度付けして修正対応を進める。",
+          "tags": [
+            "RCE",
+            "悪用確認済",
+            "OSSライブラリ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "米当局、脆弱性の悪用リストに4件を追加",
+              "url": "https://www.security-next.com/193071",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required",
+              "url": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "「Puppet Enterprise」RCE脆弱性、悪用を確認 - 米当局が注意喚起",
+              "url": "https://www.security-next.com/193016",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "CVE-2024-10441: Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-10441",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-40217: BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-40217",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-90817: Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90817",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-90436: Apache Axis Unsafe Reflection Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90436",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "六花亭、決済画面改ざんでクレジットカード情報約8000件流出・全桁とセキュリティコード含む",
+          "summary": "六花亭の決済画面が改ざんされ、2026年10月21日午後9時〜11月18日午前11時に入力された顧客のクレジットカード番号(全桁)、名義人、有効期限、セキュリティコード約8000件が流出した可能性。改ざんは11月18日に判明し、サイトは直ちに停止。",
+          "why_it_matters": "決済画面の改ざんは典型的な攻撃。サイト運用者は定期的なファイル整合性検証、WAF、決済システムの隔離などで同様の被害を防ぐ必要がある。被害を受けた顧客は監視体制が必須。",
+          "tags": [
+            "漏えい",
+            "改ざん",
+            "決済"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "六花亭、カード番号全桁＋セキュリティコード約8000件流出か　決済画面のプログラム改ざん",
+              "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003316/",
+              "source": "はてブ テクノロジー",
+              "popularity": "17 users"
+            }
+          ]
+        },
+        {
+          "headline": "楽天証券、顧客個人情報流出の可能性を公表・システム侵害による",
+          "summary": "楽天証券はシステムが第三者に侵害され、顧客の個人情報(年収や資産情報含む)が流出した可能性があることを明らかにした。",
+          "why_it_matters": "大手証券会社の侵害で、機密情報が流出。金融機関のセキュリティ状況全般に対する信頼性の問題につながる可能性がある。",
+          "tags": [
+            "漏えい",
+            "金融",
+            "システム侵害"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "年収や資産情報など個人情報流出の可能性 - 楽天証券",
+              "url": "https://www.security-next.com/193015",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "理化学研究所「富岳」、運用系システムが不正アクセス・利用者個人情報が流出した可能性",
+          "summary": "理研の計算科学研究センターのスーパーコンピュータ「富岳」の運用系システムが外部の第三者による不正アクセスを受けた。利用者の個人情報が流出した可能性がある。",
+          "why_it_matters": "国家級の研究インフラの侵害。学術・産業研究の機密性と可用性に直結する事件。",
+          "tags": [
+            "漏えい",
+            "不正アクセス",
+            "研究インフラ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "理研「富岳」で侵害 - 窃取情報で他システムへの攻撃試行も",
+              "url": "https://www.security-next.com/192952",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "日本郵便、法人顧客向けサイトで顧客情報が閲覧可能に・流出の可能性",
+          "summary": "日本郵便の法人向けサイト「JP Business Tool Box」で顧客情報が流出した可能性があることを明らかにした。",
+          "why_it_matters": "基盤となるサービスプロバイダーの侵害は波及範囲が広い。郵便サービスを利用する企業は被害確認が必要。",
+          "tags": [
+            "漏えい",
+            "アクセス制御"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "法人顧客向けサイトで顧客情報が閲覧可能に - 日本郵便",
+              "url": "https://www.security-next.com/192585",
+              "source": "Security NEXT"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "複数の脆弱性に対処した「WordPress 7.1.5」が公開",
+          "url": "https://www.security-next.com/193073",
+          "source": "Security NEXT",
+          "note": "WordPress 7.1.5、複数脆弱性に対処したセキュリティアップデート公開"
+        },
+        {
+          "title": "個人情報漏えいの可能性に関するお知らせ|岩見沢市ホームページ",
+          "url": "https://www.city.iwamizawa.hokkaido.jp/soshiki/zeimu/zei/2/3/18234.html",
+          "source": "はてブ 世の中",
+          "popularity": "15 users",
+          "note": "岩見沢市、マルウェア「K2F」感染でGIS北海道経由の固定資産税情報が漏えいの可能性"
+        },
+        {
+          "title": "Data breach impacts 40 Irish credit unions in reported IT provider hack",
+          "url": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/",
+          "source": "BleepingComputer",
+          "note": "Wellington IT経由の攻撃で40のアイルランド信用組合の50組合が被害、機密情報露出"
+        },
+        {
+          "title": "Microsoft’s Agent Framework PyPI package compromised to steal credentials",
+          "url": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/",
+          "source": "BleepingComputer",
+          "note": "Microsoft Agent Framework、PyPIで侵害され認証情報盗取型マルウェア配信"
+        },
+        {
+          "title": "F5 Warns 6 Critical BIG-IP Flaws Can Crash Traffic in Specific Setups, May Allow RCE",
+          "url": "https://thehackernews.com/2026/11/f5-warns-6-critical-big-ip-flaws-can.html",
+          "source": "The Hacker News",
+          "note": "F5 BIG-IP、6件のクリティカル脆弱性・トラフィック管理の停止やRCE可能"
+        },
+        {
+          "title": "Oracle、のべ655件の修正パッチを公開 - 深刻な脆弱性も解消",
+          "url": "https://www.security-next.com/193031",
+          "source": "Security NEXT",
+          "note": "Oracle、655件の修正パッチを11月CSPU公開・深刻な脆弱性も解消"
+        },
+        {
+          "title": "ジョブ管理製品「AutoSys Workload Automation」に深刻な脆弱性",
+          "url": "https://www.security-next.com/193007",
+          "source": "Security NEXT",
+          "note": "Broadcom AutoSys、複数の深刻な脆弱性確認・10月に対策済み"
+        },
+        {
+          "title": "Ukraine, FBI arrest ransomware gang members tied to $40M in ransoms",
+          "url": "https://www.bleepingcomputer.com/news/security/ukraine-fbi-arrest-ransomware-gang-members-tied-to-40m-in-ransoms/",
+          "source": "BleepingComputer",
+          "note": "ウクライナ・FBI、$40.5M以上の身代金に関連した国際ランサムウェアギャング4名を逮捕"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 94,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWSがGPUインスタンスとクロスリージョンルーティング、OpenSearchのAIメモリ機能など、AI・ML推論基盤の拡張を次々発表。マイクロソフトがWindows Server 2028プレビューを公開、データベース開発環境ローカル化を推進。",
+      "topics": [
+        {
+          "headline": "AWS Lambda、GPU搭載インスタンスでAI推論・メディア処理など対応",
+          "summary": "AWS LambdaがG-series GPUに対応し、ラムダ管理インスタンス上でGPU加速ワークロード(AI推論、メディア処理、3Dレンダリング等)を実行可能に。インフラ管理はAWSが担当。",
+          "why_it_matters": "サーバレスでGPU処理が可能になり、GPU基盤を自前管理するコストと運用負荷が軽減される。Python/Terraformベースの推論ワークロードをマネージドに構築できるようになるため、基盤設計の選択肢が広がる。",
+          "tags": [
+            "AWS Lambda",
+            "GPU",
+            "推論"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AWS Lambda now supports GPU instances for Event Functions on Lambda Managed Instances",
+              "url": "https://aws.amazon.com/blogs/aws/aws-lambda-now-supports-gpu-instances-for-event-functions-on-lambda-managed-instances/",
+              "source": "AWS News Blog"
+            },
+            {
+              "title": "AWS Lambda adds support for GPU instances on Lambda Managed Instances",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-gpu-managed-instances/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS SageMaker、リージョン間の推論ルーティング機能で可用性向上",
+          "summary": "Amazon SageMaker AIがクロスリージョン推論ルーティング機能を導入。リージョンのキャパシティ不足時に他のAWSリージョン・アカウントのエンドポイントへリクエストを自動転送し、推論アプリケーションの可用性を維持。",
+          "why_it_matters": "推論アプリケーションの障害対応が自動化される。複数リージョン・アカウント展開時のルーティング管理やフェイルオーバー戦略の設計が簡素化され、本番環境の信頼性が向上する。",
+          "tags": [
+            "SageMaker",
+            "推論",
+            "マルチリージョン"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Amazon SageMaker AI now supports cross-Region inference routing",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-cross-region-routing/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon OpenSearch Memory GA、AI エージェントの対話履歴を永続保存・検索可能に",
+          "summary": "Amazon OpenSearchがサーバレス機能「OpenSearch Memory」をGA化。AI エージェントとの対話をSearchable eventとして保存・検索でき、エージェント開発の状態管理が容易に。",
+          "why_it_matters": "AIエージェント開発時の対話履歴管理がSearchableになり、デバッグや学習フェーズの効率が向上。エージェントの挙動追跡や説明責任を果たすための基盤として活用できる。",
+          "tags": [
+            "OpenSearch",
+            "AI エージェント",
+            "メモリ管理"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Amazon OpenSearch Memory is now generally available",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-memory-generally-available/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS Glue ETL、Apache Spark最適化エージェント追加",
+          "summary": "AWS Glue ETLが完了したSpark job実行を分析し、数分以内に費用最適化またはパフォーマンス最適化の推奨を返すApache Spark Optimization Agentを追加。",
+          "why_it_matters": "ETLジョブの最適化を手動から自動化し、運用コスト削減と性能改善のための工数が削減される。既存パイプラインの効率化検討時に活用できる。",
+          "tags": [
+            "Glue",
+            "Spark",
+            "最適化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Introducing the Apache Spark Optimization Agent for AWS Glue ETL",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/apache-spark-aws-glue-etl/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS ExtendDB 1.0、DynamoDB互換の本番対応オープンソースDB",
+          "summary": "AWSがExtendDB 1.0をリリース。DynamoDB APIと完全互換のオープンソース DynamoDB互換アダプタで、プロダクション利用対応。自由に選択したDBバックエンドで動作。",
+          "why_it_matters": "DynamoDB互換のAPIで、任意のDBバックエンドを選択できる柔軟性が得られる。ベンダーロックイン回避やオンプレ環境での類似機能実装検討時に選択肢が増える。",
+          "tags": [
+            "DynamoDB",
+            "互換性",
+            "オープンソース"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AWS announces ExtendDB 1.0",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-extenddb-1-0/",
+              "source": "AWS What's New"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "CloudflareがなぜパブリックDNSはブロックされるべきではないのかを説明",
+          "url": "https://gigazine.net/news/20261118-cloudflare-explain-dns-blocking/",
+          "source": "GIGAZINE",
+          "note": "CloudflareがパブリックDNS運営者として違法サイトブロック命令に抵抗。DNS運用の独立性と法的責任の定義が争点。"
+        },
+        {
+          "title": "From exposed secrets to managed credentials: Reducing credential risk across the application lifecycle",
+          "url": "https://www.hashicorp.com/blog/from-exposed-secrets-to-managed-credentials",
+          "source": "HashiCorp Blog",
+          "note": "HashiCorp、シークレット検出からマネージド認証情報へ。Vault Radarで露出シークレット特定、ライフサイクル管理で圧力軽減。"
+        },
+        {
+          "title": "HCP introduces IBMid support and new enterprise governance capabilities",
+          "url": "https://www.hashicorp.com/blog/hcp-introduces-ibmid-support-and-new-enterprise-governance-capabilities",
+          "source": "HashiCorp Blog",
+          "note": "HCP Platform、IBMid認証・エンタープライズガバナンス機能を追加。ID管理と運用スケーラビリティを強化。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 22,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "GitHub CLI がイベント待機とエージェントセキュリティ関連機能を拡張。AI 検証の課題が開発チームレベルで顕在化する中、テスト品質測定への関心が高まっている。",
+      "topics": [
+        {
+          "headline": "GitHub CLI、pull request イベント待機がポーリング廃止へ",
+          "summary": "GitHub Event Streams サポートにより、gh v2.105.0 以降は単一コマンドで PR 変更を待機可能。エージェントを含むツール開発時のポーリングループが不要化。",
+          "why_it_matters": "ローカルツールやエージェントから GitHub リポジトリの変更を検知するワークフローが簡潔に。Terraform や Python スクリプトで CI/CD 連携を構築する際に活用できる。",
+          "tags": [
+            "GitHub",
+            "CLI",
+            "イベント駆動"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Wait for pull request events with GitHub CLI",
+              "url": "https://github.blog/changelog/2026-11-18-wait-for-pull-request-events-with-github-cli",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "Bitwarden、エージェント向け認証情報プロトコル Agent Access をオープンソース化",
+          "summary": "リモートシステムが password manager からエージェント用認証情報を E2E 暗号化トンネル経由で取得でき、全体 vault 露出を回避。CLI ツール・SDK も提供。",
+          "why_it_matters": "AI エージェントが AWS やクラウドサービスの認証情報にアクセス必要時、vault 全体を公開しない設計が実現。自社システムで agent access の導入検討対象。",
+          "tags": [
+            "認証情報管理",
+            "エージェント",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "GitHub - bitwarden/agent-access: Agent Access is an open protocol, CLI tool, and SDK to provide agents with credentials without exposing their entire vault",
+              "url": "https://github.com/bitwarden/agent-access",
+              "source": "はてブ テクノロジー",
+              "popularity": "6 users"
+            }
+          ]
+        },
+        {
+          "headline": "Claude Code 開発チーム、AI 記述コード 90% を多層テスト検証で品質維持",
+          "summary": "エンドツーエンドテスト・プロパティテスト・差分テストで AI 生成コードを検証。Anthropic エンジニアが具体的な検証方法論を公開。",
+          "why_it_matters": "コード生成 AI を本番に使う際、単体テストでなく多層検証が品質を左右することを示唆。自分たちが AI コードを利用する設計レビュー時に参考になる指標。",
+          "tags": [
+            "AI コード生成",
+            "テスト",
+            "品質保証"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Claude Codeチームは検証についてどのように考えて実行しているのか、エンドツーエンドテスト・プロパティテスト・差分テストで証拠に基づいて自身の作業を検証する方法",
+              "url": "https://gigazine.net/news/20261118-claude-code-test-code-review/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub・Microsoft、オープンソース修正提案で AI bug report を実用化",
+          "summary": "Codename MDASH パイロットで数千の AI 検出事項を 99 件の検証済み private report に絞り、修正提案を付与。6 プロジェクトで既に半数以上が修正完了。",
+          "why_it_matters": "AI agent による脆弱性検査が volume 生成で maintainer 疲弊する課題への対策。AI 検出→検証→提案のパイプライン整備が現実的な活用に必須。",
+          "tags": [
+            "AI agent",
+            "脆弱性検査",
+            "オープンソース"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Maintainers don’t need more AI bug reports. They need fixes.",
+              "url": "https://github.blog/open-source/maintainers/maintainers-dont-need-more-ai-bug-reports-they-need-fixes/",
+              "source": "GitHub Blog"
+            }
+          ]
+        },
+        {
+          "headline": "Mutation test 注目高まる、コード変更に即座に反応できないテスト品質を可視化",
+          "summary": "Mutation test を導入し、意図的にコード変更を加えてテスト検出率を測定するアプローチ。従来の カバー率指標では見えない脆弱性検知能力を数値化。",
+          "why_it_matters": "テストカバー率 100% でも品質が保証されない実感をデータで証明。Python テスト設計時にカバ率指標だけでなく mutation を組み込むか検討対象。",
+          "tags": [
+            "テスト品質",
+            "Mutation testing",
+            "エンジニアリング"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "おい、 Mutation Test をやれ。テスト品質を、測るために",
+              "url": "https://zenn.dev/mizchi/articles/mutation-test-quality",
+              "source": "Zenn トレンド",
+              "popularity": "332 いいね"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "The Magic of Partial Evaluation",
+          "url": "https://jimmyhmiller.com/magic-of-partial-evaluation",
+          "source": "Lobsters",
+          "popularity": "19 score",
+          "note": "部分評価(Partial Evaluation)による最適化技法の解説。アルゴリズム理論に関心あれば。"
+        },
+        {
+          "title": "How I made a custom game engine for Satelital",
+          "url": "https://spectralorbit.com/blog/satelital_game_engine",
+          "source": "Lobsters",
+          "popularity": "26 score",
+          "note": "ゲームエンジン自作。低レベル最適化の実装知見。"
+        },
+        {
+          "title": "Show HN: ExitPath – Open-source ways out of Slack, Notion and Microsoft 365",
+          "url": "https://exitpath-ruddy.vercel.app/",
+          "source": "Hacker News",
+          "popularity": "166 points",
+          "note": "Slack・Notion・M365 データエクスポート tool のオープンソース化。データポータビリティに注目あれば。"
+        },
+        {
+          "title": "Java4Shell is a reason to use Java",
+          "url": "https://mccue.dev/pages/11-18-26-java4shell",
+          "source": "Lobsters",
+          "popularity": "26 score",
+          "note": "Java セキュリティ改善の話題。Java 使用時の脆弱性対応参考。"
+        },
+        {
+          "title": "tsrs を導入したら oxlint の type-aware linting と typecheck が爆速になった話",
+          "url": "https://zenn.dev/dress_code/articles/6c179ae5129131",
+          "source": "Zenn トレンド",
+          "popularity": "30 いいね",
+          "note": "tsrs（Rust TypeScript）導入で oxlint type-aware 検査が高速化。Typescript プロジェクトの linting 最適化例。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 22,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "Anthropicが高めた公開価格でIPO上場へ向かう一方、Microsoftは大規模な人員最適化の理由をAIに求めている。教育機関やWebサイト運営者がGoogleの施策に対応を迫られる動きも見られた。",
+      "topics": [
+        {
+          "headline": "Anthropic、IPO公開価格83ドルに設定　評価額1.5兆ドル",
+          "summary": "アンソロピックが新規株式公開の公開価格を83ドルに決定。仮条件の上限から6%引き上げ、公募株式数も2割近く増やした。評価額は約1.5兆ドルとなり、19日にナスダック市場に上場する。",
+          "why_it_matters": "AI企業の市場評価が実現される一方で、投資家心理や市場条件が実装作業に影響する。今後のAI関連プロダクト企業の投資判断や採用計画に参考になる。",
+          "tags": [
+            "AI企業",
+            "IPO",
+            "評価額"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "アンソロピック、IPO公開価格83ドルに引き上げ　評価額は1.5兆ドル - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOGN18CWP0Y6A111C2000000/",
+              "source": "はてブ 世の中",
+              "popularity": "5 users"
+            },
+            {
+              "title": "Anthropic reportedly prices IPO at $83 a share, above projected range",
+              "url": "https://techcrunch.com/2026/11/18/anthropic-reportedly-prices-ipo-at-83-a-share-above-projected-range/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Microsoft CEO、60K従業員の退職勧奨の理由をAIと説明",
+          "summary": "サティア・ナデラCEOが10月に従業員6万人に対して実施した退職勧奨（実質的な大量退職）の背景をAIにあると述べた。大規模な人員削減ではなく自発的退職を促す方式を採った。",
+          "why_it_matters": "大手テック企業のAI転換に伴う人員戦略が明確になった。読者の職場でもスキル要件や職務内容が急速に変わる可能性があり、キャリア計画の再検討が必要になるかもしれない。",
+          "tags": [
+            "Microsoft",
+            "AI人員戦略",
+            "組織再編"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit",
+              "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "NY・LA・シカゴ学区、GoogleのAI機能強制に対抗　代替検索を検討",
+          "summary": "米国大手学区がGoogle検索の代替案を検討している。Googleが検索サービスの使用を継続する条件としてAI機能の受け入れを学校に求めたことが背景。",
+          "why_it_matters": "教育機関が企業のAI推進姿勢に対抗措置を取る動きが出現。企業がサービス利用を条件にAI機能を強制する戦略に対する潮目の変化を示しており、セキュリティと教育の両立が課題になっている。",
+          "tags": [
+            "Google",
+            "教育",
+            "AI利用規制"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "The nation’s largest school districts consider ditching Google Search",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "Google AI検索概要でクリック率40%減少、Webサイト運営者が対応迫られる",
+          "summary": "Googleの検索結果画面にAI概要が表示されると、外部Webサイトへのクリック率が約40%減少することが研究で示された。サイト運営者の収益構造が変わる可能性がある。",
+          "why_it_matters": "検索流入に依存しているサイト・ビジネスモデルの基盤が揺らいでいる。読者がWebサービスやAPIの仕様変更に対応する際の優先度判断や、新規プロダクト設計の前提条件を見直す必要がある。",
+          "tags": [
+            "Google検索",
+            "AI概要",
+            "Webトラフィック"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Google検索の「AIによる概要」のせいで外部ウェブサイトのクリック率が約40％減少、サイト運営者はどうするべきか？",
+              "url": "https://gigazine.net/news/20261118-google-ai-overviews-cut-clicks-websites/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "Nvidia CEO交代後も経営層が安定、ナデラCEOが後任に信頼表明",
+          "summary": "マイクロソフトのサティア・ナデラCEOがNvidiaのColette Kress臨時CEO（フアン前CEO後任）への信頼を表明。業界首脳陣からの信頼形成を示すシグナル。",
+          "why_it_matters": "AI推論基盤を支えるGPU調達戦略に関わる企業統治の安定性が確認された。クラウドインフラの供給チェーン見通しが立てやすくなり、読者が機器調達やリージョン戦略を計画する際の参考になる。",
+          "tags": [
+            "Nvidia",
+            "CEO交代",
+            "経営層"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Microsoft CEO Satya Nadella remains confident in Nvidia after Huang’s exit",
+              "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-remains-confident-in-nvidia-after-huangs-exit/",
+              "source": "TechCrunch"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "ニトリ、2990円のノイキャン睡眠イヤホン--「横向きに寝ても耳が痛くなりにくい」",
+          "url": "https://japan.cnet.com/article/35255099/",
+          "source": "はてブ テクノロジー",
+          "popularity": "22 users",
+          "note": "ニトリが睡眠用ワイヤレスイヤホン「ESL-11」を税込み2,990円で販売開始。横向き寝時の耳の負担軽減が特徴。"
+        },
+        {
+          "title": "Nvidia created a weird bit of intrigue by not filing a routine SEC report",
+          "url": "https://techcrunch.com/2026/11/18/nvidia-created-a-weird-bit-of-intrigue-by-not-filing-a-routine-sec-report/",
+          "source": "TechCrunch",
+          "note": "Nvidiaが10-Q（四半期財務報告書）を数週間先延ばしにすることを発表。SEC報告の遅延理由はアナリストが調査中。"
+        },
+        {
+          "title": "Waymoがロボタクシーの高速道路利用を全米で中止、カリフォルニア州で複数の衝突事故を受けて出された使用中止命令を受け",
+          "url": "https://gigazine.net/news/20261118-waymo-suspends-freeway-rides/",
+          "source": "GIGAZINE",
+          "note": "Waymoが米国でのロボタクシーの高速道路利用を全面中止。カリフォルニア州での複数衝突事故を受けた使用中止命令に従う。"
+        },
+        {
+          "title": "ネットにつながらない携帯、KDDIが発売へ──誰向けなのか？　「スマホが電話の再発明なら、これは再再発明」",
+          "url": "https://www.itmedia.co.jp/news/article/2611/18/2000003288/",
+          "source": "ITmedia NEWS",
+          "note": "KDDIが12月25日にインターネット接続できない携帯電話「INFOBAR ZERO」を発売予定。LINEが連絡の中心となった日本での需要がターゲット。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 17,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "米民主党が初の黒人下院議長を指名し、Anthropicが$1.4兆超の評価額でIPO。ウクライナ情勢でマスク氏の発言が波紋を呼び、高市首相がAPEC首脳会議で中ロとの接触に臨む。",
+      "topics": [
+        {
+          "headline": "ジェフリーズ氏が初の黒人下院議長へ、米民主党が指名",
+          "summary": "米民主党がジェフリーズ氏を次期下院議長候補に指名し、アフリカ系としては下院議長初となる。",
+          "why_it_matters": "米下院議長は国の立法権と予算編成に強い影響力を持つ要職で、米政治の転換点になる。",
+          "tags": [
+            "米国政治",
+            "人事"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "ジェフリーズ氏、初の黒人下院議長へ　米民主党、新議会の候補を指名",
+              "url": "http://www.asahi.com/articles/ASVCM05YYVCMUHBI00CM.html?ref=rss",
+              "source": "朝日新聞"
+            },
+            {
+              "title": "米下院議長に民主党のジェフリーズ氏選出へ 初のアフリカ系",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261119de78146",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "Anthropic、$1.4兆超の評価でIPO進行、創業5年で大手AI企業に",
+          "summary": "Claude開発元のAnthropicが米株式市場上場予定、企業評価額は$240B超。創業7年で業界の主要企業になった。",
+          "why_it_matters": "生成AI企業の急速な成長と資本集約性が明らかになり、AI市場の構造が見える。",
+          "tags": [
+            "生成AI",
+            "企業評価"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "アンソロピックIPO、公開価格は83ドル　評価額240兆円企業に",
+              "url": "http://www.asahi.com/articles/ASVCL7X1YVCLUHBI002M.html?ref=rss",
+              "source": "朝日新聞"
+            },
+            {
+              "title": "Claude-maker Anthropic poised for more than $1.4tn stock market debut",
+              "url": "https://www.bbc.co.uk/news/articles/c6742m39xgzxo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            },
+            {
+              "title": "Seven Anthropic founders who are about to become multi-billionaires",
+              "url": "https://www.bbc.co.uk/news/articles/cmd7159vlr85o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "マスク氏、ウクライナのStarshield利用めぐりゼレンスキー大統領と対立",
+          "summary": "マスク氏はゼレンスキー氏がStarshield（軍事向け）とStarlink（民間向け）を混同していると述べ、SpaceX消費者サービスの軍事利用を否定。",
+          "why_it_matters": "衛星通信インフラの管理権と供給者の政治的自由度が、紛争地での戦況に直結する問題として浮かぶ。",
+          "tags": [
+            "ウクライナ情勢",
+            "衛星通信"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Elon Musk tries to explain what&#8217;s going on with Ukraine and Starlink",
+              "url": "https://www.theverge.com/tech/1037448/elon-musk-ukraine-starlink-starshield-nyt-dealbook",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "高市首相、深圳APECでプーチン大統領と意見交換、北海道新聞記者解放要求",
+          "summary": "高市首相は習近平国家主席との接触後、プーチン氏と30分間の会談で、拘束された北海道新聞記者の即時解放とロシア事業の暫定管理撤回を要求。",
+          "why_it_matters": "日本が米中対立の中で同盟国と対立国との関係を並行して調整する難しさと、報道従事者の身柄が外交カードになる現実。",
+          "tags": [
+            "日本外交",
+            "日露関係"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "高市首相、プーチン露大統領と意見交換　夕食会後に30分間 | 毎日新聞",
+              "url": "https://mainichi.jp/articles/20261119/k00/00m/010/033000c",
+              "source": "はてブ 世の中",
+              "popularity": "7 users"
+            }
+          ]
+        },
+        {
+          "headline": "前橋市の住宅街でクマ2頭が相次ぎ目撃、人が追いかけられる事態も",
+          "summary": "前橋市天川大島町で通学中の高校生がクマに追いかけられたと通報。警察が対応中で、親グマが未発見の可能性も。",
+          "why_it_matters": "都市部への野生動物の侵入が日常化し、通学中の児童・生徒も被害リスクに直面している。",
+          "tags": [
+            "クマ出没",
+            "地域安全"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "前橋 クマ2頭出没の住宅地 再び目撃情報 未発見の親グマか",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261119de78168",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "前橋市の住宅街で再びクマ出没か　人が追いかけられているとの情報も",
+              "url": "http://www.asahi.com/articles/ASVCM048WVCMUHNB001M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "AIカンニングを警戒、眼鏡を点検・ボタンにシール　韓国大学入試",
+          "url": "http://www.asahi.com/articles/ASVCL2CPSVCLUHBI00NM.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "韓国の大学入試でAI利用防止を強化、眼鏡点検やボタンシール封印など。"
+        },
+        {
+          "title": "四ツ谷駅の“除草ヤギ“が「早期退職」へ　想定超える速さで職務完了：朝日新聞",
+          "url": "https://www.asahi.com/articles/ASVCL1W72VCLDIFI00XM.html",
+          "source": "はてブ 世の中",
+          "popularity": "13 users",
+          "note": "JR四ツ谷駅の除草ヤギが想定以上のペースで雑草処理、予定3ヵ月から前倒しで退職へ。"
+        },
+        {
+          "title": "28年春導入の「手ぶら改札」　40駅の顔ぶれに透けるJR東の狙い　東京メトロも“陣営”入り",
+          "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003313/",
+          "source": "ITmedia NEWS",
+          "note": "JR東が2028年春からUWBウォークスルー改札を40駅導入、東京メトロも参画。スマホを取り出さず改札通過可能に。"
+        },
+        {
+          "title": "虚構の「新ヤルタ」が告げる転換点　米中ロを変えた12年と日本の孤立 - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOCB186L90Y6A111C2000000/",
+          "source": "はてブ 世の中",
+          "popularity": "15 users",
+          "note": "深圳APECで習近平体制のアジア太平洋戦略が浮き彫りに、日本は米中ロの国際秩序転換の中で孤立のリスク。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 59,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "1.4兆",
+        "240B"
+      ]
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    },
+    {
+      "source": "Google Cloud Blog",
+      "url": "https://cloudblog.withgoogle.com/rss/",
+      "error": "The read operation timed out"
+    }
+  ],
+  "stats": {
+    "collected": 308,
+    "unclassified": 6,
+    "classify_error": null
+  }
+}
