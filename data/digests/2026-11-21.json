@@ -1,0 +1,1065 @@
+{
+  "date": "2026-11-21",
+  "generated_at": "2026-11-21 10:15 JST",
+  "lead": "クラウドとセキュリティの重大脆弱性が相次ぐ中、AIエージェント運用のセキュリティ基盤が標準化へ。",
+  "highlights": [
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "AIエージェント導入時に統一されたセキュリティ基盤が使えるようになり、自社のTerraform・Python運用の規制リスクが低減される。",
+      "topic": {
+        "headline": "Google Cloud、AI エージェント向けセキュリティ基盤を CNCF へ寄贈",
+        "summary": "Google が Agent Substrate と gVisor を CNCF に寄贈。大規模 AI エージェント環境でのサンドボックス隔離とセキュアな実行環境が、ベンダー中立的なオープンソースになる。",
+        "why_it_matters": "AI エージェント実行時のセキュリティ標準化が進み、複数クラウド・オンプレ環境でのエージェント運用が統一されやすくなる。セキュリティ監査要件の明確化にも寄与。",
+        "tags": [
+          "CNCF",
+          "AI エージェント",
+          "セキュリティ"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Google Donates Agent Substrate and gVisor to the CNCF to Secure AI Agents at Scale",
+            "url": "https://www.infoq.com/news/2026/11/google-substrate-gvisor-cncf/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+            "source": "InfoQ"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "BIG-IPのクリティカル脆弱性は広く使用される基盤インフラで緊急対応が必要であり、自社のハイブリッド環境にも該当する可能性がある。",
+      "topic": {
+        "headline": "F5 BIG-IP、5つのクリティカルRCE脆弱性に緊急パッチ",
+        "summary": "F5が複数のBIG-IP脆弱性に対して緊急パッチをリリース。攻撃者は遠隔からコード実行(RCE)またはDoS攻撃を実行可能。クリティカル脆弱性が5件。",
+        "why_it_matters": "BIG-IPはエンタープライズロードバランサー・ファイアウォールで広く使用される。AWSの背後にいても自社オンプレやハイブリッド環境に導入していれば影響が及ぶ。",
+        "tags": [
+          "RCE",
+          "ネットワーク機器"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "F5 releases emergency patches for critical BIG-IP RCE flaws",
+            "url": "https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/",
+            "source": "BleepingComputer"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "AWSのOracle運用改善により、ミッションクリティカルシステムの可用性確保が容易になり、運用スクリプトの設計を簡潔にできる。",
+      "topic": {
+        "headline": "AWS RDS Oracle、フェイルオーバーダウンタイム削減の新機能追加",
+        "summary": "RDS for Oracleに「Replica First Patching」と「Primary Endpoint」が加わり、マイナーバージョン更新時のダウンタイムが短縮され、フェイルオーバー後も DNS が自動で正しいプライマリを指す。",
+        "why_it_matters": "ミッションクリティカルなOracle運用で、定期メンテ中の業務断絶時間を最小化できる。復旧手順も簡潔になり、運用負荷が減る。",
+        "tags": [
+          "AWS RDS",
+          "Oracle",
+          "可用性"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Amazon RDS for Oracle now supports Primary Endpoint",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-primary-endpoint-v2/",
+            "source": "AWS What's New"
+          },
+          {
+            "title": "Amazon RDS for Oracle now supports Replica First Patching for reduced downtime",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-replica-first-patching/",
+            "source": "AWS What's New"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "Geminiの自動デスクトップ操作機能がMac標準に統合されることで、自社ワークフロー・Terraformスクリプト実行との連携可能性が広がる。",
+      "topic": {
+        "headline": "Google Gemini Mac版に「Computer Use」を追加、バックグラウンドで画面操作が可能に",
+        "summary": "Googleは「Computer Use」機能をGemini Macに展開。AIがデスクトップアプリ・ローカルファイル・ウェブサイトを隔離されたバックグラウンドウィンドウで操作でき、ユーザーは別の作業を続行しながら自動実行が進みます。",
+        "why_it_matters": "AIによる自動デスクトップ操作がOS標準の機能に組み込まれていき、Terraform・スクリプト実行の自動化が次段階へ進むうえで、Macユーザーはこの仕組みを自社ツール・ワークフローとどう組み合わせるかの検討が必要です。",
+        "tags": [
+          "Gemini",
+          "自動操作",
+          "Mac"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "Google's Gemini can now run Mac apps and finish desktop chores in the background while you keep working",
+            "url": "https://the-decoder.com/googles-gemini-can-now-run-mac-apps-and-finish-desktop-chores-in-the-background-while-you-keep-working/",
+            "source": "The Decoder"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "AI投資企業が人員削減ではなく採用拡大を計画していることが判明し、AI時代のキャリア・組織戦略の見通しが改まる。",
+      "topic": {
+        "headline": "AI投資で高ROI達成企業ほど採用拡大を計画―IDC調査が「人員削減」の通説を否定",
+        "summary": "IDCの調査では、AI導入で高いROIを得ている組織ほど今後の増員見込み率が高く、「AI普及で人員削減」という通説と相反する結果が出ている。",
+        "why_it_matters": "AI活用組織の採用・組織構成戦略が実質的に人員増加パターンであることを示唆。組織設計やキャリア計画での判断基準が変わる可能性がある。",
+        "tags": [
+          "AI",
+          "人材戦略",
+          "調査"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "AIで成果を出す企業ほど「人を増やす」？　“通説”を否定する調査結果をIDCが発表",
+            "url": "https://www.itmedia.co.jp/enterprise/articles/2611/21/news003.html",
+            "source": "ITmedia エンタープライズ"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "ai",
+    "category_label": "AI・LLM",
+    "headline": "LLMが追加学習なしで自らのウェイト書き換え、性能向上に成功",
+    "sources": [
+      {
+        "title": "AIが追加学習なしで自らのウェイトを書き換えて「自分自身を賢くする」ことに成功",
+        "url": "https://gigazine.net/news/20261120-large-language-model-can-rewrite-itself/",
+        "source": "GIGAZINE"
+      }
+    ],
+    "background": "これまでのLLMは、学習完了後にウェイト（ニューラルネットワークの重み）が固定されていました。新しい知識や状況に対応するにはファインチューニングやリトレーニングという追加学習プロセスが必須でしたが、研究チームが「LLM自身がウェイトを動的に書き換える」仕組みを実証し、追加学習なしでの自己改善が技術的に可能であることを示しました。",
+    "concepts": [
+      {
+        "term": "ウェイト（重み）の動的書き換え",
+        "explanation": "従来は固定されていたニューラルネットワークの重みを、推論時にモデル自身が分析して調整すること。これが可能になると、デプロイ後のモデルが環境やユースケースに応じて自動適応できます。"
+      },
+      {
+        "term": "再帰的自己改善（Recursive Self-Improvement）",
+        "explanation": "AIが自分の出力を評価して自分のウェイトを改善し、改善されたモデルがさらに次の改善を実行する、という循環を繰り返すこと。これが実現すると人間の介入なしに性能が段階的に向上する可能性があります。"
+      },
+      {
+        "term": "推論時最適化（Inference-Time Optimization）",
+        "explanation": "モデルが実際に使われている（推論している）時点で、その入力や出力に基づいて自身を最適化する技術。従来は学習フェーズに限定されていた調整が推論フェーズでも起きることになります。"
+      }
+    ],
+    "for_you": "AWS上でTerraformでLLMサービスをデプロイしている立場では、この研究がもたらすインフラ・運用への影響は直接的です。現在はバージョン管理・ファインチューニング・再デプロイという明確なCIパイプラインがありますが、モデルが自己改善する仕組みが本番環境に組み込まれると、何が改善されたか、どのウェイト変更が適用されたか、ロールバックはどう担保するかといった新しい設計課題が生まれます。セキュリティ・コンプライアンスの観点でも「意図しないウェイト変更」が起きないガードが必要になるため、今から実装パターンと検証フローの再構想が求められます。",
+    "try_this": "まず、ご自身が保守しているLLMのファインチューニング・リトレーニングプロセスを書き出し、「どのステップが自動化・推論時最適化に置き換わったら、インフラコストや保守負荷が最も減るか」を特定してみてください。次に、もし本番環境でウェイトが動的に変わるなら、その変更を検知・監査・ロールバックするTerraformリソースやPythonスクリプトの構想を立てるだけでも、この研究の実務的意味が見えてきます。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "Claudeがリーマン予想の証明を発表し数学界が検証を進める一方、AIエージェント・生成AI画面操作・モデル抽出対策など、エンジニア向けAI機能の実装・拡張が相次いでいます。",
+      "topics": [
+        {
+          "headline": "Claudeでリーマン予想の証明を発表、機械検証も通過し数学界が精査中",
+          "summary": "アンソロピックの数学者Levent Alpöge氏は11月20日、Claudeとの研究でリーマン予想の証明を見つけたとウェブサイトで発表。MITの研究者が公開された証明コードの機械検証通過を報告し、追加検証が進行中です。一方、人間による別の証明も提示されており、複数の解法が数学界で並行検証されています。",
+          "why_it_matters": "AIが数学的難題に取り組む能力の実例を示す一方、その成果の検証プロセスや人間の研究との競合が、AI活用の限界と可能性の両方を示唆しており、自分たちのAI導入でも過信と検証のバランスを考えさせられます。",
+          "tags": [
+            "数学",
+            "Claude",
+            "検証"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Claudeを使い「リーマン予想」を証明か　Anthropic数学者が発表　Lean検証も通過、数学界が精査へ",
+              "url": "https://japan.cnet.com/article/35255245/",
+              "source": "はてブ テクノロジー",
+              "popularity": "6 users"
+            },
+            {
+              "title": "１６７年解けなかった「リーマン予想」、生成ＡＩが証明か…アンソロピックの数学者が発表",
+              "url": "https://www.yomiuri.co.jp/science/20261121-GYT1T00089/",
+              "source": "はてブ 世の中",
+              "popularity": "36 users"
+            },
+            {
+              "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAI、モデルの内部推論抽出を54%から0.2%に軽減―GPT-6.2 Astra/Sol",
+          "summary": "OpenAIは適応的レッドティーミング試験でGPT-6.2 Astra/Solの内部推論抽出への耐性を大幅強化。保護された推論の抽出成功率を54%から0.2%に低下させ、能力抽出攻撃（adversarial distillation）に対する多層的な対策（モデル学習・セーフガード・検知・執行）を組み合わせています。",
+          "why_it_matters": "競合企業によるモデル能力の盗用や無許可の再利用に対する防御が急速に進んでおり、自社の生成AI導入時に同様の対策が必要になる可能性があり、セキュリティ設計の参考になります。",
+          "tags": [
+            "OpenAI",
+            "セキュリティ",
+            "モデル保護"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "OpenAI makes it much harder for attackers to extract how its latest AI models think",
+              "url": "https://the-decoder.com/openai-makes-it-much-harder-for-attackers-to-extract-how-its-latest-ai-models-think/",
+              "source": "The Decoder"
+            },
+            {
+              "title": "Combatting adversarial distillation",
+              "url": "https://openai.com/index/combatting-adversarial-distillation",
+              "source": "OpenAI News"
+            }
+          ]
+        },
+        {
+          "headline": "Google Gemini Mac版に「Computer Use」を追加、バックグラウンドで画面操作が可能に",
+          "summary": "Googleは「Computer Use」機能をGemini Macに展開。AIがデスクトップアプリ・ローカルファイル・ウェブサイトを隔離されたバックグラウンドウィンドウで操作でき、ユーザーは別の作業を続行しながら自動実行が進みます。",
+          "why_it_matters": "AIによる自動デスクトップ操作がOS標準の機能に組み込まれていき、Terraform・スクリプト実行の自動化が次段階へ進むうえで、Macユーザーはこの仕組みを自社ツール・ワークフローとどう組み合わせるかの検討が必要です。",
+          "tags": [
+            "Gemini",
+            "自動操作",
+            "Mac"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Google's Gemini can now run Mac apps and finish desktop chores in the background while you keep working",
+              "url": "https://the-decoder.com/googles-gemini-can-now-run-mac-apps-and-finish-desktop-chores-in-the-background-while-you-keep-working/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "LLMが追加学習なしで自らのウェイト書き換え、性能向上に成功",
+          "summary": "研究チームが、LLMが自分のウェイト（重み）を分析・書き換えして性能を向上させる仕組みを実証。従来は学習完了後にウェイトが固定されていたのに対し、AIが独立して「自己改善」する可能性を示し、研究者は再帰的自己改善への道を指摘しています。",
+          "why_it_matters": "デプロイ後のモデルが追加学習なしに自己最適化する仕組みが現実となれば、ファインチューニングやリトレーニングの従来プロセスが変わる可能性があり、インフラコスト・保守フローの再検討が視野に入ります。",
+          "tags": [
+            "LLM",
+            "自己改善",
+            "重み"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AIが追加学習なしで自らのウェイトを書き換えて「自分自身を賢くする」ことに成功",
+              "url": "https://gigazine.net/news/20261120-large-language-model-can-rewrite-itself/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "Apple、デバイス操作AI（Intelligence）を開発・ライバルのアクセス制限で競争優位化",
+          "summary": "Meta・OpenAI・Anthropic・Googleに続きAppleも自社AIエージェントを開発。同時にAppleはライバル企業による自社デバイスへのアクセスをさらに制限し、独自AIの競争優位を保ちながら、業界のAIエージェント競争を加速させています。",
+          "why_it_matters": "複数プラットフォーム対応のAIエージェント戦略を立てるうえで、Appleデバイスはインテグレーションしにくくなるトレンドが続くため、事前にアプリ・Webベースの代替手段や優先順位の見直しが必要です。",
+          "tags": [
+            "Apple",
+            "エージェント",
+            "プラットフォーム"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Apple joins the race for AI agents that control your device while raising new barriers for competitors",
+              "url": "https://the-decoder.com/apple-joins-the-race-for-ai-agents-that-control-your-device-while-raising-new-barriers-for-competitors/",
+              "source": "The Decoder"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "モダンな情シスは、AIエージェントを育て、任せ、圧倒的な生産性を生む｜kajinari | モダンな情シス",
+          "url": "https://note.com/kajinari/n/n19c73d819b14",
+          "source": "はてブ テクノロジー",
+          "popularity": "12 users",
+          "note": "情シス部門がClaude Skillsで、アカウント発行・権限付与・クラウド設定・デバイス手配などの運用作業をほぼ自動化。エンタープライズエージェント導入の実例。"
+        },
+        {
+          "title": "京大がAI依存チェックリスト公開　「当てはまるものあれば、しばらくAI触らないで」",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/20/2000003378/",
+          "source": "ITmedia AI+",
+          "note": "京都大学がAI依存チェックリストを公開。相談機能に過度に頼るリスク要因を学生に啓発。"
+        },
+        {
+          "title": "Bloomberg analysis of 10 million job postings shows AI-exposed roles in China fell 10 percentage points faster than others",
+          "url": "https://the-decoder.com/bloomberg-analysis-of-10-million-job-postings-shows-ai-exposed-roles-in-china-fell-10-percentage-points-faster-than-others/",
+          "source": "The Decoder",
+          "note": "Bloomberg分析：中国で1,000万件の求人データからAI関連職の減少が他業種より10%ポイント速く進行。エントリーレベル・クリエイティブ業界が最大打撃。"
+        },
+        {
+          "title": "韓国大学入試で電子機器不正111件摘発　AI受験疑惑巡り死者も発生",
+          "url": "https://www.itmedia.co.jp/news/article/2611/20/2000003376/",
+          "source": "ITmedia NEWS",
+          "note": "韓国大学入試でスマートグラス・AI眼鏡など111件の不正摘発。AI受験疑惑の死者も発生。"
+        },
+        {
+          "title": "「Codexを用いてChatGPTの高速性を維持する方法」をOpenAIが解説、AIエージェントで工場システムを構築して自律的に改善作業を進める",
+          "url": "https://gigazine.net/news/20261120-openai-chatgpt-performance-factory/",
+          "source": "GIGAZINE",
+          "note": "OpenAIが「Codexを使ってChatGPTの高速性を保つ方法」を技術ブログで解説。自社製品開発にCodexを活用。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 85,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "セキュリティ侵害とOSS脆弱性が急増。大規模データ漏えい、クリティカルな脆弱性（Ruby、F5 BIG-IP、Splunk SOAR、nginx等）、AIツールを悪用した新型攻撃が報告。",
+      "topics": [
+        {
+          "headline": "ZOZO関連サービス、KARTE不正アクセスで計2,911万人分の情報漏えい",
+          "summary": "外部サービス「KARTE」への不正アクセスにより、ZOZOTOWNの退会者を含む1,518万人、WEAR by ZOZOの1,393万人分の個人情報が漏えい。うち約4.7万人は電話番号とメールアドレスも対象。パスワードとクレジットカード情報は漏えいなし。",
+          "why_it_matters": "大規模eコマースの個人情報漏えいは利用者の信用損失に直結。自社システムなら、外部SaaS委託先の脆弱性管理と責任分界を見直す必要がある。",
+          "tags": [
+            "個人情報漏えい",
+            "委託先リスク"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "ZOZOTOWNの退会者含む1,518万人分の情報が漏えい　WEAR by ZOZOでも1,393万人分に（ビジネス＋IT） - Yahoo!ニュース",
+              "url": "https://news.yahoo.co.jp/articles/1739163b2e1fd496107c05cb8b455d37d52be5d9",
+              "source": "はてブ テクノロジー",
+              "popularity": "4 users"
+            },
+            {
+              "title": "ZOZO、1518万人分の顧客情報流出　委託先に不正アクセス - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOUC20APN0Q6A121C2000000/",
+              "source": "はてブ テクノロジー",
+              "popularity": "4 users"
+            }
+          ]
+        },
+        {
+          "headline": "Ruby CVE-2026-132825(Ruby2Shell)、ヒープバッファオーバーフロー脆弱性でRCE可能",
+          "summary": "Rubyの文字列の大文字小文字変換処理に1バイトのヒープバッファオーバーフローが存在。ISO-8859-1やWindows-1252などの一部1バイト文字コードで、細工した文字列を変換するとバッファ末尾を1バイト越えて書き込まれる。修正版が公開されている。",
+          "why_it_matters": "読者がRubyで開発・運用している場合、即座にバージョンを確認し修正版への更新を検討すべき。バッファオーバーフローはRCEの経路になる。",
+          "tags": [
+            "RCE",
+            "バッファオーバーフロー",
+            "OSS"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Ruby の脆弱性 CVE-2026-132825(Ruby2Shell)についてまとめてみた",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/11/20/224814",
+              "source": "piyolog"
+            },
+            {
+              "title": "Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE",
+              "url": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
+              "source": "SecurityWeek"
+            }
+          ]
+        },
+        {
+          "headline": "F5 BIG-IP、5つのクリティカルRCE脆弱性に緊急パッチ",
+          "summary": "F5が複数のBIG-IP脆弱性に対して緊急パッチをリリース。攻撃者は遠隔からコード実行(RCE)またはDoS攻撃を実行可能。クリティカル脆弱性が5件。",
+          "why_it_matters": "BIG-IPはエンタープライズロードバランサー・ファイアウォールで広く使用される。AWSの背後にいても自社オンプレやハイブリッド環境に導入していれば影響が及ぶ。",
+          "tags": [
+            "RCE",
+            "ネットワーク機器"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "F5 releases emergency patches for critical BIG-IP RCE flaws",
+              "url": "https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "Cisco Expressway、ハードコードされた認証情報脆弱性(CVE-2026-76466)が悪用確認済",
+          "summary": "Cisco Expressway Seriesにハードコードされた認証情報脆弱性が存在。未認証の遠隔攻撃者が永続的クッキーとネットワークアクセスを持つ場合、クラスター化されたデバイスのデータベースサービス経由でroot権限で任意コマンドを実行可能。CISAがKEVリストに追加、悪用確認済。PoC公開後、ロシアの組織が複数デバイスで悪用され、内部ネットワークへのアクセスが確認されている。",
+          "why_it_matters": "VoIP・統一通信基盤の侵害は社内全体の通信が盗聴・乗っ取られるリスク。ハードコード認証情報なので通常の認証対策では防止できない。",
+          "tags": [
+            "認証回避",
+            "悪用確認済",
+            "VoIP"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Hackers Exploit Critical Cisco Expressway Flaw, Breach Four Devices and Reach Internal Network",
+              "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "CVE-2026-76466: Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76466",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Linux KVM CVE-2026-99312、ゲストVMがホストメモリ127GBにアクセス可能（AMD環境）",
+          "summary": "Linuxカーネルに統合されたKVMハイパーバイザーに脆弱性。攻撃者は自身のVM内からホストサーバーのメモリ約127GBを読み取り可能。共有サーバー環境では他の顧客のVM情報にもアクセスされる可能性。研究者がDigitalOceanで実証。",
+          "why_it_matters": "AWS EC2やクラウドで仮想化を使っている場合、ホストメモリからの情報漏えいリスクを理解すべき。マルチテナント環境での隔離が一層重要。",
+          "tags": [
+            "仮想化",
+            "メモリ露出",
+            "クラウド"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Linux KVM Flaw CVE-2026-99312 Lets Guest VMs Access Host Memory on AMD Hosts",
+              "url": "https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "Splunk SOARに複数のRCE脆弱性、アップデート提供中",
+          "summary": "Cisco傘下のSplunkが提供するセキュリティ運用自動化基盤「Splunk SOAR」に深刻なRCE脆弱性が発見。アップデートが提供されている。",
+          "why_it_matters": "SOAR（セキュリティオーケストレーション）はセキュリティチームの中核。侵害されると検知・対応システムそのものが敵の手に渡る。",
+          "tags": [
+            "RCE",
+            "セキュリティ基盤"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「Splunk SOAR」に複数のRCE脆弱性 - アップデートを提供",
+              "url": "https://www.security-next.com/193173",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "Apache Roller CVE-2026-129448、未認証RCE脆弱性が悪用確認済",
+          "summary": "Apache Rollerに信頼されていないデータの逆シリアライズ脆弱性(CVE-2026-129448)が存在。未認証の遠隔攻撃者がXML-RPCエンドポイント経由で任意コード実行可能。認証前にベンダー拡張型のデシリアライズが行われる。CISAがKEVリストに追加、悪用確認済。",
+          "why_it_matters": "XMLベースのブログシステムは日本でも公開Webサービスで使用例がある。内部ネットワークやレガシーシステムに Roller が残っていないか棚卸し推奨。",
+          "tags": [
+            "RCE",
+            "悪用確認済",
+            "XML"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "CVE-2026-129448: Apache Roller Deserialization of Untrusted Data Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-129448",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "N-able says recent security breach led to major service outage",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/n-able-says-recent-security-breach-led-to-major-service-outage/",
+          "source": "BleepingComputer",
+          "note": "N-able、ブリーチ後にMail Assure・SpamExperts Hosted Cloudで世界規模のサービス停止発生"
+        },
+        {
+          "title": "Container Store restores systems after cyberattack",
+          "url": "https://therecord.media/container-store-restores-systems-cyberattack",
+          "source": "The Record",
+          "note": "Container Store、サイバー攻撃後にシステム復旧。parent company Neighborhood Intelligenceが公表"
+        },
+        {
+          "title": "Bell Canada says 'agentic' hacker stole enterprise customer data",
+          "url": "https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/",
+          "source": "BleepingComputer",
+          "note": "Bell Canada、2026年11月17日のブリーチで「agentic」脅威アクターが企業顧客データと通信回線注文システムを盗取"
+        },
+        {
+          "title": "SBC Medical Group Data Breach Impacts Over 2 Million",
+          "url": "https://www.securityweek.com/sbc-medical-group-data-breach-impacts-over-2-million/",
+          "source": "SecurityWeek",
+          "note": "SBC Medical Group、日本のクリニック関連の顧客情報200万件以上に被害"
+        },
+        {
+          "title": "クラウド環境や業務ツールに不正アクセス、個人情報流出 - Gunosy",
+          "url": "https://www.security-next.com/193094",
+          "source": "Security NEXT",
+          "note": "Gunosy（グノシー）が不正アクセス、関係者の個人情報流出"
+        },
+        {
+          "title": "WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams",
+          "url": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html",
+          "source": "The Hacker News",
+          "note": "WhatsApp CVE-2026-23871、Android上で詐欺メッセージに悪用された可能性・セキュリティフロー対応"
+        },
+        {
+          "title": "NSA resumes normal operations following internal network disruptions",
+          "url": "https://therecord.media/nsa-resumes-normal-operations-following-internal-disruptions",
+          "source": "The Record",
+          "note": "NSA、内部ネットワーク障害から通常運用に復帰。一部施設は非必須職員に対して「Code Orange」継続中"
+        },
+        {
+          "title": "West Virginia Legislature hit with cyber incident affecting IT systems",
+          "url": "https://therecord.media/west-virginia-legislature-cyberattack",
+          "source": "The Record",
+          "note": "West Virginia Legislature、サイバーインシデント発生。他の政府機関への波及は未確認"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 82,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "2911万"
+      ]
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWSとGoogle Cloudが相次ぎサービスを拡張・アップデート。AI エージェント向けインフラの整備が加速する一方、データセンターのコスト圧力が高まっている。",
+      "topics": [
+        {
+          "headline": "AWS RDS Oracle、フェイルオーバーダウンタイム削減の新機能追加",
+          "summary": "RDS for Oracleに「Replica First Patching」と「Primary Endpoint」が加わり、マイナーバージョン更新時のダウンタイムが短縮され、フェイルオーバー後も DNS が自動で正しいプライマリを指す。",
+          "why_it_matters": "ミッションクリティカルなOracle運用で、定期メンテ中の業務断絶時間を最小化できる。復旧手順も簡潔になり、運用負荷が減る。",
+          "tags": [
+            "AWS RDS",
+            "Oracle",
+            "可用性"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Amazon RDS for Oracle now supports Primary Endpoint",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-primary-endpoint-v2/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "Amazon RDS for Oracle now supports Replica First Patching for reduced downtime",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-replica-first-patching/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS、CloudWatch PromQL のクエリ履歴を 7 日から 30 日に拡張",
+          "summary": "CloudWatch での OpenTelemetry メトリクスに対する PromQL クエリで、1 ヶ月分のデータを一度に取得・分析できるようになり、月単位や週単位の比較・トレンド分析が可能に。",
+          "why_it_matters": "長期的なパフォーマンス傾向や異常検知をダッシュボード上で一元化でき、アラート条件も月単位のパターンに対応できるようになる。オペレーション効率が向上。",
+          "tags": [
+            "CloudWatch",
+            "可観測性",
+            "PromQL"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon CloudWatch extends the PromQL query window to 30 days",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-promql-query-30days/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon Neptune Serverless、Graviton4 移行で 30% 高速化",
+          "summary": "Neptune が AWS Graviton4 プロセッサに移行し、同一価格で最大 30% のパフォーマンス向上と改善されたスケーリングアルゴリズムを提供。",
+          "why_it_matters": "グラフデータベースのコスト効率が向上。既存クエリの実行時間短縮や同コストでの処理規模拡大が見込め、エージェント向けナレッジグラフ運用のスケール判断が有利に。",
+          "tags": [
+            "Neptune",
+            "Graviton4",
+            "グラフ DB"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon Neptune Serverless now delivers up to 30% better performance and smarter scaling",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-neptune-serverless-r8g-generally-available",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS Network Firewall、インターネットゲートウェイの自動管理をプレビュー",
+          "summary": "Network Firewall が自動 Internet firewall 機能をパブリックプレビュー開始。NAT 機能組み込みで、VPC のすべてのインターネットゲートウェイ上の設定を一元管理できる。",
+          "why_it_matters": "複数 VPC のエッジファイアウォール管理が自動化され、設定の一貫性確保と運用時間短縮が実現。特にマルチアカウント環境で管理オーバーヘッド削減。",
+          "tags": [
+            "Network Firewall",
+            "セキュリティ",
+            "自動化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AWS Network Firewall introduces automated Internet firewall in public preview",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-automated-internet/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Google Cloud、AI エージェント向けセキュリティ基盤を CNCF へ寄贈",
+          "summary": "Google が Agent Substrate と gVisor を CNCF に寄贈。大規模 AI エージェント環境でのサンドボックス隔離とセキュアな実行環境が、ベンダー中立的なオープンソースになる。",
+          "why_it_matters": "AI エージェント実行時のセキュリティ標準化が進み、複数クラウド・オンプレ環境でのエージェント運用が統一されやすくなる。セキュリティ監査要件の明確化にも寄与。",
+          "tags": [
+            "CNCF",
+            "AI エージェント",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Google Donates Agent Substrate and gVisor to the CNCF to Secure AI Agents at Scale",
+              "url": "https://www.infoq.com/news/2026/11/google-substrate-gvisor-cncf/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Web Search on Amazon Bedrock expands language support and country-aware search",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/web-search-amazon-bedrock/",
+          "source": "AWS What's New",
+          "note": "Amazon Bedrock の Web Search、スペイン語・フランス語・ドイツ語・イタリア語と非米国英語を追加サポート"
+        },
+        {
+          "title": "[アップデート] AWS STS の GetScopedCredentials で権限と有効期間を絞った認証情報を作ってみた | DevelopersIO",
+          "url": "https://dev.classmethod.jp/articles/aws-sts-get-scoped-credentials/",
+          "source": "はてブ テクノロジー",
+          "popularity": "6 users",
+          "note": "AWS STS GetScopedCredentials で、権限と有効期間を絞った認証情報を短期的に生成可能に"
+        },
+        {
+          "title": "Super-hot rock geothermal could end data center energy woes",
+          "url": "https://techcrunch.com/2026/11/20/super-hot-rock-geothermal-could-end-data-center-energy-woes/",
+          "source": "TechCrunch",
+          "note": "超高温岩盤地熱発電の新興企業が、データセンター向けのテラワット級電力供給を目指す"
+        },
+        {
+          "title": "SSDの価格は2027年後半に下落し始める可能性あり",
+          "url": "https://gigazine.net/news/20261120-ssd-prices-outlook/",
+          "source": "はてブ テクノロジー",
+          "popularity": "57 users",
+          "note": "SSD 価格が 2027 年後半から下落見込み。HDD は今後 2 年は高止まり予測"
+        },
+        {
+          "title": "［速報］Azure SQL Databaseをローカルで実行する「Azure SQL Database local development container」パブリックプレビュー",
+          "url": "https://www.publickey1.jp/blog/26/azure_sql_databaseazure_sql_database_local_development_container.html",
+          "source": "Publickey",
+          "note": "Azure SQL Database をローカルで実行するコンテナが Microsoft Ignite で パブリックプレビュー発表"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 38,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "GitHub の権限管理が強化され、リポジトリセキュリティ対応が容易に。GPU コンパイラや翻訳キャッシュの最適化、ローカル生成AI の実行速度検証など、開発効率化が進む。",
+      "topics": [
+        {
+          "headline": "セキュリティアドバイザリ権限が一般向けに、カスタムロールで管理可能に",
+          "summary": "GitHub Organization オーナーが、カスタムリポジトリロール経由で、非公開の脆弱性報告を含むセキュリティアドバイザリ作業を特定メンバーに委譲できるようになった。リポジトリ管理者権限の付与が不要に。",
+          "why_it_matters": "開発チームで脆弱性対応を担当する人物に最小権限で仕事を割り当てられ、セキュリティ体制が組みやすくなる。プロジェクト別の権限設計を見直す際の参考に。",
+          "tags": [
+            "GitHub",
+            "セキュリティ",
+            "権限管理"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Security advisory permissions are now generally available",
+              "url": "https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "Meta が GPU コンパイラ拡張 TLX を開発、モダン GPU の低レベル制御を実現",
+          "summary": "Meta は Triton Low-Level Extensions (TLX) を開発。高レベル GPU プログラミング抽象化と低レベル実行制御のギャップを埋め、モダン GPU アーキテクチャの機能を十分に活用できるようにした。",
+          "why_it_matters": "GPU コンピュート最適化が言語・フレームワークレベルで進展。自分の推論・学習モデルを本当に速く動かしたい場合に、こうしたツールが選択肢に入る。",
+          "tags": [
+            "GPU",
+            "コンパイラ",
+            "AI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Meta TLX, a Native GPU Compiler Extension Supporting Advanced Hardware Capabilities",
+              "url": "https://www.infoq.com/news/2026/11/meta-triton-tlx-gpu-compiler/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "Uber、翻訳キャッシュをメモリ 90% 削減しつつ P99 レイテンシ 1ms 以下に",
+          "summary": "Uber は Go ベースの翻訳キャッシュを再設計。初期メモリを 90% 以上削減しながら、99.9% のキャッシュヒット率と P99 ディスク バックアップ キャッシュ ミス レイテンシ 100 マイクロ秒以下を維持した。ハイブリッドアーキテクチャを採用。",
+          "why_it_matters": "大規模 API キャッシュの設計パターン。メモリ効率と応答時間の両立を狙う際、ハイブリッドストレージ戦略が参考になる。",
+          "tags": [
+            "キャッシュ設計",
+            "インフラ",
+            "Go"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Uber Cuts Translation Cache Memory by up to 90% While Keeping P99 Latency Below 1 MS",
+              "url": "https://www.infoq.com/news/2026/11/uber-go-translation-cache/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub Desktop、複数アカウント対応で同一ホスト上の切り替えが可能に",
+          "summary": "GitHub Desktop が、同一ホスト（GitHub.com、GitHub Enterprise Server、GHE.com）上で複数アカウントにサインイン可能に。これまで最も要望が多かった機能。",
+          "why_it_matters": "個人と仕事、複数の組織を開発で扱う場合、ツール内で切り替えられるだけで日常の摩擦が減る。",
+          "tags": [
+            "GitHub",
+            "開発ツール"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "GitHub Desktop now supports multiple accounts per host",
+              "url": "https://github.blog/changelog/2026-11-19-github-desktop-now-supports-multiple-accounts-per-host",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "NVIDIA RTX Spark ノート PC、ローカル画像・動画生成 AI の実行速度を検証",
+          "summary": "NVIDIA RTX Spark 搭載ノート PC で、画像生成 AI や動画生成 AI をローカル実行する速度検証結果を LTT Labs が公開。RTX Spark は大規模言語モデルやコンテンツ生成モデルのローカル実行に対応。",
+          "why_it_matters": "エッジデバイスで生成 AI が実用的な速度で動く状況が進みつつある。クライアント側での AI 活用やネットワーク低遅延を優先した設計判断の根拠になる。",
+          "tags": [
+            "エッジ AI",
+            "生成 AI",
+            "GPU"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "RTX Spark搭載ノートPCで画像生成AIや動画生成AIのローカル実行速度を検証した結果が公開される",
+              "url": "https://gigazine.net/news/20261120-rtx-spark-image-video-generation/",
+              "source": "GIGAZINE"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Vibecoding an inference chip",
+          "url": "https://ankitg.me/blog/vibecoding-inference-chip/",
+          "source": "Hacker News",
+          "popularity": "110 points",
+          "note": "推論チップの「vibe coding」設計思想。新しい実装アプローチとして注目度高し。"
+        },
+        {
+          "title": "「Windows Server 2028」で「WSUS」や「SMB 1.0」、「VBScript」などが削除へ／「Windows PowerShell 5.1」「WDS」は非推奨に、レガシーBIOSでの起動も不可",
+          "url": "https://forest.watch.impress.co.jp/docs/news/2158261.html",
+          "source": "はてブ テクノロジー",
+          "popularity": "30 users",
+          "note": "Windows Server 2028 で WSUS・SMB 1.0・VBScript が削除、レガシー BIOS は不起動に。"
+        },
+        {
+          "title": "Vim Classic 8.3.1 released",
+          "url": "https://vim-classic.org/news/vim-8.3.1-released.html",
+          "source": "Lobsters",
+          "popularity": "53 score",
+          "note": "Vim Classic 8.3.1 がリリース。"
+        },
+        {
+          "title": "Trying to get our Arms around AI efficiency",
+          "url": "https://stackoverflow.blog/2026/11/20/trying-to-get-our-arms-around-ai-efficiency/",
+          "source": "Stack Overflow Blog",
+          "note": "Arm の VP が語る、ML をエッジ・エージェント向けにする課題と展望。"
+        },
+        {
+          "title": "Chaos, then control: the maturity model most AI rollouts skip over",
+          "url": "https://stackoverflow.blog/2026/11/19/chaos-then-control/",
+          "source": "Stack Overflow Blog",
+          "note": "AI コーディングツール導入組織の多くが期待値未達。成熟度モデルが抜け落ちている指摘。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 31,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "セキュリティリスク（NVIDIA・Google検索）とビジネス再編（Mailchimp売却）が主要なニュース。AIによる企業の採用増加という逆説的調査結果も注目。",
+      "topics": [
+        {
+          "headline": "NVIDIA CEO交代後、カリフォルニア司法長官が同社と前CEO黄仁勲氏を捜査対象に",
+          "summary": "NVIDIA前CEO黄仁勲氏の中国との関係と企業統治に関して、カリフォルニア司法長官が同社と黄氏を捜査。投資家への情報開示の問題を指摘している。",
+          "why_it_matters": "企業統治の観点から同業他社の経営陣交代時の対応や透明性に関する実務的な教訓が得られる。規制環境の変化も確認できる。",
+          "tags": [
+            "NVIDIA",
+            "規制",
+            "企業統治"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "California AG subpoenas Nvidia over worries about Huang’s ties with China",
+              "url": "https://techcrunch.com/2026/11/20/california-ag-subpoenas-nvidia-over-worries-about-huangs-ties-with-china/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "SEC、NVIDIA会計問題を調査―複数メディアが報道",
+          "summary": "米国SECがNVIDIA会計に関する潜在的問題を調査中。複数の情報筋が確認した。",
+          "why_it_matters": "投資先企業の信頼性評価と決算情報の確認が重要。セキュリティ関連企業の経営安定性確認も実務につながる。",
+          "tags": [
+            "NVIDIA",
+            "規制",
+            "会計"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "US SEC's Nvidia probe is examining potential accounting issues – sources",
+              "url": "https://www.marketscreener.com/news/us-sec-s-nvidia-probe-is-examining-potential-accounting-issues-sources-say-ce785ed3dd8ff627",
+              "source": "Hacker News",
+              "popularity": "218 points"
+            }
+          ]
+        },
+        {
+          "headline": "Google検索、新ホームページでAIチャット履歴を統合・検索ボタン廃止へ",
+          "summary": "GoogleがGoogle検索ホームページを刷新し、AI対話ツールへのアクセスを簡素化。検索ボタンを非表示にする設計変更を実施。",
+          "why_it_matters": "検索から会話型AIへのユーザー誘導強化により、SEO・検索トラフィック依存のWebビジネス戦略の見直しが必要になる可能性がある。",
+          "tags": [
+            "Google",
+            "AI検索",
+            "プロダクト"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Google rolls out new search homepage with AI chat history and no search button",
+              "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/",
+              "source": "Ars Technica"
+            }
+          ]
+        },
+        {
+          "headline": "Google Smart Speaker、Nest Appから統合Google Home Appへ移行・Google Assistantを廃止予定",
+          "summary": "Google来年からNest AppのシャットダウンとGoogle Assistantのスマートホームデバイスからの廃止を予告。Google Home Appへの統合が進む。",
+          "why_it_matters": "スマートホーム開発とインテグレーション設計に関わるエンジニアは後継API・UIの変化を早期に把握する必要がある。",
+          "tags": [
+            "Google",
+            "スマートホーム",
+            "廃止予定"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Google says it’s going to shut off Google Assistant on smart speakers next year",
+              "url": "https://www.theverge.com/tech/1038834/google-assistant-smart-speakers-nest-app-killed-shut-down",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "AI投資で高ROI達成企業ほど採用拡大を計画―IDC調査が「人員削減」の通説を否定",
+          "summary": "IDCの調査では、AI導入で高いROIを得ている組織ほど今後の増員見込み率が高く、「AI普及で人員削減」という通説と相反する結果が出ている。",
+          "why_it_matters": "AI活用組織の採用・組織構成戦略が実質的に人員増加パターンであることを示唆。組織設計やキャリア計画での判断基準が変わる可能性がある。",
+          "tags": [
+            "AI",
+            "人材戦略",
+            "調査"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AIで成果を出す企業ほど「人を増やす」？　“通説”を否定する調査結果をIDCが発表",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/21/news003.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Trump threatens ‘tremendous tax’ for moving AI data centers outside the US",
+          "url": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+          "source": "The Verge",
+          "note": "トランプ大統領、米国外でのAIデータセンター建設に「高い税金」導入を予告"
+        },
+        {
+          "title": "Valve says it might have to raise the price of supply-limited Steam Machines",
+          "url": "https://arstechnica.com/gaming/2026/11/valve-says-it-might-have-to-raise-the-price-of-supply-limited-steam-machines/",
+          "source": "Ars Technica",
+          "note": "Valve、Steam Machineの供給制約で値上げ可能性―製造数量と価格決定がまだ未確定"
+        },
+        {
+          "title": "Six AI-powered gadgets that could make your home office smarter",
+          "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/",
+          "source": "TechCrunch",
+          "note": "AI搭載ガジェット6製品で在宅オフィス環境アップグレードの紹介記事"
+        },
+        {
+          "title": "Behind Jensen Huang’s exit, questions about a management style reportedly built on fear",
+          "url": "https://techcrunch.com/2026/11/20/behind-jensen-huangs-exit-questions-about-a-management-style-reportedly-built-on-fear/",
+          "source": "TechCrunch",
+          "note": "NVIDIA Jensen Huang前CEOの管理スタイルが「恐怖心に基づいている」と報道"
+        },
+        {
+          "title": "We promoted developers into architects without informing them",
+          "url": "https://manidoraisamy.com/developer-to-architect.html",
+          "source": "Hacker News",
+          "popularity": "286 points",
+          "note": "開発者が正式通知なしでアーキテクト職へ昇進させられた事例がHN注目(286ポイント)"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 13,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "286"
+      ]
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "英国とEUが新協定を合意し Brexit後の関係改善が報じられる一方、国内では投機抑制税制やインフラトラブルなど多くの課題が動く。",
+      "topics": [
+        {
+          "headline": "英国とEU、ブレグジット後の新協定を合意",
+          "summary": "英国とEUがブラッセルで新たな協定に合意し、ブレグジット後としては最も緊密な関係を築く見通しが立った。",
+          "why_it_matters": "英EU関係の改善は欧州の政治的安定とサプライチェーンに影響を与える。",
+          "tags": [
+            "英国",
+            "EU"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "The Papers: 'Closest ties since Brexit' and 'Grand Theft EU'",
+              "url": "https://www.bbc.co.uk/news/articles/cw7829pl3xklo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "新築マンション、投機的取引抑制へ 2027年度税制改正で措置検討",
+          "summary": "新築マンション価格の高止まりを受け、政府・与党は投機目的の短期売買が価格押し上げの一因とみなし、2027年度税制改正での抑制措置を検討している。",
+          "why_it_matters": "住宅市場の過熱を抑える政策が不動産投資や住宅取得計画に影響する。",
+          "tags": [
+            "不動産",
+            "税制"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "新築マンション 投機的な取り引き抑制を検討 来年度税制改正",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261121de79532",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "リニア中央新幹線トンネル工事で異常、川底から気泡発生し水噴き上げ",
+          "summary": "神奈川県川崎市内のリニア中央新幹線トンネル掘削現場近くで、川の底から気泡が発生して水を噴き上げる現象が発生。JR東海は工事を停止し因果関係を調査している。",
+          "why_it_matters": "大型インフラの施工トラブルは工期遅延や周辺環境への影響につながる可能性がある。",
+          "tags": [
+            "インフラ",
+            "リニア"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "リニアのトンネル工事 地表付近の川で複数か所から気泡　川の水噴き上げていると報告も　JR東海は工事停止して因果関係調査 | TBS NEWS DIG",
+              "url": "https://newsdig.tbs.co.jp/articles/-/3102836",
+              "source": "はてブ 世の中",
+              "popularity": "16 users"
+            }
+          ]
+        },
+        {
+          "headline": "配送時の破損や盗難、国交省が指針案 置き配は引き渡し後が対象外",
+          "summary": "国土交通省は『置き配』について、荷物を指定場所に置いた時点で引き渡したと見なし、その後の破損・盗難は事業者の補償対象外とする指針案を公表。パブリックコメント後、年内に正式決定予定。",
+          "why_it_matters": "消費者と事業者の責任区分が明確化され、配送トラブル時の対応が変わる。",
+          "tags": [
+            "流通",
+            "消費者保護"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "「置き配」届けた後、補償なし　破損や盗難、国交省が指針案",
+              "url": "https://www.47news.jp/15259526.html",
+              "source": "はてブ 世の中",
+              "popularity": "192 users"
+            }
+          ]
+        },
+        {
+          "headline": "大手住宅メーカー・タマホーム、火災保険金不正請求で水増し見積書提出",
+          "summary": "タマホームの営業社員が、損害保険会社に対し顧客に提示した修理工事見積書とは異なる水増し見積書を提出し、火災保険金の不正請求を行っていた。",
+          "why_it_matters": "大手企業の不正事案が発覚し、消費者の信頼低下と業界規制強化につながる。",
+          "tags": [
+            "企業不祥事",
+            "保険"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "保険金不正請求のタマホーム、損保会社へは「数万円水増し」の見積書…顧客の自己負担軽減で「信頼」狙いか",
+              "url": "https://www.yomiuri.co.jp/economy/20261121-GYT1T00021/",
+              "source": "はてブ 世の中",
+              "popularity": "16 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "ペルーでM6.7の地震 津波のおそれなし 米海洋大気局",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261121de79540",
+          "source": "NHK 主要",
+          "note": "ペルー中部でM6.7の地震、津波のおそれなし"
+        },
+        {
+          "title": "群馬・伊勢崎市3人死亡事故　トラック運転手が上告せず懲役20年判決確定（テレビ朝日系（ANN）） - Yahoo!ニュース",
+          "url": "https://news.yahoo.co.jp/articles/9ec0dbda7dcfc7e9166b604bfd1b7bf272d5d4c0",
+          "source": "はてブ 世の中",
+          "popularity": "13 users",
+          "note": "飲酒運転で3人死亡させたトラック運転手、懲役20年判決確定"
+        },
+        {
+          "title": "ブルーライトカットのめがね、目の負担軽減の助けにならず　23年国際研究で結論",
+          "url": "https://www.cnn.co.jp/fringe/35255242.html",
+          "source": "はてブ 世の中",
+          "popularity": "15 users",
+          "note": "ブルーライトカット眼鏡、目の負担軽減に効果なし―2023年国際研究で結論"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 55,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [],
+  "stats": {
+    "collected": 315,
+    "unclassified": 11,
+    "classify_error": null
+  }
+}
