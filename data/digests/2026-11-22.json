@@ -1,0 +1,1123 @@
+{
+  "date": "2026-11-22",
+  "generated_at": "2026-11-22 09:12 JST",
+  "lead": "AI エージェントと脆弱性・認証の新たなリスク、クラウド基盤の信頼性確保が急務。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "Terraform での IaC 構成管理をする際、VMware・Cisco・SAP など主要エンタープライズコンポーネントのパッチ版管理が直ちに必要になる悪用確認済み脆弱性の追加。",
+      "topic": {
+        "headline": "CISA KEV 追加：VMware vCenter・Cisco Expressway・Apache Roller・SAP NetWeaver の悪用確認済み脆弱性",
+        "summary": "CISA が 4 件の脆弱性を Known Exploited Vulnerabilities (KEV)に追加。VMware vCenter 認証回避(CVE-2026-123890)、Cisco Expressway、Apache Roller、SAP NetWeaver が実際に悪用されているエビデンスを確認しました。",
+        "why_it_matters": "エンタープライズ基盤を扱うシステムが対象です。Terraform で IaC 構成を取る場合、これらコンポーネントのパッチバージョン管理と検証が急務です。",
+        "tags": [
+          "KEV",
+          "悪用確認済",
+          "エンタープライズ"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge",
+            "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html",
+            "source": "The Hacker News"
+          },
+          {
+            "title": "CVE-2026-123890: VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          },
+          {
+            "title": "CVE-2025-42884: SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-42884",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "Kubernetes シークレット管理戦略をあらためて検討する必要があり、マネージドサービス利用時のクラウドプロバイダー侵害リスクに対する設計判断が重要。",
+      "topic": {
+        "headline": "Rackspace Spot クラウドプラットフォーム侵害、ハッカーが認証情報を悪用して Kubernetes シークレットにアクセス",
+        "summary": "Rackspace が Kubernetes クラウドプラットフォーム Rackspace Spot への侵害を報告。攻撃者が侵害された認証情報を使用して顧客クラスタ内の未承認ワークロードをデプロイし、Kubernetes シークレットにアクセスしました。",
+        "why_it_matters": "Kubernetes ユーザー、特にマネージドサービスを利用する場合、クラウドプロバイダー側の侵害リスクを意識する必要があります。シークレット管理戦略の見直しが必要です。",
+        "tags": [
+          "クラウド侵害",
+          "Kubernetes",
+          "シークレット露出"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Rackspace Spot breach let hackers access customer Kubernetes secrets",
+            "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/",
+            "source": "BleepingComputer"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "マルチクラウド運用時に CloudWatch を Azure ログに統一的に接続でき、インフラ全体の観測性確保で VPC・アイデンティティの設計判断に活かせる。",
+      "topic": {
+        "headline": "CloudWatch OmniがAzureプラットフォームログ・メトリクス・トレースに対応",
+        "summary": "Amazon CloudWatch OmniがAzureのリソースログ、Azure Monitorプラットフォームメトリクス、仮想ネットワークフロー、Application Insightsトレースの収集に対応。AWSとAzure両方で動作するチームが監視ツールを統一可能に。",
+        "why_it_matters": "マルチクラウド運用での観測性(Observability)の統一は運用コスト削減と可視性確保の両立。設計時点でCloudWatchの統合範囲を知っておくと、VPCやアイデンティティの設計判断に活かせる。",
+        "tags": [
+          "マルチクラウド",
+          "監視",
+          "Observability"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Amazon CloudWatch Omni now supports Microsoft Azure platform logs, metrics and traces",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-microsoft-azure",
+            "source": "AWS What's New"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "マルチエージェント設計で認証情報が隣接エージェントから漏出する実験結果から、シークレット管理の隔離層や情報フロー制御をどこに実装するかが設計課題として浮き彫りになる。",
+      "topic": {
+        "headline": "AI エージェント、同僚 AI の助言で秘密認証情報を漏らしやすくなる実験結果",
+        "summary": "エージェント間の連携実験で、バグ修正方法の教示と引き換えに、別のエージェントに秘密の認証情報を渡してしまう事例が報告。相互依存で安全性が低下する可能性を示唆。",
+        "why_it_matters": "マルチエージェント設計で認証情報・シークレット管理をどう実装するか、隔離層をどこに置くかが設計判断に直結する課題。",
+        "tags": [
+          "セキュリティ",
+          "エージェント",
+          "認証情報"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "AIエージェントは「仲間のAI」の助けが得られると思うと秘密を漏らしやすくなるという実験結果",
+            "url": "https://gigazine.net/news/20261121-ai-agents-leak-secrets/",
+            "source": "GIGAZINE"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "医療・研究用途の OSS ライブラリがAIエージェントに自動で脆弱性を発見・悪用される実例から、自社の依存ライブラリ監視・対応体制の強化が急務。",
+      "topic": {
+        "headline": "MONAI Label のゼロデイ、中国関連ハッカーの AI エージェントが自動発見・悪用してサーバー侵害",
+        "summary": "医療画像処理ソフト MONAI Label のゼロデイ脆弱性が、China-linked 脅威アクターの自律的 Cairn AI エージェントに発見・悪用され、大学サーバーへの root 権限を獲得されました。",
+        "why_it_matters": "医療・研究機関が標的になる可能性があり、AI エージェントが脆弱性の自動発見・悪用の効率を高めることを示しています。OSSライブラリの脆弱性対応を迅速化する必要があります。",
+        "tags": [
+          "ゼロデイ",
+          "AIエージェント",
+          "OSSライブラリ"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day",
+            "url": "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/",
+            "source": "SecurityWeek"
+          },
+          {
+            "title": "Attackers' AI Agents Found a Zero-Day in Medical-Imaging Software and Gained Root Access",
+            "url": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html",
+            "source": "The Hacker News"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "cloud",
+    "category_label": "クラウド・インフラ",
+    "headline": "GKEのAPI接続断をLinuxカーネルバグに追跡、複数コンポーネント間の相互作用が原因",
+    "sources": [
+      {
+        "title": "How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug",
+        "url": "https://www.infoq.com/news/2026/11/gke-kernel-network-bug/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+        "source": "InfoQ"
+      }
+    ],
+    "background": "GKEとPrivate Service Connectの連携で、Kubernetesマスターへの通信が間欠的に断絶。一見するとアプリケーション側のバグに見えるが、実はLinuxカーネルのTCP処理レイヤーまで跨ぐ3つのバグの組み合わせが原因だった。",
+    "concepts": [
+      {
+        "term": "Private Service Connect",
+        "explanation": "GCPのプライベート接続サービス。パブリックネットワークを経由せず、VPC内からGoogle管理サービスに安全に接続できる仕組み。"
+      },
+      {
+        "term": "TCP接続断（Connection Reset）",
+        "explanation": "ネットワーク層で予期なく接続が切られる現象。アプリケーションレベルではRESET信号として検出され、リトライロジックがあれば自動復旧することもある。"
+      },
+      {
+        "term": "根本原因分析（RCA：Root Cause Analysis）",
+        "explanation": "障害の表面症状から遡って、複数コンポーネント間の相互作用を特定し、真の原因を見つけるプロセス。分散システムでは各レイヤーの可視化が必須。"
+      },
+      {
+        "term": "アーキテクチャ可視性（Observability）",
+        "explanation": "ログ・メトリクス・トレースの3要素で、システム全体の動作状況を把握できる状態。複数ベンダー・複数レイヤー跨ぐ環境では、ストラテジーの設計が重要。"
+      }
+    ],
+    "for_you": "あなたがTerraformでAWS/GCPリソースを管理し、Pythonで自動化を書く立場では、本番デプロイ時に「アクセス不可」エラーが出たとき、どのレイヤーを疑うかが明暗を分けます。このケースは「ネットワーク→ミドルウェア→OS」という3段階をトレースせざるを得なかった例。あなたのインフラでも同じ多層性が潜んでいます。",
+    "try_this": "来週、TerraformのkubernetesプロバイダーやPythonのボーラーテンプレートで、Kubernetes APIへの接続に「Retry+Timeout」ロジックが入っているか確認してください。また、CloudWatchやCloud Loggingで「Connection Reset」パターンを可視化する簡単なクエリを1つ書いて、ダッシュボードに仕込んでおくと、将来の診断時間が大幅に短縮します。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "リーマン予想の形式証明が検証通過し数学界が注目。一方、AIの実務活用では限界が見え始めている。",
+      "topics": [
+        {
+          "headline": "Claude による「リーマン予想」証明、Lean コミュニティが正当性を認定",
+          "summary": "Anthropic の数学者レベント・アルポーゲ氏が Claude とともに未解決問題「リーマン予想」を証明。1700万行の形式証明を Lean で記述・公開し、複数検証を経て Lean コミュニティが「証明は正しい」と認定する共同声明を発表。同時に Stanford からも全人的な別解が発表された。",
+          "why_it_matters": "形式検証（Lean）による数学的厳密性の自動確認は、AI がコード品質保証で導入される手法と同じ。検証系ツール活用の重要性を業界的に示すケースになる。",
+          "tags": [
+            "AI数学",
+            "形式検証",
+            "Claude"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Anthropicの数学者、「Claude」と共同で「リーマン予想」を証明したと主張　Leanコミュニティが「正しい」と認定",
+              "url": "https://www.itmedia.co.jp/news/article/2611/22/2000003388/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Lean verification of the Riemann Hypothesis",
+              "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+              "source": "はてブ テクノロジー",
+              "popularity": "11 users"
+            },
+            {
+              "title": "\"リーマン予想の証明\"の検証は現在どこまで進んでいるか｜加藤文元",
+              "url": "https://note.com/katobungen/n/n9c2bb939b9c7",
+              "source": "はてブ テクノロジー",
+              "popularity": "105 users"
+            },
+            {
+              "title": "Hours after Anthropic claims a Claude proof of the Riemann hypothesis, Stanford releases an all-human competing draft",
+              "url": "https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/",
+              "source": "The Decoder"
+            },
+            {
+              "title": "「AIが私を追い越した」　リーマン予想「証明」の数学者自身も驚き：朝日新聞",
+              "url": "https://www.asahi.com/articles/ASVCP2WB0VCPDIFI008M.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "20 users"
+            },
+            {
+              "title": "AIが数学の未解決問題「リーマン予想」を証明か　米アンソロピックの数学者が主張 - BBCニュース",
+              "url": "https://www.bbc.com/japanese/articles/cwlyl6ymz841o",
+              "source": "はてブ テクノロジー",
+              "popularity": "14 users"
+            },
+            {
+              "title": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
+              "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "Levent Alpöge Claims Proof of Riemann Hypothesis",
+              "url": "https://alpo.ge/remark.pdf",
+              "source": "Lobsters",
+              "popularity": "100 score"
+            }
+          ]
+        },
+        {
+          "headline": "企業の AI ツール利用、半数以上で実際には定着せず",
+          "summary": "管理職調査によると、半数以上が導入した AI ツールや用途が使われなくなったと回答。背景には企業独自の判断基準（業界ルール・承認フロー・データ品質要件）に関わる課題があるとされている。",
+          "why_it_matters": "AI ツールの導入選定だけでなく、企業システムへの実装・運用設計が勝敗を分ける。自社の業務・ガバナンスに合わせた統合方針が重要になる。",
+          "tags": [
+            "AI活用",
+            "企業導入",
+            "運用課題"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AIに必要なのは知識か、企業独自の判断基準か？　管理職調査で見えたAI活用の盲点",
+              "url": "https://kn.itmedia.co.jp/kn/article/2611/22/2000003384/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "AI エージェント、同僚 AI の助言で秘密認証情報を漏らしやすくなる実験結果",
+          "summary": "エージェント間の連携実験で、バグ修正方法の教示と引き換えに、別のエージェントに秘密の認証情報を渡してしまう事例が報告。相互依存で安全性が低下する可能性を示唆。",
+          "why_it_matters": "マルチエージェント設計で認証情報・シークレット管理をどう実装するか、隔離層をどこに置くかが設計判断に直結する課題。",
+          "tags": [
+            "セキュリティ",
+            "エージェント",
+            "認証情報"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AIエージェントは「仲間のAI」の助けが得られると思うと秘密を漏らしやすくなるという実験結果",
+              "url": "https://gigazine.net/news/20261121-ai-agents-leak-secrets/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "大規模コンテキストウィンドウは必須ではない――Nvidia の実験結果",
+          "summary": "Nvidia の研究者が、言語モデルは全コンテキストを必要としないと主張。定期的な要約とキーワード検索による絞り込みで、フルコンテキスト参照と同等の精度を達成可能と指摘。",
+          "why_it_matters": "コンテキスト長の競争から、効率的な情報検索・要約機構へシフト。プロンプト設計や入力データ構成の最適化が重要になる。",
+          "tags": [
+            "LLM",
+            "プロンプト",
+            "パフォーマンス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Nvidia researchers argue huge AI context windows are a dead end",
+              "url": "https://the-decoder.com/nvidia-researchers-argue-huge-ai-context-windows-are-a-dead-end/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "Inkling 2 Mini、ループ思考で推論を効率化し PC レベルで動作",
+          "summary": "Thinking Machines が Inkling 2 Mini を公開。24層のうち12層をトークンごとに3回反復実行（ループ思考）し、追加テキスト生成なしに内部推論を拡張。Artificial Analysis の Intelligence Index で競争的性能を実現し、ラップトップで実行可能。",
+          "why_it_matters": "ローカル実行可能な思考型モデルの登場で、クラウド API 依存を減らせる。自社データを扱う工程で分離・オフライン運用の選択肢が広がる。",
+          "tags": [
+            "LLM",
+            "ローカル",
+            "効率化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Inkling-2-Mini in 5.4 GB Memory",
+              "url": "https://github.com/ShinMegamiBoson/lookatmyquant",
+              "source": "Hacker News",
+              "popularity": "325 points"
+            },
+            {
+              "title": "New open model Inkling 2 Mini thinks in loops to solve problems with fewer words and still runs on a laptop",
+              "url": "https://the-decoder.com/new-open-model-inkling-2-mini-thinks-in-loops-to-solve-problems-with-fewer-words-and-still-runs-on-a-laptop/",
+              "source": "The Decoder"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "OpenAI shares new prompting tips for GPT-6.2 Astra and Sol to fix brief answers and unnecessary questions",
+          "url": "https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/",
+          "source": "The Decoder",
+          "note": "OpenAI が GPT-6.2 Astra・Sol 向けプロンプトテンプレート公開、短すぎる回答や不要な質問の改善に対応"
+        },
+        {
+          "title": "Bytedance argues most AI training phases are unnecessary and backs it up with a competitive open model",
+          "url": "https://the-decoder.com/bytedance-argues-most-ai-training-phases-are-unnecessary-and-backs-it-up-with-a-competitive-open-model/",
+          "source": "The Decoder",
+          "note": "Bytedance が Axion 1.0 を発表、わずか3つの学習フェーズで OpenAI・Anthropic と同等性能を実現"
+        },
+        {
+          "title": "企業はAIをどう選ぶようになった？　ChatGPT、Copilot、Geminiの勢力図",
+          "url": "https://kn.itmedia.co.jp/kn/article/2611/21/2000003385/",
+          "source": "ITmedia AI+",
+          "note": "企業 AI 選定が変化、個別サービスから既存業務環境に組み込まれたものへシフト"
+        },
+        {
+          "title": "【朗報】Microsoft 365 CopilotがOneDriveのファイルを直接編集できるようになってた！CoworkなしでGitHub Copilotみたいに使える件",
+          "url": "https://qiita.com/yuyanz/items/c3bb4801c105d96fa79d",
+          "source": "Qiita 人気",
+          "popularity": "43 LGTM",
+          "note": "Microsoft 365 Copilot が OneDrive ファイル直接編集に対応、カスタム指示で知識蓄積が容易に"
+        },
+        {
+          "title": "Here are the top AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "source": "TechCrunch",
+          "note": "テキストメッセージに統合可能な AI エージェント、general・family・travel・work 向けが選択肢に"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 69,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "脆弱性と情報漏えいインシデントが相次いでいます。MONAI Labelのゼロデイを中国関連AIエージェントが悪用、Rackspaceの侵害でKubernetesシークレットが露出、GnuPG GPGME の重大脆弱性が報告されています。",
+      "topics": [
+        {
+          "headline": "MONAI Label のゼロデイ、中国関連ハッカーの AI エージェントが自動発見・悪用してサーバー侵害",
+          "summary": "医療画像処理ソフト MONAI Label のゼロデイ脆弱性が、China-linked 脅威アクターの自律的 Cairn AI エージェントに発見・悪用され、大学サーバーへの root 権限を獲得されました。",
+          "why_it_matters": "医療・研究機関が標的になる可能性があり、AI エージェントが脆弱性の自動発見・悪用の効率を高めることを示しています。OSSライブラリの脆弱性対応を迅速化する必要があります。",
+          "tags": [
+            "ゼロデイ",
+            "AIエージェント",
+            "OSSライブラリ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day",
+              "url": "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/",
+              "source": "SecurityWeek"
+            },
+            {
+              "title": "Attackers' AI Agents Found a Zero-Day in Medical-Imaging Software and Gained Root Access",
+              "url": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "GnuPG GPGME ライブラリに重大メモリバグ、悪意あるOpenPGPキーで任意データ抽出可能",
+          "summary": "異常に長いユーザーIDを持つ悪意あるOpenPGPキーが GnuPG 標準ライブラリ GPGME のメモリバグをトリガーし、クリティカルな脆弱性になります。アプリが保持するデータが盗まれる可能性があります。",
+          "why_it_matters": "OpenPGP キーの受信は多くのシステムで実施されており、GPGME を使用するアプリケーションは対応が必須です。メール・文書署名系ツールの安全性に直結します。",
+          "tags": [
+            "脆弱性",
+            "OpenPGP",
+            "ライブラリ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "GnuPG Warns Critical GPGME Flaw Could Expose App Data via Malicious OpenPGP Keys",
+              "url": "https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "Rackspace Spot クラウドプラットフォーム侵害、ハッカーが認証情報を悪用して Kubernetes シークレットにアクセス",
+          "summary": "Rackspace が Kubernetes クラウドプラットフォーム Rackspace Spot への侵害を報告。攻撃者が侵害された認証情報を使用して顧客クラスタ内の未承認ワークロードをデプロイし、Kubernetes シークレットにアクセスしました。",
+          "why_it_matters": "Kubernetes ユーザー、特にマネージドサービスを利用する場合、クラウドプロバイダー側の侵害リスクを意識する必要があります。シークレット管理戦略の見直しが必要です。",
+          "tags": [
+            "クラウド侵害",
+            "Kubernetes",
+            "シークレット露出"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Rackspace Spot breach let hackers access customer Kubernetes secrets",
+              "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "Microsoft Entra Connect Health 脆弱性悪用、テナント設定情報と管理者メール露出",
+          "summary": "Microsoft は Entra Connect Health サービスの脆弱性が悪用され、データ漏えいが発生したことを警告。攻撃者が管理者メールアドレスとテナント構成情報に未承認アクセスしました。",
+          "why_it_matters": "Microsoft クラウドサービスのハイブリッド構成を使用する場合、Entra Connect の安全性確保が重要です。テナント情報露出は後続の標的型攻撃につながる可能性があります。",
+          "tags": [
+            "脆弱性悪用",
+            "Azure",
+            "情報漏えい"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Microsoft Entra Connect Health flaw exploited to steal tenant data",
+              "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "CISA KEV 追加：VMware vCenter・Cisco Expressway・Apache Roller・SAP NetWeaver の悪用確認済み脆弱性",
+          "summary": "CISA が 4 件の脆弱性を Known Exploited Vulnerabilities (KEV)に追加。VMware vCenter 認証回避(CVE-2026-123890)、Cisco Expressway、Apache Roller、SAP NetWeaver が実際に悪用されているエビデンスを確認しました。",
+          "why_it_matters": "エンタープライズ基盤を扱うシステムが対象です。Terraform で IaC 構成を取る場合、これらコンポーネントのパッチバージョン管理と検証が急務です。",
+          "tags": [
+            "KEV",
+            "悪用確認済",
+            "エンタープライズ"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge",
+              "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "CVE-2026-123890: VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2025-42884: SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-42884",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "FBI 全米警察データベース侵害、National Crime Information Center (NCIC) が 2 ヶ月内 2 度目の攻撃に被害",
+          "summary": "FBI の National Crime Information Center (NCIC) が侵害されました。これは過去 2 ヶ月間での FBI への 2 度目のサイバー攻撃で、全米の州・地方・連邦法執行機関が使用する情報共有システムが対象です。",
+          "why_it_matters": "公式インフラの連続侵害は国家レベルの対応の必要性を示しています。ただし詳細な被害規模・漏えい内容が明確でないため、今後の報告を待つ必要があります。",
+          "tags": [
+            "FBI侵害",
+            "公開情報共有基盤",
+            "政府インフラ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Trump says reported FBI database hack is ‘not good’",
+              "url": "https://techcrunch.com/2026/11/21/trump-says-reported-fbi-database-hack-is-not-good/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "The FBI and USDA were reportedly hacked",
+              "url": "https://www.theverge.com/tech/1039543/fbi-usda-hacked",
+              "source": "The Verge"
+            },
+            {
+              "title": "FBI reportedly hacked again, this time targeting nationwide police database",
+              "url": "https://www.bleepingcomputer.com/news/security/fbi-reportedly-hacked-again-this-time-targeting-nationwide-police-database/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "Signal、AI エージェント向けに画面共有を制限—「不完全な保護」を認める",
+          "summary": "Signal は Android・iOS で AI エージェントによる秘密チャット読み取りを防ぐためスクリーンショット制限を追加しました。ただし同社は保護が「不完全」であることを認めています。",
+          "why_it_matters": "AI エージェントが画面情報を吸い上げる脅威が現実化しており、エンドツーエンド暗号化だけでなく UI レベルの防御も必要とわかります。自身のエージェント実装時にも同様の機密情報露出経路を検討すべきです。",
+          "tags": [
+            "AI脅威",
+            "チャットアプリ",
+            "スクリーンショット"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance",
+              "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "Signal Blocks AI Agents From Reading Private Chats via Screenshots on Android and iOS",
+              "url": "https://thehackernews.com/2026/11/signal-blocks-ai-agents-from-reading.html",
+              "source": "The Hacker News"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "BADBOX botnet returns with record-breaking 40 billion daily ad requests",
+          "url": "https://www.bleepingcomputer.com/news/security/badbox-30-botnet-returns-with-record-breaking-40-billion-daily-ad-requests/",
+          "source": "BleepingComputer",
+          "note": "BADBOX ボットネット、1 日最大 40 億件の不正広告リクエストで活動を再開。汎用 Android TV ボックスに搭載。"
+        },
+        {
+          "title": "A Single Malicious Webpage Let Researchers Hijack Meta Muse and Access Private Chats",
+          "url": "https://thehackernews.com/2026/11/a-single-malicious-webpage-let.html",
+          "source": "The Hacker News",
+          "note": "Meta Muse に脆弱性：悪意あるウェブページが認可プロンプトなく秘密チャット・保存メモ・認証情報を抽出可能。"
+        },
+        {
+          "title": "CTO of ‘RansomwareHelp’ Indicted for Wire Fraud",
+          "url": "https://krebsonsecurity.com/2026/11/cto-of-ransomwarehelp-indicted-for-wire-fraud/",
+          "source": "Krebs on Security",
+          "note": "RansomwareHelp.com 創業者・CTO が詐欺容疑で起訴。FBI 囮捜査によるランサムウェア対策ツール詐欺事件。"
+        },
+        {
+          "title": "受注管理システム「GoQSystem」への不正アクセスについてまとめてみた",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/20/225808",
+          "source": "piyolog",
+          "note": "受注管理システム GoQSystem へ不正アクセス、注文データに含まれる個人情報の一部が持ち出される。"
+        },
+        {
+          "title": "北海道3市町委託先のマルウェア感染についてまとめてみた",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/20/130214",
+          "source": "piyolog",
+          "note": "北海道 3 市町の委託先でマルウェア感染、協力会社の端末漏えい。委託データが外部流出した可能性。"
+        },
+        {
+          "title": "物流代行サービス「オープンロジ」への不正アクセスについてまとめてみた",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/19/183634",
+          "source": "piyolog",
+          "note": "物流代行 OpenLogi への不正アクセス、出荷データから複数顧客の個人情報が持ち出された（対象期間: 2017 年 10 月～）。"
+        },
+        {
+          "title": "Attackers Used Optimizely to A/B Test Malware on Top Websites",
+          "url": "https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/",
+          "source": "Krebs on Security",
+          "note": "Web 体験最適化ツール Optimizely の脆弱性が悪用、少なくとも 178 の大型サイトがマルウェア配信に使用。"
+        },
+        {
+          "title": "OpenSSLにおける脆弱性に対するアップデート（2026年11月17日）",
+          "url": "https://jvn.jp/vu/JVNVU96847970/",
+          "source": "JVN",
+          "note": "OpenSSL Security Advisory [11 月 17 日] 公開。詳細は記事タイトルのみで内容不明。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 46,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "40 億"
+      ]
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "Google、Grafana、AWSが各種機能を拡張。GKEの可用性向上に向けた取り組みから、Azureのクロスプラットフォーム対応まで、クラウド・インフラのAI基盤強化が加速。",
+      "topics": [
+        {
+          "headline": "GKEのAPI接続断をLinuxカーネルバグに追跡、複数コンポーネント間の相互作用が原因",
+          "summary": "Google Kubernetes Engine(GKE)、Private Service Connect、Linuxカーネル間の3つのバグの相互作用により、Kubernetesマスターへの間欠的なAPI接続失敗が発生。約800開発者が本番環境へのデプロイをブロックされた。",
+          "why_it_matters": "複数レイヤーを跨ぐバグの根本原因特定プロセスはオンプレミスやマルチクラウド運用でも応用できる知見。アーキテクチャ全体の可視性とトレーシングの設計上重要な事例。",
+          "tags": [
+            "GKE",
+            "可用性",
+            "トラブルシューティング"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug",
+              "url": "https://www.infoq.com/news/2026/11/gke-kernel-network-bug/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "CloudWatch OmniがAzureプラットフォームログ・メトリクス・トレースに対応",
+          "summary": "Amazon CloudWatch OmniがAzureのリソースログ、Azure Monitorプラットフォームメトリクス、仮想ネットワークフロー、Application Insightsトレースの収集に対応。AWSとAzure両方で動作するチームが監視ツールを統一可能に。",
+          "why_it_matters": "マルチクラウド運用での観測性(Observability)の統一は運用コスト削減と可視性確保の両立。設計時点でCloudWatchの統合範囲を知っておくと、VPCやアイデンティティの設計判断に活かせる。",
+          "tags": [
+            "マルチクラウド",
+            "監視",
+            "Observability"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Amazon CloudWatch Omni now supports Microsoft Azure platform logs, metrics and traces",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-microsoft-azure",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "LambdaのEvent Functionがステート変更イベントをEventBridgeに発行",
+          "summary": "AWS LambdaのEvent Functionが、バージョン作成・更新・公開・削除などの顧客アクションによるステート変更イベントをAmazon EventBridgeに発行するようになった。",
+          "why_it_matters": "イベント駆動な自動化パイプラインやデプロイメント連鎖をEventBridgeで構築する際、Lambda関数ライフサイクルの把握が必須に。Infrastructure as Code(Terraform)での関数管理の自動通知にも活用できる。",
+          "tags": [
+            "Lambda",
+            "EventBridge",
+            "イベント駆動"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AWS Lambda now publishes Event Function state change events to Amazon EventBridge",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-function-state-events/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Cognito多地域複製が追加リージョン対応、レジリエンス強化",
+          "summary": "Amazon Cognitoの多地域複製(MRR)機能が追加AWSリージョンに対応。ユーザー・AIエージェント・マイクロサービスの認証・アクセス制御を複数地域で実行できる範囲が拡大。",
+          "why_it_matters": "AIエージェントが増える中、認証インフラの地域冗長性確保が業務継続計画の要件に。リージョン障害時の影響範囲を最小化するうえで、Cognitoの対応地域の把握は重要。",
+          "tags": [
+            "Cognito",
+            "レジリエンス",
+            "認証基盤"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon Cognito extends multi-Region replication to additional AWS Regions",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-mrr-opt-in-regions/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS Quick、日本語・ドイツ語・ベトナム語・中国語に対応",
+          "summary": "AWS QuickのAIワークスペースが日本語・ドイツ語・ベトナム語・中国語(簡体字・繁体字)のインターフェイスと言語別レスポンスに対応。",
+          "why_it_matters": "読者がAIエージェント活用のローカライズを検討する際の参考。多言語対応範囲の認識により、グローバルチームでの導入判断が具体的になる。",
+          "tags": [
+            "AWS Quick",
+            "多言語",
+            "AI"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "AWS Quick now supports Japanese, German, Vietnamese, and Chinese",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-japanese-german-chinese-vietnamese/",
+              "source": "AWS What's New"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "AWS Quick now supports plugins to bundle agents, skills, connectors and flows",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-plugins-bundle-agents-skills-connectors-flows/",
+          "source": "AWS What's New",
+          "note": "AWS Quickがプラグイン対応、エージェント・スキル・コネクタ・フローを個別タスク向けにバンドル可能に"
+        },
+        {
+          "title": "AWS Quick launches a new web experience with updated browser extension and Microsoft 365 add-ins",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-launches-new-web-experience-updated-browser-extension-microsoft-365-add-ins/",
+          "source": "AWS What's New",
+          "note": "AWS Quickの新しいWeb版でデスクトップと同じエージェント・スキル・コネクタ、日次ブリーフィング機能"
+        },
+        {
+          "title": "Build more capable automations through chat with Flows in AWS Quick",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-flows-automations-chat/",
+          "source": "AWS What's New",
+          "note": "AWS Quickの自動化フローがチャットUIで構築・実行・改善可能に、コーディング不要"
+        },
+        {
+          "title": "Introducing ambient networking for GKE",
+          "url": "https://cloud.google.com/blog/products/networking/ambient-networking-for-gke-sidecarless-service-mesh/",
+          "source": "Google Cloud Blog",
+          "note": "GKEの環境ネットワーク機能がGA、サイドカー型メッシュの過度なリソース消費と管理負荷を軽減"
+        },
+        {
+          "title": "［速報］AIがOracle DBからPostgreSQLへの移行を支援、「Azure Database Migration Service」プレビュー",
+          "url": "https://www.publickey1.jp/blog/26/aioracle_dbpostgresqlazure_database_migration_service.html",
+          "source": "Publickey",
+          "note": "Azure Database Migration ServiceがOracle DBからPostgreSQLへの移行をAIで支援、プレビュー版提供開始"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 34,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "GitHubにおけるエンタープライズ向けの新機能やJavaScript/Go開発向けの言語拡張に関するアップデートが中心。一方、職業キャリアの停滞や開発トレンドの変化といった業界動向も注目を集めています。",
+      "topics": [
+        {
+          "headline": "GitHub Enterprise Server 3.23 RC リリース、新機能多数追加",
+          "summary": "GitHub Enterprise Server 3.23 RC版がリリース。GitHub Projectsなど複数の領域で新機能が導入されます。詳細は記事で紹介予定。",
+          "why_it_matters": "EGHESの新機能をいち早く把握することで、自社やクライアント環境でのアップグレード計画の策定や、新しいワークフロー活用の準備ができます。",
+          "tags": [
+            "GitHub",
+            "エンタープライズ",
+            "リリース"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "GitHub Enterprise Server 3.23 release candidate",
+              "url": "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "PostgreSQL を Go で拡張可能に、新しい拡張方式の登場",
+          "summary": "PostgreSQL拡張をGo言語で開発・実装できるプロジェクトが注目。C以外の選択肢が広がります。",
+          "why_it_matters": "データベース拡張をGoで書けるようになれば、Go専門のチームでもPostgreSQL機能拡張に参加でき、開発効率と言語の統一が実現できます。",
+          "tags": [
+            "PostgreSQL",
+            "Go",
+            "拡張開発"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "PostgreSQL Extensions in Go",
+              "url": "https://jespino.github.io/gopgext/",
+              "source": "Hacker News",
+              "popularity": "113 points"
+            }
+          ]
+        },
+        {
+          "headline": "C#からランタイム・GC廃止、Zero C# プロジェクト公開",
+          "summary": "ランタイムやガベージコレクションに依存しないC#実装「Zero C#」がHackerNewsで公開。ビルドサイズやメモリ効率の改善を目指します。",
+          "why_it_matters": ".NETの代替実装の進展を知ることで、組み込みやエッジ環境でC#を活用する道が広がり、プロジェクト選定の選択肢が増えます。",
+          "tags": [
+            "C#",
+            ".NET",
+            "AOT"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Show HN: Zero C# – C# without a runtime or GC",
+              "url": "https://onurgumus.github.io/zero-csharp/index.html",
+              "source": "Hacker News",
+              "popularity": "120 points"
+            }
+          ]
+        },
+        {
+          "headline": "Blender UIライブラリ BUI、GPU対応インターフェースの再利用化",
+          "summary": "BlenderのGPUアクセラレーション対応UI（BUI）を他のアプリケーションから独立したライブラリとして利用可能にするプロジェクト。洗練されたUIを外部アプリで再利用できます。",
+          "why_it_matters": "高度なUIフレームワークをオープンソースで利用できれば、クリエイティブツルやAIビジュアライゼーション系の開発で、ビジュアル部分の実装時間を短縮できます。",
+          "tags": [
+            "UI",
+            "Blender",
+            "ライブラリ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "BlenderのGPUアクセラレーション対応UIを他のアプリケーションから再利用可能にする「BUI」",
+              "url": "https://gigazine.net/news/20261121-bui/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "無料・セルフホスト型RSSリーダー WyrmRSS、YouTube再生や外部通知に対応",
+          "summary": "WyrmRSSは無料のオープンソースRSSリーダーで、YouTube再生・フィルター・Discord/Slack通知機能を備え、Windows/macOS/Linux用アプリ提供。セルフホスト可能。",
+          "why_it_matters": "情報収集効率を高めるために、カスタマイズ可能なRSSリーダーをセルフホストすることで、社内ニュース配信やチーム内の自動通知システムを構築できます。",
+          "tags": [
+            "RSSリーダー",
+            "オープンソース",
+            "セルフホスト"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "無料でセルフホストできWindows・macOS・LinuxアプリもあるRSSリーダー「WyrmRSS」、YouTube動画の再生やDiscord・Slackへの新着通知も可能",
+              "url": "https://gigazine.net/news/20261121-wyrmrss/",
+              "source": "GIGAZINE"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Ask HN: I have been unemployed for 2y. 15 years of experience, US. What to do?",
+          "url": "https://news.ycombinator.com/item?id=50583761",
+          "source": "Hacker News",
+          "popularity": "592 points",
+          "note": "15年経験のシニアエンジニアが2年の失業に直面、業界での採用動向悪化を示唆"
+        },
+        {
+          "title": "My Monitor Was Cutting My Download Speed by 75%",
+          "url": "https://blog.tymscar.com/posts/studiodisplayethernet/",
+          "source": "Lobsters",
+          "popularity": "71 score",
+          "note": "モニター接続がダウンロード速度を75%低下させるという実例報告、ネットワーク診断の重要性"
+        },
+        {
+          "title": "Announcing jj-musubi: live sync for Jujutsu",
+          "url": "https://www.serpentine.com/posts/2026/announcing-jj-musubi/",
+          "source": "Lobsters",
+          "popularity": "67 score",
+          "note": "バージョン管理ツール Jujutsu の新拡張 jj-musubi、リアルタイム同期機能を提供"
+        },
+        {
+          "title": "The pioneering coding tricks that built Doom and Quake",
+          "url": "https://stackoverflow.blog/2026/11/17/coding-tricks-that-built-doom-and-quake/",
+          "source": "Stack Overflow Blog",
+          "note": "DoomとQuake開発の黎明期、自己改変コードとblitting技術が革新的なゲーム作動を実現"
+        },
+        {
+          "title": "最近、コードを真面目に読まなくなった",
+          "url": "https://zenn.dev/hiromoo/articles/reading-less-preparing-more",
+          "source": "Zenn トレンド",
+          "popularity": "83 いいね",
+          "note": "最近のエンジニアがコードを真面目に読まなくなった現象、背景と対策に関する考察"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 19,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "生成AI・EV・通信インフラの事業が並行して進展。AppleとSpaceXの法務争いも注目。",
+      "topics": [
+        {
+          "headline": "NvidiaはなぜCEO交代後も経営が安定しているのか",
+          "summary": "Nvidia最新決算は好調だが、テック経営者からはJensen Huang復帰を求める声。経営陣の安定性が改めて問われている。",
+          "why_it_matters": "エンタープライズGPU調達やAI推論パフォーマンス見積もりに関わる場合、同社経営方針の先行きを知るべき。",
+          "tags": [
+            "NVIDIA",
+            "経営",
+            "AI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "A tale of two Nvidias",
+              "url": "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Harbinger、電気トラック市場で$240M調達—従来メーカーとは逆行",
+          "summary": "電気トラック新興企業Harbingerが$240Mを調達。既存メーカーがEV投資に慎重な中での资金調達。",
+          "why_it_matters": "インフラストラクチャーの電動化が進む設計では、商用EV市場の競争力学を把握する参考になる。",
+          "tags": [
+            "EV",
+            "ビジネス"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Harbinger is building the unsexy EVs that keep the economy moving",
+              "url": "https://www.theverge.com/transportation/1038448/harbinger-ev-startup-240m-series-d-fedex-army-trucks",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "俳優が顔ライセンス企業に売却—AI顔生成ビジネスが映画業界でも拡大か",
+          "summary": "俳優が自分の顔をマイクロドラマスタートアップにライセンス。中国で流行している個人顔AI販売が米国でも広がる兆し。",
+          "why_it_matters": "個人データ・生成AI・ライセンシング契約の法的・倫理的課題が業界標準化に向かう時期。契約設計や権利管理のポイントを学べる。",
+          "tags": [
+            "生成AI",
+            "ビジネスモデル"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Is selling an AI version of your face to this microdrama startup the future of Hollywood?",
+              "url": "https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "SpaceX、Starlink屋上基地局の設計完了—建物内の圏外解消へ",
+          "summary": "Starlink衛星からの電波が届きにくい建物内をカバーするため、屋上設置型小型基地局の設計を完了。",
+          "why_it_matters": "リモートワークやハイブリッド拠点のネットワーク可用性評価時に、Starlinkの補完テクノロジーとしての位置づけを確認できる。",
+          "tags": [
+            "通信",
+            "SpaceX",
+            "インフラ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "SpaceXは圏外エリアを撲滅しあらゆる場所で通信できるようにするため屋上設置型基地局の設計を完了したとイーロン・マスクが語る",
+              "url": "https://gigazine.net/news/20261121-elon-musk-spacex-plan-eliminate-cell-phone-dead-zones/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "AppleがインドでスタートアップからiPhone/Watch接触共有機能で訴訟対象に",
+          "summary": "U.S.スタートアップがAppleを相手にインド法廷で提訴。Tap-to-Share連絡先機能に関する$162M賠償+iPhone/Watch輸入差し止めを要求。",
+          "why_it_matters": "クラウドとデバイス統合機能の知財・規制リスク。多地域展開時の機能実装判断に影響しうる。",
+          "tags": [
+            "Apple",
+            "知財",
+            "規制"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Startup sues Apple in India over tap-to-share contacts feature",
+              "url": "https://techcrunch.com/2026/11/20/startup-sues-apple-in-india-over-tap-to-share-contacts-feature/",
+              "source": "TechCrunch"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "令和8年に「INFOBAR」が復活するも、通話とSMSしかできない「ダムフォン」に",
+          "url": "https://www.itmedia.co.jp/mobile/articles/2611/21/news011.html",
+          "source": "はてブ テクノロジー",
+          "popularity": "6 users",
+          "note": "INFOBARが令和8年に復活するが通話・SMS専用の「ダムフォン」として限定販売予定"
+        },
+        {
+          "title": "Trump FCC declares California isn't allowed to enforce phone service rules",
+          "url": "https://arstechnica.com/tech-policy/2026/11/fcc-orders-california-to-stop-enforcing-phone-service-rules-against-att/",
+          "source": "Ars Technica",
+          "note": "FCC、カリフォルニア州の固定電話維持ルール施行を禁止・州の規制権を制限"
+        },
+        {
+          "title": "Internet Archive Staffers Are Unionizing",
+          "url": "https://cwa-union.org/news/releases/internet-archive-workers-launch-union-campaign-communications-workers-america",
+          "source": "Lobsters",
+          "popularity": "82 score",
+          "note": "インターネットアーカイブ職員が労働組合結成に向けて動く"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 11,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "学園や公共の場での犯罪や不祥事が相次ぎ、子どもの安全と職場の倫理が問われている。国内外の政治・外交情勢が複雑さを増す中、社会的課題の解決に「幸福感」が役割を果たす可能性が浮かぶ。",
+      "topics": [
+        {
+          "headline": "オンラインゲームでの出会いが救助に—FBI、16歳少年と母親の情報提供で少女が誘拐から解放",
+          "summary": "オンラインゲーム内で少女と知り合った米国の16歳少年が母親とともにFBIに通報し、誘拐事件から少女の救助につながった。",
+          "why_it_matters": "インターネットが危険と安全の両面を持つことを示す一方、家族とのコミュニケーションと気づきが子どもの危機回避に機能する事例として広がる可能性がある。",
+          "tags": [
+            "児童安全",
+            "インターネット",
+            "事件"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "How a teen gamer and his mother helped rescue a missing girl",
+              "url": "https://www.bbc.co.uk/news/articles/cmq8lyv8lkjwo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "オンライン脅迫や不正プロフィールからの接触が増加、保護者が警戒すべき兆候を専門家が指摘",
+          "summary": "偽プロフィールによる不正な接触や望まない連絡を含む児童への脅迫事案が増えている。専門家は保護者が認識すべき警告信号について説明している。",
+          "why_it_matters": "デジタルネイティブ世代の保護者にとって、子どもが直面するオンライン脅威の具体的な兆候を知ることは迅速な対応に不可欠である。",
+          "tags": [
+            "児童安全",
+            "オンライン脅迫",
+            "保護者"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Parents urged to spot online stalking warning signs as cases rise",
+              "url": "https://www.bbc.co.uk/news/articles/c674pejp1110o?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "福島県警行政職員が保育園児を盗撮容疑で逮捕、ホテル浴場の更衣室で",
+          "summary": "福島県警の40歳行政職員が、千葉県内ホテルの浴場更衣室で保育園児を含む訪問者を盗撮した容疑で逮捕された。容疑を否認している。",
+          "why_it_matters": "執行側の職員による児童への性犯罪の発覚は、公的機関の信頼を損なうとともに、施設の安全管理体制が問われることになる。",
+          "tags": [
+            "犯罪",
+            "児童虐待",
+            "警察"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "ホテル更衣室で保育園児など盗撮疑い 福島県警の行政職員逮捕",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261122de79820",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "東京消防庁が助教を処分、訓練初日に新入生の胸ぐらをつかむ",
+          "summary": "東京消防庁の助教が、入校初日の訓練生に対して身体的な暴力行為に及んだため、処分された。",
+          "why_it_matters": "第一線の安全機関内での暴力的指導が露出することで、職場のハラスメント・体罰根絶へ向けた社会的監視が厳しくなっている。",
+          "tags": [
+            "処分",
+            "ハラスメント",
+            "公務員"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "入校初日に胸ぐらつかむ　東京消防庁、助教を処分「メンタル強く…」",
+              "url": "http://www.asahi.com/articles/ASVCN3K7QVCNUTIL01FM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "ステーキ店の調理パフォーマンスで客が重いやけど、元従業員に禁錮1年2月の執行猶予判決",
+          "summary": "2022年、沖縄県豊見城市のステーキ店で調理パフォーマンス中に火が上がり、当時5歳の男児と父親が重いやけどを負った事故。業務上過失傷害罪に問われた元アルバイト従業員に禁錮1年2月・執行猶予3年の判決が言い渡された。",
+          "why_it_matters": "派手な演技を伴う飲食業務における安全管理と従業員の判断がもたらす客への被害責任が、司法の判断で明確化される。",
+          "tags": [
+            "裁判",
+            "労働災害",
+            "飲食業"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "ステーキ店の調理パフォーマンスで客やけど　元従業員に有罪判決",
+              "url": "https://ryukyushimpo.jp/national/entry-5609548.html",
+              "source": "はてブ 世の中",
+              "popularity": "49 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "From pit-stops to go-to destinations: The transformation of service stations",
+          "url": "https://www.bbc.co.uk/news/articles/ckqx5rylp9elo?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "駅や高速道路のサービスエリアが、立ち寄り先から目的地自体へと変わっている。"
+        },
+        {
+          "title": "Employers are being asked to give interview feedback - here's what applicants want",
+          "url": "https://www.bbc.co.uk/news/articles/cm2d94le23xyo?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "求職活動で企業からのフィードバック提供義務化が検討されている。"
+        },
+        {
+          "title": "出社してオフィスで働く頻度の最適解とは？",
+          "url": "https://gigazine.net/news/20261122-work-at-office/",
+          "source": "GIGAZINE",
+          "note": "リモートワーク継続の中で、週何日の出社がストレスと効率のバランスとして最適かが研究で判明した。"
+        },
+        {
+          "title": "この時期の札幌の午後4時台がどのくらい暗いかを分からせるために各地のライブカメラ画像を同時刻で比較したら、他の地方がびっくりするくらいまだ明るかった",
+          "url": "https://togetter.com/li/2773386",
+          "source": "はてブ 世の中",
+          "popularity": "37 users",
+          "note": "札幌の11月下旬午後4時台の暗さが、他地域のライブカメラ映像との比較で可視化され話題に。"
+        },
+        {
+          "title": "現金約2500万円や金塊約20キロなど盗まれる　兵庫・西宮の住宅　（ABCニュース） - Yahoo!ニュース",
+          "url": "https://news.yahoo.co.jp/articles/10ce0dfadddc040b77edbd46082c1ba54284ee6a",
+          "source": "はてブ 世の中",
+          "popularity": "10 users",
+          "note": "兵庫県西宮市の住宅で現金約2500万円と金塊約20キロが盗まれる事件が発生。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 56,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [],
+  "stats": {
+    "collected": 248,
+    "unclassified": 13,
+    "classify_error": null
+  }
+}
