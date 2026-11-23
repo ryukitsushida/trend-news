@@ -1,0 +1,946 @@
+{
+  "date": "2026-11-23",
+  "generated_at": "2026-11-23 09:42 JST",
+  "lead": "AI推論の安全性問題とエージェント運用が企業のセキュリティと設計判断を試す1週間。",
+  "highlights": [
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "廉価AI推論サービスのセキュリティ脆弱性は、コスト最適化とリスク管理のトレードオフをエンジニア自身が判断する場面を増やす。",
+      "topic": {
+        "headline": "AI 推論プロバイダーの安全性問題、偽リクエスト 200 万件で露呈した AWS キー盗難と盗聴",
+        "summary": "セキュリティ研究者が低コストの AI 推論プロバイダー 3 社以上を侵害し、数百個の盗難 AWS キーと認証情報流出、マーケットプレイスの転売事業者による直接監視を発見。",
+        "why_it_matters": "コスト削減を名目に廉価 AI 推論サービスを選ぶ場合、プロバイダー側の基本的なセキュリティが脆弱な可能性がある。クレデンシャル管理と監査ログの確認基準を上げる必要がある。",
+        "tags": [
+          "セキュリティ",
+          "AI インフラ",
+          "サプライチェーン"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "Security researchers show how cheap AI inference providers steal keys and snoop on users",
+            "url": "https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/",
+            "source": "The Decoder"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "データ基盤の侵害による下流企業への一括流出は、自社がベンダーに依存する時の権限管理と監査体制の重要性を実例で示す。",
+      "topic": {
+        "headline": "プレイド KARTE 不正アクセス、2200社超が影響を受けた顧客データ漏えい",
+        "summary": "顧客接点のデータプラットフォーム『KARTE』が不正アクセスを受け、個人情報を含む可能性がある情報が漏えい。ZOZOTOWN、三菱UFJ銀行など大手を含む2200社超の企業が影響を受けた。",
+        "why_it_matters": "委託先のデータ基盤が侵害されると、複数の下流企業の顧客情報が一度に流出する。ベンダーのセキュリティ監査と契約上の対応要件を強化し、自社システムから KARTE への接続権限を最小限にしておくべき。",
+        "tags": [
+          "データ漏えい",
+          "ベンダーリスク",
+          "顧客データ"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "「委託したとこ全部漏洩してんじゃんよ💢」プレイド『KARTE』の不正アクセスで、ZOZOTOWNや三菱UFJ銀行など影響を受けた企業が次々判明…不安や警戒の声が広がる",
+            "url": "https://togetter.com/li/2773732",
+            "source": "はてブ テクノロジー",
+            "popularity": "98 users"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "AIコーディングエージェント使用時の認証情報流出は、自動化度が高まるほどシークレット管理の厳格さが求められることを浮き彫りにする。",
+      "topic": {
+        "headline": "Claude Code、ローカル設定ファイルに保存した秘密認証情報が1122件流出",
+        "summary": "セキュリティ企業Apiiroが、Claude Codeが「Don't Ask Again」機能の実装で秘密認証情報をローカルファイルに保存し、公開リポジトリから1122個の秘密が露出していることを発見。",
+        "why_it_matters": "AI Coding Agentが開発者のマシンに保存する設定やシークレット管理は、AIツールの自動化度が上がるほど重要になる。APIキーやトークンは環境変数とシークレット管理ツール、ファイルシステムの暗号化を併用すべき。",
+        "tags": [
+          "AI安全性",
+          "秘密管理",
+          "開発環境"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "Claude Code Has Been Leaking Secrets through its \"Don't Ask Again\" Feature",
+            "url": "https://www.infoq.com/news/2026/11/claude-code-leaking-secrets/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+            "source": "InfoQ"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "エージェント本番運用ではモデル性能より『何をさせないか』の仕組みが成否を分け、設計哲学が大きく転換する。",
+      "topic": {
+        "headline": "AIエージェント向けの運用環境・セーフガード整備が加速、QCon 2026が示す次世代アーキテクチャ",
+        "summary": "QCon San Francisco 2026で、AI モデルそのものより、その周辺の制御層（harness）が、エージェントの動作と安全性を決める、という議論が登場。Google Cloud のセキュリティ基盤寄贈など、エージェント実運用の基盤整備が進行中。",
+        "why_it_matters": "AIエージェントをプロダクションで実行する際、モデルスキルより「何をさせて何をさせないか」の仕組み（プロンプト・ガバナンス・リソース制御）が成否を分ける。運用設計の優先順位が変わる。",
+        "tags": [
+          "AIエージェント",
+          "運用",
+          "セキュリティ"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "QCon San Francisco 2026: The Harness Is the New Operating System",
+            "url": "https://www.infoq.com/news/2026/11/harness-new-operating-system/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+            "source": "InfoQ"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "PostgreSQL 19のオンラインメンテナンス機能はRDS運用の実務を直接改善し、ダウンタイム最小化の実装手段になる。",
+      "topic": {
+        "headline": "PostgreSQL 19リリース、オンラインテーブル再パック機能などで運用負荷軽減",
+        "summary": "PostgreSQL Global Development Groupが PostgreSQL 19をリリース。データベース保守・クエリ計画・レプリケーション・アプリケーション開発で改善。管理オーバーヘッドの削減とパフォーマンス向上に注力。",
+        "why_it_matters": "RDSやセルフホスト型Postgresを運用するエンジニアにとって、オンラインメンテナンス機能はダウンタイム最小化に直結する。バージョンアップで何が改善されたかを把握すれば、現在の運用の最適化に活かせる。",
+        "tags": [
+          "PostgreSQL",
+          "データベース",
+          "運用"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "PostgreSQL 19 Released with Online Table Repacking and Query Planning Controls",
+            "url": "https://www.infoq.com/news/2026/11/postgresql-19-released/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+            "source": "InfoQ"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "dev",
+    "category_label": "開発・エンジニアリング",
+    "headline": "AIエージェント向けの運用環境・セーフガード整備が加速、QCon 2026が示す次世代アーキテクチャ",
+    "sources": [
+      {
+        "title": "QCon San Francisco 2026: The Harness Is the New Operating System",
+        "url": "https://www.infoq.com/news/2026/11/harness-new-operating-system/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+        "source": "InfoQ"
+      }
+    ],
+    "background": "エージェント型AIは単体のモデル性能より、その周辺の制御機構（プロンプト、権限管理、リソース制限）が実運用の安全性と有効性を決める段階に入った。GoogleなどからセキュリティインフラがOSSとして提供される流れも始まっている。",
+    "concepts": [
+      {
+        "term": "AIエージェント",
+        "explanation": "目標を与えると自律的に計画・行動・修正を繰り返すAI。単なる質問応答（チャット）と異なり、ツール呼び出しや外部システム連携を自分で判断・実行する。"
+      },
+      {
+        "term": "ハーネス（Harness）",
+        "explanation": "AIモデルを「どう制御するか」の仕組み全体。プロンプトテンプレート、実行権限フィルタ、リソース割り当て、監査ログなど、モデル外側の層を指す。"
+      },
+      {
+        "term": "プロンプト・ガバナンス",
+        "explanation": "エージェントが実行可能なアクション・参照可能なデータ・エスケープ条件を明示的に定義・検証する仕組み。バージョン管理と承認フロー含む。"
+      },
+      {
+        "term": "AIセーフガード",
+        "explanation": "エージェントが意図しない動作（権限外の操作、無限ループ、過度なコスト）を防ぐ検証層。レート制限、出力フィルタ、タイムアウト、環境分離など。"
+      }
+    ],
+    "for_you": "あなたがAWS上でPythonエージェント（例：BedfordやLangChainベース）を本番デプロイする際、モデルの精度向上より先に「このエージェントはどのAWSサービスを呼び出せるか」「誰のクレデンシャルで実行するか」「月のコストが$5000超えたら停止するか」といった運用制御を設計することが、プロダクト成功の分岐点になります。",
+    "try_this": "今週、自分の開発中のAIエージェント（またはプロトタイプ）について、①実行できるアクション一覧をコード化し、②Terraform/IAMで実行ロールを明示的に制限し、③CloudWatchアラートでコスト・実行時間の異常を監視する「ハーネス」骨組みを整備してみてください。これが運用の土台になります。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "ダイヤモンドウェハーがAIチップの熱課題に挑み、OpenAIのチーフサイエンティストが業界の開発速度制限を提案。メルカリ情報流出で、AI委託先での複数の攻撃が明かになった。",
+      "topics": [
+        {
+          "headline": "世界初200mm単結晶ダイヤモンドウェハー、AIチップ発熱課題の新素材に",
+          "summary": "Diamond Foundryが直径200mmの単結晶ダイヤモンドウェハー製造に成功。銅を上回る熱伝導率でAIチップの冷却問題を解消し、将来的にはダイヤモンドそのものをトランジスタ材料に使う構想。",
+          "why_it_matters": "AIチップの性能向上と消費電力が課題の中、従来と異なるアプローチの素材開発が加速している。半導体調達戦略や冷却設計の選択肢が変わる可能性を知っておくと、インフラ投資の判断が変わる。",
+          "tags": [
+            "ハードウェア",
+            "AI実装",
+            "熱管理"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "世界初の直径200mm単結晶ダイヤモンドウェハーは何を変えるのか、AIチップの99％をダイヤモンドにする構想とは？",
+              "url": "https://gigazine.net/news/20261123-diamond-foundrysingle-crystal-diamond/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAIチーフサイエンティスト、AIの開発速度に業界共通の「上限」設定を提案",
+          "summary": "パープレキシティ（予測精度指標）を共通基準として、AI開発に業界共通の上限を設けるよう提案。早ければ2027年に事前学習が急加速する恐れがあるとして、監視技術が追いつくまでの制約を訴え、GPT-3.5以降の内部モデル推移も開示。",
+          "why_it_matters": "今後のモデル開発ペースと業界規制の方向が具体的に議論され始めた。AIサービスの依存度を高める計画がある場合、開発トレンドや規制環境の予測精度が重要になる。",
+          "tags": [
+            "規制",
+            "業界動向",
+            "モデル開発"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "OpenAIのチーフサイエンティスト、AI開発に業界共通の「上限」を提案　指標は「パープレキシティ」",
+              "url": "https://www.itmedia.co.jp/news/article/2611/23/2000003394/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "OpenAI’s chief scientist has thoughts on how to limit AI development",
+              "url": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "メルカリ情報流出、Notion AI委託先で2つの攻撃パターン確認",
+          "summary": "メルカリグループが業務で利用する「Notion AI」でチャット記録の一部が外部に流出した可能性。AI処理を委託する企業側では、外部クラウド事業者への侵害と認証情報窃取、サービスの脆弱性を悪用した不正アクセスが確認された。",
+          "why_it_matters": "AI処理の外部委託時、単なるSaaS利用以上に複数の攻撃経路があることが明かになった。自社でもAI処理を外注する場合、委託先のセキュリティ監視と侵害検知体制の確認が必須になる。",
+          "tags": [
+            "セキュリティ",
+            "AI外注",
+            "データ漏えい"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "メルカリの情報流出、AI委託先で何が起きた？　確認された2つの攻撃",
+              "url": "https://kn.itmedia.co.jp/kn/article/2611/23/2000003393/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "AI コーディングエージェント、テスト環境では優秀も現実環境では10%未満の完了率",
+          "summary": "AI コーディングエージェントを実際の開発職環境（同僚ボット・プロジェクトボード・不完全な引き継ぎ）でテスト。孤立したタスクではなく、継続的に開発・チケット完結させるシナリオで成績が大幅に低下。",
+          "why_it_matters": "開発効率化を目的にAIエージェント導入を検討している場合、PoC結果と実運用の乖離が大きいことを予め認識できる。試行段階で現実的な制約条件を入れ込むことが重要。",
+          "tags": [
+            "AI エージェント",
+            "ソフトウェア開発",
+            "評価"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AI coding agents ace isolated tests but complete fewer than one in ten tasks in a simulated workplace",
+              "url": "https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "AI 推論プロバイダーの安全性問題、偽リクエスト 200 万件で露呈した AWS キー盗難と盗聴",
+          "summary": "セキュリティ研究者が低コストの AI 推論プロバイダー 3 社以上を侵害し、数百個の盗難 AWS キーと認証情報流出、マーケットプレイスの転売事業者による直接監視を発見。",
+          "why_it_matters": "コスト削減を名目に廉価 AI 推論サービスを選ぶ場合、プロバイダー側の基本的なセキュリティが脆弱な可能性がある。クレデンシャル管理と監査ログの確認基準を上げる必要がある。",
+          "tags": [
+            "セキュリティ",
+            "AI インフラ",
+            "サプライチェーン"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Security researchers show how cheap AI inference providers steal keys and snoop on users",
+              "url": "https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/",
+              "source": "The Decoder"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Lean and Mathlib community officially confirms Levent Alpöge's proof of the Riemann hypothesis is correct",
+          "url": "https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/",
+          "source": "The Decoder",
+          "note": "リーマン予想の証明、Lean・Mathlib コミュニティが 1700 万行のコード検証で正当性確認"
+        },
+        {
+          "title": "AI is getting better faster than experts can reliably test whether new systems are safe, METR warns",
+          "url": "https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/",
+          "source": "The Decoder",
+          "note": "METR 警告：Opus 5.5 や GPT-6 Astra などの先進モデル、測定困難で危険な加速を排除できない"
+        },
+        {
+          "title": "Perplexity's new Monitor API turns web search from a one-off query into a nonstop watchdog",
+          "url": "https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/",
+          "source": "The Decoder",
+          "note": "Perplexity、Monitor API でスケジュール検索と webhook 通知で Web 監視を自動化"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 56,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "10"
+      ]
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "Microsoft Copilotを乗っ取る脆弱性や各地のオンラインショップへの不正アクセスなど、AI・Web系で深刻なセキュリティ事案が相次ぐ。認証情報漏えいや自動化ツール側の秘密露出も課題が浮き彫り。",
+      "topics": [
+        {
+          "headline": "Microsoft 365 Copilot乗っ取り脆弱性、文書アップロード1つで悪用可能（既修正）",
+          "summary": "セキュリティ企業Rubrikが、Microsoft 365 Copilotに無害に見える文書をアップロードするだけで、攻撃者がそのCopilotを乗っ取り直接命令を実行できる脆弱性を実証。MicrosoftはRubrikへ4万8000ドルの報酬を支払った。脆弱性は既に修正済み。",
+          "why_it_matters": "Microsoft 365の環境管理やチームコラボレーションでAIを活用する組織が増える中、AIアシスタントそのものが攻撃の入口になる危険性を認識し、アップロードするファイルの検証とアクセス制御を再検討する必要がある。",
+          "tags": [
+            "Microsoft 365",
+            "AI安全性",
+            "脆弱性"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Microsoftが4万8000ドルを支払った脆弱性　文書1つでCopilotを乗っ取る「ChatMate」攻撃とは",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/23/news001.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "GL.iNet クラウド管理機能の脆弱性を悪用、ルータとKVM機器にマルウェア感染",
+          "summary": "GL.iNetのクラウド遠隔管理サービスの脆弱性が悪用され、顧客のルータとKVM機器にカスタムマルウェアが感染。一部ユーザーがバックドアとリバースシェルを報告しており、遠隔アクセスを許す状態。",
+          "why_it_matters": "ネットワーク機器の遠隔管理サービスが侵害されると、基盤となるネットワーク全体が危険にさらされる。ルータ設定の監視と定期確認、管理機能の多要素認証が重要。",
+          "tags": [
+            "ネットワーク機器",
+            "マルウェア",
+            "遠隔アクセス"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "プレイド KARTE 不正アクセス、2200社超が影響を受けた顧客データ漏えい",
+          "summary": "顧客接点のデータプラットフォーム『KARTE』が不正アクセスを受け、個人情報を含む可能性がある情報が漏えい。ZOZOTOWN、三菱UFJ銀行など大手を含む2200社超の企業が影響を受けた。",
+          "why_it_matters": "委託先のデータ基盤が侵害されると、複数の下流企業の顧客情報が一度に流出する。ベンダーのセキュリティ監査と契約上の対応要件を強化し、自社システムから KARTE への接続権限を最小限にしておくべき。",
+          "tags": [
+            "データ漏えい",
+            "ベンダーリスク",
+            "顧客データ"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "「委託したとこ全部漏洩してんじゃんよ💢」プレイド『KARTE』の不正アクセスで、ZOZOTOWNや三菱UFJ銀行など影響を受けた企業が次々判明…不安や警戒の声が広がる",
+              "url": "https://togetter.com/li/2773732",
+              "source": "はてブ テクノロジー",
+              "popularity": "98 users"
+            }
+          ]
+        },
+        {
+          "headline": "タワーレコード オンラインショップ不正アクセス、約1100万件の顧客情報流出",
+          "summary": "タワーレコードの通販サイトが不正アクセスを受け、顧客のメールアドレスと氏名あわせて約1100万件の個人情報が流出。",
+          "why_it_matters": "オンラインショップの基本的な認証・アクセス制御が突破されると大規模な顧客データが漏えいする。Web Applicationのセキュリティテストとシステムアクセスログの監視が重要。",
+          "tags": [
+            "個人情報流出",
+            "Webアプリケーション",
+            "オンラインショップ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "タワーレコード 不正アクセスで約1100万件の個人情報流出 | NHKニュース",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261122de79936",
+              "source": "はてブ テクノロジー",
+              "popularity": "88 users"
+            }
+          ]
+        },
+        {
+          "headline": "六花亭 オンラインショップ不正アクセス、クレジットカード認証コードも流出",
+          "summary": "六花亭オンラインショップがサイトプログラムを改ざんされ、顧客が入力したクレジットカード認証コード（CVV/セキュリティコード）を含む個人情報が流出した。",
+          "why_it_matters": "支払い情報の漏えいはクレジット不正利用の直結的な危険。入力フォームの暗号化・トークン化と定期的なセキュリティ診断が必須。",
+          "tags": [
+            "決済情報流出",
+            "改ざん",
+            "顧客データ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "おやつ屋「六花亭」が不正アクセス、クレカのセキュリティコードまで流出→最上位のやらかしなのに誠実さを感じてかあまり荒れていない……なぜ他社にこれができないのか？",
+              "url": "https://togetter.com/li/2773676",
+              "source": "はてブ テクノロジー",
+              "popularity": "134 users"
+            }
+          ]
+        },
+        {
+          "headline": "Claude Code、ローカル設定ファイルに保存した秘密認証情報が1122件流出",
+          "summary": "セキュリティ企業Apiiroが、Claude Codeが「Don't Ask Again」機能の実装で秘密認証情報をローカルファイルに保存し、公開リポジトリから1122個の秘密が露出していることを発見。",
+          "why_it_matters": "AI Coding Agentが開発者のマシンに保存する設定やシークレット管理は、AIツールの自動化度が上がるほど重要になる。APIキーやトークンは環境変数とシークレット管理ツール、ファイルシステムの暗号化を併用すべき。",
+          "tags": [
+            "AI安全性",
+            "秘密管理",
+            "開発環境"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Claude Code Has Been Leaking Secrets through its \"Don't Ask Again\" Feature",
+              "url": "https://www.infoq.com/news/2026/11/claude-code-leaking-secrets/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "デジタル庁 GSS ファイル共有サービスから情報漏えい、25政府機関が利用",
+          "summary": "デジタル庁が運用する政府共通ネットワーク GSSのファイル共有サービスから、一部ファイルが外部に漏えいした可能性。総務省、経済産業省、法務省、金融庁、原子力規制委員会など25機関が利用し、利用者は約15万人。",
+          "why_it_matters": "政府の共通インフラから中央集約的に情報漏えいが起きると、複数省庁の会議資料や業務情報が一度に流出。クラウド環境でのアクセス制御とファイル共有範囲の厳格な設定が不可欠。",
+          "tags": [
+            "政府システム",
+            "情報漏えい",
+            "共有サービス"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "デジタル庁が運用するGSSのファイル共有サービスからの情報漏えい可能性についてまとめてみた",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/11/21/002438",
+              "source": "piyolog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Signal to block Siri, Gemini AI from capturing chats on iOS, Android",
+          "url": "https://www.bleepingcomputer.com/news/security/signal-to-block-siri-gemini-ai-from-capturing-chats-on-ios-android/",
+          "source": "BleepingComputer",
+          "note": "Signal、iOS 27とAndroidで AIアシスタント（Siri、Gemini）によるチャット画面キャプチャをブロック"
+        },
+        {
+          "title": "OpenRouter Drops 3 Providers After Researchers Catch Months of Prompt Theft at AI Hosting Firms",
+          "url": "https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html",
+          "source": "The Hacker News",
+          "note": "AI推論プロバイダー3社から数ヶ月間プロンプトが盗まれていた、研究者の報告まで未発覚"
+        },
+        {
+          "title": "Researchers Demonstrate Ghostscript Sandbox-Escape RCE via Crafted File Uploads in Popular Apps",
+          "url": "https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html",
+          "source": "The Hacker News",
+          "note": "Ghostscript PDFサンドボックス脱出RCE脆弱性パッチ済み、Linux サーバーで PDF 変換時に悪用可能"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 30,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWSの新アカウント作成UI刷新、Lambda GPU推論とGoogle Agent Compute Engineの機能強化、Microsoft Ignite 2026での複数AI・インフラ新機能発表が主要なトピック。",
+      "topics": [
+        {
+          "headline": "AWS新規アカウント作成UIが大きく変更、Advanced Featuresの設定に注意必要",
+          "summary": "AWSアカウント作成フローが従来と異なる仕様に変わった。新しいエクスペリエンスで、通常のアカウント作成にはAdvanced Featuresの設定が必須となる。",
+          "why_it_matters": "新規でAWSアカウントを作成する際の手順が変わっているため、初期設定時にトラブルを避けるために確認が必要。自社・自分のプロジェクト開始時の手順として知っておくべき。",
+          "tags": [
+            "AWS",
+            "アカウント管理"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "[アップデート]AWSアカウント作成がとんでもなく別物になったので動作の違いを見てみた[新しいAWSエクスペリエンス] | DevelopersIO",
+              "url": "https://dev.classmethod.jp/articles/new-aws-signup/",
+              "source": "はてブ テクノロジー",
+              "popularity": "19 users"
+            }
+          ]
+        },
+        {
+          "headline": "Lambda が GPU 推論に対応、同一GPU上で最大48並行呼び出し共有可能に",
+          "summary": "AWS Lambda が Managed Instances を通じて EC2 G シリーズ GPU インスタンス上で Event Functions を実行できるように。最大48個の並行呼び出しが1つのGPU上の1つのモデルを共有でき、vLLMとSGLangベースイメージはハンドラコード不要。",
+          "why_it_matters": "Lambda での GPU 推論が可能になることで、AI推論ワークロードのデプロイ方法の選択肢が増える。Terraformでのリソース定義やアーキテクチャ設計時に、Lambda への集約が実現可能になるかを検討する必要がある。",
+          "tags": [
+            "Lambda",
+            "GPU",
+            "推論"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AWS Lambda Now Runs GPU Inference with 48 Concurrent Invocations Sharing One Model per GPU",
+              "url": "https://www.infoq.com/news/2026/11/aws-lambda-gpu-managed-instances/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "Google、AI エージェント向けマネージド実行環境「Agent Compute Engine」を発表",
+          "summary": "Google が Agent Compute Engine を発表。AI エージェントをマイクロVM内の隔離環境で実行するマネージドサービス。認証情報・API キー・OAuth リフレッシュトークンを安全に管理し、実行環境の一時停止と再開が可能。",
+          "why_it_matters": "エージェント実行時のセキュリティと信任境界の確保が Kubernetes レベルで実現される。複数エージェントを多地域で運用する際の基盤設計の参考になる。",
+          "tags": [
+            "Google Cloud",
+            "AI エージェント",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Google Announces Agent Compute Engine for Secure AI Agent Execution",
+              "url": "https://www.infoq.com/news/2026/11/google-agent-compute-engine/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "Microsoft Ignite 2026、Database Hub・Copilot Managed Runtime・Windows Server 2028 を正式リリース",
+          "summary": "Microsoft Ignite 2026 で、Azure・オンプレミス・他社クラウドのデータベース一元管理「Database Hub」（AIエージェント運用監視対応）、AI生成アプリの企業内安全実行基盤「Copilot Managed Runtime」、次期サーバOS「Windows Server 2028」パブリックプレビュー版がリリース。",
+          "why_it_matters": "企業内のAI推論基盤・エージェント運用が標準化されていく。複数クラウドに渡るデータベース管理が自動化される傾向を、設計判断・ツール選択に反映させる必要がある。",
+          "tags": [
+            "Azure",
+            "AI エージェント",
+            "マルチクラウド"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "マイクロソフト、クラウドやオンプレミスのデータベースを一元管理する「Database Hub」正式リリース。AIエージェントによる運用監視の自動化も",
+              "url": "https://www.publickey1.jp/blog/26/database_hubai.html",
+              "source": "Publickey"
+            },
+            {
+              "title": "マイクロソフト、AIが生成したアプリを企業内で安全に実行するランタイム「Copilot Managed Runtime」正式リリース",
+              "url": "https://www.publickey1.jp/blog/26/aicopilot_managed_runtime.html",
+              "source": "Publickey"
+            },
+            {
+              "title": "Windows Server 2028がパブリックプレビュー公開。Microsoft FoundryなどAIによる推論の実行基盤へと拡張",
+              "url": "https://www.publickey1.jp/blog/26/windows_server_2028microsoft_foundryai.html",
+              "source": "Publickey"
+            }
+          ]
+        },
+        {
+          "headline": "Azure Cobalt 200 VM 一般利用可能、ネイティブAIワークロード向けに性能・効率向上",
+          "summary": "Azure Cobalt 200 VM が利用可能に。クラウドネイティブアプリケーション・データベース・開発者ツール・AI エージェントワークロード向けに性能と効率性を向上させた。",
+          "why_it_matters": "エージェント運用スケール時のコンピュート選択肢として、Azure 標準CPU が性能・コスト効率で競争力を持つようになった。AWS Graviton や他ベンダーとの比較検討が必要。",
+          "tags": [
+            "Azure",
+            "コンピュート",
+            "AI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Azure Cobalt 200 VMs now available, proven on real workloads and built for the agentic era",
+              "url": "https://azure.microsoft.com/en-us/blog/azure-cobalt-200-vms-now-available-proven-on-real-workloads-and-built-for-the-agentic-era/",
+              "source": "Azure Blog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Why data centers are at the center of the Big Tech backlash",
+          "url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/",
+          "source": "TechCrunch",
+          "note": "データセンター施設と Big Tech 企業の関係についての評論書。背景技術でなく社会論。"
+        },
+        {
+          "title": "How to simplify cloud access with Unified Access Policies, now in preview",
+          "url": "https://cloud.google.com/blog/products/identity-security/how-to-simplify-cloud-access-with-unified-access-policies/",
+          "source": "Google Cloud Blog",
+          "note": "Google Cloud、マイクロサービス・自動エージェント規模への IAM ボトルネック緩和に「Unified Access Policies」プレビュー提供開始。"
+        },
+        {
+          "title": "Introducing object enrichments: Transform unstructured data into agent-ready context",
+          "url": "https://cloud.google.com/blog/products/storage-data-transfer/cost-effective-ai-context-extraction-from-unstructured-gcs-data/",
+          "source": "Google Cloud Blog",
+          "note": "Google Cloud、オブジェクトストレージの非構造化データを AI エージェント向けコンテキストに自動変換する「Object Enrichments」機能リリース。"
+        },
+        {
+          "title": "Continuous improvement comes to Microsoft Foundry",
+          "url": "https://azure.microsoft.com/en-us/blog/continuous-improvement-comes-to-microsoft-foundry/",
+          "source": "Azure Blog",
+          "note": "Microsoft Foundry が継続的改善機能を追加、エージェント性能評価・最適化を自動実施。"
+        },
+        {
+          "title": "Introducing the new Microsoft IQ: Putting your organization’s intelligence to work in every agent",
+          "url": "https://azure.microsoft.com/en-us/blog/introducing-the-new-microsoft-iq-putting-your-organizations-intelligence-to-work-in-every-agent/",
+          "source": "Azure Blog",
+          "note": "Microsoft、企業コンテキスト管理プラットフォーム「Microsoft IQ」をリリース。エージェント向けデータ準備・レピュテーション機能を提供。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 25,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "PostgreSQL 19とAIエージェント向けの運用環境が登場。大規模システム障害が相次ぐ中、堅牢性への問い直しが始まっている。",
+      "topics": [
+        {
+          "headline": "PostgreSQL 19リリース、オンラインテーブル再パック機能などで運用負荷軽減",
+          "summary": "PostgreSQL Global Development Groupが PostgreSQL 19をリリース。データベース保守・クエリ計画・レプリケーション・アプリケーション開発で改善。管理オーバーヘッドの削減とパフォーマンス向上に注力。",
+          "why_it_matters": "RDSやセルフホスト型Postgresを運用するエンジニアにとって、オンラインメンテナンス機能はダウンタイム最小化に直結する。バージョンアップで何が改善されたかを把握すれば、現在の運用の最適化に活かせる。",
+          "tags": [
+            "PostgreSQL",
+            "データベース",
+            "運用"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "PostgreSQL 19 Released with Online Table Repacking and Query Planning Controls",
+              "url": "https://www.infoq.com/news/2026/11/postgresql-19-released/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "AIエージェント向けの運用環境・セーフガード整備が加速、QCon 2026が示す次世代アーキテクチャ",
+          "summary": "QCon San Francisco 2026で、AI モデルそのものより、その周辺の制御層（harness）が、エージェントの動作と安全性を決める、という議論が登場。Google Cloud のセキュリティ基盤寄贈など、エージェント実運用の基盤整備が進行中。",
+          "why_it_matters": "AIエージェントをプロダクションで実行する際、モデルスキルより「何をさせて何をさせないか」の仕組み（プロンプト・ガバナンス・リソース制御）が成否を分ける。運用設計の優先順位が変わる。",
+          "tags": [
+            "AIエージェント",
+            "運用",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "QCon San Francisco 2026: The Harness Is the New Operating System",
+              "url": "https://www.infoq.com/news/2026/11/harness-new-operating-system/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub Actionsで無効なYAML受け入れ、ワークフロー記述の信頼性に課題",
+          "summary": "GitHub Actionsが無効なYAML構文を受け入れてしまう問題が報告されている。ワークフロー実行時の予期しない動作につながる可能性。",
+          "why_it_matters": "Terraformやデプロイメント自動化でActions に依存するエンジニアにとって、YAMLパースの厳密性は重要。CI/CD の信頼性を保つには検証チェックの強化が必要。",
+          "tags": [
+            "GitHub Actions",
+            "CI/CD",
+            "YAML"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "GitHub Actions accepts invalid YAML",
+              "url": "https://yossarian.net/til/post/github-actions-accepts-invalid-yaml/",
+              "source": "Lobsters",
+              "popularity": "28 score"
+            }
+          ]
+        },
+        {
+          "headline": "大規模システム障害が週単位で発生、金融・通信・メールで連鎖障害が懸念",
+          "summary": "1週間でFAA全土グラウンドストップ、Outlook 複数日障害、JPMorgan Chase 銀行障害が連続発生。専門家からは今後も大規模障害が起きると指摘。",
+          "why_it_matters": "クラウド・オンプレ双方で本番システムを運用するエンジニアにとって、障害の連鎖パターンと復旧時間が学べる。自社システムの冗長性・フェイルオーバー設計を再評価するトリガーになる。",
+          "tags": [
+            "システム障害",
+            "信頼性",
+            "運用"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "We haven’t seen the last of the major tech outages",
+              "url": "https://www.theverge.com/tech/1039851/major-tech-outages",
+              "source": "The Verge"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "ケガの応急処置や飲料水の入手方法など膨大なサバイバル情報をPCに保存してオフラインで閲覧可能にする「Lastbook」",
+          "url": "https://gigazine.net/news/20261123-lastbook-offline-knowledge/",
+          "source": "GIGAZINE",
+          "note": "サバイバル情報をオフラインで保存・閲覧するアプリ Lastbook が登場"
+        },
+        {
+          "title": "Open Social Web Alliance",
+          "url": "https://osw-alliance.net/en/",
+          "source": "Hacker News",
+          "popularity": "216 points",
+          "note": "Open Social Web Alliance 設立。分散型SNS・AT Protocol標準化に動き"
+        },
+        {
+          "title": "How I Got Postgres into a Single Binary",
+          "url": "https://progrium.xyz/articles/2026/single-binary-postgres",
+          "source": "Lobsters",
+          "popularity": "26 score",
+          "note": "単一バイナリにした PostgreSQL コンパイル・実行方法のまとめ"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 22,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "AdobeがAdobe Express Photosを無断インストール、Windows機能を乗っ取る報告が相次ぐ。一方、Waymoの自動運転車が冠水路で立ち往生、AI企業の収益化構造に課題が指摘されている。",
+      "topics": [
+        {
+          "headline": "Adobe Express Photosの無断インストール・Windows機能乗っ取り報告が多発",
+          "summary": "ユーザーのPCにAdobe Express Photosが勝手にインストールされ、Windows+Shift+Sショートカットが機能劣化版のスクショツールに置き換わる問題が報告多数。",
+          "why_it_matters": "セキュリティ・インストール管理の観点から、ベンダーが意図的にシステム設定を上書きする実例。企業PCでのAdobe製品利用時に同様の問題が発生していないか検査が必要。",
+          "tags": [
+            "Adobe",
+            "Windows",
+            "ユーザー体験"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "ここ1か月くらい、PCに勝手に Adobe Express Photos が勝手にインストールされたっていう問い合わせが多発してるんですが、さすがにこれはAdobeさんやりすぎじゃないでしょうか・・・？ しかも、Windows+Shift+Sを勝手に上書きして、機能劣化版のスクショツールに置き換わるんですよ…→「これマジでクソ過ぎてAdobe系製品全部消したい」",
+              "url": "https://posfie.com/@petaritape/p/tgzVdbL",
+              "source": "はてブ テクノロジー",
+              "popularity": "71 users"
+            }
+          ]
+        },
+        {
+          "headline": "Waymoの自動運転車が冠水した道路で立ち往生、交通障害に",
+          "summary": "サンフランシスコの冠水した道路でWaymoの自動運転車が動けなくなり、他の車両の通行を妨げる映像がX投稿で広がった。",
+          "why_it_matters": "自動運転システムの環境認識の限界と、悪天候・異常状況への対応能力を示す事例。クラウド・AI基盤の問題ではないが、実装時の環境対応設計参考に。",
+          "tags": [
+            "自動運転",
+            "AI",
+            "問題事例"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Waymoの自動運転車が冠水した道路で立ち往生",
+              "url": "https://gigazine.net/news/20261122-waymo-flooded-lanes/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "AI企業が必ずしも利益を得られない構造――過去の技術革新から分析",
+          "summary": "生成AIが経済成長をけん引するという期待が高まる一方で、AI開発企業や投資家が大きな利益を得られるとは限らない。PCの普及やコンテナ化など過去の技術革新の事例から分析。",
+          "why_it_matters": "AI投資の判断・キャリア設計の参考に。技術革新による利益が開発者や企業に還元されない可能性は、エンジニアとしても事業提案・給与交渉時に理解すべき構図。",
+          "tags": [
+            "AI経済学",
+            "投資構造",
+            "キャリア"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AIが世界を変えてもAI企業が儲かるとは限らない、その理由とは？",
+              "url": "https://gigazine.net/news/20261122-ai-will-not-make-you-rich/",
+              "source": "GIGAZINE"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "AndroidスマホがWindows PCのサブ画面に？マイクロソフトが新機能 - すまほん!!",
+          "url": "https://smhn.info/202611-microsoft-link-to-windows-extend-display-android-second-screen",
+          "source": "はてブ テクノロジー",
+          "popularity": "39 users",
+          "note": "MicrosoftがAndroidスマホをWindows PCのサブ画面にする新機能を提供へ。AppleのSidecarやSamsung Second Screenに対応する形。"
+        },
+        {
+          "title": "Toyota, Nissan, and Honda to standardize parts to lower costs",
+          "url": "https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/",
+          "source": "Hacker News",
+          "popularity": "1175 points",
+          "note": "トヨタ・日産・ホンダが部品の標準化で製造コスト削減を目指す。"
+        },
+        {
+          "title": "中国車39カ国で日本車超え、ドイツなどで販売数逆転　EVが切り崩し - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUC105240Q6A111C2000000/",
+          "source": "はてブ 世の中",
+          "popularity": "103 users",
+          "note": "世界39カ国で中国メーカーの新車販売シェアが日本を上回る。EV伸長が要因。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 9,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "米国で民主党が下院で34年ぶりの大勝、首里城正殿が7年ぶりに復元公開、トランプ大統領とキム総書記の首脳会談が実現しなかった報道など、国内外の政治・文化の重要な動きが続く。",
+      "topics": [
+        {
+          "headline": "米下院選挙、民主党が34年ぶりの大勝で258議席を確保",
+          "summary": "アメリカの下院選挙で民主党が大きく勝利し、1990年以来34年ぶりとなる下院での勝利を収めた。258議席を確保した。",
+          "why_it_matters": "米国の政治軸足が変わることで、今後4年の対外政策、ウクライナ支援、中国政策など日本を含む国際関係に直結する。",
+          "tags": [
+            "米国政治",
+            "選挙"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "米民主、「オバマ旋風」超えの258議席確保　下院で34年ぶり大勝",
+              "url": "http://www.asahi.com/articles/ASVCR00N7VCRBQBQ2NRM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "首里城正殿、火災から7年ぶりに復元完了し一般公開開始",
+          "summary": "沖縄の首里城正殿が、2019年の火災で焼失してから7年の復元を経て、23日正午から一般公開を開始した。式典が行われた後、琉球王国の歴史を伝えるシンボルとして来訪者を迎える。",
+          "why_it_matters": "文化遺産の復興は沖縄観光の中核であり、地域経済や文化継承にとって象徴的な出来事。",
+          "tags": [
+            "沖縄",
+            "文化遺産"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "【動画】上空から見た首里城正殿は？",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261123de80128",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "沖縄 首里城正殿が復元 きょう正午から一般公開",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261122de80078",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "トランプ大統領とキム総書記の首脳会談、条件の相違で実現ならず",
+          "summary": "ウォール・ストリート・ジャーナルの報道によると、トランプ大統領のアジア訪問にあわせて米国と北朝鮮が首脳会談の可能性を模索したが、キム・ジョンウン総書記が提示した条件を米国が受け入れられず、会談は実現しなかった。",
+          "why_it_matters": "朝鮮半島情勢の今後や米国の対北朝鮮政策に影響を与える可能性があり、地域の安定性と日本の国防政策に関わる。",
+          "tags": [
+            "米国",
+            "北朝鮮"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "“会談模索もキム総書記の条件を米が受け入れられず”米報道",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261123de80133",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "融雪剤散布がアリの食性を変化させ、地域生態系に影響を及ぼす",
+          "summary": "弘前大学の研究チームが、融雪剤（塩化ナトリウム）を散布した道路周辺でアリの食べ物が変化し、植物性の餌を好むようになることを発表した。融雪剤の生態系への具体的な影響を調べた研究は珍しいという。",
+          "why_it_matters": "積雪地域の冬季インフラ対策が予期しない生態系変動をもたらす可能性があり、長期的な環境政策の見直し議論につながる。",
+          "tags": [
+            "環境",
+            "生態系"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "融雪剤散布でアリが草食に、多雪地域の生態系に影響か　弘前大学チーム - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOUD2210L0S6A121C2000000/",
+              "source": "はてブ 世の中",
+              "popularity": "38 users"
+            }
+          ]
+        },
+        {
+          "headline": "トランプ大統領がSNSでオバマ元大統領を揶揄、外交姿勢の対比強調",
+          "summary": "トランプ米大統領が自身のSNSで、オバマ元大統領が2009年に上皇ご夫妻と面会してお辞儀した写真と、自身が中国の習近平国家主席に赤じゅうたんで迎えられた写真を並べて投稿し、外交スタイルの違いを強調した。",
+          "why_it_matters": "米国指導部の対外姿勢の変化を示す動きで、中国、日本を含む東アジア外交の今後の方向性を暗示する。",
+          "tags": [
+            "米国政治",
+            "外交"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "トランプ氏、SNSでオバマ氏を揶揄　上皇ご夫妻との写真、自身と習氏の写真と並べて投稿",
+              "url": "https://www.sankei.com/article/20261123-V2RNK7UYFZOKZNEDCZFQUPVM7M/",
+              "source": "はてブ 世の中",
+              "popularity": "37 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "What is going on with Poundland?",
+          "url": "https://www.bbc.co.uk/news/articles/cm4g10p2r0g9o?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "英国の小売企業Poundlandが買収先を探さなければ数日以内に経営破綻する可能性。"
+        },
+        {
+          "title": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+          "url": "https://www.bbc.co.uk/news/articles/cqdr15l32d3go?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "ロシアの爆撃でウクライナの住宅ビルから7歳の少年が生き埋まりから救出、6人が死亡。"
+        },
+        {
+          "title": "Fifa to confirm UK as host for 2035 Women's World Cup",
+          "url": "https://www.bbc.co.uk/sport/football/articles/cx30g83716lzo?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "FIFAが2035年女子ワールドカップの英国開催を確認予定。1966年以来の開催。"
+        },
+        {
+          "title": "一度スーパーで熊に襲われた人が、2ヶ月後に2.4km離れた駅でも襲われた…一説にはずっと同じ熊に狙われていたのではないかという話",
+          "url": "https://togetter.com/li/2773789",
+          "source": "はてブ 世の中",
+          "popularity": "5 users",
+          "note": "群馬県沼田市で、スーパーで襲われた人が2ヶ月後に2.4km離れた駅でも熊に襲われた事例。"
+        },
+        {
+          "title": "家賃の値上がり、53,700円以下の物件が見つからない……都内で住む生活保護受給者に地方への移住を勧める声が集まるが、そう単純な話ではなかった",
+          "url": "https://togetter.com/li/2773747",
+          "source": "はてブ 世の中",
+          "popularity": "231 users",
+          "note": "都内の生活保護受給者が53,700円以下の賃貸物件を見つけられず、地方移住も困難な実態。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 41,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 197,
+    "unclassified": 14,
+    "classify_error": null
+  }
+}
