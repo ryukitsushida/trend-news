@@ -1,0 +1,1143 @@
+{
+  "date": "2026-11-24",
+  "generated_at": "2026-11-24 13:41 JST",
+  "lead": "AIエージェント化とセキュリティ統合が業界の実装標準を形作る転換点。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "あなたが使うAzure APIM の未修正脆弱性が実際に攻撃されており、今すぐインフラ検査が必須です。",
+      "topic": {
+        "headline": "Cisco Expressway RCE脆弱性、ノルウェー エネルギー企業が被害—Microsoft Azure APIM も同時に悪用",
+        "summary": "ノルウェーのEquinor・Skagerak Energiがサイバー攻撃を受け、Microsoftの Azure API Management Classic階層に存在する脆弱性が悪用されてAPI認証情報が盗まれた。同じ攻撃者がCisco Expressway脆弱性も悪用。ノルウェーのセキュリティ機関がCISA（米）と共同で警告。",
+        "why_it_matters": "エネルギー・金融など重要インフラを狙う攻撃で、Azure APIM の未修正脆弱性が実際に悪用されています。あなたのインフラがAzure APIM を使っていれば、今すぐ対象版のパッチ確認が必須です。",
+        "tags": [
+          "Microsoft Azure",
+          "Cisco",
+          "API認証情報"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "Microsoft Azure flaw exploited to steal customers' API credentials",
+            "url": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/",
+            "source": "BleepingComputer"
+          },
+          {
+            "title": "Norway says hackers exploited Microsoft security flaw to attack energy firms Equinor, Skagerak Energi",
+            "url": "https://therecord.media/norway-microsoft-cyberattack-equinor",
+            "source": "The Record"
+          },
+          {
+            "title": "CISA flags critical Cisco RCE flaw as actively exploited in attacks",
+            "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/",
+            "source": "BleepingComputer"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "PR審査をAIで自動化するパターンが確立され、自分たちのCI/CDパイプラインでの統合可能性が具体的に判断できる段階に来ました。",
+      "topic": {
+        "headline": "Claude ShipがPR審査・修正・承認を自動化、ルール定義で開発サイクル短縮",
+        "summary": "AnthropicのClaude Shipベータ版がGitHub PR レビューから修正、ポリシー基づく承認判断までをAIで実施。Code Review、PR Steward、Claude Approvalsを組み合わせTeam/Enterprise向けに提供。",
+        "why_it_matters": "コード変更の承認待機時間短縮で、個人開発やチーム開発のギリギリまでAI化が進む。ルール定義の仕方で品質基準が変わる点を理解し、自分たちのCI/CDパイプラインでの統合パターンを検討する時期。",
+        "tags": [
+          "開発効率化",
+          "エージェント",
+          "コード管理"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "AIがプルリクエストのレビューや修正を行い自動承認までしてくれる「Claude Ship」が登場",
+            "url": "https://gigazine.net/news/20261124-claude-ship/",
+            "source": "GIGAZINE"
+          },
+          {
+            "title": "Anthropic、PRのレビューから修正、承認までをAIで支援する「Claude Ship」公開",
+            "url": "https://www.itmedia.co.jp/aiplus/article/2611/24/2000003404/",
+            "source": "ITmedia AI+"
+          },
+          {
+            "title": "Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+            "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+            "source": "TechCrunch"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "エージェント型ワークロード向けのAIエンドポイント自動保護が標準化され、あなたが検討すべき保護基盤の選択肢が明確になります。",
+      "topic": {
+        "headline": "AWS WAF が LLM・MCP・A2A エンドポイント自動検出・保護を一般提供",
+        "summary": "AWS WAF と Amazon Bedrock Guardrails が連携し、API Gateway・ALB・CloudFront 配下の言語モデル・MCP・エージェント間通信エンドポイントを自動で検出・保護。AI エージェント向けシールドが実装段階へ。",
+        "why_it_matters": "エージェント型ワークロードの増加に伴い、AI エンドポイント保護が明示的な課題に。自動検出により、見落としていた攻撃面がカバーされ、Bedrock Guardrails との連携でプロンプトインジェクション対策が標準化されます。設定時に検出ロジックを理解しておくと運用の予見性が高まります。",
+        "tags": [
+          "AWS",
+          "LLM",
+          "セキュリティ"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "AWS WAF announces automated discovery and protection for LLM, MCP, and A2A endpoints using Amazon Bedrock Guardrails",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection/",
+            "source": "AWS What's New"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "AIエージェント保護を統合するZero Trust戦略が業界標準化すれば、自社システム設計に直結する判断基準が変わります。",
+      "topic": {
+        "headline": "CrowdStrike、Zscalerを約439億ドルで買収—AIエージェント保護を強化",
+        "summary": "CrowdStrikeが大手ネットワークセキュリティのZscalerを全額株式交換で約439億ドル（企業価値約7兆円）で買収。Zscalerの「Zero Trust Exchange」をFalcon基盤に統合し、AIエージェント保護を強化する計画。",
+        "why_it_matters": "AIエージェントの運用環境でセキュリティの統合が進むことで、エンジニアがAIエージェント導入時に検討すべき保護基盤が大きく変わる可能性がある。Zero Trust Exchange との組み合わせが業界標準になれば、自社システムの設計判断に影響を与える。",
+        "tags": [
+          "M&A",
+          "セキュリティ",
+          "AIエージェント"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "CrowdStrike、Zscalerを約439億ドルで買収へ　狙いはAIエージェントの安全確保",
+            "url": "https://www.itmedia.co.jp/news/article/2611/24/2000003398/",
+            "source": "ITmedia NEWS"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "生成AI運用時のコンテンツフィルタリング堅牢性が実例で問われており、あなたがエージェント展開を検討する際の必須検証項目になります。",
+      "topic": {
+        "headline": "SpaceX、Grok による児童虐待画像・報復ポルノ生成で米2州が提訴",
+        "summary": "オレゴン州とバージニア州がSpaceXを提訴。SpaceX傘下のAI「Grok」が児童性的虐待コンテンツ（CSAM）および本人同意のない性的画像を生成・拡散した可能性があるとしている。",
+        "why_it_matters": "AIモデルの安全性フィルタリングが実運用で機能していないという実例。今後、AIエージェント・生成AIを社内或いは顧客向けに展開する際、コンテンツフィルタリングの堅牢性検証が必須要件になる可能性。",
+        "tags": [
+          "Grok",
+          "安全性",
+          "規制"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "SpaceXをオレゴン州とバージニア州が提訴　Grokの性的画像生成で",
+            "url": "https://www.itmedia.co.jp/news/article/2611/24/2000003399/",
+            "source": "はてブ テクノロジー",
+            "popularity": "10 users"
+          },
+          {
+            "title": "States sue SpaceX to stop Grok from generating child sex images, revenge porn",
+            "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn/",
+            "source": "Ars Technica"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "ai",
+    "category_label": "AI・LLM",
+    "headline": "OpenAIが内部指標「パープレキシティ」公開、2027年の技術革新急加速を警告し共通開発制限を提唱",
+    "sources": [
+      {
+        "title": "OpenAIがAIの進化を測る内部指標「パープレキシティ」を公開、2027年の技術革新ラッシュを見据え開発制限を提唱",
+        "url": "https://gigazine.net/news/20261124-openai-perplexity/",
+        "source": "GIGAZINE"
+      },
+      {
+        "title": "OpenAI warns that upcoming AI systems could outpace safety checks and urges rivals to agree on shared limits",
+        "url": "https://the-decoder.com/openai-warns-that-upcoming-ai-systems-could-outpace-safety-checks-and-urges-rivals-to-agree-on-shared-limits/",
+        "source": "The Decoder"
+      }
+    ],
+    "background": "OpenAIが内部指標「パープレキシティ」を初めて公開し、2027年にAI事前学習の技術革新が加速することを警告。AIの能力伸長が予測可能になる一方で、業界全体での開発制限が必要というジレンマが発生している。",
+    "concepts": [
+      {
+        "term": "パープレキシティ",
+        "explanation": "言語モデルがデータをどれだけ正確に予測できるかを数値化した指標。値が低いほどモデルの予測精度が高く、AIの基礎能力を測る標準的な尺度として機能します。"
+      },
+      {
+        "term": "AI事前学習",
+        "explanation": "大量のテキストデータで基礎的な言語理解を学ばせるプロセス。この段階での技術革新が、その後のモデル性能を大きく左右します。"
+      },
+      {
+        "term": "開発制限(共通制限)",
+        "explanation": "AI企業が業界全体で合意する、開発速度や実験規模の上限。サイバーセキュリティの『協調的な責任ある開示』のように、安全性と競争のバランスを取る仕組みです。"
+      }
+    ],
+    "for_you": "AWSでインフラ構築を担当するあなたにとって、この情報は投資判断に直結します。もし2027年に技術革新が実装される場合、現在設計するシステムのスケーラビリティ要件が変わる可能性があります。また、業界共通制限が実現すれば、競争環境が変わり、採用戦略や人材育成のペースも調整が必要になるでしょう。LLMを個人開発に使うなら、今後2年間でAPIコストの変動リスクにも備える必要があります。",
+    "try_this": "今週中に、現在使っているLLMサービス（ChatGPT APIなど）のパープレキシティスコアをGitHubやOpenAIの公式リソースで確認し、過去数ヶ月のトレンドを簡単なスプレッドシートにまとめてみてください。技術革新の加速が本当に起きるなら、スコアの改善ペースが急激に上がるはずです。その観察が、自分たちのTerraformで定義するLLM関連リソース（コスト予測、レート制限など）の見直し判断につながります。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "Claude ShipのPR自動レビュー・承認、OpenAI「パープレキシティ」指標で2027年の技術革新警告、複数の新型オープンAIモデル公開など、開発効率化とAIリスク管理の両軸で動きが活発化。",
+      "topics": [
+        {
+          "headline": "Claude ShipがPR審査・修正・承認を自動化、ルール定義で開発サイクル短縮",
+          "summary": "AnthropicのClaude Shipベータ版がGitHub PR レビューから修正、ポリシー基づく承認判断までをAIで実施。Code Review、PR Steward、Claude Approvalsを組み合わせTeam/Enterprise向けに提供。",
+          "why_it_matters": "コード変更の承認待機時間短縮で、個人開発やチーム開発のギリギリまでAI化が進む。ルール定義の仕方で品質基準が変わる点を理解し、自分たちのCI/CDパイプラインでの統合パターンを検討する時期。",
+          "tags": [
+            "開発効率化",
+            "エージェント",
+            "コード管理"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AIがプルリクエストのレビューや修正を行い自動承認までしてくれる「Claude Ship」が登場",
+              "url": "https://gigazine.net/news/20261124-claude-ship/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "Anthropic、PRのレビューから修正、承認までをAIで支援する「Claude Ship」公開",
+              "url": "https://www.itmedia.co.jp/aiplus/article/2611/24/2000003404/",
+              "source": "ITmedia AI+"
+            },
+            {
+              "title": "Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+              "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAIが内部指標「パープレキシティ」公開、2027年の技術革新急加速を警告し共通開発制限を提唱",
+          "summary": "OpenAIチーフサイエンティストがAIの予測精度指標「パープレキシティ」の測定結果を公開。2027年にAI事前学習の技術革新が雪崩的に起きる可能性を指摘し、安全性確保のため業界共通の開発制限を提案。",
+          "why_it_matters": "AIの能力伸長スピードが予測可能になれば、企業の投資判断・人材育成計画が立てやすくなる。同時に業界が共通制限に合意するかは、国内AI企業の競争力や採用戦略にも影響する情報。",
+          "tags": [
+            "AI安全性",
+            "業界トレンド",
+            "性能測定"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "OpenAIがAIの進化を測る内部指標「パープレキシティ」を公開、2027年の技術革新ラッシュを見据え開発制限を提唱",
+              "url": "https://gigazine.net/news/20261124-openai-perplexity/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "OpenAI warns that upcoming AI systems could outpace safety checks and urges rivals to agree on shared limits",
+              "url": "https://the-decoder.com/openai-warns-that-upcoming-ai-systems-could-outpace-safety-checks-and-urges-rivals-to-agree-on-shared-limits/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "Inkling 2 Mini、Qwen 27B超の性能で16GBメモリ実行版も―ループ思考で推論効率化",
+          "summary": "Thinking Machines LabがInkling 2 Miniを公開。ベンチマーク結果がQwen3.8 27Bを上回り、メモリ16GBでの量子化版も提供。ループ変圧器アーキテクチャで推論を効率化。",
+          "why_it_matters": "PC/ローカル環境で推論力を維持できるモデルが増えると、クラウドコスト削減やプライバシー面での設計選択肢が広がる。自分のTerraform/Pythonスタックでのローカルエージェント実装の実現可能性が高まる。",
+          "tags": [
+            "オープンモデル",
+            "ローカル実行",
+            "効率化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Qwen3.8 27Bより高性能なアメリカ製オープンモデル「Inkling 2 Mini」が公開される＆メモリ16GBで実行できる量子化版も登場",
+              "url": "https://gigazine.net/news/20261124-inkling-2-mini/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "DeNA、AIエージェント「AI社員」を外販、使用量を「残業時間」で管理",
+          "summary": "DeNAが企業配属・育成可能なAIエージェントサービス「AI社員 by DeNA」を発表。AIの利用過度を「残業時間」という人間的メタファーで管理する仕組み。",
+          "why_it_matters": "エージェント型AI導入時の運用管理（使いすぎ抑制、コスト可視化）をどう実装するかのリファレンス。チーム内のAI利用ガバナンスを検討する際の参考になる。",
+          "tags": [
+            "エージェント",
+            "ガバナンス",
+            "SaaS"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "DeNA、「AI社員」を外販　使い過ぎを“残業時間”で管理",
+              "url": "https://www.itmedia.co.jp/aiplus/article/2611/24/2000003406/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "Google、AIモデル性能ベンチマークフレームワーク「gBench」をオープンソース化",
+          "summary": "GoogleがAIモデル性能測定ツール「gBench」をOSSとして公開。ベンチマークフレームワークの標準化を推進。",
+          "why_it_matters": "複数モデルの性能比較が標準化されると、プロダクション環境での選定根拠が明確になる。自社モデル評価時の検証フローにも組み込みやすくなる。",
+          "tags": [
+            "ツール",
+            "評価",
+            "オープンソース"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "GoogleがAIの性能測定ツール「gBench」をオープンソース化",
+              "url": "https://gigazine.net/news/20261124-google-gbench-benchmarking-framework/",
+              "source": "GIGAZINE"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "国内で採れないAI人材、インドで確保　“日本に呼ばない”開発ラボをZenkenが始めた理由",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/24/2000003396/",
+          "source": "ITmedia AI+",
+          "note": "Zenkenがインドのベテランエンジニア現地勤務で確保、国内採用困難課題の実例。"
+        },
+        {
+          "title": "眠る「200兆円市場」、フィジカルAIを阻む「資源不足」　日立は独自技術で突破口探る",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/24/2000003382/",
+          "source": "ITmedia AI+",
+          "note": "日立が社会インフラ向けフィジカルAI市場を2030年約1.3兆ドル規模と予想、電力リソース制約が成長阻害。"
+        },
+        {
+          "title": "住友生命がChatGPT導入で524％のROI達成　金融の厳格な基準をどう突破した？",
+          "url": "https://kn.itmedia.co.jp/kn/article/2611/24/2000003335/",
+          "source": "ITmedia AI+",
+          "note": "住友生命がChatGPT Enterprise導入で平均推定ROI524%達成、金融機関の厳格基準突破事例。"
+        },
+        {
+          "title": "Anthropic's appetite for compute is pushing xAI toward a rent-over-build strategy",
+          "url": "https://the-decoder.com/anthropics-appetite-for-compute-is-pushing-xai-toward-a-rent-over-build-strategy/",
+          "source": "The Decoder",
+          "note": "SpaceXSIがAnthropic(月$3.1B)、Google(月$800M)へ計算リソース賃貸。自社AI事業からシフト。"
+        },
+        {
+          "title": "Agent Harnessを理解するために、150行ほどのPythonで自作してみた",
+          "url": "https://qiita.com/yamamoto_a_genee/items/76562c5c80032ad9e962",
+          "source": "Qiita 人気",
+          "popularity": "34 LGTM",
+          "note": "Agent Harness を150行Pythonで実装、エージェント設計パターンをハンズオンで学習できる記事。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 71,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "脆弱性の悪用確認（Cisco Expressway、Project MONAI、N-able MailAssure）とインシデント報告が相次ぐ。クラウド・VPN・メール基盤など企業インフラ広く狙われる中、企業データベースの大規模漏えいも多発。",
+      "topics": [
+        {
+          "headline": "Cisco Expressway RCE脆弱性、ノルウェー エネルギー企業が被害—Microsoft Azure APIM も同時に悪用",
+          "summary": "ノルウェーのEquinor・Skagerak Energiがサイバー攻撃を受け、Microsoftの Azure API Management Classic階層に存在する脆弱性が悪用されてAPI認証情報が盗まれた。同じ攻撃者がCisco Expressway脆弱性も悪用。ノルウェーのセキュリティ機関がCISA（米）と共同で警告。",
+          "why_it_matters": "エネルギー・金融など重要インフラを狙う攻撃で、Azure APIM の未修正脆弱性が実際に悪用されています。あなたのインフラがAzure APIM を使っていれば、今すぐ対象版のパッチ確認が必須です。",
+          "tags": [
+            "Microsoft Azure",
+            "Cisco",
+            "API認証情報"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Microsoft Azure flaw exploited to steal customers' API credentials",
+              "url": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "Norway says hackers exploited Microsoft security flaw to attack energy firms Equinor, Skagerak Energi",
+              "url": "https://therecord.media/norway-microsoft-cyberattack-equinor",
+              "source": "The Record"
+            },
+            {
+              "title": "CISA flags critical Cisco RCE flaw as actively exploited in attacks",
+              "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAI と Cisco が Linux シスムを稼働させたまま攻撃を防ぐ「Shirudo」オープンソース公開",
+          "summary": "OpenAIとCiscoが共同でオープンソース「Shirudo」を発表。パッチが適用されるまでの間、脆弱性を悪用した攻撃をブロック。Javaの脆弱性Java4Shellなどを制御下テストで検証済み。",
+          "why_it_matters": "ゼロデイやゼロデイ期間中の脆弱性攻撃を、システムシャットダウンなしに防ぐ仕組みが実装可能に。本番Linux環境でのパッチ適用スケジュール管理が変わる可能性があります。",
+          "tags": [
+            "Linux",
+            "脆弱性防御",
+            "オープンソース"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "OpenAIがシステムを停止せずに脆弱性を悪用した攻撃を防ぐ「Shirudo」を発表",
+              "url": "https://gigazine.net/news/20261124-openai-shirudo/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "OpenAI and Cisco introduce Shirudo | OpenAI",
+              "url": "https://openai.com/index/introducing-shirudo/",
+              "source": "はてブ テクノロジー",
+              "popularity": "17 users"
+            }
+          ]
+        },
+        {
+          "headline": "Chrome クリティカル脆弱性を修正—即座のアップデート推奨",
+          "summary": "Google Chromeのセキュリティアップデートがリリースされ、重要度「クリティカル」の脆弱性に対処。CVE番号・影響範囲・対処内容の詳細は記事に記載なし。",
+          "why_it_matters": "毎日使うブラウザの重大脆弱性。クリティカル指定は攻撃の即応性が高い。自動更新設定を確認してください。",
+          "tags": [
+            "Chrome",
+            "ブラウザ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「Chrome」がアップデート - 「クリティカル」脆弱性1件を修正",
+              "url": "https://www.security-next.com/193218",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "N-able Mail Assure SSRF脆弱性、CISA KEVに追加—認証API経由で内部ネットワーク偵察可能",
+          "summary": "N-able Mail Assure（SpamExperts）のLDAP同期機能に SSRF 脆弱性（CVE-2026-134624）が存在。認証済みAPIユーザが任意の内部ホスト・ポートへ接続可能。CISA KEVで悪用確認済み認定。同社はMail Assure侵害調査中に発見。",
+          "why_it_matters": "メール基盤の管理者認証情報を持つ攻撃者が、内部ネットワークの地図を引き出せます。メールサービスの管理画面アクセス制御を強化する必要があります。",
+          "tags": [
+            "SSRF",
+            "メールサービス",
+            "CISA KEV"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation",
+              "url": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "CVE-2026-134624: N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134624",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Project MONAI Label パストラバーサル脆弱性、CISA KEVで悪用確認済—医療AI研究基盤に広がる被害",
+          "summary": "医療画像AI基盤「Project MONAI MONAI Label」のパストラバーサル脆弱性（CVE-2026-133968）が CISA KEVで悪用確認済み認定。未認証の攻撃者が任意ファイル書き込み・リモートコード実行可能。",
+          "why_it_matters": "医療研究・診断AIを運用している機関は即座の調査が必要。公開研究基盤で悪用が確認されているため、スキャン・IDS検知ログの確認から始めてください。",
+          "tags": [
+            "医療AI",
+            "RCE",
+            "CISA KEV"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "CVE-2026-133968: Project MONAI MONAI Label Path Traversal Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133968",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Roundcube Webmail セキュリティ修正リリース—1.6系は終了",
+          "summary": "ウェブメールソフト Roundcube の最新版（1.7.7・1.6.22）がセキュリティ問題に対処。1.6系は今回が最後のリリース。脆弱性の詳細は記事に記載なし。",
+          "why_it_matters": "Roundcubeを運用していれば、1.6系から1.7系へ移行を計画してください。セキュリティサポート終了のタイミングを把握できます。",
+          "tags": [
+            "Webmail",
+            "サポート終了"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "「Roundcube」にセキュリティ修正 - 「1.6」系は今回が最後",
+              "url": "https://www.security-next.com/193210",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "南米ハッカー Arion Kurtaj、GTA6/Rockstar Games他への不正アクセスで有罪—7年投獄も釈放",
+          "summary": "GTA6開発元Rockstar Games、Uber、Revolut他への不正アクセスで有罪を認めたArion Kurtaj被告が7年の実刑判決を受けたが、すでに釈放された。BBCが報じた。",
+          "why_it_matters": "ゲーム企業・金融企業への大規模侵害を起こしたハッカーの立件と釈放の事例。セキュリティ侵害後の法的責任と実刑執行の実態を知る参考に。",
+          "tags": [
+            "RockStar Games",
+            "侵害",
+            "立件"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "The hacker behind early GTA VI leaks has been sentenced — and released",
+              "url": "https://www.theverge.com/games/1040966/arion-kurtaj-gta-vi-leaks-sentenced-released",
+              "source": "The Verge"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "South Korea’s power giant KEPCO confirms data breach impacting 1.5 million",
+          "url": "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/",
+          "source": "BleepingComputer",
+          "note": "韓国電力公社KEPCO侵害、顧客・従業員・請負業者データ150万件に影響"
+        },
+        {
+          "title": "Spanish LaLiga confirms hackers stole soccer fans’ personal data",
+          "url": "https://www.bleepingcomputer.com/news/security/spanish-laliga-confirms-hackers-stole-soccer-fans-personal-data/",
+          "source": "BleepingComputer",
+          "note": "スペイン LaLiga サッカーチームファンの個人情報流出"
+        },
+        {
+          "title": "Critical binary-parser Flaw Enables JavaScript Injection via Malicious Parser Definitions",
+          "url": "https://thehackernews.com/2026/11/critical-binary-parser-flaw-enables.html",
+          "source": "The Hacker News",
+          "note": "binary-parser ライブラリ critical 脆弱性 CVE-2026-134814、パーサー定義経由で任意コード実行"
+        },
+        {
+          "title": "Hackers Exploit Critical ScreenConnect Flaw to Hijack MSP Technician PCs Without Warning",
+          "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html",
+          "source": "The Hacker News",
+          "note": "ConnectWise ScreenConnect critical 脆弱性 CVE-2026-84869 悪用、MSP技術者PC乗っ取り"
+        },
+        {
+          "title": "Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE",
+          "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html",
+          "source": "The Hacker News",
+          "note": "ASP.NET 旧 Idunno.AntiCsrf ライブラリ critical 脆弱性、未認証RCE悪用中"
+        },
+        {
+          "title": "Hackers Exploited GL.iNet Cloud Flaw to Install Malware on Routers and KVM Devices",
+          "url": "https://thehackernews.com/2026/11/hackers-exploited-glinet-cloud-flaw-to.html",
+          "source": "The Hacker News",
+          "note": "GL.iNet GoodCloud リモート管理脆弱性悪用、ルータ・KVM機器にマルウェア感染"
+        },
+        {
+          "title": "AI-Assisted Cyber Attacks Trigger Unauthorized Payments at Indian Banks and Fintech Firms",
+          "url": "https://thehackernews.com/2026/11/ai-assisted-cyberattacks-trigger.html",
+          "source": "The Hacker News",
+          "note": "インド金融機関・FinTechへのAI支援型サイバー攻撃、CERT-In が警告"
+        },
+        {
+          "title": "複数のRuijie Networks製品におけるOSコマンドインジェクションの脆弱性",
+          "url": "https://jvn.jp/jp/JVN28897261/",
+          "source": "JVN",
+          "note": "Ruijie Networks製品複数にOSコマンドインジェクション脆弱性"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 61,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWSから認証セッションの長期化と WAF の価格体系簡素化、SageMaker HyperPod の Slurm 拡張が発表。Google Cloud と Microsoft の AI エージェント向けインフラ整備が進む。",
+      "topics": [
+        {
+          "headline": "AWS Sign-In が最大 90 日の長期認証セッション設定に対応",
+          "summary": "AWS Sign-In で開発者と AI エージェントが最大 90 日間認証を維持でき、頻繁なサインインやプロンプト表示が不要に。管理者が OAuth セッション期間を設定可能。",
+          "why_it_matters": "AI エージェントの実行時間が長時間に及ぶ場合、認証の再取得が運用負荷。長期セッション設定で自動化タスクの中断を減らせます。同時に過度な長期化は権限奪取のリスク。セッション有効期間と権限スコープの見直しが必要です。",
+          "tags": [
+            "AWS",
+            "認証",
+            "エージェント"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AWS Sign-In introduces configurable Sign-in duration of up to 90 days",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/configurable-aws-sign-in-duration/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS WAF が利用シーン単位の簡潔な料金体系を導入",
+          "summary": "AWS WAF がこれまでの複雑な計課（web ACL・ルール・ルールグループ・キャパシティティア単位）を、保護対象に応じたシンプルな価格体系に統一。",
+          "why_it_matters": "WAF の複数ルール・ルールグループ設計がコスト判断を複雑にしていた課題が緩和され、AI エージェントや LLM エンドポイント保護の導入判断が明確に。コスト予測と最適化計画が立てやすくなります。",
+          "tags": [
+            "AWS",
+            "WAF",
+            "セキュリティ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "AWS WAF introduces simplified pricing",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-introduces-simplified-pricing/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "AWS WAF が LLM・MCP・A2A エンドポイント自動検出・保護を一般提供",
+          "summary": "AWS WAF と Amazon Bedrock Guardrails が連携し、API Gateway・ALB・CloudFront 配下の言語モデル・MCP・エージェント間通信エンドポイントを自動で検出・保護。AI エージェント向けシールドが実装段階へ。",
+          "why_it_matters": "エージェント型ワークロードの増加に伴い、AI エンドポイント保護が明示的な課題に。自動検出により、見落としていた攻撃面がカバーされ、Bedrock Guardrails との連携でプロンプトインジェクション対策が標準化されます。設定時に検出ロジックを理解しておくと運用の予見性が高まります。",
+          "tags": [
+            "AWS",
+            "LLM",
+            "セキュリティ"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AWS WAF announces automated discovery and protection for LLM, MCP, and A2A endpoints using Amazon Bedrock Guardrails",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "SageMaker HyperPod が Slurm クラスタに管理された可視性・ユーザー管理拡張対応",
+          "summary": "Amazon SageMaker HyperPod が Slurm クラスタ用の管理機能拡張（マネージド可視性・ユーザー管理）をサポート。SageMaker AI コンソールか API で機能の導入・更新・削除が可能。",
+          "why_it_matters": "SageMaker HyperPod は AI 訓練用の大規模クラスタ管理基盤。Slurm 拡張により、オンプレやマルチクラウド環境での可視化・ユーザー管理がクラウド側で統一され、オペレーション複雑性が低減します。訓練ジョブの運用監視が標準化されます。",
+          "tags": [
+            "AWS",
+            "SageMaker",
+            "ML"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Amazon SageMaker HyperPod now supports managed observability and user management extensions for Slurm clusters",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-extensions/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon CloudFront が AWS European Sovereign Cloud で提供開始",
+          "summary": "Amazon CloudFront が EU 主権クラウド環境で利用可能に。EU データ保護要件を満たすユーザーが CloudFront の性能・スケールを EU 内で得られる。",
+          "why_it_matters": "EU 厳密運用の組織が CloudFront のグローバルキャッシュ・DDoS 防御を使えるようになり、コンプライアンス下でのアプリケーション配信効率が向上。ただし東欧・ロシア市場への配信は別途検討が必要です。",
+          "tags": [
+            "AWS",
+            "CloudFront",
+            "コンプライアンス"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Amazon CloudFront is now available in the AWS European Sovereign Cloud",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-european-sovereign-cloud",
+              "source": "AWS What's New"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Amazon EC2 X8i instances are now available in the Asia Pacific (New Zealand) Region",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-x8i-new-zealand/",
+          "source": "AWS What's New",
+          "note": "EC2 X8i インスタンス（カスタム Intel Xeon 6）が New Zealand リージョンで利用可能に。"
+        },
+        {
+          "title": "Amazon Connect Customer launches the ability to force logout agents directly from the analytics dashboard",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-force-logout/",
+          "source": "AWS What's New",
+          "note": "Amazon Connect がスーパーバイザーの分析ダッシュボードから直接エージェント強制ログアウトを実行可能に。"
+        },
+        {
+          "title": "AWS Partner Central expands analytics access with Partner Central Agents and Data Subscriptions",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-analytics-agent-s3/",
+          "source": "AWS What's New",
+          "note": "AWS Partner Central が Agent と Data Subscription で分析データへのアクセス方法を拡張。"
+        },
+        {
+          "title": "Data + AI Anywhere: AlloyDB Omni integration with local models",
+          "url": "https://cloud.google.com/blog/products/databases/alloydb-omni-integration-with-local-models/",
+          "source": "Google Cloud Blog",
+          "note": "Google AlloyDB Omni が Gemma 4 などのローカルモデルと統合し、オンプレデータで LLM 推論を実行可能に。"
+        },
+        {
+          "title": "Google is named a Leader in the 2026 Gartner® Magic Quadrant™ for SIEM",
+          "url": "https://cloud.google.com/blog/products/identity-security/google-is-named-a-leader-in-the-2026-gartner-magic-quadrant-for-siem/",
+          "source": "Google Cloud Blog",
+          "note": "Google が 2026 年 Gartner SIEM マジッククアドラントで Leader として認定。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 27,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "新ブラウザエンジンLadybirdがアルファテスト開始、企業向けではMailサーバーやデータベースの主要ソフトウェアがアップデート。開発効率化と形式検証が並行して進む。",
+      "topics": [
+        {
+          "headline": "Ladybirdブラウザ、スクラッチから構築した独立エンジンでテスト開始",
+          "summary": "独立系の新型ブラウザエンジンを搭載するLadybirdがmacOSとLinux向けアルファ版で利用可能になった。4年以上の開発を経て、開発者Andreas Klingが公開を発表した。",
+          "why_it_matters": "ブラウザエンジンは大型企業による寡占状況にあり、新しい選択肢の出現は標準化への圧力や実装の多様性をもたらす。技術選定の参考になるほか、将来オープンソース活用時の依存先検討にもなる。",
+          "tags": [
+            "ブラウザ",
+            "オープンソース",
+            "エンジニアリング"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Ladybird, the first new browser engine in years, is now available to test",
+              "url": "https://www.theverge.com/tech/1040872/ladybird-indie-browser-engine-alpha-testing",
+              "source": "The Verge"
+            },
+            {
+              "title": "Ladybird is now in alpha",
+              "url": "https://ladybird.org/posts/alpha/",
+              "source": "Hacker News",
+              "popularity": "1583 points"
+            }
+          ]
+        },
+        {
+          "headline": "PostgreSQL 19リリース、ノンブロッキング再パック機能とI/Oワーカー自動スケールに対応",
+          "summary": "オープンソースリレーショナルデータベースPostgreSQLの最新版19が正式リリースされた。ノンブロッキングなREPACK機能やI/Oワーカーのオートスケール機能などが追加されている。",
+          "why_it_matters": "AWS RDS PostgreSQL を使う場合、新版の運用負荷軽減機能は実装・負荷テストの検討対象になる。特にテーブル再構成が本番環境で非ブロッキング実行できるようになれば、メンテナンス計画が簡素化される。",
+          "tags": [
+            "データベース",
+            "PostgreSQL",
+            "運用"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "PostgreSQL 19正式リリース。ノンブロッキングなREPACKやI/Oワーカーのオートスケールなど新機能",
+              "url": "https://www.publickey1.jp/blog/26/postgresql_19repackio.html",
+              "source": "Publickey"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub、Issue statuses と repository boards をパブリックプレビュー公開",
+          "summary": "GitHubがIssueの状態を「Open/Closed」以上の粒度で管理できるstatuses機能と、repository boards機能をパブリックプレビューで提供開始。チーム内での作業状況の共有コンテキストを改善する。",
+          "why_it_matters": "Terraformなど大型プロジェクト運用で、Issue進捗の粒度が上がると計画・追跡精度が向上する。AIエージェントがGitHub APIで作業状況を読み書きする場合、新しいステータス情報の活用可能性も広がる。",
+          "tags": [
+            "GitHub",
+            "DevOps",
+            "プロジェクト管理"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Issue statuses and repository boards are in public preview",
+              "url": "https://github.blog/changelog/2026-11-23-issue-statuses-and-repository-boards-are-in-public-preview",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub Code Quality、無効なカバレッジレポート形式を検出し失敗に",
+          "summary": "GitHub Code Quality の upload-code-coverage アクションが、カバレッジレポートをCobertura XML形式で検証し、非対応形式の場合はアップロード処理を失敗させるようになった。",
+          "why_it_matters": "CI/CDパイプラインでカバレッジ品質チェックが厳密になり、フォーマット不一致の早期発見ができる。Python など複数言語のテスト環境構築時、フォーマット統一の要件確認が必要になる。",
+          "tags": [
+            "GitHub",
+            "CI/CD",
+            "テスト"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Code coverage uploads now flag invalid report formats",
+              "url": "https://github.blog/changelog/2026-11-23-code-coverage-uploads-now-flag-invalid-report-formats",
+              "source": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub、12月1日から usage reports に user_id 列を追加",
+          "summary": "GitHub usage reports に username 列と並行して user_id 列が追加される。変更は2026年12月1日から有効。その後の列は1ポジション後ろに移動する。",
+          "why_it_matters": "企業内で複数ユーザーの利用状況レポートを自動化する場合、user_id を主キーに使うことで照合精度が向上する。ユーザー名の変更時の追跡も容易になり、データ統合パイプラインの設計が改善される。",
+          "tags": [
+            "GitHub",
+            "API",
+            "DevOps"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Usage reports will include a user ID column starting December 1",
+              "url": "https://github.blog/changelog/2026-11-23-usage-reports-will-include-a-user-id-column-starting-december-1",
+              "source": "GitHub Changelog"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Stalwart is now a drop-in replacement for Microsoft Exchange",
+          "url": "https://stalw.art/blog/microsoft-exchange-replacement/",
+          "source": "Hacker News",
+          "popularity": "303 points",
+          "note": "Stalwart が Microsoft Exchange の代替になる段階に到達。セルフホスト型メールサーバーの選択肢が拡大。"
+        },
+        {
+          "title": "GPUI is getting its own repository",
+          "url": "https://github.com/zed-industries/gpui",
+          "source": "Hacker News",
+          "popularity": "185 points",
+          "note": "GPUI が独立リポジトリを獲得。Rust UI フレームワークの開発形態が変わる。"
+        },
+        {
+          "title": "DHH氏が開発する「Omarchy 4.5」リリース。一般的なマルチウィンドウをサポート。最速7秒で導入、Appleシリコン対応、Webアプリ版MS Office用ランチャーなど新機能",
+          "url": "https://www.publickey1.jp/blog/26/dhhomarchy_457applewebms_office.html",
+          "source": "Publickey",
+          "note": "DHH 氏の Omarchy 4.5 リリース。マルチウィンドウ対応や最速7秒導入など新機能。"
+        },
+        {
+          "title": "Agoda Reduces API Code Review Time by 64% with Modular Architecture",
+          "url": "https://www.infoq.com/news/2026/11/agoda-modular-monolith-framework/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "Agoda が モジュラーアーキテクチャで API コードレビュー時間を 64% 削減。設計パターンの実践例。"
+        },
+        {
+          "title": "コードを書くコストが下がった今、ソフトウェアエンジニアリングの価値はどこにあるのか",
+          "url": "https://qiita.com/figueiredoluiz/items/1d6751643b84db67812e",
+          "source": "Qiita 人気",
+          "popularity": "38 LGTM",
+          "note": "AI でコード記述コストが低下した今、ソフトウェアエンジニアの付加価値はどこか。2026年の研究で自律型エージェントのコミット増加率が 240% だったケースを踏まえた考察。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 24,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "NVIDIAのジェンスン・フアンCEO復帰がトランプ大統領の介入で実現し、政治的論争が激化。SpaceXのGrokが性的画像生成で提訴されるなど、AIの規制圧力が高まっている。",
+      "topics": [
+        {
+          "headline": "CrowdStrike、Zscalerを約439億ドルで買収—AIエージェント保護を強化",
+          "summary": "CrowdStrikeが大手ネットワークセキュリティのZscalerを全額株式交換で約439億ドル（企業価値約7兆円）で買収。Zscalerの「Zero Trust Exchange」をFalcon基盤に統合し、AIエージェント保護を強化する計画。",
+          "why_it_matters": "AIエージェントの運用環境でセキュリティの統合が進むことで、エンジニアがAIエージェント導入時に検討すべき保護基盤が大きく変わる可能性がある。Zero Trust Exchange との組み合わせが業界標準になれば、自社システムの設計判断に影響を与える。",
+          "tags": [
+            "M&A",
+            "セキュリティ",
+            "AIエージェント"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "CrowdStrike、Zscalerを約439億ドルで買収へ　狙いはAIエージェントの安全確保",
+              "url": "https://www.itmedia.co.jp/news/article/2611/24/2000003398/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon、Decart のAI最適化技術を75億ドルで買収—Trainiumチップ販売に活用",
+          "summary": "AmazonがDecartのAI最適化技術と研究チームを約7.5億ドルで買収。同社がTrainiumチップの販売準備の一環として買収を進めている。",
+          "why_it_matters": "AmazonがAI最適化技術に大型投資することで、SageMaker・Trainium・Inferentia を組み合わせたAWS上のAI開発・推論の効率性が向上する見込み。エンジニアがAWS上でAI開発を検討する際の環境や選択肢が変わる可能性。",
+          "tags": [
+            "AWS",
+            "M&A",
+            "AI最適化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon snaps up Decart’s AI optimization tech for $7.5B as it prepares to sell Trainium chips",
+              "url": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "SpaceX、Grok による児童虐待画像・報復ポルノ生成で米2州が提訴",
+          "summary": "オレゴン州とバージニア州がSpaceXを提訴。SpaceX傘下のAI「Grok」が児童性的虐待コンテンツ（CSAM）および本人同意のない性的画像を生成・拡散した可能性があるとしている。",
+          "why_it_matters": "AIモデルの安全性フィルタリングが実運用で機能していないという実例。今後、AIエージェント・生成AIを社内或いは顧客向けに展開する際、コンテンツフィルタリングの堅牢性検証が必須要件になる可能性。",
+          "tags": [
+            "Grok",
+            "安全性",
+            "規制"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "SpaceXをオレゴン州とバージニア州が提訴　Grokの性的画像生成で",
+              "url": "https://www.itmedia.co.jp/news/article/2611/24/2000003399/",
+              "source": "はてブ テクノロジー",
+              "popularity": "10 users"
+            },
+            {
+              "title": "States sue SpaceX to stop Grok from generating child sex images, revenge porn",
+              "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn/",
+              "source": "Ars Technica"
+            }
+          ]
+        },
+        {
+          "headline": "Microsoft To Do、2027年6月に廃止—法人向けはPlanner へ移行、個人向けに代替なし",
+          "summary": "Microsoftがタスク管理アプリ「Microsoft To Do」の全プラットフォーム版を2027年6月30日に提供終了すると発表。職場・学校アカウント向けは「Microsoft Planner」への移行を案内するが、個人アカウントでは利用不可。既存データは自動移行されない。",
+          "why_it_matters": "個人向けツール撤廃で、個人開発・学習にMicrosoft エコシステムを使う者は代替ツール選定が必要。法人はPlannerへの移行を計画する手間が発生。エンジニアのタスク管理ワークフロー見直しの機会。",
+          "tags": [
+            "Microsoft",
+            "廃止",
+            "移行"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "「Microsoft To Do」、2027年6月にアプリ提供終了　法人向けは「Planner」へ移行、個人向けは代替なし",
+              "url": "https://www.itmedia.co.jp/news/article/2611/23/2000003395/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "Kagi、Googleに対抗するメールサービス「Kagi Mail」をベータ公開",
+          "summary": "Kagi（有料検索・Orionブラウザ提供）が、監視なしのメールサービス「Kagi Mail」のパブリックベータをローンチ。Google メールに対抗するサービス。",
+          "why_it_matters": "プライバシー重視のGoogleオルタナティブが広がり、企業のメール・タスク管理・検索にも影響する可能性。エンジニアが個人開発や業務メール の依存先を選ぶ際の選択肢が増える。",
+          "tags": [
+            "Google代替",
+            "プライバシー",
+            "メール"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Google alternative Kagi launches an email service",
+              "url": "https://www.theverge.com/tech/1041000/kagi-mail-email-google-gmail-alternative",
+              "source": "The Verge"
+            },
+            {
+              "title": "Kagi Mail (public beta)",
+              "url": "https://blog.kagi.com/kagi-mail-public-beta",
+              "source": "Hacker News",
+              "popularity": "380 points"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "トランプ大統領がジェンスン・フアンのCEO復帰について「私が説得した」と発言、フアンがブラジャーを掲げるAI画像を投稿し復帰を歓迎",
+          "url": "https://gigazine.net/news/20261124-jensen-huang-nvidia-return-trump-behest/",
+          "source": "GIGAZINE",
+          "note": "フアンCEO復帰を巡りトランプ大統領が関与を認め、フアン氏がAI画像を投稿—政治的圧力の実態が露呈"
+        },
+        {
+          "title": "超党派議員グループがジェンスン・フアンのNVIDIA復帰を非難、中国への半導体輸出規制法案を議会が可決すべきと主張",
+          "url": "https://gigazine.net/news/20261124-us-lawmakers-criticiza-nvidia/",
+          "source": "GIGAZINE",
+          "note": "超党派議員がフアン復帰を非難、中国への半導体輸出規制法案を議会が可決すべきと主張"
+        },
+        {
+          "title": "事務職新卒「減らす」2割　採用意向、AI普及が影響（共同通信） - Yahoo!ニュース",
+          "url": "https://news.yahoo.co.jp/articles/d05d80269b744ac2d480008e296670167cad73ba",
+          "source": "はてブ テクノロジー",
+          "popularity": "11 users",
+          "note": "企業の2割がAI普及に伴い事務職新卒採用を減らす方針—IT系・現場職は採用増の傾向"
+        },
+        {
+          "title": "2028年までに「サービス中断」に見舞われるIT部門の共通点は？　Gartner予測",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/24/news023.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "Gartner予測：AIを拡大するIT部門の4割が2028年までにサービス中断に見舞われる"
+        },
+        {
+          "title": "Jensen Huang scheduled to testify next week in Senate following reinstatement as Nvidia CEO",
+          "url": "https://techcrunch.com/2026/11/23/jensen-huang-scheduled-to-testify-next-week-in-senate-following-reinstatement-as-nvidia-ceo/",
+          "source": "TechCrunch",
+          "note": "フアン氏、CEO復帰後にUpper House下院での証言が予定される—中国人スパイとの不倫問題について"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 24,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "7.5億"
+      ]
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "エヌビディアCEOの復帰が市場を刺激する一方、国内では児童虐待の事案や政治資金問題、雪による大規模停電が社会課題として浮上。都心不動産市場も下落局面を迎えつつあります。",
+      "topics": [
+        {
+          "headline": "エヌビディアCEO復帰、トランプ大統領が関与を明かす",
+          "summary": "エヌビディアのジェンスン・フアン氏がCEO職に電撃復帰。トランプ大統領は「取締役会を説得した」と関与を表明し、市場は好感して日経平均が一時2800円超上昇。",
+          "why_it_matters": "米国政治指導部がテック企業経営に直結する影響力を及ぼす傾向が強まり、企業統治や市場の中立性をめぐる議論が一層活発化する可能性があります。",
+          "tags": [
+            "経済",
+            "テック",
+            "米国政治"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "エヌビディアCEO フアン氏が復帰へ 企業統治も問われるか",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261123de80304",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "株価 一時2800円超の値上がり エヌビディアのCEO復帰発表受け",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261124de80352",
+              "source": "NHK 経済"
+            },
+            {
+              "title": "How Nvidia is reacting to Jensen Huang's return as CEO",
+              "url": "https://www.bbc.co.uk/news/videos/ckedq2edqegzo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "児相が死亡18日前に「親子関係は良好」と判断、兵庫の3歳女児死亡事案",
+          "summary": "兵庫県の3歳女児が死亡した事案で、児童相談所が事件の18日前に親子関係は良好と判断していたことが明らかに。児童保護制度の判断精度が問われています。",
+          "why_it_matters": "児童虐待の見落としが続く中、相談機関の評価基準や情報共有の仕組みに対する社会的検証が避けられません。",
+          "tags": [
+            "児童虐待",
+            "社会福祉",
+            "国内"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "児相、事件18日前に「親子関係は良好」と判断　兵庫の3歳女児死亡",
+              "url": "http://www.asahi.com/articles/ASVCS1F21VCSPTIL007M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "関文科相の政治資金問題で野党6党が問責決議案提出方針で一致",
+          "summary": "政治資金パーティーに関する指摘が相次ぐ関文部科学大臣について、参議院野党6党が国会での不正確な説明を理由に問責決議案の提出方針を決定。",
+          "why_it_matters": "政治資金の透明性をめぐる政治責任の問い方が具体化する局面であり、今後の国会論議と政治姿勢の変化を見る指標になります。",
+          "tags": [
+            "政治資金",
+            "政治",
+            "国会"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "参議院 野党6党 関文科相に対する問責決議案 提出方針で一致",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261124de80396",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "野党、関文科相への問責決議案提出で一致　与党にも続投は厳しい見方",
+              "url": "http://www.asahi.com/articles/ASVCS0P72VCSUTFK005M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "長野・岐阜の雪で4日以上停電、倒木被害が復旧を妨害",
+          "summary": "先週末から降り続いた雪による倒木の影響で、長野県内の一部地域で丸4日以上停電が続く。中部電力は24日夜の全域復旧を見込んでいます。",
+          "why_it_matters": "気象災害と電力インフラの脆弱性が重なると、地域経済と日常生活に数日単位の打撃を与えることが実証され、今冬の対策強化が課題です。",
+          "tags": [
+            "災害",
+            "インフラ",
+            "気象"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "長野と岐阜 雪の影響で停電続く 丸4日以上停電している地域も",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261124de80343",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "都心の中古マンション価格、13年ぶりに前年割れ—下落局面へ",
+          "summary": "東京都心の中古マンション価格が13年半ぶりに前年同月を下回る水準に。住宅ローン金利上昇と投資警戒感が相場の下押し要因。",
+          "why_it_matters": "数年続いた価格上昇局面の終焉は、不動産投資判断や住宅購入タイミングの見直しを促し、家計資産配分に影響します。",
+          "tags": [
+            "不動産",
+            "経済",
+            "金利"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "都心の中古マンション価格、13年半ぶり前年割れ　金利上昇で退潮 - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOUB094PF0Z01C26A1000000/",
+              "source": "はてブ 世の中",
+              "popularity": "9 users"
+            },
+            {
+              "title": "都心の中古マンション「下落局面まで秒読み」、13年ぶり前年割れ",
+              "url": "http://www.asahi.com/articles/ASVCM35LFVCMULFA00LM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "荒れた天気 強風 土砂災害に十分注意 今夜以降日本海側で雪も",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261123de80284",
+          "source": "NHK 主要",
+          "note": "日本海側で雨風が強まり、土砂災害・落雷・竜巻に注意呼びかけ"
+        },
+        {
+          "title": "海外に住む親族の扶養控除 来年度税制改正で要件厳格化へ",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261124de80499",
+          "source": "NHK 主要",
+          "note": "海外親族の扶養控除、来年度税制改正で適用要件を厳格化"
+        },
+        {
+          "title": "アメリカ商務省 “メガスピード” を輸出規制の対象に指定",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261124de80494",
+          "source": "NHK 主要",
+          "note": "米商務省、シンガポールの企業メガスピードを先端半導体輸出規制の対象に指定"
+        },
+        {
+          "title": "くら寿司が「熟成まぐろ」など22品目値上げ　魚介の仕入れ値高騰で",
+          "url": "http://www.asahi.com/articles/ASVCS127HVCSPLFA001M.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "くら寿司が22品目値上げ、魚介仕入れ値高騰を反映"
+        },
+        {
+          "title": "Nato chief vows defence against space threat after Russian nuclear satellite reports",
+          "url": "https://www.bbc.co.uk/news/articles/c9x2er1ry2mzo?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "NATO事務総長、ロシアの核搭載衛星計画に対して宇宙脅威への防衛を誓約"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 49,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 276,
+    "unclassified": 20,
+    "classify_error": null
+  }
+}
