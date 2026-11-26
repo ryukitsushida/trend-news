@@ -1,0 +1,1252 @@
+{
+  "date": "2026-11-26",
+  "generated_at": "2026-11-26 11:43 JST",
+  "lead": "セキュリティと規制が次々と厳格化し、エンジニアの実務判断が問われ始めた。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "企業インフラの認証を完全に回避される脆弱性が実攻撃で悪用されている現在進行中の危機であり、自社ネットワーク運用の確認が急務。",
+      "topic": {
+        "headline": "Mitel MiCollab、複数の認証回避・コード実行脆弱性が悪用確認—CVE-2026-133324等",
+        "summary": "Mitel MiCollabのAudio・Web・Video Conferencing（AWV）コンポーネントに、認証回避・ファイルアップロード・コマンド注入など複数の脆弱性。すべて悪用が確認されている（CISA KEV）。",
+        "why_it_matters": "MiCollabは企業のコミュニケーションインフラ。認証なしで侵入可能な脆弱性が実攻撃で悪用されており、組織内ネットワークが脅かされる状況。セキュリティチーム・IT運用は対応ステータスを即座に確認・計画する必要。",
+        "tags": [
+          "通信・会議ツール",
+          "認証回避",
+          "悪用確認済"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "悪用確認済みの脆弱性10件を「KEV」に追加 - 米当局",
+            "url": "https://www.security-next.com/193360",
+            "source": "Security NEXT"
+          },
+          {
+            "title": "CVE-2026-133324: Mitel MiCollab Not Failing Securely Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133324",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          },
+          {
+            "title": "CVE-2026-133275: Mitel MiCollab Unrestricted Upload of File with Dangerous Type Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133275",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          },
+          {
+            "title": "CVE-2026-133311: Mitel MiCollab Weak Authentication Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133311",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          },
+          {
+            "title": "CVE-2026-133303: Mitel MiCollab XML Injection Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133303",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          },
+          {
+            "title": "CVE-2026-133323: Mitel MiCollab OS Command Injection Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133323",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "信頼の要であるパスワード管理アプリからの大規模流出で、フィッシング・なりすまし攻撃が急増する可能性があり、自分と関係者の認証情報対応が必要。",
+      "topic": {
+        "headline": "1Password、顧客22万件のアカウント情報流出—GitHub経由の内部侵害",
+        "summary": "従業員のGitHubアカウントが悪用され、バックエンドシステムに悪意あるコードが仕込まれた。氏名、ログイン用メールアドレス、公開鍵、アカウント識別子、ログイン日時が流出。パスワードや保管庫内データ、暗号化鍵は無影響。",
+        "why_it_matters": "パスワード管理アプリは信頼の要であり、流出データはフィッシング攻撃の足がかりになる。今後受けるなりすまし・不正アクセス試行に備え、メール確認や認証情報変更が必要。読者が1Passwordユーザーなら緊急対応判断を迫られる。",
+        "tags": [
+          "パスワード管理",
+          "情報流出",
+          "内部侵害"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "パスワード管理アプリ「1Password」がハッキングされ顧客アカウント情報を盗まれる",
+            "url": "https://gigazine.net/news/20261126-1password-security-incident/",
+            "source": "GIGAZINE"
+          },
+          {
+            "title": "パスワード管理「1Password」でデータ流出、一部顧客の氏名やメールアドレスなど／パスワード保管庫やその鍵は無事、招待・復旧メールを装ったフィッシングに注意",
+            "url": "https://forest.watch.impress.co.jp/docs/news/2159320.html",
+            "source": "はてブ テクノロジー",
+            "popularity": "31 users"
+          },
+          {
+            "title": "1Password、一部顧客の氏名やメールアドレスが流出　保管庫内のデータに「影響なし」",
+            "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003466/",
+            "source": "はてブ テクノロジー",
+            "popularity": "9 users"
+          },
+          {
+            "title": "認証管理の「1Password」で顧客データ流出　パスワードは漏洩せず - 日本経済新聞",
+            "url": "https://www.nikkei.com/article/DGXZQOGN2601U0W6A121C2000000/",
+            "source": "はてブ 世の中",
+            "popularity": "9 users"
+          },
+          {
+            "title": "1Password customer data stolen after employee GitHub account breach",
+            "url": "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/",
+            "source": "BleepingComputer"
+          },
+          {
+            "title": "1Password、従業員のGitHubアカウント経由で顧客の氏名とメールアドレスが流出したと発表 — BigGo ファイナンス",
+            "url": "https://finance.biggo.jp/news/86bd3431-ad2e-4b18-b885-4fb6393beb46",
+            "source": "はてブ テクノロジー",
+            "popularity": "113 users"
+          },
+          {
+            "title": "1Password breach leaked customer names and emails, but not passwords",
+            "url": "https://www.theverge.com/tech/1042409/1password-data-breach-leak",
+            "source": "The Verge"
+          },
+          {
+            "title": "1Password said hackers broke into its internal systems, but customer passwords are safe",
+            "url": "https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/",
+            "source": "TechCrunch"
+          },
+          {
+            "title": "Update on a security incident involving 1Password’s backend systems",
+            "url": "https://1password.com/blog/update-on-nov-2026-security-incident",
+            "source": "Lobsters",
+            "popularity": "37 score"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "cloud",
+      "category_label": "クラウド・インフラ",
+      "reason": "Lambda 30分対応により、Step Functions 切り替えの設計判断をやり直す余地が生まれ、既存アーキテクチャの最適化と運用コスト削減を検討する時期。",
+      "topic": {
+        "headline": "AWS Lambda タイムアウト上限が30分に倍増、新機能で複雑な処理が可能に",
+        "summary": "AWS LambdaのEvent Functionsの最大タイムアウトが15分から30分に引き上げ。全リージョンで対応、追加料金なし。Lambda durable functions拡張でMicroVM管理も新たに対応。",
+        "why_it_matters": "これまで15分以内に収まらない処理はStep FunctionsやECSに逃す必要があった。30分対応で、設計の単純化と運用コスト削減の余地が生まれる。MicroVM管理との組み合わせで長時間・リソース集約的なタスクの選択肢が広がる。",
+        "tags": [
+          "Lambda",
+          "サーバーレス"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "AWS Lambda now supports orchestrating MicroVMs with Lambda durable functions",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm/",
+            "source": "AWS What's New"
+          },
+          {
+            "title": "AWS Lambda Doubles Its Timeout to 30 Minutes After Eight Years at 15",
+            "url": "https://www.infoq.com/news/2026/11/aws-lambda-30-minute-timeout/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+            "source": "InfoQ"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "AIチップサプライヤーの経営体制が市場に問われ始めると、将来の調達リスクが高まり、インフラ設計時の企業選定基準を再評価する必要がある。",
+      "topic": {
+        "headline": "エヌビディア、信用格下げの可能性—ガバナンスと経営リスク",
+        "summary": "格付機関S&Pがエヌビディアの信用格付けをAA-に引き下げる可能性を検討。ガバナンス上の懸念と「キーマン・リスク」（特定個人への依存）が理由とされている。",
+        "why_it_matters": "AIチップの需給を握る企業の経営体制が市場に問われ始めた。サプライヤー選定時に企業の持続可能性や経営統治を評価する必要が一層高まる。",
+        "tags": [
+          "エヌビディア",
+          "信用格付け",
+          "ガバナンス"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks",
+            "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+            "source": "TechCrunch"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "AIエージェントから自社システムを操作させる実装パターンが業界標準として確定し、次のシステム設計で採用判断するための公式リファレンスが整った。",
+      "topic": {
+        "headline": "Google Workspace MCPサーバ・CLIが正式版、AIエージェント統合の公式ルート確立",
+        "summary": "GoogleはGoogle WorkspaceをAIエージェントが操作するための MCP Server と CLI を正式版リリース。Workspace 操作の標準インターフェースが確立。",
+        "why_it_matters": "AIエージェント向けの統合インターフェースが公式化される。自社システムを Agent が操作させるときの実装パターンが業界標準として一つ確定。",
+        "tags": [
+          "AIエージェント",
+          "統合"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "「Google Workspace MCPサーバ」と「Google Workspace CLI」が正式版としてリリース",
+            "url": "https://www.publickey1.jp/blog/26/google_workspace_mcpgoogle_workspace_cli.html",
+            "source": "Publickey"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "cloud",
+    "category_label": "クラウド・インフラ",
+    "headline": "AWS Lambda タイムアウト上限が30分に倍増、新機能で複雑な処理が可能に",
+    "sources": [
+      {
+        "title": "AWS Lambda now supports orchestrating MicroVMs with Lambda durable functions",
+        "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm/",
+        "source": "AWS What's New"
+      },
+      {
+        "title": "AWS Lambda Doubles Its Timeout to 30 Minutes After Eight Years at 15",
+        "url": "https://www.infoq.com/news/2026/11/aws-lambda-30-minute-timeout/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+        "source": "InfoQ"
+      }
+    ],
+    "background": "AWS Lambdaは従来、15分のタイムアウト制限によって「短時間実行のサーバーレス」という設計原則が強制されていた。複雑な処理が必要な場合、Step FunctionsやECS/Fargateへ回避する多段階設計が標準的だった。今回30分への倍増により、この設計制約が大きく緩和される。",
+    "concepts": [
+      {
+        "term": "Event Functions",
+        "explanation": "API呼び出しやイベントトリガーで動作するLambda。従来15分制限で、同期的に結果を返す関数型の実行モデル。"
+      },
+      {
+        "term": "Lambda durable functions",
+        "explanation": "状態を保存して長時間実行できるLambda拡張。ワークフロー内で途中状態を記憶し、復旧可能な設計を実現する。"
+      },
+      {
+        "term": "MicroVM管理",
+        "explanation": "Lambda内で軽量仮想マシンを制御できる新機能。重いシステムツール実行やリソース集約的なタスクを、Lambda関数内から直接オーケストレーション可能になる。"
+      }
+    ],
+    "for_you": "これまであなたのTerraformコードでは「15分超の処理→自動的にStep Functions + Lambda の複合設計」という判断が先行していたはず。30分対応で、シングルLambda関数で完結できる処理が大幅に増える。その結果、IAMロール定義、Step Functionsのステート管理、Error Handlingの複雑さが軽減でき、Terraform上でのインフラコード行数も削減される。",
+    "try_this": "今週、自分のLambda関数の中で「15分で完結しない・だからStep Functionsに分割している」処理を1つ洗い出してみてください。その処理を単一Lambdaで実装し直す場合の「実行時間予測」と「リソース要件」を簡単に計算し、30分以内なら構成をシンプル化する検証を試してみる。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "AIエージェントとコーディング支援の実践が進む一方、AI企業の責任論とニューヨーク州によるAIおもちゃ規制が話題の中心。個人開発・企業導入の両面で実装段階に入った。",
+      "topics": [
+        {
+          "headline": "ニューヨーク州がAIチャットボット搭載おもちゃ販売を5年間停止",
+          "summary": "キャシー・ホークル知事がAIチャットボット搭載おもちゃの製造・流通・販売を5年間停止する法律に署名。発効は90日後。保護者にホリデーシーズンの購入時に潜在的リスク検討を呼びかけ。",
+          "why_it_matters": "エンジニアとして子どもを持つ場合、AI導入製品の規制動向を知ることで、AIを搭載したサービス・機能設計時の法的リスク評価が必要になる。米国での厳格な規制は日本の基準にも今後影響する可能性。",
+          "tags": [
+            "規制",
+            "AI安全性",
+            "米国政策"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AIチャットボット搭載おもちゃの製造・流通・販売を5年間停止する法律にニューヨーク州知事が署名",
+              "url": "https://gigazine.net/news/20261126-new-york-state-bans-ai-toys/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "Want to buy your kid an AI toy this Christmas? Not in New York",
+              "url": "https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Claude API をPythonからRustに移植、CPU使用量70%削減に成功",
+          "summary": "AnthropicがClaudeを活用してMessages APIをPythonからRustに移植。2026年9月にサービス中断なく完全移行し、リクエスト当たりのCPU使用量を約70%削減。",
+          "why_it_matters": "AIモデルバックエンドの最適化事例として参考になる。Terraformで環境管理するAWS運用時に、既存Pythonスタックをシステムプログラミング言語へ移植する際のコスト効果を見積もる際の指標になる。",
+          "tags": [
+            "パフォーマンス",
+            "Rust",
+            "LLM API"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AnthropicがClaudeを使って自社APIをPythonからRustに移植しCPU使用量を約70％削減した方法を公開",
+              "url": "https://gigazine.net/news/20261126-anthropic-claude-api-rust/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "Cognition、Kimi K3ベースのコーディング特化モデル「SWE-2.1」公開",
+          "summary": "CognitionがKimi K3を基に開発したAIモデル「SWE-2.1」を発表。コーディング能力が大幅に強化されている。",
+          "why_it_matters": "エンジニアのコーディング補助選択肢が増加。自分の開発環境で試し、既存のGitHub Copilotやその他代替案との使い分けを検討する材料が揃った。",
+          "tags": [
+            "コーディングAI",
+            "AI競争",
+            "オープンソース"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Kimi K3をベースにコーディング能力を増強したAIモデル「SWE-2.1」が登場",
+              "url": "https://gigazine.net/news/20261126-swe-2-1-coding-ai/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "AnthropicのアモデイCEO、人間の自由意志をAIに委ねる案を否定",
+          "summary": "AnthropicのダリオCEOがAxiosの報道（超知能AIに意思決定権を委ねるべき）をXで否定。社会統治と個別タスク自動化を混同していると反論、AIは民主的プロセスで管理されるべきと強調。",
+          "why_it_matters": "AI企業首脳による「AI時代の権力」に関する議論が業界内で広がっている。個人開発やシステム設計時にAIの自律度をどこまで許容するか、企業・規制がどう向き合うかの思想的背景を理解できる。",
+          "tags": [
+            "AI統治論",
+            "業界動向",
+            "倫理"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "AnthropicのアモデイCEO、「人間の自由意志をAIに明け渡す」考えを否定　AI企業間で議論",
+              "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003473/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "Anthropic CEO Dario Amodei says letting AI govern society would be \"a bad idea\"",
+              "url": "https://the-decoder.com/anthropic-ceo-dario-amodei-says-letting-ai-govern-society-would-be-a-bad-idea/",
+              "source": "The Decoder"
+            },
+            {
+              "title": "Anthropic’s Dario Amodei calls accusations of surrendering human control to AI ‘absurd’",
+              "url": "https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Obsidian、エージェント向け公式スキル集・コネクタ機能登場",
+          "summary": "マークダウンエディタObsidianにエージェント向けの公式コネクタ機能が登場。Vault操作法とファイル形式がまとめられた。",
+          "why_it_matters": "個人開発でAIエージェントを試す際、Obsidianのようなナレッジベース整理ツールとの連携が標準化される動き。自分のメモ・設計資料をAIに読ませる仕組みを手軽に構築できる。",
+          "tags": [
+            "AI統合",
+            "知識管理",
+            "開発ツール"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Obsidian公式の「エージェント向け」スキル集が登場　Vault操作法とファイル形式をひとまとめに",
+              "url": "https://www.itmedia.co.jp/aiplus/article/2611/26/2000003470/",
+              "source": "ITmedia AI+"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "図面を探す時間から技能を伝える時間へ、AI活用で業務効率化を進める空研工業",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/26/news014.html",
+          "source": "ITmedia AI+",
+          "note": "空研工業がRecursiveと共同開発した「AIナレッジ基盤システム」、図面検索工数を最大90%削減見通し—技能伝承への活用も構想"
+        },
+        {
+          "title": "国内造船業再生の鍵はフィジカルAI、デジタルシップヤード開発の現状を知る",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/26/news018.html",
+          "source": "ITmedia AI+",
+          "note": "日本の造船業再生はフィジカルAI（AIとロボット統合）が鍵。建造工程の自動化を目指し複数企業が取り組み"
+        },
+        {
+          "title": "MetaのAIエージェント Museを1ヶ月使い倒してわかったこと | kinoko dev",
+          "url": "https://dev.sin5d.com/meta-muse-usage",
+          "source": "はてブ テクノロジー",
+          "popularity": "22 users",
+          "note": "MetaのAIエージェント「Muse」、GrokBotに匹敵する利用実績。クラウドエージェント系は百花繚乱状態"
+        },
+        {
+          "title": "「AI検索に電話番号が……」鳴りやまぬコールセンター　バッファローは壊れた「顧客導線」をどう改善した？",
+          "url": "https://www.itmedia.co.jp/business/articles/2611/26/news015.html",
+          "source": "はてブ テクノロジー",
+          "popularity": "71 users",
+          "note": "AI検索の普及で、バッファローのコンタクトセンター入電が月1400件急増—10年かけた顧客導線の再設計を迫られた"
+        },
+        {
+          "title": "Copilot code review billing will default to the organization",
+          "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+          "source": "GitHub Changelog",
+          "note": "GitHub Copilot code review 、2026年12月30日からデフォルトで組織課金に変更—未選択ユーザーに自動適用"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 79,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "パスワード管理の「1Password」が従業員のGitHubアカウント経由で顧客データを流出。セキュリティ企業のランサム被害や流通・医療機関への不正アクセスも相次ぎ、生成AIがセキュリティ脅威と対策の両面で急速に進化。",
+      "topics": [
+        {
+          "headline": "1Password、顧客22万件のアカウント情報流出—GitHub経由の内部侵害",
+          "summary": "従業員のGitHubアカウントが悪用され、バックエンドシステムに悪意あるコードが仕込まれた。氏名、ログイン用メールアドレス、公開鍵、アカウント識別子、ログイン日時が流出。パスワードや保管庫内データ、暗号化鍵は無影響。",
+          "why_it_matters": "パスワード管理アプリは信頼の要であり、流出データはフィッシング攻撃の足がかりになる。今後受けるなりすまし・不正アクセス試行に備え、メール確認や認証情報変更が必要。読者が1Passwordユーザーなら緊急対応判断を迫られる。",
+          "tags": [
+            "パスワード管理",
+            "情報流出",
+            "内部侵害"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "パスワード管理アプリ「1Password」がハッキングされ顧客アカウント情報を盗まれる",
+              "url": "https://gigazine.net/news/20261126-1password-security-incident/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "パスワード管理「1Password」でデータ流出、一部顧客の氏名やメールアドレスなど／パスワード保管庫やその鍵は無事、招待・復旧メールを装ったフィッシングに注意",
+              "url": "https://forest.watch.impress.co.jp/docs/news/2159320.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "31 users"
+            },
+            {
+              "title": "1Password、一部顧客の氏名やメールアドレスが流出　保管庫内のデータに「影響なし」",
+              "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003466/",
+              "source": "はてブ テクノロジー",
+              "popularity": "9 users"
+            },
+            {
+              "title": "認証管理の「1Password」で顧客データ流出　パスワードは漏洩せず - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOGN2601U0W6A121C2000000/",
+              "source": "はてブ 世の中",
+              "popularity": "9 users"
+            },
+            {
+              "title": "1Password customer data stolen after employee GitHub account breach",
+              "url": "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "1Password、従業員のGitHubアカウント経由で顧客の氏名とメールアドレスが流出したと発表 — BigGo ファイナンス",
+              "url": "https://finance.biggo.jp/news/86bd3431-ad2e-4b18-b885-4fb6393beb46",
+              "source": "はてブ テクノロジー",
+              "popularity": "113 users"
+            },
+            {
+              "title": "1Password breach leaked customer names and emails, but not passwords",
+              "url": "https://www.theverge.com/tech/1042409/1password-data-breach-leak",
+              "source": "The Verge"
+            },
+            {
+              "title": "1Password said hackers broke into its internal systems, but customer passwords are safe",
+              "url": "https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "Update on a security incident involving 1Password’s backend systems",
+              "url": "https://1password.com/blog/update-on-nov-2026-security-incident",
+              "source": "Lobsters",
+              "popularity": "37 score"
+            }
+          ]
+        },
+        {
+          "headline": "Mitel MiCollab、複数の認証回避・コード実行脆弱性が悪用確認—CVE-2026-133324等",
+          "summary": "Mitel MiCollabのAudio・Web・Video Conferencing（AWV）コンポーネントに、認証回避・ファイルアップロード・コマンド注入など複数の脆弱性。すべて悪用が確認されている（CISA KEV）。",
+          "why_it_matters": "MiCollabは企業のコミュニケーションインフラ。認証なしで侵入可能な脆弱性が実攻撃で悪用されており、組織内ネットワークが脅かされる状況。セキュリティチーム・IT運用は対応ステータスを即座に確認・計画する必要。",
+          "tags": [
+            "通信・会議ツール",
+            "認証回避",
+            "悪用確認済"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "悪用確認済みの脆弱性10件を「KEV」に追加 - 米当局",
+              "url": "https://www.security-next.com/193360",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "CVE-2026-133324: Mitel MiCollab Not Failing Securely Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133324",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-133275: Mitel MiCollab Unrestricted Upload of File with Dangerous Type Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133275",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-133311: Mitel MiCollab Weak Authentication Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133311",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-133303: Mitel MiCollab XML Injection Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133303",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-133323: Mitel MiCollab OS Command Injection Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133323",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Danfoss冷却制御装置、認証・パストラバーサル脆弱性が悪用確認—食品小売等が影響",
+          "summary": "Danfoss AK-SM 800A Series（食品小売の冷蔵・HVAC・照明制御に使用）に、不適切な認証やパストラバーサルなど複数の脆弱性（CVE-2025-41450ほか）。すべて悪用が確認されている（CISA KEV）。",
+          "why_it_matters": "OT（運用技術）環境のセキュリティ投資は依然不足しているが、食品流通などの重要インフラが狙われている。IoT・制御装置向けのセキュリティ確保は企業のリスク計算に組み込まれるべき課題。",
+          "tags": [
+            "OT",
+            "制御装置",
+            "悪用確認済"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "CISA warns of critical unpatched flaw in Danfoss refrigeration controllers",
+              "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "CVE-2026-103406: Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103406",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2025-41450: Danfoss AK-SM 800A Series Improper Authentication Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-41450",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2023-25914: Danfoss AK-SM 800A Series Path Traversal Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-25914",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2023-25915: Danfoss AK-SM 800A Series Improper Input Validation Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-25915",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Palo Alto Networks製品、PHP2Shell・Fragnesia脆弱性の組み合わせ悪用—インターネット公開インタフェース標的",
+          "summary": "Palo Alto Networks製品（PAN-OS）で、PHP2ShellとFragnesiaの脆弱性を連鎖させる攻撃が確認。管理インターフェースをインターネット公開している環境が狙われている。",
+          "why_it_matters": "PAN-OSは多数の企業が使用する主要ファイアウォール・VPN製品。ネットワークセキュリティの要であるツールの脆弱性が実攻撃で悪用されると、侵入検知が困難になる。管理画面の公開状況を再確認する必要。",
+          "tags": [
+            "ファイアウォール",
+            "脆弱性連鎖",
+            "実攻撃"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Weekly Report: 複数のPalo Alto Networks製品に脆弱性",
+              "url": "https://www.jpcert.or.jp/wr/2026/wr261126.html#1",
+              "source": "JPCERT/CC"
+            },
+            {
+              "title": "Palo Alto Networks warns of Fragnesia flaw exploited in PAN-OS attacks",
+              "url": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-fragnesia-flaw-exploited-in-pan-os-attacks/",
+              "source": "BleepingComputer"
+            }
+          ]
+        },
+        {
+          "headline": "HPE Juniper Session Smart、root権限コマンド実行脆弱性が悪用確認—CVE-2026-103406",
+          "summary": "HPE Juniper Session Smart CondutorおよびRouterの、特殊な細工を施したSalt Minion IDを使ったOSコマンド注入脆弱性（CVE-2026-103406）が悪用されている（CISA KEV）。",
+          "why_it_matters": "Juniperはネットワーク機器の主要ベンダー。root権限の奪取が可能な脆弱性が実攻撃で悪用されると、ネットワーク全体が制御下に置かれる危険。Session Smartを運用していれば即座のパッチ確認が必須。",
+          "tags": [
+            "ネットワーク機器",
+            "root権限",
+            "悪用確認済"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "悪用確認済みの脆弱性10件を「KEV」に追加 - 米当局",
+              "url": "https://www.security-next.com/193360",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "CVE-2026-103406: Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103406",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Vates Xen Orchestra、認証回避脆弱性が悪用確認—CVE-2026-133469",
+          "summary": "Vates Xen Orchestra（仮想化管理ツール）に、不適切な入力検証により認証を回避し管理者権限でアクション可能な脆弱性。すでに悪用が確認されている（CISA KEV）。",
+          "why_it_matters": "Xen Orchestraは仮想化インフラ管理ツール。認証なしで管理者権限が奪取される脆弱性が実攻撃で使われると、VM・ストレージ全体が侵害される。仮想化基盤を運用していれば優先的に対応を進める必要。",
+          "tags": [
+            "仮想化",
+            "認証回避",
+            "悪用確認済"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "CVE-2026-133469: Vates Xen Orchestra Improper Validation of Specified Type of Input Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133469",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "サツドラ顧客22万9000件のアカウント流出—委託先の開発環境から",
+          "summary": "北海道のドラッグストアチェーン「サツドラ」のアプリ開発委託先であるサイバーエージェントの開発環境から、LINE公式アカウント登録済み顧客のメールアドレスなど22万9026件が流出。1年以上気づかず。",
+          "why_it_matters": "委託先のセキュリティ不備による流出であり、自社の対応だけでは防げない。クラウド開発環境の見守り・第三者セキュリティ監査が企業の責任になってきている。SaaSやアウトソーシング利用時の契約・監査ポイントを再考する参考に。",
+          "tags": [
+            "流出",
+            "小売",
+            "委託先"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "「サツドラ」顧客情報22万件流出　委託先サイバーエージェントがデータ誤公開、1年以上気づかず",
+              "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003469/",
+              "source": "はてブ テクノロジー",
+              "popularity": "6 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "DellのネットワークOSに深刻な脆弱性 - 800件弱の脆弱性に対応",
+          "url": "https://www.security-next.com/193319",
+          "source": "Security NEXT",
+          "note": "Dell Enterprise SONiC、800件近い脆弱性を修正—依存ライブラリ込み"
+        },
+        {
+          "title": "不正アプリ導入を促すメール急増 - 「第一生命」などブランド悪用",
+          "url": "https://www.security-next.com/193365",
+          "source": "Security NEXT",
+          "note": "フィッシング攻撃、第一生命等の企業ブランドを悪用して不正アプリインストール誘導"
+        },
+        {
+          "title": "脆弱性の発見数、1年で2倍超　Microsoft製品も月100件から1000件超に……AIで一変",
+          "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003446/",
+          "source": "はてブ テクノロジー",
+          "popularity": "15 users",
+          "note": "Microsoft Windowsの脆弱性、11月に1000件超—AIで脆弱性発見が激増、2026年上半期で10万件超"
+        },
+        {
+          "title": "「Joomla」に58件の脆弱性 - 「クリティカル」は4件",
+          "url": "https://www.security-next.com/193353",
+          "source": "Security NEXT",
+          "note": "CMS「Joomla」に58件の脆弱性—クリティカルは4件"
+        },
+        {
+          "title": "「AEM」に多数の脆弱性 - 3件がクリティカル",
+          "url": "https://www.security-next.com/193325",
+          "source": "Security NEXT",
+          "note": "Adobe Experience Manager、3件のクリティカルを含む複数の脆弱性に対応"
+        },
+        {
+          "title": "「Firefox 161」がリリース - 110件の脆弱性に対応",
+          "url": "https://www.security-next.com/193284",
+          "source": "Security NEXT",
+          "note": "Firefox 161、110件の脆弱性に対応"
+        },
+        {
+          "title": "「Thunderbird」に深刻な脆弱性 - 署名付メールで詐称可能",
+          "url": "https://www.security-next.com/193277",
+          "source": "Security NEXT",
+          "note": "Thunderbird、署名付メールで送信元詐称可能な脆弱性を修正"
+        },
+        {
+          "title": "AIペネトレーションテスト基盤「Cairn」が大学への攻撃で見つけたゼロデイについてまとめてみた",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/24/214547",
+          "source": "piyolog",
+          "note": "Amazon Threat Intelligence、AIペネトレーション基盤CairnでAIエージェントがゼロデイ発見・実攻撃に使用"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 99,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "SpaceXの軌道上データセンター衛星が米FCCに初認可され、AWSのLambda・インフラ拡張が続く一方、Amazon Bedrockの実務活用課題が顕在化。",
+      "topics": [
+        {
+          "headline": "SpaceX Starmind、最大100万基のAI衛星をFCC初認可",
+          "summary": "米FCCはSpaceXの軌道上データセンター衛星群「Starmind」について、最大100万基に関わる予備通信用電波を条件付きで認可。宇宙のデータセンター群への米国初の認可。",
+          "why_it_matters": "地球軌道へのAIコンピュート配置が動き始めると、低遅延で地理的に分散したワークロード実行の選択肢が生まれる可能性。ただし実現までの技術課題と規制動向を見守る価値がある。",
+          "tags": [
+            "衛星インフラ",
+            "データセンター"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "SpaceXの宇宙データセンター衛星100万基、予備通信用の電波を米FCCが初の認可 | テクノエッジ TechnoEdge",
+              "url": "https://www.techno-edge.net/article/2026/11/26/5820.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "8 users"
+            },
+            {
+              "title": "SpaceXの軌道上データセンター衛星「Starmind」、米FCCが最大100万基を承認",
+              "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003468/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "FCC approves SpaceX plan to put AI data centers in space",
+              "url": "https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/",
+              "source": "TechCrunch"
+            },
+            {
+              "title": "The FCC has authorized SpaceX to deploy 1 million satellites",
+              "url": "https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/",
+              "source": "Ars Technica"
+            },
+            {
+              "title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+              "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon Bedrockの実務活用が進むもアクセス制約が課題",
+          "summary": "エンジニアがBedrock導入を進める中、新規ユーザーはフロンティアモデルへのアクセスが限定される実態が指摘されている。既存顧客との利用権の格差がある。",
+          "why_it_matters": "Bedrockで最新のLLMやマルチモーダルモデルを使いたい場合、アクセス審査や初期ユーザーの優遇措置により、すぐに使えない可能性がある。プロダクト設計時にモデルの入手可能性を事前確認すべき。",
+          "tags": [
+            "Bedrock",
+            "LLM"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon Bedrockの存在意義がようやくわかったのに、新参者だと使えない話 - Sweet Escape",
+              "url": "https://www.keisuke69.net/entry/2026/11/26/085248",
+              "source": "はてブ テクノロジー",
+              "popularity": "33 users"
+            }
+          ]
+        },
+        {
+          "headline": "AWS Lambda タイムアウト上限が30分に倍増、新機能で複雑な処理が可能に",
+          "summary": "AWS LambdaのEvent Functionsの最大タイムアウトが15分から30分に引き上げ。全リージョンで対応、追加料金なし。Lambda durable functions拡張でMicroVM管理も新たに対応。",
+          "why_it_matters": "これまで15分以内に収まらない処理はStep FunctionsやECSに逃す必要があった。30分対応で、設計の単純化と運用コスト削減の余地が生まれる。MicroVM管理との組み合わせで長時間・リソース集約的なタスクの選択肢が広がる。",
+          "tags": [
+            "Lambda",
+            "サーバーレス"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AWS Lambda now supports orchestrating MicroVMs with Lambda durable functions",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "AWS Lambda Doubles Its Timeout to 30 Minutes After Eight Years at 15",
+              "url": "https://www.infoq.com/news/2026/11/aws-lambda-30-minute-timeout/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "AWS EC2 Graviton5プロセッサが複数リージョンに展開、パフォーマンス・効率向上",
+          "summary": "M9g・M9gd・C9g・C9gdインスタンスがアジア太平洋（ソウル）、ヨーロッパ（アイルランド・スペイン）、南米（サンパウロ）などに拡大。Graviton4もイスラエルで利用可能に。",
+          "why_it_matters": "カスタムCPUの地域展開が進むことで、特定地域でのコスト・性能トレードオフの最適化が進む。グローバル展開構成やローカリティ要件の案件で、インスタンスタイプの選定肢が増える。",
+          "tags": [
+            "EC2",
+            "インフラ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Amazon EC2 M8g instances are now available in Israel (Tel Aviv)",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m8g-instances-telaviv-region/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "Amazon EC2 M9gd instances are now available in Asia Pacific (Seoul)",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m9gd-asiapacific-seoul/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "Amazon EC2 C9gd instances now available in additional regions",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-c9gd-instances-additional-regions/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "Amazon EC2 C9g instances are now available in additional regions",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-c9g-instances-additional-regions/",
+              "source": "AWS What's New"
+            },
+            {
+              "title": "Amazon EC2 M9g instances now available in additional regions",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m9g-instances-additional-regions/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon CloudWatch OmniがPagerDutyと統合、MTTR短縮へ",
+          "summary": "CloudWatch Omni のアラートが直接 PagerDuty インシデント作成に対応。手動通知ステップを削除し、MeanTime To Resolution短縮。",
+          "why_it_matters": "監視・インシデント管理ツール間の統合深化で、アラート→対応までのリードタイムが削減される。既にPagerDutyを使っている環境では、CloudWatch統合をセットアップすることで運用効率が向上する。",
+          "tags": [
+            "監視",
+            "オートメーション"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Amazon CloudWatch Omni now integrates with PagerDuty",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-pagerduty/",
+              "source": "AWS What's New"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "「AIでデータが増えた」84％　“いずれ見直す”のまま膨らむクラウドの移動コスト",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/26/news024.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "AI利用で企業のクラウドストレージデータが増加、84%が管理方法見直しの必要を認識も実施企業は少数。"
+        },
+        {
+          "title": "DoorDash Scales Dispatch 10x While Maintaining 99.99% Peak Availability",
+          "url": "https://www.infoq.com/news/2026/11/doordash-dispatch-redesign/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "DoorDashがリアルタイムディスパッチプラットフォームを再設計、スループット10倍・ピーク可用性99.99%超を実現。"
+        },
+        {
+          "title": "Amazon Transcribe Turbo: more accurate transcripts and natural turn-taking for voice agents, now in public preview",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/transcribe-turbo-preview/",
+          "source": "AWS What's New",
+          "note": "Amazon Transcribe Turboが公開プレビュー開始、精度向上と自然な会話対応で音声エージェント向け。"
+        },
+        {
+          "title": "Kubernetes v1.38 Sneak Peek",
+          "url": "https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek/",
+          "source": "Kubernetes Blog",
+          "note": "Kubernetes v1.38、計画的な廃止・削除・置き換えで機能更新。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 37,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": [
+        "10"
+      ]
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "エンジニア向けの開発ツール・言語・基盤の成熟が目立つ。Rustが10年の懸案だったnever typeを安定化、GitHubはCSSパフォーマンス最適化を完了、AIエージェント操作のための標準インターフェースが正式版に。内製化のボトルネック、レガシー近代化の進め方が実例で示される。",
+      "topics": [
+        {
+          "headline": "Rust 1.100で never type安定化、10年の懸案を決着",
+          "summary": "Rust 1.100.0（11月12日リリース）で never type（!）が安定化。10年の開発を経て5度の失敗から実現。Infallible をaliasに、allocator API core も安定化。",
+          "why_it_matters": "Rustの型システムの完成度が実用段階へ進む。型安全な error handling パターンが標準化され、自分のコードの品質基準が変わる。",
+          "tags": [
+            "Rust",
+            "言語"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Rust 1.100 Ships the Never Type After Ten Years and Five Failed Attempts",
+              "url": "https://www.infoq.com/news/2026/11/rust-1-100-never-types/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "GitHub、styled-components から CSS Modules へ3年かけて移行・55% SSR高速化",
+          "summary": "github.comを3年かけてCSS-in-JS から CSS Modules に統合移行。サーバー側レンダリング時間を55%削減、コンポーネント初期化も25%高速化。",
+          "why_it_matters": "フロントエンドの実装トレードオフの最新判断基準。CSS-in-JSからの脱却が技術選択として現実的になり、次のプロジェクト構成判断に影響する。",
+          "tags": [
+            "フロントエンド",
+            "パフォーマンス"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "GitHub Ditches CSS-in-JS for CSS Modules, Reports 55% Faster SSR After Three-Year Migration",
+              "url": "https://www.infoq.com/news/2026/11/github-css-migration/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "Google Workspace MCPサーバ・CLIが正式版、AIエージェント統合の公式ルート確立",
+          "summary": "GoogleはGoogle WorkspaceをAIエージェントが操作するための MCP Server と CLI を正式版リリース。Workspace 操作の標準インターフェースが確立。",
+          "why_it_matters": "AIエージェント向けの統合インターフェースが公式化される。自社システムを Agent が操作させるときの実装パターンが業界標準として一つ確定。",
+          "tags": [
+            "AIエージェント",
+            "統合"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「Google Workspace MCPサーバ」と「Google Workspace CLI」が正式版としてリリース",
+              "url": "https://www.publickey1.jp/blog/26/google_workspace_mcpgoogle_workspace_cli.html",
+              "source": "Publickey"
+            }
+          ]
+        },
+        {
+          "headline": "コクヨ、150件の自動テスト構築で内製化のリードタイム壁を突破",
+          "summary": "コクヨが開発内製化後もリードタイム短縮が進まなかった問題を、テストの自動化（150件、1～2カ月）で解決。テストとリリースフローの改革が必要だった。",
+          "why_it_matters": "内製化だけではボトルネック解決できない。テストの自動化と並行して CI/CD フローを再構成する必要があること、企業規模での実装手順が参考になる。",
+          "tags": [
+            "開発プロセス",
+            "自動化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "内製化してもリードタイムが縮まらない　コクヨが約150件を自動化した方法",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/26/news023.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "JTB、54社の会計システムを標準機能で統合しつつ AIエージェント活用に線引き",
+          "summary": "JTB が3年半をかけて国内外54社の財務会計をシステム統合（標準機能95%）。統合を率いたリーダーは提案される全AIエージェントを受け入れないと明言。",
+          "why_it_matters": "大規模統合後のAIエージェント導入では、すべての提案を採択するのではなく業務リスク・データ品質に基づく線引きが必須。意思決定フレームが組織によって異なること認識できる。",
+          "tags": [
+            "AIエージェント",
+            "企業システム"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "JTBが54社の会計を「標準機能95％」で統合　それでも「AIエージェントは全部は使えない」と言う理由",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/26/news011.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Ladybird browser's first downloadable alpha is surprisingly capable",
+          "url": "https://arstechnica.com/gadgets/2026/11/ladybirds-new-alpha-shows-theres-life-beyond-chromium/",
+          "source": "Ars Technica",
+          "note": "Ladybird browser が Linux・macOS でダウンロード可能な alpha に。独立エンジンの実装が実際に動作する段階へ"
+        },
+        {
+          "title": "How to choose the next safe step in application modernization",
+          "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+          "source": "GitHub Blog",
+          "note": "レガシーアプリケーションの近代化ステップをGitHub Copilot agent skill で支援する手法紹介"
+        },
+        {
+          "title": "Idempotency when you don't control the other end",
+          "url": "https://stackoverflow.blog/2026/11/24/idempotency-when-you-don-t-control-the-other-end/",
+          "source": "Stack Overflow Blog",
+          "note": "Stack Overflow: 外部システムを制御できない環境での冪等性実装パターン"
+        },
+        {
+          "title": "Prompt Injection Fixes Need Regression Tests",
+          "url": "https://stackoverflow.blog/2026/11/24/prompt-injection-fixes-need-regression-tests/",
+          "source": "Stack Overflow Blog",
+          "note": "Stack Overflow: LLM アプリの prompt injection 対策にはリグレッション テストが必須"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 19,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "規制部門でのAI・新技術導入が先行し、企業の経営リスク評価も厳しくなる。SpaceX宇宙拠点の許可とエヌビディアの信用不安が、政策と企業統治の岐路を映す。",
+      "topics": [
+        {
+          "headline": "FCC、SpaceXの宇宙AIデータセンター設置を承認",
+          "summary": "米連邦通信委員会がイーロン・マスク率いるSpaceXの宇宙AIデータセンター設置計画を承認した。宇宙空間でのAI処理基盤の実現に向け、規制段階での関門を突破した。",
+          "why_it_matters": "衛星インターネットとAI処理の融合は、エッジコンピューティングの新形態。将来的に地上のクラウドアーキテクチャに代替・補完する可能性があり、設計時の選択肢として注視する価値がある。",
+          "tags": [
+            "SpaceX",
+            "衛星",
+            "AI"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "アメリカの規制当局がSpaceXの宇宙AIデータセンター設置計画を承認",
+              "url": "https://gigazine.net/news/20261126-fcc-approves-spacex-plan-ai-data-centers-space/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "トヨタ、2028年にレベル2++自動運転車を投入予定",
+          "summary": "トヨタが運転手がほぼ操作せずに走行できるレベル2++の自動運転技術を2028年に搭載した乗用車の販売を計画。ミシガン州の研究拠点で開発を進めており、記者の試乗が行われた。",
+          "why_it_matters": "主要自動車メーカーの自動運転開発が実装段階に入り、テスト走行から商用化へ進む。エンジニアにとっては業界の変化スピードと要求精度の高まりを肌で知る指標になる。",
+          "tags": [
+            "自動運転",
+            "トヨタ",
+            "レベル2++"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "トヨタ、自動運転「ほぼ操作せず走行」28年投入　開発車に記者が試乗 - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOFD105K50Q6A111C2000000/",
+              "source": "はてブ 世の中",
+              "popularity": "7 users"
+            }
+          ]
+        },
+        {
+          "headline": "エヌビディア、信用格下げの可能性—ガバナンスと経営リスク",
+          "summary": "格付機関S&Pがエヌビディアの信用格付けをAA-に引き下げる可能性を検討。ガバナンス上の懸念と「キーマン・リスク」（特定個人への依存）が理由とされている。",
+          "why_it_matters": "AIチップの需給を握る企業の経営体制が市場に問われ始めた。サプライヤー選定時に企業の持続可能性や経営統治を評価する必要が一層高まる。",
+          "tags": [
+            "エヌビディア",
+            "信用格付け",
+            "ガバナンス"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks",
+              "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Huawei、米企業秘密窃盗で有罪評決—取り組み強化",
+          "summary": "Huaweiが米国でT-MobileおよびCisco関連の企業秘密窃盗について有罪評決を受けた。DOJは窃盗の隠蔽努力が不十分だったと指摘している。",
+          "why_it_matters": "デバイス・インフラ調達時に原産国・企業系統のチェックがさらに厳格化する見込み。エンタープライズ設計で地政学的リスク評価が必須要件になる。",
+          "tags": [
+            "Huawei",
+            "知的財産",
+            "制裁"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Guilty: Huawei faces steep penalties for stealing T-Mobile, Cisco trade secrets",
+              "url": "https://arstechnica.com/tech-policy/2026/11/jury-convicts-huawei-of-stealing-us-trade-secrets-evading-iran-sanctions/",
+              "source": "Ars Technica"
+            }
+          ]
+        },
+        {
+          "headline": "Kagi、Gmail対抗メールサービスをベータ公開",
+          "summary": "プライバシー重視の検索エンジンKagiが、プライバシーとAI機能を組み合わせたメールサービスを発表。検索サービスと連携した統合を謳っている。",
+          "why_it_matters": "個人開発・プライベート運用で、大手クラウドメール以外の選択肢が出現。費用と秘匿性のトレードオフを再評価する機会だが、職場ではまだ選択肢にならない見込み。",
+          "tags": [
+            "Kagi",
+            "メール",
+            "プライバシー"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Google search alternative Kagi launches Gmail rival",
+              "url": "https://arstechnica.com/gadgets/2026/11/google-search-alternative-kagi-launches-gmail-rival/",
+              "source": "Ars Technica"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it",
+          "url": "https://techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it/",
+          "source": "TechCrunch",
+          "note": "Nvidiaの創業者兼CEOがコンプライアンス違反。企業文化への影響が懸念される。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 6,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "関文科相の政治資金問題が野党から問責決議案を提出される形で進展。国内では防衛費増額めぐる自民党内での矛盾、海外ではトランプ政権の日本への追加関税発表が大きく動いた。",
+      "topics": [
+        {
+          "headline": "関文科相、政治資金パーティー問題で野党が問責決議案—閣僚辞任に向かう可能性",
+          "summary": "文部科学相の関東国氏が主催した政治資金パーティーについて、利益率92%の利益が生じていたことが明らかになり、野党6党が参議院に問責決議案を提出。閣僚にふさわしくないとの指摘が相次いでいる。",
+          "why_it_matters": "政治資金の透明性が問われる構図で、将来の政策決定における行政の公平性がどう保たれるかが社会的な関心事となる。",
+          "tags": [
+            "政治",
+            "政治資金",
+            "政治改革"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "関文科相のパーティー問題とは何?　官僚を講師に、利益率92%",
+              "url": "http://www.asahi.com/articles/ASVCV0NXQVCVUTIL00QM.html?ref=rss",
+              "source": "朝日新聞"
+            },
+            {
+              "title": "参院 野党側 関文科相に対する問責決議案を提出",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261126de81559",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "野党、関文科相への問責決議案を提出　「行政の公平性を損なう」",
+              "url": "http://www.asahi.com/articles/ASVCV0438VCVUTFK001M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "米国がトランプ政権下で追加関税を発表、日本は最大15%—最高裁判決後の水準に戻す",
+          "summary": "米通商代表部が日本など14カ国・地域に追加関税をかける案を発表。日本の税率は最大15%、発動日は2027年1月。2月の米連邦最高裁が相互関税を無効とした判決の前の水準に逆戻りする。",
+          "why_it_matters": "今後の日米通商関係と国内産業への影響が予測しがたくなり、企業の経営計画やサプライチェーン戦略の見直しを迫られる可能性がある。",
+          "tags": [
+            "米国",
+            "通商",
+            "関税"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "トランプ政権が新関税、日本15%・中国20%　違憲判決前の水準に逆戻り - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOGN25CDT0V21C26A1000000/",
+              "source": "はてブ 世の中",
+              "popularity": "18 users"
+            }
+          ]
+        },
+        {
+          "headline": "PayPayが大規模システム障害、クレジットカード連携決済が復旧—25日夜から26日午前まで",
+          "summary": "スマホ決済大手PayPayが25日午後8時過ぎからクレジットカードと連携したサービスで決済ができなくなった。26日午前4時50分ごろに復旧。",
+          "why_it_matters": "日常的に利用している決済インフラの障害は多くの消費者・事業者に直接的な影響を与えるため、決済サービスの冗長性や障害対応態勢への信頼が問われる。",
+          "tags": [
+            "決済",
+            "障害",
+            "スマートフォン"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "PayPayのシステム障害が復旧 クレジットカード連携決済が再開",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261125de81532",
+              "source": "NHK 経済"
+            }
+          ]
+        },
+        {
+          "headline": "世界が6日連続で産業革命前比2℃以上の気温を記録—気候変動の加速を示す",
+          "summary": "世界が6日連続で産業革命前比2℃以上気温が上昇した日が続いたと報道。気候変動による異常気象の影響が顕著になっている。",
+          "why_it_matters": "気候危機の深刻化は農業・食糧・水資源などの生活基盤に直結するため、個人・企業・行政での適応・緩和策の必要性が一層高まっている。",
+          "tags": [
+            "気候変動",
+            "地球温暖化",
+            "環境"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "UK papers: Six-day streak 'smashes' global temperature record and 'Gord speed'",
+              "url": "https://www.bbc.co.uk/news/articles/cmj4reknwv9eo?at_medium=RSS&at_campaign=rss",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "headline": "禁輸のイラン産物がドバイで取引される—「制裁逃れ」の実態が浮き彫り",
+          "summary": "ドバイの商人の証言を通じて、国際的に禁輸とされたイラン産物が至る所で取引されている制裁逃れの実態が明かされた。",
+          "why_it_matters": "国際的な経済制裁の実効性の限界と、これを通じた資金流入がグローバル経済に与える影響が、政策立案や企業のコンプライアンス上の判断要素となる。",
+          "tags": [
+            "経済制裁",
+            "国際情勢",
+            "イラン"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "禁輸のイラン産物が至る所に　ドバイ商人が語る「制裁逃れ」の実態",
+              "url": "http://www.asahi.com/articles/ASVCN56YMVCNUHBI00VM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "きょうのおはBiz 11月26日(木) 日本車に影響も EU 2つの措置",
+          "url": "https://news.web.nhk/newsweb/na/nd-20261126de81596",
+          "source": "NHK 経済",
+          "note": "EU による日本車への新たな措置についてのニュース"
+        },
+        {
+          "title": "「安全神話」崩れたドバイ　五つ星ホテル閑散、宿代5分の1に値下げ",
+          "url": "http://www.asahi.com/articles/ASVCN54F3VCNUHBI013M.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "ドバイのホテルが宿泊料を5分の1に値下げするなど、安全への懸念で観光地としての魅力が低下"
+        },
+        {
+          "title": "核開発の意思を改めて強調、金正恩氏が核生産施設視察",
+          "url": "http://www.asahi.com/articles/ASVCV0CWPVCVUHBI00CM.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "北朝鮮の金正恩氏が核開発の意思をあらためて強調し、核生産施設を視察"
+        },
+        {
+          "title": "妊娠と仕事の両立、なんでこんなに苦しい？　当事者が伝えたい問題点",
+          "url": "http://www.asahi.com/articles/ASVCT2HYTVCTPLFA001M.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "妊娠と仕事の両立が困難な状況についての当事者からの問題提起"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 41,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 313,
+    "unclassified": 32,
+    "classify_error": null
+  }
+}
