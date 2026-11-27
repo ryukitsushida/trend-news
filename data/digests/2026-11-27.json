@@ -1,0 +1,1050 @@
+{
+  "date": "2026-11-27",
+  "generated_at": "2026-11-27 11:43 JST",
+  "lead": "セキュリティと運用の重大脆弱性が相次ぎ、基盤層から社内システムまで広く対応を迫られる状況が一日で明らかに。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "あなたが運用するシステムに Drupal が含まれている可能性が高く、既に悪用が進行中の脆弱性は即座の対応判断が必要。",
+      "topic": {
+        "headline": "Drupal インストーラーの不完全修正でサイトが乗っ取り可能、既に悪用中—CVE-2026-136716",
+        "summary": "前回の修正に不備があり、攻撃者が install.php を使ってサイト乗っ取りやコード実行が可能。既に野生での悪用が確認されている。",
+        "why_it_matters": "Drupal は多数のサイトで使用されており、あなたが運用するシステムに含まれる可能性がある。可及速やかなパッチ適用と install.php の削除が必須。",
+        "tags": [
+          "Drupal",
+          "RCE",
+          "悪用確認済"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "Drupal Installer Patch Left a Gap Attackers Are Already Exploiting",
+            "url": "https://www.securityweek.com/drupal-installer-patch-left-a-gap-attackers-are-already-exploiting/",
+            "source": "SecurityWeek"
+          },
+          {
+            "title": "Drupal Warns of New Highly Critical Site Takeover Vulnerability Under Active Exploitation",
+            "url": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
+            "source": "The Hacker News"
+          },
+          {
+            "title": "CVE-2026-132165: Drupal Core Remote Code Execution Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132165",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "ネットワーク管理基盤の侵害は全社インフラへの波及リスクが極めて高く、ルーター・スイッチ統合管理システムのパッチ優先度は最高。",
+      "topic": {
+        "headline": "Juniper Session Smart Conductor に root 権限コマンド実行脆弱性—CVE-2026-103406、既に悪用",
+        "summary": "リモート攻撃者が認証なしで root 権限でコマンド実行可能。攻撃が既に確認されている。",
+        "why_it_matters": "ネットワーク管理の中核製品。ルーター・スイッチを統合管理するシステムの侵害は全社基盤に波及する。すぐにパッチ確認と適用を進めるべき。",
+        "tags": [
+          "Juniper",
+          "RCE",
+          "悪用確認済"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "Critical Juniper Session Smart Conductor Flaw Exploited in Attacks",
+            "url": "https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/",
+            "source": "SecurityWeek"
+          },
+          {
+            "title": "Hackers Exploit 10 Vulnerabilities Across Mitel, Juniper, Vates, and Danfoss Products",
+            "url": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html",
+            "source": "The Hacker News"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "dev",
+      "category_label": "開発・エンジニアリング",
+      "reason": "AWS・Terraform を扱うチームが本番対応の責任感と判断力を磨く実践的な方法論で、AI 時代に価値を出し続けるための基盤を作る。",
+      "topic": {
+        "headline": "SRE 訓練で開発・運用チームのスキル習慣化、本番対応文化を醸成",
+        "summary": "InfoQ での QCon 登壇。訓練を信頼構築エンジン として位置付け、反復的行動を習慣化し文化へ定着させる。開発者・オペレーターのスキルセットを組織の成熟度・成長に合わせた形で構成。",
+        "why_it_matters": "AWS・Terraform を扱うチームで、本番環境への責任感を強化し、障害対応・設計判断の質が上がる下地を作れる。訓練の設計次第で、SRE 文化の導入期間を短縮できる。",
+        "tags": [
+          "SRE",
+          "組織文化",
+          "開発教育"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "Building a Production-Ready Culture and Skills Through SRE-based Training",
+            "url": "https://www.infoq.com/news/2026/11/SRE-based-training/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+            "source": "InfoQ"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "エージェント実装時のテスト設計の盲点を知ることで、最終結果テストだけでは見抜けない問題を事前に設計段階で検出できるようになる。",
+      "topic": {
+        "headline": "AIエージェント検証、最終結果テストだけでは見抜けない問題あり",
+        "summary": "GoogleはAIコーディングエージェント開発を通じて、期待通りの動作を確認する際、最終回答に基づく評価や実運用テストだけでは検出不可能な問題があることを明かにした。",
+        "why_it_matters": "今後エージェント実装時に、テスト設計を見直すべき。検証の盲点を知ることで、設計・テスト段階で何を追加で確認すべきか判断できる。",
+        "tags": [
+          "エージェント",
+          "テスト"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "AIエージェントの行動が「適切か暴走か」をどう見極める？　Googleが明かすテストの盲点",
+            "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/27/news035.html",
+            "source": "ITmedia AI+"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "1Password ユーザーなら流出情報の変更確認が必要だが、同時に保管庫自体のセキュリティ保証を理解することで、ツール選定の信頼性判断につながる。",
+      "topic": {
+        "headline": "1Password、従業員 GitHub アカウント侵害で顧客情報流出—パスワード保管庫は無事",
+        "summary": "攻撃者が従業員の業務用 GitHub アカウントにアクセスし、バックエンド系統から顧客数百万人のうち一部のアカウント情報（氏名・メールアドレス等）を盗出。パスワード保管庫の内容は影響なし。",
+        "why_it_matters": "1Password ユーザーなら、流出したアカウント情報の変更と、保管庫自体のセキュリティは保たれていることを確認すること。企業向けには GitHub アクセス権限の見直しの事例になる。",
+        "tags": [
+          "パスワード管理",
+          "内部侵害",
+          "GitHub"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach",
+            "url": "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html",
+            "source": "The Hacker News"
+          },
+          {
+            "title": "1Password Breach Exposes Customer Data, Internal Source Code",
+            "url": "https://www.securityweek.com/1password-breach-exposes-customer-data-internal-source-code/",
+            "source": "SecurityWeek"
+          },
+          {
+            "title": "1Passwordへの不正アクセスについてまとめてみた",
+            "url": "https://piyolog.hatenadiary.jp/entry/2026/11/26/153937",
+            "source": "piyolog"
+          },
+          {
+            "title": "1Passwordに不正アクセス、顧客の氏名など流出　「保管庫は無事」でも残る注意点は",
+            "url": "https://www.itmedia.co.jp/enterprise/articles/2611/26/news054.html",
+            "source": "ITmedia エンタープライズ"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "dev",
+    "category_label": "開発・エンジニアリング",
+    "headline": "SRE 訓練で開発・運用チームのスキル習慣化、本番対応文化を醸成",
+    "sources": [
+      {
+        "title": "Building a Production-Ready Culture and Skills Through SRE-based Training",
+        "url": "https://www.infoq.com/news/2026/11/SRE-based-training/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+        "source": "InfoQ"
+      }
+    ],
+    "background": "SRE(サイト・リライアビリティ・エンジニアリング)は従来の運用手法を進化させたもの。開発と運用の境界を曖昧にし、両チームが本番環境への所有意識を持つ文化を目指す。訓練によってこの文化を組織に定着させる際、反復的な行動パターンを習慣化し、やがて無意識レベルの対応判断ができる組織へ変えていく。",
+    "concepts": [
+      {
+        "term": "信頼構築エンジン (Confidence Engine)",
+        "explanation": "訓練を単なるスキル学習ではなく、実際に対応できるという確信を繰り返し体験させる仕組み。障害シミュレーションや本番類似環境での演習を通じて、ミスや失敗を安全に経験し、次の本番に自信を持つまでのサイクル。"
+      },
+      {
+        "term": "習慣化と文化定着",
+        "explanation": "個人のスキル獲得だけでなく、組織全体が同じ行動パターン(例:障害発生時に即ログ確認、観測可能性の重視)を繰り返すことで、いつの間にか『うちの組織の標準的なやり方』として浸透する過程。"
+      },
+      {
+        "term": "組織の成熟度に応じた設計",
+        "explanation": "新興チームには運用基礎(ログ取得・監視設定)に特化した訓練を、成熟したチームにはカオスエンジニアリング・ポストモーテムなど高度な判断を磨く訓練を、段階的に提供する考え方。"
+      }
+    ],
+    "for_you": "AWS環境でTerraformを使うチーム・個人開発にとって、訓練設計の投資が直結する。例えば、Terraformで作ったインフラが本番で何らかの障害を起こす可能性は常にある。その時に慌てず正確に対応できるか(ログから問題を特定、ロールバック判断、ステークホルダー報告)は、訓練を通じてシミュレーションした経験があるかで大きく変わる。生成AIを使う場合も同様で、LLMの挙動不安定さを理由に『AI時代も運用判断の質で勝つ』組織になれるかの分岐点になる。",
+    "try_this": "今週、チーム内で1つ小さなカオスエンジニアリング訓練を実施してみる。例えば「Terraformで管理するセキュリティグループのルールを意図的に消す→自動アラートが作動するか・チームで復旧判断ができるか」といった30分程度の演習。失敗の経験と成功の経験を安全に積み、次の本番障害への対応スピードが変わることを実感する。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "AIエージェント検証、MCP連携強化、中国開発企業の訓練データ確保の課題が浮き彫りに。実装段階へシフトする中、安全性・統合・データ戦略の重要性が増す。",
+      "topics": [
+        {
+          "headline": "AIエージェント検証、最終結果テストだけでは見抜けない問題あり",
+          "summary": "GoogleはAIコーディングエージェント開発を通じて、期待通りの動作を確認する際、最終回答に基づく評価や実運用テストだけでは検出不可能な問題があることを明かにした。",
+          "why_it_matters": "今後エージェント実装時に、テスト設計を見直すべき。検証の盲点を知ることで、設計・テスト段階で何を追加で確認すべきか判断できる。",
+          "tags": [
+            "エージェント",
+            "テスト"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "AIエージェントの行動が「適切か暴走か」をどう見極める？　Googleが明かすテストの盲点",
+              "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/27/news035.html",
+              "source": "ITmedia AI+"
+            }
+          ]
+        },
+        {
+          "headline": "Anthropic、MCPでスキル機能を公開ベータ提供開始",
+          "summary": "AnthropicはMCP（Model Context Protocol）周辺のアップデートを発表。MCPサーバーがClaudeのスキルを配信でき、タスク実行やElicitationが実装された。",
+          "why_it_matters": "MCPを通じたAI統合の仕様が実装可能な段階に進んだ。自社システム・外部サービスとClaudeの連携設計が実装できるようになる。",
+          "tags": [
+            "MCP",
+            "Claude"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Skills over MCP、めっちゃよさそう | ashunar0",
+              "url": "https://ashunar0.dev/posts/skills-over-mcp/",
+              "source": "はてブ テクノロジー",
+              "popularity": "23 users"
+            }
+          ]
+        },
+        {
+          "headline": "Google MCP実装で制限判明、Gmailスキルはメール送信不可",
+          "summary": "GoogleはMCPサーバーを使ったAIエージェント統合を進める中、Gmail MCP実装では送信機能が制限されていることが報じられた。",
+          "why_it_matters": "Google連携時の実装制限を把握必須。MCPサーバー公開時に、エンドツーエンドの操作を期待できない場合がある。設計段階で確認が必要。",
+          "tags": [
+            "MCP",
+            "Google"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+              "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+              "source": "Hacker News",
+              "popularity": "252 points"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAIがGPT-6.2の価格バグを修正、利用限度到達が40%早くなる",
+          "summary": "OpenAIは請求システムのバグでGPT-6.2ユーザーに不正割引を適用していた。修正後、AstraおよびSolユーザーはリセット前に制限に達する速度が先週比で40～25%低下した。補償として追加リセットと無料高速モード提供。",
+          "why_it_matters": "API利用コスト構造が変わった可能性がある。現在の実装でコスト試算を見直し、バッチ処理・レート戦略を再検討する時期。",
+          "tags": [
+            "OpenAI",
+            "API"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error",
+              "url": "https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "中国AI企業、OpenAI・Anthropicのデータ供給停止で訓練データ確保に課題",
+          "summary": "Z.AIとMoonshot AIは、OpenAIとAnthropicがデータ供給を制限した影響で次世代フラッグシップモデルの公開を遅延させている。GoogleとMetaの訓練データを新たな供給源として検討中。",
+          "why_it_matters": "AI開発の地政学的分断が実装レベルで顕在化。欧米企業のデータ供給戦略がモデル競争に影響を与える構図を認識すべき。",
+          "tags": [
+            "訓練データ",
+            "地政学"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "After OpenAI and Anthropic shut the door on their data, a Chinese AI developer is turning to Google and Meta instead",
+              "url": "https://the-decoder.com/after-openai-and-anthropic-shut-the-door-on-their-data-a-chinese-ai-developer-is-turning-to-google-and-meta-instead/",
+              "source": "The Decoder"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "AI使って開発するなら、モデリングするんだよ - 4つの図で始めるモデリングと、AIにモデルを実装させるアーキテクチャ",
+          "url": "https://speakerdeck.com/littlehands/umtp-suraido-20261125",
+          "source": "はてブ テクノロジー",
+          "popularity": "12 users",
+          "note": "AIで実装が速くなった今、問題解決力・モデリング設計がエンジニアに残る仕事だとの主張。設計の価値が高まることを改めて認識すべき。"
+        },
+        {
+          "title": "GitHub - datadog-labs/ephyra: A property-based testing library for the LLM era",
+          "url": "https://github.com/datadog-labs/ephyra",
+          "source": "はてブ テクノロジー",
+          "popularity": "12 users",
+          "note": "Datadog Systems Researchが開発する「Ephyra」。エージェント向けプロパティベーストテストライブラリ。LLM時代の検証手法として注目。"
+        },
+        {
+          "title": "AIで証明の数学リーマン予想、英オックスフォード大学のメイナード教授「まだ人間は理解できず」 - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOSG2544P0V21C26A1000000/",
+          "source": "はてブ テクノロジー",
+          "popularity": "4 users",
+          "note": "米Anthropicの研究者がリーマン予想の証明をAIで生成と報道。オックスフォード大学のメイナード教授は「人間はまだ理解できず」とコメント。検証段階。"
+        },
+        {
+          "title": "FCC clears SpaceX to deploy up to 1 million Starmind satellites for orbital AI data centers by 2040",
+          "url": "https://the-decoder.com/fcc-clears-spacex-to-deploy-up-to-1-million-starmind-satellites-for-orbital-ai-data-centers-by-2040/",
+          "source": "The Decoder",
+          "note": "FCC、SpaceXのStarwindクラスタル衛星1百万機まで軌道AIデータセンター展開を認可。2027年初号機打ち上げ、2040年完全運用予定。"
+        },
+        {
+          "title": "Microsoft details how state-backed hackers use the ARTEX AI framework to automate cyberattacks",
+          "url": "https://the-decoder.com/microsoft-details-how-state-backed-hackers-use-the-artex-ai-framework-to-automate-cyberattacks/",
+          "source": "The Decoder",
+          "note": "Microsoft、中国・北朝鮮の国家支援グループが使うAIサイバー攻撃フレームワーク「ARTEX」の技術アーキテクチャを公開。7月2026年から広範に使用。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 70,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "脆弱性と情報漏えいが相次ぐ。Drupal・Juniper・Mitelのゼロデイ悪用、1Passwordの内部侵害、複数企業・自治体の顧客情報流出が続く。セキュリティ対応とデータ保持ポリシーの見直しが急務。",
+      "topics": [
+        {
+          "headline": "Drupal インストーラーの不完全修正でサイトが乗っ取り可能、既に悪用中—CVE-2026-136716",
+          "summary": "前回の修正に不備があり、攻撃者が install.php を使ってサイト乗っ取りやコード実行が可能。既に野生での悪用が確認されている。",
+          "why_it_matters": "Drupal は多数のサイトで使用されており、あなたが運用するシステムに含まれる可能性がある。可及速やかなパッチ適用と install.php の削除が必須。",
+          "tags": [
+            "Drupal",
+            "RCE",
+            "悪用確認済"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Drupal Installer Patch Left a Gap Attackers Are Already Exploiting",
+              "url": "https://www.securityweek.com/drupal-installer-patch-left-a-gap-attackers-are-already-exploiting/",
+              "source": "SecurityWeek"
+            },
+            {
+              "title": "Drupal Warns of New Highly Critical Site Takeover Vulnerability Under Active Exploitation",
+              "url": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "CVE-2026-132165: Drupal Core Remote Code Execution Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132165",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "1Password、従業員 GitHub アカウント侵害で顧客情報流出—パスワード保管庫は無事",
+          "summary": "攻撃者が従業員の業務用 GitHub アカウントにアクセスし、バックエンド系統から顧客数百万人のうち一部のアカウント情報（氏名・メールアドレス等）を盗出。パスワード保管庫の内容は影響なし。",
+          "why_it_matters": "1Password ユーザーなら、流出したアカウント情報の変更と、保管庫自体のセキュリティは保たれていることを確認すること。企業向けには GitHub アクセス権限の見直しの事例になる。",
+          "tags": [
+            "パスワード管理",
+            "内部侵害",
+            "GitHub"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach",
+              "url": "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html",
+              "source": "The Hacker News"
+            },
+            {
+              "title": "1Password Breach Exposes Customer Data, Internal Source Code",
+              "url": "https://www.securityweek.com/1password-breach-exposes-customer-data-internal-source-code/",
+              "source": "SecurityWeek"
+            },
+            {
+              "title": "1Passwordへの不正アクセスについてまとめてみた",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/11/26/153937",
+              "source": "piyolog"
+            },
+            {
+              "title": "1Passwordに不正アクセス、顧客の氏名など流出　「保管庫は無事」でも残る注意点は",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/26/news054.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "Juniper Session Smart Conductor に root 権限コマンド実行脆弱性—CVE-2026-103406、既に悪用",
+          "summary": "リモート攻撃者が認証なしで root 権限でコマンド実行可能。攻撃が既に確認されている。",
+          "why_it_matters": "ネットワーク管理の中核製品。ルーター・スイッチを統合管理するシステムの侵害は全社基盤に波及する。すぐにパッチ確認と適用を進めるべき。",
+          "tags": [
+            "Juniper",
+            "RCE",
+            "悪用確認済"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Critical Juniper Session Smart Conductor Flaw Exploited in Attacks",
+              "url": "https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/",
+              "source": "SecurityWeek"
+            },
+            {
+              "title": "Hackers Exploit 10 Vulnerabilities Across Mitel, Juniper, Vates, and Danfoss Products",
+              "url": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "Mitel MiCollab 認証回避・コード実行脆弱性、CISA KEV に 5 件追加—攻撃で既に悪用",
+          "summary": "Mitel MiCollab の 5 つの脆弱性が CISA Known Exploited Vulnerabilities (KEV) カタログに追加された。これらは先週の公開後、既に悪用が確認されている。",
+          "why_it_matters": "Mitel は IP 通信システムの標準。VoIP・統一通信の中心が侵害されると、内部通信の盗聴・改ざん・制御乗っ取りに至る。対象システムの確認とパッチ適用を優先。",
+          "tags": [
+            "Mitel",
+            "認証回避",
+            "悪用確認済"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks",
+              "url": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/",
+              "source": "SecurityWeek"
+            },
+            {
+              "title": "Hackers Exploit 10 Vulnerabilities Across Mitel, Juniper, Vates, and Danfoss Products",
+              "url": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "VMware ESX・vCenter・他複数製品に 23 件の脆弱性—複数が「クリティカル」",
+          "summary": "Broadcom が ESX・vCenter など複数製品の脆弱性 23 件について修正を公開。クリティカルレベルの脆弱性も複数含まれる。",
+          "why_it_matters": "VMware 環境は多くのエンタープライズで仮想化基盤。クリティカルなので早期の脆弱性確認・パッチスケジューリングが必要。",
+          "tags": [
+            "VMware",
+            "ESX",
+            "vCenter"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「ESX」「vCenter」などVMware製品に23件の脆弱性",
+              "url": "https://www.security-next.com/193422",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "SolarWinds Serv-U に 9 件のクリティカル脆弱性—ファイル転送機能",
+          "summary": "SolarWinds がファイル転送ソリューション Serv-U のセキュリティアップデートを公開。重要度「クリティカル」の脆弱性を複数対処している。",
+          "why_it_matters": "Serv-U は SFTP・FTP サーバーとして広く導入されている。ファイル転送基盤の侵害は重要データへのアクセスを招く。パッチの優先度を高く設定すること。",
+          "tags": [
+            "SolarWinds",
+            "ファイル転送",
+            "クリティカル"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "「SolarWinds Serv-U」に脆弱性 - 9件が「クリティカル」",
+              "url": "https://www.security-next.com/193429",
+              "source": "Security NEXT"
+            }
+          ]
+        },
+        {
+          "headline": "HPE AirWave ネットワーク管理製品にセキュリティアップデート",
+          "summary": "Hewlett Packard Enterprise が AirWave のセキュリティアップデートを公開した。",
+          "why_it_matters": "AirWave はネットワーク管理・監視の中核。詳細は記事に明示されていないが、利用環境の確認と更新状況の確認が必要。",
+          "tags": [
+            "HPE",
+            "ネットワーク管理"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "HPEのネットワーク管理製品「AirWave」に深刻な脆弱性",
+              "url": "https://www.security-next.com/193437",
+              "source": "Security NEXT"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "破産申請したAIチャットサービス「Character.AI」が2100万アカウント超の非公開の会話履歴を競売にかけようとしている",
+          "url": "https://gigazine.net/news/20261127-character-ai-asset-sale/",
+          "source": "GIGAZINE",
+          "note": "Character.AI が破産手続き中に 2100 万アカウントの会話履歴を競売計画—米州司法長官が反対"
+        },
+        {
+          "title": "OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug",
+          "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/",
+          "source": "BleepingComputer",
+          "note": "OpenAI が GPT-6.2 Astra の「バグ修正」でプリセット使用制限が 40% 急加速"
+        },
+        {
+          "title": "ThreatsDay: 10M NGINX Services at Risk, 250+ Malicious Extensions, AI Server Hijacking + 17 More Stories",
+          "url": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html",
+          "source": "The Hacker News",
+          "note": "NGINX 1000 万サービス、250 以上の悪意ある拡張機能、AI サーバー乗っ取りなど複数脅威"
+        },
+        {
+          "title": "Fake paid expert interviews impersonate brands to steal Google logins",
+          "url": "https://www.bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins/",
+          "source": "BleepingComputer",
+          "note": "フィッシングキャンペーン「GoodGuys」が Google・Nvidia・Accenture 等になりすまし、企業認証情報を盗出"
+        },
+        {
+          "title": "FIFA Says It Has Been Victim of a Cyberattack Accessing ‘Personal and Business Information’",
+          "url": "https://www.securityweek.com/fifa-says-it-has-been-victim-of-a-cyberattack-accessing-personal-and-business-information/",
+          "source": "SecurityWeek",
+          "note": "FIFA がサイバー攻撃の被害—個人・ビジネス情報にアクセスされた"
+        },
+        {
+          "title": "Remus malware steals Gmail messages via fake Google Sheets extension",
+          "url": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
+          "source": "BleepingComputer",
+          "note": "マルウェア Remus が Chrome 拡張機能経由で Gmail メッセージを盗出—ゼロデイ悪用と主張"
+        },
+        {
+          "title": "13 Malicious NuGet Packages Turn Fake .NET Job Assessments Into Malware Delivery Traps",
+          "url": "https://thehackernews.com/2026/11/13-malicious-nuget-packages-turn-fake.html",
+          "source": "The Hacker News",
+          "note": "13 個の悪意ある NuGet パッケージが .NET 開発者を標的—偽の就職試験として配布"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 62,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "スペースXの衛星ネットワーク拡大、データセンター向けDBOSS採用加速、クラウドベンダーのAIエージェント基盤整備が進む一週間。",
+      "topics": [
+        {
+          "headline": "スペースXが衛星100万基配備をFCC承認、AI支援衛星インフラ構想へ",
+          "summary": "米FCCがスペースXに対し、AI対応衛星100万基の配備承認。宇宙基盤の衛星型データセンター構築を視野。",
+          "why_it_matters": "宇宙規模のエッジコンピュート基盤が現実化する可能性。将来のグローバルインフラ設計でレイテンシ・リージョン戦略を根本から再考する材料となる。",
+          "tags": [
+            "衛星",
+            "エッジ",
+            "宇宙インフラ"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "米、スペースXに衛星100万基の配備承認　宇宙にAIデータセンター構築へ",
+              "url": "https://www.cnn.co.jp/usa/35255487.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "20 users"
+            }
+          ]
+        },
+        {
+          "headline": "gh-ost導入でAurora MySQLの2,500万行DDL待ち時間を1.31秒に短縮",
+          "summary": "Findyがオンラインスキーマ変更ツール gh-ost を導入。従来の制約から脱却し、負荷制御可能な大規模テーブル更新が実現。",
+          "why_it_matters": "数千万行規模のテーブルを運用中は本番クローンで検証後、実際の施行時間が1秒台に収まる運用手法の実装例。DDL計画や保守ウィンドウの前提が変わる可能性。",
+          "tags": [
+            "MySQL",
+            "DDL",
+            "スキーマ変更"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "gh-ostで2,500万行のテーブル変更をクエリ待ち1.31秒で通した話：Aurora MySQLへの導入と本番クローンでの検証 - Findy Tech Blog",
+              "url": "https://tech.findy.co.jp/entry/2026/11/27/070000",
+              "source": "はてブ テクノロジー",
+              "popularity": "10 users"
+            }
+          ]
+        },
+        {
+          "headline": "AMD EPYC 10年間でAI性能133倍向上、Zen 1〜6世代の進化を検証",
+          "summary": "PhoronixがEPYC Naples（Zen 1）とVenice（Zen 6）のベンチマーク比較。約10年間でAI性能が133倍に改善。",
+          "why_it_matters": "サーバーCPUのAI性能進化スピードを定量把握できる。Terraformで インスタンスタイプ選定時にワークロードと性能予測の関連性を見直す参考データ。",
+          "tags": [
+            "EPYC",
+            "AI性能",
+            "ベンチマーク"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "AMD製サーバー向けCPU「EPYC」は10年間でAI性能が133倍に向上、Zen 6世代とZen 1世代のベンチマーク比較が公開される",
+              "url": "https://gigazine.net/news/20261127-amd-epyc-performance/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "NVIDIAが東南アジア向けチップ出荷を一時停止、米国の対中規制強化受けて",
+          "summary": "NVIDIAが製造パートナーに対し、マレーシア・シンガポール・タイ・インドネシア向けサーバーチップ出荷の一時停止を指示。米国による対中AIチップ規制強化の一環。",
+          "why_it_matters": "東南アジアのAIインフラ投資計画に遅延リスク。クラウドベンダーやリージョン戦略で、規制対象地域の調達パイプラインを事前確認する必要が増す。",
+          "tags": [
+            "AI規制",
+            "NVIDIA",
+            "チップ調達"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+              "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon RDS PostgreSQL が最新マイナーバージョン対応、18.7・17.12 ほか",
+          "summary": "RDS for PostgreSQL がバージョン 18.7、17.12、16.16、15.20、14.25 のマイナーバージョン対応を公開。CVE 修正を含む。",
+          "why_it_matters": "定期的なセキュリティ更新提供が標準化。自社RDSの運用ポリシーでマイナーバージョン更新タイミングを把握し、脆弱性対応計画に組み込む。",
+          "tags": [
+            "PostgreSQL",
+            "RDS",
+            "セキュリティ更新"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon RDS for PostgreSQL supports minor versions 18.7, 17.12, 16.16, 15.20, and 14.25",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-postgresql-18-7-17-12-16-16-15-20-14-25/",
+              "source": "AWS What's New"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Four Continents, Four New AWS Heroes: Closing Out 2026",
+          "url": "https://aws.amazon.com/blogs/aws/four-continents-four-new-aws-heroes-closing-out-2026/",
+          "source": "AWS News Blog",
+          "note": "AWS re:Invent 開催を控え、複数地域からAWS Hero 新規認定。コミュニティの知見共有・ツール開発支援体制を強化"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 22,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "デスクトップ・フロントエンド・開発支援ツールの新機能リリースと実装手法が焦点。.NET・Node.js・Rustなどの主要プラットフォームでホットリロードや型安全性、パフォーマンス改善が進むほか、コード審査の自動化とSRE文化の浸透が実務的な課題として浮かぶ。",
+      "topics": [
+        {
+          "headline": ".NET MAUI 11、CoreCLRデフォルト化とXAML段階的ホットリロード対応",
+          "summary": "Microsoft が .NET 11 リリース。.NET MAUI は CoreCLR をすべてのプラットフォームで標準ランタイムに統一し、XAML ホットリロードを段階的適用可能に、暗黙的な名前空間とリソース辞書の高速化に対応。",
+          "why_it_matters": "クロスプラットフォーム開発の実行時環境が統一されることで、マルチプラットフォーム対応の複雑さが軽減。ホットリロードの段階的適用は、大規模 UI 変更時の反復速度向上を見込める。",
+          "tags": [
+            ".NET",
+            "UI開発",
+            "ホットリロード"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": ".NET MAUI 11 Makes CoreCLR the Default Runtime and Adds Incremental XAML Hot Reload",
+              "url": "https://www.infoq.com/news/2026/11/dotnet-maui-11-coreclr-hotreload/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "Mock Service Worker v3.0、ESM 専用化とGraphQL サブスクリプション対応",
+          "summary": "Mock Service Worker 3.0 がリリース。ESM 専用となり、Node.js 22 以上が必須。パッケージサイズが 416KB から 234KB に削減、GraphQL サブスクリプション対応とソケットベースのインターセプション、実験的な defineNetwork API を追加。",
+          "why_it_matters": "モック環境で GraphQL サブスクリプションをテスト可能になることで、リアルタイム通信機能の開発・検証が効率化。ESM 専用化により最新の JS ツールチェーンと一体化し、バンドルサイズ削減の恩恵も直結する。",
+          "tags": [
+            "テスト",
+            "GraphQL",
+            "Node.js"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Mock Service Worker Releases v3.0 with ESM-Only Build, Socket-Based Interception and GraphQL Subs",
+              "url": "https://www.infoq.com/news/2026/11/mock-service-worker-v3/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "コード審査自動化の流れ、QCon SF 2026 で提言—75% 超の PR は人手を経ずマージ",
+          "summary": "Aviator の Ankit Jain が QCon San Francisco 2026 で、行単位のコード審査が廃止傾向と指摘。審査コメントの大半は知識共有目的で欠陥指摘は少なく、75% 以上の PR が人手を介さずマージされている。6 段階のプロセス層を提案。",
+          "why_it_matters": "GitHub などで自動マージが進む流れが追認された形。開発チームは純粋な欠陥検出に注力する審査ルール設計と、知識共有の別チャネル構築が必要になる可能性。自動化ツール導入のタイミングが重要。",
+          "tags": [
+            "コード審査",
+            "開発効率",
+            "自動化"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "QCon San Francisco 2026: How to Kill the Code Review",
+              "url": "https://www.infoq.com/news/2026/11/qcon-sf-26-kill-code-review/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "SRE 訓練で開発・運用チームのスキル習慣化、本番対応文化を醸成",
+          "summary": "InfoQ での QCon 登壇。訓練を信頼構築エンジン として位置付け、反復的行動を習慣化し文化へ定着させる。開発者・オペレーターのスキルセットを組織の成熟度・成長に合わせた形で構成。",
+          "why_it_matters": "AWS・Terraform を扱うチームで、本番環境への責任感を強化し、障害対応・設計判断の質が上がる下地を作れる。訓練の設計次第で、SRE 文化の導入期間を短縮できる。",
+          "tags": [
+            "SRE",
+            "組織文化",
+            "開発教育"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Building a Production-Ready Culture and Skills Through SRE-based Training",
+              "url": "https://www.infoq.com/news/2026/11/SRE-based-training/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "アーキテクチャ会議 2026、モダナイズの本質と実行戦略を共有",
+          "summary": "アーキテクチャ Conference 2026 の資料公開。①何をなぜモダナイズするか ②うまくいかない根本原因 ③モダナイズを支える技術、として大きな方向性共有・実行しながら学ぶ・事業とソフトウェアの継続進化を提示。",
+          "why_it_matters": "レガシー依存が強い組織でモダナイズ進捗が停滞する時、目的の再定義と実行スタイルの見直しが必要。設計判断を逆算で考える上で参考になる観点。",
+          "tags": [
+            "アーキテクチャ",
+            "レガシー",
+            "組織"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "モダナイズの目的に立ち返る",
+              "url": "https://speakerdeck.com/masuda220/aaa5fadd-e9cc-4c01-9359-b8389de8037a",
+              "source": "はてブ テクノロジー",
+              "popularity": "4 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "NVIDIA・ATI・3dfxの往年のGPUデモ36種類をブラウザ上で楽しめる「GPU Demo Gallery」",
+          "url": "https://gigazine.net/news/20261127-gpu-demo-gallery/",
+          "source": "GIGAZINE",
+          "note": "NVIDIA・ATI・3dfx の往年 GPU デモ36種類がブラウザで再生可能に。グラフィックス技術の歴史が手軽に体験できる。"
+        },
+        {
+          "title": "Windows・Mac・Linux・AndroidでファイルやテキストをLAN・インターネット経由で共有できる「flipflop」を使ってみた",
+          "url": "https://gigazine.net/news/20261126-flipflop/",
+          "source": "GIGAZINE",
+          "note": "Windows・Mac・Linux・Android で LAN・インターネット経由でファイル転送する「flipflop」、オープンソース無料アプリ。"
+        },
+        {
+          "title": "Intel One Mono font (2023)",
+          "url": "https://github.com/intel/intel-one-mono",
+          "source": "Hacker News",
+          "popularity": "473 points",
+          "note": "Intel One Mono フォント（2023年発表）が Hacker News で注目。開発環境でのフォント選択肢。"
+        },
+        {
+          "title": "When AI Writes the Code, What Counts as Evidence?",
+          "url": "https://stackoverflow.blog/2026/11/25/when-ai-writes-the-code-what-counts-as-evidence/",
+          "source": "Stack Overflow Blog",
+          "note": "Stack Overflow Blog「AI が書いたコードの証拠とは」。生成 AI コード活用時の品質・検証の考え方に関する考察。"
+        },
+        {
+          "title": "日本語サイトで指定しておきたいCSS 2026年版",
+          "url": "https://qiita.com/tofu_frontend/items/6a1bb7d80a58736eef0e",
+          "source": "Qiita 人気",
+          "popularity": "68 LGTM",
+          "note": "日本語サイト向け CSS 2026年版。自動では効かない和欧スペース・約物詰めは明示的指定が必須。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 28,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "Android開発者のプライバシー懸念が高まる中、Xは子ども向けペアレンタルコントロールを20年遅れで実装。米NY州はサブスク強要を禁止する自動車規制を施行へ。",
+      "topics": [
+        {
+          "headline": "Google、EU規制対応でAndroid開発者に住所・電話番号の公開を義務化へ—2027年から",
+          "summary": "EUのデジタルサービス法対応として、Googleは2027年からAndroidアプリ開発者に電話番号と住所の公開を求めると発表。個人開発者の間でプライバシーへの懸念が広がっている。",
+          "why_it_matters": "個人プロジェクトでモバイルアプリを開発・配布する場合、個人情報の露出リスクが発生。公開の是非や情報保護策を事前に検討しておく必要がある。",
+          "tags": [
+            "Android",
+            "プライバシー",
+            "EU規制"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Androidアプリ開発者はまもなく自身の住所を公開しなければならなくなる",
+              "url": "https://gigazine.net/news/20261127-android-app-developers-have-to-share-address-publicly/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "Android app developers will soon have to share their address publicly",
+              "url": "https://www.theverge.com/tech/1043228/android-play-store-google-developer-address-eu",
+              "source": "The Verge"
+            }
+          ]
+        },
+        {
+          "headline": "X、13～17歳向けにペアレンタルコントロール機能を提供—Twitter開始以来初",
+          "summary": "Xは13～17歳のユーザーを対象とした「ペアレンタルコントロール」機能を追加した。保護者は利用時間や表示コンテンツ、フォロワー承認、DM受信相手などを管理できるが、メッセージ内容や閲覧履歴は閲覧不可。日本でも利用可能。",
+          "why_it_matters": "Xを業務でフォロー情報や顧客分析に使用する場合、プラットフォームの安全性機能の充実は信頼度向上につながる。特に子ども向けサービスやコンテンツ配信を検討する際の判断材料になる。",
+          "tags": [
+            "X",
+            "ペアレンタルコントロール",
+            "未成年保護"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "X(旧Twitter)がついにペアレンタルコントロール機能を導入",
+              "url": "https://gigazine.net/news/20261127-x-finally-parental-controls/",
+              "source": "GIGAZINE"
+            },
+            {
+              "title": "X、「ペアレンタルコントロール」を導入　メッセージ内容は見られず",
+              "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003506/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "X finally gets parental controls after 20 years",
+              "url": "https://techcrunch.com/2026/11/26/x-finally-gets-parental-controls-after-20-years/",
+              "source": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "headline": "米NY州、既に代金支払済みの自動車機能へのサブスク課金を禁止—2027年2月施行",
+          "summary": "NY州知事がシートヒーターなど購入時に代金を支払った機能に対する月額料金課税を禁止する法案に署名。2027年2月に施行。車内Wi-Fiやカーナビ更新は対象外。",
+          "why_it_matters": "サブスクモデルの設計・利用規約では、顧客が既に購入した機能への追加課金は規制リスクとなる可能性がある。サービス提供時の明確な権利分離が重要になる。",
+          "tags": [
+            "サブスクリプション",
+            "消費者保護",
+            "規制"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "「車を買ったのにシートヒーターは月額サブスク必須」などを禁止--米NY州",
+              "url": "https://japan.cnet.com/article/35255471/",
+              "source": "はてブ 世の中",
+              "popularity": "30 users"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "イーロン・マスクがアメリカのすべての子どもにSpaceX株を2株プレゼントすることを表明",
+          "url": "https://gigazine.net/news/20261127-elon-musk-spacex-every-child/",
+          "source": "GIGAZINE",
+          "note": "イーロン・マスクがSpaceX株2株をアメリカのすべての子どもに贈与することを表明。"
+        },
+        {
+          "title": "SpaceXとマスク氏、米国の子どもに自社株を計2株ずつ贈与へ　トランプ政権の「Trump Account」経由で",
+          "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003507/",
+          "source": "ITmedia NEWS",
+          "note": "SpaceXとマスク氏がトランプ政権の「Trump Account」経由で米国の子ども向け投資口座に新規発行クラスA普通株式を計2株ずつ拠出。会社分は12月、マスク氏個人分は2027年6月に移管予定。"
+        },
+        {
+          "title": "「コスト削減」の“次”の成果、どう設定する？　ビジネス変革に結び付けるための「期待の中身」",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/27/news025.html",
+          "source": "ITmedia エンタープライズ",
+          "note": "AI導入効果の期待が「コスト削減」から次段階へ。ITRの調査では業務コスト削減・時間短縮が上位だが、ビジネス変革につなげるには期待定義の見直しが必要。"
+        },
+        {
+          "title": "飲食店の“AI商品画像”は景品表示法違反にならないの？　弁護士の見解",
+          "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003447/",
+          "source": "ITmedia NEWS",
+          "note": "飲食店のメニューにAIで生成した画像を使用する場合、景品表示法との関係について弁護士が見解を示す。"
+        },
+        {
+          "title": "KDDI、Xのデータ利用で包括契約　通信品質向上や法人向けサービスに活用へ",
+          "url": "https://www.itmedia.co.jp/news/article/2611/26/2000003480/",
+          "source": "ITmedia NEWS",
+          "note": "KDDI、X(旧Twitter)のデータ利用で包括契約。個人を特定できない形で活用し、通信品質向上や法人向けサービスに活用する予定。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 13,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "政治資金問題で関文科相の問責決議案が否決され、一方で処方薬の違法転売やいじめ件数の過去最多など、社会問題が次々と浮上。景気面では消費者物価や不動産市場に変化の兆し。",
+      "topics": [
+        {
+          "headline": "関文科相の問責決議案、与党反対で否決—政治資金問題続く",
+          "summary": "政治資金パーティー問題で野党が提出した関文部科学大臣への問責決議案は参院本会議で採決され、自民・維新など与党の反対多数で否決された。",
+          "why_it_matters": "閣僚の政治資金をめぐる疑惑が次々と明らかになる中、問責という国会の監視機能がどう機能するかが社会的な信頼に関わる。",
+          "tags": [
+            "政治",
+            "政治資金",
+            "国会"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "【更新中】関文科相への問責決議案 与党側など反対多数で否決",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261127de82148",
+              "source": "NHK 主要"
+            },
+            {
+              "title": "関文科相の問責決議案を否決　参院本会議、与党などの反対多数で",
+              "url": "http://www.asahi.com/articles/ASVCV3VDWVCVUTFK010M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "処方糖尿病治療薬をダイエット目的で他人に転売、女を逮捕",
+          "summary": "病院で処方された糖尿病治療薬「マンジャロ」を他人に販売したとして、都内の40歳女が逮捕された。警視庁はダイエット目的の転売が相次いでいるとみている。",
+          "why_it_matters": "処方医薬品の違法転売は健康被害の危険があり、医療制度への信頼と個人の安全に直結する。",
+          "tags": [
+            "犯罪",
+            "医療",
+            "医薬品"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "処方された糖尿病治療薬「マンジャロ」を他人に販売か 逮捕",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261127de82227",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "いじめ件数79万件超で過去最多、初めて『性的いじめ』を調査",
+          "summary": "2025年度、全国の学校で把握されたいじめは79万件余りと5年連続で過去最多を更新。初めて調査した『性的いじめ』は8000件以上が確認された。",
+          "why_it_matters": "いじめが増加し続ける中、新たに『性的いじめ』という課題が顕在化し、学校現場の対応が試される。",
+          "tags": [
+            "教育",
+            "いじめ",
+            "児童生徒"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "学校のいじめ79万件超で過去最多 「性的いじめ」初調査 文科省 | NHKニュース",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261127de82139",
+              "source": "はてブ 世の中",
+              "popularity": "4 users"
+            }
+          ]
+        },
+        {
+          "headline": "11月消費者物価2.9%上昇、電気・ガス代が押し上げ",
+          "summary": "都区部の11月消費者物価は前年同月比2.9%上昇。電気・ガス代の上昇が全体を押し上げた。",
+          "why_it_matters": "エネルギー価格の変動が家計に直接影響を与え、実質賃金と物価の関係が生活設計の重要な判断材料となる。",
+          "tags": [
+            "経済",
+            "物価",
+            "生活"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "11月は2.9%上昇　都区部消費者物価、電気・ガス代が押し上げ",
+              "url": "http://www.asahi.com/articles/ASVCW065ZVCWULFA003M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "副首都を2027年秋に複数道府県で指定、2028年春に運用開始",
+          "summary": "大規模災害時に首都機能を代替する『副首都』について、政府は2027年秋に複数の道府県を指定し、2028年春から運用を始めるスケジュール想定を公表した。",
+          "why_it_matters": "災害時の政治・経済機能の維持は国家的な重要課題であり、指定される地域の経済・社会計画に影響する。",
+          "tags": [
+            "防災",
+            "政策",
+            "地域"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "「副首都」来年秋に指定 再来年春から運用へ 想定日程公表",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261127de82236",
+              "source": "NHK 主要"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "神崎武法・公明党元代表が死去、83歳　自公連立政権を築く",
+          "url": "http://www.asahi.com/articles/ASVCW0HV4VCWUTFK00TM.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "公明党の神崎武法元代表が死去、83歳。自公連立政権の構築に貢献した政治家。"
+        },
+        {
+          "title": "激減したラッコ、なぜ4頭が来日？ 実現まで4年、海を越えた舞台裏",
+          "url": "http://www.asahi.com/articles/ASVCV7S80VCVPTIL01DM.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "激減していたラッコ4頭が来日。実現まで4年の取り組みの成果。"
+        },
+        {
+          "title": "新築マンション、居住せず１年以内売却で譲渡益５２％課税検討…投機的取引の抑制狙う",
+          "url": "https://www.yomiuri.co.jp/economy/20261127-GYT1T00005/",
+          "source": "はてブ 世の中",
+          "popularity": "132 users",
+          "note": "新築マンション１年以内転売に52%課税を検討—投機抑制が狙い。2027年度税制で本格検討。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 55,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    },
+    {
+      "source": "Kubernetes Blog",
+      "url": "https://kubernetes.io/feed.xml",
+      "error": "IncompleteRead(35814 bytes read, 1080266 more expected)"
+    }
+  ],
+  "stats": {
+    "collected": 262,
+    "unclassified": 12,
+    "classify_error": null
+  }
+}
