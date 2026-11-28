@@ -1,0 +1,1106 @@
+{
+  "date": "2026-11-28",
+  "generated_at": "2026-11-28 11:34 JST",
+  "lead": "セキュリティと規制環境の急速な変化が、エンジニアの実装判断と運用体制に直結する一週間。",
+  "highlights": [
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "Drupalのゼロデイが既に悪用されているため、自社・クライアントサイトで即時の脆弱性確認と修正が必須になる。",
+      "topic": {
+        "headline": "Drupal に複数の悪用確認済ゼロデイ—不完全修正でサイト乗っ取り、既に攻撃観測—CVE-2026-136716 等",
+        "summary": "Drupal Core に不完全な例外処理脆弱性が存在し、前回のアップデート後も一部サイトで悪用が可能。インストーラー露出時のサイト乗っ取りが実際に観測されている。",
+        "why_it_matters": "Drupal は世界中の政府・企業サイトで使用される CMS。既に悪用が始まっており、すぐにセキュリティアップデートの確認と適用が必須。",
+        "tags": [
+          "ゼロデイ",
+          "CMS",
+          "悪用確認済"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "「Drupal」が再アップデート、前回更新後も一部サイトは脆弱 - 侵害調査を",
+            "url": "https://www.security-next.com/193451",
+            "source": "Security NEXT"
+          },
+          {
+            "title": "Drupal warns of new site takeover flaw exploited in attacks",
+            "url": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/",
+            "source": "BleepingComputer"
+          },
+          {
+            "title": "CVE-2026-136716: Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-136716",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "security",
+      "category_label": "セキュリティ",
+      "reason": "GeoServerは官公庁インフラで広く使われており、認証なしでのリモートコード実行は他システムへの侵入経路になるため、公開インタフェース運用のセキュリティレビューが急務。",
+      "topic": {
+        "headline": "GeoServer の XML インジェクション・認可回避脆弱性が悪用確認—CVE-2026-120705、CVE-2026-129243",
+        "summary": "OSGeo GeoServer にローカルファイル読取・HTTP 要求実行が可能な XML インジェクション脆弱性と、認証なしで操作が可能な認可回避脆弱性が存在。両脆弱性とも悪用確認済み。",
+        "why_it_matters": "GeoServer は地理情報システムの基盤で、官公庁・企業のインフラで利用されている。認証なしで操作されるため、公開インタフェースの確認と修正が急務。",
+        "tags": [
+          "ゼロデイ",
+          "GIS",
+          "悪用確認済"
+        ],
+        "importance": 5,
+        "sources": [
+          {
+            "title": "CVE-2026-120705: OSGeo GeoServer XML Injection Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120705",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          },
+          {
+            "title": "CVE-2026-129243: OSGeo GeoServer Incorrect Authorization Vulnerability",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-129243",
+            "source": "CISA KEV",
+            "popularity": "悪用確認済"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "product",
+      "category_label": "プロダクト・ビジネス",
+      "reason": "個人情報最小化への転換が業界トレンドとなる中、データ設計やAPI仕様への影響を見定め、自分たちのアーキテクチャを先制的に検討する時期。",
+      "topic": {
+        "headline": "個人情報を持たない経営へ転換、顧客関係の新モデルが広がる",
+        "summary": "そばチェーン「ゆで太郎」は約4,000人が登録する「バースデークラブ」を8年で廃止し、個人情報を持たない経営戦略に転換。個人情報漏えいのリスクを理由としている。ドールメーカー「アゾンインターナショナル」も売上の約15％を占める自社ECサイトの閉店を決め、同様に個人情報を持たない方針に切り替えた。",
+        "why_it_matters": "個人情報保護とビジネス継続のトレードオフが顕在化している。今後の顧客データ活用戦略と、プライバシー規制への対応方針を検討する際の参考になる。",
+        "tags": [
+          "個人情報保護",
+          "事業戦略",
+          "サイバーセキュリティ"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "そばチェーン「ゆで太郎」は、なぜ個人情報を「持たない」と決めた？　8年続いたバースデークラブ終了の理由を社長に聞いた",
+            "url": "https://www.itmedia.co.jp/news/article/2611/28/2000003529/",
+            "source": "ITmedia NEWS"
+          },
+          {
+            "title": "顧客情報を守るため、売上15％の自社ECを閉店　ドールメーカーが明かした「決断」の背景",
+            "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003518/",
+            "source": "ITmedia NEWS"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "general",
+      "category_label": "一般ニュース",
+      "reason": "データセンター整備の政策指針策定は、AWSなどクラウド基盤の信頼性・立地・規制環境に中長期で影響するため、インフラ投資判断の背景を理解しておく。",
+      "topic": {
+        "headline": "政府がデータセンター整備の指針を新たに策定へ",
+        "summary": "全国各地でデータセンター整備が進む中、事業者と周辺住民との摩擦に対応するため、政府は事業者・地元自治体・電力会社が守るべき指針を新たに策定する方針を固めた。",
+        "why_it_matters": "データセンターは社会的インフラ化が進む一方、地域経済・電力・環境へ影響するため、利害関係者の合意形成の枠組みが経営判断に影響する可能性がある。",
+        "tags": [
+          "インフラ",
+          "エネルギー",
+          "地域政策"
+        ],
+        "importance": 3,
+        "sources": [
+          {
+            "title": "データセンター整備めぐり 政府が関係者向け指針策定へ",
+            "url": "https://news.web.nhk/newsweb/na/nd-20261128de82863",
+            "source": "NHK 主要"
+          }
+        ]
+      }
+    },
+    {
+      "category_id": "ai",
+      "category_label": "AI・LLM",
+      "reason": "エージェント開発時にMCP標準化が進むことで、Terraformなど外部ツール統合のコード設計が明確になり、自分たちの実装効率向上を見通せる。",
+      "topic": {
+        "headline": "Claude、新たなMCP機能「Skills over MCP」がベータ提供開始",
+        "summary": "AnthropicがMCP（Model Context Protocol）に新機能4つを追加。「Skills over MCP」はツールとの接続だけでなく、使用方法のスキルもMCP経由で提供できるように。",
+        "why_it_matters": "Claude利用時のエージェント実装がMCP仕様で標準化される。Terraformなど外部ツール統合時に使い方定義をコード化できるため、実装効率と堅牢性向上。",
+        "tags": [
+          "Claude",
+          "MCP",
+          "API"
+        ],
+        "importance": 4,
+        "sources": [
+          {
+            "title": "ClaudeのMCP連携に新機能　スキルもMCP経由で提供、削除前の確認も",
+            "url": "https://www.itmedia.co.jp/enterprise/articles/2611/27/news029.html",
+            "source": "ITmedia エンタープライズ"
+          },
+          {
+            "title": "MCPに新機能「Skills over MCP」登場　ツールとの接続だけでなく使い方のスキルもMCP経由で提供",
+            "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003513/",
+            "source": "ITmedia NEWS"
+          }
+        ]
+      }
+    }
+  ],
+  "deep_dive": {
+    "category_id": "security",
+    "category_label": "セキュリティ",
+    "headline": "SAP がソースコード侵害を確認—GitHub 上で従業員トークン悪用、開発インフラ侵入",
+    "sources": [
+      {
+        "title": "Software giant SAP confirms cyber incident amid reports of source code breach",
+        "url": "https://therecord.media/sap-germany-cyberattack-github",
+        "source": "The Record"
+      },
+      {
+        "title": "SAP confirms security incident after suspicious GitHub activity",
+        "url": "https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/",
+        "source": "BleepingComputer"
+      },
+      {
+        "title": "SAP Confirms Cyberattack, Source Code Reportedly Compromised",
+        "url": "https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/",
+        "source": "SecurityWeek"
+      }
+    ],
+    "background": "エンタープライズソフトウェアの中核企業であるSAPの開発インフラが侵入され、盗まれた従業員トークンでGitHub上のソースコードが複製・改変された事件。サプライチェーン全体に波及するセキュリティリスクを露呈させた。",
+    "concepts": [
+      {
+        "term": "供給チェーン攻撃（Software Supply Chain Attack）",
+        "explanation": "開発インフラやソースコードを狙い、そこから配布されるソフトウェアを通じて多数の下流ユーザーへ侵害を拡大させる戦略。SAPのような基盤ソフト企業が標的になると被害は指数関数的に広がる。"
+      },
+      {
+        "term": "従業員トークン悪用（Employee Token Compromise）",
+        "explanation": "社員のGitHubやAPI認証トークンが盗まれ、攻撃者がその権限でリポジトリにアクセス・改ざんする。MFA導入済みでも、トークン自体が窃取されれば防ぎきれない。"
+      },
+      {
+        "term": "開発インフラ侵害（Development Infrastructure Breach）",
+        "explanation": "ビルド環境、リポジトリ、デプロイシステムなど開発パイプライン全体が侵入されると、ソースコード改ざんから本番リリース後の潜在的な後門（バックドア）まで設置される。"
+      }
+    ],
+    "for_you": "SAPのような巨大ベンダーのインフラ侵害は、あなたがTerraformで構築・管理しているAWS環境や、Pythonで実装したサービスの依存ライブラリ・統合サービス層の信頼性を根本から揺るがす。今後、CI/CDパイプラインやIaC定義の完全性検証、依存関係の監視がセキュリティ設計の必須要素になる。",
+    "try_this": "手始めに、自分のTerraformリポジトリとPythonプロジェクトで使用している外部リソース・ライブラリの依存関係をリスト化し、それぞれの提供元インフラセキュリティ評価（公開情報）をチェックしてみる。特にGitHubトークンのローテーション周期と最小権限アクセス設定を見直す。",
+    "questions": []
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI・LLM",
+      "overview": "OpenAIがAppleへ反訴を起こし知財侵害を追及。Google・Meta・Anthropicがそれぞれ新型モデル・ツール機能を次々発表。AIエージェントの実装拡大に伴い、API制限やセキュリティ対策も強化される動き。",
+      "topics": [
+        {
+          "headline": "OpenAIがAppleを反訴、知財窃取と供給者への強要を主張",
+          "summary": "OpenAIが米カリフォルニアの裁判所でAppleを提訴。知財窃取と共通の供給業者に対する強要を指摘。AppleのGPT統合に関する既存訴訟への対抗措置。",
+          "why_it_matters": "大型企業間の法的対立が今後の生成AI統合の方針や条件に影響する可能性。企業提携時の契約内容・秘密保持義務の確認は重要。",
+          "tags": [
+            "法務",
+            "OpenAI",
+            "Apple"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers",
+              "url": "https://the-decoder.com/openai-countersues-apple-over-trade-secret-theft-and-alleged-coercion-of-shared-suppliers/",
+              "source": "The Decoder"
+            }
+          ]
+        },
+        {
+          "headline": "Google、AIエージェントのWorkspace API直接アクセスを制限へ—MCPサーバー経由を要求",
+          "summary": "Googleは2027年2月1日からAIエージェントがGmail・Googleドライブなど各Workspaceサービスにアクセスする際、公式MCP実装またはCLIの使用を強制。",
+          "why_it_matters": "エージェント開発時にGCP/Google Workspaceと連携させる場合、MCPサーバー対応を計画に含める必要。既存API直接呼び出しは更新が必須。",
+          "tags": [
+            "Google",
+            "API変更",
+            "エージェント"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "GoogleがAIエージェントによるGmailなどへのAPI直接アクセスを制限へ、MCPサーバーかCLIの使用を要求",
+              "url": "https://gigazine.net/news/20261127-google-workspace-ai-tools-mcp/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "Claude、新たなMCP機能「Skills over MCP」がベータ提供開始",
+          "summary": "AnthropicがMCP（Model Context Protocol）に新機能4つを追加。「Skills over MCP」はツールとの接続だけでなく、使用方法のスキルもMCP経由で提供できるように。",
+          "why_it_matters": "Claude利用時のエージェント実装がMCP仕様で標準化される。Terraformなど外部ツール統合時に使い方定義をコード化できるため、実装効率と堅牢性向上。",
+          "tags": [
+            "Claude",
+            "MCP",
+            "API"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "ClaudeのMCP連携に新機能　スキルもMCP経由で提供、削除前の確認も",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/27/news029.html",
+              "source": "ITmedia エンタープライズ"
+            },
+            {
+              "title": "MCPに新機能「Skills over MCP」登場　ツールとの接続だけでなく使い方のスキルもMCP経由で提供",
+              "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003513/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "Google DeepCrossAttention、3倍高速化で同等品質実現",
+          "summary": "Googleの新技術が同等のモデル品質を従来比3倍速く達成。推論効率が向上。",
+          "why_it_matters": "モデル推論速度向上は低遅延が必須のアプリケーション（リアルタイムAPI等）で採用候補。フレームワーク更新で恩恵を受けられる可能性。",
+          "tags": [
+            "Google",
+            "推論",
+            "性能"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Google's DeepCrossAttention achieves comparable model quality up to 3x faster",
+              "url": "https://research.google/blog/supercharging-transformer-residual-connections/",
+              "source": "Hacker News",
+              "popularity": "115 points"
+            }
+          ]
+        },
+        {
+          "headline": "Meta・AMI Labs、JEPA型ワールドモデルが因果理解に進展—ロボット制御へ",
+          "summary": "Yann LeCunが率いるAMI Labsが発表した3つの論文が、因果関係を学ぶJEPA型アーキテクチャでロボット制御・計画立案の成果を示唆。LLM以外の代替モデル。",
+          "why_it_matters": "エージェント実装の新たなアーキテクチャ選択肢。物理的タスクに特化する可能性があり、ロボティクス・制造業向けシステムでの活用検討が始まる可能性。",
+          "tags": [
+            "Meta",
+            "ロボティクス",
+            "JEPA"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Three studies from Meta and AMI Labs back Yann LeCun's bet on JEPA world models over large language models",
+              "url": "https://the-decoder.com/three-studies-from-meta-and-ami-labs-back-yann-lecuns-bet-on-jepa-world-models-over-large-language-models/",
+              "source": "The Decoder"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "AI音声による虚偽通報が深刻化",
+          "url": "https://gigazine.net/news/20261128-fake-911-call-ai/",
+          "source": "GIGAZINE",
+          "note": "AI音声による警察への虚偽通報が米国で多発、人間と見分けがつかないレベルで社会問題化。"
+        },
+        {
+          "title": "「日本語で」と書いても AI が英語に戻るので、Stop フックで止めた",
+          "url": "https://zenn.dev/hitori_pm/articles/cc955887656339",
+          "source": "はてブ テクノロジー",
+          "popularity": "14 users",
+          "note": "日本語プロンプトでもLLMが英語に戻ってしまう実装上の課題。StopフックでAPI応答を制御する対応例。"
+        },
+        {
+          "title": "電通が「Geminiを使いこなすFDE」ら3000人育成プログラムを開始　その内容とは？",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/27/news038.html",
+          "source": "ITmedia AI+",
+          "note": "電通が約3000人を対象にGemini Enterprise使いこなし人材育成開始、現場導入推進。"
+        },
+        {
+          "title": "さくらインターネット、AIを月額固定料金で提供する「シンプルAI」発表、システムへの組み込み用途を想定",
+          "url": "https://www.publickey1.jp/blog/26/aiai_1.html",
+          "source": "Publickey",
+          "note": "さくらインターネット、月額固定料金のシンプルAI提供開始、システム組み込み用途想定。"
+        },
+        {
+          "title": "Hackers breached the US Air Force's flagship Cloud One platform, report says",
+          "url": "https://the-decoder.com/hackers-breached-the-us-air-forces-flagship-cloud-one-platform-report-says/",
+          "source": "The Decoder",
+          "note": "米空軍のクラウドプラットフォームCloud Oneがハッカー侵害を受けた報告。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 60,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ",
+      "overview": "脆弱性と情報漏えいの大波が続く。Drupal・GeoServer のゼロデイ悪用、KARTE・GMOペパボ・SAP など大規模インシデント多発。AI 利用の攻撃も加速。",
+      "topics": [
+        {
+          "headline": "GMOペパボのレンタルサーバーで不正アクセス、顧客情報51万6564件漏洩—内部システム侵害、パスワード約12万件も",
+          "summary": "GMOペパボが運営する「ロリポップ！」等で第三者による不正アクセスが発生。認証情報を使用した内部システム侵害により、顧客情報とパスワードが流出。",
+          "why_it_matters": "日本の主要レンタルサーバーの大規模インシデント。利用サイトの運営者や利用者は漏洩情報の対象確認と影響評価が急務。",
+          "tags": [
+            "情報漏洩",
+            "日本",
+            "レンタルサーバー"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "GMOペパボへの不正アクセスについてまとめてみた",
+              "url": "https://piyolog.hatenadiary.jp/entry/2026/11/28/110735",
+              "source": "piyolog"
+            },
+            {
+              "title": "GMO、サーバー貸出事業で不正アクセス　顧客情報51万件漏洩 - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOUC27B210X21C26A1000000/",
+              "source": "はてブ テクノロジー",
+              "popularity": "12 users"
+            },
+            {
+              "title": "「ロリポップ！レンタルサーバー」の平文パスワード情報などが漏えい。GMOペパボの内部システムに不正アクセス　顧客情報51万6564件が漏えいの可能性、対象者に個別メール連絡",
+              "url": "https://internet.watch.impress.co.jp/docs/news/2160136.html",
+              "source": "はてブ テクノロジー",
+              "popularity": "87 users"
+            }
+          ]
+        },
+        {
+          "headline": "KARTE のデータ漏洩相次ぐ、契約終了後の削除不備で月間12億人分中2億件超が流出—ピーチ・ZOZO・ANA 等で確認",
+          "summary": "プレイドの Web 解析サービス「KARTE」の不正アクセスで、複数の契約先から大規模データが流出。契約終了後も削除されずに保管されたデータが漏洩した。人的オペレーション・管理不備が原因。",
+          "why_it_matters": "消費行動データの集約サービスの侵害で、流通・航空業界等に波及。個人データを外部に預ける際の削除プロセス確認の重要性を示す。",
+          "tags": [
+            "情報漏洩",
+            "日本",
+            "Web解析"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "不正アクセス被害のKARTE、12億人分のデータ解析　止まらぬ漏洩 - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOUC26A6E0W6A121C2000000/",
+              "source": "はてブ 世の中",
+              "popularity": "18 users"
+            },
+            {
+              "title": "止まらないKARTE漏えい　契約終了後「削除されたはず」のデータ流出相次ぐ　「人的オペレーションと管理の不備」",
+              "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003517/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "SAP がソースコード侵害を確認—GitHub 上で従業員トークン悪用、開発インフラ侵入",
+          "summary": "SAP の開発インフラに侵入され、GitHub 上で従業員トークンが悪用され、ソースコードが複製・改変された。SAP が顧客保護のため急遽対応。",
+          "why_it_matters": "エンタープライズシステムの中核企業による開発インフラ侵害。ソースコードへのアクセス権が盗まれた場合、サプライチェーン全体のセキュリティに波及するリスク。",
+          "tags": [
+            "情報漏洩",
+            "ソースコード",
+            "供給チェーン"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Software giant SAP confirms cyber incident amid reports of source code breach",
+              "url": "https://therecord.media/sap-germany-cyberattack-github",
+              "source": "The Record"
+            },
+            {
+              "title": "SAP confirms security incident after suspicious GitHub activity",
+              "url": "https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "SAP Confirms Cyberattack, Source Code Reportedly Compromised",
+              "url": "https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/",
+              "source": "SecurityWeek"
+            }
+          ]
+        },
+        {
+          "headline": "Drupal に複数の悪用確認済ゼロデイ—不完全修正でサイト乗っ取り、既に攻撃観測—CVE-2026-136716 等",
+          "summary": "Drupal Core に不完全な例外処理脆弱性が存在し、前回のアップデート後も一部サイトで悪用が可能。インストーラー露出時のサイト乗っ取りが実際に観測されている。",
+          "why_it_matters": "Drupal は世界中の政府・企業サイトで使用される CMS。既に悪用が始まっており、すぐにセキュリティアップデートの確認と適用が必須。",
+          "tags": [
+            "ゼロデイ",
+            "CMS",
+            "悪用確認済"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "「Drupal」が再アップデート、前回更新後も一部サイトは脆弱 - 侵害調査を",
+              "url": "https://www.security-next.com/193451",
+              "source": "Security NEXT"
+            },
+            {
+              "title": "Drupal warns of new site takeover flaw exploited in attacks",
+              "url": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "CVE-2026-136716: Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-136716",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "GeoServer の XML インジェクション・認可回避脆弱性が悪用確認—CVE-2026-120705、CVE-2026-129243",
+          "summary": "OSGeo GeoServer にローカルファイル読取・HTTP 要求実行が可能な XML インジェクション脆弱性と、認証なしで操作が可能な認可回避脆弱性が存在。両脆弱性とも悪用確認済み。",
+          "why_it_matters": "GeoServer は地理情報システムの基盤で、官公庁・企業のインフラで利用されている。認証なしで操作されるため、公開インタフェースの確認と修正が急務。",
+          "tags": [
+            "ゼロデイ",
+            "GIS",
+            "悪用確認済"
+          ],
+          "importance": 5,
+          "sources": [
+            {
+              "title": "CVE-2026-120705: OSGeo GeoServer XML Injection Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120705",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            },
+            {
+              "title": "CVE-2026-129243: OSGeo GeoServer Incorrect Authorization Vulnerability",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-129243",
+              "source": "CISA KEV",
+              "popularity": "悪用確認済"
+            }
+          ]
+        },
+        {
+          "headline": "Cacti ネットワーク監視ツールにゼロデイ—認証なしでリモートコード実行、PoC 公開",
+          "summary": "Cacti に認証なしでコマンド実行が可能なゼロデイ脆弱性が存在。PoC がすでに公開されており、ゲストアクセスから 4 つの HTTP リクエストで悪用可能。",
+          "why_it_matters": "監視ツールの脆弱性で、基盤インフラへのアクセスが取られる可能性。インターネット公開している場合は即応が必要。",
+          "tags": [
+            "ゼロデイ",
+            "監視ツール",
+            "RCE"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Unpatched Cacti zero-day with public PoC gives remote code execution",
+              "url": "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/",
+              "source": "BleepingComputer"
+            },
+            {
+              "title": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access",
+              "url": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
+              "source": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "headline": "pCloud Pass パスワードマネージャーが侵害—2FA 有効化でも未認証デバイスからアクセス",
+          "summary": "pCloud Pass で不正アクセスが発生。ユーザーが 2FA 有効化していても、未知のデバイスから接続できた。",
+          "why_it_matters": "パスワード保管庫の侵害は認証情報すべての流出を意味する。2FA が機能していない設定不備の可能性があり、ユーザーは緊急にパスワード変更と対応を検討する必要。",
+          "tags": [
+            "パスワード管理",
+            "認証",
+            "情報漏洩"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "pCloud confirms password manager hack after suspicious login alerts",
+              "url": "https://www.bleepingcomputer.com/news/security/pcloud-confirms-password-manager-hack-after-suspicious-login-alerts/",
+              "source": "BleepingComputer"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Cyberattack disrupts global news distribution platform at France’s AFP",
+          "url": "https://therecord.media/france-afp-hit-by-cyberattack",
+          "source": "The Record",
+          "note": "フランス AFP 通信社のニュース配信プラットフォームがサイバー攻撃で障害。世界的なメディア配信が影響。"
+        },
+        {
+          "title": "British government takes services offline following ‘cyber incident’",
+          "url": "https://therecord.media/uk-department-work-pensions-cyber-incident",
+          "source": "The Record",
+          "note": "英 DWP（働き方・年金省）が「サイバーインシデント」で複数サービスを停止。"
+        },
+        {
+          "title": "東京都「赤ちゃんファースト」で交換したQUOカードPayが使えなくなった件についてまとめてみた",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/27/004031",
+          "source": "piyolog",
+          "note": "東京都「赤ちゃんファースト」事業のポイント交換システム障害。リンベル店舗委託先への不正アクセスで、QUOカードPay 交換分が利用不可に。"
+        },
+        {
+          "title": "Japan’s education ministry discloses breach of government procurement system",
+          "url": "https://therecord.media/japan-education-ministry-cyberattack",
+          "source": "The Record",
+          "note": "日本文部科学省の政府調達情報システムが侵害。関係者の個人情報流出の可能性。"
+        },
+        {
+          "title": "化粧品通販サイトに不正アクセス - 個人情報流出の可能性",
+          "url": "https://www.security-next.com/193310",
+          "source": "Security NEXT",
+          "note": "化粧品通販「ヴェレダ公式オンラインショップ」が不正アクセス。個人情報流出可能性。"
+        },
+        {
+          "title": "契約者向けマイページに不正アクセス、個人情報が流出 - 東京海上ダイレクト",
+          "url": "https://www.security-next.com/193168",
+          "source": "Security NEXT",
+          "note": "東京海上ダイレクト損保の契約者マイページが不正アクセス。顧客個人情報流出。"
+        },
+        {
+          "title": "Hex Package Manager Warns of Potential Data Breach",
+          "url": "https://www.securityweek.com/hex-package-manager-warns-of-potential-data-breach/",
+          "source": "SecurityWeek",
+          "note": "Hex パッケージマネージャーに脆弱性。サーバー上でのコマンド実行が可能だったが、データ改変は未確認。"
+        },
+        {
+          "title": "Hackers Trojanize Official Q-Dir and DesktopOK Downloads to Deliver Remote Access Malware",
+          "url": "https://thehackernews.com/2026/11/hackers-trojanize-official-q-dir-and.html",
+          "source": "The Hacker News",
+          "note": "Q-Dir・DesktopOK のサプライチェーン攻撃。公式サイトからの配布ファイルがマルウェア搭載。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 67,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "cloud",
+      "label": "クラウド・インフラ",
+      "overview": "AWSとGoogle Cloudが相次ぎ機能拡張。クラウド競争が激化する中、Terraformはエージェント対応を加速。",
+      "topics": [
+        {
+          "headline": "Amazon Timestream for InfluxDBが異機種ノード対応、役割ごとにサイズ調整可能に",
+          "summary": "InfluxDB 3のWriter・Reader・Compactorロール各々で異なるインスタンスサイズを割り当てられるようになった。ノード役割に応じた独立的な数の資源配分が可能。",
+          "why_it_matters": "時系列DBの最適化が細かく制御でき、コスト削減とパフォーマンス調整の自由度が上がる。InfluxDB運用の汎用性が高まる。",
+          "tags": [
+            "AWS",
+            "Timestream"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Amazon Timestream for InfluxDB 3 now supports heterogeneous clusters",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/influxdb-heterogeneous-cluster/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon CloudWatchが基本OpenTelemetry エンリッチメント無償提供開始",
+          "summary": "CloudWatchが発行するAWSサービスメトリクスをOpenTelemetryデータポイントに変換する基本的なエンリッチメント機能を追加費用なしで提供開始。PromQLでのクエリが可能に。",
+          "why_it_matters": "監視データの標準化が進み、既存のPromQL知識やOTel対応ツールとの統合が容易になる。複数クラウド・オンプレ監視の統一基盤構築コストが下がる。",
+          "tags": [
+            "CloudWatch",
+            "OpenTelemetry"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon CloudWatch announces basic OpenTelemetry enrichment at no additional cost",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-opentelemetry-enrichment/",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "Amazon Neptuneがエージェント向けセッション機能、スケーラビリティ向上で16 m-NCUの最小要件を廃止",
+          "summary": "Neptune Graph Sessionsという新コンピュートモードを実装。エージェント・ユーザ・タスクごとに独立したグラフを割り当てでき、メモリとCPUを自動スケーリング、アイドル時はスケーアウトする。従来の16 m-NCU最小要件が不要。",
+          "why_it_matters": "グラフDBの従量課金がより粒度高く実現でき、エージェントコストが削減される。複数エージェント並行運用のスケーリングモデルが実用的に。",
+          "tags": [
+            "Neptune",
+            "Graph"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Amazon Neptune introduces Neptune Graph Sessions, smaller graphs designed for agents that scale to zero and resume automatically",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-neptune-graph-sessions-generally-available",
+              "source": "AWS What's New"
+            }
+          ]
+        },
+        {
+          "headline": "さくらのクラウド、東京第三ゾーン新設と新ネットワーク基盤・DBサービスを発表",
+          "summary": "さくらインターネットが「SAKURA DEKIRU Conference 2026」で東京リージョンの第三ゾーン新設と新ネットワーク基盤、新データベースサービスを発表した。",
+          "why_it_matters": "国内クラウドの冗長性と選択肢が拡大。AWS・Azure以外の選択肢の強化により、ベンダーロック回避やデータ主権の要件を満たしやすくなる。",
+          "tags": [
+            "クラウド",
+            "さくらインターネット"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "さくらのクラウド、新ネットワーク基盤、新データベースサービスなど投入。東京リージョン第三ゾーン新設も発表",
+              "url": "https://www.publickey1.jp/blog/26/post_310.html",
+              "source": "Publickey"
+            }
+          ]
+        },
+        {
+          "headline": "さくらインターネット、AWS・Azure対応の新ストレージ「Object Storage Suite」発表",
+          "summary": "さくらのクラウドの新ストレージサービス「Object Storage Suite（OS2）」を発表。AWS・Azureなど他クラウド間でのバックアップが可能。",
+          "why_it_matters": "マルチクラウド戦略のバックアップ統合が進展。クラウド間のデータ移行・ディザスタリカバリ戦略のコストと複雑さが減る。",
+          "tags": [
+            "クラウド",
+            "ストレージ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "さくらインターネット、AWSやAzureなど他クラウドでバックアップ可能な新ストレージ「Object Storage Suite」（OS2）発表",
+              "url": "https://www.publickey1.jp/blog/26/awsazureobject_storage_suiteos2.html",
+              "source": "Publickey"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Hard Drive pricing has gotten bad",
+          "url": "https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/",
+          "source": "Lobsters",
+          "popularity": "37 score",
+          "note": "HDDの価格下落は続かず。大容量ストレージ調達の単価戦略に影響。"
+        },
+        {
+          "title": "Built for trust and control: Powering the next wave of AI agents across Google Workspace and Google Cloud",
+          "url": "https://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise/",
+          "source": "Google Cloud Blog",
+          "note": "Google Workspace・Google Cloudが20年で40億ユーザ・1,300万組織を保護。エンタープライズ信頼が継続。"
+        },
+        {
+          "title": "Enabling zero trust: ALLEN’s move to Chrome Enterprise Premium",
+          "url": "https://cloud.google.com/blog/products/chrome-enterprise/enabling-zero-trust-allens-move-to-chrome-enterprise-premium/",
+          "source": "Google Cloud Blog",
+          "note": "ALLEN(インドの大手教育機関)がChrome Enterprise Premiumでゼロトラスト移行。教育セクターのセキュリティ意識向上。"
+        },
+        {
+          "title": "DynaPORT modernization on Google Cloud with AlloyDB for PostgreSQL and GKE",
+          "url": "https://cloud.google.com/blog/products/databases/dynaport-modernizes-with-alloydb/",
+          "source": "Google Cloud Blog",
+          "note": "AlloyDB・GKEでの海運ターミナルOSモダナイゼーション事例。GlobalなPaaS活用が進む。"
+        },
+        {
+          "title": "What’s new in Managed Service for Apache Spark 4.0",
+          "url": "https://cloud.google.com/blog/products/data-analytics/whats-new-in-managed-service-for-apache-spark-4-0/",
+          "source": "Google Cloud Blog",
+          "note": "Managed Service for Apache Sparkが4.0で、反応型分析からAIエージェント規模のプロアクティブシステムへ対応。"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 19,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "dev",
+      "label": "開発・エンジニアリング",
+      "overview": "運用チームの人手不足が深刻化し、PyTorchなどでAI審査自動化が浸透。開発基盤とコード品質ツールの高度化が進む。",
+      "topics": [
+        {
+          "headline": "運用担当者の過半数が心身消耗、2年以内離職率も5割超",
+          "summary": "大企業の運用担当者は勤務時間外の待機が常態化し、過半数が心身の消耗を訴えている。2年以内に離職する可能性が高い割合も半数を超えた。",
+          "why_it_matters": "チームの運用メンバーの離職リスク把握と、SRE施策の見直しに直結。自分たちの組織でも同様の兆候がないか振り返るべき。",
+          "tags": [
+            "運用",
+            "人事"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "運用担当者はなぜ離脱するのか？　“消耗の背景”に迫る調査結果が発表",
+              "url": "https://www.itmedia.co.jp/enterprise/articles/2611/28/news005.html",
+              "source": "ITmedia エンタープライズ"
+            }
+          ]
+        },
+        {
+          "headline": "PyTorch GreenLight、AIが低リスクPRを自動承認—Meta発オープンソース",
+          "summary": "PyTorchはメンテナのPRをAIレビュアーが自動承認できるGreenLightを導入。MetaのRADARシステムをオープンソース化したもので、安全性チェックと低リスク判定後にLLMが承認する。",
+          "why_it_matters": "コード審査の自動化が主流プロダクトで実装される段階へ進展。自分たちのCIパイプラインに同様の仕組みを導入する場合の実装・リスク設計の参考になる。",
+          "tags": [
+            "AI審査",
+            "DevOps"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "Meta Brings Code Review Auto-Approval More Mainstream with PyTorch GreenLight",
+              "url": "https://www.infoq.com/news/2026/11/uber-agent-spend-steady/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "Netflix、ライブラリAPI変更の影響範囲を自動追跡—Quasarツール開発",
+          "summary": "NetflixはQuasarという内部ツールを開発。セマンティックコードインデックス(SCIP)とAPI比較を組み合わせ、ライブラリ変更の下流への影響を自動検出する。S3とAthenaでリポジトリ横断的にAPI参照を追跡。",
+          "why_it_matters": "マイクロサービスやモノレポで複数チーム間のAPI依存を管理する際の自動化手法。自社の規模や構成に応じた類似ツール導入の判断材料になる。",
+          "tags": [
+            "API管理",
+            "依存追跡"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "Netflix Builds Quasar to Measure the Blast Radius of Library API Changes",
+              "url": "https://www.infoq.com/news/2026/11/netflix-quasar-api-impact/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        },
+        {
+          "headline": "D2図生成ツール、非営利化でレイアウトエンジンをOSS化",
+          "summary": "テキストから図を自動生成するD2は2026年9月に非営利組織に移行。独自のレイアウトエンジンをオープンソース化し、手描き風デザイン・アニメーション・ASCII出力など拡張機能も充実している。",
+          "why_it_matters": "ドキュメント自動生成、Terraformテンプレートのアーキテクチャ図作成などで活用可能。OSSレイアウトエンジンの提供で、カスタマイズや組み込みの選択肢が広がる。",
+          "tags": [
+            "ドキュメント",
+            "可視化"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "シンプルな構文で美しい図を自動生成する「D2」が進化、非営利化で独自レイアウトエンジンもオープンソース化",
+              "url": "https://gigazine.net/news/20261127-d2/",
+              "source": "はてブ テクノロジー",
+              "popularity": "57 users"
+            }
+          ]
+        },
+        {
+          "headline": "Grafana、バージョン7以来最大級のUI刷新—テーマとコンポーネント統一",
+          "summary": "Grafana Labsはテーマ更新、インターフェース統一、視覚階層改善を含むUI刷新の第1段階を発表。可観測性プラットフォーム全体の一貫性を強化。",
+          "why_it_matters": "組織内でGrafanaを運用ツールとして使用している場合、今後のバージョンアップ時の画面レイアウト・操作性の変化に備えておくと良い。",
+          "tags": [
+            "監視",
+            "UI/UX"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "Grafana Begins Its Biggest UI Refresh Since Version 7",
+              "url": "https://www.infoq.com/news/2026/11/grfana-ui-refresh/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+              "source": "InfoQ"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Presentation: From Fan-Out to Fast: Sub-100ms API Design in Distributed Systems",
+          "url": "https://www.infoq.com/presentations/sub-100ms-latency-distributed-systems/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "分散APIの100ms以下設計—eBayの実践から学ぶホップ単位のレイテンシ予算、非同期化、スレッドプール、キャッシュ、サーキットブレーカーの組み合わせ"
+        },
+        {
+          "title": "Article: Engineering Reliable Telematics from Smartphone Sensors",
+          "url": "https://www.infoq.com/articles/engineering-reliable-smartphone-sensor-telematics/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+          "source": "InfoQ",
+          "note": "スマートフォンセンサーテレマティクスの信頼性設計—デバイス置き場所のばらつきとサンプリング動作の制御が課題"
+        },
+        {
+          "title": "作業を止めずに進めるClaude Codeの/btw・/fork・/rewindなどの使い分け",
+          "url": "https://zenn.dev/nextbeat/articles/b0ccca979da06b",
+          "source": "Zenn トレンド",
+          "popularity": "31 いいね",
+          "note": "Claude Codeの操作: /btw・/fork・/rewindの使い分けで作業を中断せず進める"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 29,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "product",
+      "label": "プロダクト・ビジネス",
+      "overview": "中国のセールイベントでiPhoneが好調、個人情報を持たない経営戦略を進める企業が相次ぐ。AIが管理職の役割を脅かし始めている。",
+      "topics": [
+        {
+          "headline": "中国独身の日セール、iPhoneが最売上10機種中6機種を占める",
+          "summary": "中国最大のネット通販セールイベント「独身の日」（11月11日）で、AppleのiPhoneが最も売れたスマートフォン上位10機種のうち6機種を占めた。調査はCounterpoint Researchが実施。",
+          "why_it_matters": "消費地市場での製品シェアと需要動向を把握できる。中国の購買トレンドはグローバルテック産業に大きな影響を与える。",
+          "tags": [
+            "スマートフォン",
+            "市場動向",
+            "中国"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "AppleのiPhoneは中国最大のネット通販セールイベントで最も売れたスマホ10機種のうち6機種を占める",
+              "url": "https://gigazine.net/news/20261128-china-double-11-iphone-domination/",
+              "source": "GIGAZINE"
+            }
+          ]
+        },
+        {
+          "headline": "個人情報を持たない経営へ転換、顧客関係の新モデルが広がる",
+          "summary": "そばチェーン「ゆで太郎」は約4,000人が登録する「バースデークラブ」を8年で廃止し、個人情報を持たない経営戦略に転換。個人情報漏えいのリスクを理由としている。ドールメーカー「アゾンインターナショナル」も売上の約15％を占める自社ECサイトの閉店を決め、同様に個人情報を持たない方針に切り替えた。",
+          "why_it_matters": "個人情報保護とビジネス継続のトレードオフが顕在化している。今後の顧客データ活用戦略と、プライバシー規制への対応方針を検討する際の参考になる。",
+          "tags": [
+            "個人情報保護",
+            "事業戦略",
+            "サイバーセキュリティ"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "そばチェーン「ゆで太郎」は、なぜ個人情報を「持たない」と決めた？　8年続いたバースデークラブ終了の理由を社長に聞いた",
+              "url": "https://www.itmedia.co.jp/news/article/2611/28/2000003529/",
+              "source": "ITmedia NEWS"
+            },
+            {
+              "title": "顧客情報を守るため、売上15％の自社ECを閉店　ドールメーカーが明かした「決断」の背景",
+              "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003518/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        },
+        {
+          "headline": "シリコンバレーから発信、AIが管理職の役割を担おうとしている",
+          "summary": "経験の少ない若者だけでなく、経営陣と現場をつなぐ管理職の役割もAIが担おうとしている。米テック企業トップからは「管理職はいらない」との発言が出ている。",
+          "why_it_matters": "エンジニア向けの組織設計と昇進キャリアの選択肢に変化が訪れる可能性がある。個人の専門性強化と組織への依存度を考える必要が生じる。",
+          "tags": [
+            "AI導入",
+            "組織設計",
+            "経営"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "｢もう管理職はいらない｣　震源はシリコンバレー、AIで消える肩書と階層 - 日本経済新聞",
+              "url": "https://www.nikkei.com/article/DGXZQOGN246EE0U6A121C2000000/",
+              "source": "はてブ テクノロジー",
+              "popularity": "67 users"
+            }
+          ]
+        },
+        {
+          "headline": "京セラ、5年で9000億円をAI・データセンター投資に充てる",
+          "summary": "京セラは2031年3月期までの5年間で設備投資に計9,000億円を投じることを発表。AIの普及に伴うデータセンターと半導体関連需要の取り込みを狙う。研究開発にも5年間で6,500億円を投資する。",
+          "why_it_matters": "サプライチェーンや部品調達の需要予測、インフラ投資トレンドを把握できる。データセンター関連の調達・購買担当者向けに市場展開の変化が参考になる。",
+          "tags": [
+            "データセンター",
+            "AI基盤",
+            "設備投資"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "「AI関連の需要強い」京セラ　5年で設備投資9000億円、データセンター需要狙う",
+              "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003521/",
+              "source": "ITmedia NEWS"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "This purple electric Chinese minivan can go up to 559 miles on a charge",
+          "url": "https://www.theverge.com/transportation/1044706/this-purple-electric-chinese-minivan-can-go-up-to-559-miles-on-a-charge",
+          "source": "The Verge",
+          "note": "BYD製の電動ミニバン、1充電で最大559マイルの走行が可能"
+        },
+        {
+          "title": "Yooka-Laylee’s free upgrade is skipping Xbox",
+          "url": "https://www.theverge.com/games/1044715/yooka-laylees-free-upgrade-is-skipping-xbox",
+          "source": "The Verge",
+          "note": "Yooka-Laylee Definitive Edition、12月15日にPS5/Switch 2/PCで無料配信、Xbox版は対応不明"
+        },
+        {
+          "title": "「時給1280円?」「在宅勤務」　ローソンが募集する「アバターオペレーター」という謎のお仕事",
+          "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003511/",
+          "source": "ITmedia NEWS",
+          "note": "ローソン、在宅でアバター操作して接客する「アバターオペレーター」の募集開始（時給1,280円）"
+        },
+        {
+          "title": "聴覚障害の社員にスマートグラス支給　会話をリアルタイムに文字表示　ソフトバンク、連携アプリも独自開発",
+          "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003516/",
+          "source": "ITmedia NEWS",
+          "note": "ソフトバンク、聴覚障害社員にスマートグラス支給、会話をリアルタイムで文字表示"
+        },
+        {
+          "title": "サブスクの「お試し→自動更新」は客を逃していた？　新規購読者数は「お試し→自動解約」比23％減　140万人で実験",
+          "url": "https://www.itmedia.co.jp/news/article/2611/27/2000003503/",
+          "source": "ITmedia NEWS",
+          "note": "サブスク140万人実験、「お試し→自動更新」は「お試し→自動解約」比で新規購読23％減"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 14,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    },
+    {
+      "id": "general",
+      "label": "一般ニュース",
+      "overview": "政府がデータセンター整備の指針策定へ進め、一方で防衛分野では原潜導入論が高まる中、国内では不漁や貧困などの生活課題が深刻化。国際舞台では日本の識者・自治体首長が重要な発言を続けている。",
+      "topics": [
+        {
+          "headline": "政府がデータセンター整備の指針を新たに策定へ",
+          "summary": "全国各地でデータセンター整備が進む中、事業者と周辺住民との摩擦に対応するため、政府は事業者・地元自治体・電力会社が守るべき指針を新たに策定する方針を固めた。",
+          "why_it_matters": "データセンターは社会的インフラ化が進む一方、地域経済・電力・環境へ影響するため、利害関係者の合意形成の枠組みが経営判断に影響する可能性がある。",
+          "tags": [
+            "インフラ",
+            "エネルギー",
+            "地域政策"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "データセンター整備めぐり 政府が関係者向け指針策定へ",
+              "url": "https://news.web.nhk/newsweb/na/nd-20261128de82863",
+              "source": "NHK 主要"
+            }
+          ]
+        },
+        {
+          "headline": "防衛省内で原潜導入に8割が反対、軍事的合理性に疑念",
+          "summary": "政府・与党は年内の安保関連3文書改定で原子力潜水艦の導入を視野に検討する方針を進める一方、防衛省・自衛隊内では軍事的合理性や莫大なコストについて疑問の声が上がっており、防衛省内では本音では約8割が反対している。",
+          "why_it_matters": "防衛・安全保障政策の決定過程で、実行部隊と政治判断の乖離が生じており、今後の政策転換の可能性や実装上のリスクを理解する上で重要。",
+          "tags": [
+            "防衛政策",
+            "安全保障",
+            "政治判断"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "原潜導入へ政府が検討、防衛省内「本音は8割が反対」四つの問題点",
+              "url": "http://www.asahi.com/articles/ASVCW2RBFVCWUTFK00BM.html?ref=rss",
+              "source": "朝日新聞"
+            },
+            {
+              "title": "原潜の導入視野に検討へ　今なぜ？　リスクは？　3人の識者に聞く",
+              "url": "http://www.asahi.com/articles/ASVCW45LTVCWUTFK00BM.html?ref=rss",
+              "source": "朝日新聞"
+            },
+            {
+              "title": "「空気の産物」原潜導入論　軍事的合理性への疑念や巨額コストに懸念",
+              "url": "http://www.asahi.com/articles/ASVCW4JJQVCWUTFK01GM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "広島知事が核兵器禁止条約会議参加へ、非核三原則の「例外」明記に懸念",
+          "summary": "広島知事が核兵器禁止条約の会議参加を表明し、「脅しで平和、核抑止は矛盾」と述べた。一方、政府が非核三原則の「例外」を明記する動きについて、事実上の形骸化を懸念する声が上がっている。",
+          "why_it_matters": "日本の核政策の方向転換が各地で議論を呼んでおり、今後の国内コンセンサス形成と国際発言への影響を注視する必要がある。",
+          "tags": [
+            "核政策",
+            "国際関係",
+            "地方政治"
+          ],
+          "importance": 4,
+          "sources": [
+            {
+              "title": "核兵器禁止条約の会議参加へ　広島知事「脅しで平和、核抑止は矛盾」",
+              "url": "http://www.asahi.com/articles/ASVCT2TRPVCTPTIL00LM.html?ref=rss",
+              "source": "朝日新聞"
+            },
+            {
+              "title": "非核三原則の「例外」明記に効果は？　事実上の形骸化、懸念の声も",
+              "url": "http://www.asahi.com/articles/ASVCW4H8TVCWUQIP007M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "秋田のハタハタが記録的不漁、禁漁か続行かの判断が迫られる",
+          "summary": "秋田でハタハタの不漁が続いており、漁を禁漁にするか続行するかの判断が迫られている状況にある。",
+          "why_it_matters": "地域産業と生態系管理のバランスが問われる課題で、類似の漁業資源管理に先例を提供する可能性がある。",
+          "tags": [
+            "漁業",
+            "地域産業",
+            "資源管理"
+          ],
+          "importance": 2,
+          "sources": [
+            {
+              "title": "記録的不漁続く秋田のハタハタ　「禁漁」か「続行」か　見えぬ答え",
+              "url": "http://www.asahi.com/articles/ASVCV2CM4VCVUBUB005M.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        },
+        {
+          "headline": "ホームレス過去最少でも、数字に表れない住まいの困窮が深刻化",
+          "summary": "ホームレスの数が2481人と過去最少を記録する一方、統計に表れない不安定な住まいの困窮が存在し、貧困の形態が変わってきていることが指摘されている。",
+          "why_it_matters": "貧困層の生活基盤の不安定化が進む中、従来の統計では捉えきれない新たな支援ニーズが生まれており、政策対応の盲点を示唆している。",
+          "tags": [
+            "貧困",
+            "社会保障",
+            "統計"
+          ],
+          "importance": 3,
+          "sources": [
+            {
+              "title": "ホームレス2481人、過去最少でも　数字に表れない住まいの困窮",
+              "url": "http://www.asahi.com/articles/ASVCN0HZCVCNOXIE00QM.html?ref=rss",
+              "source": "朝日新聞"
+            }
+          ]
+        }
+      ],
+      "quick_hits": [
+        {
+          "title": "Set time aside for children to read for pleasure, schools to be told",
+          "url": "https://www.bbc.co.uk/news/articles/c65y1vp4ndqjo?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
+          "note": "英国政府が学校に「楽しみ目的の読書時間」の確保を指示、読解力低下と「無思考スクロール」対策として"
+        },
+        {
+          "title": "12月から公益通報者の保護強化　解雇・懲戒に罰則、「配転」が課題",
+          "url": "http://www.asahi.com/articles/ASVCV2SHJVCVUPQJ00TM.html?ref=rss",
+          "source": "朝日新聞",
+          "note": "12月から公益通報者の保護が強化され、解雇・懲戒に罰則が付く一方、『配転』対応が残る課題"
+        },
+        {
+          "title": "JR東日本、成田空港―羽田空港の直通運転は常磐線・東京駅経由で最終調整　上野東京ライン活用 - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUC2553V0V21C26A1000000/",
+          "source": "はてブ 世の中",
+          "popularity": "24 users",
+          "note": "JR東日本が成田・羽田両空港間の直通列車を検討、常磐線・東京駅経由で最終調整—インバウンド拡大狙い"
+        },
+        {
+          "title": "利益844万円、利益率92%　関文科相が官僚呼んだパーティー：朝日新聞",
+          "url": "https://www.asahi.com/articles/ASVCS4D87VCSUTIL01RM.html",
+          "source": "はてブ 世の中",
+          "popularity": "17 users",
+          "note": "文科相の政治資金パーティーで利益844万円・利益率92%と指摘され、政治資金問題が継続"
+        }
+      ],
+      "ok": true,
+      "error": null,
+      "article_count": 50,
+      "dropped_topics": 0,
+      "truncated": false,
+      "unverified_numbers": []
+    }
+  ],
+  "collection_failures": [
+    {
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "error": "<unknown>:2:0: not well-formed (invalid token)"
+    }
+  ],
+  "stats": {
+    "collected": 252,
+    "unclassified": 13,
+    "classify_error": null
+  }
+}
